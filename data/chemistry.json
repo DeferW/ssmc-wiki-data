@@ -1,0 +1,320 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "repository": "MetalSage/space-stories-cm14",
+    "branch": "master",
+    "commit": "17193e0f0b25bc1d47265ec98c148f0d11017019"
+  },
+  "generatedAt": "2026-08-09T18:19:52.247897Z",
+  "guides": {
+    "ordnance": [
+      {
+        "type": "reagent",
+        "id": "RMCNapalmSticky",
+        "sectionPath": [
+          "Топливо для огнемёта"
+        ]
+      },
+      {
+        "type": "reagent",
+        "id": "RMCNapalmHighCombustion",
+        "sectionPath": [
+          "Топливо для огнемёта"
+        ]
+      },
+      {
+        "type": "reagent",
+        "id": "WeldingFuel",
+        "sectionPath": [
+          "Топливо для огнемёта",
+          "Ограниченное",
+          "Доступно для покупки"
+        ]
+      },
+      {
+        "type": "reagent",
+        "id": "RMCNapalmUT",
+        "sectionPath": [
+          "Топливо для огнемёта",
+          "Ограниченное",
+          "Доступно для покупки"
+        ]
+      },
+      {
+        "type": "reagent",
+        "id": "RMCBGel",
+        "sectionPath": [
+          "Топливо для огнемёта",
+          "Ограниченное",
+          "Доступно для покупки"
+        ]
+      },
+      {
+        "type": "reagent",
+        "id": "RMCNapalmB",
+        "sectionPath": [
+          "Топливо для огнемёта",
+          "Ограниченное",
+          "Доступно для покупки"
+        ]
+      },
+      {
+        "type": "reagent",
+        "id": "RMCNapalmX",
+        "sectionPath": [
+          "Топливо для огнемёта",
+          "Ограниченное",
+          "Доступно для покупки"
+        ]
+      },
+      {
+        "type": "reagent",
+        "id": "RMCNapalmE",
+        "sectionPath": [
+          "Топливо для огнемёта",
+          "Ограниченное",
+          "Недоступно для покупки"
+        ]
+      },
+      {
+        "type": "reagent",
+        "id": "RMCNapalmEX",
+        "sectionPath": [
+          "Топливо для огнемёта",
+          "Ограниченное",
+          "Недоступно для покупки"
+        ]
+      },
+      {
+        "type": "reagent",
+        "id": "RMCR189",
+        "sectionPath": [
+          "Топливо для огнемёта",
+          "Ограниченное",
+          "Недоступно для покупки"
+        ]
+      },
+      {
+        "type": "reagent",
+        "id": "RMCCLF3",
+        "sectionPath": [
+          "Прекурсоры"
+        ]
+      },
+      {
+        "type": "reagent",
+        "id": "RMCSulphuricAcid",
+        "sectionPath": [
+          "Прекурсоры"
+        ]
+      },
+      {
+        "type": "reagent",
+        "id": "RMCNapalm",
+        "sectionPath": [
+          "Прекурсоры"
+        ]
+      },
+      {
+        "type": "reagent",
+        "id": "RMCPotassiumHydroxide",
+        "sectionPath": [
+          "Взрывчатые вещества"
+        ]
+      },
+      {
+        "type": "reagent",
+        "id": "RMCAmmonia",
+        "sectionPath": [
+          "Взрывчатые вещества"
+        ]
+      },
+      {
+        "type": "reagent",
+        "id": "RMCPolytrinicAcid",
+        "sectionPath": [
+          "Взрывчатые вещества"
+        ]
+      },
+      {
+        "type": "reagent",
+        "id": "RMCAmmoniumNitrate",
+        "sectionPath": [
+          "Взрывчатые вещества"
+        ]
+      },
+      {
+        "type": "reagent",
+        "id": "RMCANFO",
+        "sectionPath": [
+          "Взрывчатые вещества"
+        ]
+      },
+      {
+        "type": "reagent",
+        "id": "RMCGlycerol",
+        "sectionPath": [
+          "Взрывчатые вещества"
+        ]
+      },
+      {
+        "type": "reagent",
+        "id": "RMCNitroglycerin",
+        "sectionPath": [
+          "Взрывчатые вещества"
+        ]
+      },
+      {
+        "type": "reagent",
+        "id": "RMCFormaldehyde",
+        "sectionPath": [
+          "Взрывчатые вещества"
+        ]
+      },
+      {
+        "type": "reagent",
+        "id": "RMCHexamine",
+        "sectionPath": [
+          "Взрывчатые вещества"
+        ]
+      },
+      {
+        "type": "reagent",
+        "id": "RMCParaformaldehyde",
+        "sectionPath": [
+          "Взрывчатые вещества"
+        ]
+      },
+      {
+        "type": "reagent",
+        "id": "RMCCyclonite",
+        "sectionPath": [
+          "Взрывчатые вещества"
+        ]
+      },
+      {
+        "type": "reagent",
+        "id": "RMCOctogen",
+        "sectionPath": [
+          "Взрывчатые вещества"
+        ]
+      }
+    ],
+    "medicine": [
+      {
+        "type": "reagent",
+        "id": "CMTricordrazine",
+        "sectionPath": [
+          "Основные лекарственные препараты"
+        ]
+      },
+      {
+        "type": "reagent",
+        "id": "CMBicaridine",
+        "sectionPath": [
+          "Основные лекарственные препараты"
+        ]
+      },
+      {
+        "type": "reagent",
+        "id": "CMKelotane",
+        "sectionPath": [
+          "Основные лекарственные препараты"
+        ]
+      },
+      {
+        "type": "reagent",
+        "id": "CMDylovene",
+        "sectionPath": [
+          "Основные лекарственные препараты"
+        ]
+      },
+      {
+        "type": "reagent",
+        "id": "CMDexalin",
+        "sectionPath": [
+          "Основные лекарственные препараты"
+        ]
+      },
+      {
+        "type": "reagent",
+        "id": "CMDexalinPlus",
+        "sectionPath": [
+          "Основные лекарственные препараты"
+        ]
+      },
+      {
+        "type": "reagent",
+        "id": "CMMeralyne",
+        "sectionPath": [
+          "Основные лекарственные препараты"
+        ]
+      },
+      {
+        "type": "reagent",
+        "id": "CMDermaline",
+        "sectionPath": [
+          "Основные лекарственные препараты"
+        ]
+      },
+      {
+        "type": "reagent",
+        "id": "CMInaprovaline",
+        "sectionPath": [
+          "Специализированные лекарственные препараты"
+        ]
+      },
+      {
+        "type": "reagent",
+        "id": "CMEpinephrine",
+        "sectionPath": [
+          "Специализированные лекарственные препараты"
+        ]
+      },
+      {
+        "type": "reagent",
+        "id": "CMEthylredoxrazine",
+        "sectionPath": [
+          "Специализированные лекарственные препараты"
+        ]
+      },
+      {
+        "type": "reagent",
+        "id": "CMArithrazine",
+        "sectionPath": [
+          "Специализированные лекарственные препараты"
+        ]
+      },
+      {
+        "type": "reagent",
+        "id": "CMLeporazine",
+        "sectionPath": [
+          "Специализированные лекарственные препараты"
+        ]
+      },
+      {
+        "type": "reagent",
+        "id": "CMCryoxadone",
+        "sectionPath": [
+          "Специализированные лекарственные препараты"
+        ]
+      },
+      {
+        "type": "group",
+        "id": "Medicine",
+        "sectionPath": [
+          "Все лекарственные препараты"
+        ]
+      }
+    ],
+    "drinks": [
+      {
+        "type": "group",
+        "id": "Drinks",
+        "sectionPath": [
+          "Напитки"
+        ]
+      }
+    ]
+  }
+}
