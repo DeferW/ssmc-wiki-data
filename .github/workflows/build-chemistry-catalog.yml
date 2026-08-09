@@ -1,0 +1,184 @@
+name: Build chemistry catalog
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-chemistry-catalog
+  cancel-in-progress: false
+
+jobs:
+  build-catalog:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download wiki data repository
+        uses: actions/checkout@v7.0.1
+
+      - name: Download chemistry sources
+        uses: actions/checkout@v7.0.1
+        with:
+          repository: MetalSage/space-stories-cm14
+          ref: master
+          path: game-source
+          sparse-checkout: |
+            Resources/ServerInfo/Guidebook/_RMC14/Chemicals/OT.xml
+            Resources/ServerInfo/Guidebook/_RMC14/Chemicals/Medicine.xml
+            Resources/ServerInfo/Guidebook/_RMC14/Guides/RMCGuideDrinks.xml
+            Resources/Prototypes/_RMC14/Reagents
+            Resources/Prototypes/_Stories/Reagents
+            Resources/Prototypes/_RMC14/Recipes/Reactions
+            Resources/Prototypes/_Stories/Recipes/Reactions
+            Resources/Prototypes/Reagents
+            Resources/Locale/ru-RU
+          sparse-checkout-cone-mode: false
+
+      - name: Install YAML parser
+        run: |
+          python3 -m pip install "PyYAML>=6,<7"
+
+      - name: Build chemistry data
+        run: |
+          GAME_COMMIT=$(git -C game-source rev-parse HEAD)
+
+          python3 scripts/extract_guide_sections.py \
+            --game-source game-source \
+            --output data/chemistry-guides.json \
+            --commit "$GAME_COMMIT"
+
+          python3 scripts/index_chemistry.py \
+            --game-source game-source \
+            --output data/chemistry-index.json \
+            --commit "$GAME_COMMIT"
+
+          python3 scripts/build_chemistry_catalog.py \
+            --index data/chemistry-index.json \
+            --guides data/chemistry-guides.json \
+            --game-source game-source \
+            --output data/chemistry-catalog.json \
+            --locale ru-RU
+
+      - name: Validate chemistry catalog
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("data/chemistry-catalog.json")
+          data = json.loads(path.read_text(encoding="utf-8"))
+
+          reagents = data.get("reagents", {})
+          dependencies = data.get("dependencies", {})
+          reactions = data.get("reactions", {})
+          guides = data.get("guides", {})
+          counts = data.get("counts", {})
+
+          if not reagents:
+              raise RuntimeError("No custom reagents found")
+
+          if not reactions:
+              raise RuntimeError("No custom reactions found")
+
+          if set(guides) != {"ordnance", "medicine", "drinks"}:
+              raise RuntimeError(
+                  "Unexpected guide set: " + ", ".join(sorted(guides))
+              )
+
+          invalid_reagents = sorted(
+              reagent_id
+              for reagent_id, reagent in reagents.items()
+              if reagent.get("origin") not in {"rmc14", "stories"}
+          )
+          if invalid_reagents:
+              raise RuntimeError(
+                  "Upstream reagents entered the custom catalog: "
+                  + ", ".join(invalid_reagents)
+              )
+
+          invalid_dependencies = sorted(
+              reagent_id
+              for reagent_id, reagent in dependencies.items()
+              if reagent.get("origin") != "upstream-reference"
+          )
+          if invalid_dependencies:
+              raise RuntimeError(
+                  "Invalid dependency origins: "
+                  + ", ".join(invalid_dependencies)
+              )
+
+          invalid_reactions = sorted(
+              reaction_id
+              for reaction_id, reaction in reactions.items()
+              if reaction.get("origin") not in {"rmc14", "stories"}
+          )
+          if invalid_reactions:
+              raise RuntimeError(
+                  "Upstream reactions entered the catalog: "
+                  + ", ".join(invalid_reactions)
+              )
+
+          known_reagents = set(reagents) | set(dependencies)
+          missing_references = set()
+
+          for reaction in reactions.values():
+              for field in ("reactants", "products"):
+                  for item in reaction.get(field, []):
+                      reagent_id = item.get("id")
+                      if reagent_id not in known_reagents:
+                          missing_references.add(reagent_id)
+
+          for entries in guides.values():
+              for entry in entries:
+                  reagent_id = entry.get("id")
+                  if reagent_id not in known_reagents:
+                      missing_references.add(reagent_id)
+
+          if missing_references:
+              raise RuntimeError(
+                  "Unknown reagent references: "
+                  + ", ".join(sorted(missing_references))
+              )
+
+          expected_counts = {
+              "customReagents": len(reagents),
+              "upstreamDependencies": len(dependencies),
+              "customReactions": len(reactions),
+              "unlistedCustomReagents": len(
+                  data.get("unlistedReagents", [])
+              ),
+          }
+
+          if counts != expected_counts:
+              raise RuntimeError(
+                  f"Count mismatch: stored={counts}, actual={expected_counts}"
+              )
+
+          print(f'Custom reagents: {len(reagents)}')
+          print(f'Upstream dependencies: {len(dependencies)}')
+          print(f'Custom reactions: {len(reactions)}')
+          print(
+              "Unlisted custom reagents: "
+              f'{len(data.get("unlistedReagents", []))}'
+          )
+          print("Chemistry catalog validation passed")
+          PY
+
+      - name: Save chemistry data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add \
+            data/chemistry-guides.json \
+            data/chemistry-index.json \
+            data/chemistry-catalog.json
+
+          if git diff --cached --quiet; then
+            echo "Nothing changed"
+          else
+            git commit -m "Build chemistry catalog"
+            git push
+          fi
