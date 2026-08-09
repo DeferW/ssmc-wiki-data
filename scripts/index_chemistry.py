@@ -10,7 +10,7 @@ import yaml
 
 
 class GameYamlLoader(yaml.SafeLoader):
-    """YAML loader that accepts SS14 tags such as !type:HealthChange."""
+    """YAML loader that accepts and preserves SS14 custom tags."""
 
 
 def construct_tagged_value(
@@ -35,6 +35,12 @@ def construct_tagged_value(
         "yamlTag": f"!{tag_suffix}",
         "value": value,
     }
+
+
+GameYamlLoader.add_multi_constructor(
+    "!",
+    construct_tagged_value,
+)
 
 
 SOURCE_ROOTS = [
