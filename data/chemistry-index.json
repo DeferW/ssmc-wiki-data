@@ -1,0 +1,2016 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "repository": "MetalSage/space-stories-cm14",
+    "branch": "master",
+    "commit": "17193e0f0b25bc1d47265ec98c148f0d11017019"
+  },
+  "generatedAt": "2026-08-09T18:33:07.994424Z",
+  "sourceFileCounts": {
+    "Resources/Prototypes/_RMC14/Reagents": 16,
+    "Resources/Prototypes/_Stories/Reagents": 4,
+    "Resources/Prototypes/_RMC14/Recipes/Reactions": 8,
+    "Resources/Prototypes/_Stories/Recipes/Reactions": 1
+  },
+  "prototypeCounts": {
+    "reagents": 135,
+    "reactions": 77
+  },
+  "duplicates": {},
+  "entries": [
+    {
+      "type": "reaction",
+      "id": "BlueCuracao",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "CMArithrazine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "CMBicaridine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "CMClonexadone",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "CMCryoxadone",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "CMDermaline",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "CMDexalin",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "CMDexalinPlus",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "CMDylovene",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "CMEpinephrine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "CMEthylredoxrazine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "CMImidazoline",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "CMInaprovaline",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "CMKelotane",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "CMLeporazine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "CMMeralyne",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "CMTricordrazine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "CoffeeLiqueur",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "CookingMayoOliveOil",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "CreateFriedEgg",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "CreateMeat",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "Grenadine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "Gunfire",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "IceCafe",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "MangoAguaFresca",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "MangoCooler",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "MelonLiquor",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCAluminiumMetalFoam",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/chemicals.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCBatter",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCCLF3",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/pyrotechnic.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCCLF3Bad",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/pyrotechnic.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCCherryJelly",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCCitalopram",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCCreateWater",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/other.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCEthanoloxidation",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/other.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCEthanoloxidationV2",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/other.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCGrapeSoda",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCInstantApple",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCInstantGrape",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCInstantOrange",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCInstantPineapple",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCInstantWatermelon",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCIronMetalFoam",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/chemicals.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCLexorin",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/toxins.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCLipozine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCMethane",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/pyrotechnic.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCMethylphenidate",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCMilkshake",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCMindbreakerToxin",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/narcotics.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCNapalm",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/pyrotechnic.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCNapalmBad",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/pyrotechnic.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCNapalmHighCombustion",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/pyrotechnic.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCNapalmSticky",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/pyrotechnic.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCParoxetine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCPotassiumExplosion",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/chemicals.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCSmoke",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/chemicals.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCSpaceDrugs",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/narcotics.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCSulphuricAcid",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/elements.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCTableSalt",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/chemicals.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCVirusFood",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/other.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCVodka",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "Sake",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "Sidecar",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "SwissLemonade",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "Wine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCANFO",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Recipes/Reactions/explosives.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCAmmonia",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Recipes/Reactions/explosives.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCAmmoniumNitrate",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Recipes/Reactions/explosives.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCCyclonite",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Recipes/Reactions/explosives.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCFormaldehyde",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Recipes/Reactions/explosives.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCGlycerol",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Recipes/Reactions/explosives.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCHexamine",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Recipes/Reactions/explosives.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCNitroglycerin",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Recipes/Reactions/explosives.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCOctogen",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Recipes/Reactions/explosives.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCParaformaldehyde",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Recipes/Reactions/explosives.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCPolytrinicAcid",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Recipes/Reactions/explosives.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reaction",
+      "id": "RMCPotassiumHydroxide",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Recipes/Reactions/explosives.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "CMArithrazine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine",
+        "Arithrazine"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "CMBicaridine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine",
+        "Bicaridine"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "CMClonexadone",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine",
+        "CMCryoxadone"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "CMCryoxadone",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine",
+        "Cryoxadone"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "CMDermaline",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine",
+        "Dermaline"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "CMDexalin",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine",
+        "Dexalin"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "CMDexalinPlus",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine",
+        "DexalinPlus"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "CMDylovene",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine",
+        "Dylovene"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "CMEpinephrine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine",
+        "Epinephrine"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "CMEthylredoxrazine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine",
+        "Ethylredoxrazine"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "CMImidazoline",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine",
+        "CMDylovene"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "CMInaprovaline",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine",
+        "Inaprovaline"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "CMKelotane",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine",
+        "Kelotane"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "CMLeporazine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine",
+        "Leporazine"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "CMMeralyne",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine",
+        "CMBicaridine"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "CMReagent",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/base_reagent.yml",
+      "parents": [],
+      "abstract": true
+    },
+    {
+      "type": "reagent",
+      "id": "CMReagentMedicine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/base_reagent.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": true
+    },
+    {
+      "type": "reagent",
+      "id": "CMSodaBase",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/soda.yml",
+      "parents": [
+        "BaseSoda"
+      ],
+      "abstract": true
+    },
+    {
+      "type": "reagent",
+      "id": "CMSodaBobdaBlue",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/soda.yml",
+      "parents": [
+        "CMSodaBase"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "CMSodaBobdaCherry",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/soda.yml",
+      "parents": [
+        "CMSodaBase"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "CMSodaBobdaClassic",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/soda.yml",
+      "parents": [
+        "CMSodaBase"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "CMSodaBobdaCranberry",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/soda.yml",
+      "parents": [
+        "CMSodaBase"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "CMSodaBobdaGrape",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/soda.yml",
+      "parents": [
+        "CMSodaBase"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "CMSodaBobdaLime",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/soda.yml",
+      "parents": [
+        "CMSodaBase"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "CMSodaBobdaPeach",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/soda.yml",
+      "parents": [
+        "CMSodaBase"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "CMSodaBobdaPineapple",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/soda.yml",
+      "parents": [
+        "CMSodaBase"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "CMSodaBobdaVanilla",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/soda.yml",
+      "parents": [
+        "CMSodaBase"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "CMSodaFruitBeer",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/soda.yml",
+      "parents": [
+        "CMSodaBase"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "CMTricordrazine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine",
+        "Tricordrazine"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "Gunfire",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/other_drinks.yml",
+      "parents": [
+        "BaseAlcohol"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "IceCafe",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/other_drinks.yml",
+      "parents": [
+        "BaseDrink"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "MangoAguaFresca",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/other_drinks.yml",
+      "parents": [
+        "BaseDrink"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "MangoCooler",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/other_drinks.yml",
+      "parents": [
+        "BaseAlcohol"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCAluminum",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCAntiZed",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagent",
+        "AmbuzolPlus"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCBGel",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/pyrotechnic.yml",
+      "parents": [
+        "RMCBaseNapalm"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCBaseNapalm",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/pyrotechnic.yml",
+      "parents": [
+        "CMReagent",
+        "BasePyrotechnic"
+      ],
+      "abstract": true
+    },
+    {
+      "type": "reagent",
+      "id": "RMCBatter",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/ingredients.yml",
+      "parents": [
+        "BaseJuice"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCBlackGoo",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/toxins.yml",
+      "parents": [
+        "CMReagent",
+        "Romerol"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCCLF3",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/pyrotechnic.yml",
+      "parents": [
+        "CMReagent",
+        "BasePyrotechnic"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCCarbon",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCCherryJelly",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/ingredients.yml",
+      "parents": [
+        "BaseJuice"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCChloralhydrate",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/toxins.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCChlorine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCChocolateDrink",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/packaged_drinks.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCCitalopram",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "RMCMethylphenidate"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCCocoMilk",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/packaged_drinks.yml",
+      "parents": [
+        "RMCDrinkBase"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCCopper",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCCyanide",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/toxins.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCDrinkBase",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/base.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": true
+    },
+    {
+      "type": "reagent",
+      "id": "RMCEthanol",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement",
+        "BaseAlcohol"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCFluorine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCGenericToxin",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/toxins.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCGold",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCGrapeSoda",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/other_drinks.yml",
+      "parents": [
+        "BaseDrink"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCHydrogen",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCInstantJuiceApple",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/powdered_mixes.yml",
+      "parents": [
+        "BaseDrink"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCInstantJuiceGrape",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/powdered_mixes.yml",
+      "parents": [
+        "BaseDrink"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCInstantJuiceOrange",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/powdered_mixes.yml",
+      "parents": [
+        "BaseDrink"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCInstantJuicePineapple",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/powdered_mixes.yml",
+      "parents": [
+        "BaseDrink"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCInstantJuicePowderApple",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/powdered_mixes.yml",
+      "parents": [
+        "BaseDrink"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCInstantJuicePowderGrape",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/powdered_mixes.yml",
+      "parents": [
+        "BaseDrink"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCInstantJuicePowderOrange",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/powdered_mixes.yml",
+      "parents": [
+        "BaseDrink"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCInstantJuicePowderPineapple",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/powdered_mixes.yml",
+      "parents": [
+        "BaseDrink"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCInstantJuicePowderWatermelon",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/powdered_mixes.yml",
+      "parents": [
+        "BaseDrink"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCInstantJuiceWatermelon",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/powdered_mixes.yml",
+      "parents": [
+        "BaseDrink"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCIron",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCJuiceBug",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/packaged_drinks.yml",
+      "parents": [
+        "RMCDrinkBase"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCJuiceMango",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/juice.yml",
+      "parents": [
+        "BaseJuice"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCLexorin",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/toxins.yml",
+      "parents": [
+        "CMReagent",
+        "Lexorin"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCLipozine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine",
+        "Lipozine"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCLithium",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCMercury",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCMethane",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/pyrotechnic.yml",
+      "parents": [
+        "CMReagent",
+        "BasePyrotechnic"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCMethylphenidate",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCMilkshake",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/other_drinks.yml",
+      "parents": [
+        "BaseDrink"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCMindbreakerToxin",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/toxins.yml",
+      "parents": [
+        "CMReagent",
+        "MindbreakerToxin"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCMolecularAcid",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/toxins.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCNapalm",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/pyrotechnic.yml",
+      "parents": [
+        "RMCBaseNapalm"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCNapalmB",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/pyrotechnic.yml",
+      "parents": [
+        "RMCBaseNapalm"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCNapalmE",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/pyrotechnic.yml",
+      "parents": [
+        "RMCBaseNapalm"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCNapalmEX",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/pyrotechnic.yml",
+      "parents": [
+        "RMCBaseNapalm"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCNapalmHighCombustion",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/pyrotechnic.yml",
+      "parents": [
+        "RMCBaseNapalm"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCNapalmSticky",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/pyrotechnic.yml",
+      "parents": [
+        "RMCBaseNapalm"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCNapalmUT",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/pyrotechnic.yml",
+      "parents": [
+        "RMCBaseNapalm"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCNapalmUTTank",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/pyrotechnic.yml",
+      "parents": [
+        "RMCNapalmUT"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCNapalmWeak",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/pyrotechnic.yml",
+      "parents": [
+        "RMCBaseNapalm"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCNapalmX",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/pyrotechnic.yml",
+      "parents": [
+        "RMCBaseNapalm"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCNitrogen",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCOxygen",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCParoxetine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "RMCMethylphenidate"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCPeanutButter",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/ingredients.yml",
+      "parents": [
+        "BaseJuice"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCPhoron",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/pyrotechnic.yml",
+      "parents": [
+        "CMReagent",
+        "BasePyrotechnic"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCPhosphorus",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCPlatinum",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCPotassium",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCPsilocybin",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/narcotics.yml",
+      "parents": [
+        "RMCSpaceDrugs"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCR189",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/pyrotechnic.yml",
+      "parents": [
+        "RMCBaseNapalm"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCRadium",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement",
+        "Uranium"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCReagentElement",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/base_reagent.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": true
+    },
+    {
+      "type": "reagent",
+      "id": "RMCRussianRed",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine",
+        "CMArithrazine"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCSilicon",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCSilver",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCSodium",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCSoyMilk",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/packaged_drinks.yml",
+      "parents": [
+        "RMCDrinkBase"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCSpaceDrugs",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/narcotics.yml",
+      "parents": [
+        "CMReagent",
+        "SpaceDrugs"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCSpecialBlendWhiskey",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/alcohol.yml",
+      "parents": [
+        "Whiskey"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCSprinkles",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/ingredients.yml",
+      "parents": [],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCSugar",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCSulfur",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCSulphuricAcid",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCSynthBlood",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/synth_blood.yml",
+      "parents": [
+        "Blood"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCUltrazine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine",
+        "Stimulants"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCUranium",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCVirusFood",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/other.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "Sidecar",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/other_drinks.yml",
+      "parents": [
+        "BaseAlcohol"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "SwissLemonade",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/other_drinks.yml",
+      "parents": [
+        "BaseDrink"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCANFO",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Reagents/explosives.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCAmmonia",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Reagents/explosives.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCAmmoniumNitrate",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Reagents/explosives.yml",
+      "parents": [
+        "CMReagent",
+        "BasePyrotechnic"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCCornOil",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Reagents/explosives.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCCyclonite",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Reagents/explosives.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCFormaldehyde",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Reagents/explosives.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCFrostOil",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Reagents/explosives.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCGlycerol",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Reagents/explosives.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCHexamine",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Reagents/explosives.yml",
+      "parents": [
+        "CMReagent",
+        "BasePyrotechnic"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCNitroglycerin",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Reagents/explosives.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCOctogen",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Reagents/explosives.yml",
+      "parents": [
+        "CMReagent",
+        "BasePyrotechnic"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCParaformaldehyde",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Reagents/explosives.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCPolytrinicAcid",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Reagents/explosives.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCPotassiumChlorophoride",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Reagents/toxic.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCPotassiumHydroxide",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Reagents/explosives.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCTableSalt",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Reagents/other.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "RMCWeldingFuel",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Reagents/explosives.yml",
+      "parents": [
+        "CMReagent",
+        "BasePyrotechnic"
+      ],
+      "abstract": false
+    },
+    {
+      "type": "reagent",
+      "id": "STHunterBlood",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Reagents/hunter_blood.yml",
+      "parents": [
+        "Blood"
+      ],
+      "abstract": false
+    }
+  ]
+}
