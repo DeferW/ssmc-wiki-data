@@ -1,0 +1,72 @@
+name: Build chemistry data
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download wiki data repository
+        uses: actions/checkout@v7
+
+      - name: Download chemistry guide files
+        uses: actions/checkout@v7
+        with:
+          repository: MetalSage/space-stories-cm14
+          ref: master
+          path: game-source
+          sparse-checkout: |
+            Resources/ServerInfo/Guidebook/_RMC14/Chemicals/OT.xml
+            Resources/ServerInfo/Guidebook/_RMC14/Chemicals/Medicine.xml
+            Resources/ServerInfo/Guidebook/_RMC14/Guides/RMCGuideDrinks.xml
+          sparse-checkout-cone-mode: false
+
+      - name: Build chemistry JSON
+        run: |
+          GAME_COMMIT=$(git -C game-source rev-parse HEAD)
+
+          python3 scripts/build_chemistry.py \
+            --game-source game-source \
+            --output data/chemistry.json \
+            --commit "$GAME_COMMIT"
+
+      - name: Validate generated data
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("data/chemistry.json")
+          data = json.loads(path.read_text(encoding="utf-8"))
+
+          for guide in ("ordnance", "medicine", "drinks"):
+              entries = data["guides"].get(guide, [])
+
+              if not entries:
+                  raise RuntimeError(
+                      f"Guide '{guide}' contains no entries"
+                  )
+
+              print(f"{guide}: {len(entries)} entries")
+
+          print("Chemistry JSON is valid")
+          PY
+
+      - name: Save generated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/chemistry.json
+
+          if git diff --cached --quiet; then
+            echo "Nothing changed"
+          else
+            git commit -m "Update chemistry guide data"
+            git push
+          fi
