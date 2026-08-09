@@ -19,18 +19,22 @@ def construct_tagged_value(
     node: yaml.Node,
 ) -> Any:
     if isinstance(node, yaml.MappingNode):
-        return loader.construct_mapping(node, deep=True)
+        value = loader.construct_mapping(
+            node,
+            deep=True,
+        )
+    elif isinstance(node, yaml.SequenceNode):
+        value = loader.construct_sequence(
+            node,
+            deep=True,
+        )
+    else:
+        value = loader.construct_scalar(node)
 
-    if isinstance(node, yaml.SequenceNode):
-        return loader.construct_sequence(node, deep=True)
-
-    return loader.construct_scalar(node)
-
-
-GameYamlLoader.add_multi_constructor(
-    "!",
-    construct_tagged_value,
-)
+    return {
+        "yamlTag": f"!{tag_suffix}",
+        "value": value,
+    }
 
 
 SOURCE_ROOTS = [
@@ -124,6 +128,16 @@ def read_file(
                     "abstract": bool(
                         prototype.get("abstract", False)
                     ),
+                    "definition": {
+                        key: value
+                        for key, value in prototype.items()
+                        if key not in {
+                            "type",
+                            "id",
+                            "parent",
+                            "abstract",
+                        }
+                    },
                 })
 
     return entries
