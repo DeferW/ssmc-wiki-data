@@ -1,0 +1,36 @@
+name: Test automatic update
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  test-update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download repository
+        uses: actions/checkout@v4
+
+      - name: Generate test JSON
+        run: |
+          mkdir -p data
+
+          cat > data/test.json << EOF
+          {
+            "status": "ok",
+            "message": "Automatic update works",
+            "generatedAt": "$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+          }
+          EOF
+
+      - name: Save generated file
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/test.json
+          git commit -m "Test automatic data update"
+          git push
