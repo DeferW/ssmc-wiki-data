@@ -27,6 +27,7 @@ jobs:
           sparse-checkout: |
             Resources/ServerInfo/Guidebook/_RMC14/Chemicals/OT.xml
             Resources/ServerInfo/Guidebook/_RMC14/Chemicals/Medicine.xml
+            Resources/ServerInfo/Guidebook/_RMC14/Chemicals/RMCChemicals.xml
             Resources/ServerInfo/Guidebook/_RMC14/Guides/RMCGuideDrinks.xml
             Resources/Prototypes/_RMC14/Reagents
             Resources/Prototypes/_Stories/Reagents
@@ -74,6 +75,8 @@ jobs:
           dependencies = data.get("dependencies", {})
           reactions = data.get("reactions", {})
           guides = data.get("guides", {})
+          catalog_sections = data.get("catalogSections", {})
+          classification = data.get("classification", {})
           counts = data.get("counts", {})
 
           if not reagents:
@@ -85,6 +88,37 @@ jobs:
           if set(guides) != {"ordnance", "medicine", "drinks"}:
               raise RuntimeError(
                   "Unexpected guide set: " + ", ".join(sorted(guides))
+              )
+
+          expected_catalog_sections = {
+              "ordnance", "medicine", "drinks", "elements", "other"
+          }
+          if set(catalog_sections) != expected_catalog_sections:
+              raise RuntimeError(
+                  "Unexpected catalog section set: "
+                  + ", ".join(sorted(catalog_sections))
+              )
+
+          expected_classification_guide = (
+              "Resources/ServerInfo/Guidebook/_RMC14/Chemicals/"
+              "RMCChemicals.xml"
+          )
+          if classification.get("guideFile") != expected_classification_guide:
+              raise RuntimeError(
+                  "RMCChemicals.xml is not connected to the catalog build"
+              )
+
+          required_chemical_groups = {
+              "Elements", "Medicine", "Narcotics", "Pyrotechnic",
+              "Toxins", "Foods", "Botanical", "Biological", "Unknown",
+          }
+          actual_chemical_groups = set(
+              classification.get("groupSections", {})
+          )
+          if actual_chemical_groups != required_chemical_groups:
+              raise RuntimeError(
+                  "Unexpected RMCChemicals.xml groups: "
+                  + ", ".join(sorted(actual_chemical_groups))
               )
 
           invalid_reagents = sorted(
@@ -136,10 +170,36 @@ jobs:
                   if reagent_id not in known_reagents:
                       missing_references.add(reagent_id)
 
+          catalog_ids = []
+          for entries in catalog_sections.values():
+              for entry in entries:
+                  reagent_id = entry.get("id")
+                  catalog_ids.append(reagent_id)
+                  if reagent_id not in known_reagents:
+                      missing_references.add(reagent_id)
+
           if missing_references:
               raise RuntimeError(
                   "Unknown reagent references: "
                   + ", ".join(sorted(missing_references))
+              )
+
+          duplicate_catalog_ids = sorted({
+              reagent_id
+              for reagent_id in catalog_ids
+              if catalog_ids.count(reagent_id) > 1
+          })
+          if duplicate_catalog_ids:
+              raise RuntimeError(
+                  "Reagents entered multiple catalog sections: "
+                  + ", ".join(duplicate_catalog_ids)
+              )
+
+          missing_custom_reagents = sorted(set(reagents) - set(catalog_ids))
+          if missing_custom_reagents:
+              raise RuntimeError(
+                  "Custom reagents missing from catalog sections: "
+                  + ", ".join(missing_custom_reagents)
               )
 
           expected_counts = {
