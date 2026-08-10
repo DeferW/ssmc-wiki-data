@@ -5,7 +5,7 @@
     "branch": "master",
     "commit": "17193e0f0b25bc1d47265ec98c148f0d11017019"
   },
-  "generatedAt": "2026-08-10T14:21:34.059506Z",
+  "generatedAt": "2026-08-10T15:10:43.295771Z",
   "guides": {
     "ordnance": [
       {
@@ -313,6 +313,83 @@
         "id": "Drinks",
         "sectionPath": [
           "Напитки"
+        ]
+      }
+    ]
+  },
+  "classificationGuide": {
+    "path": "Resources/ServerInfo/Guidebook/_RMC14/Chemicals/RMCChemicals.xml",
+    "entries": [
+      {
+        "type": "group",
+        "id": "Elements",
+        "sectionPath": [
+          "Химикаты",
+          "Элементы"
+        ]
+      },
+      {
+        "type": "group",
+        "id": "Medicine",
+        "sectionPath": [
+          "Химикаты",
+          "Медицина"
+        ]
+      },
+      {
+        "type": "group",
+        "id": "Narcotics",
+        "sectionPath": [
+          "Химикаты",
+          "Наркотики"
+        ]
+      },
+      {
+        "type": "group",
+        "id": "Pyrotechnic",
+        "sectionPath": [
+          "Химикаты",
+          "Пиротехника"
+        ]
+      },
+      {
+        "type": "group",
+        "id": "Toxins",
+        "sectionPath": [
+          "Химикаты",
+          "Токсины"
+        ]
+      },
+      {
+        "type": "group",
+        "id": "Foods",
+        "sectionPath": [
+          "Химикаты",
+          "Продукты"
+        ]
+      },
+      {
+        "type": "group",
+        "id": "Botanical",
+        "sectionPath": [
+          "Химикаты",
+          "Ботанические"
+        ]
+      },
+      {
+        "type": "group",
+        "id": "Biological",
+        "sectionPath": [
+          "Химикаты",
+          "Биологические"
+        ]
+      },
+      {
+        "type": "group",
+        "id": "Unknown",
+        "sectionPath": [
+          "Химикаты",
+          "Прочее"
         ]
       }
     ]

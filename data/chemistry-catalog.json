@@ -5,7 +5,7 @@
     "branch": "master",
     "commit": "17193e0f0b25bc1d47265ec98c148f0d11017019"
   },
-  "generatedAt": "2026-08-10T14:21:35.092029Z",
+  "generatedAt": "2026-08-10T15:10:44.405609Z",
   "locale": "ru-RU",
   "counts": {
     "customReagents": 129,
@@ -837,6 +837,1281 @@
         "group": "Drinks"
       }
     ]
+  },
+  "catalogSections": {
+    "ordnance": [
+      {
+        "id": "RMCNapalmSticky",
+        "name": "Липкий напалм",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Топливо для огнемёта"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "RMCNapalmHighCombustion",
+        "name": "Высокогорючий напалм",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Топливо для огнемёта"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "WeldingFuel",
+        "name": "сварочное топливо",
+        "origin": "upstream-reference",
+        "sectionPath": [
+          "Топливо для огнемёта",
+          "Ограниченное",
+          "Доступно для покупки"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "RMCNapalmUT",
+        "name": "Топливо СГ-Нафталин",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Топливо для огнемёта",
+          "Ограниченное",
+          "Доступно для покупки"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "RMCBGel",
+        "name": "Напалм Б-Гель",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Топливо для огнемёта",
+          "Ограниченное",
+          "Доступно для покупки"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "RMCNapalmB",
+        "name": "Напалм Б",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Топливо для огнемёта",
+          "Ограниченное",
+          "Доступно для покупки"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "RMCNapalmX",
+        "name": "Напалм X",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Топливо для огнемёта",
+          "Ограниченное",
+          "Доступно для покупки"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "RMCNapalmE",
+        "name": "Напалм E",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Топливо для огнемёта",
+          "Ограниченное",
+          "Недоступно для покупки"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "RMCNapalmEX",
+        "name": "Напалм EX",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Топливо для огнемёта",
+          "Ограниченное",
+          "Недоступно для покупки"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "RMCR189",
+        "name": "Р189",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Топливо для огнемёта",
+          "Ограниченное",
+          "Недоступно для покупки"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "RMCCLF3",
+        "name": "Трифторид хлора",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Прекурсоры"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "RMCSulphuricAcid",
+        "name": "серная кислота",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Прекурсоры"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "RMCNapalm",
+        "name": "Напалм",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Прекурсоры"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "RMCPotassiumHydroxide",
+        "name": "гидроксид калия",
+        "origin": "stories",
+        "sectionPath": [
+          "Взрывчатые вещества"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "RMCAmmonia",
+        "name": "аммиак",
+        "origin": "stories",
+        "sectionPath": [
+          "Взрывчатые вещества"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "RMCPolytrinicAcid",
+        "name": "политриновая кислота",
+        "origin": "stories",
+        "sectionPath": [
+          "Взрывчатые вещества"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "RMCAmmoniumNitrate",
+        "name": "аммиачная селитра",
+        "origin": "stories",
+        "sectionPath": [
+          "Взрывчатые вещества"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "RMCANFO",
+        "name": "АНФО",
+        "origin": "stories",
+        "sectionPath": [
+          "Взрывчатые вещества"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "RMCGlycerol",
+        "name": "глицерин",
+        "origin": "stories",
+        "sectionPath": [
+          "Взрывчатые вещества"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "RMCNitroglycerin",
+        "name": "нитроглицерин",
+        "origin": "stories",
+        "sectionPath": [
+          "Взрывчатые вещества"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "RMCFormaldehyde",
+        "name": "формальдегид",
+        "origin": "stories",
+        "sectionPath": [
+          "Взрывчатые вещества"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "RMCHexamine",
+        "name": "гексамин",
+        "origin": "stories",
+        "sectionPath": [
+          "Взрывчатые вещества"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "RMCParaformaldehyde",
+        "name": "параформальдегид",
+        "origin": "stories",
+        "sectionPath": [
+          "Взрывчатые вещества"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "RMCCyclonite",
+        "name": "циклонит",
+        "origin": "stories",
+        "sectionPath": [
+          "Взрывчатые вещества"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "RMCOctogen",
+        "name": "октоген",
+        "origin": "stories",
+        "sectionPath": [
+          "Взрывчатые вещества"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "RMCMethane",
+        "name": "Метан",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Пиротехника"
+        ],
+        "includedBy": "rmc-chemicals-guide"
+      },
+      {
+        "id": "RMCFrostOil",
+        "name": "морозное масло",
+        "origin": "stories",
+        "sectionPath": [
+          "Прекурсоры"
+        ],
+        "includedBy": "source-file-fallback"
+      },
+      {
+        "id": "RMCWeldingFuel",
+        "name": "сварочное топливо",
+        "origin": "stories",
+        "sectionPath": [
+          "Пиротехника"
+        ],
+        "includedBy": "rmc-chemicals-guide"
+      },
+      {
+        "id": "RMCNapalmUTTank",
+        "name": "Топливо СГ-Нафталин",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Пиротехника"
+        ],
+        "includedBy": "rmc-chemicals-guide"
+      },
+      {
+        "id": "RMCNapalmWeak",
+        "name": "Топливо СГ-Нафталин",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Пиротехника"
+        ],
+        "includedBy": "rmc-chemicals-guide"
+      },
+      {
+        "id": "RMCPhoron",
+        "name": "Форон",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Пиротехника"
+        ],
+        "includedBy": "rmc-chemicals-guide"
+      }
+    ],
+    "medicine": [
+      {
+        "id": "CMTricordrazine",
+        "name": "Трикордразин",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Основные лекарственные препараты"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "CMBicaridine",
+        "name": "Бикаридин",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Основные лекарственные препараты"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "CMKelotane",
+        "name": "Келотан",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Основные лекарственные препараты"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "CMDylovene",
+        "name": "Диловен",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Основные лекарственные препараты"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "CMDexalin",
+        "name": "Дексалин",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Основные лекарственные препараты"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "CMDexalinPlus",
+        "name": "Дексалин Плюс",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Основные лекарственные препараты"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "CMMeralyne",
+        "name": "Мералин",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Основные лекарственные препараты"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "CMDermaline",
+        "name": "Дермалин",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Основные лекарственные препараты"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "CMInaprovaline",
+        "name": "Инапровалин",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Специализированные лекарственные препараты"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "CMEpinephrine",
+        "name": "Эпинефрин",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Специализированные лекарственные препараты"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "CMEthylredoxrazine",
+        "name": "Этилредоксразин",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Специализированные лекарственные препараты"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "CMArithrazine",
+        "name": "Аритразин",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Специализированные лекарственные препараты"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "CMLeporazine",
+        "name": "Лепоразин",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Специализированные лекарственные препараты"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "CMCryoxadone",
+        "name": "Криоксадон",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Специализированные лекарственные препараты"
+        ],
+        "includedBy": "reagent"
+      },
+      {
+        "id": "RMCAntiZed",
+        "name": "Анти-Зед",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Все лекарственные препараты"
+        ],
+        "includedBy": "group",
+        "group": "Medicine"
+      },
+      {
+        "id": "CMImidazoline",
+        "name": "Имидазолин",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Все лекарственные препараты"
+        ],
+        "includedBy": "group",
+        "group": "Medicine"
+      },
+      {
+        "id": "CMClonexadone",
+        "name": "Клонексадон",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Все лекарственные препараты"
+        ],
+        "includedBy": "group",
+        "group": "Medicine"
+      },
+      {
+        "id": "RMCLipozine",
+        "name": "Липозин",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Все лекарственные препараты"
+        ],
+        "includedBy": "group",
+        "group": "Medicine"
+      },
+      {
+        "id": "RMCMethylphenidate",
+        "name": "Метилфенидат",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Все лекарственные препараты"
+        ],
+        "includedBy": "group",
+        "group": "Medicine"
+      },
+      {
+        "id": "RMCParoxetine",
+        "name": "Пароксетин",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Все лекарственные препараты"
+        ],
+        "includedBy": "group",
+        "group": "Medicine"
+      },
+      {
+        "id": "RMCRussianRed",
+        "name": "Русский Красный",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Все лекарственные препараты"
+        ],
+        "includedBy": "group",
+        "group": "Medicine"
+      },
+      {
+        "id": "RMCCitalopram",
+        "name": "Циталопрам",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Все лекарственные препараты"
+        ],
+        "includedBy": "group",
+        "group": "Medicine"
+      }
+    ],
+    "drinks": [
+      {
+        "id": "IceCafe",
+        "name": "айс-кофе",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Напитки"
+        ],
+        "includedBy": "group",
+        "group": "Drinks"
+      },
+      {
+        "id": "RMCPeanutButter",
+        "name": "арахисовая паста",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Напитки"
+        ],
+        "includedBy": "group",
+        "group": "Drinks"
+      },
+      {
+        "id": "CMSodaBobdaPineapple",
+        "name": "Бобда ананасовая",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Напитки"
+        ],
+        "includedBy": "group",
+        "group": "Drinks"
+      },
+      {
+        "id": "CMSodaBobdaVanilla",
+        "name": "Бобда ванильная",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Напитки"
+        ],
+        "includedBy": "group",
+        "group": "Drinks"
+      },
+      {
+        "id": "CMSodaBobdaGrape",
+        "name": "Бобда виноградная",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Напитки"
+        ],
+        "includedBy": "group",
+        "group": "Drinks"
+      },
+      {
+        "id": "CMSodaBobdaCherry",
+        "name": "Бобда вишневая",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Напитки"
+        ],
+        "includedBy": "group",
+        "group": "Drinks"
+      },
+      {
+        "id": "CMSodaBobdaClassic",
+        "name": "Бобда классическая",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Напитки"
+        ],
+        "includedBy": "group",
+        "group": "Drinks"
+      },
+      {
+        "id": "CMSodaBobdaCranberry",
+        "name": "Бобда клюквенная",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Напитки"
+        ],
+        "includedBy": "group",
+        "group": "Drinks"
+      },
+      {
+        "id": "CMSodaBobdaLime",
+        "name": "Бобда лаймовая",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Напитки"
+        ],
+        "includedBy": "group",
+        "group": "Drinks"
+      },
+      {
+        "id": "CMSodaBobdaPeach",
+        "name": "Бобда персиковая",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Напитки"
+        ],
+        "includedBy": "group",
+        "group": "Drinks"
+      },
+      {
+        "id": "CMSodaBobdaBlue",
+        "name": "Бобда с голубой малиной",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Напитки"
+        ],
+        "includedBy": "group",
+        "group": "Drinks"
+      },
+      {
+        "id": "RMCInstantJuicePowderPineapple",
+        "name": "быстрорастворимый ананасовый порошок",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Напитки"
+        ],
+        "includedBy": "group",
+        "group": "Drinks"
+      },
+      {
+        "id": "RMCInstantJuicePineapple",
+        "name": "быстрорастворимый ананасовый сок",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Напитки"
+        ],
+        "includedBy": "group",
+        "group": "Drinks"
+      },
+      {
+        "id": "RMCInstantJuicePowderOrange",
+        "name": "быстрорастворимый апельсиновый порошок",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Напитки"
+        ],
+        "includedBy": "group",
+        "group": "Drinks"
+      },
+      {
+        "id": "RMCInstantJuiceOrange",
+        "name": "быстрорастворимый апельсиновый сок",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Напитки"
+        ],
+        "includedBy": "group",
+        "group": "Drinks"
+      },
+      {
+        "id": "RMCInstantJuicePowderWatermelon",
+        "name": "быстрорастворимый арбузный порошок",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Напитки"
+        ],
+        "includedBy": "group",
+        "group": "Drinks"
+      },
+      {
+        "id": "RMCInstantJuiceWatermelon",
+        "name": "быстрорастворимый арбузный сок",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Напитки"
+        ],
+        "includedBy": "group",
+        "group": "Drinks"
+      },
+      {
+        "id": "RMCInstantJuicePowderGrape",
+        "name": "быстрорастворимый виноградный порошок",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Напитки"
+        ],
+        "includedBy": "group",
+        "group": "Drinks"
+      },
+      {
+        "id": "RMCInstantJuiceGrape",
+        "name": "быстрорастворимый виноградный сок",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Напитки"
+        ],
+        "includedBy": "group",
+        "group": "Drinks"
+      },
+      {
+        "id": "RMCInstantJuicePowderApple",
+        "name": "быстрорастворимый яблочный порошок",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Напитки"
+        ],
+        "includedBy": "group",
+        "group": "Drinks"
+      },
+      {
+        "id": "RMCInstantJuiceApple",
+        "name": "быстрорастворимый яблочный сок",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Напитки"
+        ],
+        "includedBy": "group",
+        "group": "Drinks"
+      },
+      {
+        "id": "RMCGrapeSoda",
+        "name": "виноградная кола",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Напитки"
+        ],
+        "includedBy": "group",
+        "group": "Drinks"
+      },
+      {
+        "id": "RMCSpecialBlendWhiskey",
+        "name": "виски специального приготовления",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Напитки"
+        ],
+        "includedBy": "group",
+        "group": "Drinks"
+      },
+      {
+        "id": "RMCCherryJelly",
+        "name": "вишневое желе",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Напитки"
+        ],
+        "includedBy": "group",
+        "group": "Drinks"
+      },
+      {
+        "id": "Gunfire",
+        "name": "ганфайр",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Напитки"
+        ],
+        "includedBy": "group",
+        "group": "Drinks"
+      },
+      {
+        "id": "RMCCocoMilk",
+        "name": "кокосовое молоко",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Напитки"
+        ],
+        "includedBy": "group",
+        "group": "Drinks"
+      },
+      {
+        "id": "Sidecar",
+        "name": "коляска",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Напитки"
+        ],
+        "includedBy": "group",
+        "group": "Drinks"
+      },
+      {
+        "id": "MangoAguaFresca",
+        "name": "манговая вода",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Напитки"
+        ],
+        "includedBy": "group",
+        "group": "Drinks"
+      },
+      {
+        "id": "RMCJuiceMango",
+        "name": "манговый сок",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Напитки"
+        ],
+        "includedBy": "group",
+        "group": "Drinks"
+      },
+      {
+        "id": "RMCMilkshake",
+        "name": "милкшейк",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Напитки"
+        ],
+        "includedBy": "group",
+        "group": "Drinks"
+      },
+      {
+        "id": "MangoCooler",
+        "name": "прохладительный напиток с манго",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Напитки"
+        ],
+        "includedBy": "group",
+        "group": "Drinks"
+      },
+      {
+        "id": "RMCSoyMilk",
+        "name": "соевое молоко",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Напитки"
+        ],
+        "includedBy": "group",
+        "group": "Drinks"
+      },
+      {
+        "id": "RMCJuiceBug",
+        "name": "сок из насекомых",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Напитки"
+        ],
+        "includedBy": "group",
+        "group": "Drinks"
+      },
+      {
+        "id": "RMCBatter",
+        "name": "тесто",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Напитки"
+        ],
+        "includedBy": "group",
+        "group": "Drinks"
+      },
+      {
+        "id": "CMSodaFruitBeer",
+        "name": "Фруктовое пиво",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Напитки"
+        ],
+        "includedBy": "group",
+        "group": "Drinks"
+      },
+      {
+        "id": "SwissLemonade",
+        "name": "швейцарский лимонад",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Напитки"
+        ],
+        "includedBy": "group",
+        "group": "Drinks"
+      },
+      {
+        "id": "RMCEthanol",
+        "name": "этанол",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Напитки"
+        ],
+        "includedBy": "group",
+        "group": "Drinks"
+      },
+      {
+        "id": "RMCChocolateDrink",
+        "name": "шоколадный напиток",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Напитки"
+        ],
+        "includedBy": "source-file-fallback"
+      }
+    ],
+    "elements": [
+      {
+        "id": "RMCNitrogen",
+        "name": "азот",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Элементы"
+        ],
+        "includedBy": "rmc-chemicals-guide"
+      },
+      {
+        "id": "RMCAluminum",
+        "name": "алюминий",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Элементы"
+        ],
+        "includedBy": "rmc-chemicals-guide"
+      },
+      {
+        "id": "RMCHydrogen",
+        "name": "водород",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Элементы"
+        ],
+        "includedBy": "rmc-chemicals-guide"
+      },
+      {
+        "id": "RMCIron",
+        "name": "железо",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Элементы"
+        ],
+        "includedBy": "rmc-chemicals-guide"
+      },
+      {
+        "id": "RMCGold",
+        "name": "золото",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Элементы"
+        ],
+        "includedBy": "rmc-chemicals-guide"
+      },
+      {
+        "id": "RMCPotassium",
+        "name": "калий",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Элементы"
+        ],
+        "includedBy": "rmc-chemicals-guide"
+      },
+      {
+        "id": "RMCOxygen",
+        "name": "кислород",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Элементы"
+        ],
+        "includedBy": "rmc-chemicals-guide"
+      },
+      {
+        "id": "RMCSilicon",
+        "name": "кремний",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Элементы"
+        ],
+        "includedBy": "rmc-chemicals-guide"
+      },
+      {
+        "id": "RMCLithium",
+        "name": "литий",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Элементы"
+        ],
+        "includedBy": "rmc-chemicals-guide"
+      },
+      {
+        "id": "RMCCopper",
+        "name": "медь",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Элементы"
+        ],
+        "includedBy": "rmc-chemicals-guide"
+      },
+      {
+        "id": "RMCSodium",
+        "name": "натрий",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Элементы"
+        ],
+        "includedBy": "rmc-chemicals-guide"
+      },
+      {
+        "id": "RMCPlatinum",
+        "name": "платина",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Элементы"
+        ],
+        "includedBy": "rmc-chemicals-guide"
+      },
+      {
+        "id": "RMCRadium",
+        "name": "радий",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Элементы"
+        ],
+        "includedBy": "rmc-chemicals-guide"
+      },
+      {
+        "id": "RMCMercury",
+        "name": "ртуть",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Элементы"
+        ],
+        "includedBy": "rmc-chemicals-guide"
+      },
+      {
+        "id": "RMCSulfur",
+        "name": "сера",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Элементы"
+        ],
+        "includedBy": "rmc-chemicals-guide"
+      },
+      {
+        "id": "RMCSilver",
+        "name": "серебро",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Элементы"
+        ],
+        "includedBy": "rmc-chemicals-guide"
+      },
+      {
+        "id": "RMCCarbon",
+        "name": "углерод",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Элементы"
+        ],
+        "includedBy": "rmc-chemicals-guide"
+      },
+      {
+        "id": "RMCUranium",
+        "name": "уран",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Элементы"
+        ],
+        "includedBy": "rmc-chemicals-guide"
+      },
+      {
+        "id": "RMCPhosphorus",
+        "name": "фосфор",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Элементы"
+        ],
+        "includedBy": "rmc-chemicals-guide"
+      },
+      {
+        "id": "RMCFluorine",
+        "name": "фтор",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Элементы"
+        ],
+        "includedBy": "rmc-chemicals-guide"
+      },
+      {
+        "id": "RMCChlorine",
+        "name": "хлор",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Элементы"
+        ],
+        "includedBy": "rmc-chemicals-guide"
+      }
+    ],
+    "other": [
+      {
+        "id": "RMCSpaceDrugs",
+        "name": "Космические наркотики",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Наркотики"
+        ],
+        "includedBy": "rmc-chemicals-guide"
+      },
+      {
+        "id": "RMCPsilocybin",
+        "name": "Псилоцибин",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Наркотики"
+        ],
+        "includedBy": "rmc-chemicals-guide"
+      },
+      {
+        "id": "RMCUltrazine",
+        "name": "Ультразин",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Наркотики"
+        ],
+        "includedBy": "rmc-chemicals-guide"
+      },
+      {
+        "id": "RMCLexorin",
+        "name": "Лексорин",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Токсины"
+        ],
+        "includedBy": "rmc-chemicals-guide"
+      },
+      {
+        "id": "RMCMolecularAcid",
+        "name": "Разбавленная молекулярная кислота",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Токсины"
+        ],
+        "includedBy": "metabolism-fallback"
+      },
+      {
+        "id": "RMCGenericToxin",
+        "name": "Стандартный токсин",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Токсины"
+        ],
+        "includedBy": "metabolism-fallback"
+      },
+      {
+        "id": "RMCMindbreakerToxin",
+        "name": "Токсин \"Разрушитель разума\"",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Токсины"
+        ],
+        "includedBy": "rmc-chemicals-guide"
+      },
+      {
+        "id": "RMCChloralhydrate",
+        "name": "Хлоралгидрат",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Токсины"
+        ],
+        "includedBy": "metabolism-fallback"
+      },
+      {
+        "id": "RMCPotassiumChlorophoride",
+        "name": "хлорофорид калия",
+        "origin": "stories",
+        "sectionPath": [
+          "Токсины"
+        ],
+        "includedBy": "metabolism-fallback"
+      },
+      {
+        "id": "RMCCyanide",
+        "name": "Цианид",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Токсины"
+        ],
+        "includedBy": "metabolism-fallback"
+      },
+      {
+        "id": "RMCBlackGoo",
+        "name": "Черная жижа",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Токсины"
+        ],
+        "includedBy": "rmc-chemicals-guide"
+      },
+      {
+        "id": "STHunterBlood",
+        "name": "кровь охотника",
+        "origin": "stories",
+        "sectionPath": [
+          "Биологические"
+        ],
+        "includedBy": "rmc-chemicals-guide"
+      },
+      {
+        "id": "RMCSynthBlood",
+        "name": "синтетическая кровь",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Биологические"
+        ],
+        "includedBy": "rmc-chemicals-guide"
+      },
+      {
+        "id": "RMCVirusFood",
+        "name": "еда для вируса",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Продукты"
+        ],
+        "includedBy": "metabolism-fallback"
+      },
+      {
+        "id": "RMCCornOil",
+        "name": "кукурузное масло",
+        "origin": "stories",
+        "sectionPath": [
+          "Продукты"
+        ],
+        "includedBy": "rmc-chemicals-guide"
+      },
+      {
+        "id": "RMCSprinkles",
+        "name": "посыпка",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Продукты"
+        ],
+        "includedBy": "metabolism-fallback"
+      },
+      {
+        "id": "RMCSugar",
+        "name": "сахар",
+        "origin": "rmc14",
+        "sectionPath": [
+          "Продукты"
+        ],
+        "includedBy": "rmc-chemicals-guide"
+      },
+      {
+        "id": "RMCTableSalt",
+        "name": "столовая соль",
+        "origin": "stories",
+        "sectionPath": [
+          "Продукты"
+        ],
+        "includedBy": "explicit-override"
+      }
+    ]
+  },
+  "classification": {
+    "guideFile": "Resources/ServerInfo/Guidebook/_RMC14/Chemicals/RMCChemicals.xml",
+    "groupSections": {
+      "Elements": [
+        "Элементы"
+      ],
+      "Medicine": [
+        "Медицина"
+      ],
+      "Narcotics": [
+        "Наркотики"
+      ],
+      "Pyrotechnic": [
+        "Пиротехника"
+      ],
+      "Toxins": [
+        "Токсины"
+      ],
+      "Foods": [
+        "Продукты"
+      ],
+      "Botanical": [
+        "Ботанические"
+      ],
+      "Biological": [
+        "Биологические"
+      ],
+      "Unknown": [
+        "Прочее"
+      ]
+    }
   },
   "groups": {
     "Biological": [
@@ -17160,8 +18435,8 @@
     "RMCGenericToxin",
     "RMCTableSalt",
     "RMCMindbreakerToxin",
-    "RMCNapalmWeak",
     "RMCNapalmUTTank",
+    "RMCNapalmWeak",
     "RMCCarbon",
     "RMCUltrazine",
     "RMCUranium",
