@@ -47,6 +47,7 @@ RESOLVED_FIELDS = (
     "color",
     "flavor",
     "metabolisms",
+    "plantMetabolism",
     "overdose",
     "criticalOverdose",
     "intensity",
