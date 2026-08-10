@@ -5,7 +5,7 @@
     "branch": "master",
     "commit": "17193e0f0b25bc1d47265ec98c148f0d11017019"
   },
-  "generatedAt": "2026-08-10T05:34:03.120729Z",
+  "generatedAt": "2026-08-10T14:21:35.092029Z",
   "locale": "ru-RU",
   "counts": {
     "customReagents": 129,
@@ -17160,8 +17160,8 @@
     "RMCGenericToxin",
     "RMCTableSalt",
     "RMCMindbreakerToxin",
-    "RMCNapalmUTTank",
     "RMCNapalmWeak",
+    "RMCNapalmUTTank",
     "RMCCarbon",
     "RMCUltrazine",
     "RMCUranium",
