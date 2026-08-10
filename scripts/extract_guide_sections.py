@@ -59,7 +59,13 @@ def main() -> None:
         "drinks": guide_root / "Guides/RMCGuideDrinks.xml",
     }
 
-    missing = [str(path) for path in guides.values() if not path.is_file()]
+    classification_guide = guide_root / "Chemicals/RMCChemicals.xml"
+
+    missing = [
+        str(path)
+        for path in (*guides.values(), classification_guide)
+        if not path.is_file()
+    ]
     if missing:
         raise FileNotFoundError("Missing guide files: " + ", ".join(missing))
 
@@ -74,6 +80,10 @@ def main() -> None:
         "guides": {
             key: parse_guide(path)
             for key, path in guides.items()
+        },
+        "classificationGuide": {
+            "path": classification_guide.relative_to(args.game_source).as_posix(),
+            "entries": parse_guide(classification_guide),
         },
     }
 
