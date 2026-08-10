@@ -63,8 +63,95 @@ RESOLVED_FIELDS = (
 )
 
 
+# RMCChemicals.xml задаёт названия и состав химических групп. Здесь остаётся
+# только привязка игровых групп к вкладкам интерфейса.
+TAB_BY_CHEMICAL_GROUP: dict[str, str] = {
+    "Elements": "elements",
+    "Medicine": "medicine",
+    "Pyrotechnic": "ordnance",
+    "Narcotics": "other",
+    "Toxins": "other",
+    "Foods": "other",
+    "Botanical": "other",
+    "Biological": "other",
+    "Unknown": "other",
+}
+
+
+# Группы, которых нет в RMCChemicals.xml, но которые встречаются в YAML.
+FALLBACK_SECTION_BY_GROUP: dict[str, tuple[str, list[str]]] = {
+    "Drinks": ("drinks", ["Напитки"]),
+}
+
+
+# У отдельных реагентов в игровых прототипах пока нет группы или метаболизма.
+# Такие короткие исключения лучше держать здесь, а не зашивать в интерфейс вики.
+AUTO_SECTION_BY_ID: dict[str, tuple[str, list[str]]] = {
+    "RMCTableSalt": ("other", ["Продукты"]),
+}
+
+
+AUTO_SECTION_ORDER = {
+    ("other", "Наркотики"): 10,
+    ("other", "Токсины"): 20,
+    ("other", "Биологические"): 30,
+    ("other", "Ботанические"): 40,
+    ("other", "Продукты"): 50,
+    ("other", "Прочее"): 99,
+}
+
+
 def read_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def read_chemical_group_sections(
+    guides: dict[str, Any],
+) -> tuple[str, dict[str, list[str]]]:
+    classification_guide = guides.get("classificationGuide")
+    if not isinstance(classification_guide, dict):
+        raise RuntimeError("Missing RMCChemicals.xml classification guide")
+
+    guide_path = classification_guide.get("path")
+    entries = classification_guide.get("entries")
+    if not isinstance(guide_path, str) or not guide_path.endswith(
+        "/RMCChemicals.xml"
+    ):
+        raise RuntimeError("Invalid RMCChemicals.xml classification guide path")
+    if not isinstance(entries, list):
+        raise RuntimeError("Invalid RMCChemicals.xml classification entries")
+
+    group_sections: dict[str, list[str]] = {}
+    for entry in entries:
+        if not isinstance(entry, dict) or entry.get("type") != "group":
+            continue
+
+        group_id = entry.get("id")
+        section_path = entry.get("sectionPath")
+        if not isinstance(group_id, str) or not isinstance(section_path, list):
+            continue
+
+        clean_path = [item for item in section_path if isinstance(item, str)]
+        if clean_path and clean_path[0] == "Химикаты":
+            clean_path = clean_path[1:]
+        if not clean_path:
+            raise RuntimeError(
+                f"RMCChemicals.xml group has no section heading: {group_id}"
+            )
+        if group_id in group_sections:
+            raise RuntimeError(
+                f"Duplicate group in RMCChemicals.xml: {group_id}"
+            )
+        group_sections[group_id] = clean_path
+
+    missing_groups = sorted(set(TAB_BY_CHEMICAL_GROUP) - set(group_sections))
+    if missing_groups:
+        raise RuntimeError(
+            "RMCChemicals.xml is missing required groups: "
+            + ", ".join(missing_groups)
+        )
+
+    return guide_path, group_sections
 
 
 def normalize_parents(value: Any) -> list[str]:
@@ -309,6 +396,126 @@ def normalize_amounts(
     return result
 
 
+def automatic_section(
+    prototype_id: str,
+    record: dict[str, Any],
+    chemical_group_sections: dict[str, list[str]],
+) -> tuple[str, list[str], str]:
+    explicit = AUTO_SECTION_BY_ID.get(prototype_id)
+    if explicit is not None:
+        return *explicit, "explicit-override"
+
+    properties = record.get("properties", {})
+    group = properties.get("group")
+    if isinstance(group, str) and group in TAB_BY_CHEMICAL_GROUP:
+        return (
+            TAB_BY_CHEMICAL_GROUP[group],
+            chemical_group_sections[group],
+            "rmc-chemicals-guide",
+        )
+    if isinstance(group, str) and group in FALLBACK_SECTION_BY_GROUP:
+        tab_id, section_path = FALLBACK_SECTION_BY_GROUP[group]
+        return tab_id, section_path, "yaml-group-fallback"
+
+    source_file = record.get("sourceFile", "")
+    if source_file.endswith("/Reagents/explosives.yml"):
+        return "ordnance", ["Прекурсоры"], "source-file-fallback"
+    if "/Reagents/Consumable/Drink/" in source_file:
+        return "drinks", ["Напитки"], "source-file-fallback"
+
+    metabolisms = properties.get("metabolisms", {})
+    metabolism_names = set(metabolisms) if isinstance(metabolisms, dict) else set()
+
+    if "Narcotic" in metabolism_names:
+        return "other", ["Наркотики"], "metabolism-fallback"
+    if "Poison" in metabolism_names:
+        return "other", ["Токсины"], "metabolism-fallback"
+    if "Drink" in metabolism_names:
+        return "drinks", ["Напитки"], "metabolism-fallback"
+    if "Food" in metabolism_names:
+        return "other", ["Продукты"], "metabolism-fallback"
+
+    return "other", ["Прочее"], "unclassified-fallback"
+
+
+def build_catalog_sections(
+    expanded_guides: dict[str, list[dict[str, Any]]],
+    custom_records: dict[str, dict[str, Any]],
+    chemical_group_sections: dict[str, list[str]],
+) -> dict[str, list[dict[str, Any]]]:
+    sections = {
+        "ordnance": [dict(entry) for entry in expanded_guides["ordnance"]],
+        "medicine": [dict(entry) for entry in expanded_guides["medicine"]],
+        "drinks": [dict(entry) for entry in expanded_guides["drinks"]],
+        "elements": [],
+        "other": [],
+    }
+    included_ids = {
+        entry["id"]
+        for entries in sections.values()
+        for entry in entries
+    }
+
+    def remaining_sort_key(prototype_id: str) -> tuple[int, str]:
+        tab_id, section_path, _included_by = automatic_section(
+            prototype_id,
+            custom_records[prototype_id],
+            chemical_group_sections,
+        )
+        section_rank = AUTO_SECTION_ORDER.get(
+            (tab_id, section_path[-1]),
+            50,
+        )
+        return section_rank, custom_records[prototype_id]["name"].casefold()
+
+    remaining_ids = sorted(
+        set(custom_records) - included_ids,
+        key=remaining_sort_key,
+    )
+
+    for prototype_id in remaining_ids:
+        record = custom_records[prototype_id]
+        tab_id, section_path, included_by = automatic_section(
+            prototype_id,
+            record,
+            chemical_group_sections,
+        )
+        sections[tab_id].append({
+            "id": prototype_id,
+            "name": record["name"],
+            "origin": record["origin"],
+            "sectionPath": section_path,
+            "includedBy": included_by,
+        })
+
+    catalog_ids = [
+        entry["id"]
+        for entries in sections.values()
+        for entry in entries
+    ]
+    duplicate_ids = sorted({
+        prototype_id
+        for prototype_id in catalog_ids
+        if catalog_ids.count(prototype_id) > 1
+    })
+    if duplicate_ids:
+        raise RuntimeError(
+            "Reagents entered multiple catalog sections: "
+            + ", ".join(duplicate_ids)
+        )
+
+    expected_ids = set(custom_records)
+    actual_custom_ids = set(catalog_ids) & expected_ids
+    if actual_custom_ids != expected_ids:
+        missing_ids = sorted(expected_ids - actual_custom_ids)
+        raise RuntimeError(
+            "Custom reagents missing from catalog sections: "
+            + ", ".join(missing_ids)
+        )
+
+    return sections
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--index", required=True, type=Path)
@@ -320,6 +527,9 @@ def main() -> None:
 
     index = read_json(args.index)
     guides = read_json(args.guides)
+    classification_guide_path, chemical_group_sections = (
+        read_chemical_group_sections(guides)
+    )
 
     index_commit = index["source"]["commit"]
     guide_commit = guides["source"]["commit"]
@@ -473,6 +683,12 @@ def main() -> None:
         key=lambda item: custom_records[item]["name"].casefold(),
     )
 
+    catalog_sections = build_catalog_sections(
+        expanded_guides,
+        custom_records,
+        chemical_group_sections,
+    )
+
     unresolved_names = sorted(
         prototype_id
         for prototype_id, record in all_records.items()
@@ -497,6 +713,11 @@ def main() -> None:
             "unlistedCustomReagents": len(unlisted),
         },
         "guides": expanded_guides,
+        "catalogSections": catalog_sections,
+        "classification": {
+            "guideFile": classification_guide_path,
+            "groupSections": chemical_group_sections,
+        },
         "groups": groups,
         "reagents": custom_records,
         "dependencies": dependency_records,
