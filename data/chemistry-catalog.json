@@ -5,7 +5,7 @@
     "branch": "master",
     "commit": "17193e0f0b25bc1d47265ec98c148f0d11017019"
   },
-  "generatedAt": "2026-08-09T19:14:00.711893Z",
+  "generatedAt": "2026-08-10T04:43:37.754039Z",
   "locale": "ru-RU",
   "counts": {
     "customReagents": 129,
@@ -1146,7 +1146,25 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustToxins",
+            "value": {
+              "amount": -5
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": 5
+            }
+          },
+          {
+            "yamlTag": "!type:PlantCryoxadone",
+            "value": {}
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-cmclonexadone",
@@ -1244,7 +1262,25 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustToxins",
+            "value": {
+              "amount": -5
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": 5
+            }
+          },
+          {
+            "yamlTag": "!type:PlantCryoxadone",
+            "value": {}
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-cmcryoxadone",
@@ -1499,6 +1535,20 @@
             ]
           }
         },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustToxins",
+            "value": {
+              "amount": -10
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": 1
+            }
+          }
+        ],
         "overdose": 30,
         "criticalOverdose": 50
       },
@@ -1784,6 +1834,20 @@
             ]
           }
         },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustToxins",
+            "value": {
+              "amount": -10
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": 1
+            }
+          }
+        ],
         "overdose": 30,
         "criticalOverdose": 50
       },
@@ -2226,7 +2290,27 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustNutrition",
+            "value": {
+              "amount": 0.1
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 0.1
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": -0.1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-bobda-blue",
@@ -2266,7 +2350,27 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustNutrition",
+            "value": {
+              "amount": 0.1
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 0.1
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": -0.1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-bobda-cherry",
@@ -2306,7 +2410,27 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustNutrition",
+            "value": {
+              "amount": 0.1
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 0.1
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": -0.1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-bobda-classic",
@@ -2346,7 +2470,27 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustNutrition",
+            "value": {
+              "amount": 0.1
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 0.1
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": -0.1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-bobda-cranberry",
@@ -2386,7 +2530,27 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustNutrition",
+            "value": {
+              "amount": 0.1
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 0.1
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": -0.1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-bobda-grape",
@@ -2426,7 +2590,27 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustNutrition",
+            "value": {
+              "amount": 0.1
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 0.1
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": -0.1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-bobda-lime",
@@ -2466,7 +2650,27 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustNutrition",
+            "value": {
+              "amount": 0.1
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 0.1
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": -0.1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-bobda-peach",
@@ -2506,7 +2710,27 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustNutrition",
+            "value": {
+              "amount": 0.1
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 0.1
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": -0.1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-bobda-pineapple",
@@ -2546,7 +2770,27 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustNutrition",
+            "value": {
+              "amount": 0.1
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 0.1
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": -0.1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-bobda-vanilla",
@@ -2586,7 +2830,27 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustNutrition",
+            "value": {
+              "amount": 0.1
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 0.1
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": -0.1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-fruit-beer",
@@ -2727,6 +2991,20 @@
             ]
           }
         },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustNutrition",
+            "value": {
+              "amount": 0.25
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 0.7
+            }
+          }
+        ],
         "intensity": 15,
         "duration": 15,
         "radius": 4,
@@ -2779,7 +3057,15 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-ice-cafe",
@@ -2826,7 +3112,15 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-mango-agua-fresca",
@@ -2881,6 +3175,20 @@
             ]
           }
         },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustNutrition",
+            "value": {
+              "amount": 0.25
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 0.7
+            }
+          }
+        ],
         "intensity": 15,
         "duration": 15,
         "radius": 4,
@@ -3072,6 +3380,20 @@
       "properties": {
         "group": "Pyrotechnic",
         "color": "#E5E5E5",
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWeeds",
+            "value": {
+              "amount": -2
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": -2
+            }
+          }
+        ],
         "burnColor": "#ff9900",
         "explosive": true,
         "power": 0.4,
@@ -3207,6 +3529,20 @@
             ]
           }
         },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWeeds",
+            "value": {
+              "amount": -2
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": -2
+            }
+          }
+        ],
         "intensity": 15,
         "duration": 50,
         "radius": 7,
@@ -3253,7 +3589,15 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-rmc-batter",
@@ -3377,6 +3721,20 @@
             ]
           }
         },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWeeds",
+            "value": {
+              "amount": -2
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": -2
+            }
+          }
+        ],
         "burnColor": "#ff9300"
       },
       "definition": {
@@ -3507,7 +3865,15 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-rmc-cherry-jelly",
@@ -4292,6 +4658,20 @@
             ]
           }
         },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustNutrition",
+            "value": {
+              "amount": 0.25
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 0.7
+            }
+          }
+        ],
         "intensity": 15,
         "duration": 15,
         "radius": 4,
@@ -4802,7 +5182,15 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-grapesoda",
@@ -4838,6 +5226,20 @@
       "properties": {
         "group": "Pyrotechnic",
         "color": "#F0F0F0",
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWeeds",
+            "value": {
+              "amount": -2
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": -2
+            }
+          }
+        ],
         "burnColor": "#ff9900",
         "durationMod": 0.5
       },
@@ -4950,7 +5352,15 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-instant-apple",
@@ -4990,7 +5400,15 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-instant-grape",
@@ -5030,7 +5448,15 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-instant-orange",
@@ -5070,7 +5496,15 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-instant-pineapple",
@@ -5110,7 +5544,15 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-instant-apple-powder",
@@ -5150,7 +5592,15 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-instant-grape-powder",
@@ -5190,7 +5640,15 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-instant-orange-powder",
@@ -5230,7 +5688,15 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-instant-pineapple-powder",
@@ -5270,7 +5736,15 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-instant-watermelon-powder",
@@ -5310,7 +5784,15 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-instant-watermelon",
@@ -5456,7 +5938,15 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "rmc-reagent-name-juice-mango",
@@ -5826,6 +6316,20 @@
             ]
           }
         },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWeeds",
+            "value": {
+              "amount": -2
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": -2
+            }
+          }
+        ],
         "burnColor": "#00a5ff",
         "explosive": true,
         "power": 0.15
@@ -5966,7 +6470,15 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-rmc-milkshake",
@@ -6049,6 +6561,14 @@
             ]
           }
         },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustToxins",
+            "value": {
+              "amount": 10
+            }
+          }
+        ],
         "overdose": 30,
         "criticalOverdose": 50
       },
@@ -6239,6 +6759,20 @@
             ]
           }
         },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWeeds",
+            "value": {
+              "amount": -2
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": -2
+            }
+          }
+        ],
         "intensity": 27,
         "duration": 38,
         "radius": 2,
@@ -6299,6 +6833,20 @@
             ]
           }
         },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWeeds",
+            "value": {
+              "amount": -2
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": -2
+            }
+          }
+        ],
         "intensity": 15,
         "duration": 50,
         "radius": 6,
@@ -6360,6 +6908,20 @@
             ]
           }
         },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWeeds",
+            "value": {
+              "amount": -2
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": -2
+            }
+          }
+        ],
         "intensity": 15,
         "duration": 50,
         "radius": 6,
@@ -6421,6 +6983,20 @@
             ]
           }
         },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWeeds",
+            "value": {
+              "amount": -2
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": -2
+            }
+          }
+        ],
         "intensity": 40,
         "duration": 40,
         "radius": 6,
@@ -6482,6 +7058,20 @@
             ]
           }
         },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWeeds",
+            "value": {
+              "amount": -2
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": -2
+            }
+          }
+        ],
         "intensity": 45,
         "duration": 10,
         "radius": 5,
@@ -6548,6 +7138,20 @@
             ]
           }
         },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWeeds",
+            "value": {
+              "amount": -2
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": -2
+            }
+          }
+        ],
         "intensity": 15,
         "duration": 50,
         "radius": 5,
@@ -6614,6 +7218,20 @@
             ]
           }
         },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWeeds",
+            "value": {
+              "amount": -2
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": -2
+            }
+          }
+        ],
         "intensity": 30,
         "duration": 20,
         "radius": 5,
@@ -6673,6 +7291,20 @@
             ]
           }
         },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWeeds",
+            "value": {
+              "amount": -2
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": -2
+            }
+          }
+        ],
         "intensity": 30,
         "duration": 20,
         "radius": 7,
@@ -6728,6 +7360,20 @@
             ]
           }
         },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWeeds",
+            "value": {
+              "amount": -2
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": -2
+            }
+          }
+        ],
         "intensity": 15,
         "duration": 20,
         "radius": 5,
@@ -6787,6 +7433,20 @@
             ]
           }
         },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWeeds",
+            "value": {
+              "amount": -2
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": -2
+            }
+          }
+        ],
         "intensity": 40,
         "duration": 40,
         "radius": 6,
@@ -6933,6 +7593,20 @@
             ]
           }
         },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWeeds",
+            "value": {
+              "amount": -2
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": -2
+            }
+          }
+        ],
         "explosive": true,
         "power": 2.0,
         "falloffModifier": -0.2
@@ -7229,7 +7903,15 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-rmc-peanut-butter",
@@ -7282,6 +7964,20 @@
             ]
           }
         },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWeeds",
+            "value": {
+              "amount": -2
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": -2
+            }
+          }
+        ],
         "burnColor": "#e01e1e",
         "intensityMod": 0.4,
         "durationMod": -0.8,
@@ -7799,6 +8495,20 @@
             ]
           }
         },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWeeds",
+            "value": {
+              "amount": -2
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": -2
+            }
+          }
+        ],
         "intensity": 50,
         "duration": 30,
         "radius": 6,
@@ -7848,7 +8558,34 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustMutationLevel",
+            "value": {
+              "amount": 0.6
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustToxins",
+            "value": {
+              "amount": 4
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": -1.5
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustMutationMod",
+            "value": {
+              "probability": 0.2,
+              "amount": 0.1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-radium",
@@ -8336,6 +9073,20 @@
             ]
           }
         },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustNutrition",
+            "value": {
+              "amount": 0.25
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 0.7
+            }
+          }
+        ],
         "intensity": 15,
         "duration": 15,
         "radius": 4,
@@ -8666,7 +9417,15 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 0.5
+            }
+          }
+        ]
       },
       "definition": {
         "name": "rmc-reagent-name-synth-blood",
@@ -8945,6 +9704,20 @@
             ]
           }
         },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWeeds",
+            "value": {
+              "amount": -2
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": -2
+            }
+          }
+        ],
         "intensity": 10,
         "duration": 10,
         "radius": 4,
@@ -9071,7 +9844,15 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 0.5
+            }
+          }
+        ]
       },
       "definition": {
         "name": "st-reagent-name-hunter-blood",
@@ -9120,6 +9901,20 @@
             ]
           }
         },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustNutrition",
+            "value": {
+              "amount": 0.25
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 0.7
+            }
+          }
+        ],
         "intensity": 15,
         "duration": 15,
         "radius": 4,
@@ -9172,7 +9967,15 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-swiss-lemonade",
@@ -9348,7 +10151,15 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 0.5
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-blood",
@@ -9474,6 +10285,20 @@
             ]
           }
         },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustNutrition",
+            "value": {
+              "amount": 0.25
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 0.7
+            }
+          }
+        ],
         "intensity": 15,
         "duration": 15,
         "radius": 4,
@@ -9560,7 +10385,15 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-coffee",
@@ -9643,6 +10476,20 @@
             ]
           }
         },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustNutrition",
+            "value": {
+              "amount": 0.25
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 0.7
+            }
+          }
+        ],
         "intensity": 15,
         "duration": 15,
         "radius": 4,
@@ -9703,6 +10550,20 @@
             ]
           }
         },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustNutrition",
+            "value": {
+              "amount": 0.25
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 0.7
+            }
+          }
+        ],
         "intensity": 15,
         "duration": 15,
         "radius": 4,
@@ -9783,7 +10644,27 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustNutrition",
+            "value": {
+              "amount": 0.1
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 0.1
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": -0.1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-cola",
@@ -10133,6 +11014,20 @@
             ]
           }
         },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustNutrition",
+            "value": {
+              "amount": 0.25
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 0.7
+            }
+          }
+        ],
         "intensity": 15,
         "duration": 15,
         "radius": 4,
@@ -10355,7 +11250,21 @@
       "properties": {
         "group": "Pyrotechnic",
         "color": "#215263",
-        "flavor": "bitter"
+        "flavor": "bitter",
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWeeds",
+            "value": {
+              "amount": -2
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": -2
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-foaming-agent",
@@ -10397,7 +11306,15 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-grenadine",
@@ -10447,7 +11364,27 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustNutrition",
+            "value": {
+              "amount": 0.1
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 0.1
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": -0.1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-ice-cream",
@@ -10504,7 +11441,15 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-iced-coffee",
@@ -10571,7 +11516,15 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-juice-berry",
@@ -10611,7 +11564,15 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-juice-cherry",
@@ -10651,7 +11612,15 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-juice-grape",
@@ -10691,7 +11660,15 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-juice-lemon",
@@ -10738,7 +11715,15 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-juice-lime",
@@ -10778,7 +11763,15 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-juice-orange",
@@ -10825,7 +11818,15 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-juice-potato",
@@ -10865,7 +11866,15 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-juice-watermelon",
@@ -10912,7 +11921,27 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustNutrition",
+            "value": {
+              "amount": 0.1
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 0.1
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": -0.1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-lemon-lime",
@@ -10988,6 +12017,20 @@
             ]
           }
         },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustNutrition",
+            "value": {
+              "amount": 0.25
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 0.7
+            }
+          }
+        ],
         "intensity": 15,
         "duration": 15,
         "radius": 4,
@@ -11038,7 +12081,21 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustNutrition",
+            "value": {
+              "amount": 0.1
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 0.9
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-milk",
@@ -11182,7 +12239,27 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustToxins",
+            "value": {
+              "amount": 20
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustWeeds",
+            "value": {
+              "amount": -4
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": -8
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-polytrinic-acid",
@@ -11384,6 +12461,20 @@
             ]
           }
         },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustNutrition",
+            "value": {
+              "amount": 0.25
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 0.7
+            }
+          }
+        ],
         "intensity": 15,
         "duration": 15,
         "radius": 4,
@@ -11464,6 +12555,20 @@
             ]
           }
         },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustNutrition",
+            "value": {
+              "amount": 0.25
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 0.7
+            }
+          }
+        ],
         "intensity": 15,
         "duration": 15,
         "radius": 4,
@@ -11542,7 +12647,27 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustNutrition",
+            "value": {
+              "amount": 0.1
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustWeeds",
+            "value": {
+              "amount": 2
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustPests",
+            "value": {
+              "amount": 2
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-sugar",
@@ -11630,7 +12755,45 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": -3
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustNutrition",
+            "value": {
+              "amount": -0.3
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustToxins",
+            "value": {
+              "amount": 8
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustWeeds",
+            "value": {
+              "amount": -2
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustPests",
+            "value": {
+              "amount": -1
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": -2
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-table-salt",
@@ -11731,7 +12894,15 @@
               }
             ]
           }
-        }
+        },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 1
+            }
+          }
+        ]
       },
       "definition": {
         "name": "reagent-name-tea",
@@ -11902,6 +13073,20 @@
             ]
           }
         },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustNutrition",
+            "value": {
+              "amount": 0.25
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 0.7
+            }
+          }
+        ],
         "intensity": 15,
         "duration": 15,
         "radius": 4,
@@ -12000,6 +13185,14 @@
             ]
           }
         },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 1
+            }
+          }
+        ],
         "intensityMod": -3
       },
       "definition": {
@@ -12086,6 +13279,20 @@
             ]
           }
         },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustWeeds",
+            "value": {
+              "amount": -2
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustHealth",
+            "value": {
+              "amount": -2
+            }
+          }
+        ],
         "intensity": 16,
         "duration": 33,
         "radius": 4,
@@ -12167,6 +13374,20 @@
             ]
           }
         },
+        "plantMetabolism": [
+          {
+            "yamlTag": "!type:PlantAdjustNutrition",
+            "value": {
+              "amount": 0.25
+            }
+          },
+          {
+            "yamlTag": "!type:PlantAdjustWater",
+            "value": {
+              "amount": 0.7
+            }
+          }
+        ],
         "intensity": 15,
         "duration": 15,
         "radius": 4,
@@ -15939,8 +17160,8 @@
     "RMCGenericToxin",
     "RMCTableSalt",
     "RMCMindbreakerToxin",
-    "RMCNapalmWeak",
     "RMCNapalmUTTank",
+    "RMCNapalmWeak",
     "RMCCarbon",
     "RMCUltrazine",
     "RMCUranium",
