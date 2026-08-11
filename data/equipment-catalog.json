@@ -3564,7 +3564,7 @@
     },
     "CMBackpackMarine": {
       "id": "CMBackpackMarine",
-      "name": "легкий рюкзак IMP",
+      "name": "Легкий рюкзак IMP",
       "description": "Стандартный рюкзак сил КМП США. Предназначен для переноски снаряжения на поле боя.",
       "suffix": "",
       "origin": "rmc14",
@@ -3669,11 +3669,14 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Броня",
+      "public": true,
+      "image": "equipment-sprites/CMBackpackMarine.png"
     },
     "CMBackpackMortar": {
       "id": "CMBackpackMortar",
-      "name": "рюкзак минометчика КМП США",
+      "name": "Рюкзак минометчика КМП США",
       "description": "Рюкзак, специально разработанный для хранения боеприпасов для миномета M402.",
       "suffix": "",
       "origin": "rmc14",
@@ -3785,11 +3788,14 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Броня",
+      "public": true,
+      "image": "equipment-sprites/CMBackpackMortar.png"
     },
     "CMBackpackWelder": {
       "id": "CMBackpackWelder",
-      "name": "рюкзак сварщика-техника КМП США",
+      "name": "Рюкзак сварщика-техника КМП США",
       "description": "Специализированный ранец, который носят техники КМП США. В нем находится топливный бак для быстрой заправки и использования сварочного аппарата.",
       "suffix": "",
       "origin": "rmc14",
@@ -3915,11 +3921,14 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Броня",
+      "public": true,
+      "image": "equipment-sprites/CMBackpackWelder.png"
     },
     "CMBeltKnifeFilled": {
       "id": "CMBeltKnifeFilled",
-      "name": "пояс M276 для ножей",
+      "name": "Пояс M276 для ножей",
       "description": "Пояс M276 для ножей является стандартным снаряжением КМП США. Состоит из модульного ремня с различными зажимами. Эта версия специально разработана для хранения ножей. Обычно не выдается, но состоит на вооружении.",
       "suffix": "Заполненный",
       "origin": "rmc14",
@@ -4004,11 +4013,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Clothing/Belt/knife/jungle-classic.rsi",
         "state": "icon"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/CMBeltKnifeFilled.png"
     },
     "CMBeltMarine": {
       "id": "CMBeltMarine",
-      "name": "пояс M276 для боеприпасов",
+      "name": "Пояс M276 для боеприпасов",
       "description": "Пояс M276 для боеприпасов является стандартным снаряжение КМП США. Состоит из модульного ремня с различными зажимами. Это стандартный вариант, предназначенный для переноски большого количества боеприпасов.",
       "suffix": "",
       "origin": "rmc14",
@@ -4125,11 +4137,14 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/CMBeltMarine.png"
     },
     "CMBeltMortar": {
       "id": "CMBeltMortar",
-      "name": "пояс M276 оператора миномета",
+      "name": "Пояс M276 оператора миномета",
       "description": "Пояс M276 оператора миномёта является стандартным снаряжением КМП США, предназначенное для переноски боеприпасов для миномета M402 и оружия.",
       "suffix": "",
       "origin": "rmc14",
@@ -4244,11 +4259,14 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/CMBeltMortar.png"
     },
     "CMBicaridineAutoInjector": {
       "id": "CMBicaridineAutoInjector",
-      "name": "автоинъектор бикаридина",
+      "name": "Автоинъектор бикаридина",
       "description": "Автоинъектор с 3 дозами бикаридина, распространенного препарата для лечения кровотечений и нарушений кровообращения.",
       "suffix": "",
       "origin": "rmc14",
@@ -4342,7 +4360,7 @@
     },
     "CMBulletPistol9mm": {
       "id": "CMBulletPistol9mm",
-      "name": "пуля (9 мм)",
+      "name": "Пуля (9 мм)",
       "description": "Если вы можете видеть это, вы, вероятно, мертвы!",
       "suffix": "",
       "origin": "rmc14",
@@ -4409,7 +4427,7 @@
     },
     "CMBulletPistolM77AP": {
       "id": "CMBulletPistolM77AP",
-      "name": "пуля (9 мм ББ)",
+      "name": "Пуля (9 мм ББ)",
       "description": "Если вы можете видеть это, вы, вероятно, мертвы!",
       "suffix": "",
       "origin": "rmc14",
@@ -4476,7 +4494,7 @@
     },
     "CMBulletRevolver44": {
       "id": "CMBulletRevolver44",
-      "name": "пуля (.44)",
+      "name": "Пуля (.44)",
       "description": "Если вы можете видеть это, вы, вероятно, мертвы!",
       "suffix": "",
       "origin": "rmc14",
@@ -4543,7 +4561,7 @@
     },
     "CMBulletSmartGun10x30mm": {
       "id": "CMBulletSmartGun10x30mm",
-      "name": "пуля (10x30 мм)",
+      "name": "Пуля (10x30 мм)",
       "description": "Если вы можете видеть это, вы, вероятно, мертвы!",
       "suffix": "",
       "origin": "rmc14",
@@ -4628,7 +4646,7 @@
     },
     "CMCartridge10x20mm": {
       "id": "CMCartridge10x20mm",
-      "name": "патрон (10x20мм)",
+      "name": "Патрон (10x20мм)",
       "description": "{ \"\" }",
       "suffix": "",
       "origin": "rmc14",
@@ -4706,7 +4724,7 @@
     },
     "CMCartridge10x20mmAP": {
       "id": "CMCartridge10x20mmAP",
-      "name": "бронебойный патрон (10x20мм)",
+      "name": "Бронебойный патрон (10x20мм)",
       "description": "{ \"\" }",
       "suffix": "",
       "origin": "rmc14",
@@ -4784,7 +4802,7 @@
     },
     "CMCartridgePistol9mm": {
       "id": "CMCartridgePistol9mm",
-      "name": "патрон (9 мм)",
+      "name": "Патрон (9 мм)",
       "description": "{ \"\" }",
       "suffix": "",
       "origin": "rmc14",
@@ -4862,7 +4880,7 @@
     },
     "CMCartridgePistolM77AP": {
       "id": "CMCartridgePistolM77AP",
-      "name": "патрон (9 мм ББ)",
+      "name": "Патрон (9 мм ББ)",
       "description": "{ \"\" }",
       "suffix": "",
       "origin": "rmc14",
@@ -4940,7 +4958,7 @@
     },
     "CMCartridgeRifle10x24mm": {
       "id": "CMCartridgeRifle10x24mm",
-      "name": "патрон (10x24 мм)",
+      "name": "Патрон (10x24 мм)",
       "description": "Патрон калибра 10x24 мм. Совместим с магазинами 10x24 мм.",
       "suffix": "",
       "origin": "rmc14",
@@ -5019,7 +5037,7 @@
     },
     "CMCartridgeRifle10x24mmAP": {
       "id": "CMCartridgeRifle10x24mmAP",
-      "name": "бронебойный патрон (10x24 мм)",
+      "name": "Бронебойный патрон (10x24 мм)",
       "description": "Бронебойный патрон калибра 10x24 мм. Совместим с бронебойными магазинами 10x24 мм.",
       "suffix": "",
       "origin": "rmc14",
@@ -5097,7 +5115,7 @@
     },
     "CMCartridgeRifle10x24mmHT": {
       "id": "CMCartridgeRifle10x24mmHT",
-      "name": "патрон (10x24мм)",
+      "name": "Патрон (10x24мм)",
       "description": "Патрон 10x24мм HT. Устанавливается в магазины 10x24мм наведение голограммы.",
       "suffix": "",
       "origin": "rmc14",
@@ -5176,7 +5194,7 @@
     },
     "CMCartridgeSmartGun10x30mm": {
       "id": "CMCartridgeSmartGun10x30mm",
-      "name": "патрон (10x30 мм)",
+      "name": "Патрон (10x30 мм)",
       "description": "{ \"\" }",
       "suffix": "",
       "origin": "rmc14",
@@ -5253,7 +5271,7 @@
     },
     "CMEmergencyAutoInjector": {
       "id": "CMEmergencyAutoInjector",
-      "name": "аварийный автоинъектор (ВНИМАНИЕ)",
+      "name": "Аварийный автоинъектор (ВНИМАНИЕ)",
       "description": "Автоинъектор, заряженный специальным коктейлем химикатов, для использования в ситуациях, угрожающих жизни. Не требует подготовки для использования.",
       "suffix": "",
       "origin": "rmc14",
@@ -5351,7 +5369,7 @@
     },
     "CMEntrenchingTool": {
       "id": "CMEntrenchingTool",
-      "name": "складная лопата",
+      "name": "Складная лопата",
       "description": "Складная лопата для быстрого создания траншей.",
       "suffix": "",
       "origin": "rmc14",
@@ -5450,11 +5468,14 @@
           }
         ],
         "state": "etool"
-      }
+      },
+      "category": "Ближний бой",
+      "public": true,
+      "image": "equipment-sprites/CMEntrenchingTool.png"
     },
     "CMFireExtinguisherPortable": {
       "id": "CMFireExtinguisherPortable",
-      "name": "переносной огнетушитель",
+      "name": "Переносной огнетушитель",
       "description": "Легкая и компактная модель огнетушителя в стекловолоконном корпусе.",
       "suffix": "",
       "origin": "rmc14",
@@ -5558,11 +5579,14 @@
           }
         ],
         "state": "minife1"
-      }
+      },
+      "category": "Ближний бой",
+      "public": true,
+      "image": "equipment-sprites/CMFireExtinguisherPortable.png"
     },
     "CMFlare": {
       "id": "CMFlare",
-      "name": "фаер",
+      "name": "Фаер",
       "description": "Красная сигнальная ракета, выпущенная КМП США. На боковой стороне есть инструкция: \"Вытяните шнур, зажгите\".",
       "suffix": "",
       "origin": "rmc14",
@@ -5651,7 +5675,7 @@
     },
     "CMFoldingBarricadesMB6x3": {
       "id": "CMFoldingBarricadesMB6x3",
-      "name": "складная баррикада MB-6",
+      "name": "Складная баррикада MB-6",
       "description": "Переносная композитная баррикада, которую можно быстро развернуть в оборонительную позицию.",
       "suffix": "Три",
       "origin": "rmc14",
@@ -5733,11 +5757,14 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Прочее",
+      "public": true,
+      "image": "equipment-sprites/CMFoldingBarricadesMB6x3.png"
     },
     "CMGrenadeFragOld": {
       "id": "CMGrenadeFragOld",
-      "name": "осколочная граната M15",
+      "name": "Осколочная граната M15",
       "description": "Устаревшая осколочная граната США. Прослужив несколько десятилетий в КМП США, старая осколочная граната M15 постепенно заменяется более безопасными гранатами серии M40. Она срабатывает через 4 секунды.",
       "suffix": "",
       "origin": "rmc14",
@@ -5824,11 +5851,14 @@
           }
         ],
         "state": "icon"
-      }
+      },
+      "category": "Взрывчатка",
+      "public": true,
+      "image": "equipment-sprites/CMGrenadeFragOld.png"
     },
     "CMGrenadeHighExplosive": {
       "id": "CMGrenadeHighExplosive",
-      "name": "граната M40 ОКГ",
+      "name": "Граната M40 ОКГ",
       "description": "Взрывная граната двойного назначения. Небольшая, но обманчиво сильная фугасная граната, которая вытеснила гранаты M15 HE и заменила их на M40 ОППГ. Может заряжаться в гранатомет M83 Launcher или метаться вручную.",
       "suffix": "",
       "origin": "rmc14",
@@ -5916,11 +5946,14 @@
           }
         ],
         "state": "icon"
-      }
+      },
+      "category": "Взрывчатка",
+      "public": true,
+      "image": "equipment-sprites/CMGrenadeHighExplosive.png"
     },
     "CMGrenadeSmoke": {
       "id": "CMGrenadeSmoke",
-      "name": "дымовая граната M40",
+      "name": "Дымовая граната M40",
       "description": "M40 ДГДН — это небольшая, но мощная дымовая граната. Основана на той же платформе, что и M40 ОКГ. Взрывается через 2 секунды.",
       "suffix": "",
       "origin": "rmc14",
@@ -6007,11 +6040,14 @@
           }
         ],
         "state": "icon"
-      }
+      },
+      "category": "Взрывчатка",
+      "public": true,
+      "image": "equipment-sprites/CMGrenadeSmoke.png"
     },
     "CMKelotaneAutoInjector": {
       "id": "CMKelotaneAutoInjector",
-      "name": "автоинъектор келотана",
+      "name": "Автоинъектор келотана",
       "description": "Автоинъектор с 3 дозами келотана, распространенного лекарства от ожогов.",
       "suffix": "",
       "origin": "rmc14",
@@ -6166,6 +6202,7 @@
           "sprite": "_RMC14/Objects/Weapons/Melee/m11_knife.rsi"
         },
         "MeleeWeapon": {
+          "angle": 0,
           "wideAnimationRotation": -135,
           "damage": {
             "types": {
@@ -6249,6 +6286,7 @@
           "sprite": "_RMC14/Objects/Weapons/Melee/machete.rsi"
         },
         "MeleeWeapon": {
+          "angle": 0,
           "wideAnimationRotation": -135,
           "damage": {
             "types": {
@@ -6272,7 +6310,7 @@
     },
     "CMMagazinePistolM1984": {
       "id": "CMMagazinePistolM1984",
-      "name": "магазин M4A3 (9 мм)",
+      "name": "Магазин M4A3 (9 мм)",
       "description": "A pistol magazine.",
       "suffix": "",
       "origin": "rmc14",
@@ -6359,11 +6397,14 @@
           }
         ],
         "state": "base"
-      }
+      },
+      "category": "Боеприпасы",
+      "public": true,
+      "image": "equipment-sprites/CMMagazinePistolM1984.png"
     },
     "CMMagazinePistolM77AP": {
       "id": "CMMagazinePistolM77AP",
-      "name": "магазин 88 Мод 4 ББ (9 мм)",
+      "name": "Магазин 88 Мод 4 ББ (9 мм)",
       "description": "A pistol magazine.",
       "suffix": "",
       "origin": "rmc14",
@@ -6450,11 +6491,14 @@
           }
         ],
         "state": "base_ap"
-      }
+      },
+      "category": "Боеприпасы",
+      "public": true,
+      "image": "equipment-sprites/CMMagazinePistolM77AP.png"
     },
     "CMMagazinePistolMK80": {
       "id": "CMMagazinePistolMK80",
-      "name": "магазин VP78 (9 мм Squash-Head)",
+      "name": "Магазин VP78 (9 мм Squash-Head)",
       "description": "A pistol magazine.",
       "suffix": "",
       "origin": "rmc14",
@@ -6543,11 +6587,14 @@
           }
         ],
         "state": "base"
-      }
+      },
+      "category": "Боеприпасы",
+      "public": true,
+      "image": "equipment-sprites/CMMagazinePistolMK80.png"
     },
     "CMMagazineRifleM4SPR": {
       "id": "CMMagazineRifleM4SPR",
-      "name": "магазин M4RA (10x24 мм)",
+      "name": "Магазин M4RA (10x24 мм)",
       "description": "Магазин для винтовки M4RA, предназначенный для стандартных патронов 10x24 мм.",
       "suffix": "",
       "origin": "rmc14",
@@ -6635,11 +6682,14 @@
           }
         ],
         "state": "base"
-      }
+      },
+      "category": "Боеприпасы",
+      "public": true,
+      "image": "equipment-sprites/CMMagazineRifleM4SPR.png"
     },
     "CMMagazineRifleM4SPRAP": {
       "id": "CMMagazineRifleM4SPRAP",
-      "name": "бронебойный магазин M4RA (10x24 мм)",
+      "name": "Бронебойный магазин M4RA (10x24 мм)",
       "description": "Магазин M4RA ББ, предназначенный для бронебойных патронов 10x24 мм.",
       "suffix": "Бронебойный",
       "origin": "rmc14",
@@ -6731,11 +6781,14 @@
           }
         ],
         "state": "base"
-      }
+      },
+      "category": "Боеприпасы",
+      "public": true,
+      "image": "equipment-sprites/CMMagazineRifleM4SPRAP.png"
     },
     "CMMagazineRifleM4SPRExt": {
       "id": "CMMagazineRifleM4SPRExt",
-      "name": "расширенный магазин M4RA (10x24 мм)",
+      "name": "Расширенный магазин M4RA (10x24 мм)",
       "description": "Удлинённый магазин для винтовки M4RA, рассчитанный на стандартные патроны 10x24 мм.",
       "suffix": "",
       "origin": "rmc14",
@@ -6823,11 +6876,14 @@
           }
         ],
         "state": "base"
-      }
+      },
+      "category": "Боеприпасы",
+      "public": true,
+      "image": "equipment-sprites/CMMagazineRifleM4SPRExt.png"
     },
     "CMMagazineRifleM54C": {
       "id": "CMMagazineRifleM54C",
-      "name": "магазин M41A (10x24 мм)",
+      "name": "Магазин M41A (10x24 мм)",
       "description": "{ \"\" }",
       "suffix": "",
       "origin": "rmc14",
@@ -6915,11 +6971,14 @@
           }
         ],
         "state": "base"
-      }
+      },
+      "category": "Боеприпасы",
+      "public": true,
+      "image": "equipment-sprites/CMMagazineRifleM54C.png"
     },
     "CMMagazineRifleM54CAP": {
       "id": "CMMagazineRifleM54CAP",
-      "name": "бронебойный магазин M41A (10x24 мм)",
+      "name": "Бронебойный магазин M41A (10x24 мм)",
       "description": "{ \"\" }",
       "suffix": "Бронебойный",
       "origin": "rmc14",
@@ -7012,11 +7071,14 @@
           }
         ],
         "state": "base"
-      }
+      },
+      "category": "Боеприпасы",
+      "public": true,
+      "image": "equipment-sprites/CMMagazineRifleM54CAP.png"
     },
     "CMMagazineRifleM54CE2": {
       "id": "CMMagazineRifleM54CE2",
-      "name": "магазин M41AE2 (10x24 мм)",
+      "name": "Магазин M41AE2 (10x24 мм)",
       "description": "{ \"\" }",
       "suffix": "",
       "origin": "rmc14",
@@ -7106,11 +7168,14 @@
           }
         ],
         "state": "base"
-      }
+      },
+      "category": "Боеприпасы",
+      "public": true,
+      "image": "equipment-sprites/CMMagazineRifleM54CE2.png"
     },
     "CMMagazineRifleM54CE2HT": {
       "id": "CMMagazineRifleM54CE2HT",
-      "name": "магазин M41AE2 HT (10x24мм)",
+      "name": "Магазин M41AE2 HT (10x24мм)",
       "description": "{ \"\" }",
       "suffix": "",
       "origin": "rmc14",
@@ -7204,11 +7269,14 @@
           }
         ],
         "state": "base"
-      }
+      },
+      "category": "Боеприпасы",
+      "public": true,
+      "image": "equipment-sprites/CMMagazineRifleM54CE2HT.png"
     },
     "CMMagazineRifleM54CExt": {
       "id": "CMMagazineRifleM54CExt",
-      "name": "расширенный магазин M41A (10x24 мм)",
+      "name": "Расширенный магазин M41A (10x24 мм)",
       "description": "{ \"\" }",
       "suffix": "",
       "origin": "rmc14",
@@ -7296,11 +7364,14 @@
           }
         ],
         "state": "base"
-      }
+      },
+      "category": "Боеприпасы",
+      "public": true,
+      "image": "equipment-sprites/CMMagazineRifleM54CExt.png"
     },
     "CMMagazineRifleM54CMK1": {
       "id": "CMMagazineRifleM54CMK1",
-      "name": "магазин M41A MK1 (10x24 мм)",
+      "name": "Магазин M41A MK1 (10x24 мм)",
       "description": "{ \"\" }",
       "suffix": "",
       "origin": "rmc14",
@@ -7389,11 +7460,14 @@
           }
         ],
         "state": "base"
-      }
+      },
+      "category": "Боеприпасы",
+      "public": true,
+      "image": "equipment-sprites/CMMagazineRifleM54CMK1.png"
     },
     "CMMagazineRifleM54CMK1AP": {
       "id": "CMMagazineRifleM54CMK1AP",
-      "name": "магазин M41A MK1 ББ (10x24 мм)",
+      "name": "Магазин M41A MK1 ББ (10x24 мм)",
       "description": "{ \"\" }",
       "suffix": "ББ",
       "origin": "rmc14",
@@ -7485,11 +7559,14 @@
           }
         ],
         "state": "base"
-      }
+      },
+      "category": "Боеприпасы",
+      "public": true,
+      "image": "equipment-sprites/CMMagazineRifleM54CMK1AP.png"
     },
     "CMMagazineSMGM63": {
       "id": "CMMagazineSMGM63",
-      "name": "магазин M39 (10x20мм)",
+      "name": "Магазин M39 (10x20мм)",
       "description": "{ \"\" }",
       "suffix": "",
       "origin": "rmc14",
@@ -7577,11 +7654,14 @@
           }
         ],
         "state": "base"
-      }
+      },
+      "category": "Боеприпасы",
+      "public": true,
+      "image": "equipment-sprites/CMMagazineSMGM63.png"
     },
     "CMMagazineSMGM63AP": {
       "id": "CMMagazineSMGM63AP",
-      "name": "бронебойный магазин M39 (10x20мм)",
+      "name": "Бронебойный магазин M39 (10x20мм)",
       "description": "{ \"\" }",
       "suffix": "",
       "origin": "rmc14",
@@ -7673,11 +7753,14 @@
           }
         ],
         "state": "base"
-      }
+      },
+      "category": "Боеприпасы",
+      "public": true,
+      "image": "equipment-sprites/CMMagazineSMGM63AP.png"
     },
     "CMMagazineSMGM63Ext": {
       "id": "CMMagazineSMGM63Ext",
-      "name": "удлинённый магазин M39 (10x20мм)",
+      "name": "Удлинённый магазин M39 (10x20мм)",
       "description": "{ \"\" }",
       "suffix": "",
       "origin": "rmc14",
@@ -7765,11 +7848,14 @@
           }
         ],
         "state": "base"
-      }
+      },
+      "category": "Боеприпасы",
+      "public": true,
+      "image": "equipment-sprites/CMMagazineSMGM63Ext.png"
     },
     "CMMaskGas": {
       "id": "CMMaskGas",
-      "name": "противогаз",
+      "name": "Противогаз",
       "description": "Маска, закрывающая лицо и подключаемая к источнику воздуха. Фильтрует вредные газы из воздуха.",
       "suffix": "",
       "origin": "rmc14",
@@ -7843,11 +7929,14 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Прочее",
+      "public": true,
+      "image": "equipment-sprites/CMMaskGas.png"
     },
     "CMMultitool": {
       "id": "CMMultitool",
-      "name": "тюнер доступа к системе безопасности",
+      "name": "Тюнер доступа к системе безопасности",
       "description": "Небольшой ручной инструмент, используемый для отмены различных функций машины.",
       "suffix": "Мультиинструмент",
       "origin": "rmc14",
@@ -7914,7 +8003,7 @@
     },
     "CMPackFlare": {
       "id": "CMPackFlare",
-      "name": "упаковка с фаерами M94",
+      "name": "Упаковка с фаерами M94",
       "description": "Упаковка с восемью сигнальными ракетами M94. Носится солдатами КМП США для освещения темных участков, куда невозможно добраться с обычным наплечным фонарем TNR.",
       "suffix": "Полный",
       "origin": "rmc14",
@@ -8000,11 +8089,14 @@
           }
         ],
         "state": "m94_e"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/CMPackFlare.png"
     },
     "CMPacketGrenadeFragOldFilled": {
       "id": "CMPacketGrenadeFragOldFilled",
-      "name": "коробка осколочных гранат M15",
+      "name": "Коробка осколочных гранат M15",
       "description": "В нем находятся три осколочные гранаты M15. Обращайтесь с ними осторожно.",
       "suffix": "Заполненный",
       "origin": "rmc14",
@@ -8104,11 +8196,14 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Взрывчатка",
+      "public": true,
+      "image": "equipment-sprites/CMPacketGrenadeFragOldFilled.png"
     },
     "CMPacketGrenadeHighExplosiveFilled": {
       "id": "CMPacketGrenadeHighExplosiveFilled",
-      "name": "коробка гранат ОКГ",
+      "name": "Коробка гранат ОКГ",
       "description": "Содержит три фугасные гранаты ОКГ.",
       "suffix": "Заполненный",
       "origin": "rmc14",
@@ -8208,11 +8303,14 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Взрывчатка",
+      "public": true,
+      "image": "equipment-sprites/CMPacketGrenadeHighExplosiveFilled.png"
     },
     "CMPamphletEngineer": {
       "id": "CMPamphletEngineer",
-      "name": "брошюра с инструкциями для инженеров",
+      "name": "Брошюра с инструкциями для инженеров",
       "description": "Брошюра, используемая для быстрого распространения жизненно важных знаний. На этой брошюре изображен инженерный знак.",
       "suffix": "",
       "origin": "rmc14",
@@ -8271,11 +8369,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Misc/pamphlets.rsi",
         "state": "pamphlet_construction"
-      }
+      },
+      "category": "Прочее",
+      "public": true,
+      "image": "equipment-sprites/CMPamphletEngineer.png"
     },
     "CMPamphletJTAC": {
       "id": "CMPamphletJTAC",
-      "name": "инструктивная брошюра СКАТ",
+      "name": "Инструктивная брошюра СКАТ",
       "description": "Брошюра, используемая для быстрого распространения жизненно важных знаний. На этой брошюре изображена рация.",
       "suffix": "",
       "origin": "rmc14",
@@ -8334,11 +8435,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Misc/pamphlets.rsi",
         "state": "pamphlet_jtac"
-      }
+      },
+      "category": "Прочее",
+      "public": true,
+      "image": "equipment-sprites/CMPamphletJTAC.png"
     },
     "CMPamphletPowerloader": {
       "id": "CMPamphletPowerloader",
-      "name": "брошюра с инструкциями по эксплуатации погрузчика",
+      "name": "Брошюра с инструкциями по эксплуатации погрузчика",
       "description": "Брошюра, используемая для быстрого распространения жизненно важных знаний. На этой брошюре есть эмблема погрузчика. Заголовок гласит: \"Перемещение грузов и сминание голов — практическое руководство по рабочему погрузчику Caterpillar P-5000\".",
       "suffix": "",
       "origin": "rmc14",
@@ -8397,11 +8501,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Misc/pamphlets.rsi",
         "state": "pamphlet_powerloader"
-      }
+      },
+      "category": "Прочее",
+      "public": true,
+      "image": "equipment-sprites/CMPamphletPowerloader.png"
     },
     "CMPelletShotgunBuckshot": {
       "id": "CMPelletShotgunBuckshot",
-      "name": "дробь",
+      "name": "Дробь",
       "description": "Если вы можете видеть это, вы, вероятно, мертвы!",
       "suffix": "",
       "origin": "rmc14",
@@ -8489,7 +8596,7 @@
     },
     "CMPelletShotgunFlechette": {
       "id": "CMPelletShotgunFlechette",
-      "name": "дротик",
+      "name": "Дротик",
       "description": "Если вы можете видеть это, вы, вероятно, мертвы!",
       "suffix": "",
       "origin": "rmc14",
@@ -8570,7 +8677,7 @@
     },
     "CMPelletShotgunSlug": {
       "id": "CMPelletShotgunSlug",
-      "name": "дробовая пуля",
+      "name": "Дробовая пуля",
       "description": "Если вы можете видеть это, вы, вероятно, мертвы!",
       "suffix": "",
       "origin": "rmc14",
@@ -8656,7 +8763,7 @@
     },
     "CMScrewdriver": {
       "id": "CMScrewdriver",
-      "name": "отвёртка",
+      "name": "Отвёртка",
       "description": "Крутящий момент промышленного класса в небольшом корпусе отвёртки.",
       "suffix": "",
       "origin": "rmc14",
@@ -8738,11 +8845,14 @@
           }
         ],
         "state": "screwdriver"
-      }
+      },
+      "category": "Ближний бой",
+      "public": true,
+      "image": "equipment-sprites/CMScrewdriver.png"
     },
     "CMShellShotgunBuckshot": {
       "id": "CMShellShotgunBuckshot",
-      "name": "горсть дробовых патронов",
+      "name": "Горсть дробовых патронов",
       "description": "Горсть патронов для перезарядки на ходу.",
       "suffix": "",
       "origin": "rmc14",
@@ -8841,7 +8951,7 @@
     },
     "CMShellShotgunFlechette": {
       "id": "CMShellShotgunFlechette",
-      "name": "горсть флешетт",
+      "name": "Горсть флешетт",
       "description": "Горсть патронов для перезарядки на ходу.",
       "suffix": "",
       "origin": "rmc14",
@@ -8940,7 +9050,7 @@
     },
     "CMShellShotgunSlugs": {
       "id": "CMShellShotgunSlugs",
-      "name": "горсть пуль",
+      "name": "Горсть пуль",
       "description": "Горсть патронов для перезарядки на ходу.",
       "suffix": "",
       "origin": "rmc14",
@@ -9122,11 +9232,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Storage/pdt-case.rsi",
         "state": "icon"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/CMSparePDTLBattleBuddyKit.png"
     },
     "CMWeaponPistolM1984Empty": {
       "id": "CMWeaponPistolM1984Empty",
-      "name": "служебный пистолет M4A3",
+      "name": "Служебный пистолет M4A3",
       "description": "Служебный пистолет M4A3, когда-то являвшийся стандартным оружием морской пехоты, но недавно замененный на боевой пистолет 88 M4. Стреляет пистолетными патронами калибра 9 мм.",
       "suffix": "Пустой",
       "origin": "rmc14",
@@ -9359,11 +9472,14 @@
           }
         ],
         "state": "base"
-      }
+      },
+      "category": "Оружие",
+      "public": true,
+      "image": "equipment-sprites/CMWeaponPistolM1984Empty.png"
     },
     "CMWebbing": {
       "id": "CMWebbing",
-      "name": "разгрузка",
+      "name": "Разгрузка",
       "description": "Крепкие ремни и пряжки из синтикоттона, готовые разделить вашу ношу.",
       "suffix": "",
       "origin": "rmc14",
@@ -9432,11 +9548,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Clothing/Webbing/webbing.rsi",
         "state": "webbing"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/CMWebbing.png"
     },
     "CMWebbingBlack": {
       "id": "CMWebbingBlack",
-      "name": "черная разгрузка",
+      "name": "Черная разгрузка",
       "description": "Прочный черный жилет из синтикоттона с множеством карманов, в которые можно положить все, что нужно, но нельзя взять в руки.",
       "suffix": "",
       "origin": "rmc14",
@@ -9510,11 +9629,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Clothing/Webbing/webbing_black.rsi",
         "state": "webbing"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/CMWebbingBlack.png"
     },
     "CMWebbingBrown": {
       "id": "CMWebbingBrown",
-      "name": "коричневая разгрузка",
+      "name": "Коричневая разгрузка",
       "description": "Поношенный коричневатый жилет из синтикоттона с множеством карманов, чтобы разгрузить руки.",
       "suffix": "",
       "origin": "rmc14",
@@ -9588,11 +9710,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Clothing/Webbing/webbing_brown.rsi",
         "state": "webbing"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/CMWebbingBrown.png"
     },
     "CMWebbingHolster": {
       "id": "CMWebbingHolster",
-      "name": "плечевая кобура",
+      "name": "Плечевая кобура",
       "description": "Кобура для пистолета с подсумком, позволяющим хранить в ней два магазина или скорозарядные устройства.",
       "suffix": "",
       "origin": "rmc14",
@@ -9669,11 +9794,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Clothing/Webbing/webbing_holster.rsi",
         "state": "holster"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/CMWebbingHolster.png"
     },
     "CMWebbingKnivesFilled": {
       "id": "CMWebbingKnivesFilled",
-      "name": "разгрузка с ножами",
+      "name": "Разгрузка с ножами",
       "description": "Жилет для ножей старого поколения M272, когда-то использовавшийся в КМП США. Вмещает до 5 ножей. Изготовлен из синтикоттона.",
       "suffix": "Заполненный",
       "origin": "rmc14",
@@ -9757,11 +9885,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Clothing/Webbing/webbing_knife.rsi",
         "state": "webbing"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/CMWebbingKnivesFilled.png"
     },
     "CMWirecutter": {
       "id": "CMWirecutter",
-      "name": "кусачки",
+      "name": "Кусачки",
       "description": "Это убивает провод.",
       "suffix": "",
       "origin": "rmc14",
@@ -9849,7 +9980,7 @@
     },
     "CMWrench": {
       "id": "CMWrench",
-      "name": "гаечный ключ",
+      "name": "Гаечный ключ",
       "description": "Главный инструмент для откручивания и крепления чего бы то ни было куда-нибудь.",
       "suffix": "",
       "origin": "rmc14",
@@ -9924,11 +10055,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Tools/wrench.rsi",
         "state": "icon"
-      }
+      },
+      "category": "Ближний бой",
+      "public": true,
+      "image": "equipment-sprites/CMWrench.png"
     },
     "RCMBulletPistol9mmSquashHead": {
       "id": "RCMBulletPistol9mmSquashHead",
-      "name": "пуля (9 мм Squash-Head)",
+      "name": "Пуля (9 мм Squash-Head)",
       "description": "Если вы можете видеть это, вы, вероятно, мертвы!",
       "suffix": "",
       "origin": "rmc14",
@@ -10008,7 +10142,7 @@
     },
     "RMC40MMGrenadeM74AGMF": {
       "id": "RMC40MMGrenadeM74AGMF",
-      "name": "осколочная граната M74 БВГ-Ф 40мм",
+      "name": "Осколочная граната M74 БВГ-Ф 40мм",
       "description": "M74 — Боеприпас Воздушного Взрыва — Осколочный. Эта граната должна быть запущена из гранатомета и детонирует по достижении цели. Она рассеивает зазубренную шрапнель конусом перед собой, разрывая сухожилия и броню. Диаграмма рассеивания оптимизирована для поражения крупных целей. Страдает от избыточного пробития при прямом попадании.",
       "suffix": "",
       "origin": "rmc14",
@@ -10084,11 +10218,14 @@
           }
         ],
         "state": "grenade_m74_airburst_f"
-      }
+      },
+      "category": "Взрывчатка",
+      "public": true,
+      "image": "equipment-sprites/RMC40MMGrenadeM74AGMF.png"
     },
     "RMC40MMGrenadeM74AGMI": {
       "id": "RMC40MMGrenadeM74AGMI",
-      "name": "зажигательная граната M74 БВГ-З 40мм",
+      "name": "Зажигательная граната M74 БВГ-З 40мм",
       "description": "M74 — Боеприпас Воздушного Взрыва — Зажигательный. Эта граната должна быть запущена из гранатомета и детонирует по достижении цели. Она рассеивает зазубренную шрапнель конусом перед собой, разрывая сухожилия и броню. Диаграмма рассеивания оптимизирована для поражения крупных целей. Страдает от избыточного пробития при прямом попадании.",
       "suffix": "",
       "origin": "rmc14",
@@ -10164,11 +10301,14 @@
           }
         ],
         "state": "grenade_m74_airburst_i"
-      }
+      },
+      "category": "Взрывчатка",
+      "public": true,
+      "image": "equipment-sprites/RMC40MMGrenadeM74AGMI.png"
     },
     "RMC40MMGrenadeM74AGMS": {
       "id": "RMC40MMGrenadeM74AGMS",
-      "name": "дымовая граната M74 БВГ-Д 40мм",
+      "name": "Дымовая граната M74 БВГ-Д 40мм",
       "description": "M74 — Боеприпас Воздушного Взрыва — Дымовой. Эта граната должна быть запущена из гранатомета и детонирует по достижении цели. При детонации мгновенно смешивает несколько химических веществ внутри своего корпуса, образуя дымовое облако.",
       "suffix": "",
       "origin": "rmc14",
@@ -10244,11 +10384,14 @@
           }
         ],
         "state": "grenade_m74_airburst_s"
-      }
+      },
+      "category": "Взрывчатка",
+      "public": true,
+      "image": "equipment-sprites/RMC40MMGrenadeM74AGMS.png"
     },
     "RMCAirBurstProjectileFrag": {
       "id": "RMCAirBurstProjectileFrag",
-      "name": "осколочная граната M74 БВГ-Ф 40мм",
+      "name": "Осколочная граната M74 БВГ-Ф 40мм",
       "description": "Если вы можете видеть это, вы, вероятно, мертвы!",
       "suffix": "",
       "origin": "rmc14",
@@ -10315,7 +10458,7 @@
     },
     "RMCAirBurstProjectileHornet": {
       "id": "RMCAirBurstProjectileHornet",
-      "name": "шрапнель \"Шершень\" M74 БВГ-Ш 40мм",
+      "name": "Шрапнель \"Шершень\" M74 БВГ-Ш 40мм",
       "description": "Если вы можете видеть это, вы, вероятно, мертвы!",
       "suffix": "",
       "origin": "rmc14",
@@ -10382,7 +10525,7 @@
     },
     "RMCAirBurstProjectileIncendiary": {
       "id": "RMCAirBurstProjectileIncendiary",
-      "name": "зажигательная граната M74 БВГ-З 40мм",
+      "name": "Зажигательная граната M74 БВГ-З 40мм",
       "description": "Если вы можете видеть это, вы, вероятно, мертвы!",
       "suffix": "",
       "origin": "rmc14",
@@ -10450,7 +10593,7 @@
     },
     "RMCAirBurstProjectileSmoke": {
       "id": "RMCAirBurstProjectileSmoke",
-      "name": "дымовая граната M74 БВГ-Д 40мм",
+      "name": "Дымовая граната M74 БВГ-Д 40мм",
       "description": "Если вы можете видеть это, вы, вероятно, мертвы!",
       "suffix": "",
       "origin": "rmc14",
@@ -10519,7 +10662,7 @@
     },
     "RMCAirBurstProjectileStarShell": {
       "id": "RMCAirBurstProjectileStarShell",
-      "name": "осветительная граната M74 БВГ-Ш 40мм",
+      "name": "Осветительная граната M74 БВГ-Ш 40мм",
       "description": "Если вы можете видеть это, вы, вероятно, мертвы!",
       "suffix": "",
       "origin": "rmc14",
@@ -10587,7 +10730,7 @@
     },
     "RMCAttachmentAngledGrip": {
       "id": "RMCAttachmentAngledGrip",
-      "name": "угловая рукоятка",
+      "name": "Угловая рукоятка",
       "description": "Наклонная рукоятка улучшает эргономику оружия и позволяет быстрее овладеть им. Однако при этом увеличивается размер оружия.",
       "suffix": "",
       "origin": "rmc14",
@@ -10665,7 +10808,10 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/rmc_under.rsi",
         "state": "angledgrip"
-      }
+      },
+      "category": "Обвесы",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentAngledGrip.png"
     },
     "RMCAttachmentB8SmartScope": {
       "id": "RMCAttachmentB8SmartScope",
@@ -10791,12 +10937,16 @@
         "ColMarTechCargoAttachments"
       ],
       "sprite": {
+        "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/rail.rsi",
         "state": "iffbarrel"
-      }
+      },
+      "category": "Обвесы",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentB8SmartScope.png"
     },
     "RMCAttachmentBipod": {
       "id": "RMCAttachmentBipod",
-      "name": "сошка",
+      "name": "Сошка",
       "description": "Простой набор телескопических стоек для стабилизации оружия во время стрельбы. При правильном размещении значительно повышает точность, скорострельность и снижает отдачу, но в нерабочем состоянии увеличивает размер оружия и замедляет скорость стрельбы.",
       "suffix": "",
       "origin": "rmc14",
@@ -11016,12 +11166,16 @@
         "ColMarTechCargoGuns"
       ],
       "sprite": {
+        "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/under.rsi",
         "state": "bipod"
-      }
+      },
+      "category": "Обвесы",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentBipod.png"
     },
     "RMCAttachmentBurstFireAssembly": {
       "id": "RMCAttachmentBurstFireAssembly",
-      "name": "сборка для стрельбы очередями",
+      "name": "Сборка для стрельбы очередями",
       "description": "Небольшой угловатый элемент тонкой механики, увеличивающий количество очередей на некоторых видах оружия.",
       "suffix": "",
       "origin": "rmc14",
@@ -11115,11 +11269,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/under.rsi",
         "state": "rapidfire"
-      }
+      },
+      "category": "Обвесы",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentBurstFireAssembly.png"
     },
     "RMCAttachmentExtendedBarrel": {
       "id": "RMCAttachmentExtendedBarrel",
-      "name": "удлиненный ствол",
+      "name": "Удлиненный ствол",
       "description": "Удлиненный ствол ускоряет и стабилизирует пулю, повышая скорость и точность стрельбы.",
       "suffix": "",
       "origin": "rmc14",
@@ -11203,11 +11360,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/barrel.rsi",
         "state": "ebarrel"
-      }
+      },
+      "category": "Обвесы",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentExtendedBarrel.png"
     },
     "RMCAttachmentFlashlightGrip": {
       "id": "RMCAttachmentFlashlightGrip",
-      "name": "подствольная рукоятка с фонарём",
+      "name": "Подствольная рукоятка с фонарём",
       "description": "Святые угольки RO, они приделали к фонарю рукоятку! Уменьшает отдачу и рассеивание на крошечную величину. Работает как источник света.",
       "suffix": "",
       "origin": "rmc14",
@@ -11311,6 +11471,7 @@
         "ColMarTechCargoAttachments"
       ],
       "sprite": {
+        "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/under.rsi",
         "layers": [
           {
             "state": "flashgrip"
@@ -11325,11 +11486,14 @@
           }
         ],
         "state": "flashgrip"
-      }
+      },
+      "category": "Обвесы",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentFlashlightGrip.png"
     },
     "RMCAttachmentGyroscopicStabilizer": {
       "id": "RMCAttachmentGyroscopicStabilizer",
-      "name": "гироскопический стабилизатор",
+      "name": "Гироскопический стабилизатор",
       "description": "Набор грузиков и противовесов для стабилизации оружия при стрельбе с одной руки. Немного снижает скорость стрельбы.",
       "suffix": "",
       "origin": "rmc14",
@@ -11434,11 +11598,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/under.rsi",
         "state": "gyro"
-      }
+      },
+      "category": "Обвесы",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentGyroscopicStabilizer.png"
     },
     "RMCAttachmentLaserLightModule": {
       "id": "RMCAttachmentLaserLightModule",
-      "name": "лазерно-световой модуль VP78",
+      "name": "Лазерно-световой модуль VP78",
       "description": "Модуль лазерного освещения для служебного пистолета VP78, который в настоящее время проходит ограниченные полевые испытания в рамках программы по созданию пистолета нового поколения для морской пехоты. Все пистолеты VP78 оснащаются этим модулем.",
       "suffix": "НЕ МАППИТЬ",
       "origin": "rmc14",
@@ -11542,6 +11709,7 @@
         "ColMarTechCargoGuns"
       ],
       "sprite": {
+        "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/under.rsi",
         "layers": [
           {
             "state": "laserlight"
@@ -11560,7 +11728,7 @@
     },
     "RMCAttachmentLaserSight": {
       "id": "RMCAttachmentLaserSight",
-      "name": "лазерный прицел",
+      "name": "Лазерный прицел",
       "description": "Лазерный прицел, который крепится к нижней части большинства видов оружия. Повышает точность и уменьшает разброс, особенно при стрельбе одной рукой.",
       "suffix": "",
       "origin": "rmc14",
@@ -11642,7 +11810,10 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/under.rsi",
         "state": "lasersight"
-      }
+      },
+      "category": "Обвесы",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentLaserSight.png"
     },
     "RMCAttachmentM13StockCollapsible": {
       "id": "RMCAttachmentM13StockCollapsible",
@@ -11796,7 +11967,10 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/m13_folding_stocks/desert.rsi",
         "state": "stock"
-      }
+      },
+      "category": "Обвесы",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentM13StockCollapsible.png"
     },
     "RMCAttachmentM13StockSolid": {
       "id": "RMCAttachmentM13StockSolid",
@@ -11925,7 +12099,10 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/stock.rsi",
         "state": "m10_stock"
-      }
+      },
+      "category": "Обвесы",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentM13StockSolid.png"
     },
     "RMCAttachmentM42A2CollapsibleStock": {
       "id": "RMCAttachmentM42A2CollapsibleStock",
@@ -12080,11 +12257,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/m42a2_stocks/desert.rsi",
         "state": "stock"
-      }
+      },
+      "category": "Обвесы",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentM42A2CollapsibleStock.png"
     },
     "RMCAttachmentM44MagnumSharpshooterStock": {
       "id": "RMCAttachmentM44MagnumSharpshooterStock",
-      "name": "приклад M44 снайпер магнум",
+      "name": "Приклад M44 снайпер магнум",
       "description": "Деревянная ложа, модифицированная для использования с .44 Magnum. Повышает точность и снижает отдачу за счет ухудшения управляемости и маневренности. Менее эффективен в ближнем бою.",
       "suffix": "",
       "origin": "rmc14",
@@ -12232,8 +12412,12 @@
         "ColMarTechCargoAttachments"
       ],
       "sprite": {
+        "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/stock.rsi",
         "state": "44stock"
-      }
+      },
+      "category": "Обвесы",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentM44MagnumSharpshooterStock.png"
     },
     "RMCAttachmentM54CMK1StockCollapsible": {
       "id": "RMCAttachmentM54CMK1StockCollapsible",
@@ -12535,7 +12719,10 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/stock.rsi",
         "state": "m54-folding"
-      }
+      },
+      "category": "Обвесы",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentM54CStockCollapsible.png"
     },
     "RMCAttachmentM54CStockSolid": {
       "id": "RMCAttachmentM54CStockSolid",
@@ -12663,11 +12850,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/stock.rsi",
         "state": "riflestock"
-      }
+      },
+      "category": "Обвесы",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentM54CStockSolid.png"
     },
     "RMCAttachmentM63ArmBrace": {
       "id": "RMCAttachmentM63ArmBrace",
-      "name": "наручная скоба для пистолета-пулемета",
+      "name": "Наручная скоба для пистолета-пулемета",
       "description": "Специализированный приклад для пистолета-пулемета M39. Он повышает точность стрельбы за счет увеличения количества очередей. При использовании оружия с этим прикладом на оружие накладывается значительный эффект неточности и отдачи.",
       "suffix": "",
       "origin": "rmc14",
@@ -12802,12 +12992,16 @@
         "ColMarTechCargoAttachments"
       ],
       "sprite": {
+        "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/stock.rsi",
         "state": "smg-brace"
-      }
+      },
+      "category": "Обвесы",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentM63ArmBrace.png"
     },
     "RMCAttachmentM63Stock": {
       "id": "RMCAttachmentM63Stock",
-      "name": "приклад пистолета-пулемета",
+      "name": "Приклад пистолета-пулемета",
       "description": "Редкий приклад ЭГИДА, поставляемый в небольшом количестве в войска КМП США. Совместимый с M39, он снижает отдачу и повышает точность, но при этом снижает управляемость и маневренность. Кажется, что он более эффективен в драке.",
       "suffix": "",
       "origin": "rmc14",
@@ -12922,11 +13116,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/stock.rsi",
         "state": "smgstock"
-      }
+      },
+      "category": "Обвесы",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentM63Stock.png"
     },
     "RMCAttachmentM63StockCollapsible": {
       "id": "RMCAttachmentM63StockCollapsible",
-      "name": "складной приклад для пистолета-пулемета",
+      "name": "Складной приклад для пистолета-пулемета",
       "description": "Складной приклад K2 M39 марки Kirchner, стандартный для КМП США. Приклад в выдвинутом состоянии снижает отдачу и повышает точность стрельбы, но при этом снижается управляемость и маневренность. В драке он кажется более эффективным. Приклад может складываться, устраняя все положительные и отрицательные эффекты.",
       "suffix": "",
       "origin": "rmc14",
@@ -13075,12 +13272,16 @@
         "ColMarTechCargoGuns"
       ],
       "sprite": {
+        "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/stock.rsi",
         "state": "smgstockcol"
-      }
+      },
+      "category": "Обвесы",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentM63StockCollapsible.png"
     },
     "RMCAttachmentMK1GrenadeLauncher": {
       "id": "RMCAttachmentMK1GrenadeLauncher",
-      "name": "подствольный гранатомет MK1",
+      "name": "Подствольный гранатомет MK1",
       "description": "Устаревшая версия классического подствольного гранатомета. Может хранить пять гранат, но стреляет ими медленнее.",
       "suffix": "",
       "origin": "rmc14",
@@ -13202,6 +13403,7 @@
         "ColMarTechCargoGuns"
       ],
       "sprite": {
+        "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/under.rsi",
         "layers": [
           {
             "state": "grenade-mk1",
@@ -13215,7 +13417,7 @@
     },
     "RMCAttachmentMOU53Stock": {
       "id": "RMCAttachmentMOU53Stock",
-      "name": "тактический приклад MOU53",
+      "name": "Тактический приклад MOU53",
       "description": "Металлическое ложе, специально предназначенное для ружья MOU53.",
       "suffix": "",
       "origin": "rmc14",
@@ -13333,11 +13535,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/stock.rsi",
         "state": "ou_stock"
-      }
+      },
+      "category": "Обвесы",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentMOU53Stock.png"
     },
     "RMCAttachmentMagneticHarness": {
       "id": "RMCAttachmentMagneticHarness",
-      "name": "магнитный жгут",
+      "name": "Магнитный жгут",
       "description": "Магнитный комплект ремней, который крепится к рельсовому креплению оружия. При падении оружие прикрепляется к любому комплекту брони морского пехотинца.",
       "suffix": "",
       "origin": "rmc14",
@@ -13409,11 +13614,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/rail.rsi",
         "state": "magnetic"
-      }
+      },
+      "category": "Обвесы",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentMagneticHarness.png"
     },
     "RMCAttachmentMicroLaserSight": {
       "id": "RMCAttachmentMicroLaserSight",
-      "name": "микролазерный прицел",
+      "name": "Микролазерный прицел",
       "description": "Компактный высокоточный лазерный прицел, разработанный специально для автоматического пистолета M10. Обеспечивает исключительное повышение точности благодаря прямому взаимодействию с внутренними системами наведения оружия.",
       "suffix": "",
       "origin": "rmc14",
@@ -13495,11 +13703,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/under.rsi",
         "state": "lasersight_micro"
-      }
+      },
+      "category": "Обвесы",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentMicroLaserSight.png"
     },
     "RMCAttachmentMiniFlamethrower": {
       "id": "RMCAttachmentMiniFlamethrower",
-      "name": "мини-огнемет",
+      "name": "Мини-огнемет",
       "description": "Навесной огнемет, устанавливаемый на оружие. Имеет вторичную настройку для более интенсивного пламени при гораздо меньшей тяге и большом расходе топлива.",
       "suffix": "",
       "origin": "rmc14",
@@ -13629,11 +13840,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/under.rsi",
         "state": "flamethrower"
-      }
+      },
+      "category": "Оружие",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentMiniFlamethrower.png"
     },
     "RMCAttachmentRailFlashlight": {
       "id": "RMCAttachmentRailFlashlight",
-      "name": "навесной фонарь",
+      "name": "Навесной фонарь",
       "description": "Фонарик для рельсов на оружии. Можно включать и выключать. Лучший источник света, чем стандартные фонари для брони образца M3.",
       "suffix": "",
       "origin": "rmc14",
@@ -13725,6 +13939,7 @@
         "ColMarTechCargoAttachments"
       ],
       "sprite": {
+        "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/rail.rsi",
         "layers": [
           {
             "state": "flashlight"
@@ -13739,11 +13954,14 @@
           }
         ],
         "state": "flashlight"
-      }
+      },
+      "category": "Обвесы",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentRailFlashlight.png"
     },
     "RMCAttachmentRecoilCompensator": {
       "id": "RMCAttachmentRecoilCompensator",
-      "name": "дульный тормоз",
+      "name": "Дульный тормоз",
       "description": "Дульная насадка, снижающая отдачу за счет отвода выходящих газов вверх. Повышает точность и снижает отдачу, но при этом наносит небольшой урон оружию.",
       "suffix": "",
       "origin": "rmc14",
@@ -13827,11 +14045,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/barrel.rsi",
         "state": "comp"
-      }
+      },
+      "category": "Обвесы",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentRecoilCompensator.png"
     },
     "RMCAttachmentRecoilCompensatorM13": {
       "id": "RMCAttachmentRecoilCompensatorM13",
-      "name": "удлинённый дульный тормоз М13",
+      "name": "Удлинённый дульный тормоз М13",
       "description": "Тяжелый, избыточно прочный компенсатор и удлинитель ствола для пистолета M10 Auto. Значительно улучшает контроль отдачи при автоматической стрельбе, но за счет увеличения габаритов и удобства использования.",
       "suffix": "",
       "origin": "rmc14",
@@ -13911,11 +14132,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/barrel.rsi",
         "state": "m10_overcomp"
-      }
+      },
+      "category": "Обвесы",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentRecoilCompensatorM13.png"
     },
     "RMCAttachmentRecoilCompensatorM13Spiked": {
       "id": "RMCAttachmentRecoilCompensatorM13Spiked",
-      "name": "шипованый удлинённый дульный тормоз М13",
+      "name": "Шипованый удлинённый дульный тормоз М13",
       "description": "Чрезвычайно тяжелый, избыточно сложный компенсатор и удлинитель ствола для автоматического пистолета М13, увенчанный закаленным колпачком с шипами. Значительно улучшает контроль отдачи при автоматической стрельбе — и превращает пистолет в опасную дубинку в ближнем бою.",
       "suffix": "",
       "origin": "rmc14",
@@ -14000,7 +14224,10 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/barrel.rsi",
         "state": "m10_overcomp_spike"
-      }
+      },
+      "category": "Обвесы",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentRecoilCompensatorM13Spiked.png"
     },
     "RMCAttachmentS42xTelescopicMiniscope": {
       "id": "RMCAttachmentS42xTelescopicMiniscope",
@@ -14129,12 +14356,16 @@
         "ColMarTechCargoGuns"
       ],
       "sprite": {
+        "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/rail.rsi",
         "state": "miniscope"
-      }
+      },
+      "category": "Обвесы",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentS42xTelescopicMiniscope.png"
     },
     "RMCAttachmentS5MicroRedDotSight": {
       "id": "RMCAttachmentS5MicroRedDotSight",
-      "name": "микроприцел S5 с красной точкой",
+      "name": "Микроприцел S5 с красной точкой",
       "description": "Легкий, низкопрофильный коллиматорный прицел, разработанный для быстрого захвата цели с минимальным увеличением веса. Оптимизирован для пистолетов-пулеметов и пистолетов, идеально подходит для ближнего боя, где скорость и маневренность имеют первостепенное значение.",
       "suffix": "",
       "origin": "rmc14",
@@ -14214,11 +14445,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/rail.rsi",
         "state": "reddot_small"
-      }
+      },
+      "category": "Обвесы",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentS5MicroRedDotSight.png"
     },
     "RMCAttachmentS5RedDotSight": {
       "id": "RMCAttachmentS5RedDotSight",
-      "name": "прицел S5 с красной точкой",
+      "name": "Прицел S5 с красной точкой",
       "description": "Всепогодный коллиматорный прицел, обозначаемый как AN/PVQ-64 Dot Sight. Оснащен солнцезащитным козырьком для повышения четкости изображения в ярких условиях и устойчивости к атмосферным воздействиям. Компактный и эффективный, чудо военного дизайна, пока вы не поймете, что на самом деле это просто готовая конструкция, на которую нанесли военное обозначение.",
       "suffix": "",
       "origin": "rmc14",
@@ -14298,11 +14532,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/rail.rsi",
         "state": "reddot"
-      }
+      },
+      "category": "Обвесы",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentS5RedDotSight.png"
     },
     "RMCAttachmentS6ReflexSight": {
       "id": "RMCAttachmentS6ReflexSight",
-      "name": "рефлекторный прицел S6",
+      "name": "Рефлекторный прицел S6",
       "description": "Рефлекторный прицел ЭГИДА S6. Альтернатива железным прицелам с нулевым увеличением и более открытым оптическим окном по сравнению с S5 red-dot. Помогает уменьшить рассеивание при автоматической стрельбе.",
       "suffix": "",
       "origin": "rmc14",
@@ -14384,11 +14621,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/rail.rsi",
         "state": "reflex"
-      }
+      },
+      "category": "Обвесы",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentS6ReflexSight.png"
     },
     "RMCAttachmentS84xTelescopicScope": {
       "id": "RMCAttachmentS84xTelescopicScope",
-      "name": "телескопический прицел S8 4x",
+      "name": "Телескопический прицел S8 4x",
       "description": "Телескопический наглазник ЭГИДА S8. Фиксированное 4-кратное увеличение.",
       "suffix": "",
       "origin": "rmc14",
@@ -14515,12 +14755,16 @@
         "ColMarTechCargoAttachments"
       ],
       "sprite": {
+        "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/rail.rsi",
         "state": "sniperscope"
-      }
+      },
+      "category": "Обвесы",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentS84xTelescopicScope.png"
     },
     "RMCAttachmentShotgunChoke": {
       "id": "RMCAttachmentShotgunChoke",
-      "name": "дульное сужение",
+      "name": "Дульное сужение",
       "description": "Резьбовое дульное сужение, которое можно вставить в дробовик M37A2. Улучшает точность, скорость, сужает осыпь и увеличивает скорострельность. Взамен снижается урон снаряда и его сила. Также увеличивает отдачу. Не рекомендуется для пуль.",
       "suffix": "",
       "origin": "rmc14",
@@ -14619,11 +14863,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/barrel.rsi",
         "state": "choke"
-      }
+      },
+      "category": "Обвесы",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentShotgunChoke.png"
     },
     "RMCAttachmentSuppressor": {
       "id": "RMCAttachmentSuppressor",
-      "name": "глушитель",
+      "name": "Глушитель",
       "description": "Маленькая трубка с выпускными отверстиями для отвода шума и газа. Не полностью заглушает оружие, но делает его намного тише и немного точнее и стабильнее ценой небольшого снижения урона.",
       "suffix": "",
       "origin": "rmc14",
@@ -14702,11 +14949,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/barrel.rsi",
         "state": "suppressor"
-      }
+      },
+      "category": "Обвесы",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentSuppressor.png"
     },
     "RMCAttachmentSuppressorCompact": {
       "id": "RMCAttachmentSuppressorCompact",
-      "name": "компактный глушитель",
+      "name": "Компактный глушитель",
       "description": "Легкий, низкопрофильный глушитель, разработанный специально для пистолетов и пистолетов-пулеметов. Он делает звук стрельбы тише и убирает вспышку выстрела, незначительно улучшая стабильность и точность, хотя и немного снижает начальную скорость пули и поражающее действие.",
       "suffix": "",
       "origin": "rmc14",
@@ -14786,11 +15036,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/barrel.rsi",
         "state": "suppressor_sleek"
-      }
+      },
+      "category": "Обвесы",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentSuppressorCompact.png"
     },
     "RMCAttachmentU1GrenadeLauncher": {
       "id": "RMCAttachmentU1GrenadeLauncher",
-      "name": "подствольный гранатомет U1",
+      "name": "Подствольный гранатомет U1",
       "description": "Гранатомет с возможностью перезарядки, установленный на оружии.",
       "suffix": "",
       "origin": "rmc14",
@@ -14920,6 +15173,7 @@
         "ColMarTechCargoGuns"
       ],
       "sprite": {
+        "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/under.rsi",
         "layers": [
           {
             "state": "grenade",
@@ -14929,11 +15183,14 @@
           }
         ],
         "state": "grenade"
-      }
+      },
+      "category": "Оружие",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentU1GrenadeLauncher.png"
     },
     "RMCAttachmentU7UnderbarrelShotgun": {
       "id": "RMCAttachmentU7UnderbarrelShotgun",
-      "name": "подствольный дробовик U7",
+      "name": "Подствольный дробовик U7",
       "description": "Тактический дробовик ЭГИДА U7. Крепится к подствольному блоку большинства видов оружия. Может заряжаться только пятью патронами с картечью. Специализирован для проникновения в здания.",
       "suffix": "",
       "origin": "rmc14",
@@ -15067,12 +15324,16 @@
         "ColMarTechCargoAttachments"
       ],
       "sprite": {
+        "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/under.rsi",
         "state": "masterkey"
-      }
+      },
+      "category": "Оружие",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentU7UnderbarrelShotgun.png"
     },
     "RMCAttachmentUnderbarrelExtinguisher": {
       "id": "RMCAttachmentUnderbarrelExtinguisher",
-      "name": "подствольный огнетушитель HME-12",
+      "name": "Подствольный огнетушитель HME-12",
       "description": "Подствольный огнетушитель Taiho-Technologies HME-12. Крепится к подствольному баллону большинства видов оружия. Направьте на пламя, прежде чем надавить.",
       "suffix": "",
       "origin": "rmc14",
@@ -15194,11 +15455,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/under.rsi",
         "state": "extinguisher"
-      }
+      },
+      "category": "Оружие",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentUnderbarrelExtinguisher.png"
     },
     "RMCAttachmentVerticalGrip": {
       "id": "RMCAttachmentVerticalGrip",
-      "name": "вертикальная рукоятка",
+      "name": "Вертикальная рукоятка",
       "description": "Вертикальная рукоятка, обеспечивающая более высокую точность, меньшую отдачу и меньший разброс, особенно при стрельбе очередями. Однако при этом увеличивается размер оружия.",
       "suffix": "",
       "origin": "rmc14",
@@ -15289,11 +15553,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/rmc_under.rsi",
         "state": "verticalgrip"
-      }
+      },
+      "category": "Обвесы",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentVerticalGrip.png"
     },
     "RMCAttachmentXM88Stock": {
       "id": "RMCAttachmentXM88Stock",
-      "name": "приклад XM88",
+      "name": "Приклад XM88",
       "description": "Специально изготовленное ложе из комбинированного полимера, усиленное алюминиевыми стержнями и толстыми резиновыми накладками, защищающими пользователя от отдачи. Подходит специально для тяжелой винтовки XM88.",
       "suffix": "",
       "origin": "rmc14",
@@ -15412,11 +15679,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/stock.rsi",
         "state": "d_boomslang-stock"
-      }
+      },
+      "category": "Обвесы",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentXM88Stock.png"
     },
     "RMCAttachmentXS-9": {
       "id": "RMCAttachmentXS-9",
-      "name": "реле целеуказания XS-9",
+      "name": "Реле целеуказания XS-9",
       "description": "Пока еще находящийся в разработке прицел XS-9 имеет множество функций — большинство из них отключено на время полевых испытаний — и функционирует чуть лучше, чем стандартный прицел.",
       "suffix": "",
       "origin": "rmc14",
@@ -15533,12 +15803,16 @@
         "ColMarTechCargoGuns"
       ],
       "sprite": {
+        "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/rail.rsi",
         "state": "d_boomslang-scope"
-      }
+      },
+      "category": "Обвесы",
+      "public": true,
+      "image": "equipment-sprites/RMCAttachmentXS-9.png"
     },
     "RMCBackpackAmmo": {
       "id": "RMCBackpackAmmo",
-      "name": "стойка для патронов IMP",
+      "name": "Стойка для патронов IMP",
       "description": "Голая рама IMP с пряжками, предназначенная для хранения нескольких банок с патронами, но благодаря изобретательности морского пехотинца в нее может поместиться любой громоздкий ящик. Помогает носить с собой дополнительные патроны или припасы.",
       "suffix": "",
       "origin": "rmc14",
@@ -15648,11 +15922,14 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Броня",
+      "public": true,
+      "image": "equipment-sprites/RMCBackpackAmmo.png"
     },
     "RMCBackpackFlamer": {
       "id": "RMCBackpackFlamer",
-      "name": "пиротехнический топливный бак КМП США G4-1",
+      "name": "Пиротехнический топливный бак КМП США G4-1",
       "description": "Наспинная установка старого поколения, в которой топливо хранится в двух баках. Между ними располагается небольшой регулятор. Имеет несколько ремней для крепления до трех стандатных баков огнемёта, которые вы будете заправлять.",
       "suffix": "",
       "origin": "rmc14",
@@ -15770,11 +16047,14 @@
             "state": "icon"
           }
         ]
-      }
+      },
+      "category": "Броня",
+      "public": true,
+      "image": "equipment-sprites/RMCBackpackFlamer.png"
     },
     "RMCBackpackRTO": {
       "id": "RMCBackpackRTO",
-      "name": "комплект радиотелефонов КМП США",
+      "name": "Комплект радиотелефонов КМП США",
       "description": "Сверхмощный пакет, используемый для связи между центральным командованием. Обычно носится РТО.",
       "suffix": "",
       "origin": "rmc14",
@@ -15886,11 +16166,14 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Броня",
+      "public": true,
+      "image": "equipment-sprites/RMCBackpackRTO.png"
     },
     "RMCBatonSlugHIRR": {
       "id": "RMCBatonSlugHIRR",
-      "name": "картечь с резиновой пулей РПУВ 40мм",
+      "name": "Картечь с резиновой пулей РПУВ 40мм",
       "description": "Родственник резиновой пули M15, РПУВ картечь с резиновой пулей была отозвана из вооруженных сил и гражданской полиции из-за избытка пороха в подкалиберном корпусе. Теперь она используется в качестве несмертельного варианта в столкновениях с людьми, а иногда и с нелюдями. Исторически, РПУВ была невероятно популярна во время Арктурианского конфликта, так как ударная сила, как было установлено, надежно выводила из строя силы арктурианского сопротивления, ломая им ребра и пробивая легкие.",
       "suffix": "",
       "origin": "rmc14",
@@ -15965,7 +16248,10 @@
           }
         ],
         "state": "baton_slug"
-      }
+      },
+      "category": "Взрывчатка",
+      "public": true,
+      "image": "equipment-sprites/RMCBatonSlugHIRR.png"
     },
     "RMCBatonSlugProjectile": {
       "id": "RMCBatonSlugProjectile",
@@ -16044,7 +16330,7 @@
     },
     "RMCBeltGrenade": {
       "id": "RMCBeltGrenade",
-      "name": "пояс M276 для M40 гранат",
+      "name": "Пояс M276 для M40 гранат",
       "description": "M276 — это стандартное грузовое снаряжение КМП США. Он состоит из модульного ремня с различными зажимами. Эта версия рассчитана на переноску до 12 гранат серии M40.",
       "suffix": "",
       "origin": "rmc14",
@@ -16150,11 +16436,14 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCBeltGrenade.png"
     },
     "RMCBeltHolsterM13": {
       "id": "RMCBeltHolsterM13",
-      "name": "кобура для пистолета M10 образца M276",
+      "name": "Кобура для пистолета M10 образца M276",
       "description": "Вариант специального выпуска M276, предназначенный для ношения автоматического пистолета M10 и 8 запасных обойм.",
       "suffix": "",
       "origin": "rmc14",
@@ -16277,11 +16566,14 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCBeltHolsterM13.png"
     },
     "RMCBeltHolsterPistol": {
       "id": "RMCBeltHolsterPistol",
-      "name": "кобура для пистолета общего образца M276",
+      "name": "Кобура для пистолета общего образца M276",
       "description": "M276 — это стандартное грузовое снаряжение КМП США. Он состоит из модульного ремня с различными зажимами. В этой версии имеется кобура, позволяющая носить наиболее распространенные пистолеты. Также имеются боковые подсумки, в которых можно хранить большинство пистолетных магазинов.",
       "suffix": "",
       "origin": "rmc14",
@@ -16470,11 +16762,14 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCBeltHolsterPistol.png"
     },
     "RMCBeltHolsterRevolver": {
       "id": "RMCBeltHolsterRevolver",
-      "name": "кобура для револьвера M276",
+      "name": "Кобура для револьвера M276",
       "description": "Он M276 является стандартным грузовым снаряжением КМП США. Он состоит из модульного ремня с различными зажимами. Эта версия универсальна и регулируется под разные револьверы, а также имеет шесть небольших подсумков для скорозарядных устройств. Слабо пахнет сеном.",
       "suffix": "",
       "origin": "rmc14",
@@ -16595,11 +16890,14 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCBeltHolsterRevolver.png"
     },
     "RMCBeltHolsterSMG": {
       "id": "RMCBeltHolsterSMG",
-      "name": "кобура M276 для M39",
+      "name": "Кобура M276 для M39",
       "description": "Специальный вариант M276, предназначенный для ношения пистолета-пулемета M39.",
       "suffix": "",
       "origin": "rmc14",
@@ -16692,11 +16990,14 @@
             "visible": false
           }
         ]
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCBeltHolsterSMG.png"
     },
     "RMCBeltHolsterSMGPouch": {
       "id": "RMCBeltHolsterSMGPouch",
-      "name": "кобура M276 для M39",
+      "name": "Кобура M276 для M39",
       "description": "Специальный вариант M276, предназначенный для ношения пистолета-пулемета M39 и двух запасных магазинов. Выдавался в основном вспомогательному и специализированному персоналу КМП США.",
       "suffix": "",
       "origin": "rmc14",
@@ -16811,11 +17112,14 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCBeltHolsterSMGPouch.png"
     },
     "RMCBeltMachineGunner": {
       "id": "RMCBeltMachineGunner",
-      "name": "пояс оператора станкового пулемета M804",
+      "name": "Пояс оператора станкового пулемета M804",
       "description": "Складской пояс M804 для тяжелого пулеметчика представляет собой модифицированную поясную систему M276, предназначенную для переноски боеприпасов для крупнокалиберных пулеметных систем и инженерных инструментов для пулеметчика.",
       "suffix": "",
       "origin": "rmc14",
@@ -16921,11 +17225,14 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCBeltMachineGunner.png"
     },
     "RMCBeltSmartPistolFilled": {
       "id": "RMCBeltSmartPistolFilled",
-      "name": "кобура для умного пистолета SU-6 по образцу M276",
+      "name": "Кобура для умного пистолета SU-6 по образцу M276",
       "description": "M276 — это стандартное грузовое снаряжение КМП США. Он состоит из модульного ремня с различными зажимами. Эта версия предназначена для смартпистолета SU-6.",
       "suffix": "Заполненный",
       "origin": "rmc14",
@@ -17049,11 +17356,14 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCBeltSmartPistolFilled.png"
     },
     "RMCBeltUtilityGeneral": {
       "id": "RMCBeltUtilityGeneral",
-      "name": "подсумок общего назначения M276 G8-A",
+      "name": "Подсумок общего назначения M276 G8-A",
       "description": "Небольшой, легкий подсумок, который можно закрепить на броне M3 Pattern, чтобы обеспечить дополнительное хранение. Более новая модель G8-A, хотя и неудобная, также может крепиться на талии.",
       "suffix": "",
       "origin": "rmc14",
@@ -17153,11 +17463,14 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCBeltUtilityGeneral.png"
     },
     "RMCBinoculars": {
       "id": "RMCBinoculars",
-      "name": "бинокль",
+      "name": "Бинокль",
       "description": "Бинокль, выданный военным.",
       "suffix": "Джунгли",
       "origin": "rmc14",
@@ -17219,11 +17532,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Devices/binoculars.rsi",
         "state": "binoculars"
-      }
+      },
+      "category": "Прочее",
+      "public": true,
+      "image": "equipment-sprites/RMCBinoculars.png"
     },
     "RMCBox458SOCOM": {
       "id": "RMCBox458SOCOM",
-      "name": "коробка .458 SOCOM",
+      "name": "Коробка .458 SOCOM",
       "description": "Коробка, наполненная горстями патронов калибра .458 SOCOM, предназначенных для тяжелой винтовки XM88.",
       "suffix": "",
       "origin": "rmc14",
@@ -17334,11 +17650,14 @@
           }
         ],
         "state": "smallshell_box"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCBox458SOCOM.png"
     },
     "RMCBoxBullets458": {
       "id": "RMCBoxBullets458",
-      "name": "коробка пуль .458 (x300 патронов)",
+      "name": "Коробка пуль .458 (x300 патронов)",
       "description": "A box of bundled .458 SOCOM rounds.",
       "suffix": "Заполненый",
       "origin": "rmc14",
@@ -17456,11 +17775,14 @@
           }
         ],
         "state": "rifle_box"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCBoxBullets458.png"
     },
     "RMCBoxBulletsPistol": {
       "id": "RMCBoxBulletsPistol",
-      "name": "ящик боеприпасов М13 (10x20mm-БПК)",
+      "name": "Ящик боеприпасов М13 (10x20mm-БПК)",
       "description": "Ящик для патронов калибра 10x20 мм БПК. Используется для пополнения обычных, удлиненных и барабанных магазинов M10. В комплекте кожаный ремешок для ношения на спине.",
       "suffix": "",
       "origin": "rmc14",
@@ -17549,7 +17871,7 @@
     },
     "RMCBoxBulletsRifle": {
       "id": "RMCBoxBulletsRifle",
-      "name": "rifle ammunition box (10x24mm)",
+      "name": "Rifle ammunition box (10x24mm)",
       "description": "A 10x24mm ammunition box. Used to refill M54C MK1, MK2, M4RA and M54CE2 HAR magazines. It comes with a leather strap allowing someone to wear it on their back.",
       "suffix": "",
       "origin": "rmc14",
@@ -17647,11 +17969,14 @@
           }
         ],
         "state": "rifle_box"
-      }
+      },
+      "category": "Прочее",
+      "public": true,
+      "image": "equipment-sprites/RMCBoxBulletsRifle.png"
     },
     "RMCBoxBulletsRifleAP": {
       "id": "RMCBoxBulletsRifleAP",
-      "name": "ящик винтовочных боеприпасов (10x24мм ББ)",
+      "name": "Ящик винтовочных боеприпасов (10x24мм ББ)",
       "description": "Ящик с бронебойными боеприпасами 10x24мм. Используется для пополнения магазинов M41A MK2 и M4RA ББ. Поставляется с кожаным ремешком, позволяющим носить его на спине.",
       "suffix": "",
       "origin": "rmc14",
@@ -17748,11 +18073,14 @@
           }
         ],
         "state": "rifle_box"
-      }
+      },
+      "category": "Прочее",
+      "public": true,
+      "image": "equipment-sprites/RMCBoxBulletsRifleAP.png"
     },
     "RMCBoxBulletsSMG": {
       "id": "RMCBoxBulletsSMG",
-      "name": "ящик боеприпасов ПП (10x20мм)",
+      "name": "Ящик боеприпасов ПП (10x20мм)",
       "description": "Ящик для боеприпасов 10x20 мм. Используется для пополнения магазинов M39 и удлиненных магазинов. Поставляется с кожаным ремешком, позволяющим носить его на спине.",
       "suffix": "",
       "origin": "rmc14",
@@ -17843,11 +18171,14 @@
           }
         ],
         "state": "rifle_box"
-      }
+      },
+      "category": "Прочее",
+      "public": true,
+      "image": "equipment-sprites/RMCBoxBulletsSMG.png"
     },
     "RMCBoxBulletsSMGAP": {
       "id": "RMCBoxBulletsSMGAP",
-      "name": "ящик боеприпасов ПП (10x20мм ББ)",
+      "name": "Ящик боеприпасов ПП (10x20мм ББ)",
       "description": "Ящик для бронебойных боеприпасов 10x20 мм. Используется для пополнения магазинов M39 ББ. В комплекте идет кожаный ремешок, позволяющий носить его на спине.",
       "suffix": "",
       "origin": "rmc14",
@@ -17938,11 +18269,14 @@
           }
         ],
         "state": "rifle_box"
-      }
+      },
+      "category": "Прочее",
+      "public": true,
+      "image": "equipment-sprites/RMCBoxBulletsSMGAP.png"
     },
     "RMCBoxBulletsSmartGun": {
       "id": "RMCBoxBulletsSmartGun",
-      "name": "smart gun ammunition box (10x30mm)",
+      "name": "Smart gun ammunition box (10x30mm)",
       "description": "A 10x30mm ammunition box. Used to refill Smart Gun magazines. It comes with a leather strap allowing someone to wear it on their back.",
       "suffix": "",
       "origin": "rmc14",
@@ -18030,7 +18364,7 @@
     },
     "RMCBoxClaymoreMineFilled": {
       "id": "RMCBoxClaymoreMineFilled",
-      "name": "коробка мин М20",
+      "name": "Коробка мин М20",
       "description": "Защищенная коробка, содержащая пять противопехотных мин М20.",
       "suffix": "Filled",
       "origin": "rmc14",
@@ -18130,11 +18464,14 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Взрывчатка",
+      "public": true,
+      "image": "equipment-sprites/RMCBoxClaymoreMineFilled.png"
     },
     "RMCBoxMagazinePistolM13": {
       "id": "RMCBoxMagazinePistolM13",
-      "name": "коробка магазинов (M10 22x)",
+      "name": "Коробка магазинов (M10 22x)",
       "description": "Коробка с пистолетными магазинами.",
       "suffix": "Заполненый",
       "origin": "rmc14",
@@ -18245,11 +18582,14 @@
           }
         ],
         "state": "pistol_box"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCBoxMagazinePistolM13.png"
     },
     "RMCBoxMagazinePistolM13Ext": {
       "id": "RMCBoxMagazinePistolM13Ext",
-      "name": "коробка магазинов (M10 Расширенные 14x)",
+      "name": "Коробка магазинов (M10 Расширенные 14x)",
       "description": "Коробка с пистолетными магазинами.",
       "suffix": "Заполненый",
       "origin": "rmc14",
@@ -18360,11 +18700,14 @@
           }
         ],
         "state": "pistol_box"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCBoxMagazinePistolM13Ext.png"
     },
     "RMCBoxMagazinePistolM1984": {
       "id": "RMCBoxMagazinePistolM1984",
-      "name": "коробка магазинов (M4A3 16x)",
+      "name": "Коробка магазинов (M4A3 16x)",
       "description": "Коробка с пистолетными магазинами.",
       "suffix": "Заполненый",
       "origin": "rmc14",
@@ -18475,11 +18818,14 @@
           }
         ],
         "state": "pistol_box"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCBoxMagazinePistolM1984.png"
     },
     "RMCBoxMagazinePistolM1984AP": {
       "id": "RMCBoxMagazinePistolM1984AP",
-      "name": "коробка магазинов (M4A3 ББ 16x)",
+      "name": "Коробка магазинов (M4A3 ББ 16x)",
       "description": "Коробка с пистолетными магазинами.",
       "suffix": "Заполненый",
       "origin": "rmc14",
@@ -18590,11 +18936,14 @@
           }
         ],
         "state": "pistol_box"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCBoxMagazinePistolM1984AP.png"
     },
     "RMCBoxMagazinePistolM1984HP": {
       "id": "RMCBoxMagazinePistolM1984HP",
-      "name": "magazine box (HP M4A3 x 16)",
+      "name": "Magazine box (HP M4A3 x 16)",
       "description": "Коробка с пистолетными магазинами.",
       "suffix": "Full",
       "origin": "rmc14",
@@ -18705,11 +19054,14 @@
           }
         ],
         "state": "pistol_box"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCBoxMagazinePistolM1984HP.png"
     },
     "RMCBoxMagazinePistolM77AP": {
       "id": "RMCBoxMagazinePistolM77AP",
-      "name": "коробка магазинов (88 М4 ББ 16x)",
+      "name": "Коробка магазинов (88 М4 ББ 16x)",
       "description": "Коробка с пистолетными магазинами.",
       "suffix": "Заполненый",
       "origin": "rmc14",
@@ -18820,11 +19172,14 @@
           }
         ],
         "state": "pistol_box"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCBoxMagazinePistolM77AP.png"
     },
     "RMCBoxMagazinePistolMK80": {
       "id": "RMCBoxMagazinePistolMK80",
-      "name": "коробка магазинов (VP78 16x)",
+      "name": "Коробка магазинов (VP78 16x)",
       "description": "Коробка с пистолетными магазинами.",
       "suffix": "Заполненый",
       "origin": "rmc14",
@@ -18935,11 +19290,14 @@
           }
         ],
         "state": "pistol_box"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCBoxMagazinePistolMK80.png"
     },
     "RMCBoxMagazinePistolSU6": {
       "id": "RMCBoxMagazinePistolSU6",
-      "name": "коробка магазинов (SU-6 16x)",
+      "name": "Коробка магазинов (SU-6 16x)",
       "description": "Коробка с пистолетными магазинами.",
       "suffix": "Заполненый",
       "origin": "rmc14",
@@ -19050,11 +19408,14 @@
           }
         ],
         "state": "pistol_box"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCBoxMagazinePistolSU6.png"
     },
     "RMCBoxMagazineRevolverM44": {
       "id": "RMCBoxMagazineRevolverM44",
-      "name": "коробка спидлоадеров (M44 16x)",
+      "name": "Коробка спидлоадеров (M44 16x)",
       "description": "Коробка для хранения большого количества спидлоадеров с ручкой для переноски.",
       "suffix": "Заполненый",
       "origin": "rmc14",
@@ -19165,11 +19526,14 @@
           }
         ],
         "state": "pistol_box"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCBoxMagazineRevolverM44.png"
     },
     "RMCBoxMagazineRevolverM44Marksman": {
       "id": "RMCBoxMagazineRevolverM44Marksman",
-      "name": "коробка спидлоадеров (марксманские M44 16x)",
+      "name": "Коробка спидлоадеров (марксманские M44 16x)",
       "description": "Коробка для хранения множества спидлоадеров с ручкой для переноски, эти заряжены патронами Marksman.",
       "suffix": "Заполненый",
       "origin": "rmc14",
@@ -19280,11 +19644,14 @@
           }
         ],
         "state": "pistol_box"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCBoxMagazineRevolverM44Marksman.png"
     },
     "RMCBoxMagazineRifleM4SPR": {
       "id": "RMCBoxMagazineRifleM4SPR",
-      "name": "коробка магазинов (M4RA 16x)",
+      "name": "Коробка магазинов (M4RA 16x)",
       "description": "коробка для винтовочных магазинов.",
       "suffix": "Заполненый",
       "origin": "rmc14",
@@ -19401,11 +19768,14 @@
           }
         ],
         "state": "rifle_box"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCBoxMagazineRifleM4SPR.png"
     },
     "RMCBoxMagazineRifleM4SPRAP": {
       "id": "RMCBoxMagazineRifleM4SPRAP",
-      "name": "коробка магазинов (ББ M4RA 16x)",
+      "name": "Коробка магазинов (ББ M4RA 16x)",
       "description": "коробка для винтовочных магазинов.",
       "suffix": "Заполненый",
       "origin": "rmc14",
@@ -19522,11 +19892,14 @@
           }
         ],
         "state": "rifle_box"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCBoxMagazineRifleM4SPRAP.png"
     },
     "RMCBoxMagazineRifleM4SPRExt": {
       "id": "RMCBoxMagazineRifleM4SPRExt",
-      "name": "коробка магазинов (расширенные M4RA 12x)",
+      "name": "Коробка магазинов (расширенные M4RA 12x)",
       "description": "коробка для винтовочных магазинов.",
       "suffix": "Заполненый",
       "origin": "rmc14",
@@ -19643,11 +20016,14 @@
           }
         ],
         "state": "rifle_box"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCBoxMagazineRifleM4SPRExt.png"
     },
     "RMCBoxMagazineRifleM54C": {
       "id": "RMCBoxMagazineRifleM54C",
-      "name": "коробка магазинов (M41A 10x)",
+      "name": "Коробка магазинов (M41A 10x)",
       "description": "коробка для винтовочных магазинов.",
       "suffix": "Заполненый",
       "origin": "rmc14",
@@ -19764,11 +20140,14 @@
           }
         ],
         "state": "rifle_box"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCBoxMagazineRifleM54C.png"
     },
     "RMCBoxMagazineRifleM54CAP": {
       "id": "RMCBoxMagazineRifleM54CAP",
-      "name": "коробка магазинов (ББ M41A 10x)",
+      "name": "Коробка магазинов (ББ M41A 10x)",
       "description": "коробка для винтовочных магазинов.",
       "suffix": "Заполненый",
       "origin": "rmc14",
@@ -19885,11 +20264,14 @@
           }
         ],
         "state": "rifle_box"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCBoxMagazineRifleM54CAP.png"
     },
     "RMCBoxMagazineRifleM54CExt": {
       "id": "RMCBoxMagazineRifleM54CExt",
-      "name": "коробка магазинов (расширенные M41A 8x)",
+      "name": "Коробка магазинов (расширенные M41A 8x)",
       "description": "коробка для винтовочных магазинов.",
       "suffix": "Заполненый",
       "origin": "rmc14",
@@ -20006,11 +20388,14 @@
           }
         ],
         "state": "rifle_box"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCBoxMagazineRifleM54CExt.png"
     },
     "RMCBoxMagazineSMGM63": {
       "id": "RMCBoxMagazineSMGM63",
-      "name": "коробка магазинов (M39 12x)",
+      "name": "Коробка магазинов (M39 12x)",
       "description": "Коробка с магазинами для SMG.",
       "suffix": "Заполненый",
       "origin": "rmc14",
@@ -20127,11 +20512,14 @@
           }
         ],
         "state": "smg_box"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCBoxMagazineSMGM63.png"
     },
     "RMCBoxMagazineSMGM63AP": {
       "id": "RMCBoxMagazineSMGM63AP",
-      "name": "коробка магазинов (ББ M39 12x)",
+      "name": "Коробка магазинов (ББ M39 12x)",
       "description": "Коробка с магазинами для SMG.",
       "suffix": "Заполненый",
       "origin": "rmc14",
@@ -20248,11 +20636,14 @@
           }
         ],
         "state": "smg_box"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCBoxMagazineSMGM63AP.png"
     },
     "RMCBoxMagazineSMGM63Ext": {
       "id": "RMCBoxMagazineSMGM63Ext",
-      "name": "коробка магазинов (расширенные M39 10x)",
+      "name": "Коробка магазинов (расширенные M39 10x)",
       "description": "Коробка с магазинами для SMG.",
       "suffix": "Заполненый",
       "origin": "rmc14",
@@ -20369,11 +20760,14 @@
           }
         ],
         "state": "smg_box"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCBoxMagazineSMGM63Ext.png"
     },
     "RMCBoxShellsBuckshot": {
       "id": "RMCBoxShellsBuckshot",
-      "name": "коробка дроби (картечь)",
+      "name": "Коробка дроби (картечь)",
       "description": "Коробка со снарядами в связке.",
       "suffix": "Заполненый",
       "origin": "rmc14",
@@ -20480,11 +20874,14 @@
           }
         ],
         "state": "rifle_box"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCBoxShellsBuckshot.png"
     },
     "RMCBoxShellsFlechette": {
       "id": "RMCBoxShellsFlechette",
-      "name": "коробка дроби (флешетта)",
+      "name": "Коробка дроби (флешетта)",
       "description": "Коробка со снарядами в связке.",
       "suffix": "Заполненый",
       "origin": "rmc14",
@@ -20591,11 +20988,14 @@
           }
         ],
         "state": "rifle_box"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCBoxShellsFlechette.png"
     },
     "RMCBoxShellsSlugs": {
       "id": "RMCBoxShellsSlugs",
-      "name": "коробка дроби (слаг)",
+      "name": "Коробка дроби (слаг)",
       "description": "Коробка со снарядами в связке.",
       "suffix": "Заполненый",
       "origin": "rmc14",
@@ -20702,11 +21102,14 @@
           }
         ],
         "state": "rifle_box"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCBoxShellsSlugs.png"
     },
     "RMCBoxShotgunBuckshot": {
       "id": "RMCBoxShotgunBuckshot",
-      "name": "коробка патронами для дробовика",
+      "name": "Коробка патронами для дробовика",
       "description": "Коробка с дробовыми патронами. Калибр 12.",
       "suffix": "",
       "origin": "rmc14",
@@ -20816,11 +21219,14 @@
           }
         ],
         "state": "smallshell_box"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCBoxShotgunBuckshot.png"
     },
     "RMCBoxShotgunFlechette": {
       "id": "RMCBoxShotgunFlechette",
-      "name": "коробка флешеттой",
+      "name": "Коробка флешеттой",
       "description": "Коробка с дротиками для дробовика. Калибр 12.",
       "suffix": "",
       "origin": "rmc14",
@@ -20930,11 +21336,14 @@
           }
         ],
         "state": "smallshell_box"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCBoxShotgunFlechette.png"
     },
     "RMCBoxShotgunSlugs": {
       "id": "RMCBoxShotgunSlugs",
-      "name": "коробка с пулями",
+      "name": "Коробка с пулями",
       "description": "Коробка со свинцовыми пулями для дробовика.  Классика. Калибр 12.",
       "suffix": "",
       "origin": "rmc14",
@@ -21044,7 +21453,10 @@
           }
         ],
         "state": "smallshell_box"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCBoxShotgunSlugs.png"
     },
     "RMCBullet458SOCOM": {
       "id": "RMCBullet458SOCOM",
@@ -21222,7 +21634,7 @@
     },
     "RMCBulletHMG10x28mm": {
       "id": "RMCBulletHMG10x28mm",
-      "name": "пуля (10x28мм)",
+      "name": "Пуля (10x28мм)",
       "description": "Если вы можете видеть это, вы, вероятно, мертвы!",
       "suffix": "",
       "origin": "rmc14",
@@ -21307,7 +21719,7 @@
     },
     "RMCBulletHMG10x28mmTungsten": {
       "id": "RMCBulletHMG10x28mmTungsten",
-      "name": "пуля (10x28 мм, вольфрам)",
+      "name": "Пуля (10x28 мм, вольфрам)",
       "description": "Если вы можете видеть это, вы, вероятно, мертвы!",
       "suffix": "",
       "origin": "rmc14",
@@ -21400,7 +21812,7 @@
     },
     "RMCBulletPistol45ACP": {
       "id": "RMCBulletPistol45ACP",
-      "name": "пуля (.45 ACP)",
+      "name": "Пуля (.45 ACP)",
       "description": "Если вы можете видеть это, вы, вероятно, мертвы!",
       "suffix": "",
       "origin": "rmc14",
@@ -21468,7 +21880,7 @@
     },
     "RMCBulletPistol9mmHP": {
       "id": "RMCBulletPistol9mmHP",
-      "name": "пуля (9 мм с полой головной частью)",
+      "name": "Пуля (9 мм с полой головной частью)",
       "description": "Если вы можете видеть это, вы, вероятно, мертвы!",
       "suffix": "",
       "origin": "rmc14",
@@ -21531,7 +21943,7 @@
     },
     "RMCBulletRevolver44Marksman": {
       "id": "RMCBulletRevolver44Marksman",
-      "name": "пуля (.44 снайперская)",
+      "name": "Пуля (.44 снайперская)",
       "description": "Если вы можете видеть это, вы, вероятно, мертвы!",
       "suffix": "",
       "origin": "rmc14",
@@ -21612,7 +22024,7 @@
     },
     "RMCCartridge458SOCOM": {
       "id": "RMCCartridge458SOCOM",
-      "name": "горсть пуль .458 SOCOM",
+      "name": "Горсть пуль .458 SOCOM",
       "description": "Горсть патронов для перезарядки на ходу.",
       "suffix": "",
       "origin": "rmc14",
@@ -21714,7 +22126,7 @@
     },
     "RMCCartridge7x45mm": {
       "id": "RMCCartridge7x45mm",
-      "name": "гвоздь (7x45 мм)",
+      "name": "Гвоздь (7x45 мм)",
       "description": "{ \"\" }",
       "suffix": "",
       "origin": "rmc14",
@@ -21792,7 +22204,7 @@
     },
     "RMCCartridgeAutoPistol": {
       "id": "RMCCartridgeAutoPistol",
-      "name": "патрон (10x20мм БПК)",
+      "name": "Патрон (10x20мм БПК)",
       "description": "{ \"\" }",
       "suffix": "",
       "origin": "rmc14",
@@ -21871,7 +22283,7 @@
     },
     "RMCCartridgeHMG10x28mm": {
       "id": "RMCCartridgeHMG10x28mm",
-      "name": "патрон (10x28мм)",
+      "name": "Патрон (10x28мм)",
       "description": "{ \"\" }",
       "suffix": "",
       "origin": "rmc14",
@@ -21949,7 +22361,7 @@
     },
     "RMCCartridgeHMG10x28mmTungsten": {
       "id": "RMCCartridgeHMG10x28mmTungsten",
-      "name": "патрон (10x28 мм, вольфрамовый)",
+      "name": "Патрон (10x28 мм, вольфрамовый)",
       "description": "{ \"\" }",
       "suffix": "",
       "origin": "rmc14",
@@ -22027,7 +22439,7 @@
     },
     "RMCCartridgePistol45ACP": {
       "id": "RMCCartridgePistol45ACP",
-      "name": "патрон (.45 ACP)",
+      "name": "Патрон (.45 ACP)",
       "description": "{ \"\" }",
       "suffix": "",
       "origin": "rmc14",
@@ -22106,7 +22518,7 @@
     },
     "RMCCartridgePistol9mmHP": {
       "id": "RMCCartridgePistol9mmHP",
-      "name": "патрон (9 мм с полой головной частью)",
+      "name": "Патрон (9 мм с полой головной частью)",
       "description": "{ \"\" }",
       "suffix": "",
       "origin": "rmc14",
@@ -22185,7 +22597,7 @@
     },
     "RMCCartridgePistol9mmSquashHead": {
       "id": "RMCCartridgePistol9mmSquashHead",
-      "name": "патрон (9 мм Squash-Head)",
+      "name": "Патрон (9 мм Squash-Head)",
       "description": "{ \"\" }",
       "suffix": "",
       "origin": "rmc14",
@@ -22264,7 +22676,7 @@
     },
     "RMCCartridgeRevolver44": {
       "id": "RMCCartridgeRevolver44",
-      "name": "патрон (.44)",
+      "name": "Патрон (.44)",
       "description": "{ \"\" }",
       "suffix": "",
       "origin": "rmc14",
@@ -22342,7 +22754,7 @@
     },
     "RMCCartridgeRevolver44Marksman": {
       "id": "RMCCartridgeRevolver44Marksman",
-      "name": "патрон (.44 снайперский)",
+      "name": "Патрон (.44 снайперский)",
       "description": "{ \"\" }",
       "suffix": "",
       "origin": "rmc14",
@@ -22420,7 +22832,7 @@
     },
     "RMCCaseFlamer": {
       "id": "RMCCaseFlamer",
-      "name": "кейс огнемета M240A1",
+      "name": "Кейс огнемета M240A1",
       "description": "Оружейный кейс, содержащий установку для сжигания M240A1. Он поставляется заряженным, но вам все равно придется искать дополнительные баки по ходу дела.",
       "suffix": "",
       "origin": "rmc14",
@@ -22524,7 +22936,7 @@
     },
     "RMCCaseXM88": {
       "id": "RMCCaseXM88",
-      "name": "кейс тяжелой винтовки XM88",
+      "name": "Кейс тяжелой винтовки XM88",
       "description": "Оружейный кейс с тяжелой винтовкой XM88 Heavy Rifle — прототипом оружия, предназначенного для борьбы с тяжелобронированными пехотными целями и легкими транспортными средствами. Содержит пояс для боеприпасов, два ящика с патронами, насадку XS-9 Targeting Relay и ложе для винтовки.",
       "suffix": "",
       "origin": "rmc14",
@@ -22639,7 +23051,7 @@
     },
     "RMCExplosiveBreachingCharge": {
       "id": "RMCExplosiveBreachingCharge",
-      "name": "взрывной заряд",
+      "name": "Взрывной заряд",
       "description": "Взрывное устройство, используемое для проникновения в помещения и защищающее пользователя от взрыва, а также разбрасывающее смертоносную шрапнель с другой стороны.",
       "suffix": "",
       "origin": "rmc14",
@@ -22711,11 +23123,14 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Взрывчатка",
+      "public": true,
+      "image": "equipment-sprites/RMCExplosiveBreachingCharge.png"
     },
     "RMCExplosiveClaymoreMine": {
       "id": "RMCExplosiveClaymoreMine",
-      "name": "противопехотная мина М20 \"Клеймор\"",
+      "name": "Противопехотная мина М20 \"Клеймор\"",
       "description": "Мина M20 Claymore — это направленная противопехотная мина с бесконтактным срабатыванием, разработанная компанией Aegis Armaments для использования Корпусом морской пехоты США. Мина срабатывает при движении в пространстве непосредственно перед ней. При детонации осколки разлетаются вперед в конусе с углом 120 градусов. На передней части мины выгравирована надпись \"Вперед, к врагу\".",
       "suffix": "",
       "origin": "rmc14",
@@ -22794,11 +23209,14 @@
           }
         ],
         "state": "icon"
-      }
+      },
+      "category": "Взрывчатка",
+      "public": true,
+      "image": "equipment-sprites/RMCExplosiveClaymoreMine.png"
     },
     "RMCExplosivePlastic": {
       "id": "RMCExplosivePlastic",
-      "name": "пластичная взрывчатка",
+      "name": "Пластичная взрывчатка",
       "description": "Используется для проделывания отверстий в определенных местах без лишних дырок.",
       "suffix": "",
       "origin": "rmc14",
@@ -22870,11 +23288,14 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Взрывчатка",
+      "public": true,
+      "image": "equipment-sprites/RMCExplosivePlastic.png"
     },
     "RMCFlareBullet": {
       "id": "RMCFlareBullet",
-      "name": "сигнальная ракета",
+      "name": "Сигнальная ракета",
       "description": "Если вы можете видеть это, вы, вероятно, мертвы!",
       "suffix": "",
       "origin": "rmc14",
@@ -22943,7 +23364,7 @@
     },
     "RMCFlareCAS": {
       "id": "RMCFlareCAS",
-      "name": "сигнальная ракета",
+      "name": "Сигнальная ракета",
       "description": "Зеленая сигнальная ракета, выпущенная КМП США. Телеметрический компьютер работает на химической реакции, в результате которой выделяется дым и свет, и поэтому работает только во время горения сигнальной ракеты.",
       "suffix": "",
       "origin": "rmc14",
@@ -23038,7 +23459,7 @@
     },
     "RMCFlareCASBullet": {
       "id": "RMCFlareCASBullet",
-      "name": "сигнальная ракета осветительная",
+      "name": "Сигнальная ракета осветительная",
       "description": "Если вы можете видеть это, вы, вероятно, мертвы!",
       "suffix": "",
       "origin": "rmc14",
@@ -23107,7 +23528,7 @@
     },
     "RMCFlashlight": {
       "id": "RMCFlashlight",
-      "name": "фонарик",
+      "name": "Фонарик",
       "description": "Ручной аварийный фонарь.",
       "suffix": "",
       "origin": "rmc14",
@@ -23198,11 +23619,14 @@
           }
         ],
         "state": "flashlight"
-      }
+      },
+      "category": "Ближний бой",
+      "public": true,
+      "image": "equipment-sprites/RMCFlashlight.png"
     },
     "RMCFulton20": {
       "id": "RMCFulton20",
-      "name": "фултон",
+      "name": "Фултон",
       "description": "Система, используемая КМП США для извлечения объектов, представляющих интерес на земле, из дропшипа AUD-25. Может использоваться для извлечения нежизнеспособных трупов или ящиков, обычно длится около 3 минут в воздухе.",
       "suffix": "20",
       "origin": "rmc14",
@@ -23266,11 +23690,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Tools/fulton.rsi",
         "state": "fulton"
-      }
+      },
+      "category": "Прочее",
+      "public": true,
+      "image": "equipment-sprites/RMCFulton20.png"
     },
     "RMCGrenadeIncendiary": {
       "id": "RMCGrenadeIncendiary",
-      "name": "зажигательная граната M40 ЗКГ",
+      "name": "Зажигательная граната M40 ЗКГ",
       "description": "M40 ЗКГ — это небольшая, но обманчиво сильная зажигательная граната, предназначенная для нарушения подвижности противника с помощью напалма типа B длительного действия. Она детонирует через 4 секунды.",
       "suffix": "",
       "origin": "rmc14",
@@ -23352,7 +23779,10 @@
           }
         ],
         "state": "icon"
-      }
+      },
+      "category": "Взрывчатка",
+      "public": true,
+      "image": "equipment-sprites/RMCGrenadeIncendiary.png"
     },
     "RMCGrenadeWhitePhosphorusCompound": {
       "id": "RMCGrenadeWhitePhosphorusCompound",
@@ -23440,11 +23870,14 @@
           }
         ],
         "state": "icon"
-      }
+      },
+      "category": "Взрывчатка",
+      "public": true,
+      "image": "equipment-sprites/RMCGrenadeWhitePhosphorusCompound.png"
     },
     "RMCGunCasePistolM13": {
       "id": "RMCGunCasePistolM13",
-      "name": "кейс автоматического пистолета M10",
+      "name": "Кейс автоматического пистолета M10",
       "description": "Оружейный кейс, содержащий необходимые крепления для сборки кастомного автоматического пистолета M10. В комплекте два удлиненных и два удлиненных бронебойных магазина.",
       "suffix": "",
       "origin": "rmc14",
@@ -23567,7 +24000,7 @@
     },
     "RMCGunCasePistolMK80": {
       "id": "RMCGunCasePistolMK80",
-      "name": "кейс пистолета VP78",
+      "name": "Кейс пистолета VP78",
       "description": "Футляр для пистолета VP78. Поставляется с двумя магазинами.",
       "suffix": "",
       "origin": "rmc14",
@@ -23665,7 +24098,7 @@
     },
     "RMCGunCasePistolSmart": {
       "id": "RMCGunCasePistolSmart",
-      "name": "кейс пистолета SU-6",
+      "name": "Кейс пистолета SU-6",
       "description": "Оружейный кейс, содержащий умный пистолет SU-6. Поставляется с полной кобурой на пояс.",
       "suffix": "",
       "origin": "rmc14",
@@ -23762,7 +24195,7 @@
     },
     "RMCGunCaseRifleM54CE2": {
       "id": "RMCGunCaseRifleM54CE2",
-      "name": "кейс тяжелой штурмовой винтовки M41AE2",
+      "name": "Кейс тяжелой штурмовой винтовки M41AE2",
       "description": "Чехол для оружия, содержащий тяжелую штурмовую винтовку M41AE2. Получить дополнительные боеприпасы можно на реквизициях.",
       "suffix": "",
       "origin": "rmc14",
@@ -23864,7 +24297,7 @@
     },
     "RMCHornetShellM74AGMS": {
       "id": "RMCHornetShellM74AGMS",
-      "name": "шрапнель \"Шершень\" M74 БВГ-Ш 40мм",
+      "name": "Шрапнель \"Шершень\" M74 БВГ-Ш 40мм",
       "description": "Функционирует идентично стандартной БВГ-Ф 40-мм гранате, за исключением того, что вместо взрыва шрапнелью, шрапнель \"Шершень\" выстреливает самонаводящимися голографическими пулями калибра .22lr. Эквивалент картечи на дистанции.",
       "suffix": "",
       "origin": "rmc14",
@@ -23940,11 +24373,14 @@
           }
         ],
         "state": "grenade_hornet"
-      }
+      },
+      "category": "Взрывчатка",
+      "public": true,
+      "image": "equipment-sprites/RMCHornetShellM74AGMS.png"
     },
     "RMCIntelDetector": {
       "id": "RMCIntelDetector",
-      "name": "детектор данных",
+      "name": "Детектор данных",
       "description": "Устройство, обнаруживающее объекты, которые могут быть полезны для сбора информации.",
       "suffix": "",
       "origin": "rmc14",
@@ -24013,11 +24449,14 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Прочее",
+      "public": true,
+      "image": "equipment-sprites/RMCIntelDetector.png"
     },
     "RMCLaserDesignator": {
       "id": "RMCLaserDesignator",
-      "name": "лазерный целеуказатель",
+      "name": "Лазерный целеуказатель",
       "description": "Лазерный целеуказатель с двумя режимами: маркировка цели для CAS с помощью ИК-лазера и дальномер. Нажмите на плитку, чтобы навести на цель.",
       "suffix": "Джунгли",
       "origin": "rmc14",
@@ -24091,11 +24530,14 @@
             "state": "laser_cas"
           }
         ]
-      }
+      },
+      "category": "Прочее",
+      "public": true,
+      "image": "equipment-sprites/RMCLaserDesignator.png"
     },
     "RMCM276ShotgunShellLoadingRig": {
       "id": "RMCM276ShotgunShellLoadingRig",
-      "name": "пояс M276 заряжания патронов дробовика",
+      "name": "Пояс M276 заряжания патронов дробовика",
       "description": "Пояс для боеприпасов, предназначенный для хранения дробовых патронов.",
       "suffix": "",
       "origin": "rmc14",
@@ -24209,11 +24651,14 @@
             "visible": false
           }
         ]
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCM276ShotgunShellLoadingRig.png"
     },
     "RMCM2CCase": {
       "id": "RMCM2CCase",
-      "name": "кейс станкового пулемета M2C",
+      "name": "Кейс станкового пулемета M2C",
       "description": "Оружейный кейс, содержащий станковый пулемет M2C. Поставляется с четыремя магазинами",
       "suffix": "",
       "origin": "rmc14",
@@ -24327,7 +24772,7 @@
     },
     "RMCM2CMount": {
       "id": "RMCM2CMount",
-      "name": "станковый пулемет M2C",
+      "name": "Станковый пулемет M2C",
       "description": "Разобранный крупнокалиберный пулемет M2C со сложенными телескопическими штативами, неспособный вести огонь.",
       "suffix": "",
       "origin": "rmc14",
@@ -24436,11 +24881,14 @@
             "visible": false
           }
         ]
-      }
+      },
+      "category": "Прочее",
+      "public": true,
+      "image": "equipment-sprites/RMCM2CMount.png"
     },
     "RMCM300SOCOMBelt": {
       "id": "RMCM300SOCOMBelt",
-      "name": "снаряжение M300 по образцу .458 SOCOM",
+      "name": "Снаряжение M300 по образцу .458 SOCOM",
       "description": "Патронный пояс, предназначенный для хранения крупных пуль калибра .458 SOCOM для тяжелой винтовки XM88.",
       "suffix": "",
       "origin": "rmc14",
@@ -24534,11 +24982,14 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCM300SOCOMBelt.png"
     },
     "RMCM54CMK1Case": {
       "id": "RMCM54CMK1Case",
-      "name": "кейс штурмовой винтовки M41A MK1",
+      "name": "Кейс штурмовой винтовки M41A MK1",
       "description": "Оружейный кейс, содержащий штурмовую винтовку M41A MK1. В нем могут использоваться только фирменные магазины MK1.",
       "suffix": "",
       "origin": "rmc14",
@@ -24638,7 +25089,7 @@
     },
     "RMCM5Bayonet": {
       "id": "RMCM5Bayonet",
-      "name": "штык-нож M5 \"Ночной рейдер\"",
+      "name": "Штык-нож M5 \"Ночной рейдер\"",
       "description": "Стандартный штык морской пехоты. Этот нож можно засунуть в сапоги.",
       "suffix": "",
       "origin": "rmc14",
@@ -24734,6 +25185,7 @@
           "sprite": "_RMC14/Objects/Weapons/Melee/m5_bayonet.rsi"
         },
         "MeleeWeapon": {
+          "angle": 0,
           "wideAnimationRotation": -135,
           "damage": {
             "types": {
@@ -24761,11 +25213,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Weapons/Melee/m5_bayonet.rsi",
         "state": "icon"
-      }
+      },
+      "category": "Обвесы",
+      "public": true,
+      "image": "equipment-sprites/RMCM5Bayonet.png"
     },
     "RMCM82FHolster": {
       "id": "RMCM82FHolster",
-      "name": "разгрузочный пояс M276 для сигнального пистолета M82F.",
+      "name": "Разгрузочный пояс M276 для сигнального пистолета M82F.",
       "description": "M276 – стандартное снаряжение КМС США. Представляет собой модульный ремень с различными креплениями. Эта версия предназначена для сигнального пистолета M82F и может дополнительно вмещать до 16 ракет.",
       "suffix": "",
       "origin": "rmc14",
@@ -24885,11 +25340,14 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCM82FHolster.png"
     },
     "RMCM85A1Case": {
       "id": "RMCM85A1Case",
-      "name": "кейс гранатомета M79",
+      "name": "Кейс гранатомета M79",
       "description": "Оружейный кейс, содержащий гранатомет M79. Поставляется с тремя различными пакетами гранат",
       "suffix": "",
       "origin": "rmc14",
@@ -24992,7 +25450,7 @@
     },
     "RMCMK80": {
       "id": "RMCMK80",
-      "name": "пистолет VP78",
+      "name": "Пистолет VP78",
       "description": "Мощный и надёжный полуавтоматический пистолет под патрон 9 мм \"squash-head\". Распространён в UA и 3WE, часто встречается как у наёмников Ве-Я, так и у корпоративных руководителей. Также проходит ограниченное испытание в составе программы морских пехотинцев по созданию нового поколения пистолетов. Затвор гравирован логотипом Ве-Я, что напоминает, кто здесь главный.",
       "suffix": "",
       "origin": "rmc14",
@@ -25228,11 +25686,14 @@
           }
         ],
         "state": "base"
-      }
+      },
+      "category": "Оружие",
+      "public": true,
+      "image": "equipment-sprites/RMCMK80.png"
     },
     "RMCML66DCase": {
       "id": "RMCML66DCase",
-      "name": "кейс станкового пулемета M56D",
+      "name": "Кейс станкового пулемета M56D",
       "description": "Оружейный кейс, содержащий станковый пулемет M56D. Поставляется с двумя магазинами",
       "suffix": "",
       "origin": "rmc14",
@@ -25352,7 +25813,7 @@
     },
     "RMCML66DMount": {
       "id": "RMCML66DMount",
-      "name": "тренога M56D",
+      "name": "Тренога M56D",
       "description": "Складная тренога для M56D, обеспечивает устойчивость устройства.",
       "suffix": "Folded",
       "origin": "rmc14",
@@ -25465,11 +25926,14 @@
             "visible": false
           }
         ]
-      }
+      },
+      "category": "Прочее",
+      "public": true,
+      "image": "equipment-sprites/RMCML66DMount.png"
     },
     "RMCMOU53Case": {
       "id": "RMCMOU53Case",
-      "name": "кейс ружья MOU53",
+      "name": "Кейс ружья MOU53",
       "description": "Оружейный кейс с ружьем MOU53. Он поставляется заряженным, но вам все равно придется искать боеприпасы по ходу дела.",
       "suffix": "",
       "origin": "rmc14",
@@ -25566,7 +26030,7 @@
     },
     "RMCMagazineM2C": {
       "id": "RMCMagazineM2C",
-      "name": "короб для патронов M2C (10x28мм вольфрамовые сердечники)",
+      "name": "Короб для патронов M2C (10x28мм вольфрамовые сердечники)",
       "description": "Короб из 125 безгильзовых вольфрамовых патронов 10x28 мм для крупнокалиберного пулемета M2C.",
       "suffix": "",
       "origin": "rmc14",
@@ -25654,11 +26118,14 @@
           }
         ],
         "state": "base"
-      }
+      },
+      "category": "Боеприпасы",
+      "public": true,
+      "image": "equipment-sprites/RMCMagazineM2C.png"
     },
     "RMCMagazineML66D": {
       "id": "RMCMagazineML66D",
-      "name": "короб для патронов M56D (10x28мм)",
+      "name": "Короб для патронов M56D (10x28мм)",
       "description": "Короб из 700 безгильзовых вольфрамовых патронов калибра 10x28 мм для крупнокалиберного пулемета M56D.",
       "suffix": "",
       "origin": "rmc14",
@@ -25746,11 +26213,14 @@
           }
         ],
         "state": "base"
-      }
+      },
+      "category": "Боеприпасы",
+      "public": true,
+      "image": "equipment-sprites/RMCMagazineML66D.png"
     },
     "RMCMagazinePistolM13": {
       "id": "RMCMagazinePistolM13",
-      "name": "магазин M10 HV (10x20 мм)",
+      "name": "Магазин M10 HV (10x20 мм)",
       "description": "A pistol magazine.",
       "suffix": "",
       "origin": "rmc14",
@@ -25839,11 +26309,14 @@
           }
         ],
         "state": "base"
-      }
+      },
+      "category": "Боеприпасы",
+      "public": true,
+      "image": "equipment-sprites/RMCMagazinePistolM13.png"
     },
     "RMCMagazinePistolM13Ext": {
       "id": "RMCMagazinePistolM13Ext",
-      "name": "увеличенный магазин M10 HV (10x20 мм)",
+      "name": "Увеличенный магазин M10 HV (10x20 мм)",
       "description": "A pistol magazine.",
       "suffix": "",
       "origin": "rmc14",
@@ -25932,11 +26405,14 @@
           }
         ],
         "state": "base"
-      }
+      },
+      "category": "Боеприпасы",
+      "public": true,
+      "image": "equipment-sprites/RMCMagazinePistolM13Ext.png"
     },
     "RMCMagazinePistolM1984AP": {
       "id": "RMCMagazinePistolM1984AP",
-      "name": "магазин M4A3 ББ (9 мм)",
+      "name": "Магазин M4A3 ББ (9 мм)",
       "description": "Пистолетный магазин. Содержит бронебойные пули, обладающие заметно большей убойной силой по хорошо бронированным целям и заметно меньшей — по небронированным или легкобронированным.",
       "suffix": "",
       "origin": "rmc14",
@@ -26027,11 +26503,14 @@
           }
         ],
         "state": "base"
-      }
+      },
+      "category": "Боеприпасы",
+      "public": true,
+      "image": "equipment-sprites/RMCMagazinePistolM1984AP.png"
     },
     "RMCMagazinePistolM1984HP": {
       "id": "RMCMagazinePistolM1984HP",
-      "name": "магазин M4A3 с полой головной частью (9 мм)",
+      "name": "Магазин M4A3 с полой головной частью (9 мм)",
       "description": "Пистолетный магазин M4A3 калибра 9 мм с пулями с полой головной частью. Эти пули с полой головной частью обладают заметно большей убойной силой по небронированным целям и заметно меньшей — по бронированным.",
       "suffix": "",
       "origin": "rmc14",
@@ -26122,11 +26601,14 @@
           }
         ],
         "state": "base"
-      }
+      },
+      "category": "Боеприпасы",
+      "public": true,
+      "image": "equipment-sprites/RMCMagazinePistolM1984HP.png"
     },
     "RMCMagazinePistolSU6": {
       "id": "RMCMagazinePistolSU6",
-      "name": "магазин SU-6 (.45 ACP)",
+      "name": "Магазин SU-6 (.45 ACP)",
       "description": "A pistol magazine.",
       "suffix": "",
       "origin": "rmc14",
@@ -26214,11 +26696,14 @@
           }
         ],
         "state": "base"
-      }
+      },
+      "category": "Боеприпасы",
+      "public": true,
+      "image": "equipment-sprites/RMCMagazinePistolSU6.png"
     },
     "RMCMagazineSMGNailgun": {
       "id": "RMCMagazineSMGNailgun",
-      "name": "магазин для гвоздомёта (7x45 мм)",
+      "name": "Магазин для гвоздомёта (7x45 мм)",
       "description": "Большой магазин крупногабаритных пласталевых гвоздей. К сожалению, стоимость производства этих гвоздей делает их недоступными для большинства военных проектов, и только некоторые специфические строительные проекты требуют их использования.",
       "suffix": "",
       "origin": "rmc14",
@@ -26306,11 +26791,14 @@
           }
         ],
         "state": "base"
-      }
+      },
+      "category": "Боеприпасы",
+      "public": true,
+      "image": "equipment-sprites/RMCMagazineSMGNailgun.png"
     },
     "RMCMagazineSmartGun": {
       "id": "RMCMagazineSmartGun",
-      "name": "боевой магазин M56B (10x30 мм)",
+      "name": "Боевой магазин M56B (10x30 мм)",
       "description": "{ \"\" }",
       "suffix": "",
       "origin": "rmc14",
@@ -26398,11 +26886,14 @@
           }
         ],
         "state": "base"
-      }
+      },
+      "category": "Боеприпасы",
+      "public": true,
+      "image": "equipment-sprites/RMCMagazineSmartGun.png"
     },
     "RMCMotionDetector": {
       "id": "RMCMotionDetector",
-      "name": "детектор движения",
+      "name": "Детектор движения",
       "description": "Устройство, которое обнаруживает движение, но игнорирует пехотинцев.",
       "suffix": "",
       "origin": "rmc14",
@@ -26481,7 +26972,10 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Прочее",
+      "public": true,
+      "image": "equipment-sprites/RMCMotionDetector.png"
     },
     "RMCNail7x45mm": {
       "id": "RMCNail7x45mm",
@@ -26570,7 +27064,7 @@
     },
     "RMCOuterClothingExternalWebbing": {
       "id": "RMCOuterClothingExternalWebbing",
-      "name": "внешняя разгрузка",
+      "name": "Внешняя разгрузка",
       "description": "Предназначена для ношения поверх комбинезона, а не для застегивания.",
       "suffix": "",
       "origin": "rmc14",
@@ -26640,7 +27134,10 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Clothing/OuterClothing/Misc/external_webbing.rsi",
         "state": "icon"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCOuterClothingExternalWebbing.png"
     },
     "RMCOverwatchCameraTripod": {
       "id": "RMCOverwatchCameraTripod",
@@ -26714,7 +27211,10 @@
           }
         ],
         "state": "undeployed"
-      }
+      },
+      "category": "Прочее",
+      "public": true,
+      "image": "equipment-sprites/RMCOverwatchCameraTripod.png"
     },
     "RMCPDTBracelet": {
       "id": "RMCPDTBracelet",
@@ -26894,7 +27394,7 @@
     },
     "RMCPackFlareCAS": {
       "id": "RMCPackFlareCAS",
-      "name": "упаковка сигнальных ракет M89-S",
+      "name": "Упаковка сигнальных ракет M89-S",
       "description": "Упаковка из восьми сигнальных ракет M89-S.",
       "suffix": "Заполненный",
       "origin": "rmc14",
@@ -26979,11 +27479,14 @@
           }
         ],
         "state": "m89_e"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCPackFlareCAS.png"
     },
     "RMCPacketGrenadeBatonSlugHIRRFilled": {
       "id": "RMCPacketGrenadeBatonSlugHIRRFilled",
-      "name": "коробка картечи РПУВ",
+      "name": "Коробка картечи РПУВ",
       "description": "Содержит три патрона картечи РПУВ.",
       "suffix": "Заполненный",
       "origin": "rmc14",
@@ -27083,11 +27586,14 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Взрывчатка",
+      "public": true,
+      "image": "equipment-sprites/RMCPacketGrenadeBatonSlugHIRRFilled.png"
     },
     "RMCPacketGrenadeIncendiaryFilled": {
       "id": "RMCPacketGrenadeIncendiaryFilled",
-      "name": "коробка гранат ЗКГ",
+      "name": "Коробка гранат ЗКГ",
       "description": "В нем находятся три зажигательные гранаты ЗКГ.",
       "suffix": "Заполненный",
       "origin": "rmc14",
@@ -27187,11 +27693,14 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Взрывчатка",
+      "public": true,
+      "image": "equipment-sprites/RMCPacketGrenadeIncendiaryFilled.png"
     },
     "RMCPacketGrenadeM74AGMFFilled": {
       "id": "RMCPacketGrenadeM74AGMFFilled",
-      "name": "коробка гранат M74 БВГ-Ф",
+      "name": "Коробка гранат M74 БВГ-Ф",
       "description": "Содержит три осколочные гранаты воздушного взрыва M74 БВГ-Фрагмент.",
       "suffix": "Заполненный",
       "origin": "rmc14",
@@ -27291,11 +27800,14 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Взрывчатка",
+      "public": true,
+      "image": "equipment-sprites/RMCPacketGrenadeM74AGMFFilled.png"
     },
     "RMCPacketGrenadeM74AGMIFilled": {
       "id": "RMCPacketGrenadeM74AGMIFilled",
-      "name": "коробка гранат M74 БВГ-З",
+      "name": "Коробка гранат M74 БВГ-З",
       "description": "Содержит три зажигательные гранаты воздушного взрыва M74 БВГ-Зажигательный.",
       "suffix": "Заполненный",
       "origin": "rmc14",
@@ -27395,11 +27907,14 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Взрывчатка",
+      "public": true,
+      "image": "equipment-sprites/RMCPacketGrenadeM74AGMIFilled.png"
     },
     "RMCPacketGrenadeM74AGMSFilled": {
       "id": "RMCPacketGrenadeM74AGMSFilled",
-      "name": "коробка гранат M74 БВГ-Д",
+      "name": "Коробка гранат M74 БВГ-Д",
       "description": "Содержит три дымовые гранаты воздушного взрыва M74 БВГ-Дым.",
       "suffix": "Заполненный",
       "origin": "rmc14",
@@ -27499,11 +28014,14 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Взрывчатка",
+      "public": true,
+      "image": "equipment-sprites/RMCPacketGrenadeM74AGMSFilled.png"
     },
     "RMCPacketGrenadeM74AGMSHornetFilled": {
       "id": "RMCPacketGrenadeM74AGMSHornetFilled",
-      "name": "коробка гранат \"Шершень\" M74 БВГ-Ш",
+      "name": "Коробка гранат \"Шершень\" M74 БВГ-Ш",
       "description": "Содержит три гранаты воздушного взрыва \"Шершень\" M74 БВГ-Ш.",
       "suffix": "Заполненный",
       "origin": "rmc14",
@@ -27603,11 +28121,14 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Взрывчатка",
+      "public": true,
+      "image": "equipment-sprites/RMCPacketGrenadeM74AGMSHornetFilled.png"
     },
     "RMCPacketGrenadeM74AGMSStarShellFilled": {
       "id": "RMCPacketGrenadeM74AGMSStarShellFilled",
-      "name": "коробка осветительных гранат M74 БВГ-Ш",
+      "name": "Коробка осветительных гранат M74 БВГ-Ш",
       "description": "Содержит три осветительные гранаты воздушного взрыва M74 БВГ-Ш Звездопад.",
       "suffix": "Заполненный",
       "origin": "rmc14",
@@ -27707,11 +28228,14 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Взрывчатка",
+      "public": true,
+      "image": "equipment-sprites/RMCPacketGrenadeM74AGMSStarShellFilled.png"
     },
     "RMCPacketGrenadeSmokeFilled": {
       "id": "RMCPacketGrenadeSmokeFilled",
-      "name": "коробка гранат ДГДН",
+      "name": "Коробка гранат ДГДН",
       "description": "Он содержит три дымовые гранаты ДГДН.",
       "suffix": "Заполненный",
       "origin": "rmc14",
@@ -27811,7 +28335,10 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Взрывчатка",
+      "public": true,
+      "image": "equipment-sprites/RMCPacketGrenadeSmokeFilled.png"
     },
     "RMCPacketGrenadeWhitePhosphorusCompoundFilled": {
       "id": "RMCPacketGrenadeWhitePhosphorusCompoundFilled",
@@ -27915,11 +28442,14 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Взрывчатка",
+      "public": true,
+      "image": "equipment-sprites/RMCPacketGrenadeWhitePhosphorusCompoundFilled.png"
     },
     "RMCPamphletHeavyMachineGunner": {
       "id": "RMCPamphletHeavyMachineGunner",
-      "name": "брошюра с инструкциями для операторов станкового пулемета",
+      "name": "Брошюра с инструкциями для операторов станкового пулемета",
       "description": "Брошюра, предназначенная для быстрого распространения важной информации. На этой брошюре изображены инженерная эмблема и эмблема пулеметчика.",
       "suffix": "",
       "origin": "rmc14",
@@ -27971,11 +28501,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Misc/pamphlets.rsi",
         "state": "pamphlet_machinegunner"
-      }
+      },
+      "category": "Прочее",
+      "public": true,
+      "image": "equipment-sprites/RMCPamphletHeavyMachineGunner.png"
     },
     "RMCParachute": {
       "id": "RMCParachute",
-      "name": "парашют",
+      "name": "Парашют",
       "description": "На удивление маленький, но громоздкий ранец с достаточным количеством страховочных ремней, чтобы отдел исследований и разработок прошел проверку по технике безопасности. На этикетке указано, что в комплекте два парашюта — основной и запасной, но вы сомневаетесь, что в ранец поместится хотя бы один.",
       "suffix": "",
       "origin": "rmc14",
@@ -28041,11 +28574,14 @@
           }
         ],
         "state": "icon"
-      }
+      },
+      "category": "Прочее",
+      "public": true,
+      "image": "equipment-sprites/RMCParachute.png"
     },
     "RMCPouchAutoinjector": {
       "id": "RMCPouchAutoinjector",
-      "name": "подсумок автоинъекторов",
+      "name": "Подсумок автоинъекторов",
       "description": "Подсумок специально для автоинъекторов.",
       "suffix": "",
       "origin": "rmc14",
@@ -28131,12 +28667,21 @@
         "ColMarTechCargoGuns"
       ],
       "sprite": {
-        "sprite": "_RMC14/Objects/Clothing/Pouches/injectors.rsi"
-      }
+        "sprite": "_RMC14/Objects/Clothing/Pouches/injectors.rsi",
+        "layers": [
+          {
+            "state": "icon"
+          }
+        ],
+        "state": "icon"
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCPouchAutoinjector.png"
     },
     "RMCPouchBayonetFill": {
       "id": "RMCPouchBayonetFill",
-      "name": "ножны для штыка",
+      "name": "Ножны для штыка",
       "description": "Нож для встречи с вами!",
       "suffix": "Заполненный",
       "origin": "rmc14",
@@ -28237,11 +28782,14 @@
           }
         ],
         "state": "icon"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCPouchBayonetFill.png"
     },
     "RMCPouchConstruction": {
       "id": "RMCPouchConstruction",
-      "name": "строительный подсумок",
+      "name": "Строительный подсумок",
       "description": "Предназначен для хранения строительных материалов — листов стекла/металла, металлических прутьев, колючей проволоки, мотков кабеля и пустых мешков с песком. Также в нем есть два крючка для траншейного инструмента и заменителя света.",
       "suffix": "",
       "origin": "rmc14",
@@ -28336,12 +28884,21 @@
         "ColMarTechCargoGuns"
       ],
       "sprite": {
-        "sprite": "_RMC14/Objects/Clothing/Pouches/construction.rsi"
-      }
+        "sprite": "_RMC14/Objects/Clothing/Pouches/construction.rsi",
+        "layers": [
+          {
+            "state": "icon"
+          }
+        ],
+        "state": "icon"
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCPouchConstruction.png"
     },
     "RMCPouchDocumentSmall": {
       "id": "RMCPouchDocumentSmall",
-      "name": "небольшой подсумок документов",
+      "name": "Небольшой подсумок документов",
       "description": "Уменьшенная версия сумки для документов. В нем можно хранить бумаги, папки, диски, технические руководства и планшеты.",
       "suffix": "",
       "origin": "rmc14",
@@ -28434,12 +28991,21 @@
         "ColMarTechCargoGuns"
       ],
       "sprite": {
-        "sprite": "_RMC14/Objects/Clothing/Pouches/document.rsi"
-      }
+        "sprite": "_RMC14/Objects/Clothing/Pouches/document.rsi",
+        "layers": [
+          {
+            "state": "icon"
+          }
+        ],
+        "state": "icon"
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCPouchDocumentSmall.png"
     },
     "RMCPouchElectronics": {
       "id": "RMCPouchElectronics",
-      "name": "подсумок для электроники",
+      "name": "Подсумок для электроники",
       "description": "Он предназначен для хранения большинства электронных устройств, элементов питания и печатных плат.",
       "suffix": "",
       "origin": "rmc14",
@@ -28531,12 +29097,21 @@
         "ColMarTechCargoGuns"
       ],
       "sprite": {
-        "sprite": "_RMC14/Objects/Clothing/Pouches/electronics.rsi"
-      }
+        "sprite": "_RMC14/Objects/Clothing/Pouches/electronics.rsi",
+        "layers": [
+          {
+            "state": "icon"
+          }
+        ],
+        "state": "icon"
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCPouchElectronics.png"
     },
     "RMCPouchExplosive": {
       "id": "RMCPouchExplosive",
-      "name": "взрывозащитный подсумок",
+      "name": "Взрывозащитный подсумок",
       "description": "В нем можно переносить гранаты, пластиковую взрывчатку, минные коробки и другие взрывчатые вещества.",
       "suffix": "",
       "origin": "rmc14",
@@ -28624,12 +29199,21 @@
         "ColMarTechCargoGuns"
       ],
       "sprite": {
-        "sprite": "_RMC14/Objects/Clothing/Pouches/large_explosive.rsi"
-      }
+        "sprite": "_RMC14/Objects/Clothing/Pouches/large_explosive.rsi",
+        "layers": [
+          {
+            "state": "icon"
+          }
+        ],
+        "state": "icon"
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCPouchExplosive.png"
     },
     "RMCPouchFirstAidInjectors": {
       "id": "RMCPouchFirstAidInjectors",
-      "name": "подсумок первой помощи",
+      "name": "Подсумок первой помощи",
       "description": "Contains a variety of autoinjectors for quickly treating injuries.",
       "suffix": "Инъекторы",
       "origin": "rmc14",
@@ -28732,12 +29316,21 @@
         "ColMarTechCargoGuns"
       ],
       "sprite": {
-        "sprite": "_RMC14/Objects/Clothing/Pouches/firstaid.rsi"
-      }
+        "sprite": "_RMC14/Objects/Clothing/Pouches/firstaid.rsi",
+        "layers": [
+          {
+            "state": "icon"
+          }
+        ],
+        "state": "icon"
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCPouchFirstAidInjectors.png"
     },
     "RMCPouchFirstResponder": {
       "id": "RMCPouchFirstResponder",
-      "name": "сумка для спасателей",
+      "name": "Сумка для спасателей",
       "description": "Подсумок, предназначенный для переноски припасов, помогающих медицинскому персоналу быстро реагировать на ранения на поле боя, не прибегая к немедленному лечению. Может вмещать такие предметы, как роликовые кровати, стазисные мешки и анализаторы здоровья.",
       "suffix": "",
       "origin": "rmc14",
@@ -28840,12 +29433,21 @@
         "ColMarTechCargoGuns"
       ],
       "sprite": {
-        "sprite": "_RMC14/Objects/Clothing/Pouches/frt_med.rsi"
-      }
+        "sprite": "_RMC14/Objects/Clothing/Pouches/frt_med.rsi",
+        "layers": [
+          {
+            "state": "icon"
+          }
+        ],
+        "state": "icon"
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCPouchFirstResponder.png"
     },
     "RMCPouchFlareFilled": {
       "id": "RMCPouchFlareFilled",
-      "name": "подсумок фаеров",
+      "name": "Подсумок фаеров",
       "description": "Подсумок, предназначенный для хранения сигнальных ракет. Заправляется сигнальными ракетами M94.",
       "suffix": "Заполненный",
       "origin": "rmc14",
@@ -28942,11 +29544,14 @@
           }
         ],
         "state": "icon"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCPouchFlareFilled.png"
     },
     "RMCPouchFuelTank": {
       "id": "RMCPouchFuelTank",
-      "name": "подсумок ремня топливного бака",
+      "name": "Подсумок ремня топливного бака",
       "description": "Два кольцевых ремня для обхвата напалмовых баков образца M240A. Обращайтесь с ними осторожно.",
       "suffix": "",
       "origin": "rmc14",
@@ -29036,12 +29641,21 @@
         "ColMarTechCargoGuns"
       ],
       "sprite": {
-        "sprite": "_RMC14/Objects/Clothing/Pouches/fueltank.rsi"
-      }
+        "sprite": "_RMC14/Objects/Clothing/Pouches/fueltank.rsi",
+        "layers": [
+          {
+            "state": "icon"
+          }
+        ],
+        "state": "icon"
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCPouchFuelTank.png"
     },
     "RMCPouchGeneralLarge": {
       "id": "RMCPouchGeneralLarge",
-      "name": "большой подсумок общего назначения",
+      "name": "Большой подсумок общего назначения",
       "description": "Подсумок общего назначения, используемый для переноски большего количества предметов разного размера.",
       "suffix": "",
       "origin": "rmc14",
@@ -29124,12 +29738,21 @@
         "ColMarTechCargoGuns"
       ],
       "sprite": {
-        "sprite": "_RMC14/Objects/Clothing/Pouches/large_drop.rsi"
-      }
+        "sprite": "_RMC14/Objects/Clothing/Pouches/large_drop.rsi",
+        "layers": [
+          {
+            "state": "icon"
+          }
+        ],
+        "state": "icon"
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCPouchGeneralLarge.png"
     },
     "RMCPouchGeneralMedium": {
       "id": "RMCPouchGeneralMedium",
-      "name": "средний общий подсумок",
+      "name": "Средний общий подсумок",
       "description": "Подсумок общего назначения, используемый для переноски различных предметов разного размера.",
       "suffix": "",
       "origin": "rmc14",
@@ -29212,12 +29835,21 @@
         "ColMarTechCargoGuns"
       ],
       "sprite": {
-        "sprite": "_RMC14/Objects/Clothing/Pouches/medium_drop.rsi"
-      }
+        "sprite": "_RMC14/Objects/Clothing/Pouches/medium_drop.rsi",
+        "layers": [
+          {
+            "state": "icon"
+          }
+        ],
+        "state": "icon"
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCPouchGeneralMedium.png"
     },
     "RMCPouchMacheteFilled": {
       "id": "RMCPouchMacheteFilled",
-      "name": "подсумок для мачете M2132 образца H6B",
+      "name": "Подсумок для мачете M2132 образца H6B",
       "description": "Большой кожаный чехол для ношения мачете M2132. Его можно пристегнуть к гнезду подсумка.",
       "suffix": "Заполненный",
       "origin": "rmc14",
@@ -29310,11 +29942,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Clothing/Pouches/machete.rsi",
         "state": "sheath"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCPouchMacheteFilled.png"
     },
     "RMCPouchMagazine": {
       "id": "RMCPouchMagazine",
-      "name": "подсумок магазинов",
+      "name": "Подсумок магазинов",
       "description": "На нем можно носить магазины.",
       "suffix": "",
       "origin": "rmc14",
@@ -29406,12 +30041,21 @@
         "ColMarTechCargoGuns"
       ],
       "sprite": {
-        "sprite": "_RMC14/Objects/Clothing/Pouches/medium_ammo_mag.rsi"
-      }
+        "sprite": "_RMC14/Objects/Clothing/Pouches/medium_ammo_mag.rsi",
+        "layers": [
+          {
+            "state": "icon"
+          }
+        ],
+        "state": "icon"
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCPouchMagazine.png"
     },
     "RMCPouchMagazineLarge": {
       "id": "RMCPouchMagazineLarge",
-      "name": "большой подсумок магазинов",
+      "name": "Большой подсумок магазинов",
       "description": "На нем можно разместить множество магазинов.",
       "suffix": "",
       "origin": "rmc14",
@@ -29502,12 +30146,21 @@
         "ColMarTechCargoGuns"
       ],
       "sprite": {
-        "sprite": "_RMC14/Objects/Clothing/Pouches/large_ammo_mag.rsi"
-      }
+        "sprite": "_RMC14/Objects/Clothing/Pouches/large_ammo_mag.rsi",
+        "layers": [
+          {
+            "state": "icon"
+          }
+        ],
+        "state": "icon"
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCPouchMagazineLarge.png"
     },
     "RMCPouchMagazinePistolLarge": {
       "id": "RMCPouchMagazinePistolLarge",
-      "name": "большой подсумок пистолетных магазинов",
+      "name": "Большой подсумок пистолетных магазинов",
       "description": "В него можно поместить множество пистолетных магазинов или револьверных скорозарядников.",
       "suffix": "",
       "origin": "rmc14",
@@ -29593,12 +30246,21 @@
         "ColMarTechCargoGuns"
       ],
       "sprite": {
-        "sprite": "_RMC14/Objects/Clothing/Pouches/large_pistol_mag.rsi"
-      }
+        "sprite": "_RMC14/Objects/Clothing/Pouches/large_pistol_mag.rsi",
+        "layers": [
+          {
+            "state": "icon"
+          }
+        ],
+        "state": "icon"
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCPouchMagazinePistolLarge.png"
     },
     "RMCPouchMedkit": {
       "id": "RMCPouchMedkit",
-      "name": "подсумок для медицинской аптечки",
+      "name": "Подсумок для медицинской аптечки",
       "description": "Он специально сделан для хранения медицинских предметов.",
       "suffix": "",
       "origin": "rmc14",
@@ -29708,12 +30370,21 @@
         "ColMarTechCargoGuns"
       ],
       "sprite": {
-        "sprite": "_RMC14/Objects/Clothing/Pouches/medkit.rsi"
-      }
+        "sprite": "_RMC14/Objects/Clothing/Pouches/medkit.rsi",
+        "layers": [
+          {
+            "state": "icon"
+          }
+        ],
+        "state": "icon"
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCPouchMedkit.png"
     },
     "RMCPouchPistol": {
       "id": "RMCPouchPistol",
-      "name": "подсумок для оружия",
+      "name": "Подсумок для оружия",
       "description": "В нем можно носить пистолет, а главное — быстро его достать. Полезно для чрезвычайных ситуаций.",
       "suffix": "",
       "origin": "rmc14",
@@ -29949,11 +30620,14 @@
           }
         ],
         "state": "np92"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCPouchPistol.png"
     },
     "RMCPouchShotgun": {
       "id": "RMCPouchShotgun",
-      "name": "подсумок патрон дробовика",
+      "name": "Подсумок патрон дробовика",
       "description": "В нем может находиться одна коробка патронов для дробовика.",
       "suffix": "",
       "origin": "rmc14",
@@ -30056,11 +30730,14 @@
           }
         ],
         "state": "icon"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCPouchShotgun.png"
     },
     "RMCPouchShotgunLarge": {
       "id": "RMCPouchShotgunLarge",
-      "name": "большой подсумок для патронов к дробовику",
+      "name": "Большой подсумок для патронов к дробовику",
       "description": "В нём может поместиться больше патронов.",
       "suffix": "",
       "origin": "rmc14",
@@ -30163,11 +30840,14 @@
           }
         ],
         "state": "icon"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCPouchShotgunLarge.png"
     },
     "RMCPouchSling": {
       "id": "RMCPouchSling",
-      "name": "строповочный ремень",
+      "name": "Строповочный ремень",
       "description": "Удерживает один предмет, прикрепленный к ремешку.",
       "suffix": "",
       "origin": "rmc14",
@@ -30275,12 +30955,21 @@
         "ColMarTechCargoGuns"
       ],
       "sprite": {
-        "sprite": "_RMC14/Objects/Clothing/Pouches/sling.rsi"
-      }
+        "sprite": "_RMC14/Objects/Clothing/Pouches/sling.rsi",
+        "layers": [
+          {
+            "state": "icon"
+          }
+        ],
+        "state": "icon"
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCPouchSling.png"
     },
     "RMCPouchSyringe": {
       "id": "RMCPouchSyringe",
-      "name": "подсумок шприцов",
+      "name": "Подсумок шприцов",
       "description": "В нем можно перевозить шприцы.",
       "suffix": "",
       "origin": "rmc14",
@@ -30366,12 +31055,21 @@
         "ColMarTechCargoGuns"
       ],
       "sprite": {
-        "sprite": "_RMC14/Objects/Clothing/Pouches/syringe.rsi"
-      }
+        "sprite": "_RMC14/Objects/Clothing/Pouches/syringe.rsi",
+        "layers": [
+          {
+            "state": "icon"
+          }
+        ],
+        "state": "icon"
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCPouchSyringe.png"
     },
     "RMCPouchToolsFill": {
       "id": "RMCPouchToolsFill",
-      "name": "подсумок для инструментов",
+      "name": "Подсумок для инструментов",
       "description": "Он предназначен для хранения инструментов для технического обслуживания — отвертки, гаечного ключа, катушки кабеля и т.д. В нем также есть крючок для траншейного инструмента или заменителя света.",
       "suffix": "Заполненный",
       "origin": "rmc14",
@@ -30490,12 +31188,21 @@
         "ColMarTechCargoGuns"
       ],
       "sprite": {
-        "sprite": "_RMC14/Objects/Clothing/Pouches/tools.rsi"
-      }
+        "sprite": "_RMC14/Objects/Clothing/Pouches/tools.rsi",
+        "layers": [
+          {
+            "state": "icon"
+          }
+        ],
+        "state": "icon"
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCPouchToolsFill.png"
     },
     "RMCPowerCellCrap": {
       "id": "RMCPowerCellCrap",
-      "name": "перезаряжаемая мини-батарейка Ве-Я",
+      "name": "Перезаряжаемая мини-батарейка Ве-Я",
       "description": "Дешевые, бросовые батарейки, поставляемые корпорацией \"Вестон-Ямада\". Функция \"подзарядки\" была добавлена для того, чтобы стать более популярной среди независимых колонистов, желающих \"использовать его, пока он не распадется\" — обычное настроение на фронтире.",
       "suffix": "",
       "origin": "rmc14",
@@ -30573,11 +31280,14 @@
           }
         ],
         "state": "mini-cell"
-      }
+      },
+      "category": "Прочее",
+      "public": true,
+      "image": "equipment-sprites/RMCPowerCellCrap.png"
     },
     "RMCPowerCellHigh": {
       "id": "RMCPowerCellHigh",
-      "name": "высокомощная батарейка",
+      "name": "Высокомощная батарейка",
       "description": "Перезаряжаемый электрохимический элемент питания.",
       "suffix": "",
       "origin": "rmc14",
@@ -30656,11 +31366,14 @@
           }
         ],
         "state": "hcell"
-      }
+      },
+      "category": "Прочее",
+      "public": true,
+      "image": "equipment-sprites/RMCPowerCellHigh.png"
     },
     "RMCPowerCellSmartgun": {
       "id": "RMCPowerCellSmartgun",
-      "name": "аккумулятор для умного оружия M56",
+      "name": "Аккумулятор для умного оружия M56",
       "description": "Стандартная 9-вольтовая литиевая батарея с сухими элементами, чаще всего используемая в КМП США для питания смартганов. Согласно инструкции, одной батареи хватает на 50000 выстрелов. Она подключается непосредственно к гнезду питания смартгана, которое совместимо только с этим типом батарей. В различных вспомогательных режимах количество патронов обычно намного меньше. Хотя этот элемент несовместим с большинством стандартных электрических систем, в крайнем случае его можно зарядить от обычных зарядных устройств. Сматрганеры КПМ США часто ревностно охраняют их.",
       "suffix": "",
       "origin": "rmc14",
@@ -30734,11 +31447,14 @@
           }
         ],
         "state": "smartguncell"
-      }
+      },
+      "category": "Прочее",
+      "public": true,
+      "image": "equipment-sprites/RMCPowerCellSmartgun.png"
     },
     "RMCProjectileM5510Brute": {
       "id": "RMCProjectileM5510Brute",
-      "name": "ракета M5510 с лазерным наведением",
+      "name": "Ракета M5510 с лазерным наведением",
       "description": "Uh oh.",
       "suffix": "",
       "origin": "rmc14",
@@ -30803,7 +31519,7 @@
     },
     "RMCRangefinder": {
       "id": "RMCRangefinder",
-      "name": "дальномер",
+      "name": "Дальномер",
       "description": "Бинокль с функцией дальномера. Нажмите на плитку, чтобы узнать ее координаты.",
       "suffix": "Джунгли",
       "origin": "rmc14",
@@ -30882,11 +31598,14 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Прочее",
+      "public": true,
+      "image": "equipment-sprites/RMCRangefinder.png"
     },
     "RMCRocketM5510Brute": {
       "id": "RMCRocketM5510Brute",
-      "name": "ракета M5510 с лазерным наведением",
+      "name": "Ракета M5510 с лазерным наведением",
       "description": "Ракетная труба, совместимая с пусковой установкой M6H-BRUTE.",
       "suffix": "",
       "origin": "rmc14",
@@ -30958,11 +31677,14 @@
           }
         ],
         "state": "brute_rocket"
-      }
+      },
+      "category": "Боеприпасы",
+      "public": true,
+      "image": "equipment-sprites/RMCRocketM5510Brute.png"
     },
     "RMCSatchelGrenadeSpec": {
       "id": "RMCSatchelGrenadeSpec",
-      "name": "гранатометный ранец КМП США IMP M63A1",
+      "name": "Гранатометный ранец КМП США IMP M63A1",
       "description": "Рюкзак, специально разработанный для максимального увеличения вместимости гранаты и минимизации риска вторичного воспламенения.",
       "suffix": "",
       "origin": "rmc14",
@@ -31079,11 +31801,14 @@
             "shader": "unshaded"
           }
         ]
-      }
+      },
+      "category": "Броня",
+      "public": true,
+      "image": "equipment-sprites/RMCSatchelGrenadeSpec.png"
     },
     "RMCSatchelWelder": {
       "id": "RMCSatchelWelder",
-      "name": "сумка для сварки КМП США",
+      "name": "Сумка для сварки КМП США",
       "description": "Специализированный ранец, который носят техники и инженеры КМП США. В нем находятся два небольших топливных бака для быстрой заправки и использования сварщика.",
       "suffix": "",
       "origin": "rmc14",
@@ -31207,11 +31932,14 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Броня",
+      "public": true,
+      "image": "equipment-sprites/RMCSatchelWelder.png"
     },
     "RMCScabbardMacheteFilled": {
       "id": "RMCScabbardMacheteFilled",
-      "name": "ножны для мачете H5 образца M2132",
+      "name": "Ножны для мачете H5 образца M2132",
       "description": "Большие кожаные ножны для ношения мачете M2132. Его можно пристегнуть к спине или к поясу.",
       "suffix": "Заполненный",
       "origin": "rmc14",
@@ -31305,11 +32033,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Clothing/Back/Scabbards/machete_h5.rsi",
         "state": "sheath"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCScabbardMacheteFilled.png"
     },
     "RMCScabbardShotgun": {
       "id": "RMCScabbardShotgun",
-      "name": "ножны для ружья L44",
+      "name": "Ножны для ружья L44",
       "description": "Большая кожаная кобура, предназначенная для ружей, выдаваемых КМП США. Имеет ремни, позволяющие закрепить ее на спине для удобства хранения.",
       "suffix": "",
       "origin": "rmc14",
@@ -31394,11 +32125,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Clothing/Back/Scabbards/shotgun.rsi",
         "state": "sheath"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCScabbardShotgun.png"
     },
     "RMCSentryLaptop": {
       "id": "RMCSentryLaptop",
-      "name": "ноутбук управления турелями",
+      "name": "Ноутбук управления турелями",
       "description": "Прочный военный ноутбук, используемый для дистанционного управления и мониторинга сторожевых орудий. Может размещаться на столах для более удобного доступа. Используйте тюнер доступа для подключения сторожевых орудий к сети ноутбука.",
       "suffix": "",
       "origin": "rmc14",
@@ -31472,11 +32206,14 @@
           }
         ],
         "state": "sentrycomp_cl"
-      }
+      },
+      "category": "Прочее",
+      "public": true,
+      "image": "equipment-sprites/RMCSentryLaptop.png"
     },
     "RMCSmartGunMounted": {
       "id": "RMCSmartGunMounted",
-      "name": "станковый пулемет M56D",
+      "name": "Станковый пулемет M56D",
       "description": "Верхняя половина стойки для крупнокалиберного пулемета M56D. Однако без треноги от нее мало пользы.",
       "suffix": "",
       "origin": "rmc14",
@@ -31666,11 +32403,14 @@
           }
         ],
         "state": "ml66d_gun_e"
-      }
+      },
+      "category": "Оружие",
+      "public": true,
+      "image": "equipment-sprites/RMCSmartGunMounted.png"
     },
     "RMCSpeedLoader44Marksman": {
       "id": "RMCSpeedLoader44Marksman",
-      "name": "спидлоадер M44 снайперский (.44)",
+      "name": "Спидлоадер M44 снайперский (.44)",
       "description": "Скорострельный магазин для револьвера, заполненный патронами для снайперской стрельбы.",
       "suffix": "",
       "origin": "rmc14",
@@ -31762,11 +32502,14 @@
           }
         ],
         "state": "base"
-      }
+      },
+      "category": "Боеприпасы",
+      "public": true,
+      "image": "equipment-sprites/RMCSpeedLoader44Marksman.png"
     },
     "RMCSpeedLoaderM44": {
       "id": "RMCSpeedLoaderM44",
-      "name": "спидлоадер M44 (.44)",
+      "name": "Спидлоадер M44 (.44)",
       "description": "Скорострельный магазин для револьвера.",
       "suffix": "",
       "origin": "rmc14",
@@ -31851,11 +32594,14 @@
           }
         ],
         "state": "base"
-      }
+      },
+      "category": "Боеприпасы",
+      "public": true,
+      "image": "equipment-sprites/RMCSpeedLoaderM44.png"
     },
     "RMCStarShellM74AGMS": {
       "id": "RMCStarShellM74AGMS",
-      "name": "осветительная граната M74 БВГ-Ш 40мм",
+      "name": "Осветительная граната M74 БВГ-Ш 40мм",
       "description": "Функционирует идентично стандартной БВГ-Ф 40-мм гранате, за исключением того, что вместо взрыва шрапнелью, осветительная граната взрывается горящим фосфором, который освещает местность.",
       "suffix": "",
       "origin": "rmc14",
@@ -31931,11 +32677,14 @@
           }
         ],
         "state": "grenade_starshell"
-      }
+      },
+      "category": "Взрывчатка",
+      "public": true,
+      "image": "equipment-sprites/RMCStarShellM74AGMS.png"
     },
     "RMCTankFlamer": {
       "id": "RMCTankFlamer",
-      "name": "бак огнемета",
+      "name": "Бак огнемета",
       "description": "Топливный бак, используемый для хранения топлива для использования в установке M240A1 для сжигания. Обращайтесь с ним осторожно.",
       "suffix": "",
       "origin": "rmc14",
@@ -32031,11 +32780,14 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Прочее",
+      "public": true,
+      "image": "equipment-sprites/RMCTankFlamer.png"
     },
     "RMCWeaponFlamer": {
       "id": "RMCWeaponFlamer",
-      "name": "огнеметная установка M240A1",
+      "name": "Огнеметная установка M240A1",
       "description": "Огнеметная установка M240A1 зарекомендовала себя как одно из самых эффективных орудий для уничтожения малозаметных целей. Это оружие следует бояться и уважать, поскольку оно весьма смертоносно.",
       "suffix": "",
       "origin": "rmc14",
@@ -32241,11 +32993,14 @@
             ]
           }
         ]
-      }
+      },
+      "category": "Оружие",
+      "public": true,
+      "image": "equipment-sprites/RMCWeaponFlamer.png"
     },
     "RMCWeaponLauncherM85A1": {
       "id": "RMCWeaponLauncherM85A1",
-      "name": "гранатомет M79",
+      "name": "Гранатомет M79",
       "description": "Тяжелый 40-мм гранатомет переломного типа, предназначенный для стрельбы по настильной траектории. Архаичный по своей базовой конструкции, он уступает более современным полуавтоматическим гранатометам M92, M95 и ударной пусковой установке M94, но не требует магнитной арматуры или продвинутых навыков для эксплуатации, не говоря уже о почти безупречной надежности, чрезвычайно низкой стоимости и малом весе за счет преимущественно полимерных материалов в конструкции.",
       "suffix": "",
       "origin": "rmc14",
@@ -32429,11 +33184,14 @@
           }
         ],
         "state": "base"
-      }
+      },
+      "category": "Оружие",
+      "public": true,
+      "image": "equipment-sprites/RMCWeaponLauncherM85A1.png"
     },
     "RMCWeaponPistolM13": {
       "id": "RMCWeaponPistolM13",
-      "name": "автоматический пистолет M10",
+      "name": "Автоматический пистолет M10",
       "description": "Автоматический пистолет M10 — компактное, скорострельное вспомогательное оружие, разработанное для обороны в ближнем бою. С магазином на 40 патронов, он делает упор на скорострельность, а не на точность, обеспечивая эффективный подавляющий огонь на коротких дистанциях.",
       "suffix": "",
       "origin": "rmc14",
@@ -32683,11 +33441,14 @@
           }
         ],
         "state": "base"
-      }
+      },
+      "category": "Оружие",
+      "public": true,
+      "image": "equipment-sprites/RMCWeaponPistolM13.png"
     },
     "RMCWeaponPistolM13Empty": {
       "id": "RMCWeaponPistolM13Empty",
-      "name": "автоматический пистолет M10",
+      "name": "Автоматический пистолет M10",
       "description": "Автоматический пистолет M10 — компактное, скорострельное вспомогательное оружие, разработанное для обороны в ближнем бою. С магазином на 40 патронов, он делает упор на скорострельность, а не на точность, обеспечивая эффективный подавляющий огонь на коротких дистанциях.",
       "suffix": "Пустой",
       "origin": "rmc14",
@@ -32943,11 +33704,14 @@
           }
         ],
         "state": "base"
-      }
+      },
+      "category": "Оружие",
+      "public": true,
+      "image": "equipment-sprites/RMCWeaponPistolM13Empty.png"
     },
     "RMCWeaponPistolM77Empty": {
       "id": "RMCWeaponPistolM77Empty",
-      "name": "боевой пистолет 88 Мод 4",
+      "name": "Боевой пистолет 88 Мод 4",
       "description": "Стандартное огнестрельное оружие морской пехоты. Также встречается в руках команд ЧВК Ве-Я. Стреляет 9-мм патронами, разрушающими броню, и может вести огонь очередями по 3 патрона.",
       "suffix": "Пустой",
       "origin": "rmc14",
@@ -33191,11 +33955,14 @@
           }
         ],
         "state": "base"
-      }
+      },
+      "category": "Оружие",
+      "public": true,
+      "image": "equipment-sprites/RMCWeaponPistolM77Empty.png"
     },
     "RMCWeaponPistolM82FEmpty": {
       "id": "RMCWeaponPistolM82FEmpty",
-      "name": "сигнальный пистолет M82-F",
+      "name": "Сигнальный пистолет M82-F",
       "description": "Сигнальный пистолет, выдаваемый операторам JTAC для использования с сигнальными ракетами. Поставляется с мини-прицелом. Один выстрел, одна... спасенная жизнь?",
       "suffix": "Empty",
       "origin": "rmc14",
@@ -33382,11 +34149,14 @@
           }
         ],
         "state": "base"
-      }
+      },
+      "category": "Оружие",
+      "public": true,
+      "image": "equipment-sprites/RMCWeaponPistolM82FEmpty.png"
     },
     "RMCWeaponPistolSU6": {
       "id": "RMCWeaponPistolSU6",
-      "name": "умный пистолет SU-6",
+      "name": "Умный пистолет SU-6",
       "description": "Умный пистолет SU-6 — это парное оружие с системой опознавания \"друг или враг\", которое в настоящее время проходит полевые испытания в КМП США. Использует модифицированные пули .45 ACP с системой опознавания \"друг или враг\". Способен стрелять очередями.",
       "suffix": "",
       "origin": "rmc14",
@@ -33618,11 +34388,14 @@
           }
         ],
         "state": "base"
-      }
+      },
+      "category": "Оружие",
+      "public": true,
+      "image": "equipment-sprites/RMCWeaponPistolSU6.png"
     },
     "RMCWeaponRevolverM44Empty": {
       "id": "RMCWeaponRevolverM44Empty",
-      "name": "боевой револьвер M44",
+      "name": "Боевой револьвер M44",
       "description": "Крупнокалиберный револьвер, который иногда используется штурмовыми отрядами и офицерами морской пехоты, а также гражданскими правоохранительными органами. Стреляет патронами .44 Magnum.",
       "suffix": "Пустой",
       "origin": "rmc14",
@@ -33827,12 +34600,23 @@
       ],
       "sprite": {
         "sprite": "_RMC14/Objects/Weapons/Guns/Pistols/m44.rsi",
-        "state": "icon"
-      }
+        "state": "icon",
+        "layers": [
+          {
+            "state": "base",
+            "map": [
+              "enum.RMCMagazineVisuals.SlideOpen"
+            ]
+          }
+        ]
+      },
+      "category": "Оружие",
+      "public": true,
+      "image": "equipment-sprites/RMCWeaponRevolverM44Empty.png"
     },
     "RMCWeaponRifleM54C": {
       "id": "RMCWeaponRifleM54C",
-      "name": "штурмовая винтовка M41A MK2",
+      "name": "Штурмовая винтовка M41A MK2",
       "description": "Стандартная винтовка морской пехоты. Часто используется большинством бойцов. Использует безгильзовые патроны 10x24 мм.",
       "suffix": "",
       "origin": "rmc14",
@@ -34115,11 +34899,14 @@
           }
         ],
         "state": "base"
-      }
+      },
+      "category": "Оружие",
+      "public": true,
+      "image": "equipment-sprites/RMCWeaponRifleM54C.png"
     },
     "RMCWeaponRifleM54CE2": {
       "id": "RMCWeaponRifleM54CE2",
-      "name": "тяжёлая штурмовая винтовка M41AE2",
+      "name": "Тяжёлая штурмовая винтовка M41AE2",
       "description": "Мощное оружие поддержки для отделения, способное вести длительный подавляющий огонь с прикреплённой позиции. Несмотря на неустойчивость и меньшую точность, её можно использовать, отталкиваясь от двух рук.",
       "suffix": "",
       "origin": "rmc14",
@@ -34371,11 +35158,14 @@
           }
         ],
         "state": "base"
-      }
+      },
+      "category": "Оружие",
+      "public": true,
+      "image": "equipment-sprites/RMCWeaponRifleM54CE2.png"
     },
     "RMCWeaponRifleM54CMK1": {
       "id": "RMCWeaponRifleM54CMK1",
-      "name": "штурмовая винтовка M41A MK1",
+      "name": "Штурмовая винтовка M41A MK1",
       "description": "Устаревший вариант штурмовой винтовки, широко используемой в Корпусе морской пехоты. Использует безгильзовые патроны калибра 10х24мм.",
       "suffix": "",
       "origin": "rmc14",
@@ -34637,11 +35427,14 @@
           }
         ],
         "state": "base"
-      }
+      },
+      "category": "Оружие",
+      "public": true,
+      "image": "equipment-sprites/RMCWeaponRifleM54CMK1.png"
     },
     "RMCWebbingBlackSmall": {
       "id": "RMCWebbingBlackSmall",
-      "name": "чёрная разгрузка",
+      "name": "Чёрная разгрузка",
       "description": "Крепкие ремни и пряжки из синтикоттона, готовые разделить вашу ношу.",
       "suffix": "",
       "origin": "rmc14",
@@ -34710,11 +35503,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Clothing/Webbing/webbing_black_small.rsi",
         "state": "webbing"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCWebbingBlackSmall.png"
     },
     "RMCWebbingDropPouch": {
       "id": "RMCWebbingDropPouch",
-      "name": "подсумок-сбросник",
+      "name": "Подсумок-сбросник",
       "description": "Удобный подсумок для переноски различных мелочей.",
       "suffix": "",
       "origin": "rmc14",
@@ -34790,11 +35586,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Clothing/Webbing/drop_pouch.rsi",
         "state": "webbing"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCWebbingDropPouch.png"
     },
     "RMCWebbingDropPouchBlack": {
       "id": "RMCWebbingDropPouchBlack",
-      "name": "чёрный подсумок-сбросник",
+      "name": "Чёрный подсумок-сбросник",
       "description": "Удобный подсумок для переноски различных мелочей.",
       "suffix": "",
       "origin": "rmc14",
@@ -34870,11 +35669,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Clothing/Webbing/drop_pouch_black.rsi",
         "state": "drop_pouch_black"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCWebbingDropPouchBlack.png"
     },
     "RMCWebbingHolsterBlack": {
       "id": "RMCWebbingHolsterBlack",
-      "name": "чёрная плечевая кобура",
+      "name": "Чёрная плечевая кобура",
       "description": "Чёрная кобура для пистолета с прикрепленным подсумком, позволяющая хранить два магазина или спидлоадера вместе с ним.",
       "suffix": "",
       "origin": "rmc14",
@@ -34951,11 +35753,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Clothing/Webbing/webbing_holster_black.rsi",
         "state": "holster"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCWebbingHolsterBlack.png"
     },
     "RMCWebbingLegPouch": {
       "id": "RMCWebbingLegPouch",
-      "name": "набедренная разгрузка",
+      "name": "Набедренная разгрузка",
       "description": "Камуфлированная набедренная сумка, которую обычно носят охотники, военные и те, кто мечтает ими стать.",
       "suffix": "",
       "origin": "rmc14",
@@ -35031,11 +35836,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Clothing/Webbing/leg_pouch/classic.rsi",
         "state": "webbing"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCWebbingLegPouch.png"
     },
     "RMCWebbingLegPouchBlack": {
       "id": "RMCWebbingLegPouchBlack",
-      "name": "чёрная набедренная разгрузка",
+      "name": "Чёрная набедренная разгрузка",
       "description": "Чёрная набедренная сумка, которую обычно носят охотники, военные и те, кто мечтает ими стать.",
       "suffix": "",
       "origin": "rmc14",
@@ -35109,11 +35917,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Clothing/Webbing/leg_pouch/black.rsi",
         "state": "webbing"
-      }
+      },
+      "category": "Снаряжение",
+      "public": true,
+      "image": "equipment-sprites/RMCWebbingLegPouchBlack.png"
     },
     "RMCWeldingGoggles": {
       "id": "RMCWeldingGoggles",
-      "name": "сварочные очки",
+      "name": "Сварочные очки",
       "description": "Защищает глаза от сварщиков, одобрена Ассоциацией безумных ученых.",
       "suffix": "",
       "origin": "rmc14",
@@ -35181,11 +35992,14 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Clothing/Eyes/Glasses/welding_goggles.rsi",
         "state": "icon"
-      }
+      },
+      "category": "Прочее",
+      "public": true,
+      "image": "equipment-sprites/RMCWeldingGoggles.png"
     },
     "WeaponRifleM4SPR": {
       "id": "WeaponRifleM4SPR",
-      "name": "боевая винтовка M4RA",
+      "name": "Боевая винтовка M4RA",
       "description": "Боевая винтовка M4RA — марксманская винтовка, используемая морскими пехотинцами. Благодаря компоновке булл-пап, M4RA идеально подходит для разведгрупп и подразделений огневой поддержки.",
       "suffix": "",
       "origin": "rmc14",
@@ -35458,11 +36272,14 @@
           }
         ],
         "state": "bolt-open"
-      }
+      },
+      "category": "Оружие",
+      "public": true,
+      "image": "equipment-sprites/WeaponRifleM4SPR.png"
     },
     "WeaponRifleXM88": {
       "id": "WeaponRifleXM88",
-      "name": "тяжелая винтовка XM88",
+      "name": "Тяжелая винтовка XM88",
       "description": "Экспериментальная переносная антиматериальная винтовка под патрон .458 SOCOM. Для каждого выстрела необходимо вручную взводить патрон.",
       "suffix": "",
       "origin": "rmc14",
@@ -35710,11 +36527,14 @@
           }
         ],
         "state": "icon"
-      }
+      },
+      "category": "Оружие",
+      "public": true,
+      "image": "equipment-sprites/WeaponRifleXM88.png"
     },
     "WeaponSMGM63": {
       "id": "WeaponSMGM63",
-      "name": "пистолет-пулемёт M39",
+      "name": "Пистолет-пулемёт M39",
       "description": "Пистолет-пулемёт Боевое Вооружение Эгида, M39. Иногда используется лёгкой пехотой, разведчиками, инженерами и медиками.",
       "suffix": "",
       "origin": "rmc14",
@@ -35993,11 +36813,14 @@
           }
         ],
         "state": "bolt-open"
-      }
+      },
+      "category": "Оружие",
+      "public": true,
+      "image": "equipment-sprites/WeaponSMGM63.png"
     },
     "WeaponShotgunM42A2": {
       "id": "WeaponShotgunM42A2",
-      "name": "помповый дробовик M42A2",
+      "name": "Помповый дробовик M42A2",
       "description": "Современное воплощение от Armat Battlefield Systems, сочетающее в себе мощь на ближней дистанции и долговечность. Требует перезарядки.",
       "suffix": "",
       "origin": "rmc14",
@@ -36243,11 +37066,14 @@
           }
         ],
         "state": "icon"
-      }
+      },
+      "category": "Оружие",
+      "public": true,
+      "image": "equipment-sprites/WeaponShotgunM42A2.png"
     },
     "WeaponShotgunMOU53": {
       "id": "WeaponShotgunMOU53",
-      "name": "разборный дробовик MOU53",
+      "name": "Разборный дробовик MOU53",
       "description": "Ограниченная серия классических дробовиков Kerchner MOU53 с тройным разборным механизмом. Имеет неплохую мощность на средних дистанциях, однако, в ближнем бою он уступает Эгида M42. Этот конкретный образец не пригоден для стрельбы дробью.",
       "suffix": "",
       "origin": "rmc14",
@@ -36483,8 +37309,514 @@
           }
         ],
         "state": "base"
-      }
+      },
+      "category": "Оружие",
+      "public": true,
+      "image": "equipment-sprites/WeaponShotgunMOU53.png"
     }
+  },
+  "publicCatalog": {
+    "itemIds": [
+      "RMCGrenadeWhitePhosphorusCompound",
+      "RMCAttachmentB8SmartScope",
+      "CMSparePDTLBattleBuddyKit",
+      "RMCPacketGrenadeWhitePhosphorusCompoundFilled",
+      "RMCAttachmentM13StockCollapsible",
+      "RMCAttachmentM13StockSolid",
+      "RMCAttachmentM54CStockCollapsible",
+      "RMCAttachmentM54CStockSolid",
+      "RMCBoxMagazinePistolM1984HP",
+      "RMCBoxBulletsRifle",
+      "RMCAttachmentS42xTelescopicMiniscope",
+      "RMCWeaponPistolM13",
+      "RMCWeaponPistolM13Empty",
+      "RMCPowerCellSmartgun",
+      "RMCTankFlamer",
+      "RMCBinoculars",
+      "WeaponRifleM4SPR",
+      "RMCMagazineSmartGun",
+      "RMCWeaponPistolM77Empty",
+      "RMCWeaponRevolverM44Empty",
+      "RMCPouchShotgunLarge",
+      "RMCPouchMagazineLarge",
+      "RMCPouchGeneralLarge",
+      "RMCPouchMagazinePistolLarge",
+      "CMMagazineSMGM63AP",
+      "CMMagazineRifleM54CAP",
+      "CMMagazineRifleM4SPRAP",
+      "CMPamphletEngineer",
+      "RMCPamphletHeavyMachineGunner",
+      "CMPamphletPowerloader",
+      "RMCAttachmentVerticalGrip",
+      "RMCExplosiveBreachingCharge",
+      "RMCPouchExplosive",
+      "RMCOuterClothingExternalWebbing",
+      "RMCPowerCellHigh",
+      "CMWrench",
+      "RMCAttachmentGyroscopicStabilizer",
+      "RMCAttachmentSuppressor",
+      "CMGrenadeHighExplosive",
+      "RMCWeaponLauncherM85A1",
+      "RMCSatchelGrenadeSpec",
+      "RMCRangefinder",
+      "RMCIntelDetector",
+      "RMCMotionDetector",
+      "RMCAttachmentShotgunChoke",
+      "RMCAttachmentRecoilCompensator",
+      "CMGrenadeSmoke",
+      "RMC40MMGrenadeM74AGMS",
+      "RMCGrenadeIncendiary",
+      "RMC40MMGrenadeM74AGMI",
+      "CMPamphletJTAC",
+      "RMCBatonSlugHIRR",
+      "RMCBeltHolsterSMGPouch",
+      "RMCBeltHolsterSMG",
+      "RMCBeltHolsterM13",
+      "RMCBeltHolsterPistol",
+      "RMCBeltHolsterRevolver",
+      "RMCBeltSmartPistolFilled",
+      "RMCAttachmentSuppressorCompact",
+      "RMCBackpackRTO",
+      "CMWebbingBrown",
+      "RMCMagazineM2C",
+      "RMCMagazineML66D",
+      "RMCBox458SOCOM",
+      "RMCPacketGrenadeM74AGMSHornetFilled",
+      "RMCPacketGrenadeM74AGMSFilled",
+      "RMCPacketGrenadeM74AGMIFilled",
+      "RMCPacketGrenadeM74AGMFFilled",
+      "RMCPacketGrenadeSmokeFilled",
+      "RMCPacketGrenadeIncendiaryFilled",
+      "CMPacketGrenadeHighExplosiveFilled",
+      "RMCBoxShellsBuckshot",
+      "RMCBoxShellsSlugs",
+      "RMCBoxShellsFlechette",
+      "RMCPacketGrenadeBatonSlugHIRRFilled",
+      "RMCBoxMagazinePistolM77AP",
+      "RMCBoxMagazinePistolM13",
+      "RMCBoxMagazinePistolM13Ext",
+      "RMCBoxMagazineSMGM63",
+      "RMCBoxMagazineRifleM54C",
+      "RMCBoxMagazinePistolM1984",
+      "RMCBoxMagazinePistolM1984AP",
+      "RMCBoxMagazineRifleM4SPR",
+      "RMCBoxMagazinePistolSU6",
+      "RMCBoxMagazinePistolMK80",
+      "RMCBoxMagazineSMGM63AP",
+      "RMCBoxMagazineRifleM54CAP",
+      "RMCBoxMagazineRifleM4SPRAP",
+      "RMCBoxMagazineSMGM63Ext",
+      "RMCBoxMagazineRifleM54CExt",
+      "RMCBoxMagazineRifleM4SPRExt",
+      "RMCBoxClaymoreMineFilled",
+      "RMCPacketGrenadeM74AGMSStarShellFilled",
+      "CMPacketGrenadeFragOldFilled",
+      "RMCBoxShotgunBuckshot",
+      "RMCBoxBullets458",
+      "RMCBoxShotgunSlugs",
+      "RMCBoxMagazineRevolverM44",
+      "RMCBoxMagazineRevolverM44Marksman",
+      "RMCBoxShotgunFlechette",
+      "RMCAttachmentLaserSight",
+      "RMCLaserDesignator",
+      "CMBackpackMarine",
+      "RMCAttachmentM42A2CollapsibleStock",
+      "CMMagazinePistolM77AP",
+      "RMCMagazinePistolM13",
+      "CMMagazineSMGM63",
+      "CMMagazineRifleM54C",
+      "CMMagazineRifleM54CMK1",
+      "CMMagazineRifleM54CMK1AP",
+      "CMMagazineRifleM54CE2",
+      "CMMagazineRifleM54CE2HT",
+      "CMMagazinePistolM1984",
+      "RMCMagazinePistolM1984AP",
+      "RMCMagazinePistolM1984HP",
+      "CMMagazineRifleM4SPR",
+      "RMCMagazinePistolSU6",
+      "CMMagazinePistolMK80",
+      "RMCMagazineSMGNailgun",
+      "RMCAttachmentMagneticHarness",
+      "RMCAttachmentMicroLaserSight",
+      "RMCAttachmentS5MicroRedDotSight",
+      "RMCAttachmentMiniFlamethrower",
+      "RMCWebbingLegPouch",
+      "RMCAttachmentRailFlashlight",
+      "RMCAttachmentM63ArmBrace",
+      "RMCPouchDocumentSmall",
+      "RMCScabbardMacheteFilled",
+      "RMCScabbardShotgun",
+      "RMCPouchBayonetFill",
+      "RMCSentryLaptop",
+      "RMCWeaponFlamer",
+      "RMCStarShellM74AGMS",
+      "CMGrenadeFragOld",
+      "RMC40MMGrenadeM74AGMF",
+      "CMScrewdriver",
+      "RMCParachute",
+      "RMCPowerCellCrap",
+      "CMFireExtinguisherPortable",
+      "RMCBackpackFlamer",
+      "RMCMK80",
+      "WeaponSMGM63",
+      "RMCExplosivePlastic",
+      "CMWebbingHolster",
+      "RMCAttachmentFlashlightGrip",
+      "RMCAttachmentU1GrenadeLauncher",
+      "RMCAttachmentU7UnderbarrelShotgun",
+      "RMCAttachmentUnderbarrelExtinguisher",
+      "RMCPouchAutoinjector",
+      "RMCPouchToolsFill",
+      "RMCPouchMacheteFilled",
+      "RMCPouchMedkit",
+      "RMCPouchPistol",
+      "RMCPouchElectronics",
+      "RMCPouchMagazine",
+      "RMCBeltUtilityGeneral",
+      "RMCPouchShotgun",
+      "RMCPouchFirstAidInjectors",
+      "RMCPouchFuelTank",
+      "RMCPouchFlareFilled",
+      "RMCPouchSyringe",
+      "RMCWebbingDropPouch",
+      "RMCOverwatchCameraTripod",
+      "WeaponShotgunM42A2",
+      "RMCBeltGrenade",
+      "CMBeltMarine",
+      "CMBeltKnifeFilled",
+      "RMCM276ShotgunShellLoadingRig",
+      "CMBeltMortar",
+      "RMCBeltMachineGunner",
+      "RMCAttachmentM44MagnumSharpshooterStock",
+      "RMCAttachmentXM88Stock",
+      "RMCAttachmentM63Stock",
+      "RMCAttachmentS5RedDotSight",
+      "CMMaskGas",
+      "RMCExplosiveClaymoreMine",
+      "WeaponShotgunMOU53",
+      "CMWebbing",
+      "CMWebbingKnivesFilled",
+      "RMCM82FHolster",
+      "RMCRocketM5510Brute",
+      "CMMagazineRifleM54CExt",
+      "CMMagazineRifleM4SPRExt",
+      "RMCAttachmentXS-9",
+      "RMCAttachmentS6ReflexSight",
+      "CMBackpackMortar",
+      "CMBackpackWelder",
+      "RMCAttachmentBurstFireAssembly",
+      "RMCWeldingGoggles",
+      "RMCWeaponPistolM82FEmpty",
+      "CMFoldingBarricadesMB6x3",
+      "CMEntrenchingTool",
+      "RMCAttachmentM63StockCollapsible",
+      "CMWeaponPistolM1984Empty",
+      "RMCM300SOCOMBelt",
+      "RMCAttachmentBipod",
+      "RMCSpeedLoaderM44",
+      "RMCSpeedLoader44Marksman",
+      "RMCPouchGeneralMedium",
+      "RMCM2CMount",
+      "RMCSmartGunMounted",
+      "RMCBackpackAmmo",
+      "RMCPouchConstruction",
+      "RMCPouchSling",
+      "RMCSatchelWelder",
+      "RMCPouchFirstResponder",
+      "RMCAttachmentMOU53Stock",
+      "RMCAttachmentS84xTelescopicScope",
+      "RMCML66DMount",
+      "WeaponRifleXM88",
+      "RMCWeaponRifleM54CE2",
+      "RMCMagazinePistolM13Ext",
+      "RMCAttachmentAngledGrip",
+      "RMCAttachmentExtendedBarrel",
+      "RMCAttachmentRecoilCompensatorM13",
+      "CMMagazineSMGM63Ext",
+      "RMCWeaponPistolSU6",
+      "CMPackFlare",
+      "RMCPackFlareCAS",
+      "RMCFlashlight",
+      "RMCFulton20",
+      "CMWebbingBlack",
+      "RMCWebbingLegPouchBlack",
+      "RMCWebbingHolsterBlack",
+      "RMCWebbingBlackSmall",
+      "RMCWebbingDropPouchBlack",
+      "RMCAttachmentRecoilCompensatorM13Spiked",
+      "RMCHornetShellM74AGMS",
+      "RMCWeaponRifleM54CMK1",
+      "RMCWeaponRifleM54C",
+      "RMCM5Bayonet",
+      "RMCBoxBulletsSMGAP",
+      "RMCBoxBulletsSMG",
+      "RMCBoxBulletsRifleAP"
+    ],
+    "categories": {
+      "Ближний бой": [
+        "CMWrench",
+        "CMScrewdriver",
+        "CMFireExtinguisherPortable",
+        "CMEntrenchingTool",
+        "RMCFlashlight"
+      ],
+      "Боеприпасы": [
+        "RMCMagazineSmartGun",
+        "CMMagazineSMGM63AP",
+        "CMMagazineRifleM54CAP",
+        "CMMagazineRifleM4SPRAP",
+        "RMCMagazineM2C",
+        "RMCMagazineML66D",
+        "CMMagazinePistolM77AP",
+        "RMCMagazinePistolM13",
+        "CMMagazineSMGM63",
+        "CMMagazineRifleM54C",
+        "CMMagazineRifleM54CMK1",
+        "CMMagazineRifleM54CMK1AP",
+        "CMMagazineRifleM54CE2",
+        "CMMagazineRifleM54CE2HT",
+        "CMMagazinePistolM1984",
+        "RMCMagazinePistolM1984AP",
+        "RMCMagazinePistolM1984HP",
+        "CMMagazineRifleM4SPR",
+        "RMCMagazinePistolSU6",
+        "CMMagazinePistolMK80",
+        "RMCMagazineSMGNailgun",
+        "RMCRocketM5510Brute",
+        "CMMagazineRifleM54CExt",
+        "CMMagazineRifleM4SPRExt",
+        "RMCSpeedLoaderM44",
+        "RMCSpeedLoader44Marksman",
+        "RMCMagazinePistolM13Ext",
+        "CMMagazineSMGM63Ext"
+      ],
+      "Броня": [
+        "RMCSatchelGrenadeSpec",
+        "RMCBackpackRTO",
+        "CMBackpackMarine",
+        "RMCBackpackFlamer",
+        "CMBackpackMortar",
+        "CMBackpackWelder",
+        "RMCBackpackAmmo",
+        "RMCSatchelWelder"
+      ],
+      "Взрывчатка": [
+        "RMCGrenadeWhitePhosphorusCompound",
+        "RMCPacketGrenadeWhitePhosphorusCompoundFilled",
+        "RMCExplosiveBreachingCharge",
+        "CMGrenadeHighExplosive",
+        "CMGrenadeSmoke",
+        "RMC40MMGrenadeM74AGMS",
+        "RMCGrenadeIncendiary",
+        "RMC40MMGrenadeM74AGMI",
+        "RMCBatonSlugHIRR",
+        "RMCPacketGrenadeM74AGMSHornetFilled",
+        "RMCPacketGrenadeM74AGMSFilled",
+        "RMCPacketGrenadeM74AGMIFilled",
+        "RMCPacketGrenadeM74AGMFFilled",
+        "RMCPacketGrenadeSmokeFilled",
+        "RMCPacketGrenadeIncendiaryFilled",
+        "CMPacketGrenadeHighExplosiveFilled",
+        "RMCPacketGrenadeBatonSlugHIRRFilled",
+        "RMCBoxClaymoreMineFilled",
+        "RMCPacketGrenadeM74AGMSStarShellFilled",
+        "CMPacketGrenadeFragOldFilled",
+        "RMCStarShellM74AGMS",
+        "CMGrenadeFragOld",
+        "RMC40MMGrenadeM74AGMF",
+        "RMCExplosivePlastic",
+        "RMCExplosiveClaymoreMine",
+        "RMCHornetShellM74AGMS"
+      ],
+      "Обвесы": [
+        "RMCAttachmentB8SmartScope",
+        "RMCAttachmentM13StockCollapsible",
+        "RMCAttachmentM13StockSolid",
+        "RMCAttachmentM54CStockCollapsible",
+        "RMCAttachmentM54CStockSolid",
+        "RMCAttachmentS42xTelescopicMiniscope",
+        "RMCAttachmentVerticalGrip",
+        "RMCAttachmentGyroscopicStabilizer",
+        "RMCAttachmentSuppressor",
+        "RMCAttachmentShotgunChoke",
+        "RMCAttachmentRecoilCompensator",
+        "RMCAttachmentSuppressorCompact",
+        "RMCAttachmentLaserSight",
+        "RMCAttachmentM42A2CollapsibleStock",
+        "RMCAttachmentMagneticHarness",
+        "RMCAttachmentMicroLaserSight",
+        "RMCAttachmentS5MicroRedDotSight",
+        "RMCAttachmentRailFlashlight",
+        "RMCAttachmentM63ArmBrace",
+        "RMCAttachmentFlashlightGrip",
+        "RMCAttachmentM44MagnumSharpshooterStock",
+        "RMCAttachmentXM88Stock",
+        "RMCAttachmentM63Stock",
+        "RMCAttachmentS5RedDotSight",
+        "RMCAttachmentXS-9",
+        "RMCAttachmentS6ReflexSight",
+        "RMCAttachmentBurstFireAssembly",
+        "RMCAttachmentM63StockCollapsible",
+        "RMCAttachmentBipod",
+        "RMCAttachmentMOU53Stock",
+        "RMCAttachmentS84xTelescopicScope",
+        "RMCAttachmentAngledGrip",
+        "RMCAttachmentExtendedBarrel",
+        "RMCAttachmentRecoilCompensatorM13",
+        "RMCAttachmentRecoilCompensatorM13Spiked",
+        "RMCM5Bayonet"
+      ],
+      "Оружие": [
+        "RMCWeaponPistolM13",
+        "RMCWeaponPistolM13Empty",
+        "WeaponRifleM4SPR",
+        "RMCWeaponPistolM77Empty",
+        "RMCWeaponRevolverM44Empty",
+        "RMCWeaponLauncherM85A1",
+        "RMCAttachmentMiniFlamethrower",
+        "RMCWeaponFlamer",
+        "RMCMK80",
+        "WeaponSMGM63",
+        "RMCAttachmentU1GrenadeLauncher",
+        "RMCAttachmentU7UnderbarrelShotgun",
+        "RMCAttachmentUnderbarrelExtinguisher",
+        "WeaponShotgunM42A2",
+        "WeaponShotgunMOU53",
+        "RMCWeaponPistolM82FEmpty",
+        "CMWeaponPistolM1984Empty",
+        "RMCSmartGunMounted",
+        "WeaponRifleXM88",
+        "RMCWeaponRifleM54CE2",
+        "RMCWeaponPistolSU6",
+        "RMCWeaponRifleM54CMK1",
+        "RMCWeaponRifleM54C"
+      ],
+      "Прочее": [
+        "RMCBoxBulletsRifle",
+        "RMCPowerCellSmartgun",
+        "RMCTankFlamer",
+        "RMCBinoculars",
+        "CMPamphletEngineer",
+        "RMCPamphletHeavyMachineGunner",
+        "CMPamphletPowerloader",
+        "RMCPowerCellHigh",
+        "RMCRangefinder",
+        "RMCIntelDetector",
+        "RMCMotionDetector",
+        "CMPamphletJTAC",
+        "RMCLaserDesignator",
+        "RMCSentryLaptop",
+        "RMCParachute",
+        "RMCPowerCellCrap",
+        "RMCOverwatchCameraTripod",
+        "CMMaskGas",
+        "RMCWeldingGoggles",
+        "CMFoldingBarricadesMB6x3",
+        "RMCM2CMount",
+        "RMCML66DMount",
+        "RMCFulton20",
+        "RMCBoxBulletsSMGAP",
+        "RMCBoxBulletsSMG",
+        "RMCBoxBulletsRifleAP"
+      ],
+      "Снаряжение": [
+        "CMSparePDTLBattleBuddyKit",
+        "RMCBoxMagazinePistolM1984HP",
+        "RMCPouchShotgunLarge",
+        "RMCPouchMagazineLarge",
+        "RMCPouchGeneralLarge",
+        "RMCPouchMagazinePistolLarge",
+        "RMCPouchExplosive",
+        "RMCOuterClothingExternalWebbing",
+        "RMCBeltHolsterSMGPouch",
+        "RMCBeltHolsterSMG",
+        "RMCBeltHolsterM13",
+        "RMCBeltHolsterPistol",
+        "RMCBeltHolsterRevolver",
+        "RMCBeltSmartPistolFilled",
+        "CMWebbingBrown",
+        "RMCBox458SOCOM",
+        "RMCBoxShellsBuckshot",
+        "RMCBoxShellsSlugs",
+        "RMCBoxShellsFlechette",
+        "RMCBoxMagazinePistolM77AP",
+        "RMCBoxMagazinePistolM13",
+        "RMCBoxMagazinePistolM13Ext",
+        "RMCBoxMagazineSMGM63",
+        "RMCBoxMagazineRifleM54C",
+        "RMCBoxMagazinePistolM1984",
+        "RMCBoxMagazinePistolM1984AP",
+        "RMCBoxMagazineRifleM4SPR",
+        "RMCBoxMagazinePistolSU6",
+        "RMCBoxMagazinePistolMK80",
+        "RMCBoxMagazineSMGM63AP",
+        "RMCBoxMagazineRifleM54CAP",
+        "RMCBoxMagazineRifleM4SPRAP",
+        "RMCBoxMagazineSMGM63Ext",
+        "RMCBoxMagazineRifleM54CExt",
+        "RMCBoxMagazineRifleM4SPRExt",
+        "RMCBoxShotgunBuckshot",
+        "RMCBoxBullets458",
+        "RMCBoxShotgunSlugs",
+        "RMCBoxMagazineRevolverM44",
+        "RMCBoxMagazineRevolverM44Marksman",
+        "RMCBoxShotgunFlechette",
+        "RMCWebbingLegPouch",
+        "RMCPouchDocumentSmall",
+        "RMCScabbardMacheteFilled",
+        "RMCScabbardShotgun",
+        "RMCPouchBayonetFill",
+        "CMWebbingHolster",
+        "RMCPouchAutoinjector",
+        "RMCPouchToolsFill",
+        "RMCPouchMacheteFilled",
+        "RMCPouchMedkit",
+        "RMCPouchPistol",
+        "RMCPouchElectronics",
+        "RMCPouchMagazine",
+        "RMCBeltUtilityGeneral",
+        "RMCPouchShotgun",
+        "RMCPouchFirstAidInjectors",
+        "RMCPouchFuelTank",
+        "RMCPouchFlareFilled",
+        "RMCPouchSyringe",
+        "RMCWebbingDropPouch",
+        "RMCBeltGrenade",
+        "CMBeltMarine",
+        "CMBeltKnifeFilled",
+        "RMCM276ShotgunShellLoadingRig",
+        "CMBeltMortar",
+        "RMCBeltMachineGunner",
+        "CMWebbing",
+        "CMWebbingKnivesFilled",
+        "RMCM82FHolster",
+        "RMCM300SOCOMBelt",
+        "RMCPouchGeneralMedium",
+        "RMCPouchConstruction",
+        "RMCPouchSling",
+        "RMCPouchFirstResponder",
+        "CMPackFlare",
+        "RMCPackFlareCAS",
+        "CMWebbingBlack",
+        "RMCWebbingLegPouchBlack",
+        "RMCWebbingHolsterBlack",
+        "RMCWebbingBlackSmall",
+        "RMCWebbingDropPouchBlack"
+      ]
+    },
+    "unwrappedCaseIds": [
+      "RMCCaseFlamer",
+      "RMCCaseXM88",
+      "RMCGunCasePistolM13",
+      "RMCGunCasePistolMK80",
+      "RMCGunCasePistolSmart",
+      "RMCGunCaseRifleM54CE2",
+      "RMCM2CCase",
+      "RMCM54CMK1Case",
+      "RMCM85A1Case",
+      "RMCML66DCase",
+      "RMCMOU53Case"
+    ]
   },
   "relations": [
     {
@@ -39118,6 +40450,7 @@
     "tradeEntries": 225,
     "directItemPrototypes": 223,
     "catalogItems": 312,
+    "publicItems": 234,
     "relations": 424
   }
 }

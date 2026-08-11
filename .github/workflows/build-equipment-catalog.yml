@@ -27,11 +27,12 @@ jobs:
           sparse-checkout: |
             Resources/Prototypes
             Resources/Locale/ru-RU
+            Resources/Textures
           sparse-checkout-cone-mode: false
 
-      - name: Install YAML parser
+      - name: Install catalog tools
         run: |
-          python3 -m pip install "PyYAML>=6,<7"
+          python3 -m pip install "PyYAML>=6,<7" "Pillow>=10,<12"
 
       - name: Build equipment data
         run: |
@@ -42,6 +43,7 @@ jobs:
             --config config/equipment-sources.yml \
             --index-output data/equipment-index.json \
             --output data/equipment-catalog.json \
+            --sprites-output data/equipment-sprites \
             --commit "$GAME_COMMIT" \
             --locale ru-RU
 
@@ -50,7 +52,8 @@ jobs:
           python3 scripts/validate_equipment_catalog.py \
             --catalog data/equipment-catalog.json \
             --index data/equipment-index.json \
-            --config config/equipment-sources.yml
+            --config config/equipment-sources.yml \
+            --sprites data/equipment-sprites
 
       - name: Save equipment data
         run: |
@@ -59,7 +62,8 @@ jobs:
 
           git add \
             data/equipment-index.json \
-            data/equipment-catalog.json
+            data/equipment-catalog.json \
+            data/equipment-sprites
 
           if git diff --cached --quiet; then
             echo "Nothing changed"

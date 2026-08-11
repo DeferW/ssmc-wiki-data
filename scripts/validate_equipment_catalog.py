@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any
 
 import yaml
+from PIL import Image
 
 
 HIERARCHICAL_RELATIONS = {
@@ -68,7 +69,12 @@ def validate_no_hierarchical_cycles(relations: list[dict[str, Any]]) -> None:
         visit(node)
 
 
-def validate(catalog: dict[str, Any], index: dict[str, Any], config: Path) -> None:
+def validate(
+    catalog: dict[str, Any],
+    index: dict[str, Any],
+    config: Path,
+    sprites: Path,
+) -> None:
     if catalog.get("schemaVersion") != 1:
         raise RuntimeError("Unexpected equipment catalog schema")
     if index.get("schemaVersion") != 1:
@@ -82,6 +88,7 @@ def validate(catalog: dict[str, Any], index: dict[str, Any], config: Path) -> No
     items = catalog.get("items")
     relations = catalog.get("relations")
     counts = catalog.get("counts")
+    public_catalog = catalog.get("publicCatalog")
 
     if not isinstance(vendors, dict) or list(vendors) != expected_vendors:
         raise RuntimeError(
@@ -96,6 +103,8 @@ def validate(catalog: dict[str, Any], index: dict[str, Any], config: Path) -> No
         raise RuntimeError("Invalid equipment relations")
     if not isinstance(counts, dict):
         raise RuntimeError("Missing equipment counts")
+    if not isinstance(public_catalog, dict):
+        raise RuntimeError("Missing public equipment catalog")
 
     trade_keys: set[str] = set()
     direct_ids: set[str] = set()
@@ -133,6 +142,55 @@ def validate(catalog: dict[str, Any], index: dict[str, Any], config: Path) -> No
                 f"Item {item_id} has unknown source vendors: {sorted(unknown_vendors)}"
             )
 
+    public_ids = public_catalog.get("itemIds")
+    unwrapped_cases = public_catalog.get("unwrappedCaseIds")
+    categories = public_catalog.get("categories")
+    if not isinstance(public_ids, list) or not public_ids:
+        raise RuntimeError("Public equipment catalog is empty")
+    if len(public_ids) != len(set(public_ids)):
+        raise RuntimeError("Public equipment catalog contains duplicate items")
+    if not isinstance(unwrapped_cases, list) or not unwrapped_cases:
+        raise RuntimeError("No equipment cases were unwrapped")
+    leaked_cases = sorted(set(public_ids).intersection(unwrapped_cases))
+    if leaked_cases:
+        raise RuntimeError(f"Cases leaked into public catalog: {leaked_cases}")
+    if not isinstance(categories, dict):
+        raise RuntimeError("Missing public equipment categories")
+
+    categorized_ids: list[str] = []
+    for category, category_ids in categories.items():
+        if not isinstance(category, str) or not isinstance(category_ids, list):
+            raise RuntimeError("Invalid public equipment category")
+        categorized_ids.extend(category_ids)
+    if sorted(categorized_ids) != sorted(public_ids):
+        raise RuntimeError("Public equipment categories do not match public items")
+
+    for item_id in public_ids:
+        if item_id not in items:
+            raise RuntimeError(f"Public catalog references missing item: {item_id}")
+        item = items[item_id]
+        name = item.get("name")
+        if not isinstance(name, str) or not name:
+            raise RuntimeError(f"Public item has no name: {item_id}")
+        for character in name:
+            if character.isdigit():
+                break
+            if character.isalpha():
+                if character != character.upper():
+                    raise RuntimeError(
+                        f"Public item name is not capitalized: {item_id}"
+                    )
+                break
+        image = item.get("image")
+        if image != f"equipment-sprites/{item_id}.png":
+            raise RuntimeError(f"Public item has invalid image path: {item_id}")
+        sprite_path = sprites / f"{item_id}.png"
+        if not sprite_path.is_file() or sprite_path.stat().st_size == 0:
+            raise RuntimeError(f"Public item sprite is missing: {item_id}")
+        with Image.open(sprite_path) as image_file:
+            if image_file.convert("RGBA").getbbox() is None:
+                raise RuntimeError(f"Public item sprite is transparent: {item_id}")
+
     relation_keys: set[str] = set()
     for relation in relations:
         if not isinstance(relation, dict):
@@ -166,6 +224,7 @@ def validate(catalog: dict[str, Any], index: dict[str, Any], config: Path) -> No
         "tradeEntries": len(trades),
         "directItemPrototypes": len(direct_ids),
         "catalogItems": len(items),
+        "publicItems": len(public_ids),
         "relations": len(relations),
     }
     if counts != actual_counts:
@@ -227,6 +286,7 @@ def validate(catalog: dict[str, Any], index: dict[str, Any], config: Path) -> No
     print(f"Trade entries: {len(trades)}")
     print(f"Direct item prototypes: {len(direct_ids)}")
     print(f"Catalog items: {len(items)}")
+    print(f"Public equipment items: {len(public_ids)}")
     print(f"Relations: {len(relations)}")
     print("Equipment catalog validation passed")
 
@@ -236,8 +296,14 @@ def main() -> None:
     parser.add_argument("--catalog", type=Path, required=True)
     parser.add_argument("--index", type=Path, required=True)
     parser.add_argument("--config", type=Path, required=True)
+    parser.add_argument("--sprites", type=Path, required=True)
     args = parser.parse_args()
-    validate(read_json(args.catalog), read_json(args.index), args.config)
+    validate(
+        read_json(args.catalog),
+        read_json(args.index),
+        args.config,
+        args.sprites,
+    )
 
 
 if __name__ == "__main__":

@@ -10,6 +10,7 @@ from pathlib import Path
 from typing import Any, Iterable
 
 import yaml
+from PIL import Image
 
 
 class GameYamlLoader(yaml.SafeLoader):
@@ -51,6 +52,22 @@ ROOT_RELATION_TYPES = {
 
 
 HIERARCHICAL_RELATION_TYPES = ROOT_RELATION_TYPES - {"refillableBy"}
+
+
+CASE_CONTENT_RELATION_TYPES = {"contains", "bundleItem", "variant"}
+
+
+PUBLIC_CATEGORY_LABELS = {
+    "weapon": "Оружие",
+    "attachment": "Обвесы",
+    "explosive": "Взрывчатка",
+    "magazine-or-ammo-container": "Боеприпасы",
+    "cartridge": "Боеприпасы",
+    "armor": "Броня",
+    "melee": "Ближний бой",
+    "container": "Снаряжение",
+    "misc": "Прочее",
+}
 
 
 CORE_COMPONENTS = {
@@ -207,7 +224,9 @@ class PrototypeResolver:
             parent = self.resolve(parent_id)
             fields.update(copy.deepcopy(parent["fields"]))
             for component_type, component in parent["components"].items():
-                components[component_type] = copy.deepcopy(component)
+                merged_parent = copy.deepcopy(components.get(component_type, {}))
+                merged_parent.update(copy.deepcopy(component))
+                components[component_type] = merged_parent
 
         # Prototype fields and individual component fields replace the matching
         # inherited field as a whole. Nested maps are intentionally not merged:
@@ -351,6 +370,16 @@ def read_config(path: Path) -> dict[str, Any]:
     if len(set(ids)) != len(ids):
         raise RuntimeError("Duplicate vendor id in equipment config")
     return data
+
+
+def capitalize_first(value: str) -> str:
+    """Uppercase the first visible letter without changing the rest of a name."""
+    for index, character in enumerate(value):
+        if character.isdigit():
+            return value
+        if character.isalpha():
+            return value[:index] + character.upper() + value[index + 1 :]
+    return value
 
 
 def relation_key(relation: dict[str, Any]) -> str:
@@ -696,6 +725,207 @@ def sprite_summary(components: dict[str, Any]) -> dict[str, Any] | None:
     return result or None
 
 
+def texture_path(game_source: Path, sprite_path: str) -> Path:
+    normalized = sprite_path.replace("\\", "/").lstrip("/")
+    if normalized.startswith("Textures/"):
+        normalized = normalized[len("Textures/") :]
+    return game_source / "Resources/Textures" / normalized
+
+
+def first_rsi_state(meta: dict[str, Any]) -> str | None:
+    states = meta.get("states")
+    if not isinstance(states, list):
+        return None
+    for state in states:
+        if isinstance(state, dict) and isinstance(state.get("name"), str):
+            return state["name"]
+    return None
+
+
+def load_sprite_frame(
+    game_source: Path,
+    sprite_path: str,
+    state: str | None,
+) -> Image.Image:
+    source = texture_path(game_source, sprite_path)
+    if source.suffix.lower() != ".rsi":
+        if not source.is_file():
+            raise FileNotFoundError(f"Missing sprite texture: {source}")
+        return Image.open(source).convert("RGBA")
+
+    meta_path = source / "meta.json"
+    if not meta_path.is_file():
+        raise FileNotFoundError(f"Missing RSI metadata: {meta_path}")
+    meta = json.loads(meta_path.read_text(encoding="utf-8-sig"))
+    if not isinstance(meta, dict):
+        raise RuntimeError(f"Invalid RSI metadata: {meta_path}")
+
+    selected_state = state or first_rsi_state(meta)
+    if not selected_state:
+        raise RuntimeError(f"RSI has no states: {meta_path}")
+    state_path = source / f"{selected_state}.png"
+    if not state_path.is_file():
+        fallback = first_rsi_state(meta)
+        if not fallback:
+            raise FileNotFoundError(
+                f"Missing RSI state {selected_state}: {meta_path}"
+            )
+        state_path = source / f"{fallback}.png"
+    sheet = Image.open(state_path).convert("RGBA")
+
+    size = meta.get("size", {})
+    width = size.get("x") if isinstance(size, dict) else None
+    height = size.get("y") if isinstance(size, dict) else None
+    if not isinstance(width, int) or not isinstance(height, int):
+        width, height = sheet.height, sheet.height
+    return sheet.crop((0, 0, min(width, sheet.width), min(height, sheet.height)))
+
+
+def render_sprite_preview(
+    game_source: Path,
+    summary: dict[str, Any],
+) -> Image.Image:
+    base_sprite = summary.get("sprite")
+    layers = summary.get("layers")
+    render_layers: list[tuple[str, str | None]] = []
+
+    if isinstance(layers, list):
+        for layer in layers:
+            if not isinstance(layer, dict) or layer.get("visible") is False:
+                continue
+            layer_sprite = layer.get("sprite", base_sprite)
+            layer_state = layer.get("state", summary.get("state"))
+            if isinstance(layer_sprite, str):
+                render_layers.append(
+                    (layer_sprite, layer_state if isinstance(layer_state, str) else None)
+                )
+            elif isinstance(layer.get("texture"), str):
+                render_layers.append((layer["texture"], None))
+
+    if not render_layers and isinstance(base_sprite, str):
+        state = summary.get("state")
+        render_layers.append((base_sprite, state if isinstance(state, str) else None))
+    if not render_layers:
+        raise RuntimeError("Sprite component has no renderable texture")
+
+    images = [
+        load_sprite_frame(game_source, sprite_path, state)
+        for sprite_path, state in render_layers
+    ]
+    width = max(image.width for image in images)
+    height = max(image.height for image in images)
+    preview = Image.new("RGBA", (width, height), (0, 0, 0, 0))
+    for layer in images:
+        x = (width - layer.width) // 2
+        y = (height - layer.height) // 2
+        preview.alpha_composite(layer, (x, y))
+    return preview
+
+
+def public_category(item: dict[str, Any]) -> str:
+    types = item.get("types", [])
+    if not isinstance(types, list):
+        return "Прочее"
+    for item_type in (
+        "weapon",
+        "attachment",
+        "explosive",
+        "magazine-or-ammo-container",
+        "cartridge",
+        "armor",
+        "melee",
+        "container",
+        "misc",
+    ):
+        if item_type in types:
+            return PUBLIC_CATEGORY_LABELS[item_type]
+    return "Прочее"
+
+
+def is_case_item(item: dict[str, Any]) -> bool:
+    name = str(item.get("name", "")).casefold()
+    prototype_id = str(item.get("id", ""))
+    component_types = set(item.get("componentTypes", []))
+    return (
+        "StorageFill" in component_types
+        and ("кейс" in name or "case" in prototype_id.casefold())
+    )
+
+
+def build_public_catalog(
+    trade_entries: list[dict[str, Any]],
+    items: dict[str, Any],
+    relations: list[dict[str, Any]],
+) -> dict[str, Any]:
+    case_contents: dict[str, list[str]] = defaultdict(list)
+    for relation in relations:
+        if relation.get("type") in CASE_CONTENT_RELATION_TYPES:
+            case_contents[relation["from"]].append(relation["to"])
+
+    public_ids: set[str] = set()
+    queue = deque(
+        entry["itemId"]
+        for entry in trade_entries
+        if isinstance(entry.get("itemId"), str)
+    )
+    visited_cases: set[str] = set()
+    while queue:
+        item_id = queue.popleft()
+        item = items[item_id]
+        if not is_case_item(item):
+            public_ids.add(item_id)
+            continue
+        if item_id in visited_cases:
+            continue
+        visited_cases.add(item_id)
+        queue.extend(case_contents.get(item_id, []))
+
+    categories: dict[str, list[str]] = defaultdict(list)
+    for item_id in sorted(public_ids, key=lambda value: items[value]["name"].casefold()):
+        category = public_category(items[item_id])
+        items[item_id]["category"] = category
+        items[item_id]["public"] = True
+        categories[category].append(item_id)
+
+    return {
+        "itemIds": sorted(public_ids, key=lambda value: items[value]["name"].casefold()),
+        "categories": dict(sorted(categories.items())),
+        "unwrappedCaseIds": sorted(visited_cases),
+    }
+
+
+def render_public_sprites(
+    game_source: Path,
+    output_dir: Path,
+    items: dict[str, Any],
+    public_item_ids: list[str],
+) -> None:
+    output_dir.mkdir(parents=True, exist_ok=True)
+    expected: set[str] = set()
+    failures: list[str] = []
+
+    for item_id in public_item_ids:
+        item = items[item_id]
+        summary = item.get("sprite")
+        if not isinstance(summary, dict):
+            failures.append(f"{item_id}: no Sprite component")
+            continue
+        filename = f"{item_id}.png"
+        expected.add(filename)
+        try:
+            preview = render_sprite_preview(game_source, summary)
+            preview.save(output_dir / filename, format="PNG", optimize=True)
+            item["image"] = f"equipment-sprites/{filename}"
+        except Exception as error:  # Collect every missing/broken sprite in one run.
+            failures.append(f"{item_id}: {error}")
+
+    for path in output_dir.glob("*.png"):
+        if path.name not in expected:
+            path.unlink()
+    if failures:
+        raise RuntimeError("Unable to render equipment sprites:\n" + "\n".join(failures))
+
+
 def should_publish_component(component_type: str) -> bool:
     return (
         component_type in CORE_COMPONENTS
@@ -726,8 +956,8 @@ def build_card(
 
     card: dict[str, Any] = {
         "id": prototype_id,
-        "name": localizer.entity_text(
-            prototype_id, None, fields.get("name")
+        "name": capitalize_first(
+            localizer.entity_text(prototype_id, None, fields.get("name"))
         ),
         "description": localizer.entity_text(
             prototype_id, "desc", fields.get("description")
@@ -939,6 +1169,8 @@ def build_catalog(
     )
     trade_entries.sort(key=lambda item: item["key"])
 
+    public_catalog = build_public_catalog(trade_entries, items, relations)
+
     counts = {
         "indexedEntityPrototypes": len(prototypes),
         "vendors": len(vendors),
@@ -946,6 +1178,7 @@ def build_catalog(
         "tradeEntries": len(trade_entries),
         "directItemPrototypes": len(availability_by_item),
         "catalogItems": len(items),
+        "publicItems": len(public_catalog["itemIds"]),
         "relations": len(relations),
     }
 
@@ -958,6 +1191,7 @@ def build_catalog(
         "vendors": vendors,
         "tradeEntries": trade_entries,
         "items": items,
+        "publicCatalog": public_catalog,
         "relations": relations,
         "counts": counts,
     }
@@ -1001,6 +1235,7 @@ def main() -> None:
     parser.add_argument("--config", type=Path, required=True)
     parser.add_argument("--index-output", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--sprites-output", type=Path, required=True)
     parser.add_argument("--commit", required=True)
     parser.add_argument("--locale", default="ru-RU")
     args = parser.parse_args()
@@ -1015,6 +1250,12 @@ def main() -> None:
         localizer=localizer,
         game_commit=args.commit,
     )
+    render_public_sprites(
+        game_source=args.game_source,
+        output_dir=args.sprites_output,
+        items=catalog["items"],
+        public_item_ids=catalog["publicCatalog"]["itemIds"],
+    )
     write_json(args.index_output, index)
     write_json(args.output, catalog)
 
@@ -1023,6 +1264,7 @@ def main() -> None:
     print(f"Vendor sections: {counts['sections']}")
     print(f"Trade entries: {counts['tradeEntries']}")
     print(f"Catalog items: {counts['catalogItems']}")
+    print(f"Public equipment items: {counts['publicItems']}")
     print(f"Relations: {counts['relations']}")
 
 
