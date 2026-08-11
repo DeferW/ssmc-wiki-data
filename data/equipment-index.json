@@ -1,11 +1,11 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "gameCommit": "17193e0f0b25bc1d47265ec98c148f0d11017019",
   "source": "MetalSage/space-stories-cm14",
   "counts": {
     "indexedEntityPrototypes": 25596,
-    "catalogEntityPrototypes": 1119,
-    "resolvedEntityPrototypes": 1530
+    "catalogEntityPrototypes": 1120,
+    "resolvedEntityPrototypes": 1531
   },
   "entries": {
     "ArmorHelmetM10": {
@@ -7930,6 +7930,14 @@
       "abstract": false,
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/Launchers/m5_atl_rocket_launcher.yml"
+    },
+    "RMCProjectileTaser": {
+      "parents": [
+        "RMCBaseBullet"
+      ],
+      "abstract": false,
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/Ammunition/Projectiles/battery.yml"
     },
     "RMCPyroSpecEquipmentCase": {
       "parents": [
