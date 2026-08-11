@@ -69,6 +69,18 @@ def validate_no_hierarchical_cycles(relations: list[dict[str, Any]]) -> None:
         visit(node)
 
 
+def sprite_has_green_tint(path: Path) -> bool:
+    with Image.open(path) as image:
+        rgba = image.convert("RGBA")
+        pixels = rgba.load()
+        for y in range(rgba.height):
+            for x in range(rgba.width):
+                red, green, blue, alpha = pixels[x, y]
+                if alpha and green >= red + 20 and green >= blue + 20:
+                    return True
+    return False
+
+
 def validate(
     catalog: dict[str, Any],
     index: dict[str, Any],
@@ -162,6 +174,11 @@ def validate(
         if not isinstance(category, str) or not isinstance(category_ids, list):
             raise RuntimeError("Invalid public equipment category")
         categorized_ids.extend(category_ids)
+        for item_id in category_ids:
+            if items.get(item_id, {}).get("category") != category:
+                raise RuntimeError(
+                    f"Public category mismatch for {item_id}: {category}"
+                )
     if sorted(categorized_ids) != sorted(public_ids):
         raise RuntimeError("Public equipment categories do not match public items")
 
@@ -190,6 +207,59 @@ def validate(
         with Image.open(sprite_path) as image_file:
             if image_file.convert("RGBA").getbbox() is None:
                 raise RuntimeError(f"Public item sprite is transparent: {item_id}")
+
+    expected_categories = {
+        "RMCAttachmentU7UnderbarrelShotgun": "Обвесы",
+        "RMCAttachmentUnderbarrelExtinguisher": "Обвесы",
+        "RMCAttachmentU1GrenadeLauncher": "Обвесы",
+        "CMWrench": "Снаряжение",
+        "CMScrewdriver": "Снаряжение",
+        "CMEntrenchingTool": "Снаряжение",
+        "CMFireExtinguisherPortable": "Снаряжение",
+        "CMBackpackMarine": "Снаряжение",
+        "RMCBackpackAmmo": "Снаряжение",
+        "RMCBoxMagazinePistolM13": "Боеприпасы",
+        "RMCBoxMagazineRifleM54CAP": "Боеприпасы",
+        "RMCBoxBulletsRifle": "Боеприпасы",
+        "RMCBoxShotgunBuckshot": "Боеприпасы",
+        "CMM11Knife": "Ближний бой",
+        "CMM2132Machete": "Ближний бой",
+    }
+    for item_id, expected_category in expected_categories.items():
+        actual_category = items.get(item_id, {}).get("category")
+        if actual_category != expected_category:
+            raise RuntimeError(
+                f"Wrong category for {item_id}: "
+                f"expected={expected_category}, actual={actual_category}"
+            )
+
+    for item_id in public_ids:
+        item = items[item_id]
+        if "Attachable" in item.get("componentTypes", []):
+            if item.get("category") != "Обвесы":
+                raise RuntimeError(f"Attachment categorized incorrectly: {item_id}")
+        if "RMCAmmoBox" in item.get("tags", []):
+            if item.get("category") != "Боеприпасы":
+                raise RuntimeError(f"Ammo box categorized incorrectly: {item_id}")
+
+    green_ap_magazines = {
+        "CMMagazineSMGM63AP",
+        "CMMagazineRifleM54CAP",
+        "CMMagazineRifleM4SPRAP",
+    }
+    for item_id in green_ap_magazines:
+        sprite_path = sprites / f"{item_id}.png"
+        if not sprite_has_green_tint(sprite_path):
+            raise RuntimeError(f"AP magazine lost its green sprite tint: {item_id}")
+
+    distinct_box_sprites = {
+        (sprites / "RMCBoxMagazinePistolM13.png").read_bytes(),
+        (sprites / "RMCBoxMagazineSMGM63.png").read_bytes(),
+        (sprites / "RMCBoxMagazineRifleM54C.png").read_bytes(),
+        (sprites / "RMCBoxMagazineRifleM54CAP.png").read_bytes(),
+    }
+    if len(distinct_box_sprites) != 4:
+        raise RuntimeError("Differently colored ammunition boxes rendered identically")
 
     relation_keys: set[str] = set()
     for relation in relations:

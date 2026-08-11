@@ -10,7 +10,7 @@ from pathlib import Path
 from typing import Any, Iterable
 
 import yaml
-from PIL import Image
+from PIL import Image, ImageChops, ImageColor
 
 
 class GameYamlLoader(yaml.SafeLoader):
@@ -57,6 +57,14 @@ HIERARCHICAL_RELATION_TYPES = ROOT_RELATION_TYPES - {"refillableBy"}
 CASE_CONTENT_RELATION_TYPES = {"contains", "bundleItem", "variant"}
 
 
+PHYSICAL_CONTENT_RELATION_TYPES = {
+    "contains",
+    "slotItem",
+    "bundleItem",
+    "variant",
+}
+
+
 PUBLIC_CATEGORY_LABELS = {
     "weapon": "Оружие",
     "attachment": "Обвесы",
@@ -66,7 +74,8 @@ PUBLIC_CATEGORY_LABELS = {
     "armor": "Броня",
     "melee": "Ближний бой",
     "container": "Снаряжение",
-    "misc": "Прочее",
+    "tool": "Снаряжение",
+    "misc": "Снаряжение",
 }
 
 
@@ -675,11 +684,64 @@ def add_compatibility_relations(
                     )
 
 
-def infer_types(components: dict[str, Any], tags: set[str]) -> list[str]:
+def has_meaningful_armor(components: dict[str, Any]) -> bool:
+    """Ignore the empty Armor marker inherited by backpacks and satchels."""
+    if "RMCArmor" in components:
+        return True
+    armor = components.get("Armor")
+    if not isinstance(armor, dict):
+        return False
+    modifiers = armor.get("modifiers")
+    if isinstance(modifiers, dict) and modifiers:
+        return True
+    modifier_sets = armor.get("modifierSets")
+    return isinstance(modifier_sets, list) and bool(modifier_sets)
+
+
+def is_ammunition_container(
+    prototype_id: str,
+    component_types: set[str],
+    tags: set[str],
+) -> bool:
+    if "RMCAmmoBox" in tags or "RMCBoxShotgunShells" in tags:
+        return True
+    if prototype_id.startswith((
+        "RMCBoxMagazine",
+        "RMCBoxBullets",
+        "RMCBoxShells",
+        "RMCBoxShotgun",
+        "RMCBox458SOCOM",
+    )):
+        return True
+    return "RMCFlamerTank" in component_types
+
+
+def is_dedicated_melee_weapon(
+    prototype_id: str,
+    component_types: set[str],
+    tags: set[str],
+) -> bool:
+    if "MeleeWeapon" not in component_types:
+        return False
+    melee_words = ("knife", "machete", "bayonet", "sword", "blade")
+    signals = {prototype_id.casefold(), *(tag.casefold() for tag in tags)}
+    return "Sharp" in component_types or any(
+        word in signal for signal in signals for word in melee_words
+    )
+
+
+def infer_types(
+    prototype_id: str,
+    components: dict[str, Any],
+    tags: set[str],
+) -> list[str]:
     result: set[str] = set()
     component_types = set(components)
 
-    if "Gun" in component_types or "RMCFlamerAmmoProvider" in component_types:
+    if (
+        "Attachable" not in component_types
+        and ("Gun" in component_types or "RMCFlamerAmmoProvider" in component_types)
+    ):
         result.add("weapon")
     if "Attachable" in component_types:
         result.add("attachment")
@@ -689,17 +751,51 @@ def infer_types(components: dict[str, Any], tags: set[str]) -> list[str]:
         result.add("cartridge")
     if "BallisticAmmoProvider" in component_types and "Gun" not in component_types:
         result.add("magazine-or-ammo-container")
+    if is_ammunition_container(prototype_id, component_types, tags):
+        result.add("magazine-or-ammo-container")
     if "Storage" in component_types or "CMItemSlots" in component_types:
         result.add("container")
-    if "Armor" in component_types or "RMCArmor" in component_types:
+    if has_meaningful_armor(components):
         result.add("armor")
     if "Explosive" in component_types or any("Grenade" in tag for tag in tags):
         result.add("explosive")
-    if "MeleeWeapon" in component_types:
+    if is_dedicated_melee_weapon(prototype_id, component_types, tags):
         result.add("melee")
+    if "Tool" in component_types or any(
+        component_type.endswith("Tool") for component_type in component_types
+    ):
+        result.add("tool")
     if not result:
         result.add("misc")
     return sorted(result)
+
+
+def layer_map_names(layer: dict[str, Any]) -> set[str]:
+    value = layer.get("map")
+    if isinstance(value, str):
+        return {value}
+    if isinstance(value, list):
+        return {item for item in value if isinstance(item, str)}
+    return set()
+
+
+def apply_static_preview_states(
+    components: dict[str, Any],
+    layers: list[dict[str, Any]],
+) -> None:
+    """Choose the spawn-time state for layers normally updated by game systems."""
+    magazine_visuals = components.get("MagazineVisuals")
+    if not isinstance(magazine_visuals, dict):
+        return
+    mag_state = magazine_visuals.get("magState")
+    steps = magazine_visuals.get("steps")
+    if not isinstance(mag_state, str) or not isinstance(steps, int) or steps <= 0:
+        return
+    full_state = f"{mag_state}-{max(steps - 1, 0)}"
+    for layer in layers:
+        if "enum.GunVisualLayers.Mag" in layer_map_names(layer):
+            layer["state"] = full_state
+            layer["visible"] = True
 
 
 def sprite_summary(components: dict[str, Any]) -> dict[str, Any] | None:
@@ -713,8 +809,11 @@ def sprite_summary(components: dict[str, Any]) -> dict[str, Any] | None:
         result["state"] = sprite["state"]
     layers = sprite.get("layers")
     if isinstance(layers, list):
-        clean_layers = [layer for layer in layers if isinstance(layer, dict)]
+        clean_layers = [
+            copy.deepcopy(layer) for layer in layers if isinstance(layer, dict)
+        ]
         if clean_layers:
+            apply_static_preview_states(components, clean_layers)
             result["layers"] = clean_layers
             if "state" not in result:
                 for layer in clean_layers:
@@ -765,12 +864,7 @@ def load_sprite_frame(
         raise RuntimeError(f"RSI has no states: {meta_path}")
     state_path = source / f"{selected_state}.png"
     if not state_path.is_file():
-        fallback = first_rsi_state(meta)
-        if not fallback:
-            raise FileNotFoundError(
-                f"Missing RSI state {selected_state}: {meta_path}"
-            )
-        state_path = source / f"{fallback}.png"
+        raise FileNotFoundError(f"Missing RSI state {selected_state}: {meta_path}")
     sheet = Image.open(state_path).convert("RGBA")
 
     size = meta.get("size", {})
@@ -781,44 +875,102 @@ def load_sprite_frame(
     return sheet.crop((0, 0, min(width, sheet.width), min(height, sheet.height)))
 
 
+def tint_sprite_layer(image: Image.Image, color_value: Any) -> Image.Image:
+    if not isinstance(color_value, str):
+        return image
+    try:
+        red, green, blue, alpha = ImageColor.getcolor(color_value, "RGBA")
+    except ValueError as error:
+        raise RuntimeError(f"Unsupported sprite layer color: {color_value}") from error
+
+    rgb = ImageChops.multiply(
+        image.convert("RGB"),
+        Image.new("RGB", image.size, (red, green, blue)),
+    )
+    source_alpha = image.getchannel("A")
+    if alpha != 255:
+        source_alpha = ImageChops.multiply(
+            source_alpha,
+            Image.new("L", image.size, alpha),
+        )
+    return Image.merge("RGBA", (*rgb.split(), source_alpha))
+
+
+def layer_offset_pixels(layer: dict[str, Any], width: int, height: int) -> tuple[int, int]:
+    value = layer.get("offset")
+    if isinstance(value, str):
+        parts = [part.strip() for part in value.split(",")]
+    elif isinstance(value, (list, tuple)):
+        parts = list(value)
+    else:
+        return 0, 0
+    if len(parts) != 2:
+        return 0, 0
+    try:
+        x = float(parts[0])
+        y = float(parts[1])
+    except (TypeError, ValueError):
+        return 0, 0
+    return round(x * width), round(-y * height)
+
+
 def render_sprite_preview(
     game_source: Path,
     summary: dict[str, Any],
 ) -> Image.Image:
     base_sprite = summary.get("sprite")
     layers = summary.get("layers")
-    render_layers: list[tuple[str, str | None]] = []
+    render_layers: list[dict[str, Any]] = []
 
     if isinstance(layers, list):
         for layer in layers:
             if not isinstance(layer, dict) or layer.get("visible") is False:
                 continue
             layer_sprite = layer.get("sprite", base_sprite)
-            layer_state = layer.get("state", summary.get("state"))
+            layer_state = layer.get("state")
             if isinstance(layer_sprite, str):
-                render_layers.append(
-                    (layer_sprite, layer_state if isinstance(layer_state, str) else None)
-                )
+                # A layer without a state is an initially empty visualizer slot.
+                # Reusing Sprite.state here produced unrelated duplicate artwork.
+                if not isinstance(layer_state, str):
+                    continue
+                rendered = copy.deepcopy(layer)
+                rendered["sprite"] = layer_sprite
+                rendered["state"] = layer_state
+                render_layers.append(rendered)
             elif isinstance(layer.get("texture"), str):
-                render_layers.append((layer["texture"], None))
+                rendered = copy.deepcopy(layer)
+                rendered["sprite"] = layer["texture"]
+                rendered["state"] = None
+                render_layers.append(rendered)
 
     if not render_layers and isinstance(base_sprite, str):
         state = summary.get("state")
-        render_layers.append((base_sprite, state if isinstance(state, str) else None))
+        render_layers.append(
+            {
+                "sprite": base_sprite,
+                "state": state if isinstance(state, str) else None,
+            }
+        )
     if not render_layers:
         raise RuntimeError("Sprite component has no renderable texture")
 
-    images = [
-        load_sprite_frame(game_source, sprite_path, state)
-        for sprite_path, state in render_layers
-    ]
-    width = max(image.width for image in images)
-    height = max(image.height for image in images)
+    images: list[tuple[Image.Image, dict[str, Any]]] = []
+    for layer in render_layers:
+        image = load_sprite_frame(
+            game_source,
+            layer["sprite"],
+            layer.get("state"),
+        )
+        image = tint_sprite_layer(image, layer.get("color"))
+        images.append((image, layer))
+    width = max(image.width for image, _ in images)
+    height = max(image.height for image, _ in images)
     preview = Image.new("RGBA", (width, height), (0, 0, 0, 0))
-    for layer in images:
-        x = (width - layer.width) // 2
-        y = (height - layer.height) // 2
-        preview.alpha_composite(layer, (x, y))
+    for image, layer in images:
+        offset_x, offset_y = layer_offset_pixels(layer, width, height)
+        x = (width - image.width) // 2 + offset_x
+        y = (height - image.height) // 2 + offset_y
+        preview.alpha_composite(image, (x, y))
     return preview
 
 
@@ -827,13 +979,14 @@ def public_category(item: dict[str, Any]) -> str:
     if not isinstance(types, list):
         return "Прочее"
     for item_type in (
-        "weapon",
         "attachment",
+        "weapon",
         "explosive",
         "magazine-or-ammo-container",
         "cartridge",
         "armor",
         "melee",
+        "tool",
         "container",
         "misc",
     ):
@@ -858,9 +1011,12 @@ def build_public_catalog(
     relations: list[dict[str, Any]],
 ) -> dict[str, Any]:
     case_contents: dict[str, list[str]] = defaultdict(list)
+    physical_contents: dict[str, list[str]] = defaultdict(list)
     for relation in relations:
         if relation.get("type") in CASE_CONTENT_RELATION_TYPES:
             case_contents[relation["from"]].append(relation["to"])
+        if relation.get("type") in PHYSICAL_CONTENT_RELATION_TYPES:
+            physical_contents[relation["from"]].append(relation["to"])
 
     public_ids: set[str] = set()
     queue = deque(
@@ -874,6 +1030,13 @@ def build_public_catalog(
         item = items[item_id]
         if not is_case_item(item):
             public_ids.add(item_id)
+            # Filled sheaths, pouches and knife belts remain useful catalog
+            # items, while their actual melee weapons deserve their own cards.
+            # Do not promote arbitrary nested ammunition or technical entities.
+            for target in physical_contents.get(item_id, []):
+                target_types = items[target].get("types", [])
+                if isinstance(target_types, list) and "melee" in target_types:
+                    queue.append(target)
             continue
         if item_id in visited_cases:
             continue
@@ -881,14 +1044,15 @@ def build_public_catalog(
         queue.extend(case_contents.get(item_id, []))
 
     categories: dict[str, list[str]] = defaultdict(list)
-    for item_id in sorted(public_ids, key=lambda value: items[value]["name"].casefold()):
+    sort_key = lambda value: (items[value]["name"].casefold(), value)
+    for item_id in sorted(public_ids, key=sort_key):
         category = public_category(items[item_id])
         items[item_id]["category"] = category
         items[item_id]["public"] = True
         categories[category].append(item_id)
 
     return {
-        "itemIds": sorted(public_ids, key=lambda value: items[value]["name"].casefold()),
+        "itemIds": sorted(public_ids, key=sort_key),
         "categories": dict(sorted(categories.items())),
         "unwrappedCaseIds": sorted(visited_cases),
     }
@@ -969,7 +1133,7 @@ def build_card(
         "sourceFile": resolved["sourceFile"],
         "parents": resolved["parents"],
         "abstract": resolved["abstract"],
-        "types": infer_types(components, tags),
+        "types": infer_types(prototype_id, components, tags),
         "tags": sorted(tags),
         "componentTypes": sorted(components),
         "properties": properties,
