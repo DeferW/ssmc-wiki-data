@@ -48,6 +48,8 @@ ROOT_RELATION_TYPES = {
     "variant",
     "fires",
     "refillableBy",
+    "mountedWeapon",
+    "mappedVariant",
 }
 
 
@@ -62,20 +64,86 @@ PHYSICAL_CONTENT_RELATION_TYPES = {
     "slotItem",
     "bundleItem",
     "variant",
+    "mountedWeapon",
+    "mappedVariant",
 }
 
 
 PUBLIC_CATEGORY_LABELS = {
     "weapon": "Оружие",
+    "weapon-support": "Оружейные системы",
     "attachment": "Обвесы",
     "explosive": "Взрывчатка",
     "magazine-or-ammo-container": "Боеприпасы",
     "cartridge": "Боеприпасы",
-    "armor": "Броня",
+    "vehicle-ammunition": "Боеприпасы для техники",
+    "armor": "Броня и защита",
     "melee": "Ближний бой",
-    "container": "Снаряжение",
-    "tool": "Снаряжение",
+    "medical": "Медицина",
+    "medicine": "Медикаменты",
+    "engineering": "Инженерия",
+    "material": "Материалы",
+    "tool": "Инструменты",
+    "clothing": "Одежда",
+    "container": "Разгрузка и хранение",
+    "electronics": "Электроника и связь",
+    "lighting": "Освещение",
+    "food": "Провизия",
+    "training": "Инструкции и обучение",
+    "reagent": "Реагенты и топливо",
+    "office": "Канцелярия",
+    "janitorial": "Хозяйственные принадлежности",
     "misc": "Снаряжение",
+}
+
+
+SOURCE_CATEGORY_HINTS = {
+    "ammunition": "magazine-or-ammo-container",
+    "armor-piercing ammunition": "magazine-or-ammo-container",
+    "extended ammunition": "magazine-or-ammo-container",
+    "special ammunition": "magazine-or-ammo-container",
+    "restricted firearm ammunition": "magazine-or-ammo-container",
+    "primary ammunition": "magazine-or-ammo-container",
+    "sidearm ammunition": "magazine-or-ammo-container",
+    "magazine boxes": "magazine-or-ammo-container",
+    "ammunition boxes": "magazine-or-ammo-container",
+    "боеприпасы": "magazine-or-ammo-container",
+    "боеприпасы специалиста по оружию": "magazine-or-ammo-container",
+    "vehicle ammunition": "vehicle-ammunition",
+    "боеприпасы для техники": "vehicle-ammunition",
+    "attachments": "attachment",
+    "обвесы": "attachment",
+    "armor": "armor",
+    "броня": "armor",
+    "clothing": "clothing",
+    "одежда": "clothing",
+    "food": "food",
+    "еда": "food",
+    "medicine": "medical",
+    "medical": "medical",
+    "медицина": "medical",
+    "engineering": "engineering",
+    "инженерия": "engineering",
+    "explosives": "explosive",
+    "взрывчатка": "explosive",
+    "research": "material",
+    "исследование": "material",
+    "mortar": "magazine-or-ammo-container",
+    "мортира": "magazine-or-ammo-container",
+    "reagent tanks": "reagent",
+    "резервуары для реагентов": "reagent",
+    "weapons": "weapon",
+    "primary firearms": "weapon",
+    "sidearms": "weapon",
+    "оружие": "weapon",
+}
+
+
+SLOT_LABELS = {
+    "rmc-aslot-barrel": "Дуло",
+    "rmc-aslot-rail": "Верхняя планка",
+    "rmc-aslot-stock": "Приклад",
+    "rmc-aslot-underbarrel": "Подствольный слот",
 }
 
 
@@ -106,6 +174,19 @@ CORE_COMPONENTS = {
     "Stack",
     "Storage",
     "StorageFill",
+}
+
+
+NON_MECHANICAL_COMPONENTS = {
+    "Appearance",
+    "ContainerContainer",
+    "GenericVisualizer",
+    "Icon",
+    "ItemCamouflage",
+    "PointLight",
+    "Sprite",
+    "Tag",
+    "Transform",
 }
 
 
@@ -371,13 +452,17 @@ def read_config(path: Path) -> dict[str, Any]:
     if not isinstance(data, dict):
         raise RuntimeError("Equipment config must be a mapping")
     vendors = data.get("vendors")
+    cargo_catalogs = data.get("cargoCatalogs", [])
     if not isinstance(vendors, list) or not vendors:
         raise RuntimeError("Equipment config has no vendors")
-    ids = [entry.get("id") for entry in vendors if isinstance(entry, dict)]
-    if len(ids) != len(vendors) or any(not isinstance(item, str) for item in ids):
-        raise RuntimeError("Every configured vendor must have a string id")
+    if not isinstance(cargo_catalogs, list):
+        raise RuntimeError("Equipment cargoCatalogs must be a list")
+    sources = [*vendors, *cargo_catalogs]
+    ids = [entry.get("id") for entry in sources if isinstance(entry, dict)]
+    if len(ids) != len(sources) or any(not isinstance(item, str) for item in ids):
+        raise RuntimeError("Every configured source must have a string id")
     if len(set(ids)) != len(ids):
-        raise RuntimeError("Duplicate vendor id in equipment config")
+        raise RuntimeError("Duplicate source id in equipment config")
     return data
 
 
@@ -389,6 +474,30 @@ def capitalize_first(value: str) -> str:
         if character.isalpha():
             return value[:index] + character.upper() + value[index + 1 :]
     return value
+
+
+def catalog_display_name(base_name: str, suffix: str) -> str:
+    ignored_prefixes = (
+        "empty",
+        "filled",
+        "loaded",
+        "folded",
+        "assembled",
+        "пуст",
+        "заполн",
+        "заряж",
+        "слож",
+        "собран",
+    )
+    qualifiers = [
+        part.strip()
+        for part in suffix.split(",")
+        if part.strip()
+        and not part.strip().casefold().startswith(ignored_prefixes)
+    ]
+    if not qualifiers:
+        return base_name
+    return f"{base_name} ({', '.join(qualifiers)})"
 
 
 def relation_key(relation: dict[str, Any]) -> str:
@@ -540,6 +649,31 @@ def content_relations(
                     }
                 )
 
+    squad_mapping = components.get("CMVendorMapToSquad", {}).get("map")
+    if isinstance(squad_mapping, dict):
+        for squad_name, item in squad_mapping.items():
+            if isinstance(item, str):
+                result.append(
+                    {
+                        "from": prototype_id,
+                        "to": item,
+                        "type": "mappedVariant",
+                        "variant": str(squad_name),
+                        "quantity": 1,
+                    }
+                )
+
+    fixed_weapon = components.get("WeaponMount", {}).get("fixedWeaponPrototype")
+    if isinstance(fixed_weapon, str):
+        result.append(
+            {
+                "from": prototype_id,
+                "to": fixed_weapon,
+                "type": "mountedWeapon",
+                "quantity": 1,
+            }
+        )
+
     provider = components.get("BallisticAmmoProvider", {})
     ammo = provider.get("proto")
     if isinstance(ammo, str):
@@ -688,6 +822,11 @@ def has_meaningful_armor(components: dict[str, Any]) -> bool:
     """Ignore the empty Armor marker inherited by backpacks and satchels."""
     if "RMCArmor" in components:
         return True
+    if any(
+        component_type in components
+        for component_type in ("CMHardArmor", "RMCBulkyArmor", "SquadArmor")
+    ):
+        return True
     armor = components.get("Armor")
     if not isinstance(armor, dict):
         return False
@@ -730,13 +869,35 @@ def is_dedicated_melee_weapon(
     )
 
 
+def source_category_hint(section_name: str) -> str | None:
+    normalized = re.sub(r"\s+", " ", section_name.strip().casefold())
+    direct = SOURCE_CATEGORY_HINTS.get(normalized)
+    if direct:
+        return direct
+    for fragment, category in SOURCE_CATEGORY_HINTS.items():
+        if fragment in normalized:
+            return category
+    return None
+
+
+def has_any_component(component_types: set[str], fragments: tuple[str, ...]) -> bool:
+    return any(
+        fragment.casefold() in component_type.casefold()
+        for component_type in component_types
+        for fragment in fragments
+    )
+
+
 def infer_types(
     prototype_id: str,
     components: dict[str, Any],
     tags: set[str],
+    source_hints: set[str] | None = None,
 ) -> list[str]:
     result: set[str] = set()
     component_types = set(components)
+    source_hints = source_hints or set()
+    folded_id = prototype_id.casefold()
 
     if (
         "Attachable" not in component_types
@@ -765,6 +926,83 @@ def infer_types(
         component_type.endswith("Tool") for component_type in component_types
     ):
         result.add("tool")
+    if "Clothing" in component_types or has_any_component(
+        component_types, ("uniformaccessory", "helmetaccessory")
+    ):
+        result.add("clothing")
+    if has_any_component(
+        component_types,
+        ("healing", "healthanalyzer", "surgery", "defibrillator", "hypospray"),
+    ):
+        result.add("medical")
+    if (
+        has_any_component(
+            component_types,
+            ("pill", "injector", "hypospray", "syringe", "injectablesolution"),
+        )
+        or any(
+            word in folded_id
+            for word in ("pill", "tablet", "autoinjector", "syringe")
+        )
+    ):
+        result.add("medicine")
+    if has_any_component(component_types, ("edible",)):
+        result.add("food")
+    if has_any_component(
+        component_types,
+        (
+            "radio",
+            "headset",
+            "binocular",
+            "motiondetector",
+            "camera",
+            "computer",
+            "encryption",
+            "visor",
+        ),
+    ):
+        result.add("electronics")
+    if "Flash" in component_types:
+        result.add("electronics")
+    if has_any_component(component_types, ("light", "flashlight", "flare")):
+        result.add("lighting")
+    if "Stack" in component_types or any(
+        word in folded_id for word in ("sheet", "plank", "sandbag", "plastic", "phoron")
+    ):
+        result.add("material")
+    if any(word in folded_id for word in ("pamphlet", "manual", "guidebook")):
+        result.add("training")
+    if has_any_component(component_types, ("crayon", "stamp")) or any(
+        word in folded_id for word in ("crayon", "stamp")
+    ):
+        result.add("office")
+    if has_any_component(component_types, ("mop", "broom", "janitor")) or any(
+        word in folded_id
+        for word in ("cleaner", "wetsign", "mop", "broom", "janitor")
+    ):
+        result.add("janitorial")
+    if has_any_component(component_types, ("cprdummy", "healthscannable")):
+        result.add("medical")
+    if has_any_component(
+        component_types,
+        ("welder", "construction", "powercell", "generator", "barricade"),
+    ):
+        result.add("engineering")
+    if "WeaponMount" in component_types or has_any_component(
+        component_types, ("sentry", "mortar")
+    ):
+        result.add("weapon-support")
+    if (
+        "vehicle-ammunition" in source_hints
+        and (
+            "magazine-or-ammo-container" in result
+            or "cartridge" in result
+            or "explosive" in result
+        )
+    ):
+        result.add("vehicle-ammunition")
+    if not result:
+        result.update(source_hints)
     if not result:
         result.add("misc")
     return sorted(result)
@@ -981,13 +1219,27 @@ def public_category(item: dict[str, Any]) -> str:
     for item_type in (
         "attachment",
         "weapon",
+        "weapon-support",
+        "melee",
         "explosive",
+        "vehicle-ammunition",
         "magazine-or-ammo-container",
         "cartridge",
         "armor",
-        "melee",
-        "tool",
         "container",
+        "medicine",
+        "medical",
+        "tool",
+        "engineering",
+        "electronics",
+        "lighting",
+        "food",
+        "clothing",
+        "material",
+        "training",
+        "reagent",
+        "office",
+        "janitorial",
         "misc",
     ):
         if item_type in types:
@@ -1005,43 +1257,268 @@ def is_case_item(item: dict[str, Any]) -> bool:
     )
 
 
+def is_state_variant(item: dict[str, Any]) -> bool:
+    signal = f"{item.get('id', '')} {item.get('suffix', '')}".casefold()
+    return any(
+        marker in signal
+        for marker in (
+            "empty",
+            "filled",
+            "loaded",
+            "assembled",
+            "пуст",
+            "заполн",
+            "заряж",
+            "собран",
+        )
+    )
+
+
+def normalized_identity_text(value: Any) -> str:
+    return re.sub(r"\s+", " ", str(value or "").strip().casefold())
+
+
+def state_alias_groups(
+    candidate_ids: set[str],
+    items: dict[str, Any],
+    relations: list[dict[str, Any]],
+) -> tuple[dict[str, str], dict[str, list[str]]]:
+    """Collapse load-state prototypes without merging merely similar models."""
+    parent: dict[str, str] = {item_id: item_id for item_id in candidate_ids}
+
+    def find(item_id: str) -> str:
+        while parent[item_id] != item_id:
+            parent[item_id] = parent[parent[item_id]]
+            item_id = parent[item_id]
+        return item_id
+
+    def union(left: str, right: str) -> None:
+        left_root = find(left)
+        right_root = find(right)
+        if left_root != right_root:
+            parent[max(left_root, right_root)] = min(left_root, right_root)
+
+    for item_id in sorted(candidate_ids):
+        item = items[item_id]
+        ancestors = list(item.get("parents", []))
+        visited: set[str] = set()
+        while ancestors:
+            ancestor_id = ancestors.pop(0)
+            if ancestor_id in visited:
+                continue
+            visited.add(ancestor_id)
+            ancestor = items.get(ancestor_id)
+            if not isinstance(ancestor, dict):
+                continue
+            ancestors.extend(ancestor.get("parents", []))
+            same_text = (
+                normalized_identity_text(item.get("name"))
+                == normalized_identity_text(ancestor.get("name"))
+                and normalized_identity_text(item.get("description"))
+                == normalized_identity_text(ancestor.get("description"))
+            )
+            load_state_weapon = (
+                "weapon" in item.get("types", [])
+                and "weapon" in ancestor.get("types", [])
+                and (is_state_variant(item) or is_state_variant(ancestor))
+            )
+            load_state_container = (
+                "container" in item.get("types", [])
+                and "container" in ancestor.get("types", [])
+                and (is_state_variant(item) or is_state_variant(ancestor))
+            )
+            stack_variant = (
+                "Stack" in item.get("componentTypes", [])
+                and "Stack" in ancestor.get("componentTypes", [])
+            )
+            if (
+                ancestor_id in candidate_ids
+                and same_text
+                and (load_state_weapon or load_state_container or stack_variant)
+            ):
+                union(item_id, ancestor_id)
+
+    for relation in relations:
+        if relation.get("type") != "variant":
+            continue
+        source = relation.get("from")
+        target = relation.get("to")
+        if source not in candidate_ids or target not in candidate_ids:
+            continue
+        source_item = items[source]
+        target_item = items[target]
+        if (
+            normalized_identity_text(source_item.get("name"))
+            == normalized_identity_text(target_item.get("name"))
+        ):
+            union(source, target)
+
+    variant_siblings: dict[str, list[str]] = defaultdict(list)
+    for relation in relations:
+        if relation.get("type") == "variant" and relation.get("to") in candidate_ids:
+            variant_siblings[str(relation.get("from"))].append(str(relation["to"]))
+    for siblings in variant_siblings.values():
+        by_text: dict[tuple[str, str], list[str]] = defaultdict(list)
+        for item_id in siblings:
+            item = items[item_id]
+            by_text[
+                (
+                    normalized_identity_text(item.get("name")),
+                    normalized_identity_text(item.get("description")),
+                )
+            ].append(item_id)
+        for members in by_text.values():
+            for member in members[1:]:
+                union(members[0], member)
+
+    stack_families: dict[tuple[str, str, tuple[str, ...]], list[str]] = defaultdict(list)
+    for item_id in sorted(candidate_ids):
+        item = items[item_id]
+        if "Stack" not in item.get("componentTypes", []):
+            continue
+        key = (
+            normalized_identity_text(item.get("name")),
+            normalized_identity_text(item.get("description")),
+            tuple(sorted(item.get("parents", []))),
+        )
+        stack_families[key].append(item_id)
+    for members in stack_families.values():
+        for member in members[1:]:
+            union(members[0], member)
+
+    outgoing_weight: dict[str, int] = defaultdict(int)
+    for relation in relations:
+        if relation.get("type") in ROOT_RELATION_TYPES:
+            outgoing_weight[str(relation.get("from"))] += 1
+
+    groups: dict[str, list[str]] = defaultdict(list)
+    for item_id in sorted(candidate_ids):
+        groups[find(item_id)].append(item_id)
+
+    aliases: dict[str, str] = {}
+    canonical_groups: dict[str, list[str]] = {}
+    for members in groups.values():
+        plain_containers = [
+            item_id
+            for item_id in members
+            if "container" in items[item_id].get("types", [])
+            and "armor" not in items[item_id].get("types", [])
+            and "weapon" not in items[item_id].get("types", [])
+            and not is_state_variant(items[item_id])
+        ]
+        if plain_containers:
+            canonical = min(plain_containers, key=lambda item_id: (len(item_id), item_id))
+        else:
+            canonical = max(
+                members,
+                key=lambda item_id: (
+                    outgoing_weight[item_id],
+                    not any(
+                        marker in f"{item_id} {items[item_id].get('suffix', '')}".casefold()
+                        for marker in ("empty", "пуст")
+                    ),
+                    len(items[item_id].get("componentTypes", [])),
+                    -len(item_id),
+                    item_id,
+                ),
+            )
+        canonical_groups[canonical] = sorted(members)
+        for member in members:
+            aliases[member] = canonical
+    return aliases, canonical_groups
+
+
+def is_hidden_transport(
+    item_id: str,
+    item: dict[str, Any],
+    explicit_transport_ids: set[str],
+    generated_wrapper_ids: set[str],
+) -> bool:
+    if item_id in explicit_transport_ids or item_id.startswith("RMCCrate"):
+        return True
+    if is_case_item(item):
+        return True
+    return item_id in generated_wrapper_ids
+
+
 def build_public_catalog(
     trade_entries: list[dict[str, Any]],
     items: dict[str, Any],
     relations: list[dict[str, Any]],
+    transport_container_ids: set[str],
 ) -> dict[str, Any]:
-    case_contents: dict[str, list[str]] = defaultdict(list)
     physical_contents: dict[str, list[str]] = defaultdict(list)
+    generated_wrapper_ids: set[str] = set()
     for relation in relations:
-        if relation.get("type") in CASE_CONTENT_RELATION_TYPES:
-            case_contents[relation["from"]].append(relation["to"])
         if relation.get("type") in PHYSICAL_CONTENT_RELATION_TYPES:
             physical_contents[relation["from"]].append(relation["to"])
+        if relation.get("type") == "mountedWeapon":
+            generated_wrapper_ids.add(relation["from"])
+        if relation.get("type") == "bundleItem":
+            generated_wrapper_ids.add(relation["from"])
+        if relation.get("type") == "mappedVariant":
+            generated_wrapper_ids.add(relation["from"])
 
-    public_ids: set[str] = set()
+    public_candidates: set[str] = set()
     queue = deque(
         entry["itemId"]
         for entry in trade_entries
         if isinstance(entry.get("itemId"), str)
     )
-    visited_cases: set[str] = set()
+    visited: set[str] = set()
+    unwrapped_transport_ids: set[str] = set()
     while queue:
         item_id = queue.popleft()
+        if item_id in visited:
+            continue
+        visited.add(item_id)
         item = items[item_id]
-        if not is_case_item(item):
-            public_ids.add(item_id)
-            # Filled sheaths, pouches and knife belts remain useful catalog
-            # items, while their actual melee weapons deserve their own cards.
-            # Do not promote arbitrary nested ammunition or technical entities.
-            for target in physical_contents.get(item_id, []):
-                target_types = items[target].get("types", [])
-                if isinstance(target_types, list) and "melee" in target_types:
-                    queue.append(target)
-            continue
-        if item_id in visited_cases:
-            continue
-        visited_cases.add(item_id)
-        queue.extend(case_contents.get(item_id, []))
+        hidden = is_hidden_transport(
+            item_id,
+            item,
+            transport_container_ids,
+            generated_wrapper_ids,
+        )
+        if hidden:
+            unwrapped_transport_ids.add(item_id)
+        else:
+            public_candidates.add(item_id)
+        # Every physical container is recursive. Useful bags/pouches remain
+        # public while their actual contents receive their own cards.
+        queue.extend(physical_contents.get(item_id, []))
+
+    aliases, alias_groups = state_alias_groups(
+        public_candidates,
+        items,
+        relations,
+    )
+    public_ids = {aliases[item_id] for item_id in public_candidates}
+    for canonical_id, members in alias_groups.items():
+        if len(members) > 1:
+            items[canonical_id]["aliases"] = [
+                member for member in members if member != canonical_id
+            ]
+            for member in members:
+                items[member]["canonicalItemId"] = canonical_id
+            if (
+                "container" in items[canonical_id].get("types", [])
+                and "armor" not in items[canonical_id].get("types", [])
+                and "weapon" not in items[canonical_id].get("types", [])
+            ):
+                loadouts = []
+                for member in members:
+                    content_ids = sorted(set(physical_contents.get(member, [])))
+                    if not content_ids:
+                        continue
+                    loadouts.append(
+                        {
+                            "itemId": member,
+                            "suffix": items[member].get("suffix", ""),
+                            "contentItemIds": content_ids,
+                        }
+                    )
+                if loadouts:
+                    items[canonical_id]["loadoutVariants"] = loadouts
 
     categories: dict[str, list[str]] = defaultdict(list)
     sort_key = lambda value: (items[value]["name"].casefold(), value)
@@ -1054,7 +1531,15 @@ def build_public_catalog(
     return {
         "itemIds": sorted(public_ids, key=sort_key),
         "categories": dict(sorted(categories.items())),
-        "unwrappedCaseIds": sorted(visited_cases),
+        "unwrappedCaseIds": sorted(
+            item_id for item_id in unwrapped_transport_ids if is_case_item(items[item_id])
+        ),
+        "unwrappedTransportIds": sorted(unwrapped_transport_ids),
+        "aliases": {
+            item_id: canonical_id
+            for item_id, canonical_id in sorted(aliases.items())
+            if item_id != canonical_id
+        },
     }
 
 
@@ -1091,13 +1576,14 @@ def render_public_sprites(
 
 
 def should_publish_component(component_type: str) -> bool:
-    return (
-        component_type in CORE_COMPONENTS
-        or component_type.startswith("Attachable")
-        or "Gun" in component_type
-        or component_type.startswith("RMCWeapon")
-        or component_type.startswith("RMCProjectile")
-    )
+    # Keep every gameplay-bearing component. This deliberately prefers a
+    # slightly larger stable JSON over silently dropping a newly introduced
+    # weapon/armor/medical statistic that the website may need tomorrow.
+    if component_type in NON_MECHANICAL_COMPONENTS:
+        return False
+    if component_type.endswith("Visuals") or component_type.endswith("Visualizer"):
+        return False
+    return True
 
 
 def build_card(
@@ -1106,6 +1592,7 @@ def build_card(
     localizer: Localizer,
     availability: list[dict[str, Any]],
     reachable_vendors: set[str],
+    source_hints: set[str],
 ) -> dict[str, Any]:
     components = resolved["components"]
     raw_tags = components.get("Tag", {}).get("tags", [])
@@ -1118,22 +1605,26 @@ def build_card(
         if should_publish_component(component_type)
     }
 
+    base_name = capitalize_first(
+        localizer.entity_text(prototype_id, None, fields.get("name"))
+    )
+    suffix = localizer.entity_text(
+        prototype_id, "suffix", fields.get("suffix")
+    )
     card: dict[str, Any] = {
         "id": prototype_id,
-        "name": capitalize_first(
-            localizer.entity_text(prototype_id, None, fields.get("name"))
-        ),
+        "name": catalog_display_name(base_name, suffix),
+        "baseName": base_name,
         "description": localizer.entity_text(
             prototype_id, "desc", fields.get("description")
         ),
-        "suffix": localizer.entity_text(
-            prototype_id, "suffix", fields.get("suffix")
-        ),
+        "suffix": suffix,
         "origin": resolved["origin"],
         "sourceFile": resolved["sourceFile"],
         "parents": resolved["parents"],
         "abstract": resolved["abstract"],
-        "types": infer_types(prototype_id, components, tags),
+        "types": infer_types(prototype_id, components, tags, source_hints),
+        "sourceCategoryHints": sorted(source_hints),
         "tags": sorted(tags),
         "componentTypes": sorted(components),
         "properties": properties,
@@ -1147,6 +1638,149 @@ def build_card(
     return card
 
 
+def slot_label(slot: Any) -> str:
+    raw = str(slot or "")
+    if raw in SLOT_LABELS:
+        return SLOT_LABELS[raw]
+    folded = raw.casefold()
+    if "barrel" in folded or "muzzle" in folded:
+        return "Дуло"
+    if "rail" in folded or "optic" in folded or "sight" in folded:
+        return "Верхняя планка"
+    if "stock" in folded:
+        return "Приклад"
+    if "under" in folded:
+        return "Подствольный слот"
+    return raw
+
+
+def populate_compatibility_summaries(
+    items: dict[str, Any],
+    relations: list[dict[str, Any]],
+    public_item_ids: set[str],
+    aliases: dict[str, str],
+) -> None:
+    attachment_slots: dict[str, dict[str, set[str]]] = defaultdict(
+        lambda: defaultdict(set)
+    )
+    attachment_weapons: dict[str, dict[str, set[str]]] = defaultdict(
+        lambda: defaultdict(set)
+    )
+    magazine_slots: dict[str, dict[str, set[str]]] = defaultdict(
+        lambda: defaultdict(set)
+    )
+    magazine_weapons: dict[str, set[str]] = defaultdict(set)
+    installed: dict[str, dict[str, set[str]]] = defaultdict(lambda: defaultdict(set))
+    loaded: dict[str, dict[str, set[str]]] = defaultdict(lambda: defaultdict(set))
+    outgoing: dict[str, list[dict[str, Any]]] = defaultdict(list)
+
+    def canonical(item_id: str) -> str:
+        return aliases.get(item_id, item_id)
+
+    for relation in relations:
+        raw_source = str(relation.get("from", ""))
+        raw_target = str(relation.get("to", ""))
+        source = canonical(raw_source)
+        target = canonical(raw_target)
+        relation_type = relation.get("type")
+        canonical_relation = dict(relation)
+        canonical_relation["from"] = source
+        canonical_relation["to"] = target
+        outgoing[source].append(canonical_relation)
+        raw_slot = str(relation.get("slot", ""))
+        if (
+            relation_type == "compatibleAttachment"
+            and source in public_item_ids
+            and target in public_item_ids
+        ):
+            attachment_slots[source][raw_slot].add(target)
+            attachment_weapons[target][raw_slot].add(source)
+        elif (
+            relation_type == "compatibleMagazine"
+            and source in public_item_ids
+            and target in public_item_ids
+        ):
+            magazine_slots[source][raw_slot].add(target)
+            magazine_weapons[target].add(source)
+        elif relation_type == "installedAttachment":
+            installed[source][raw_slot].add(target)
+        elif relation_type == "loadedWith":
+            loaded[source][raw_slot].add(target)
+
+    for weapon_id, slots in attachment_slots.items():
+        items[weapon_id]["attachmentSlots"] = [
+            {
+                "id": raw_slot,
+                "name": slot_label(raw_slot),
+                "compatibleItemIds": sorted(attachment_ids),
+                "installedItemIds": sorted(installed[weapon_id].get(raw_slot, set())),
+            }
+            for raw_slot, attachment_ids in sorted(slots.items())
+        ]
+    for attachment_id, slots in attachment_weapons.items():
+        items[attachment_id]["attachableTo"] = [
+            {
+                "slotId": raw_slot,
+                "slotName": slot_label(raw_slot),
+                "weaponIds": sorted(weapon_ids),
+            }
+            for raw_slot, weapon_ids in sorted(slots.items())
+        ]
+    for weapon_id, slots in magazine_slots.items():
+        items[weapon_id]["magazineSlots"] = [
+            {
+                "id": raw_slot,
+                "name": "Магазин" if "magazine" in raw_slot.casefold() else raw_slot,
+                "compatibleItemIds": sorted(magazine_ids),
+                "loadedItemIds": sorted(loaded[weapon_id].get(raw_slot, set())),
+            }
+            for raw_slot, magazine_ids in sorted(slots.items())
+        ]
+    for magazine_id, weapon_ids in magazine_weapons.items():
+        items[magazine_id]["compatibleWeaponIds"] = sorted(weapon_ids)
+
+    # Materialize the magazine -> cartridge -> projectile path so a future
+    # damage/falloff calculator does not have to rediscover the graph.
+    for weapon_id in sorted(set(attachment_slots) | set(magazine_slots)):
+        paths: list[dict[str, Any]] = []
+        magazines = {
+            magazine_id
+            for values in magazine_slots.get(weapon_id, {}).values()
+            for magazine_id in values
+        }
+        if not magazines:
+            magazines = {
+                str(relation["to"])
+                for relation in outgoing.get(weapon_id, [])
+                if relation.get("type") == "loadedWith"
+            }
+        for magazine_id in sorted(magazines):
+            cartridges = sorted(
+                {
+                    str(relation["to"])
+                    for relation in outgoing.get(magazine_id, [])
+                    if relation.get("type") == "loadedWith"
+                }
+            )
+            projectiles = sorted(
+                {
+                    str(relation["to"])
+                    for cartridge_id in cartridges
+                    for relation in outgoing.get(cartridge_id, [])
+                    if relation.get("type") == "fires"
+                }
+            )
+            paths.append(
+                {
+                    "magazineId": magazine_id,
+                    "cartridgeIds": cartridges,
+                    "projectileIds": projectiles,
+                }
+            )
+        if paths:
+            items[weapon_id]["ammunitionPaths"] = paths
+
+
 def build_catalog(
     prototypes: dict[str, EntityPrototype],
     config: dict[str, Any],
@@ -1155,10 +1789,14 @@ def build_catalog(
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     resolver = PrototypeResolver(prototypes)
     vendor_ids = [entry["id"] for entry in config["vendors"]]
+    cargo_catalog_ids = [entry["id"] for entry in config.get("cargoCatalogs", [])]
+    source_ids = [*vendor_ids, *cargo_catalog_ids]
     vendors: dict[str, Any] = {}
     trade_entries: list[dict[str, Any]] = []
     availability_by_item: dict[str, list[dict[str, Any]]] = defaultdict(list)
     reachable_vendors: dict[str, set[str]] = defaultdict(set)
+    source_hints_by_item: dict[str, set[str]] = defaultdict(set)
+    transport_container_ids: set[str] = set()
     item_ids: set[str] = set()
     queue: deque[str] = deque()
 
@@ -1183,6 +1821,7 @@ def build_catalog(
                 section_name = f"Section {section_index + 1}"
             section_key = f"{vendor_id}:{section_index}"
             section_trade_keys: list[str] = []
+            category_hint = source_category_hint(section_name)
 
             for entry_index, raw_entry in enumerate(raw_entries):
                 if not isinstance(raw_entry, dict):
@@ -1247,6 +1886,8 @@ def build_catalog(
                 availability_by_item[item_id].append(availability)
                 if vendor_id not in reachable_vendors[item_id]:
                     reachable_vendors[item_id].add(vendor_id)
+                if category_hint:
+                    source_hints_by_item[item_id].add(category_hint)
                 if item_id not in item_ids:
                     item_ids.add(item_id)
                     queue.append(item_id)
@@ -1273,6 +1914,112 @@ def build_catalog(
             "sections": vendor_sections,
         }
 
+    for catalog_id in cargo_catalog_ids:
+        catalog_source = resolver.resolve(catalog_id)
+        component = catalog_source["components"].get("RequisitionsComputer")
+        if not isinstance(component, dict):
+            raise RuntimeError(
+                f"Cargo catalog {catalog_id} has no RequisitionsComputer"
+            )
+        categories = component.get("categories")
+        if not isinstance(categories, list) or not categories:
+            raise RuntimeError(f"Cargo catalog {catalog_id} has no categories")
+
+        catalog_sections: list[dict[str, Any]] = []
+        for section_index, raw_section in enumerate(categories):
+            if not isinstance(raw_section, dict):
+                continue
+            section_name = raw_section.get("name")
+            if not isinstance(section_name, str):
+                section_name = f"Section {section_index + 1}"
+            raw_entries = raw_section.get("entries")
+            if not isinstance(raw_entries, list):
+                continue
+            section_key = f"{catalog_id}:cargo:{section_index}"
+            section_trade_keys: list[str] = []
+            category_hint = source_category_hint(section_name)
+
+            for entry_index, raw_entry in enumerate(raw_entries):
+                if not isinstance(raw_entry, dict):
+                    continue
+                payload_ids: list[tuple[str, bool]] = []
+                crate_id = raw_entry.get("crate")
+                if isinstance(crate_id, str):
+                    payload_ids.append((crate_id, True))
+                    transport_container_ids.add(crate_id)
+                extras = raw_entry.get("entities")
+                if isinstance(extras, list):
+                    payload_ids.extend(
+                        (item_id, False)
+                        for item_id in extras
+                        if isinstance(item_id, str)
+                    )
+
+                for payload_index, (item_id, is_transport) in enumerate(payload_ids):
+                    if item_id not in prototypes:
+                        raise RuntimeError(
+                            f"Cargo catalog {catalog_id} references unknown item {item_id}"
+                        )
+                    kind = "crate" if is_transport else f"entity{payload_index}"
+                    trade_key = (
+                        f"{catalog_id}:cargo:{section_index}:{entry_index}:{kind}"
+                    )
+                    item = resolver.resolve(item_id)
+                    trade: dict[str, Any] = {
+                        "key": trade_key,
+                        "vendorId": catalog_id,
+                        "sourceType": "cargo",
+                        "sectionKey": section_key,
+                        "sectionName": section_name,
+                        "position": entry_index,
+                        "itemId": item_id,
+                        "name": localizer.entity_text(
+                            item_id, None, item["fields"].get("name")
+                        ),
+                        "transportContainer": is_transport,
+                    }
+                    if "cost" in raw_entry:
+                        trade["cost"] = copy.deepcopy(raw_entry["cost"])
+                    trade_entries.append(trade)
+                    section_trade_keys.append(trade_key)
+                    availability_by_item[item_id].append(
+                        {
+                            "vendorId": catalog_id,
+                            "sourceType": "cargo",
+                            "sectionKey": section_key,
+                            "sectionName": section_name,
+                            "tradeKey": trade_key,
+                        }
+                    )
+                    reachable_vendors[item_id].add(catalog_id)
+                    if category_hint:
+                        source_hints_by_item[item_id].add(category_hint)
+                    if item_id not in item_ids:
+                        item_ids.add(item_id)
+                        queue.append(item_id)
+
+            catalog_sections.append(
+                {
+                    "key": section_key,
+                    "name": section_name,
+                    "position": section_index,
+                    "tradeKeys": section_trade_keys,
+                }
+            )
+
+        vendors[catalog_id] = {
+            "id": catalog_id,
+            "type": "cargo",
+            "name": localizer.entity_text(
+                catalog_id, None, catalog_source["fields"].get("name")
+            ),
+            "description": localizer.entity_text(
+                catalog_id, "desc", catalog_source["fields"].get("description")
+            ),
+            "sourceFile": catalog_source["sourceFile"],
+            "sections": catalog_sections,
+        }
+
     relations: list[dict[str, Any]] = []
     relation_keys: set[str] = set()
     outgoing: dict[str, list[str]] = defaultdict(list)
@@ -1293,6 +2040,10 @@ def build_catalog(
                 if vendor_id not in reachable_vendors[target]:
                     reachable_vendors[target].add(vendor_id)
                     changed = True
+            before_hints = len(source_hints_by_item[target])
+            source_hints_by_item[target].update(source_hints_by_item[item_id])
+            if len(source_hints_by_item[target]) != before_hints:
+                changed = True
             if target not in item_ids:
                 item_ids.add(target)
                 queue.append(target)
@@ -1307,7 +2058,12 @@ def build_catalog(
         for target in outgoing.get(source, []):
             before = len(reachable_vendors[target])
             reachable_vendors[target].update(reachable_vendors[source])
-            if len(reachable_vendors[target]) != before:
+            before_hints = len(source_hints_by_item[target])
+            source_hints_by_item[target].update(source_hints_by_item[source])
+            if (
+                len(reachable_vendors[target]) != before
+                or len(source_hints_by_item[target]) != before_hints
+            ):
                 provenance_queue.append(target)
 
     add_compatibility_relations(item_ids, resolver, relations, relation_keys)
@@ -1320,6 +2076,7 @@ def build_catalog(
             localizer,
             availability_by_item.get(item_id, []),
             reachable_vendors[item_id],
+            source_hints_by_item[item_id],
         )
 
     relations.sort(
@@ -1333,11 +2090,24 @@ def build_catalog(
     )
     trade_entries.sort(key=lambda item: item["key"])
 
-    public_catalog = build_public_catalog(trade_entries, items, relations)
+    public_catalog = build_public_catalog(
+        trade_entries,
+        items,
+        relations,
+        transport_container_ids,
+    )
+    populate_compatibility_summaries(
+        items,
+        relations,
+        set(public_catalog["itemIds"]),
+        public_catalog["aliases"],
+    )
 
     counts = {
         "indexedEntityPrototypes": len(prototypes),
-        "vendors": len(vendors),
+        "vendors": len(vendor_ids),
+        "cargoCatalogs": len(cargo_catalog_ids),
+        "sources": len(vendors),
         "sections": sum(len(vendor["sections"]) for vendor in vendors.values()),
         "tradeEntries": len(trade_entries),
         "directItemPrototypes": len(availability_by_item),
@@ -1352,6 +2122,8 @@ def build_catalog(
         "source": "MetalSage/space-stories-cm14",
         "locale": "ru-RU",
         "configuredVendorIds": vendor_ids,
+        "configuredCargoCatalogIds": cargo_catalog_ids,
+        "configuredSourceIds": source_ids,
         "vendors": vendors,
         "tradeEntries": trade_entries,
         "items": items,

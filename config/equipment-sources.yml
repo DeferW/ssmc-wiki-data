@@ -1,9 +1,31 @@
 schemaVersion: 1
 
-# Only these in-round sources seed the catalog. The builder may follow their
-# contents and technical dependencies, but it never publishes unrelated entity
-# prototypes merely because they exist in the game repository.
+# These equipment sources seed the catalog. The builder follows their current
+# contents and technical dependencies instead of storing today's item list.
 vendors:
   - id: ColMarTechCargoGuns
   - id: ColMarTechCargoAmmo
   - id: ColMarTechCargoAttachments
+  - id: ColMarTechSurplus
+  - id: ColMarTechGuns
+  - id: ColMarTechMunitions
+  - id: ColMarTechUtilities
+  - id: ColMarTechSGGear
+  - id: ColMarTechSWSGear
+  - id: ColMarTechSLGear
+  - id: ColMarTechFLGear
+  - id: ColMarTechSCTGear
+  - id: ColMarTechMedicalGear
+  - id: ColMarTechSCTEquipment
+  - id: ColMarTechMedicalEquipment
+  - id: ColMarTechFLEquipment
+  - id: ColMarTechSGEquipment
+  - id: ColMarTechSWSEquipment
+  - id: ColMarTechSLEquipment
+  - id: ColMarTechCargoUniform
+  - id: ColMarTechSeniorOfficerEquipment
+
+# Cargo consoles expose RequisitionsComputer categories. Their orderable crates
+# seed the graph, but the shipping crates themselves never enter publicCatalog.
+cargoCatalogs:
+  - id: CMASRSConsole

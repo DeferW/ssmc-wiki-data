@@ -28,16 +28,24 @@ def read_json(path: Path) -> dict[str, Any]:
     return data
 
 
-def configured_vendors(path: Path) -> list[str]:
+def configured_sources(path: Path) -> tuple[list[str], list[str]]:
     data = yaml.safe_load(path.read_text(encoding="utf-8"))
     if not isinstance(data, dict) or not isinstance(data.get("vendors"), list):
         raise RuntimeError("Invalid equipment config")
-    result = []
+    vendor_ids = []
     for entry in data["vendors"]:
         if not isinstance(entry, dict) or not isinstance(entry.get("id"), str):
             raise RuntimeError("Invalid configured vendor")
-        result.append(entry["id"])
-    return result
+        vendor_ids.append(entry["id"])
+    cargo_ids = []
+    cargo_catalogs = data.get("cargoCatalogs", [])
+    if not isinstance(cargo_catalogs, list):
+        raise RuntimeError("Invalid cargo catalog config")
+    for entry in cargo_catalogs:
+        if not isinstance(entry, dict) or not isinstance(entry.get("id"), str):
+            raise RuntimeError("Invalid configured cargo catalog")
+        cargo_ids.append(entry["id"])
+    return vendor_ids, cargo_ids
 
 
 def validate_no_hierarchical_cycles(relations: list[dict[str, Any]]) -> None:
@@ -94,7 +102,8 @@ def validate(
     if catalog.get("gameCommit") != index.get("gameCommit"):
         raise RuntimeError("Catalog and index were built from different commits")
 
-    expected_vendors = configured_vendors(config)
+    expected_vendors, expected_cargo_catalogs = configured_sources(config)
+    expected_sources = [*expected_vendors, *expected_cargo_catalogs]
     vendors = catalog.get("vendors")
     trades = catalog.get("tradeEntries")
     items = catalog.get("items")
@@ -102,9 +111,9 @@ def validate(
     counts = catalog.get("counts")
     public_catalog = catalog.get("publicCatalog")
 
-    if not isinstance(vendors, dict) or list(vendors) != expected_vendors:
+    if not isinstance(vendors, dict) or list(vendors) != expected_sources:
         raise RuntimeError(
-            f"Unexpected vendors: expected={expected_vendors}, "
+            f"Unexpected sources: expected={expected_sources}, "
             f"actual={list(vendors) if isinstance(vendors, dict) else vendors}"
         )
     if not isinstance(trades, list) or not trades:
@@ -156,6 +165,8 @@ def validate(
 
     public_ids = public_catalog.get("itemIds")
     unwrapped_cases = public_catalog.get("unwrappedCaseIds")
+    unwrapped_transport = public_catalog.get("unwrappedTransportIds")
+    aliases = public_catalog.get("aliases")
     categories = public_catalog.get("categories")
     if not isinstance(public_ids, list) or not public_ids:
         raise RuntimeError("Public equipment catalog is empty")
@@ -163,9 +174,32 @@ def validate(
         raise RuntimeError("Public equipment catalog contains duplicate items")
     if not isinstance(unwrapped_cases, list) or not unwrapped_cases:
         raise RuntimeError("No equipment cases were unwrapped")
+    if not isinstance(unwrapped_transport, list) or not unwrapped_transport:
+        raise RuntimeError("No transport containers were unwrapped")
+    if not isinstance(aliases, dict):
+        raise RuntimeError("Missing public item aliases")
     leaked_cases = sorted(set(public_ids).intersection(unwrapped_cases))
     if leaked_cases:
         raise RuntimeError(f"Cases leaked into public catalog: {leaked_cases}")
+    leaked_transport = sorted(set(public_ids).intersection(unwrapped_transport))
+    if leaked_transport:
+        raise RuntimeError(
+            f"Transport containers leaked into public catalog: {leaked_transport}"
+        )
+    leaked_cargo_crates = sorted(
+        item_id for item_id in public_ids if item_id.startswith("RMCCrate")
+    )
+    if leaked_cargo_crates:
+        raise RuntimeError(
+            f"Cargo crates leaked into public catalog: {leaked_cargo_crates}"
+        )
+    for alias_id, canonical_id in aliases.items():
+        if alias_id in public_ids:
+            raise RuntimeError(f"Alias leaked into public catalog: {alias_id}")
+        if canonical_id not in public_ids:
+            raise RuntimeError(
+                f"Alias {alias_id} has non-public canonical item {canonical_id}"
+            )
     if not isinstance(categories, dict):
         raise RuntimeError("Missing public equipment categories")
 
@@ -212,18 +246,21 @@ def validate(
         "RMCAttachmentU7UnderbarrelShotgun": "Обвесы",
         "RMCAttachmentUnderbarrelExtinguisher": "Обвесы",
         "RMCAttachmentU1GrenadeLauncher": "Обвесы",
-        "CMWrench": "Снаряжение",
-        "CMScrewdriver": "Снаряжение",
-        "CMEntrenchingTool": "Снаряжение",
-        "CMFireExtinguisherPortable": "Снаряжение",
-        "CMBackpackMarine": "Снаряжение",
-        "RMCBackpackAmmo": "Снаряжение",
+        "CMWrench": "Инструменты",
+        "CMScrewdriver": "Инструменты",
+        "CMEntrenchingTool": "Инструменты",
+        "CMFireExtinguisherPortable": "Инструменты",
+        "CMBackpackMarine": "Разгрузка и хранение",
+        "RMCBackpackAmmo": "Разгрузка и хранение",
         "RMCBoxMagazinePistolM13": "Боеприпасы",
         "RMCBoxMagazineRifleM54CAP": "Боеприпасы",
         "RMCBoxBulletsRifle": "Боеприпасы",
         "RMCBoxShotgunBuckshot": "Боеприпасы",
         "CMM11Knife": "Ближний бой",
         "CMM2132Machete": "Ближний бой",
+        "ArmorHelmetM10": "Броня и защита",
+        "RMCArmorM3MediumPadded": "Броня и защита",
+        "RMCML66DMount": "Оружейные системы",
     }
     for item_id, expected_category in expected_categories.items():
         actual_category = items.get(item_id, {}).get("category")
@@ -239,8 +276,62 @@ def validate(
             if item.get("category") != "Обвесы":
                 raise RuntimeError(f"Attachment categorized incorrectly: {item_id}")
         if "RMCAmmoBox" in item.get("tags", []):
-            if item.get("category") != "Боеприпасы":
+            if item.get("category") not in {
+                "Боеприпасы",
+                "Боеприпасы для техники",
+            }:
                 raise RuntimeError(f"Ammo box categorized incorrectly: {item_id}")
+
+    if "Прочее" in categories:
+        raise RuntimeError("Public catalog contains a catch-all 'Прочее' category")
+
+    if aliases.get("RMCWeaponPistolM13Empty") != "RMCWeaponPistolM13":
+        raise RuntimeError("M10 empty/load-state variants were not collapsed")
+    m10_public = {
+        "RMCWeaponPistolM13",
+        "RMCWeaponPistolM13Empty",
+    }.intersection(public_ids)
+    if m10_public != {"RMCWeaponPistolM13"}:
+        raise RuntimeError(f"Unexpected public M10 variants: {sorted(m10_public)}")
+    if "RMCML66DMountAssembled" in public_ids or "RMCML66DMountWeaponAssembledLoaded" in public_ids:
+        raise RuntimeError("Assembled ML66D state wrapper leaked into public catalog")
+
+    m54c = items.get("RMCWeaponRifleM54C", {})
+    expected_slot_names = {"Дуло", "Верхняя планка", "Приклад", "Подствольный слот"}
+    actual_slot_names = {
+        slot.get("name")
+        for slot in m54c.get("attachmentSlots", [])
+        if isinstance(slot, dict)
+    }
+    if not expected_slot_names.issubset(actual_slot_names):
+        raise RuntimeError(
+            f"M54C attachment slots incomplete: {sorted(actual_slot_names)}"
+        )
+    if not m54c.get("magazineSlots") or not m54c.get("ammunitionPaths"):
+        raise RuntimeError("M54C ammunition compatibility is incomplete")
+    suppressor = items.get("RMCAttachmentSuppressor", {})
+    if not suppressor.get("attachableTo"):
+        raise RuntimeError("Suppressor has no reverse attachment compatibility")
+    if "AttachableWeaponRangedMods" not in suppressor.get("properties", {}):
+        raise RuntimeError("Attachment mechanical modifiers were not preserved")
+
+    pill_pouch_id = "RMCPouchFirstAidPills"
+    if pill_pouch_id not in public_ids:
+        raise RuntimeError("Filled pill pouch is missing from public catalog")
+    pill_packets = {
+        relation.get("to")
+        for relation in relations
+        if relation.get("from") == pill_pouch_id
+        and relation.get("type") == "contains"
+    }
+    if not pill_packets or not pill_packets.issubset(set(public_ids)):
+        raise RuntimeError(
+            f"Pill pouch contents were not recursively published: {sorted(pill_packets)}"
+        )
+    holster = items.get("RMCBeltHolsterPistol", {})
+    loadouts = holster.get("loadoutVariants")
+    if "RMCBeltHolsterPistol" not in public_ids or not isinstance(loadouts, list) or len(loadouts) < 2:
+        raise RuntimeError("Filled holster variants were not merged with their loadouts")
 
     green_ap_magazines = {
         "CMMagazineSMGM63AP",
@@ -289,7 +380,9 @@ def validate(
 
     actual_counts = {
         "indexedEntityPrototypes": index_counts.get("indexedEntityPrototypes"),
-        "vendors": len(vendors),
+        "vendors": len(expected_vendors),
+        "cargoCatalogs": len(expected_cargo_catalogs),
+        "sources": len(vendors),
         "sections": sum(len(vendor.get("sections", [])) for vendor in vendors.values()),
         "tradeEntries": len(trades),
         "directItemPrototypes": len(direct_ids),
@@ -351,7 +444,7 @@ def validate(
             f"Empty weapons inherited starting ammunition: {incorrectly_loaded}"
         )
 
-    print(f"Vendors: {len(vendors)}")
+    print(f"Sources: {len(vendors)}")
     print(f"Sections: {actual_counts['sections']}")
     print(f"Trade entries: {len(trades)}")
     print(f"Direct item prototypes: {len(direct_ids)}")
