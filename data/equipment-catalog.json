@@ -3574,7 +3574,6 @@
       ],
       "abstract": false,
       "types": [
-        "armor",
         "container"
       ],
       "tags": [
@@ -3670,7 +3669,7 @@
           }
         ]
       },
-      "category": "Броня",
+      "category": "Снаряжение",
       "public": true,
       "image": "equipment-sprites/CMBackpackMarine.png"
     },
@@ -3686,7 +3685,6 @@
       ],
       "abstract": false,
       "types": [
-        "armor",
         "container"
       ],
       "tags": [
@@ -3789,7 +3787,7 @@
           }
         ]
       },
-      "category": "Броня",
+      "category": "Снаряжение",
       "public": true,
       "image": "equipment-sprites/CMBackpackMortar.png"
     },
@@ -3805,7 +3803,6 @@
       ],
       "abstract": false,
       "types": [
-        "armor",
         "container"
       ],
       "tags": [
@@ -3922,7 +3919,7 @@
           }
         ]
       },
-      "category": "Броня",
+      "category": "Снаряжение",
       "public": true,
       "image": "equipment-sprites/CMBackpackWelder.png"
     },
@@ -5379,7 +5376,7 @@
       ],
       "abstract": false,
       "types": [
-        "melee"
+        "tool"
       ],
       "tags": [
         "Shovel"
@@ -5469,7 +5466,7 @@
         ],
         "state": "etool"
       },
-      "category": "Ближний бой",
+      "category": "Снаряжение",
       "public": true,
       "image": "equipment-sprites/CMEntrenchingTool.png"
     },
@@ -5485,7 +5482,7 @@
       ],
       "abstract": false,
       "types": [
-        "melee"
+        "tool"
       ],
       "tags": [
         "CMFireExtinguisherPortable"
@@ -5580,7 +5577,7 @@
         ],
         "state": "minife1"
       },
-      "category": "Ближний бой",
+      "category": "Снаряжение",
       "public": true,
       "image": "equipment-sprites/CMFireExtinguisherPortable.png"
     },
@@ -5758,7 +5755,7 @@
           }
         ]
       },
-      "category": "Прочее",
+      "category": "Снаряжение",
       "public": true,
       "image": "equipment-sprites/CMFoldingBarricadesMB6x3.png"
     },
@@ -6152,7 +6149,8 @@
       ],
       "abstract": false,
       "types": [
-        "melee"
+        "melee",
+        "tool"
       ],
       "tags": [
         "Knife",
@@ -6222,7 +6220,10 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Weapons/Melee/m11_knife.rsi",
         "state": "icon"
-      }
+      },
+      "category": "Ближний бой",
+      "public": true,
+      "image": "equipment-sprites/CMM11Knife.png"
     },
     "CMM2132Machete": {
       "id": "CMM2132Machete",
@@ -6237,7 +6238,8 @@
       ],
       "abstract": false,
       "types": [
-        "melee"
+        "melee",
+        "tool"
       ],
       "tags": [
         "Machete"
@@ -6306,7 +6308,10 @@
       "sprite": {
         "sprite": "_RMC14/Objects/Weapons/Melee/machete.rsi",
         "state": "icon"
-      }
+      },
+      "category": "Ближний бой",
+      "public": true,
+      "image": "equipment-sprites/CMM2132Machete.png"
     },
     "CMMagazinePistolM1984": {
       "id": "CMMagazinePistolM1984",
@@ -6393,7 +6398,8 @@
             "state": "mag-1",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           }
         ],
         "state": "base"
@@ -6487,7 +6493,8 @@
             "state": "base_ap-1",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           }
         ],
         "state": "base_ap"
@@ -6583,7 +6590,8 @@
             "state": "mag-1",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           }
         ],
         "state": "base"
@@ -6678,7 +6686,8 @@
             "state": "mag-1",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           }
         ],
         "state": "base"
@@ -6773,7 +6782,8 @@
             "state": "mag-1",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           },
           {
             "state": "ammo_band",
@@ -6872,7 +6882,8 @@
             "state": "mag-1",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           }
         ],
         "state": "base"
@@ -6967,7 +6978,8 @@
             "state": "mag-1",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           }
         ],
         "state": "base"
@@ -7063,7 +7075,8 @@
             "state": "mag-1",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           },
           {
             "state": "ammo_band",
@@ -7164,7 +7177,8 @@
             "state": "mag-1",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           }
         ],
         "state": "base"
@@ -7261,7 +7275,8 @@
             "state": "mag-1",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           },
           {
             "state": "ammo_band",
@@ -7360,7 +7375,8 @@
             "state": "mag-1",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           }
         ],
         "state": "base"
@@ -7456,7 +7472,8 @@
             "state": "mag-1",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           }
         ],
         "state": "base"
@@ -7551,7 +7568,8 @@
             "state": "mag-1",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           },
           {
             "state": "ammo_band",
@@ -7650,7 +7668,8 @@
             "state": "mag-1",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           }
         ],
         "state": "base"
@@ -7745,7 +7764,8 @@
             "state": "mag-1",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           },
           {
             "state": "ammo_band",
@@ -7844,7 +7864,8 @@
             "state": "mag-1",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           }
         ],
         "state": "base"
@@ -7930,7 +7951,7 @@
           }
         ]
       },
-      "category": "Прочее",
+      "category": "Снаряжение",
       "public": true,
       "image": "equipment-sprites/CMMaskGas.png"
     },
@@ -7946,7 +7967,7 @@
       ],
       "abstract": false,
       "types": [
-        "misc"
+        "tool"
       ],
       "tags": [
         "DoorElectronicsConfigurator",
@@ -8370,7 +8391,7 @@
         "sprite": "_RMC14/Objects/Misc/pamphlets.rsi",
         "state": "pamphlet_construction"
       },
-      "category": "Прочее",
+      "category": "Снаряжение",
       "public": true,
       "image": "equipment-sprites/CMPamphletEngineer.png"
     },
@@ -8436,7 +8457,7 @@
         "sprite": "_RMC14/Objects/Misc/pamphlets.rsi",
         "state": "pamphlet_jtac"
       },
-      "category": "Прочее",
+      "category": "Снаряжение",
       "public": true,
       "image": "equipment-sprites/CMPamphletJTAC.png"
     },
@@ -8502,7 +8523,7 @@
         "sprite": "_RMC14/Objects/Misc/pamphlets.rsi",
         "state": "pamphlet_powerloader"
       },
-      "category": "Прочее",
+      "category": "Снаряжение",
       "public": true,
       "image": "equipment-sprites/CMPamphletPowerloader.png"
     },
@@ -8773,7 +8794,7 @@
       ],
       "abstract": false,
       "types": [
-        "melee"
+        "tool"
       ],
       "tags": [
         "Screwdriver"
@@ -8846,7 +8867,7 @@
         ],
         "state": "screwdriver"
       },
-      "category": "Ближний бой",
+      "category": "Снаряжение",
       "public": true,
       "image": "equipment-sprites/CMScrewdriver.png"
     },
@@ -9249,7 +9270,6 @@
       ],
       "abstract": false,
       "types": [
-        "melee",
         "weapon"
       ],
       "tags": [
@@ -9468,7 +9488,8 @@
             "state": "mag-0",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           }
         ],
         "state": "base"
@@ -9902,7 +9923,7 @@
       ],
       "abstract": false,
       "types": [
-        "melee"
+        "tool"
       ],
       "tags": [
         "PlantSampleTaker",
@@ -9990,7 +10011,7 @@
       ],
       "abstract": false,
       "types": [
-        "melee"
+        "tool"
       ],
       "tags": [
         "Wrench"
@@ -10056,7 +10077,7 @@
         "sprite": "_RMC14/Objects/Tools/wrench.rsi",
         "state": "icon"
       },
-      "category": "Ближний бой",
+      "category": "Снаряжение",
       "public": true,
       "image": "equipment-sprites/CMWrench.png"
     },
@@ -13292,8 +13313,7 @@
       "abstract": false,
       "types": [
         "attachment",
-        "explosive",
-        "weapon"
+        "explosive"
       ],
       "tags": [
         "RMCAttachmentMK1GrenadeLauncher",
@@ -13721,7 +13741,7 @@
       "abstract": false,
       "types": [
         "attachment",
-        "weapon"
+        "magazine-or-ammo-container"
       ],
       "tags": [
         "RMCAttachmentMiniFlamethrower",
@@ -13841,7 +13861,7 @@
         "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/under.rsi",
         "state": "flamethrower"
       },
-      "category": "Оружие",
+      "category": "Обвесы",
       "public": true,
       "image": "equipment-sprites/RMCAttachmentMiniFlamethrower.png"
     },
@@ -15055,8 +15075,7 @@
       "abstract": false,
       "types": [
         "attachment",
-        "explosive",
-        "weapon"
+        "explosive"
       ],
       "tags": [
         "RMCAttachmentU1GrenadeLauncher",
@@ -15184,7 +15203,7 @@
         ],
         "state": "grenade"
       },
-      "category": "Оружие",
+      "category": "Обвесы",
       "public": true,
       "image": "equipment-sprites/RMCAttachmentU1GrenadeLauncher.png"
     },
@@ -15201,8 +15220,7 @@
       ],
       "abstract": false,
       "types": [
-        "attachment",
-        "weapon"
+        "attachment"
       ],
       "tags": [
         "RMCAttachmentU7UnderbarrelShotgun",
@@ -15327,7 +15345,7 @@
         "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/under.rsi",
         "state": "masterkey"
       },
-      "category": "Оружие",
+      "category": "Обвесы",
       "public": true,
       "image": "equipment-sprites/RMCAttachmentU7UnderbarrelShotgun.png"
     },
@@ -15343,8 +15361,7 @@
       ],
       "abstract": false,
       "types": [
-        "attachment",
-        "weapon"
+        "attachment"
       ],
       "tags": [
         "RMCAttachmentUnderbarrel",
@@ -15456,7 +15473,7 @@
         "sprite": "_RMC14/Objects/Weapons/Guns/Attachments/under.rsi",
         "state": "extinguisher"
       },
-      "category": "Оружие",
+      "category": "Обвесы",
       "public": true,
       "image": "equipment-sprites/RMCAttachmentUnderbarrelExtinguisher.png"
     },
@@ -15822,7 +15839,6 @@
       ],
       "abstract": false,
       "types": [
-        "armor",
         "container"
       ],
       "tags": [
@@ -15923,7 +15939,7 @@
           }
         ]
       },
-      "category": "Броня",
+      "category": "Снаряжение",
       "public": true,
       "image": "equipment-sprites/RMCBackpackAmmo.png"
     },
@@ -15939,7 +15955,6 @@
       ],
       "abstract": false,
       "types": [
-        "armor",
         "container"
       ],
       "tags": [
@@ -16048,7 +16063,7 @@
           }
         ]
       },
-      "category": "Броня",
+      "category": "Снаряжение",
       "public": true,
       "image": "equipment-sprites/RMCBackpackFlamer.png"
     },
@@ -16064,7 +16079,6 @@
       ],
       "abstract": false,
       "types": [
-        "armor",
         "container"
       ],
       "tags": [
@@ -16167,7 +16181,7 @@
           }
         ]
       },
-      "category": "Броня",
+      "category": "Снаряжение",
       "public": true,
       "image": "equipment-sprites/RMCBackpackRTO.png"
     },
@@ -17533,7 +17547,7 @@
         "sprite": "_RMC14/Objects/Devices/binoculars.rsi",
         "state": "binoculars"
       },
-      "category": "Прочее",
+      "category": "Снаряжение",
       "public": true,
       "image": "equipment-sprites/RMCBinoculars.png"
     },
@@ -17549,7 +17563,8 @@
       ],
       "abstract": false,
       "types": [
-        "container"
+        "container",
+        "magazine-or-ammo-container"
       ],
       "tags": [
         "RMCBox458SOCOM"
@@ -17651,7 +17666,7 @@
         ],
         "state": "smallshell_box"
       },
-      "category": "Снаряжение",
+      "category": "Боеприпасы",
       "public": true,
       "image": "equipment-sprites/RMCBox458SOCOM.png"
     },
@@ -17667,7 +17682,8 @@
       ],
       "abstract": false,
       "types": [
-        "container"
+        "container",
+        "magazine-or-ammo-container"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -17776,7 +17792,7 @@
         ],
         "state": "rifle_box"
       },
-      "category": "Снаряжение",
+      "category": "Боеприпасы",
       "public": true,
       "image": "equipment-sprites/RMCBoxBullets458.png"
     },
@@ -17792,7 +17808,7 @@
       ],
       "abstract": false,
       "types": [
-        "misc"
+        "magazine-or-ammo-container"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -17881,7 +17897,7 @@
       ],
       "abstract": false,
       "types": [
-        "misc"
+        "magazine-or-ammo-container"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -17970,7 +17986,7 @@
         ],
         "state": "rifle_box"
       },
-      "category": "Прочее",
+      "category": "Боеприпасы",
       "public": true,
       "image": "equipment-sprites/RMCBoxBulletsRifle.png"
     },
@@ -17986,7 +18002,7 @@
       ],
       "abstract": false,
       "types": [
-        "misc"
+        "magazine-or-ammo-container"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -18074,7 +18090,7 @@
         ],
         "state": "rifle_box"
       },
-      "category": "Прочее",
+      "category": "Боеприпасы",
       "public": true,
       "image": "equipment-sprites/RMCBoxBulletsRifleAP.png"
     },
@@ -18090,7 +18106,7 @@
       ],
       "abstract": false,
       "types": [
-        "misc"
+        "magazine-or-ammo-container"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -18172,7 +18188,7 @@
         ],
         "state": "rifle_box"
       },
-      "category": "Прочее",
+      "category": "Боеприпасы",
       "public": true,
       "image": "equipment-sprites/RMCBoxBulletsSMG.png"
     },
@@ -18188,7 +18204,7 @@
       ],
       "abstract": false,
       "types": [
-        "misc"
+        "magazine-or-ammo-container"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -18270,7 +18286,7 @@
         ],
         "state": "rifle_box"
       },
-      "category": "Прочее",
+      "category": "Боеприпасы",
       "public": true,
       "image": "equipment-sprites/RMCBoxBulletsSMGAP.png"
     },
@@ -18286,7 +18302,7 @@
       ],
       "abstract": false,
       "types": [
-        "misc"
+        "magazine-or-ammo-container"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -18481,7 +18497,8 @@
       ],
       "abstract": false,
       "types": [
-        "container"
+        "container",
+        "magazine-or-ammo-container"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -18583,7 +18600,7 @@
         ],
         "state": "pistol_box"
       },
-      "category": "Снаряжение",
+      "category": "Боеприпасы",
       "public": true,
       "image": "equipment-sprites/RMCBoxMagazinePistolM13.png"
     },
@@ -18599,7 +18616,8 @@
       ],
       "abstract": false,
       "types": [
-        "container"
+        "container",
+        "magazine-or-ammo-container"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -18701,7 +18719,7 @@
         ],
         "state": "pistol_box"
       },
-      "category": "Снаряжение",
+      "category": "Боеприпасы",
       "public": true,
       "image": "equipment-sprites/RMCBoxMagazinePistolM13Ext.png"
     },
@@ -18717,7 +18735,8 @@
       ],
       "abstract": false,
       "types": [
-        "container"
+        "container",
+        "magazine-or-ammo-container"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -18819,7 +18838,7 @@
         ],
         "state": "pistol_box"
       },
-      "category": "Снаряжение",
+      "category": "Боеприпасы",
       "public": true,
       "image": "equipment-sprites/RMCBoxMagazinePistolM1984.png"
     },
@@ -18835,7 +18854,8 @@
       ],
       "abstract": false,
       "types": [
-        "container"
+        "container",
+        "magazine-or-ammo-container"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -18937,7 +18957,7 @@
         ],
         "state": "pistol_box"
       },
-      "category": "Снаряжение",
+      "category": "Боеприпасы",
       "public": true,
       "image": "equipment-sprites/RMCBoxMagazinePistolM1984AP.png"
     },
@@ -18953,7 +18973,8 @@
       ],
       "abstract": false,
       "types": [
-        "container"
+        "container",
+        "magazine-or-ammo-container"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -19055,7 +19076,7 @@
         ],
         "state": "pistol_box"
       },
-      "category": "Снаряжение",
+      "category": "Боеприпасы",
       "public": true,
       "image": "equipment-sprites/RMCBoxMagazinePistolM1984HP.png"
     },
@@ -19071,7 +19092,8 @@
       ],
       "abstract": false,
       "types": [
-        "container"
+        "container",
+        "magazine-or-ammo-container"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -19173,7 +19195,7 @@
         ],
         "state": "pistol_box"
       },
-      "category": "Снаряжение",
+      "category": "Боеприпасы",
       "public": true,
       "image": "equipment-sprites/RMCBoxMagazinePistolM77AP.png"
     },
@@ -19189,7 +19211,8 @@
       ],
       "abstract": false,
       "types": [
-        "container"
+        "container",
+        "magazine-or-ammo-container"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -19291,7 +19314,7 @@
         ],
         "state": "pistol_box"
       },
-      "category": "Снаряжение",
+      "category": "Боеприпасы",
       "public": true,
       "image": "equipment-sprites/RMCBoxMagazinePistolMK80.png"
     },
@@ -19307,7 +19330,8 @@
       ],
       "abstract": false,
       "types": [
-        "container"
+        "container",
+        "magazine-or-ammo-container"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -19409,7 +19433,7 @@
         ],
         "state": "pistol_box"
       },
-      "category": "Снаряжение",
+      "category": "Боеприпасы",
       "public": true,
       "image": "equipment-sprites/RMCBoxMagazinePistolSU6.png"
     },
@@ -19425,7 +19449,8 @@
       ],
       "abstract": false,
       "types": [
-        "container"
+        "container",
+        "magazine-or-ammo-container"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -19527,7 +19552,7 @@
         ],
         "state": "pistol_box"
       },
-      "category": "Снаряжение",
+      "category": "Боеприпасы",
       "public": true,
       "image": "equipment-sprites/RMCBoxMagazineRevolverM44.png"
     },
@@ -19543,7 +19568,8 @@
       ],
       "abstract": false,
       "types": [
-        "container"
+        "container",
+        "magazine-or-ammo-container"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -19645,7 +19671,7 @@
         ],
         "state": "pistol_box"
       },
-      "category": "Снаряжение",
+      "category": "Боеприпасы",
       "public": true,
       "image": "equipment-sprites/RMCBoxMagazineRevolverM44Marksman.png"
     },
@@ -19661,7 +19687,8 @@
       ],
       "abstract": false,
       "types": [
-        "container"
+        "container",
+        "magazine-or-ammo-container"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -19769,7 +19796,7 @@
         ],
         "state": "rifle_box"
       },
-      "category": "Снаряжение",
+      "category": "Боеприпасы",
       "public": true,
       "image": "equipment-sprites/RMCBoxMagazineRifleM4SPR.png"
     },
@@ -19785,7 +19812,8 @@
       ],
       "abstract": false,
       "types": [
-        "container"
+        "container",
+        "magazine-or-ammo-container"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -19893,7 +19921,7 @@
         ],
         "state": "rifle_box"
       },
-      "category": "Снаряжение",
+      "category": "Боеприпасы",
       "public": true,
       "image": "equipment-sprites/RMCBoxMagazineRifleM4SPRAP.png"
     },
@@ -19909,7 +19937,8 @@
       ],
       "abstract": false,
       "types": [
-        "container"
+        "container",
+        "magazine-or-ammo-container"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -20017,7 +20046,7 @@
         ],
         "state": "rifle_box"
       },
-      "category": "Снаряжение",
+      "category": "Боеприпасы",
       "public": true,
       "image": "equipment-sprites/RMCBoxMagazineRifleM4SPRExt.png"
     },
@@ -20033,7 +20062,8 @@
       ],
       "abstract": false,
       "types": [
-        "container"
+        "container",
+        "magazine-or-ammo-container"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -20141,7 +20171,7 @@
         ],
         "state": "rifle_box"
       },
-      "category": "Снаряжение",
+      "category": "Боеприпасы",
       "public": true,
       "image": "equipment-sprites/RMCBoxMagazineRifleM54C.png"
     },
@@ -20157,7 +20187,8 @@
       ],
       "abstract": false,
       "types": [
-        "container"
+        "container",
+        "magazine-or-ammo-container"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -20265,7 +20296,7 @@
         ],
         "state": "rifle_box"
       },
-      "category": "Снаряжение",
+      "category": "Боеприпасы",
       "public": true,
       "image": "equipment-sprites/RMCBoxMagazineRifleM54CAP.png"
     },
@@ -20281,7 +20312,8 @@
       ],
       "abstract": false,
       "types": [
-        "container"
+        "container",
+        "magazine-or-ammo-container"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -20389,7 +20421,7 @@
         ],
         "state": "rifle_box"
       },
-      "category": "Снаряжение",
+      "category": "Боеприпасы",
       "public": true,
       "image": "equipment-sprites/RMCBoxMagazineRifleM54CExt.png"
     },
@@ -20405,7 +20437,8 @@
       ],
       "abstract": false,
       "types": [
-        "container"
+        "container",
+        "magazine-or-ammo-container"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -20513,7 +20546,7 @@
         ],
         "state": "smg_box"
       },
-      "category": "Снаряжение",
+      "category": "Боеприпасы",
       "public": true,
       "image": "equipment-sprites/RMCBoxMagazineSMGM63.png"
     },
@@ -20529,7 +20562,8 @@
       ],
       "abstract": false,
       "types": [
-        "container"
+        "container",
+        "magazine-or-ammo-container"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -20637,7 +20671,7 @@
         ],
         "state": "smg_box"
       },
-      "category": "Снаряжение",
+      "category": "Боеприпасы",
       "public": true,
       "image": "equipment-sprites/RMCBoxMagazineSMGM63AP.png"
     },
@@ -20653,7 +20687,8 @@
       ],
       "abstract": false,
       "types": [
-        "container"
+        "container",
+        "magazine-or-ammo-container"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -20761,7 +20796,7 @@
         ],
         "state": "smg_box"
       },
-      "category": "Снаряжение",
+      "category": "Боеприпасы",
       "public": true,
       "image": "equipment-sprites/RMCBoxMagazineSMGM63Ext.png"
     },
@@ -20777,7 +20812,8 @@
       ],
       "abstract": false,
       "types": [
-        "container"
+        "container",
+        "magazine-or-ammo-container"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -20875,7 +20911,7 @@
         ],
         "state": "rifle_box"
       },
-      "category": "Снаряжение",
+      "category": "Боеприпасы",
       "public": true,
       "image": "equipment-sprites/RMCBoxShellsBuckshot.png"
     },
@@ -20891,7 +20927,8 @@
       ],
       "abstract": false,
       "types": [
-        "container"
+        "container",
+        "magazine-or-ammo-container"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -20989,7 +21026,7 @@
         ],
         "state": "rifle_box"
       },
-      "category": "Снаряжение",
+      "category": "Боеприпасы",
       "public": true,
       "image": "equipment-sprites/RMCBoxShellsFlechette.png"
     },
@@ -21005,7 +21042,8 @@
       ],
       "abstract": false,
       "types": [
-        "container"
+        "container",
+        "magazine-or-ammo-container"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -21103,7 +21141,7 @@
         ],
         "state": "rifle_box"
       },
-      "category": "Снаряжение",
+      "category": "Боеприпасы",
       "public": true,
       "image": "equipment-sprites/RMCBoxShellsSlugs.png"
     },
@@ -21119,7 +21157,8 @@
       ],
       "abstract": false,
       "types": [
-        "container"
+        "container",
+        "magazine-or-ammo-container"
       ],
       "tags": [
         "RMCBoxShotgunShells"
@@ -21220,7 +21259,7 @@
         ],
         "state": "smallshell_box"
       },
-      "category": "Снаряжение",
+      "category": "Боеприпасы",
       "public": true,
       "image": "equipment-sprites/RMCBoxShotgunBuckshot.png"
     },
@@ -21236,7 +21275,8 @@
       ],
       "abstract": false,
       "types": [
-        "container"
+        "container",
+        "magazine-or-ammo-container"
       ],
       "tags": [
         "RMCBoxShotgunShells"
@@ -21337,7 +21377,7 @@
         ],
         "state": "smallshell_box"
       },
-      "category": "Снаряжение",
+      "category": "Боеприпасы",
       "public": true,
       "image": "equipment-sprites/RMCBoxShotgunFlechette.png"
     },
@@ -21353,7 +21393,8 @@
       ],
       "abstract": false,
       "types": [
-        "container"
+        "container",
+        "magazine-or-ammo-container"
       ],
       "tags": [
         "RMCBoxShotgunShells"
@@ -21454,7 +21495,7 @@
         ],
         "state": "smallshell_box"
       },
-      "category": "Снаряжение",
+      "category": "Боеприпасы",
       "public": true,
       "image": "equipment-sprites/RMCBoxShotgunSlugs.png"
     },
@@ -23538,7 +23579,7 @@
       ],
       "abstract": false,
       "types": [
-        "melee"
+        "misc"
       ],
       "tags": [
         "Flashlight"
@@ -23620,7 +23661,7 @@
         ],
         "state": "flashlight"
       },
-      "category": "Ближний бой",
+      "category": "Снаряжение",
       "public": true,
       "image": "equipment-sprites/RMCFlashlight.png"
     },
@@ -23691,7 +23732,7 @@
         "sprite": "_RMC14/Objects/Tools/fulton.rsi",
         "state": "fulton"
       },
-      "category": "Прочее",
+      "category": "Снаряжение",
       "public": true,
       "image": "equipment-sprites/RMCFulton20.png"
     },
@@ -24450,7 +24491,7 @@
           }
         ]
       },
-      "category": "Прочее",
+      "category": "Снаряжение",
       "public": true,
       "image": "equipment-sprites/RMCIntelDetector.png"
     },
@@ -24531,7 +24572,7 @@
           }
         ]
       },
-      "category": "Прочее",
+      "category": "Снаряжение",
       "public": true,
       "image": "equipment-sprites/RMCLaserDesignator.png"
     },
@@ -24882,7 +24923,7 @@
           }
         ]
       },
-      "category": "Прочее",
+      "category": "Снаряжение",
       "public": true,
       "image": "equipment-sprites/RMCM2CMount.png"
     },
@@ -25102,7 +25143,8 @@
       "abstract": false,
       "types": [
         "attachment",
-        "melee"
+        "melee",
+        "tool"
       ],
       "tags": [
         "Knife",
@@ -25461,7 +25503,6 @@
       ],
       "abstract": false,
       "types": [
-        "melee",
         "weapon"
       ],
       "tags": [
@@ -25682,7 +25723,8 @@
             "state": "mag-0",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           }
         ],
         "state": "base"
@@ -25927,7 +25969,7 @@
           }
         ]
       },
-      "category": "Прочее",
+      "category": "Снаряжение",
       "public": true,
       "image": "equipment-sprites/RMCML66DMount.png"
     },
@@ -26114,7 +26156,8 @@
             "state": "mag-1",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           }
         ],
         "state": "base"
@@ -26209,7 +26252,8 @@
             "state": "mag-1",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           }
         ],
         "state": "base"
@@ -26305,7 +26349,8 @@
             "state": "mag-1",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           }
         ],
         "state": "base"
@@ -26401,7 +26446,8 @@
             "state": "mag-1",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           }
         ],
         "state": "base"
@@ -26495,7 +26541,8 @@
             "state": "mag-1",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           },
           {
             "state": "ammo_band",
@@ -26593,7 +26640,8 @@
             "state": "mag-1",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           },
           {
             "state": "ammo_band",
@@ -26692,7 +26740,8 @@
             "state": "mag-1",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           }
         ],
         "state": "base"
@@ -26787,7 +26836,8 @@
             "state": "mag-6",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           }
         ],
         "state": "base"
@@ -26882,7 +26932,8 @@
             "state": "mag-1",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           }
         ],
         "state": "base"
@@ -26973,7 +27024,7 @@
           }
         ]
       },
-      "category": "Прочее",
+      "category": "Снаряжение",
       "public": true,
       "image": "equipment-sprites/RMCMotionDetector.png"
     },
@@ -27212,7 +27263,7 @@
         ],
         "state": "undeployed"
       },
-      "category": "Прочее",
+      "category": "Снаряжение",
       "public": true,
       "image": "equipment-sprites/RMCOverwatchCameraTripod.png"
     },
@@ -28502,7 +28553,7 @@
         "sprite": "_RMC14/Objects/Misc/pamphlets.rsi",
         "state": "pamphlet_machinegunner"
       },
-      "category": "Прочее",
+      "category": "Снаряжение",
       "public": true,
       "image": "equipment-sprites/RMCPamphletHeavyMachineGunner.png"
     },
@@ -28575,7 +28626,7 @@
         ],
         "state": "icon"
       },
-      "category": "Прочее",
+      "category": "Снаряжение",
       "public": true,
       "image": "equipment-sprites/RMCParachute.png"
     },
@@ -31281,7 +31332,7 @@
         ],
         "state": "mini-cell"
       },
-      "category": "Прочее",
+      "category": "Снаряжение",
       "public": true,
       "image": "equipment-sprites/RMCPowerCellCrap.png"
     },
@@ -31367,7 +31418,7 @@
         ],
         "state": "hcell"
       },
-      "category": "Прочее",
+      "category": "Снаряжение",
       "public": true,
       "image": "equipment-sprites/RMCPowerCellHigh.png"
     },
@@ -31448,7 +31499,7 @@
         ],
         "state": "smartguncell"
       },
-      "category": "Прочее",
+      "category": "Снаряжение",
       "public": true,
       "image": "equipment-sprites/RMCPowerCellSmartgun.png"
     },
@@ -31599,7 +31650,7 @@
           }
         ]
       },
-      "category": "Прочее",
+      "category": "Снаряжение",
       "public": true,
       "image": "equipment-sprites/RMCRangefinder.png"
     },
@@ -31694,7 +31745,6 @@
       ],
       "abstract": false,
       "types": [
-        "armor",
         "container"
       ],
       "tags": [
@@ -31802,7 +31852,7 @@
           }
         ]
       },
-      "category": "Броня",
+      "category": "Снаряжение",
       "public": true,
       "image": "equipment-sprites/RMCSatchelGrenadeSpec.png"
     },
@@ -31818,7 +31868,6 @@
       ],
       "abstract": false,
       "types": [
-        "armor",
         "container"
       ],
       "tags": [
@@ -31933,7 +31982,7 @@
           }
         ]
       },
-      "category": "Броня",
+      "category": "Снаряжение",
       "public": true,
       "image": "equipment-sprites/RMCSatchelWelder.png"
     },
@@ -32207,7 +32256,7 @@
         ],
         "state": "sentrycomp_cl"
       },
-      "category": "Прочее",
+      "category": "Снаряжение",
       "public": true,
       "image": "equipment-sprites/RMCSentryLaptop.png"
     },
@@ -32224,7 +32273,6 @@
       ],
       "abstract": false,
       "types": [
-        "melee",
         "weapon"
       ],
       "tags": [
@@ -32399,7 +32447,8 @@
             "state": "mag-0",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           }
         ],
         "state": "ml66d_gun_e"
@@ -32491,7 +32540,8 @@
             "state": "base-5",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           },
           {
             "state": "base-unshaded-5",
@@ -32590,7 +32640,8 @@
             "state": "base-5",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           }
         ],
         "state": "base"
@@ -32694,7 +32745,7 @@
       ],
       "abstract": false,
       "types": [
-        "misc"
+        "magazine-or-ammo-container"
       ],
       "tags": [
         "RMCTankFlamer"
@@ -32781,7 +32832,7 @@
           }
         ]
       },
-      "category": "Прочее",
+      "category": "Боеприпасы",
       "public": true,
       "image": "equipment-sprites/RMCTankFlamer.png"
     },
@@ -32799,7 +32850,6 @@
       ],
       "abstract": false,
       "types": [
-        "melee",
         "weapon"
       ],
       "tags": [
@@ -32977,7 +33027,8 @@
             "state": "mag-0",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           },
           {
             "state": "strip",
@@ -33011,7 +33062,6 @@
       ],
       "abstract": false,
       "types": [
-        "melee",
         "weapon"
       ],
       "tags": [
@@ -33201,7 +33251,6 @@
       ],
       "abstract": false,
       "types": [
-        "melee",
         "weapon"
       ],
       "tags": [
@@ -33437,7 +33486,8 @@
             "state": "mag-0",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           }
         ],
         "state": "base"
@@ -33458,7 +33508,6 @@
       ],
       "abstract": false,
       "types": [
-        "melee",
         "weapon"
       ],
       "tags": [
@@ -33700,7 +33749,8 @@
             "state": "mag-0",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           }
         ],
         "state": "base"
@@ -33721,7 +33771,6 @@
       ],
       "abstract": false,
       "types": [
-        "melee",
         "weapon"
       ],
       "tags": [
@@ -33951,7 +34000,8 @@
             "state": "mag-0",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           }
         ],
         "state": "base"
@@ -33972,7 +34022,6 @@
       ],
       "abstract": false,
       "types": [
-        "melee",
         "weapon"
       ],
       "tags": [
@@ -34166,7 +34215,6 @@
       ],
       "abstract": false,
       "types": [
-        "melee",
         "weapon"
       ],
       "tags": [
@@ -34384,7 +34432,8 @@
             "state": "mag-0",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           }
         ],
         "state": "base"
@@ -34405,7 +34454,6 @@
       ],
       "abstract": false,
       "types": [
-        "melee",
         "weapon"
       ],
       "tags": [
@@ -34627,7 +34675,6 @@
       ],
       "abstract": false,
       "types": [
-        "melee",
         "weapon"
       ],
       "tags": [
@@ -34895,7 +34942,8 @@
             "state": "mag-0",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           }
         ],
         "state": "base"
@@ -34917,7 +34965,6 @@
       ],
       "abstract": false,
       "types": [
-        "melee",
         "weapon"
       ],
       "tags": [
@@ -35154,7 +35201,8 @@
             "state": "mag-0",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           }
         ],
         "state": "base"
@@ -35176,7 +35224,6 @@
       ],
       "abstract": false,
       "types": [
-        "melee",
         "weapon"
       ],
       "tags": [
@@ -35423,7 +35470,8 @@
             "state": "mag-0",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           }
         ],
         "state": "base"
@@ -35993,7 +36041,7 @@
         "sprite": "_RMC14/Objects/Clothing/Eyes/Glasses/welding_goggles.rsi",
         "state": "icon"
       },
-      "category": "Прочее",
+      "category": "Снаряжение",
       "public": true,
       "image": "equipment-sprites/RMCWeldingGoggles.png"
     },
@@ -36010,7 +36058,6 @@
       ],
       "abstract": false,
       "types": [
-        "melee",
         "weapon"
       ],
       "tags": [
@@ -36268,7 +36315,8 @@
             "state": "mag-0",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           }
         ],
         "state": "bolt-open"
@@ -36289,7 +36337,6 @@
       ],
       "abstract": false,
       "types": [
-        "melee",
         "weapon"
       ],
       "tags": [],
@@ -36544,7 +36591,6 @@
       ],
       "abstract": false,
       "types": [
-        "melee",
         "weapon"
       ],
       "tags": [
@@ -36809,7 +36855,8 @@
             "state": "mag-0",
             "map": [
               "enum.GunVisualLayers.Mag"
-            ]
+            ],
+            "visible": true
           }
         ],
         "state": "bolt-open"
@@ -36831,7 +36878,6 @@
       ],
       "abstract": false,
       "types": [
-        "melee",
         "weapon"
       ],
       "tags": [
@@ -37084,7 +37130,6 @@
       ],
       "abstract": false,
       "types": [
-        "melee",
         "weapon"
       ],
       "tags": [
@@ -37328,8 +37373,8 @@
       "RMCBoxMagazinePistolM1984HP",
       "RMCBoxBulletsRifle",
       "RMCAttachmentS42xTelescopicMiniscope",
-      "RMCWeaponPistolM13Empty",
       "RMCWeaponPistolM13",
+      "RMCWeaponPistolM13Empty",
       "RMCPowerCellSmartgun",
       "RMCTankFlamer",
       "RMCBinoculars",
@@ -37369,8 +37414,8 @@
       "RMC40MMGrenadeM74AGMI",
       "CMPamphletJTAC",
       "RMCBatonSlugHIRR",
-      "RMCBeltHolsterSMGPouch",
       "RMCBeltHolsterSMG",
+      "RMCBeltHolsterSMGPouch",
       "RMCBeltHolsterM13",
       "RMCBeltHolsterPistol",
       "RMCBeltHolsterRevolver",
@@ -37437,6 +37482,8 @@
       "CMMagazinePistolMK80",
       "RMCMagazineSMGNailgun",
       "RMCAttachmentMagneticHarness",
+      "CMM2132Machete",
+      "CMM11Knife",
       "RMCAttachmentMicroLaserSight",
       "RMCAttachmentS5MicroRedDotSight",
       "RMCAttachmentMiniFlamethrower",
@@ -37554,19 +37601,45 @@
     ],
     "categories": {
       "Ближний бой": [
-        "CMWrench",
-        "CMScrewdriver",
-        "CMFireExtinguisherPortable",
-        "CMEntrenchingTool",
-        "RMCFlashlight"
+        "CMM2132Machete",
+        "CMM11Knife"
       ],
       "Боеприпасы": [
+        "RMCBoxMagazinePistolM1984HP",
+        "RMCBoxBulletsRifle",
+        "RMCTankFlamer",
         "RMCMagazineSmartGun",
         "CMMagazineSMGM63AP",
         "CMMagazineRifleM54CAP",
         "CMMagazineRifleM4SPRAP",
         "RMCMagazineM2C",
         "RMCMagazineML66D",
+        "RMCBox458SOCOM",
+        "RMCBoxShellsBuckshot",
+        "RMCBoxShellsSlugs",
+        "RMCBoxShellsFlechette",
+        "RMCBoxMagazinePistolM77AP",
+        "RMCBoxMagazinePistolM13",
+        "RMCBoxMagazinePistolM13Ext",
+        "RMCBoxMagazineSMGM63",
+        "RMCBoxMagazineRifleM54C",
+        "RMCBoxMagazinePistolM1984",
+        "RMCBoxMagazinePistolM1984AP",
+        "RMCBoxMagazineRifleM4SPR",
+        "RMCBoxMagazinePistolSU6",
+        "RMCBoxMagazinePistolMK80",
+        "RMCBoxMagazineSMGM63AP",
+        "RMCBoxMagazineRifleM54CAP",
+        "RMCBoxMagazineRifleM4SPRAP",
+        "RMCBoxMagazineSMGM63Ext",
+        "RMCBoxMagazineRifleM54CExt",
+        "RMCBoxMagazineRifleM4SPRExt",
+        "RMCBoxShotgunBuckshot",
+        "RMCBoxBullets458",
+        "RMCBoxShotgunSlugs",
+        "RMCBoxMagazineRevolverM44",
+        "RMCBoxMagazineRevolverM44Marksman",
+        "RMCBoxShotgunFlechette",
         "CMMagazinePistolM77AP",
         "RMCMagazinePistolM13",
         "CMMagazineSMGM63",
@@ -37588,17 +37661,10 @@
         "RMCSpeedLoaderM44",
         "RMCSpeedLoader44Marksman",
         "RMCMagazinePistolM13Ext",
-        "CMMagazineSMGM63Ext"
-      ],
-      "Броня": [
-        "RMCSatchelGrenadeSpec",
-        "RMCBackpackRTO",
-        "CMBackpackMarine",
-        "RMCBackpackFlamer",
-        "CMBackpackMortar",
-        "CMBackpackWelder",
-        "RMCBackpackAmmo",
-        "RMCSatchelWelder"
+        "CMMagazineSMGM63Ext",
+        "RMCBoxBulletsSMGAP",
+        "RMCBoxBulletsSMG",
+        "RMCBoxBulletsRifleAP"
       ],
       "Взрывчатка": [
         "RMCGrenadeWhitePhosphorusCompound",
@@ -37646,9 +37712,13 @@
         "RMCAttachmentMagneticHarness",
         "RMCAttachmentMicroLaserSight",
         "RMCAttachmentS5MicroRedDotSight",
+        "RMCAttachmentMiniFlamethrower",
         "RMCAttachmentRailFlashlight",
         "RMCAttachmentM63ArmBrace",
         "RMCAttachmentFlashlightGrip",
+        "RMCAttachmentU1GrenadeLauncher",
+        "RMCAttachmentU7UnderbarrelShotgun",
+        "RMCAttachmentUnderbarrelExtinguisher",
         "RMCAttachmentM44MagnumSharpshooterStock",
         "RMCAttachmentXM88Stock",
         "RMCAttachmentM63Stock",
@@ -37667,19 +37737,15 @@
         "RMCM5Bayonet"
       ],
       "Оружие": [
-        "RMCWeaponPistolM13Empty",
         "RMCWeaponPistolM13",
+        "RMCWeaponPistolM13Empty",
         "WeaponRifleM4SPR",
         "RMCWeaponPistolM77Empty",
         "RMCWeaponRevolverM44Empty",
         "RMCWeaponLauncherM85A1",
-        "RMCAttachmentMiniFlamethrower",
         "RMCWeaponFlamer",
         "RMCMK80",
         "WeaponSMGM63",
-        "RMCAttachmentU1GrenadeLauncher",
-        "RMCAttachmentU7UnderbarrelShotgun",
-        "RMCAttachmentUnderbarrelExtinguisher",
         "WeaponShotgunM42A2",
         "WeaponShotgunMOU53",
         "RMCWeaponPistolM82FEmpty",
@@ -37691,81 +37757,47 @@
         "RMCWeaponRifleM54CMK1",
         "RMCWeaponRifleM54C"
       ],
-      "Прочее": [
-        "RMCBoxBulletsRifle",
-        "RMCPowerCellSmartgun",
-        "RMCTankFlamer",
-        "RMCBinoculars",
-        "CMPamphletEngineer",
-        "RMCPamphletHeavyMachineGunner",
-        "CMPamphletPowerloader",
-        "RMCPowerCellHigh",
-        "RMCRangefinder",
-        "RMCIntelDetector",
-        "RMCMotionDetector",
-        "CMPamphletJTAC",
-        "RMCLaserDesignator",
-        "RMCSentryLaptop",
-        "RMCParachute",
-        "RMCPowerCellCrap",
-        "RMCOverwatchCameraTripod",
-        "CMMaskGas",
-        "RMCWeldingGoggles",
-        "CMFoldingBarricadesMB6x3",
-        "RMCM2CMount",
-        "RMCML66DMount",
-        "RMCFulton20",
-        "RMCBoxBulletsSMGAP",
-        "RMCBoxBulletsSMG",
-        "RMCBoxBulletsRifleAP"
-      ],
       "Снаряжение": [
         "CMSparePDTLBattleBuddyKit",
-        "RMCBoxMagazinePistolM1984HP",
+        "RMCPowerCellSmartgun",
+        "RMCBinoculars",
         "RMCPouchShotgunLarge",
         "RMCPouchMagazineLarge",
         "RMCPouchGeneralLarge",
         "RMCPouchMagazinePistolLarge",
+        "CMPamphletEngineer",
+        "RMCPamphletHeavyMachineGunner",
+        "CMPamphletPowerloader",
         "RMCPouchExplosive",
         "RMCOuterClothingExternalWebbing",
-        "RMCBeltHolsterSMGPouch",
+        "RMCPowerCellHigh",
+        "CMWrench",
+        "RMCSatchelGrenadeSpec",
+        "RMCRangefinder",
+        "RMCIntelDetector",
+        "RMCMotionDetector",
+        "CMPamphletJTAC",
         "RMCBeltHolsterSMG",
+        "RMCBeltHolsterSMGPouch",
         "RMCBeltHolsterM13",
         "RMCBeltHolsterPistol",
         "RMCBeltHolsterRevolver",
         "RMCBeltSmartPistolFilled",
+        "RMCBackpackRTO",
         "CMWebbingBrown",
-        "RMCBox458SOCOM",
-        "RMCBoxShellsBuckshot",
-        "RMCBoxShellsSlugs",
-        "RMCBoxShellsFlechette",
-        "RMCBoxMagazinePistolM77AP",
-        "RMCBoxMagazinePistolM13",
-        "RMCBoxMagazinePistolM13Ext",
-        "RMCBoxMagazineSMGM63",
-        "RMCBoxMagazineRifleM54C",
-        "RMCBoxMagazinePistolM1984",
-        "RMCBoxMagazinePistolM1984AP",
-        "RMCBoxMagazineRifleM4SPR",
-        "RMCBoxMagazinePistolSU6",
-        "RMCBoxMagazinePistolMK80",
-        "RMCBoxMagazineSMGM63AP",
-        "RMCBoxMagazineRifleM54CAP",
-        "RMCBoxMagazineRifleM4SPRAP",
-        "RMCBoxMagazineSMGM63Ext",
-        "RMCBoxMagazineRifleM54CExt",
-        "RMCBoxMagazineRifleM4SPRExt",
-        "RMCBoxShotgunBuckshot",
-        "RMCBoxBullets458",
-        "RMCBoxShotgunSlugs",
-        "RMCBoxMagazineRevolverM44",
-        "RMCBoxMagazineRevolverM44Marksman",
-        "RMCBoxShotgunFlechette",
+        "RMCLaserDesignator",
+        "CMBackpackMarine",
         "RMCWebbingLegPouch",
         "RMCPouchDocumentSmall",
         "RMCScabbardMacheteFilled",
         "RMCScabbardShotgun",
         "RMCPouchBayonetFill",
+        "RMCSentryLaptop",
+        "CMScrewdriver",
+        "RMCParachute",
+        "RMCPowerCellCrap",
+        "CMFireExtinguisherPortable",
+        "RMCBackpackFlamer",
         "CMWebbingHolster",
         "RMCPouchAutoinjector",
         "RMCPouchToolsFill",
@@ -37781,22 +37813,35 @@
         "RMCPouchFlareFilled",
         "RMCPouchSyringe",
         "RMCWebbingDropPouch",
+        "RMCOverwatchCameraTripod",
         "RMCBeltGrenade",
         "CMBeltMarine",
         "CMBeltKnifeFilled",
         "RMCM276ShotgunShellLoadingRig",
         "CMBeltMortar",
         "RMCBeltMachineGunner",
+        "CMMaskGas",
         "CMWebbing",
         "CMWebbingKnivesFilled",
         "RMCM82FHolster",
+        "CMBackpackMortar",
+        "CMBackpackWelder",
+        "RMCWeldingGoggles",
+        "CMFoldingBarricadesMB6x3",
+        "CMEntrenchingTool",
         "RMCM300SOCOMBelt",
         "RMCPouchGeneralMedium",
+        "RMCM2CMount",
+        "RMCBackpackAmmo",
         "RMCPouchConstruction",
         "RMCPouchSling",
+        "RMCSatchelWelder",
         "RMCPouchFirstResponder",
+        "RMCML66DMount",
         "CMPackFlare",
         "RMCPackFlareCAS",
+        "RMCFlashlight",
+        "RMCFulton20",
         "CMWebbingBlack",
         "RMCWebbingLegPouchBlack",
         "RMCWebbingHolsterBlack",
@@ -40450,7 +40495,7 @@
     "tradeEntries": 225,
     "directItemPrototypes": 223,
     "catalogItems": 312,
-    "publicItems": 234,
+    "publicItems": 236,
     "relations": 424
   }
 }
