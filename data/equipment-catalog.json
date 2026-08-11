@@ -37328,8 +37328,8 @@
       "RMCBoxMagazinePistolM1984HP",
       "RMCBoxBulletsRifle",
       "RMCAttachmentS42xTelescopicMiniscope",
-      "RMCWeaponPistolM13",
       "RMCWeaponPistolM13Empty",
+      "RMCWeaponPistolM13",
       "RMCPowerCellSmartgun",
       "RMCTankFlamer",
       "RMCBinoculars",
@@ -37667,8 +37667,8 @@
         "RMCM5Bayonet"
       ],
       "Оружие": [
-        "RMCWeaponPistolM13",
         "RMCWeaponPistolM13Empty",
+        "RMCWeaponPistolM13",
         "WeaponRifleM4SPR",
         "RMCWeaponPistolM77Empty",
         "RMCWeaponRevolverM44Empty",
