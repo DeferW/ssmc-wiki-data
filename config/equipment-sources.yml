@@ -29,3 +29,12 @@ vendors:
 # seed the graph, but the shipping crates themselves never enter publicCatalog.
 cargoCatalogs:
   - id: CMASRSConsole
+
+# Strict publication policy. The automatic classifier only publishes items
+# backed by dedicated functional components. These maps are an escape hatch for
+# genuine game-data anomalies, not the primary categorization mechanism.
+classification:
+  excludePrototypeIds: []
+  includePrototypeIds: []
+  categoryOverrides: {}
+  canonicalPrototypeIds: {}

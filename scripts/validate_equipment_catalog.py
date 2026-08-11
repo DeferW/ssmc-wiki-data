@@ -95,9 +95,9 @@ def validate(
     config: Path,
     sprites: Path,
 ) -> None:
-    if catalog.get("schemaVersion") != 1:
+    if catalog.get("schemaVersion") != 2:
         raise RuntimeError("Unexpected equipment catalog schema")
-    if index.get("schemaVersion") != 1:
+    if index.get("schemaVersion") != 2:
         raise RuntimeError("Unexpected equipment index schema")
     if catalog.get("gameCommit") != index.get("gameCommit"):
         raise RuntimeError("Catalog and index were built from different commits")
@@ -164,12 +164,29 @@ def validate(
             )
 
     public_ids = public_catalog.get("itemIds")
+    candidate_ids = public_catalog.get("candidateItemIds")
+    quarantine_ids = public_catalog.get("quarantineItemIds")
+    excluded_ids = public_catalog.get("excludedItemIds")
     unwrapped_cases = public_catalog.get("unwrappedCaseIds")
     unwrapped_transport = public_catalog.get("unwrappedTransportIds")
     aliases = public_catalog.get("aliases")
     categories = public_catalog.get("categories")
     if not isinstance(public_ids, list) or not public_ids:
         raise RuntimeError("Public equipment catalog is empty")
+    if not isinstance(candidate_ids, list) or not candidate_ids:
+        raise RuntimeError("Equipment candidate list is empty")
+    if not isinstance(quarantine_ids, list):
+        raise RuntimeError("Missing equipment quarantine")
+    if not isinstance(excluded_ids, list):
+        raise RuntimeError("Missing excluded equipment list")
+    if set(public_ids) | set(quarantine_ids) | set(excluded_ids) != set(candidate_ids):
+        raise RuntimeError("Candidate publication states do not form a complete partition")
+    if (
+        set(public_ids).intersection(quarantine_ids)
+        or set(public_ids).intersection(excluded_ids)
+        or set(quarantine_ids).intersection(excluded_ids)
+    ):
+        raise RuntimeError("Equipment publication states overlap")
     if len(public_ids) != len(set(public_ids)):
         raise RuntimeError("Public equipment catalog contains duplicate items")
     if not isinstance(unwrapped_cases, list) or not unwrapped_cases:
@@ -220,6 +237,15 @@ def validate(
         if item_id not in items:
             raise RuntimeError(f"Public catalog references missing item: {item_id}")
         item = items[item_id]
+        classification = item.get("classification")
+        if not isinstance(classification, dict):
+            raise RuntimeError(f"Public item has no classification: {item_id}")
+        if classification.get("status") != "public":
+            raise RuntimeError(f"Public item has non-public classification: {item_id}")
+        if classification.get("confidence") != "high":
+            raise RuntimeError(f"Public item lacks high-confidence classification: {item_id}")
+        if classification.get("category") != item.get("category"):
+            raise RuntimeError(f"Classification/category mismatch: {item_id}")
         name = item.get("name")
         if not isinstance(name, str) or not name:
             raise RuntimeError(f"Public item has no name: {item_id}")
@@ -246,12 +272,13 @@ def validate(
         "RMCAttachmentU7UnderbarrelShotgun": "Обвесы",
         "RMCAttachmentUnderbarrelExtinguisher": "Обвесы",
         "RMCAttachmentU1GrenadeLauncher": "Обвесы",
-        "CMWrench": "Инструменты",
-        "CMScrewdriver": "Инструменты",
-        "CMEntrenchingTool": "Инструменты",
-        "CMFireExtinguisherPortable": "Инструменты",
-        "CMBackpackMarine": "Разгрузка и хранение",
-        "RMCBackpackAmmo": "Разгрузка и хранение",
+        "CMWrench": "Инженерное оборудование и инструменты",
+        "CMScrewdriver": "Инженерное оборудование и инструменты",
+        "CMEntrenchingTool": "Инженерное оборудование и инструменты",
+        "CMFireExtinguisherPortable": "Инженерное оборудование и инструменты",
+        "RMCNailgunTactical": "Инженерное оборудование и инструменты",
+        "CMBackpackMarine": "Разгрузка и переноска",
+        "RMCBackpackAmmo": "Разгрузка и переноска",
         "RMCBoxMagazinePistolM13": "Боеприпасы",
         "RMCBoxMagazineRifleM54CAP": "Боеприпасы",
         "RMCBoxBulletsRifle": "Боеприпасы",
@@ -261,6 +288,8 @@ def validate(
         "ArmorHelmetM10": "Броня и защита",
         "RMCArmorM3MediumPadded": "Броня и защита",
         "RMCML66DMount": "Оружейные системы",
+        "RMCBinoculars": "Специальное снаряжение",
+        "RMCRangefinder": "Специальное снаряжение",
     }
     for item_id, expected_category in expected_categories.items():
         actual_category = items.get(item_id, {}).get("category")
@@ -272,6 +301,8 @@ def validate(
 
     for item_id in public_ids:
         item = items[item_id]
+        if "Item" in item.get("properties", {}):
+            raise RuntimeError(f"Internal item-size properties leaked publicly: {item_id}")
         if "Attachable" in item.get("componentTypes", []):
             if item.get("category") != "Обвесы":
                 raise RuntimeError(f"Attachment categorized incorrectly: {item_id}")
@@ -282,8 +313,21 @@ def validate(
             }:
                 raise RuntimeError(f"Ammo box categorized incorrectly: {item_id}")
 
-    if "Прочее" in categories:
-        raise RuntimeError("Public catalog contains a catch-all 'Прочее' category")
+    forbidden_categories = {
+        "Прочее",
+        "Снаряжение",
+        "Одежда",
+        "Провизия",
+        "Канцелярия",
+        "Материалы",
+        "Инструкции и обучение",
+        "Хозяйственные принадлежности",
+    }.intersection(categories)
+    if forbidden_categories:
+        raise RuntimeError(
+            "Public catalog contains forbidden catch-all/non-equipment categories: "
+            + ", ".join(sorted(forbidden_categories))
+        )
 
     if aliases.get("RMCWeaponPistolM13Empty") != "RMCWeaponPistolM13":
         raise RuntimeError("M10 empty/load-state variants were not collapsed")
@@ -314,6 +358,41 @@ def validate(
         raise RuntimeError("Suppressor has no reverse attachment compatibility")
     if "AttachableWeaponRangedMods" not in suppressor.get("properties", {}):
         raise RuntimeError("Attachment mechanical modifiers were not preserved")
+
+    public_guns = {
+        item_id
+        for item_id in public_ids
+        if "Gun" in items[item_id].get("componentTypes", [])
+    }
+    guns_without_stats = sorted(
+        item_id
+        for item_id in public_guns
+        if not isinstance(items[item_id].get("weaponStats"), dict)
+        or not items[item_id]["weaponStats"]
+    )
+    if guns_without_stats:
+        raise RuntimeError(f"Public guns have no normalized stats: {guns_without_stats}")
+    m10_stats = items.get("RMCWeaponPistolM13", {}).get("weaponStats", {})
+    if m10_stats.get("shotsPerSecond") != 10:
+        raise RuntimeError("M10 normalized fire rate is missing or incorrect")
+    m10_ammunition = m10_stats.get("ammunition")
+    if not isinstance(m10_ammunition, list) or not m10_ammunition:
+        raise RuntimeError("M10 normalized ammunition data is missing")
+    if not any(
+        entry.get("capacity") == 40
+        and any(
+            projectile.get("damage", {}).get("Piercing") == 24
+            and projectile.get("effectiveDamage", {}).get("Piercing") == 18
+            for projectile in entry.get("projectiles", [])
+            if isinstance(projectile, dict)
+        )
+        for entry in m10_ammunition
+        if isinstance(entry, dict)
+    ):
+        raise RuntimeError("M10 magazine capacity/projectile damage was not normalized")
+    mounted_m56 = items.get("RMCSmartGunMounted", {})
+    if mounted_m56.get("category") != "Оружие" or not mounted_m56.get("weaponStats"):
+        raise RuntimeError("M56D weapon card or normalized statistics are missing")
 
     pill_pouch_id = "RMCPouchFirstAidPills"
     if pill_pouch_id not in public_ids:
@@ -388,12 +467,28 @@ def validate(
         "directItemPrototypes": len(direct_ids),
         "catalogItems": len(items),
         "publicItems": len(public_ids),
+        "quarantineItems": len(quarantine_ids),
+        "excludedItems": len(excluded_ids),
         "relations": len(relations),
     }
     if counts != actual_counts:
         raise RuntimeError(
             f"Equipment count mismatch: stored={counts}, actual={actual_counts}"
         )
+
+    review = catalog.get("review")
+    if not isinstance(review, dict) or review.get("policy") != "strict-functional-v1":
+        raise RuntimeError("Missing strict classification review report")
+    review_quarantine = review.get("quarantine")
+    review_excluded = review.get("excluded")
+    if not isinstance(review_quarantine, list) or {
+        entry.get("id") for entry in review_quarantine if isinstance(entry, dict)
+    } != set(quarantine_ids):
+        raise RuntimeError("Quarantine review does not match quarantine ids")
+    if not isinstance(review_excluded, list) or {
+        entry.get("id") for entry in review_excluded if isinstance(entry, dict)
+    } != set(excluded_ids):
+        raise RuntimeError("Excluded review does not match excluded ids")
 
     required_cases = {
         "RMCGunCasePistolMK80",
@@ -450,6 +545,8 @@ def validate(
     print(f"Direct item prototypes: {len(direct_ids)}")
     print(f"Catalog items: {len(items)}")
     print(f"Public equipment items: {len(public_ids)}")
+    print(f"Quarantined equipment items: {len(quarantine_ids)}")
+    print(f"Excluded non-equipment items: {len(excluded_ids)}")
     print(f"Relations: {len(relations)}")
     print("Equipment catalog validation passed")
 
