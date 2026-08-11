@@ -1,4 +1,4 @@
-schemaVersion: 1
+schemaVersion: 2
 
 # These equipment sources seed the catalog. The builder follows their current
 # contents and technical dependencies instead of storing today's item list.
@@ -30,11 +30,10 @@ vendors:
 cargoCatalogs:
   - id: CMASRSConsole
 
-# Strict publication policy. The automatic classifier only publishes items
-# backed by dedicated functional components. These maps are an escape hatch for
-# genuine game-data anomalies, not the primary categorization mechanism.
+# Universal functional rules publish every useful candidate. Obvious food,
+# raw materials, books and household clutter are excluded; every remaining
+# unmatched item goes to "Другое", never to quarantine.
 classification:
   excludePrototypeIds: []
-  includePrototypeIds: []
   categoryOverrides: {}
   canonicalPrototypeIds: {}

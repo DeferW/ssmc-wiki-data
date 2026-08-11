@@ -2,7 +2,9 @@ from __future__ import annotations
 
 import argparse
 import copy
+import hashlib
 import json
+import math
 import re
 from collections import defaultdict, deque
 from dataclasses import dataclass
@@ -71,37 +73,31 @@ PHYSICAL_CONTENT_RELATION_TYPES = {
 
 PUBLIC_CATEGORY_LABELS = {
     "weapon": "Оружие",
-    "weapon-support": "Оружейные системы",
+    "ammunition": "Боеприпасы",
     "attachment": "Обвесы",
     "explosive": "Взрывчатка",
-    "ammunition": "Боеприпасы",
-    "vehicle-ammunition": "Боеприпасы для техники",
-    "armor": "Броня и защита",
     "melee": "Ближний бой",
-    "medicine": "Медикаменты",
-    "medical-equipment": "Медицинское оборудование",
-    "engineering": "Инженерное оборудование и инструменты",
-    "load-bearing": "Разгрузка и переноска",
-    "communications": "Связь и электроника",
-    "special-equipment": "Специальное снаряжение",
+    "armor": "Броня",
+    "equipment": "Экипировка",
+    "tools-equipment": "Инструменты и оборудование",
+    "medicine": "Медицина",
+    "gear": "Снаряжение",
+    "other": "Другое",
 }
 
 
 PUBLIC_CATEGORY_ORDER = (
     "weapon",
-    "weapon-support",
-    "melee",
     "ammunition",
-    "vehicle-ammunition",
     "attachment",
     "explosive",
+    "melee",
     "armor",
-    "load-bearing",
+    "equipment",
+    "tools-equipment",
     "medicine",
-    "medical-equipment",
-    "engineering",
-    "communications",
-    "special-equipment",
+    "gear",
+    "other",
 )
 
 
@@ -123,6 +119,8 @@ PUBLIC_PROPERTY_COMPONENTS = {
     "RMCSelectiveFire",
     "RMCWeaponAccuracy",
     "RMCWeaponDamageFalloff",
+    "WieldDelay",
+    "WieldableSpeedModifiers",
     # Attachments and melee.
     "AttachableSizeMods",
     "AttachableSpeedMods",
@@ -132,8 +130,12 @@ PUBLIC_PROPERTY_COMPONENTS = {
     "MeleeWeapon",
     # Protection, medicine and useful containers.
     "Armor",
+    "CMArmor",
     "RMCArmor",
+    "RMCArmorSpeedTier",
     "RMCArmorVariant",
+    "ClothingSpeedModifier",
+    "ExplosionResistance",
     "SolutionContainerManager",
     "Storage",
 }
@@ -320,6 +322,21 @@ def read_entity_prototypes(game_source: Path) -> dict[str, EntityPrototype]:
 
     if not result:
         raise RuntimeError("No entity prototypes found")
+    return result
+
+
+def read_reagent_colors(game_source: Path) -> dict[str, str]:
+    """Read reagent colors used by runtime-filled bottle/injector visuals."""
+    root = game_source / "Resources/Prototypes"
+    result: dict[str, str] = {}
+    for path in sorted([*root.rglob("*.yml"), *root.rglob("*.yaml")]):
+        for raw in iter_prototype_documents(path):
+            if raw.get("type") != "reagent":
+                continue
+            reagent_id = raw.get("id")
+            color = raw.get("color")
+            if isinstance(reagent_id, str) and isinstance(color, str):
+                result[reagent_id] = color
     return result
 
 
@@ -904,7 +921,23 @@ def add_compatibility_relations(
 
 def has_meaningful_armor(components: dict[str, Any]) -> bool:
     """Ignore the empty Armor marker inherited by backpacks and satchels."""
-    if "RMCArmor" in components:
+    cm_armor = components.get("CMArmor")
+    if isinstance(cm_armor, dict) and any(
+        isinstance(value, (int, float)) and not isinstance(value, bool) and value != 0
+        for key, value in cm_armor.items()
+        if key
+        in {
+            "xenoArmor",
+            "frontalArmor",
+            "sideArmor",
+            "melee",
+            "bullet",
+            "bio",
+            "explosionArmor",
+        }
+    ):
+        return True
+    if isinstance(cm_armor, dict) and cm_armor.get("immuneToAP") is True:
         return True
     if any(
         component_type in components
@@ -919,6 +952,26 @@ def has_meaningful_armor(components: dict[str, Any]) -> bool:
         return True
     modifier_sets = armor.get("modifierSets")
     return isinstance(modifier_sets, list) and bool(modifier_sets)
+
+
+def equipment_slots(components: dict[str, Any]) -> set[str]:
+    clothing = components.get("Clothing")
+    if not isinstance(clothing, dict):
+        return set()
+    slots = clothing.get("slots")
+    if isinstance(slots, str):
+        return {slots}
+    if isinstance(slots, list):
+        return {str(slot) for slot in slots if isinstance(slot, str)}
+    return set()
+
+
+def is_public_armor(components: dict[str, Any]) -> bool:
+    """Armor is only protective outer clothing or a protective helmet."""
+    if not has_meaningful_armor(components):
+        return False
+    slots = {slot.casefold() for slot in equipment_slots(components)}
+    return bool(slots.intersection({"outerclothing", "head"}))
 
 
 def is_ammunition_container(
@@ -1120,15 +1173,73 @@ def apply_static_preview_states(
             layer["visible"] = True
 
 
+def solution_preview_summary(components: dict[str, Any]) -> dict[str, Any] | None:
+    visuals = components.get("SolutionContainerVisuals")
+    manager = components.get("SolutionContainerManager")
+    if not isinstance(visuals, dict) or not isinstance(manager, dict):
+        return None
+    solutions = manager.get("solutions")
+    if not isinstance(solutions, dict) or not solutions:
+        return None
+    solution_name = visuals.get("solutionName")
+    if not isinstance(solution_name, str) or solution_name not in solutions:
+        solution_name = next(iter(solutions))
+    solution = solutions.get(solution_name)
+    if not isinstance(solution, dict):
+        return None
+    raw_reagents = solution.get("reagents")
+    reagents: list[dict[str, Any]] = []
+    if isinstance(raw_reagents, list):
+        for entry in raw_reagents:
+            if not isinstance(entry, dict):
+                continue
+            reagent_id = entry.get("ReagentId")
+            quantity = entry.get("Quantity")
+            if isinstance(reagent_id, str) and isinstance(quantity, (int, float)):
+                reagents.append({"id": reagent_id, "quantity": quantity})
+    elif isinstance(raw_reagents, dict):
+        for reagent_id, quantity in raw_reagents.items():
+            if isinstance(reagent_id, str) and isinstance(quantity, (int, float)):
+                reagents.append({"id": reagent_id, "quantity": quantity})
+    volume = sum(
+        float(entry["quantity"])
+        for entry in reagents
+        if isinstance(entry.get("quantity"), (int, float))
+    )
+    max_volume = solution.get("maxVol")
+    if not isinstance(max_volume, (int, float)) or max_volume <= 0:
+        max_volume = volume
+    result = {
+        "layerMap": str(
+            visuals.get("layer", "enum.SolutionContainerLayers.Fill")
+        ),
+        "fillBaseName": visuals.get("fillBaseName"),
+        "emptySpriteName": visuals.get("emptySpriteName"),
+        "maxFillLevels": visuals.get("maxFillLevels", 1),
+        "changeColor": visuals.get("changeColor", True),
+        "fillFraction": min(max(volume / max_volume, 0), 1) if max_volume else 0,
+        "reagents": reagents,
+    }
+    return result
+
+
 def sprite_summary(components: dict[str, Any]) -> dict[str, Any] | None:
     sprite = components.get("Sprite")
     if not isinstance(sprite, dict):
-        return None
+        sprite = components.get("Icon")
+    if not isinstance(sprite, dict):
+        sprite = {}
     result: dict[str, Any] = {}
     if isinstance(sprite.get("sprite"), str):
         result["sprite"] = sprite["sprite"]
+    elif isinstance(sprite.get("texture"), str):
+        result["sprite"] = sprite["texture"]
     if isinstance(sprite.get("state"), str):
         result["state"] = sprite["state"]
+    if "sprite" not in result:
+        item_sprite = components.get("Item", {}).get("sprite")
+        if isinstance(item_sprite, str):
+            result["sprite"] = item_sprite
     layers = sprite.get("layers")
     if isinstance(layers, list):
         clean_layers = [
@@ -1143,6 +1254,9 @@ def sprite_summary(components: dict[str, Any]) -> dict[str, Any] | None:
                     if isinstance(state, str):
                         result["state"] = state
                         break
+    solution_preview = solution_preview_summary(components)
+    if solution_preview:
+        result["solutionPreview"] = solution_preview
     return result or None
 
 
@@ -1153,14 +1267,43 @@ def texture_path(game_source: Path, sprite_path: str) -> Path:
     return game_source / "Resources/Textures" / normalized
 
 
-def first_rsi_state(meta: dict[str, Any]) -> str | None:
+def first_rsi_state(
+    meta: dict[str, Any],
+    sprite_path: str = "",
+    requested: str | None = None,
+) -> str | None:
     states = meta.get("states")
     if not isinstance(states, list):
         return None
-    for state in states:
-        if isinstance(state, dict) and isinstance(state.get("name"), str):
-            return state["name"]
-    return None
+    names = [
+        state["name"]
+        for state in states
+        if isinstance(state, dict) and isinstance(state.get("name"), str)
+    ]
+    if requested in names:
+        return requested
+    stem = Path(sprite_path).stem.casefold()
+    preferred = ("icon", "item", "default", stem, "base", "idle", "closed", "full")
+    folded = {name.casefold(): name for name in names}
+    for candidate in preferred:
+        if candidate and candidate in folded:
+            return folded[candidate]
+    non_equipped = [
+        name
+        for name in names
+        if not any(
+            marker in name.casefold()
+            for marker in (
+                "inhand",
+                "equipped",
+                "-left",
+                "-right",
+                "-front",
+                "-back",
+            )
+        )
+    ]
+    return (non_equipped or names or [None])[0]
 
 
 def load_sprite_frame(
@@ -1181,7 +1324,7 @@ def load_sprite_frame(
     if not isinstance(meta, dict):
         raise RuntimeError(f"Invalid RSI metadata: {meta_path}")
 
-    selected_state = state or first_rsi_state(meta)
+    selected_state = first_rsi_state(meta, sprite_path, state)
     if not selected_state:
         raise RuntimeError(f"RSI has no states: {meta_path}")
     state_path = source / f"{selected_state}.png"
@@ -1236,16 +1379,83 @@ def layer_offset_pixels(layer: dict[str, Any], width: int, height: int) -> tuple
     return round(x * width), round(-y * height)
 
 
+def mixed_reagent_color(
+    reagents: list[dict[str, Any]],
+    reagent_colors: dict[str, str],
+) -> str | None:
+    weighted: list[tuple[tuple[int, int, int, int], float]] = []
+    for entry in reagents:
+        reagent_id = entry.get("id")
+        quantity = entry.get("quantity")
+        color = reagent_colors.get(str(reagent_id))
+        if not isinstance(quantity, (int, float)) or quantity <= 0 or not color:
+            continue
+        try:
+            weighted.append((ImageColor.getcolor(color, "RGBA"), float(quantity)))
+        except ValueError:
+            continue
+    total = sum(quantity for _, quantity in weighted)
+    if total <= 0:
+        return None
+    channels = tuple(
+        round(sum(color[index] * quantity for color, quantity in weighted) / total)
+        for index in range(4)
+    )
+    return "#" + "".join(f"{channel:02x}" for channel in channels)
+
+
+def apply_solution_preview(
+    summary: dict[str, Any],
+    layers: list[dict[str, Any]],
+    reagent_colors: dict[str, str],
+) -> None:
+    preview = summary.get("solutionPreview")
+    if not isinstance(preview, dict):
+        return
+    fraction = preview.get("fillFraction")
+    max_levels = preview.get("maxFillLevels")
+    if not isinstance(fraction, (int, float)):
+        return
+    if not isinstance(max_levels, int) or max_levels <= 0:
+        max_levels = 1
+    level = min(max(math.ceil(float(fraction) * max_levels), 0), max_levels)
+    map_name = str(preview.get("layerMap", "enum.SolutionContainerLayers.Fill"))
+    color = mixed_reagent_color(preview.get("reagents", []), reagent_colors)
+    for layer in layers:
+        maps = layer_map_names(layer)
+        if map_name not in maps and "enum.SolutionContainerLayers.Fill" not in maps:
+            continue
+        if level <= 0:
+            empty_state = preview.get("emptySpriteName")
+            if isinstance(empty_state, str):
+                layer["state"] = empty_state
+                layer["visible"] = True
+            else:
+                layer["visible"] = False
+            continue
+        fill_base = preview.get("fillBaseName")
+        if isinstance(fill_base, str):
+            layer["state"] = f"{fill_base}{level}"
+        layer["visible"] = True
+        if preview.get("changeColor", True) and color:
+            layer["color"] = color
+        else:
+            layer.pop("color", None)
+
+
 def render_sprite_preview(
     game_source: Path,
     summary: dict[str, Any],
+    reagent_colors: dict[str, str],
 ) -> Image.Image:
     base_sprite = summary.get("sprite")
     layers = summary.get("layers")
     render_layers: list[dict[str, Any]] = []
 
     if isinstance(layers, list):
-        for layer in layers:
+        prepared_layers = [copy.deepcopy(layer) for layer in layers if isinstance(layer, dict)]
+        apply_solution_preview(summary, prepared_layers, reagent_colors)
+        for layer in prepared_layers:
             if not isinstance(layer, dict) or layer.get("visible") is False:
                 continue
             layer_sprite = layer.get("sprite", base_sprite)
@@ -1319,12 +1529,7 @@ def classify_item(
     item: dict[str, Any],
     policy: dict[str, Any],
 ) -> dict[str, Any]:
-    """Assign one functional category or keep the item out of the public data.
-
-    Equipment-slot components such as Clothing and generic Storage are never
-    category evidence by themselves. This is intentional: many guns, scopes,
-    ammunition boxes and even surgical caps inherit those components.
-    """
+    """Assign exactly one wiki category from reusable mechanical signals."""
     item_id = str(item.get("id", ""))
     component_types = set(item.get("componentTypes", []))
     tags = set(item.get("tags", []))
@@ -1334,7 +1539,6 @@ def classify_item(
     folded_tags = {tag.casefold() for tag in tags}
 
     excluded_ids = set(policy.get("excludePrototypeIds", []))
-    included_ids = set(policy.get("includePrototypeIds", []))
     category_overrides = policy.get("categoryOverrides", {})
     if item_id in excluded_ids:
         return classification_result(
@@ -1359,6 +1563,10 @@ def classify_item(
             signals=signals,
         )
 
+    properties = item.get("properties", {})
+    if not isinstance(properties, dict):
+        properties = {}
+    slots = {str(slot).casefold() for slot in item.get("equipmentSlots", [])}
     has_gun = "Gun" in component_types or "RMCFlamerAmmoProvider" in component_types
     has_ammo = (
         "CartridgeAmmo" in component_types
@@ -1371,29 +1579,18 @@ def classify_item(
         or "RMCPacketGrenade" in tags
     )
 
+    # Underbarrel launchers and shotguns still belong to attachments even when
+    # they also contain a Gun component.
     if "Attachable" in component_types:
         return public("attachment", "dedicated attachment component", "Attachable")
-    if "WeaponMount" in component_types or has_any_component(
-        component_types,
-        ("sentry", "turret", "mortar", "weaponmount"),
-    ):
-        if "MortarShell" not in component_types:
-            return public(
-                "weapon-support",
-                "dedicated mounted-weapon or emplacement component",
-                "component:weapon-support",
-            )
     if has_gun:
         return public("weapon", "dedicated firearm component", "Gun")
-    if is_dedicated_melee_weapon(item_id, component_types, tags):
-        return public("melee", "dedicated sharp melee weapon", "MeleeWeapon", "sharp-signal")
     if has_ammo:
-        category_id = (
-            "vehicle-ammunition"
-            if "vehicle-ammunition" in set(item.get("sourceCategoryHints", []))
-            else "ammunition"
+        return public(
+            "ammunition",
+            "ammunition provider, cartridge or vehicle-ammunition chain",
+            "component:ammunition",
         )
-        return public(category_id, "ammunition provider or cartridge chain", "component:ammunition")
     if (
         "/objects/weapons/throwable/packets" in folded_path
         and ("Storage" in component_types or "CMItemSlots" in component_types)
@@ -1411,30 +1608,44 @@ def classify_item(
         or "handgrenade" in folded_tags
     ):
         return public("explosive", "dedicated explosive or grenade mechanics", "component:explosive")
-    if has_meaningful_armor({component: {} for component in component_types}) or (
-        "armor" in set(item.get("types", []))
-    ):
-        return public("armor", "non-empty armor mechanics", "component:armor")
+
+    cm_armor = properties.get("CMArmor")
+    armor_components = {
+        key: value
+        for key, value in properties.items()
+        if key in {"Armor", "CMArmor", "RMCArmor"}
+    }
+    meaningful_armor = has_meaningful_armor(armor_components) or (
+        isinstance(cm_armor, dict)
+        and any(
+            isinstance(value, (int, float))
+            and not isinstance(value, bool)
+            and value != 0
+            for value in cm_armor.values()
+        )
+    )
+    if meaningful_armor and slots.intersection({"outerclothing", "head"}):
+        return public(
+            "armor",
+            "protective outer-clothing or helmet slot",
+            "component:armor",
+            "slot:armor-or-head",
+        )
 
     medical_object_path = "/entities/objects/medical/" in folded_path
-    if (
+    medical_box_path = "/catalog/fills/boxes/medical" in folded_path
+    medical_delivery = (
         "Pill" in component_types
         or "Hypospray" in component_types
         or "Injector" in component_types
         or "Syringe" in component_types
         or "pillcanister" in folded_id
         or "packetpills" in folded_id
-    ):
-        return public("medicine", "medicine delivery component", "component:medicine")
-    if medical_object_path and (
+    )
+    medical_solution = medical_object_path and (
         "CMRefillableSolution" in component_types
         or folded_id.startswith("cmbottle")
-    ):
-        return public(
-            "medicine",
-            "medical solution container",
-            "component:medical-solution",
-        )
+    )
 
     medical_path_id_signal = any(
         word in folded_id
@@ -1455,12 +1666,27 @@ def classify_item(
             "surgicalbed",
             "oxygentank",
             "anesthetictank",
+            "surgical",
+            "scalpel",
+            "hemostat",
+            "retractor",
+            "cautery",
+            "bonesaw",
+            "bonesetter",
+            "woundclamp",
+            "bonegel",
+            "synthgraft",
         )
     )
-    if has_any_component(
-        component_types,
+    medical_mechanics = has_any_component(
+        {
+            component
+            for component in component_types
+            if not component.casefold().endswith("blocked")
+        },
         (
             "surgerytool",
+            "surgery",
             "healthanalyzer",
             "defibrillator",
             "dialysis",
@@ -1474,51 +1700,72 @@ def classify_item(
             "stethoscope",
             "healing",
         ),
-    ) or (medical_path_id_signal and medical_object_path) or field_medical_id_signal:
-        return public(
-            "medical-equipment",
-            "dedicated medical device or treatment kit",
-            "component:medical-equipment",
+    )
+    medical_container = (
+        medical_object_path
+        and (
+            medical_path_id_signal
+            or "Storage" in component_types
+            or "CMItemSlots" in component_types
         )
-
-    if has_any_component(
-        component_types,
-        (
-            "radio",
-            "headset",
-            "encryption",
-            "motiondetector",
-            "overwatchcamera",
-            "nightvision",
-            "togglevisor",
-            "targetinglaser",
-            "overwatch",
-        ),
+    )
+    if (
+        medical_delivery
+        or medical_solution
+        or medical_mechanics
+        or medical_container
+        or medical_object_path
+        or medical_box_path
+        or field_medical_id_signal
     ):
         return public(
-            "communications",
-            "dedicated communications, sensor or electronic component",
-            "component:communications",
+            "medicine",
+            "medicine, medical device, treatment kit or surgical instrument",
+            "component:medicine",
+        )
+
+    if is_dedicated_melee_weapon(item_id, component_types, tags):
+        return public(
+            "melee",
+            "dedicated melee weapon outside medical use",
+            "MeleeWeapon",
+            "sharp-signal",
+        )
+
+    # Headsets and ordinary eyewear are equipment. Functional visors and
+    # handheld sensors are handled below as gear.
+    if has_any_component(component_types, ("headset", "encryption")):
+        return public(
+            "equipment",
+            "wearable communications equipment",
+            "component:headset",
         )
 
     if has_any_component(
         component_types,
         (
             "scope",
+            "binocular",
             "rangefinder",
             "spotting",
-            "handheldlight",
-            "lightreplacer",
-            "flare",
-            "flash",
+            "motiondetector",
+            "motionsensor",
+            "sensor",
+            "nightvision",
+            "togglevisor",
+            "integratedvisor",
+            "cycleablevisor",
+            "targetinglaser",
+            "overwatchcamera",
+            "overwatch",
             "handcuff",
             "restrain",
         ),
     ):
         return public(
-            "special-equipment",
-            "dedicated observation, illumination or field-equipment component",
-            "component:special-equipment",
+            "gear",
+            "single-purpose observation, sensor, visor or field device",
+            "component:gear",
         )
 
     janitorial_item = (
@@ -1528,15 +1775,32 @@ def classify_item(
             for marker in ("bucket", "wetsign", "mop", "spraybottlespacecleaner")
         )
     )
-    if janitorial_item:
+    non_equipment = (
+        janitorial_item
+        or "Edible" in component_types
+        or "Food" in component_types
+        or "Stack" in component_types
+        or "SkillPamphlet" in component_types
+        or "/entities/objects/consumables/food/" in folded_path
+        or "/entities/objects/consumables/drinks/" in folded_path
+        or "/entities/objects/consumables/smokeables/" in folded_path
+        or "/entities/objects/misc/books/" in folded_path
+        or any(
+            word in folded_id
+            for word in ("pamphlet", "manual", "crayon", "stamp", "trashbag", "ragitem")
+        )
+    )
+    if non_equipment:
         return classification_result(
             "excluded",
-            reason="recognized as janitorial or household content",
-            signals=("non-equipment:janitorial",),
+            reason="recognized as provisions, raw material, training or household content",
+            signals=("non-equipment",),
         )
 
     if (
-        "Tool" in component_types
+        "WeaponMount" in component_types
+        or has_any_component(component_types, ("sentry", "turret", "mortar", "weaponmount"))
+        or "Tool" in component_types
         or any(component.endswith("Tool") for component in component_types)
         or has_any_component(
             component_types,
@@ -1548,74 +1812,65 @@ def classify_item(
                 "foldingbarricade",
                 "powercell",
                 "battery",
+                "circuitboard",
+                "lightreplacer",
+                "lightbulb",
+                "lighttube",
+                "generator",
+                "machineboard",
             ),
         )
         or "/entities/objects/tools/" in folded_path
+        or "/catalog/fills/boxes/light" in folded_path
+        or "engineerkit" in folded_id
+        or any(component.casefold().endswith("electronics") for component in component_types)
+        or any(
+            word in folded_id
+            for word in ("battery", "powercell", "lightbulb", "lighttube", "circuitboard")
+        )
     ):
         return public(
-            "engineering",
-            "dedicated tool or engineering component",
-            "component:engineering",
-        )
-
-    ordinary_clothing_paths = (
-        "/clothing/head/",
-        "/clothing/shoes/",
-        "/clothing/uniform/",
-        "/clothing/outerclothing/",
-    )
-    storage_signals = {
-        "CMStorageVisualizer",
-        "RMCStorageEjectHand",
-        "StorageStoreSkillRequired",
-        "StorageOpenDoAfter",
-        "CMHolster",
-    }.intersection(component_types)
-    dedicated_carrier_path = any(
-        fragment in folded_path
-        for fragment in ("/clothing/back/", "/clothing/belt/", "/clothing/accessory/")
-    )
-    if (
-        ("Storage" in component_types or "CMItemSlots" in component_types)
-        and (storage_signals or dedicated_carrier_path)
-        and not any(fragment in folded_path for fragment in ordinary_clothing_paths)
-    ):
-        return public(
-            "load-bearing",
-            "dedicated wearable storage or holster mechanics",
-            *(f"component:{signal}" for signal in sorted(storage_signals)),
-            *("path:carrier",) if dedicated_carrier_path else (),
-        )
-
-    if item_id in included_ids:
-        return classification_result(
-            "quarantine",
-            reason="explicit inclusion requested, but no functional category was assigned",
-            signals=("config:includePrototypeIds",),
+            "tools-equipment",
+            "tool, battery, replacement part, turret, tripod or equipment component",
+            "component:tools-equipment",
         )
 
     if (
-        "Edible" in component_types
-        or "Stack" in component_types
-        or "SkillPamphlet" in component_types
-        or "Food" in component_types
-        or "/entities/objects/consumables/food/" in folded_path
-        or "/entities/objects/consumables/smokeables/" in folded_path
-        or "/entities/objects/misc/books/" in folded_path
+        "Clothing" in component_types
+        or slots
         or "/entities/clothing/" in folded_path
-        or any(fragment in folded_path for fragment in ordinary_clothing_paths)
-        or any(word in folded_id for word in ("pamphlet", "manual", "crayon", "stamp"))
     ):
-        return classification_result(
-            "excluded",
-            reason="recognized as non-equipment content",
-            signals=("non-equipment",),
+        return public(
+            "equipment",
+            "wearable item outside the armor definition",
+            "component:clothing",
         )
 
-    return classification_result(
-        "quarantine",
-        reason="no high-confidence functional category",
-        signals=("unclassified",),
+    if has_any_component(
+        component_types,
+        (
+            "radio",
+            "camera",
+            "handheldlight",
+            "flare",
+            "flash",
+            "detector",
+            "scanner",
+        ),
+    ) or any(
+        word in folded_id
+        for word in ("whistle", "ziptie", "bedroll", "gasmask")
+    ):
+        return public(
+            "gear",
+            "single-purpose field item",
+            "component:gear",
+        )
+
+    return public(
+        "other",
+        "no stronger universal functional rule matched",
+        "fallback:other",
     )
 
 
@@ -1838,6 +2093,12 @@ def build_public_catalog(
             generated_wrapper_ids.add(relation["from"])
         if relation.get("type") == "mappedVariant":
             generated_wrapper_ids.add(relation["from"])
+        if (
+            relation.get("type") == "variant"
+            and "RMCArmorVariant"
+            in items.get(str(relation.get("from", "")), {}).get("componentTypes", [])
+        ):
+            generated_wrapper_ids.add(relation["from"])
 
     public_candidates: set[str] = set()
     queue = deque(
@@ -1911,16 +2172,12 @@ def build_public_catalog(
                     items[canonical_id]["loadoutVariants"] = loadouts
 
     categories: dict[str, list[str]] = defaultdict(list)
-    quarantine_ids: list[str] = []
     excluded_ids: list[str] = []
     sort_key = lambda value: (items[value]["name"].casefold(), value)
     for item_id in sorted(public_ids, key=sort_key):
         classification = classify_item(items[item_id], classification_policy)
         items[item_id]["classification"] = classification
         status = classification["status"]
-        if status == "quarantine":
-            quarantine_ids.append(item_id)
-            continue
         if status == "excluded":
             excluded_ids.append(item_id)
             continue
@@ -1943,9 +2200,7 @@ def build_public_catalog(
                 PUBLIC_CATEGORY_LABELS[category_id], []
             )
             for category_id in PUBLIC_CATEGORY_ORDER
-            if categories.get(PUBLIC_CATEGORY_LABELS[category_id])
         },
-        "quarantineItemIds": quarantine_ids,
         "excludedItemIds": excluded_ids,
         "candidateItemIds": sorted(public_ids, key=sort_key),
         "unwrappedCaseIds": sorted(
@@ -1965,10 +2220,12 @@ def render_public_sprites(
     output_dir: Path,
     items: dict[str, Any],
     public_item_ids: list[str],
+    reagent_colors: dict[str, str],
 ) -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
     expected: set[str] = set()
     failures: list[str] = []
+    solution_images: dict[str, list[tuple[str, str]]] = defaultdict(list)
 
     for item_id in public_item_ids:
         item = items[item_id]
@@ -1979,9 +2236,16 @@ def render_public_sprites(
         filename = f"{item_id}.png"
         expected.add(filename)
         try:
-            preview = render_sprite_preview(game_source, summary)
+            preview = render_sprite_preview(game_source, summary, reagent_colors)
             preview.save(output_dir / filename, format="PNG", optimize=True)
             item["image"] = f"equipment-sprites/{filename}"
+            solution = summary.get("solutionPreview")
+            if isinstance(solution, dict) and solution.get("reagents"):
+                signature = json.dumps(
+                    solution.get("reagents"), ensure_ascii=False, sort_keys=True
+                )
+                digest = hashlib.sha256(preview.tobytes()).hexdigest()
+                solution_images[digest].append((item_id, signature))
         except Exception as error:  # Collect every missing/broken sprite in one run.
             failures.append(f"{item_id}: {error}")
 
@@ -1990,6 +2254,16 @@ def render_public_sprites(
             path.unlink()
     if failures:
         raise RuntimeError("Unable to render equipment sprites:\n" + "\n".join(failures))
+    ambiguous = [
+        sorted(item_id for item_id, _ in entries)
+        for entries in solution_images.values()
+        if len({signature for _, signature in entries}) > 1
+    ]
+    if ambiguous:
+        raise RuntimeError(
+            "Different filled solutions rendered as identical sprites:\n"
+            + "\n".join(", ".join(group) for group in ambiguous)
+        )
 
 
 def should_publish_component(component_type: str) -> bool:
@@ -2050,6 +2324,7 @@ def build_card(
         "sourceCategoryHints": sorted(source_hints),
         "tags": sorted(tags),
         "componentTypes": sorted(components),
+        "equipmentSlots": sorted(equipment_slots(components)),
         "properties": properties,
         "availability": availability,
         "directlyVended": bool(availability),
@@ -2208,6 +2483,114 @@ def populate_compatibility_summaries(
             items[weapon_id]["ammunitionPaths"] = paths
 
 
+def populate_content_summaries(
+    items: dict[str, Any],
+    relations: list[dict[str, Any]],
+    public_item_ids: set[str],
+    aliases: dict[str, str],
+) -> None:
+    """Expose only the forward 'contains' view; never an incoming provenance view."""
+    contents: dict[str, set[str]] = defaultdict(set)
+    for relation in relations:
+        if relation.get("type") not in PHYSICAL_CONTENT_RELATION_TYPES:
+            continue
+        source = aliases.get(str(relation.get("from", "")), str(relation.get("from", "")))
+        target = aliases.get(str(relation.get("to", "")), str(relation.get("to", "")))
+        if source in public_item_ids and target in public_item_ids and source != target:
+            contents[source].add(target)
+    for source, target_ids in contents.items():
+        items[source]["containsItemIds"] = sorted(
+            target_ids,
+            key=lambda item_id: (items[item_id]["name"].casefold(), item_id),
+        )
+
+
+def populate_armor_statistics(
+    items: dict[str, Any],
+    public_item_ids: set[str],
+) -> None:
+    protection_fields = (
+        "xenoArmor",
+        "frontalArmor",
+        "sideArmor",
+        "melee",
+        "bullet",
+        "bio",
+        "explosionArmor",
+    )
+    for item_id in sorted(public_item_ids):
+        item = items[item_id]
+        if item.get("category") != PUBLIC_CATEGORY_LABELS["armor"]:
+            continue
+        properties = item.get("properties", {})
+        cm_armor = properties.get("CMArmor", {})
+        if not isinstance(cm_armor, dict):
+            cm_armor = {}
+        stats: dict[str, Any] = {
+            "slots": list(item.get("equipmentSlots", [])),
+            "protection": {
+                field: cm_armor.get(field, 0) for field in protection_fields
+            },
+            "immuneToArmorPiercing": bool(cm_armor.get("immuneToAP", False)),
+            "hardArmor": "CMHardArmor" in item.get("componentTypes", []),
+            "bulkyArmor": "RMCBulkyArmor" in item.get("componentTypes", []),
+        }
+        speed_tier = properties.get("RMCArmorSpeedTier", {})
+        if isinstance(speed_tier, dict) and isinstance(speed_tier.get("speedTier"), str):
+            stats["speedTier"] = speed_tier["speedTier"]
+        movement = properties.get("ClothingSpeedModifier")
+        if isinstance(movement, dict) and movement:
+            stats["movement"] = copy.deepcopy(movement)
+        explosion = properties.get("ExplosionResistance")
+        if isinstance(explosion, dict) and explosion:
+            stats["explosionResistance"] = copy.deepcopy(explosion)
+        generic = properties.get("Armor")
+        if isinstance(generic, dict) and generic:
+            stats["genericArmor"] = copy.deepcopy(generic)
+        item["armorStats"] = stats
+
+
+def populate_attachment_statistics(
+    items: dict[str, Any],
+    public_item_ids: set[str],
+) -> None:
+    modifier_components = (
+        "AttachableWeaponRangedMods",
+        "AttachableWeaponMeleeMods",
+        "AttachableSpeedMods",
+        "AttachableWieldDelayMods",
+        "AttachableSizeMods",
+    )
+    for item_id in sorted(public_item_ids):
+        item = items[item_id]
+        if item.get("category") != PUBLIC_CATEGORY_LABELS["attachment"]:
+            continue
+        properties = item.get("properties", {})
+        modifiers = {
+            component: copy.deepcopy(properties[component])
+            for component in modifier_components
+            if isinstance(properties.get(component), dict)
+            and properties[component]
+        }
+        special_components = sorted(
+            component
+            for component in item.get("componentTypes", [])
+            if component.startswith("Attachable")
+            and component
+            not in {
+                "Attachable",
+                "AttachableVisuals",
+                *modifier_components,
+            }
+        )
+        stats: dict[str, Any] = {
+            "compatibleWith": copy.deepcopy(item.get("attachableTo", [])),
+            "modifiers": modifiers,
+            "effects": special_components,
+        }
+        item["attachmentStats"] = stats
+
+
 def populate_weapon_statistics(
     items: dict[str, Any],
     relations: list[dict[str, Any]],
@@ -2289,6 +2672,48 @@ def populate_weapon_statistics(
         burst_size = number(gun.get("shotsPerBurst"))
         if burst_size is not None and burst_size > 0:
             stats["burstSize"] = burst_size
+        gun_parameters = {
+            key: value
+            for key, value in gun.items()
+            if isinstance(value, (str, int, float, bool))
+            and not key.casefold().startswith("sound")
+            and key not in {"selectedMode", "fireRate", "shotsPerBurst"}
+        }
+        if gun_parameters:
+            stats["gunParameters"] = copy.deepcopy(gun_parameters)
+
+        melee = properties.get("MeleeWeapon")
+        if isinstance(melee, dict) and melee:
+            melee_stats: dict[str, Any] = {}
+            for source_key, output_key in (
+                ("attackRate", "attacksPerSecond"),
+                ("angle", "angle"),
+                ("range", "range"),
+            ):
+                value = number(melee.get(source_key))
+                if value is not None:
+                    melee_stats[output_key] = value
+            damage = melee.get("damage")
+            if isinstance(damage, dict) and isinstance(damage.get("types"), dict):
+                melee_stats["damage"] = copy.deepcopy(damage["types"])
+            if melee_stats:
+                stats["melee"] = melee_stats
+
+        iff = properties.get("GunIFF")
+        if isinstance(iff, dict):
+            stats["iffEnabled"] = bool(iff.get("enabled", True))
+        skill_requirements = properties.get("GunRequiresSkills")
+        if isinstance(skill_requirements, dict) and skill_requirements:
+            stats["skillRequirements"] = copy.deepcopy(skill_requirements)
+        dual_wielding = properties.get("GunDualWielding")
+        if isinstance(dual_wielding, dict) and dual_wielding:
+            stats["dualWielding"] = copy.deepcopy(dual_wielding)
+        wield_delay = properties.get("WieldDelay")
+        if isinstance(wield_delay, dict) and wield_delay:
+            stats["wieldDelay"] = copy.deepcopy(wield_delay)
+        wield_speed = properties.get("WieldableSpeedModifiers")
+        if isinstance(wield_speed, dict) and wield_speed:
+            stats["wieldedMovement"] = copy.deepcopy(wield_speed)
 
         for output_key, source_keys in {
             "recoil": ("recoilWielded", "recoilUnwielded"),
@@ -2782,13 +3207,21 @@ def build_catalog(
         set(public_catalog["itemIds"]),
         public_catalog["aliases"],
     )
+    populate_content_summaries(
+        items,
+        relations,
+        set(public_catalog["itemIds"]),
+        public_catalog["aliases"],
+    )
     populate_weapon_statistics(
         items,
         relations,
         set(public_catalog["itemIds"]),
     )
+    populate_armor_statistics(items, set(public_catalog["itemIds"]))
+    populate_attachment_statistics(items, set(public_catalog["itemIds"]))
 
-    counts = {
+    source_counts = {
         "indexedEntityPrototypes": len(prototypes),
         "vendors": len(vendor_ids),
         "cargoCatalogs": len(cargo_catalog_ids),
@@ -2798,33 +3231,54 @@ def build_catalog(
         "directItemPrototypes": len(availability_by_item),
         "catalogItems": len(items),
         "publicItems": len(public_catalog["itemIds"]),
-        "quarantineItems": len(public_catalog["quarantineItemIds"]),
         "excludedItems": len(public_catalog["excludedItemIds"]),
         "relations": len(relations),
     }
 
+    # The public catalog intentionally carries no vending/crate provenance and
+    # no reverse containment graph. Those diagnostics live in the index only.
+    provenance_keys = {
+        "origin",
+        "sourceFile",
+        "parents",
+        "abstract",
+        "sourceCategoryHints",
+        "availability",
+        "directlyVended",
+        "reachableFromVendors",
+    }
+    for item in items.values():
+        for key in provenance_keys:
+            item.pop(key, None)
+
+    counts = {
+        "catalogItems": len(items),
+        "publicItems": len(public_catalog["itemIds"]),
+        "excludedItems": len(public_catalog["excludedItemIds"]),
+    }
+
     catalog = {
-        "schemaVersion": 2,
+        "schemaVersion": 3,
         "gameCommit": game_commit,
         "source": "MetalSage/space-stories-cm14",
         "locale": "ru-RU",
+        "items": items,
+        "publicCatalog": public_catalog,
+        "counts": counts,
+    }
+
+    index = {
+        "schemaVersion": 3,
+        "gameCommit": game_commit,
+        "source": "MetalSage/space-stories-cm14",
         "configuredVendorIds": vendor_ids,
         "configuredCargoCatalogIds": cargo_catalog_ids,
         "configuredSourceIds": source_ids,
         "vendors": vendors,
         "tradeEntries": trade_entries,
-        "items": items,
-        "publicCatalog": public_catalog,
         "relations": relations,
-        "counts": counts,
-    }
-
-    index = {
-        "schemaVersion": 2,
-        "gameCommit": game_commit,
-        "source": "MetalSage/space-stories-cm14",
         "counts": {
-            "indexedEntityPrototypes": len(prototypes),
+            **source_counts,
             "catalogEntityPrototypes": len(item_ids),
             "resolvedEntityPrototypes": len(resolver.cache),
         },
@@ -2862,14 +3316,10 @@ def build_review_section(catalog: dict[str, Any]) -> dict[str, Any]:
             "name": item.get("name", item_id),
             "reason": classification.get("reason", ""),
             "signals": classification.get("signals", []),
-            "sourceFile": item.get("sourceFile", ""),
         }
 
     return {
-        "policy": "strict-functional-v1",
-        "quarantine": [
-            entry(item_id) for item_id in public_catalog["quarantineItemIds"]
-        ],
+        "policy": "universal-functional-v2",
         "excluded": [
             entry(item_id) for item_id in public_catalog["excludedItemIds"]
         ],
@@ -2885,7 +3335,6 @@ def print_previous_catalog_comparison(
         return
     previous_public = set(previous.get("publicCatalog", {}).get("itemIds", []))
     current_public = set(current["publicCatalog"]["itemIds"])
-    current_quarantine = set(current["publicCatalog"]["quarantineItemIds"])
     current_excluded = set(current["publicCatalog"]["excludedItemIds"])
     previous_items = previous.get("items", {})
     current_items = current["items"]
@@ -2898,16 +3347,10 @@ def print_previous_catalog_comparison(
     print(f"New public items: {len(current_public - previous_public)}")
     print(f"Removed public items: {len(previous_public - current_public)}")
     print(
-        "Previously public items now quarantined: "
-        f"{len(previous_public & current_quarantine)}"
-    )
-    print(
         "Previously public items now excluded: "
         f"{len(previous_public & current_excluded)}"
     )
     print(f"Public category changes: {len(category_changes)}")
-    for item_id in sorted(previous_public & current_quarantine):
-        print(f"  QUARANTINE {item_id}: {current_items[item_id]['name']}")
 
 
 def main() -> None:
@@ -2933,6 +3376,7 @@ def main() -> None:
             previous_catalog = None
 
     prototypes = read_entity_prototypes(args.game_source)
+    reagent_colors = read_reagent_colors(args.game_source)
     config = read_config(args.config)
     locale_root = args.game_source / "Resources/Locale" / args.locale
     localizer = Localizer(read_fluent_messages(locale_root))
@@ -2948,20 +3392,21 @@ def main() -> None:
         output_dir=args.sprites_output,
         items=catalog["items"],
         public_item_ids=catalog["publicCatalog"]["itemIds"],
+        reagent_colors=reagent_colors,
     )
     write_json(args.index_output, index)
     write_json(args.output, catalog)
     print_previous_catalog_comparison(previous_catalog, catalog)
 
     counts = catalog["counts"]
-    print(f"Indexed entity prototypes: {counts['indexedEntityPrototypes']}")
-    print(f"Vendor sections: {counts['sections']}")
-    print(f"Trade entries: {counts['tradeEntries']}")
+    source_counts = index["counts"]
+    print(f"Indexed entity prototypes: {source_counts['indexedEntityPrototypes']}")
+    print(f"Vendor sections: {source_counts['sections']}")
+    print(f"Trade entries: {source_counts['tradeEntries']}")
     print(f"Catalog items: {counts['catalogItems']}")
     print(f"Public equipment items: {counts['publicItems']}")
-    print(f"Quarantined equipment items: {counts['quarantineItems']}")
     print(f"Excluded non-equipment items: {counts['excludedItems']}")
-    print(f"Relations: {counts['relations']}")
+    print(f"Internal relations: {source_counts['relations']}")
 
 
 if __name__ == "__main__":
