@@ -32029,12 +32029,12 @@
     "tradeEntries": 1598,
     "directItemPrototypes": 715,
     "catalogItems": 1120,
-    "publicItems": 1028,
+    "publicItems": 964,
     "excludedItems": 0,
     "relations": 1406,
     "catalogEntityPrototypes": 1120,
     "resolvedEntityPrototypes": 1531,
-    "hiddenItems": 1
+    "hiddenItems": 65
   },
   "entries": {
     "ArmorHelmetM10": {
