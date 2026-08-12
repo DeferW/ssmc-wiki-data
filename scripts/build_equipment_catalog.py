@@ -73,13 +73,11 @@ PHYSICAL_CONTENT_RELATION_TYPES = {
 
 PUBLIC_CATEGORY_LABELS = {
     "weapon": "Оружие",
-    "ammunition": "Боеприпасы",
+    "ammunition": "Боеприпасы и взрывчатка",
     "attachment": "Обвесы",
-    "explosive": "Взрывчатка",
     "melee": "Ближний бой",
     "armor": "Броня",
     "equipment": "Экипировка",
-    "tools-equipment": "Инструменты и оборудование",
     "medicine": "Медицина",
     "gear": "Снаряжение",
     "other": "Другое",
@@ -90,15 +88,43 @@ PUBLIC_CATEGORY_ORDER = (
     "weapon",
     "ammunition",
     "attachment",
-    "explosive",
     "melee",
     "armor",
     "equipment",
-    "tools-equipment",
     "medicine",
     "gear",
     "other",
 )
+
+
+WEARABLE_EQUIPMENT_SLOTS = {
+    "innerclothing",
+    "jumpsuit",
+    "head",
+    "eyes",
+    "gloves",
+    "hands",
+    "shoes",
+    "feet",
+    "mask",
+    "mouth",
+    "ears",
+    "ear",
+    "neck",
+    "pocket",
+    "pockets",
+    "belt",
+    "back",
+}
+
+
+WEARABLE_STORAGE_SLOTS = {
+    "innerclothing",
+    "pocket",
+    "pockets",
+    "belt",
+    "back",
+}
 
 
 PUBLIC_PROPERTY_COMPONENTS = {
@@ -525,6 +551,12 @@ def read_config(path: Path) -> dict[str, Any]:
         raise RuntimeError("Every configured source must have a string id")
     if len(set(ids)) != len(ids):
         raise RuntimeError("Duplicate source id in equipment config")
+    discovery_prefixes = data.get("vendorDiscoveryPrefixes", [])
+    if not isinstance(discovery_prefixes, list) or any(
+        not isinstance(prefix, str) or not prefix
+        for prefix in discovery_prefixes
+    ):
+        raise RuntimeError("vendorDiscoveryPrefixes must be a list of strings")
     policy = data.get("classification", {})
     if not isinstance(policy, dict):
         raise RuntimeError("Equipment classification policy must be a mapping")
@@ -1176,6 +1208,16 @@ def apply_static_preview_states(
             layer["visible"] = True
 
 
+def apply_closed_container_preview(layers: list[dict[str, Any]]) -> None:
+    """Mirror the closed item icon used by vendors, not the opened UI state."""
+    for layer in layers:
+        maps = {name.casefold() for name in layer_map_names(layer)}
+        if any("openlayer" in name or "emptylayer" in name for name in maps):
+            layer["visible"] = False
+        if any("closedlayer" in name for name in maps):
+            layer["visible"] = True
+
+
 def solution_preview_summary(components: dict[str, Any]) -> dict[str, Any] | None:
     visuals = components.get("SolutionContainerVisuals")
     manager = components.get("SolutionContainerManager")
@@ -1249,6 +1291,12 @@ def sprite_summary(components: dict[str, Any]) -> dict[str, Any] | None:
             copy.deepcopy(layer) for layer in layers if isinstance(layer, dict)
         ]
         if clean_layers:
+            if (
+                "StorageFill" in components
+                or "ContainerFill" in components
+                or "Storage" in components
+            ):
+                apply_closed_container_preview(clean_layers)
             apply_static_preview_states(components, clean_layers)
             result["layers"] = clean_layers
             if "state" not in result:
@@ -1260,6 +1308,14 @@ def sprite_summary(components: dict[str, Any]) -> dict[str, Any] | None:
     solution_preview = solution_preview_summary(components)
     if solution_preview:
         result["solutionPreview"] = solution_preview
+    if (
+        "StorageFill" in components
+        or "ContainerFill" in components
+        or "Storage" in components
+    ):
+        # Vending UIs show the spawn/closed appearance. Runtime visualizers can
+        # otherwise leave a crate or grenade box on its open state in the wiki.
+        result["preferClosed"] = True
     return result or None
 
 
@@ -1274,6 +1330,7 @@ def first_rsi_state(
     meta: dict[str, Any],
     sprite_path: str = "",
     requested: str | None = None,
+    prefer_closed: bool = False,
 ) -> str | None:
     states = meta.get("states")
     if not isinstance(states, list):
@@ -1283,11 +1340,31 @@ def first_rsi_state(
         for state in states
         if isinstance(state, dict) and isinstance(state.get("name"), str)
     ]
+    stem = Path(sprite_path).stem.casefold()
+    folded = {name.casefold(): name for name in names}
+    if prefer_closed and isinstance(requested, str) and (
+        "open" in requested.casefold() or "empty" in requested.casefold()
+    ):
+        closed_candidates: list[str] = []
+        requested_folded = requested.casefold()
+        closed_candidates.extend(
+            (
+                requested_folded.replace("opened", "closed").replace("empty", "closed"),
+                requested_folded.replace("open", "closed").replace("empty", "closed"),
+                re.sub(r"(?:^|[-_])(?:open(?:ed)?|empty)(?:$|[-_])", "", requested_folded).strip("-_"),
+            )
+        )
+        closed_candidates.extend(("closed", "icon", "item", "default", stem, "base", "idle", "full"))
+        for candidate in closed_candidates:
+            if candidate and candidate in folded:
+                return folded[candidate]
     if requested in names:
         return requested
-    stem = Path(sprite_path).stem.casefold()
-    preferred = ("icon", "item", "default", stem, "base", "idle", "closed", "full")
-    folded = {name.casefold(): name for name in names}
+    preferred = (
+        ("closed", "icon", "item", "default", stem, "base", "idle", "full")
+        if prefer_closed
+        else ("icon", "item", "default", stem, "base", "idle", "closed", "full")
+    )
     for candidate in preferred:
         if candidate and candidate in folded:
             return folded[candidate]
@@ -1313,6 +1390,7 @@ def load_sprite_frame(
     game_source: Path,
     sprite_path: str,
     state: str | None,
+    prefer_closed: bool = False,
 ) -> Image.Image:
     source = texture_path(game_source, sprite_path)
     if source.suffix.lower() != ".rsi":
@@ -1327,7 +1405,12 @@ def load_sprite_frame(
     if not isinstance(meta, dict):
         raise RuntimeError(f"Invalid RSI metadata: {meta_path}")
 
-    selected_state = first_rsi_state(meta, sprite_path, state)
+    selected_state = first_rsi_state(
+        meta,
+        sprite_path,
+        state,
+        prefer_closed=prefer_closed,
+    )
     if not selected_state:
         raise RuntimeError(f"RSI has no states: {meta_path}")
     state_path = source / f"{selected_state}.png"
@@ -1495,6 +1578,7 @@ def render_sprite_preview(
             game_source,
             layer["sprite"],
             layer.get("state"),
+            prefer_closed=summary.get("preferClosed") is True,
         )
         image = tint_sprite_layer(image, layer.get("color"))
         images.append((image, layer))
@@ -1581,6 +1665,14 @@ def classify_item(
         or "MortarShell" in component_types
         or "RMCPacketGrenade" in tags
     )
+    has_explosive = (
+        ("Explosive" in component_types and "gastank" not in folded_tags)
+        or "ExplodeOnTrigger" in component_types
+        or "ProjectileGrenade" in component_types
+        or "grenade" in folded_id
+        or "grenade" in folded_tags
+        or "handgrenade" in folded_tags
+    )
 
     # Underbarrel launchers and shotguns still belong to attachments even when
     # they also contain a Gun component.
@@ -1588,11 +1680,11 @@ def classify_item(
         return public("attachment", "dedicated attachment component", "Attachable")
     if has_gun:
         return public("weapon", "dedicated firearm component", "Gun")
-    if has_ammo:
+    if has_ammo or has_explosive:
         return public(
             "ammunition",
-            "ammunition provider, cartridge or vehicle-ammunition chain",
-            "component:ammunition",
+            "ammunition, grenade or explosive item",
+            "component:ammunition-or-explosive",
         )
     if (
         "/objects/weapons/throwable/packets" in folded_path
@@ -1603,15 +1695,6 @@ def classify_item(
             "grenade packet or ammunition box",
             "path:throwable-packet",
         )
-    if (
-        ("Explosive" in component_types and "gastank" not in folded_tags)
-        or "ExplodeOnTrigger" in component_types
-        or "ProjectileGrenade" in component_types
-        or "grenade" in folded_tags
-        or "handgrenade" in folded_tags
-    ):
-        return public("explosive", "dedicated explosive or grenade mechanics", "component:explosive")
-
     cm_armor = properties.get("CMArmor")
     armor_components = {
         key: value
@@ -1735,71 +1818,102 @@ def classify_item(
             "sharp-signal",
         )
 
-    # Headsets and ordinary eyewear are equipment. Functional visors and
-    # handheld sensors are handled below as gear.
-    if has_any_component(component_types, ("headset", "encryption")):
-        return public(
-            "equipment",
-            "wearable communications equipment",
-            "component:headset",
+    strong_tool = (
+        "Tool" in component_types
+        or any(component.endswith("Tool") for component in component_types)
+        or has_any_component(
+            component_types,
+            (
+                "welder",
+                "multitool",
+                "entrenchingtool",
+                "nailgun",
+                "lightreplacer",
+            ),
         )
-
-    if has_any_component(
-        component_types,
-        (
-            "scope",
-            "binocular",
-            "rangefinder",
-            "spotting",
-            "motiondetector",
-            "motionsensor",
-            "sensor",
-            "nightvision",
-            "togglevisor",
-            "integratedvisor",
-            "cycleablevisor",
-            "targetinglaser",
-            "overwatchcamera",
-            "overwatch",
-            "handcuff",
-            "restrain",
-        ),
-    ):
+        or "/entities/objects/tools/" in folded_path
+    )
+    if strong_tool:
         return public(
             "gear",
-            "single-purpose observation, sensor, visor or field device",
+            "dedicated hand tool or single-purpose utility item",
+            "component:tool",
+        )
+
+    is_patch = (
+        "patch" in folded_id
+        or any("patch" in tag for tag in folded_tags)
+        or has_any_component(component_types, ("uniformaccessory", "patch"))
+    )
+    is_headset = (
+        "headset" in folded_id
+        or has_any_component(component_types, ("headset",))
+    )
+    has_storage = "Storage" in component_types or "CMItemSlots" in component_types
+    is_wearable_storage = has_storage and bool(slots.intersection(WEARABLE_STORAGE_SLOTS))
+    is_standard_wearable = (
+        "Clothing" in component_types
+        and bool(slots.intersection(WEARABLE_EQUIPMENT_SLOTS))
+    )
+
+    # Patches and radio headsets are equipment even when their prototypes use
+    # accessory components instead of an ordinary Clothing slot.
+    if is_patch or is_headset:
+        return public(
+            "equipment",
+            "patch or radio headset",
+            "component:wearable-equipment",
+        )
+
+    advanced_field_device = (
+        "WeaponMount" in component_types
+        or has_any_component(component_types, ("sentry", "turret", "mortar", "weaponmount"))
+        or "encryption" in folded_id
+        or has_any_component(
+            component_types,
+            ("encryption",),
+        )
+        or has_any_component(
+            component_types,
+            (
+                "scope",
+                "binocular",
+                "rangefinder",
+                "spotting",
+                "motiondetector",
+                "motionsensor",
+                "sensor",
+                "nightvision",
+                "togglevisor",
+                "integratedvisor",
+                "cycleablevisor",
+                "targetinglaser",
+                "overwatchcamera",
+                "overwatch",
+                "handcuff",
+                "restrain",
+            ),
+        )
+    )
+    if advanced_field_device:
+        return public(
+            "gear",
+            "advanced field device, weapon support or encryption component",
             "component:gear",
         )
 
-    janitorial_item = (
-        "/objects/tools/janitor" in folded_path
-        or any(
-            marker in folded_id
-            for marker in ("bucket", "wetsign", "mop", "spraybottlespacecleaner")
-        )
-    )
-    non_equipment = (
-        janitorial_item
-        or "Edible" in component_types
-        or "Food" in component_types
-        or "Stack" in component_types
-        or "SkillPamphlet" in component_types
-        or "/entities/objects/consumables/food/" in folded_path
-        or "/entities/objects/consumables/drinks/" in folded_path
-        or "/entities/objects/consumables/smokeables/" in folded_path
-        or "/entities/objects/misc/books/" in folded_path
-        or any(
-            word in folded_id
-            for word in ("pamphlet", "manual", "crayon", "stamp", "trashbag", "ragitem")
-        )
-    )
-    if non_equipment:
-        return classification_result(
-            "excluded",
-            reason="recognized as provisions, raw material, training or household content",
-            signals=("non-equipment",),
+    # Clothing and wearable storage belong together. Medical pouches are
+    # already caught by the higher-priority medical rule.
+    if is_wearable_storage or is_standard_wearable:
+        return public(
+            "equipment",
+            "standard wearable or wearable storage",
+            "component:wearable-equipment",
         )
 
+    # Tools, complex field technology and single-purpose utility objects share
+    # one broad section. This avoids an arbitrary border between a multitool,
+    # binoculars, a turret and an encryption key.
     if (
         "WeaponMount" in component_types
         or has_any_component(component_types, ("sentry", "turret", "mortar", "weaponmount"))
@@ -1824,18 +1938,25 @@ def classify_item(
             ),
         )
         or "/entities/objects/tools/" in folded_path
-        or "/catalog/fills/boxes/light" in folded_path
         or "engineerkit" in folded_id
         or any(component.casefold().endswith("electronics") for component in component_types)
         or any(
             word in folded_id
-            for word in ("battery", "powercell", "lightbulb", "lighttube", "circuitboard")
+            for word in (
+                "battery",
+                "powercell",
+                "lightbulb",
+                "lighttube",
+                "circuitboard",
+                "encryptionkey",
+                "encryption",
+            )
         )
     ):
         return public(
-            "tools-equipment",
-            "tool, battery, replacement part, turret, tripod or equipment component",
-            "component:tools-equipment",
+            "gear",
+            "tool, field technology, replacement part or single-purpose utility item",
+            "component:gear-or-tool",
         )
 
     if (
@@ -1844,9 +1965,9 @@ def classify_item(
         or "/entities/clothing/" in folded_path
     ):
         return public(
-            "equipment",
-            "wearable item outside the armor definition",
-            "component:clothing",
+            "gear",
+            "non-standard wearable or installed clothing accessory",
+            "component:installed-accessory",
         )
 
     if has_any_component(
@@ -2073,7 +2194,17 @@ def is_hidden_transport(
 ) -> bool:
     if item_id in explicit_transport_ids or item_id.startswith("RMCCrate"):
         return True
-    if is_case_item(item):
+    folded = f"{item_id} {item.get('name', '')}".casefold()
+    component_types = set(item.get("componentTypes", []))
+    packaging = any(
+        marker in folded
+        for marker in ("box", "crate", "case", "kit", "ящик", "короб")
+    )
+    lighting_supply = any(
+        marker in folded
+        for marker in ("flashlight", "flare", "фонар", "флаер", "сигнальн")
+    )
+    if "StorageFill" in component_types and packaging and lighting_supply:
         return True
     return item_id in generated_wrapper_ids
 
@@ -2104,11 +2235,16 @@ def build_public_catalog(
             generated_wrapper_ids.add(relation["from"])
 
     public_candidates: set[str] = set()
-    queue = deque(
-        entry["itemId"]
-        for entry in trade_entries
-        if isinstance(entry.get("itemId"), str)
-    )
+    seed_ids: list[str] = []
+    for entry in trade_entries:
+        item_id = entry.get("itemId")
+        if isinstance(item_id, str):
+            seed_ids.append(item_id)
+        stock = entry.get("stock")
+        stock_id = stock.get("itemId") if isinstance(stock, dict) else None
+        if isinstance(stock_id, str):
+            seed_ids.append(stock_id)
+    queue = deque(seed_ids)
     visited: set[str] = set()
     unwrapped_transport_ids: set[str] = set()
     while queue:
@@ -2895,7 +3031,20 @@ def build_catalog(
     game_commit: str,
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     resolver = PrototypeResolver(prototypes)
-    vendor_ids = [entry["id"] for entry in config["vendors"]]
+    required_vendor_ids = [entry["id"] for entry in config["vendors"]]
+    discovery_prefixes = tuple(config.get("vendorDiscoveryPrefixes", []))
+    discovered_vendor_ids = sorted(
+        prototype_id
+        for prototype_id in prototypes
+        if discovery_prefixes
+        and prototype_id.startswith(discovery_prefixes)
+        and not prototypes[prototype_id].abstract
+        and isinstance(
+            resolver.resolve(prototype_id)["components"].get("CMAutomatedVendor"),
+            dict,
+        )
+    )
+    vendor_ids = list(dict.fromkeys([*required_vendor_ids, *discovered_vendor_ids]))
     cargo_catalog_ids = [entry["id"] for entry in config.get("cargoCatalogs", [])]
     source_ids = [*vendor_ids, *cargo_catalog_ids]
     vendors: dict[str, Any] = {}
@@ -2998,6 +3147,22 @@ def build_catalog(
                 if item_id not in item_ids:
                     item_ids.add(item_id)
                     queue.append(item_id)
+                if isinstance(stock_item, str):
+                    availability_by_item[stock_item].append(
+                        {
+                            "vendorId": vendor_id,
+                            "sectionKey": section_key,
+                            "sectionName": section_name,
+                            "tradeKey": trade_key,
+                            "stockForItemId": item_id,
+                        }
+                    )
+                    reachable_vendors[stock_item].add(vendor_id)
+                    if category_hint:
+                        source_hints_by_item[stock_item].add(category_hint)
+                    if stock_item not in item_ids:
+                        item_ids.add(stock_item)
+                        queue.append(stock_item)
 
             vendor_sections.append(
                 {
@@ -3322,7 +3487,7 @@ def build_review_section(catalog: dict[str, Any]) -> dict[str, Any]:
         }
 
     return {
-        "policy": "universal-functional-v2",
+        "policy": "universal-functional-v3",
         "excluded": [
             entry(item_id) for item_id in public_catalog["excludedItemIds"]
         ],

@@ -1,4 +1,4 @@
-schemaVersion: 2
+schemaVersion: 3
 
 # These equipment sources seed the catalog. The builder follows their current
 # contents and technical dependencies instead of storing today's item list.
@@ -25,14 +25,19 @@ vendors:
   - id: ColMarTechCargoUniform
   - id: ColMarTechSeniorOfficerEquipment
 
+# Pick up newly added marine vendors automatically. Explicit ids above remain
+# useful as required sources: the validator will fail if one of them disappears.
+vendorDiscoveryPrefixes:
+  - ColMarTech
+
 # Cargo consoles expose RequisitionsComputer categories. Their orderable crates
 # seed the graph, but the shipping crates themselves never enter publicCatalog.
 cargoCatalogs:
   - id: CMASRSConsole
 
-# Universal functional rules publish every useful candidate. Obvious food,
-# raw materials, books and household clutter are excluded; every remaining
-# unmatched item goes to "Другое", never to quarantine.
+# Everything reachable from the configured/discovered sources is published.
+# Manual cleanup belongs to the admin override layer; the automatic builder
+# only classifies items and unwraps transport-only packaging.
 classification:
   excludePrototypeIds: []
   categoryOverrides: {}

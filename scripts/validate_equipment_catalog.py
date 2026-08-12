@@ -24,13 +24,11 @@ HIERARCHICAL_RELATIONS = {
 
 EXPECTED_CATEGORIES = [
     "Оружие",
-    "Боеприпасы",
+    "Боеприпасы и взрывчатка",
     "Обвесы",
-    "Взрывчатка",
     "Ближний бой",
     "Броня",
     "Экипировка",
-    "Инструменты и оборудование",
     "Медицина",
     "Снаряжение",
     "Другое",
@@ -128,9 +126,9 @@ def validate(
     source_counts = index.get("counts")
     public_catalog = catalog.get("publicCatalog")
 
-    if not isinstance(vendors, dict) or list(vendors) != expected_sources:
+    if not isinstance(vendors, dict) or not set(expected_sources).issubset(vendors):
         raise RuntimeError(
-            f"Unexpected sources: expected={expected_sources}, "
+            f"Missing configured sources: expected={expected_sources}, "
             f"actual={list(vendors) if isinstance(vendors, dict) else vendors}"
         )
     if not isinstance(trades, list) or not trades:
@@ -167,6 +165,10 @@ def validate(
                 raise RuntimeError(f"Trade {key} has unknown stock item {stock_id}")
         trade_keys.add(key)
         direct_ids.add(item_id)
+        stock = trade.get("stock")
+        stock_id = stock.get("itemId") if isinstance(stock, dict) else None
+        if isinstance(stock_id, str):
+            direct_ids.add(stock_id)
 
     for item_id, item in items.items():
         if not isinstance(item, dict) or item.get("id") != item_id:
@@ -221,15 +223,12 @@ def validate(
         raise RuntimeError("Equipment publication states overlap")
     if len(public_ids) != len(set(public_ids)):
         raise RuntimeError("Public equipment catalog contains duplicate items")
-    if not isinstance(unwrapped_cases, list) or not unwrapped_cases:
-        raise RuntimeError("No equipment cases were unwrapped")
+    if not isinstance(unwrapped_cases, list):
+        raise RuntimeError("Invalid unwrapped equipment case list")
     if not isinstance(unwrapped_transport, list) or not unwrapped_transport:
         raise RuntimeError("No transport containers were unwrapped")
     if not isinstance(aliases, dict):
         raise RuntimeError("Missing public item aliases")
-    leaked_cases = sorted(set(public_ids).intersection(unwrapped_cases))
-    if leaked_cases:
-        raise RuntimeError(f"Cases leaked into public catalog: {leaked_cases}")
     leaked_transport = sorted(set(public_ids).intersection(unwrapped_transport))
     if leaked_transport:
         raise RuntimeError(
@@ -340,23 +339,26 @@ def validate(
         "RMCAttachmentU7UnderbarrelShotgun": "Обвесы",
         "RMCAttachmentUnderbarrelExtinguisher": "Обвесы",
         "RMCAttachmentU1GrenadeLauncher": "Обвесы",
-        "CMWrench": "Инструменты и оборудование",
-        "CMScrewdriver": "Инструменты и оборудование",
-        "CMEntrenchingTool": "Инструменты и оборудование",
-        "CMFireExtinguisherPortable": "Инструменты и оборудование",
-        "RMCNailgunTactical": "Инструменты и оборудование",
+        "CMWrench": "Снаряжение",
+        "CMScrewdriver": "Снаряжение",
+        "CMEntrenchingTool": "Снаряжение",
+        "CMFireExtinguisherPortable": "Снаряжение",
+        "RMCNailgunTactical": "Снаряжение",
         "CMBackpackMarine": "Экипировка",
         "RMCBackpackAmmo": "Экипировка",
-        "RMCBoxMagazinePistolM13": "Боеприпасы",
-        "RMCBoxMagazineRifleM54CAP": "Боеприпасы",
-        "RMCBoxBulletsRifle": "Боеприпасы",
-        "RMCBoxShotgunBuckshot": "Боеприпасы",
+        "RMCPatchUNMC": "Экипировка",
+        "CMHeadsetAlpha": "Экипировка",
+        "CMEncryptionKeyAlpha": "Снаряжение",
+        "RMCBoxMagazinePistolM13": "Боеприпасы и взрывчатка",
+        "RMCBoxMagazineRifleM54CAP": "Боеприпасы и взрывчатка",
+        "RMCBoxBulletsRifle": "Боеприпасы и взрывчатка",
+        "RMCBoxShotgunBuckshot": "Боеприпасы и взрывчатка",
         "CMM11Knife": "Ближний бой",
         "CMM2132Machete": "Ближний бой",
         "CMScalpel": "Медицина",
         "ArmorHelmetM10": "Броня",
         "RMCArmorM3MediumPadded": "Броня",
-        "RMCML66DMount": "Инструменты и оборудование",
+        "RMCML66DMount": "Снаряжение",
         "RMCBinoculars": "Снаряжение",
         "RMCRangefinder": "Снаряжение",
         "RMCMotionDetector": "Снаряжение",
@@ -388,7 +390,7 @@ def validate(
             if not isinstance(item.get("attachmentStats"), dict):
                 raise RuntimeError(f"Attachment statistics are missing: {item_id}")
         if "RMCAmmoBox" in item.get("tags", []):
-            if item.get("category") != "Боеприпасы":
+            if item.get("category") != "Боеприпасы и взрывчатка":
                 raise RuntimeError(f"Ammo box categorized incorrectly: {item_id}")
         if item.get("category") == "Броня":
             slots = {str(slot).casefold() for slot in item.get("equipmentSlots", [])}
@@ -506,6 +508,52 @@ def validate(
     if len(distinct_box_sprites) != 4:
         raise RuntimeError("Differently colored ammunition boxes rendered identically")
 
+    grenade_box_ids = {
+        "RMCBoxAGMF",
+        "RMCBoxAGMI",
+        "RMCBoxCCDP",
+        "RMCBoxHEDP",
+        "RMCBoxHEFA",
+    }
+    grenade_box_sprites: set[bytes] = set()
+    for item_id in grenade_box_ids:
+        if item_id not in public_ids:
+            raise RuntimeError(f"Grenade box missing from public catalog: {item_id}")
+        layers = items[item_id].get("sprite", {}).get("layers", [])
+        closed_layers = [
+            layer
+            for layer in layers
+            if isinstance(layer, dict)
+            and "closedLayer" in layer.get("map", [])
+        ]
+        open_layers = [
+            layer
+            for layer in layers
+            if isinstance(layer, dict)
+            and set(layer.get("map", [])).intersection({"openLayer", "emptyLayer"})
+        ]
+        if not closed_layers or not all(layer.get("visible") is True for layer in closed_layers):
+            raise RuntimeError(f"Grenade box has no closed vending layer: {item_id}")
+        if not open_layers or not all(layer.get("visible") is False for layer in open_layers):
+            raise RuntimeError(f"Grenade box leaks its open layer: {item_id}")
+        grenade_box_sprites.add((sprites / f"{item_id}.png").read_bytes())
+    if len(grenade_box_sprites) != len(grenade_box_ids):
+        raise RuntimeError("Different grenade boxes rendered identically")
+
+    for container_id in ("RMCCrateFlashlights", "RMCCrateGearPackFlare"):
+        if container_id in public_ids:
+            raise RuntimeError(f"Lighting transport box leaked publicly: {container_id}")
+        content_ids = {
+            relation.get("to")
+            for relation in relations
+            if relation.get("from") == container_id
+            and relation.get("type") in {"contains", "bundleItem"}
+        }
+        if not content_ids or not content_ids.issubset(set(public_ids)):
+            raise RuntimeError(
+                f"Lighting box contents were not published: {container_id}"
+            )
+
     relation_keys: set[str] = set()
     for relation in relations:
         if not isinstance(relation, dict):
@@ -534,7 +582,11 @@ def validate(
 
     actual_source_counts = {
         "indexedEntityPrototypes": index_counts.get("indexedEntityPrototypes"),
-        "vendors": len(expected_vendors),
+        "vendors": sum(
+            1
+            for vendor in vendors.values()
+            if isinstance(vendor, dict) and vendor.get("type") != "cargo"
+        ),
         "cargoCatalogs": len(expected_cargo_catalogs),
         "sources": len(vendors),
         "sections": sum(len(vendor.get("sections", [])) for vendor in vendors.values()),
@@ -562,7 +614,7 @@ def validate(
         )
 
     review = catalog.get("review")
-    if not isinstance(review, dict) or review.get("policy") != "universal-functional-v2":
+    if not isinstance(review, dict) or review.get("policy") != "universal-functional-v3":
         raise RuntimeError("Missing universal classification review report")
     if "quarantine" in review or "quarantineItemIds" in public_catalog:
         raise RuntimeError("Quarantine leaked into the v5 catalog")
