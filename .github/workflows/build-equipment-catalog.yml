@@ -38,7 +38,7 @@ jobs:
 
       - name: Install catalog tools
         run: |
-          python3 -m pip install "PyYAML>=6,<7" "Pillow>=10,<12"
+          python3 -m pip install -r requirements.txt
 
       - name: Build equipment data
         run: |
