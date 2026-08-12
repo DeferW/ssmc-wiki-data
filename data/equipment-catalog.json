@@ -36946,7 +36946,7 @@
       "description": "{ \"\" }",
       "suffix": "",
       "types": [
-        "other"
+        "equipment"
       ],
       "tags": [],
       "componentTypes": [
@@ -36961,11 +36961,10 @@
         "signals": [
           "component:wearable-equipment"
         ],
-        "categoryId": "other",
-        "category": "Другое",
-        "overriddenByAdministrator": true
+        "categoryId": "equipment",
+        "category": "Экипировка"
       },
-      "category": "Другое",
+      "category": "Экипировка",
       "public": false,
       "hiddenByAdministrator": true
     },
@@ -36976,7 +36975,7 @@
       "description": "{ \"\" }",
       "suffix": "",
       "types": [
-        "other"
+        "equipment"
       ],
       "tags": [],
       "componentTypes": [
@@ -36991,11 +36990,10 @@
         "signals": [
           "component:wearable-equipment"
         ],
-        "categoryId": "other",
-        "category": "Другое",
-        "overriddenByAdministrator": true
+        "categoryId": "equipment",
+        "category": "Экипировка"
       },
-      "category": "Другое",
+      "category": "Экипировка",
       "public": false,
       "hiddenByAdministrator": true
     },
@@ -37006,7 +37004,7 @@
       "description": "{ \"\" }",
       "suffix": "",
       "types": [
-        "other"
+        "equipment"
       ],
       "tags": [],
       "componentTypes": [
@@ -37021,11 +37019,10 @@
         "signals": [
           "component:wearable-equipment"
         ],
-        "categoryId": "other",
-        "category": "Другое",
-        "overriddenByAdministrator": true
+        "categoryId": "equipment",
+        "category": "Экипировка"
       },
-      "category": "Другое",
+      "category": "Экипировка",
       "public": false,
       "hiddenByAdministrator": true
     },
@@ -37036,7 +37033,7 @@
       "description": "{ \"\" }",
       "suffix": "",
       "types": [
-        "other"
+        "equipment"
       ],
       "tags": [],
       "componentTypes": [
@@ -37051,11 +37048,10 @@
         "signals": [
           "component:wearable-equipment"
         ],
-        "categoryId": "other",
-        "category": "Другое",
-        "overriddenByAdministrator": true
+        "categoryId": "equipment",
+        "category": "Экипировка"
       },
-      "category": "Другое",
+      "category": "Экипировка",
       "public": false,
       "hiddenByAdministrator": true
     },
@@ -37464,7 +37460,7 @@
       "description": "Служебный пистолет M4A3, когда-то являвшийся стандартным оружием морской пехоты, но недавно замененный на боевой пистолет 88 M4. Стреляет пистолетными патронами калибра 9 мм.",
       "suffix": "Пустой",
       "types": [
-        "other"
+        "weapon"
       ],
       "tags": [
         "CMWeaponPistolM1984",
@@ -37670,11 +37666,10 @@
         "signals": [
           "Gun"
         ],
-        "categoryId": "other",
-        "category": "Другое",
-        "overriddenByAdministrator": true
+        "categoryId": "weapon",
+        "category": "Оружие"
       },
-      "category": "Другое",
+      "category": "Оружие",
       "public": false,
       "attachmentSlots": [
         {
@@ -48534,7 +48529,7 @@
       "description": "Стандартный нагрудный щиток КМП США M3 Pattern. Защищает грудь от баллистических снарядов, ножевых предметов и несчастных случаев. К нему пристегивается небольшой кожаный подсумок для ограниченного хранения.",
       "suffix": "",
       "types": [
-        "other"
+        "gear"
       ],
       "tags": [],
       "componentTypes": [
@@ -48566,11 +48561,10 @@
         "signals": [
           "component:installed-accessory"
         ],
-        "categoryId": "other",
-        "category": "Другое",
-        "overriddenByAdministrator": true
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Другое",
+      "category": "Снаряжение",
       "public": false,
       "hiddenByAdministrator": true
     },
@@ -69493,7 +69487,7 @@
       "description": "Нефильтрованный рулон табака и никотина. При курении такой сигареты в рот попадает еще больше смол и копоти.",
       "suffix": "",
       "types": [
-        "other"
+        "equipment"
       ],
       "tags": [
         "Cigarette",
@@ -69563,11 +69557,10 @@
         "signals": [
           "component:wearable-equipment"
         ],
-        "categoryId": "other",
-        "category": "Другое",
-        "overriddenByAdministrator": true
+        "categoryId": "equipment",
+        "category": "Экипировка"
       },
-      "category": "Другое",
+      "category": "Экипировка",
       "public": false,
       "hiddenByAdministrator": true
     },
@@ -129455,7 +129448,7 @@
       "description": "Автоматический пистолет M10 — компактное, скорострельное вспомогательное оружие, разработанное для обороны в ближнем бою. С магазином на 40 патронов, он делает упор на скорострельность, а не на точность, обеспечивая эффективный подавляющий огонь на коротких дистанциях.",
       "suffix": "Пустой",
       "types": [
-        "other"
+        "weapon"
       ],
       "tags": [
         "RMCWeaponPistolM13",
@@ -129681,11 +129674,10 @@
         "signals": [
           "Gun"
         ],
-        "categoryId": "other",
-        "category": "Другое",
-        "overriddenByAdministrator": true
+        "categoryId": "weapon",
+        "category": "Оружие"
       },
-      "category": "Другое",
+      "category": "Оружие",
       "public": false,
       "attachmentSlots": [
         {
@@ -130269,7 +130261,7 @@
       "description": "Стандартное огнестрельное оружие морской пехоты. Также встречается в руках команд ЧВК Ве-Я. Стреляет 9-мм патронами, разрушающими броню, и может вести огонь очередями по 3 патрона.",
       "suffix": "Пустой",
       "types": [
-        "other"
+        "weapon"
       ],
       "tags": [
         "RMCWeaponPistolM77",
@@ -130489,11 +130481,10 @@
         "signals": [
           "Gun"
         ],
-        "categoryId": "other",
-        "category": "Другое",
-        "overriddenByAdministrator": true
+        "categoryId": "weapon",
+        "category": "Оружие"
       },
-      "category": "Другое",
+      "category": "Оружие",
       "public": false,
       "attachmentSlots": [
         {
@@ -130920,7 +130911,7 @@
       "description": "Сигнальный пистолет, выдаваемый операторам JTAC для использования с сигнальными ракетами. Поставляется с мини-прицелом. Один выстрел, одна... спасенная жизнь?",
       "suffix": "Empty",
       "types": [
-        "other"
+        "weapon"
       ],
       "tags": [
         "RMCFlareGun",
@@ -131096,11 +131087,10 @@
         "signals": [
           "Gun"
         ],
-        "categoryId": "other",
-        "category": "Другое",
-        "overriddenByAdministrator": true
+        "categoryId": "weapon",
+        "category": "Оружие"
       },
-      "category": "Другое",
+      "category": "Оружие",
       "public": false,
       "attachmentSlots": [
         {
@@ -131955,7 +131945,7 @@
       "description": "Крупнокалиберный револьвер, который иногда используется штурмовыми отрядами и офицерами морской пехоты, а также гражданскими правоохранительными органами. Стреляет патронами .44 Magnum.",
       "suffix": "Пустой",
       "types": [
-        "other"
+        "weapon"
       ],
       "tags": [
         "RMCRevolver",
@@ -132184,11 +132174,10 @@
         "signals": [
           "Gun"
         ],
-        "categoryId": "other",
-        "category": "Другое",
-        "overriddenByAdministrator": true
+        "categoryId": "weapon",
+        "category": "Оружие"
       },
-      "category": "Другое",
+      "category": "Оружие",
       "public": false,
       "attachmentSlots": [
         {
@@ -146095,17 +146084,10 @@
       "STCrateMagazineSharpIncendiary"
     ],
     "categoryItemIds": [
-      "CMVendorHeadsetSquadComTech",
-      "CMVendorHeadsetSquadCorpsman",
-      "CMVendorHeadsetSquadFTL",
-      "CMVendorHeadsetSquadLeader",
-      "CMWeaponPistolM1984Empty",
-      "RMCArmorM3MediumVariants",
       "RMCBoxFlashlights",
       "RMCBoxMRE",
       "RMCBoxMagazineRifleM54C",
       "RMCBoxPackFlare",
-      "RMCCigarette",
       "RMCCrateBatterySmartGun",
       "RMCCrateBoxAmmo458",
       "RMCCrateBoxBulletsRifle",
@@ -146152,10 +146134,6 @@
       "RMCCrateMagazineRifleM54CE2HT",
       "RMCCrateMagazineSmartGun",
       "RMCCrateMagazineXM43E1Standard",
-      "RMCWeaponPistolM13Empty",
-      "RMCWeaponPistolM77Empty",
-      "RMCWeaponPistolM82FEmpty",
-      "RMCWeaponRevolverM44Empty",
       "STCrateMagazineSharpExplosive",
       "STCrateMagazineSharpFlechette",
       "STCrateMagazineSharpIncendiary"
