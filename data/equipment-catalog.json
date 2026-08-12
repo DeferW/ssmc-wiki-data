@@ -97356,7 +97356,7 @@
       "description": "Вероятно, боевая сетка для шлема. Возможно, это просто дополнительная сетка для волос, которую заказали для призрачного повара Алмайера. Скорее всего, бесполезная.",
       "suffix": "",
       "types": [
-        "gear"
+        "equipment"
       ],
       "tags": [],
       "componentTypes": [
@@ -97394,10 +97394,11 @@
         "signals": [
           "component:installed-accessory"
         ],
-        "categoryId": "gear",
-        "category": "Снаряжение"
+        "categoryId": "equipment",
+        "category": "Экипировка",
+        "overriddenByAdministrator": true
       },
-      "category": "Снаряжение",
+      "category": "Экипировка",
       "public": true,
       "image": "equipment-sprites/RMCHelmetGarbNetting.png"
     },
@@ -109605,7 +109606,7 @@
       "description": "Предназначена для ношения поверх комбинезона, а не для застегивания.",
       "suffix": "",
       "types": [
-        "gear"
+        "equipment"
       ],
       "tags": [
         "WhitelistChameleon"
@@ -109674,10 +109675,11 @@
         "signals": [
           "component:installed-accessory"
         ],
-        "categoryId": "gear",
-        "category": "Снаряжение"
+        "categoryId": "equipment",
+        "category": "Экипировка",
+        "overriddenByAdministrator": true
       },
-      "category": "Снаряжение",
+      "category": "Экипировка",
       "public": true,
       "storageStats": {
         "gridCells": 8,
@@ -144379,6 +144381,7 @@
         "RMCHeadBeretQuartermaster",
         "CMHeadBeretCMP",
         "RMCHeadBeretASO",
+        "RMCHelmetGarbNetting",
         "CMHandsBlackMarine",
         "RMCHandsLatexMarine",
         "RMCPouchShotgunLarge",
@@ -144388,6 +144391,7 @@
         "RMCPouchMagazinePistolLarge",
         "RMCScoutShoes",
         "RMCPouchExplosive",
+        "RMCOuterClothingExternalWebbing",
         "CMBeltSecurityMPFilled",
         "CMHeadsetCMO",
         "RMCHeadsetShip",
@@ -144680,12 +144684,10 @@
         "RMCVisorMedical",
         "RMCPowerCell",
         "RMCBinoculars",
-        "RMCHelmetGarbNetting",
         "RMCGlassesM4SPRBattleSight",
         "RMCArmorM3MediumVariants",
         "RMCBucket",
         "CMBucketMop",
-        "RMCOuterClothingExternalWebbing",
         "CMFlash",
         "RMCPowerCellHigh",
         "CMWrench",
@@ -146118,6 +146120,8 @@
       "RMCBeltGrenade",
       "RMCBeltGrenadeLargeFilled",
       "RMCFlareCAS",
+      "RMCHelmetGarbNetting",
+      "RMCOuterClothingExternalWebbing",
       "RMCSatchelGrenadeSpec"
     ],
     "categoryItemIds": [
@@ -146125,6 +146129,8 @@
       "RMCBeltGrenade",
       "RMCBeltGrenadeLargeFilled",
       "RMCFlareCAS",
+      "RMCHelmetGarbNetting",
+      "RMCOuterClothingExternalWebbing",
       "RMCSatchelGrenadeSpec"
     ],
     "hiddenItemIds": [
