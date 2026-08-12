@@ -7504,7 +7504,6 @@
           "RMCSpeedLoaderRsh9",
           "RMCStarShellM74AGMS",
           "RMCWeaponPistolM82F",
-          "RMCWeaponPistolM82FEmpty",
           "STMagazineSharpRifleExplosive",
           "STMagazineSharpRifleFlechette",
           "STMagazineSharpRifleIncendiary"
@@ -8702,20 +8701,15 @@
         ],
         "acceptedItemIds": [
           "CMWeaponPistolM1984",
-          "CMWeaponPistolM1984Empty",
           "RMCMK80",
           "RMCMortarShellFlare",
           "RMCMortarShellHE",
           "RMCMortarShellIncendiary",
           "RMCWeaponPistolM13",
-          "RMCWeaponPistolM13Empty",
           "RMCWeaponPistolM77",
-          "RMCWeaponPistolM77Empty",
           "RMCWeaponPistolM82F",
-          "RMCWeaponPistolM82FEmpty",
           "RMCWeaponPistolSU6",
           "RMCWeaponRevolverM44",
-          "RMCWeaponRevolverM44Empty",
           "RMCWeaponRevolverM44Marksman",
           "RMCWeaponRevolverRSh9",
           "RMCWeaponTaser"
@@ -8932,7 +8926,6 @@
           "CMStunbaton",
           "CMSurgicalDrill",
           "CMWeaponPistolM1984",
-          "CMWeaponPistolM1984Empty",
           "CMWelder",
           "CMWelderSmall",
           "CMWirecutter",
@@ -8973,14 +8966,10 @@
           "RMCSpeedLoaderRsh9",
           "RMCVial",
           "RMCWeaponPistolM13",
-          "RMCWeaponPistolM13Empty",
           "RMCWeaponPistolM77",
-          "RMCWeaponPistolM77Empty",
           "RMCWeaponPistolM82F",
-          "RMCWeaponPistolM82FEmpty",
           "RMCWeaponPistolSU6",
           "RMCWeaponRevolverM44",
-          "RMCWeaponRevolverM44Empty",
           "RMCWeaponRevolverM44Marksman",
           "RMCWeaponRevolverRSh9",
           "RMCWeaponTaser"
@@ -9421,7 +9410,6 @@
           "CMShellShotgunFlechette",
           "CMShellShotgunSlugs",
           "CMWeaponPistolM1984",
-          "CMWeaponPistolM1984Empty",
           "CMWelder",
           "CMWelderSmall",
           "CMWirecutter",
@@ -9450,14 +9438,10 @@
           "RMCSpeedLoaderRsh9",
           "RMCSynthResetKey",
           "RMCWeaponPistolM13",
-          "RMCWeaponPistolM13Empty",
           "RMCWeaponPistolM77",
-          "RMCWeaponPistolM77Empty",
           "RMCWeaponPistolM82F",
-          "RMCWeaponPistolM82FEmpty",
           "RMCWeaponPistolSU6",
           "RMCWeaponRevolverM44",
-          "RMCWeaponRevolverM44Empty",
           "RMCWeaponRevolverM44Marksman",
           "RMCWeaponRevolverRSh9",
           "RMCWeaponTaser"
@@ -13197,9 +13181,7 @@
       },
       "category": "Снаряжение",
       "public": true,
-      "containsItemIds": [
-        "RMCCigarette"
-      ],
+      "containsItemIds": [],
       "storageStats": {
         "gridCells": 16,
         "maxItemSize": "Tiny",
@@ -13214,9 +13196,7 @@
             "count": 4
           }
         ],
-        "acceptedItemIds": [
-          "RMCCigarette"
-        ],
+        "acceptedItemIds": [],
         "whitelist": {
           "tags": [
             "Cigarette"
@@ -18089,7 +18069,6 @@
           "CMExecutiveWEYAMatchbook",
           "CMGlassesSecurity",
           "CMMatchBook",
-          "RMCCigarette",
           "RMCGlassesAviators",
           "RMCGlassesMarineRpg",
           "RMCGlassesMarineRpgOld",
@@ -18260,7 +18239,6 @@
           "CMExecutiveWEYAMatchbook",
           "CMGlassesSecurity",
           "CMMatchBook",
-          "RMCCigarette",
           "RMCGlassesAviators",
           "RMCGlassesMarineRpg",
           "RMCGlassesMarineRpgOld",
@@ -18451,7 +18429,6 @@
           "CMExecutiveWEYAMatchbook",
           "CMGlassesSecurity",
           "CMMatchBook",
-          "RMCCigarette",
           "RMCGlassesAviators",
           "RMCGlassesMarineRpg",
           "RMCGlassesMarineRpgOld",
@@ -18622,7 +18599,6 @@
           "CMExecutiveWEYAMatchbook",
           "CMGlassesSecurity",
           "CMMatchBook",
-          "RMCCigarette",
           "RMCGlassesAviators",
           "RMCGlassesMarineRpg",
           "RMCGlassesMarineRpgOld",
@@ -18793,7 +18769,6 @@
           "CMExecutiveWEYAMatchbook",
           "CMGlassesSecurity",
           "CMMatchBook",
-          "RMCCigarette",
           "RMCGlassesAviators",
           "RMCGlassesMarineRpg",
           "RMCGlassesMarineRpgOld",
@@ -18964,7 +18939,6 @@
           "CMExecutiveWEYAMatchbook",
           "CMGlassesSecurity",
           "CMMatchBook",
-          "RMCCigarette",
           "RMCGlassesAviators",
           "RMCGlassesMarineRpg",
           "RMCGlassesMarineRpgOld",
@@ -19135,7 +19109,6 @@
           "CMExecutiveWEYAMatchbook",
           "CMGlassesSecurity",
           "CMMatchBook",
-          "RMCCigarette",
           "RMCGlassesAviators",
           "RMCGlassesMarineRpg",
           "RMCGlassesMarineRpgOld",
@@ -19306,7 +19279,6 @@
           "CMExecutiveWEYAMatchbook",
           "CMGlassesSecurity",
           "CMMatchBook",
-          "RMCCigarette",
           "RMCGlassesAviators",
           "RMCGlassesMarineRpg",
           "RMCGlassesMarineRpgOld",
@@ -19477,7 +19449,6 @@
           "CMExecutiveWEYAMatchbook",
           "CMGlassesSecurity",
           "CMMatchBook",
-          "RMCCigarette",
           "RMCGlassesAviators",
           "RMCGlassesMarineRpg",
           "RMCGlassesMarineRpgOld",
@@ -19648,7 +19619,6 @@
           "CMExecutiveWEYAMatchbook",
           "CMGlassesSecurity",
           "CMMatchBook",
-          "RMCCigarette",
           "RMCGlassesAviators",
           "RMCGlassesMarineRpg",
           "RMCGlassesMarineRpgOld",
@@ -19819,7 +19789,6 @@
           "CMExecutiveWEYAMatchbook",
           "CMGlassesSecurity",
           "CMMatchBook",
-          "RMCCigarette",
           "RMCGlassesAviators",
           "RMCGlassesMarineRpg",
           "RMCGlassesMarineRpgOld",
@@ -19990,7 +19959,6 @@
           "CMExecutiveWEYAMatchbook",
           "CMGlassesSecurity",
           "CMMatchBook",
-          "RMCCigarette",
           "RMCGlassesAviators",
           "RMCGlassesMarineRpg",
           "RMCGlassesMarineRpgOld",
@@ -20161,7 +20129,6 @@
           "CMExecutiveWEYAMatchbook",
           "CMGlassesSecurity",
           "CMMatchBook",
-          "RMCCigarette",
           "RMCGlassesAviators",
           "RMCGlassesMarineRpg",
           "RMCGlassesMarineRpgOld",
@@ -20332,7 +20299,6 @@
           "CMExecutiveWEYAMatchbook",
           "CMGlassesSecurity",
           "CMMatchBook",
-          "RMCCigarette",
           "RMCGlassesAviators",
           "RMCGlassesMarineRpg",
           "RMCGlassesMarineRpgOld",
@@ -20503,7 +20469,6 @@
           "CMExecutiveWEYAMatchbook",
           "CMGlassesSecurity",
           "CMMatchBook",
-          "RMCCigarette",
           "RMCGlassesAviators",
           "RMCGlassesMarineRpg",
           "RMCGlassesMarineRpgOld",
@@ -26707,8 +26672,7 @@
       "category": "Боеприпасы и взрывчатка",
       "public": true,
       "compatibleWeaponIds": [
-        "CMWeaponPistolM1984",
-        "CMWeaponPistolM1984Empty"
+        "CMWeaponPistolM1984"
       ],
       "image": "equipment-sprites/CMMagazinePistolM1984.png"
     },
@@ -26799,8 +26763,7 @@
       "category": "Боеприпасы и взрывчатка",
       "public": true,
       "compatibleWeaponIds": [
-        "RMCWeaponPistolM77",
-        "RMCWeaponPistolM77Empty"
+        "RMCWeaponPistolM77"
       ],
       "image": "equipment-sprites/CMMagazinePistolM77AP.png"
     },
@@ -36653,7 +36616,6 @@
       "category": "Другое",
       "public": true,
       "containsItemIds": [
-        "CMVendorHeadsetSquadComTech",
         "RMCJumpsuitMarineEngineerPatch",
         "CMBootsBlackFilled"
       ],
@@ -36737,7 +36699,6 @@
       "category": "Другое",
       "public": true,
       "containsItemIds": [
-        "CMVendorHeadsetSquadFTL",
         "RMCJumpsuitMarinePatch",
         "CMBootsBlackFilled",
         "CMArmorHelmetM12"
@@ -36817,7 +36778,6 @@
       "category": "Другое",
       "public": true,
       "containsItemIds": [
-        "CMVendorHeadsetSquadLeader",
         "CMHandsBlackMarine",
         "RMCJumpsuitMarinePatch",
         "CMBootsBlackFilled",
@@ -36858,7 +36818,6 @@
       "category": "Другое",
       "public": true,
       "containsItemIds": [
-        "CMVendorHeadsetSquadCorpsman",
         "RMCJumpsuitMarineMedicPatch",
         "CMBootsBlackFilled"
       ],
@@ -37006,7 +36965,8 @@
         "category": "Экипировка"
       },
       "category": "Экипировка",
-      "public": true
+      "public": false,
+      "hiddenByAdministrator": true
     },
     "CMVendorHeadsetSquadCorpsman": {
       "id": "CMVendorHeadsetSquadCorpsman",
@@ -37034,7 +36994,8 @@
         "category": "Экипировка"
       },
       "category": "Экипировка",
-      "public": true
+      "public": false,
+      "hiddenByAdministrator": true
     },
     "CMVendorHeadsetSquadFTL": {
       "id": "CMVendorHeadsetSquadFTL",
@@ -37062,7 +37023,8 @@
         "category": "Экипировка"
       },
       "category": "Экипировка",
-      "public": true
+      "public": false,
+      "hiddenByAdministrator": true
     },
     "CMVendorHeadsetSquadLeader": {
       "id": "CMVendorHeadsetSquadLeader",
@@ -37090,7 +37052,8 @@
         "category": "Экипировка"
       },
       "category": "Экипировка",
-      "public": true
+      "public": false,
+      "hiddenByAdministrator": true
     },
     "CMWeaponPistolM1984": {
       "id": "CMWeaponPistolM1984",
@@ -37707,7 +37670,7 @@
         "category": "Оружие"
       },
       "category": "Оружие",
-      "public": true,
+      "public": false,
       "attachmentSlots": [
         {
           "id": "rmc-aslot-barrel",
@@ -37884,7 +37847,7 @@
           }
         ]
       },
-      "image": "equipment-sprites/CMWeaponPistolM1984Empty.png"
+      "hiddenByAdministrator": true
     },
     "CMWebbing": {
       "id": "CMWebbing",
@@ -38622,7 +38585,6 @@
           "CMMagazinePistolM77AP",
           "CMMagazinePistolMK80",
           "CMWeaponPistolM1984",
-          "CMWeaponPistolM1984Empty",
           "RMCMK80",
           "RMCMagazinePistolM13",
           "RMCMagazinePistolM13Ext",
@@ -38633,14 +38595,10 @@
           "RMCSpeedLoaderM44",
           "RMCSpeedLoaderRsh9",
           "RMCWeaponPistolM13",
-          "RMCWeaponPistolM13Empty",
           "RMCWeaponPistolM77",
-          "RMCWeaponPistolM77Empty",
           "RMCWeaponPistolM82F",
-          "RMCWeaponPistolM82FEmpty",
           "RMCWeaponPistolSU6",
           "RMCWeaponRevolverM44",
-          "RMCWeaponRevolverM44Empty",
           "RMCWeaponRevolverM44Marksman",
           "RMCWeaponRevolverRSh9",
           "RMCWeaponTaser"
@@ -48607,8 +48565,8 @@
         "category": "Снаряжение"
       },
       "category": "Снаряжение",
-      "public": true,
-      "image": "equipment-sprites/RMCArmorM3MediumVariants.png"
+      "public": false,
+      "hiddenByAdministrator": true
     },
     "RMCArmorM3SO": {
       "id": "RMCArmorM3SO",
@@ -50094,7 +50052,6 @@
           "slotName": "Верхняя планка",
           "weaponIds": [
             "RMCWeaponRevolverM44",
-            "RMCWeaponRevolverM44Empty",
             "RMCWeaponRevolverM44Marksman",
             "WeaponRifleM4SPR"
           ]
@@ -50607,9 +50564,7 @@
           "slotName": "Подствольный слот",
           "weaponIds": [
             "CMWeaponPistolM1984",
-            "CMWeaponPistolM1984Empty",
             "RMCWeaponPistolM77",
-            "RMCWeaponPistolM77Empty",
             "RMCWeaponPistolSU6",
             "RMCWeaponRifleM54CE2"
           ]
@@ -50752,15 +50707,11 @@
           "slotName": "Дуло",
           "weaponIds": [
             "CMWeaponPistolM1984",
-            "CMWeaponPistolM1984Empty",
             "RMCMK80",
             "RMCWeaponPistolM13",
-            "RMCWeaponPistolM13Empty",
             "RMCWeaponPistolM77",
-            "RMCWeaponPistolM77Empty",
             "RMCWeaponPistolSU6",
             "RMCWeaponRevolverM44",
-            "RMCWeaponRevolverM44Empty",
             "RMCWeaponRevolverM44Marksman",
             "RMCWeaponRifleM54C",
             "WeaponRifleM4SPR",
@@ -50939,7 +50890,6 @@
           "slotName": "Подствольный слот",
           "weaponIds": [
             "RMCWeaponPistolM77",
-            "RMCWeaponPistolM77Empty",
             "RMCWeaponRifleM54C",
             "RMCWeaponRifleM54CE2",
             "WeaponRifleM4SPR",
@@ -51355,12 +51305,9 @@
           "slotName": "Подствольный слот",
           "weaponIds": [
             "CMWeaponPistolM1984",
-            "CMWeaponPistolM1984Empty",
             "RMCWeaponPistolM77",
-            "RMCWeaponPistolM77Empty",
             "RMCWeaponPistolSU6",
             "RMCWeaponRevolverM44",
-            "RMCWeaponRevolverM44Empty",
             "RMCWeaponRevolverM44Marksman",
             "RMCWeaponRevolverRSh9",
             "RMCWeaponRifleM54C",
@@ -51568,8 +51515,7 @@
           "slotId": "rmc-aslot-stock",
           "slotName": "Приклад",
           "weaponIds": [
-            "RMCWeaponPistolM13",
-            "RMCWeaponPistolM13Empty"
+            "RMCWeaponPistolM13"
           ]
         }
       ],
@@ -51778,8 +51724,7 @@
           "slotId": "rmc-aslot-stock",
           "slotName": "Приклад",
           "weaponIds": [
-            "RMCWeaponPistolM13",
-            "RMCWeaponPistolM13Empty"
+            "RMCWeaponPistolM13"
           ]
         }
       ],
@@ -52236,7 +52181,6 @@
           "slotName": "Приклад",
           "weaponIds": [
             "RMCWeaponRevolverM44",
-            "RMCWeaponRevolverM44Empty",
             "RMCWeaponRevolverM44Marksman"
           ]
         }
@@ -53907,9 +53851,7 @@
             "RMCWeaponFlamerSpec",
             "RMCWeaponLauncherM85A1",
             "RMCWeaponPistolM13",
-            "RMCWeaponPistolM13Empty",
             "RMCWeaponPistolM77",
-            "RMCWeaponPistolM77Empty",
             "RMCWeaponRifleM54C",
             "RMCWeaponRifleM54CE2",
             "RMCWeaponRifleM54CMK1",
@@ -54045,8 +53987,7 @@
           "slotId": "rmc-aslot-underbarrel",
           "slotName": "Подствольный слот",
           "weaponIds": [
-            "RMCWeaponPistolM13",
-            "RMCWeaponPistolM13Empty"
+            "RMCWeaponPistolM13"
           ]
         }
       ],
@@ -54351,19 +54292,15 @@
           "slotName": "Верхняя планка",
           "weaponIds": [
             "CMWeaponPistolM1984",
-            "CMWeaponPistolM1984Empty",
             "RMCMK80",
             "RMCSmartGunUNMC",
             "RMCWeaponFlamer",
             "RMCWeaponFlamerSpec",
             "RMCWeaponLauncherM85A1",
             "RMCWeaponPistolM13",
-            "RMCWeaponPistolM13Empty",
             "RMCWeaponPistolM77",
-            "RMCWeaponPistolM77Empty",
             "RMCWeaponPistolSU6",
             "RMCWeaponRevolverM44",
-            "RMCWeaponRevolverM44Empty",
             "RMCWeaponRevolverM44Marksman",
             "RMCWeaponRevolverRSh9",
             "RMCWeaponRifleM54C",
@@ -54505,13 +54442,10 @@
           "slotName": "Дуло",
           "weaponIds": [
             "CMWeaponPistolM1984",
-            "CMWeaponPistolM1984Empty",
             "RMCMK80",
             "RMCWeaponPistolM77",
-            "RMCWeaponPistolM77Empty",
             "RMCWeaponPistolSU6",
             "RMCWeaponRevolverM44",
-            "RMCWeaponRevolverM44Empty",
             "RMCWeaponRevolverM44Marksman",
             "RMCWeaponRevolverRSh9",
             "RMCWeaponRifleM54CE2",
@@ -54649,8 +54583,7 @@
           "slotId": "rmc-aslot-barrel",
           "slotName": "Дуло",
           "weaponIds": [
-            "RMCWeaponPistolM13",
-            "RMCWeaponPistolM13Empty"
+            "RMCWeaponPistolM13"
           ]
         }
       ],
@@ -54778,8 +54711,7 @@
           "slotId": "rmc-aslot-barrel",
           "slotName": "Дуло",
           "weaponIds": [
-            "RMCWeaponPistolM13",
-            "RMCWeaponPistolM13Empty"
+            "RMCWeaponPistolM13"
           ]
         }
       ],
@@ -54953,9 +54885,7 @@
           "slotName": "Верхняя планка",
           "weaponIds": [
             "RMCWeaponPistolM82F",
-            "RMCWeaponPistolM82FEmpty",
             "RMCWeaponRevolverM44",
-            "RMCWeaponRevolverM44Empty",
             "RMCWeaponRevolverM44Marksman",
             "RMCWeaponRifleM54C",
             "WeaponRifleM4SPR",
@@ -55110,14 +55040,10 @@
           "slotName": "Верхняя планка",
           "weaponIds": [
             "CMWeaponPistolM1984",
-            "CMWeaponPistolM1984Empty",
             "RMCMK80",
             "RMCWeaponPistolM13",
-            "RMCWeaponPistolM13Empty",
             "RMCWeaponPistolM77",
-            "RMCWeaponPistolM77Empty",
             "RMCWeaponRevolverM44",
-            "RMCWeaponRevolverM44Empty",
             "RMCWeaponRevolverM44Marksman",
             "WeaponSMGM63"
           ]
@@ -55246,14 +55172,11 @@
           "slotName": "Верхняя планка",
           "weaponIds": [
             "CMWeaponPistolM1984",
-            "CMWeaponPistolM1984Empty",
             "RMCMK80",
             "RMCWeaponLauncherM85A1",
             "RMCWeaponPistolM77",
-            "RMCWeaponPistolM77Empty",
             "RMCWeaponPistolSU6",
             "RMCWeaponRevolverM44",
-            "RMCWeaponRevolverM44Empty",
             "RMCWeaponRevolverM44Marksman",
             "RMCWeaponRevolverRSh9",
             "RMCWeaponRifleM54C",
@@ -55402,16 +55325,12 @@
           "slotName": "Верхняя планка",
           "weaponIds": [
             "CMWeaponPistolM1984",
-            "CMWeaponPistolM1984Empty",
             "RMCMK80",
             "RMCWeaponLauncherM85A1",
             "RMCWeaponPistolM13",
-            "RMCWeaponPistolM13Empty",
             "RMCWeaponPistolM77",
-            "RMCWeaponPistolM77Empty",
             "RMCWeaponPistolSU6",
             "RMCWeaponRevolverM44",
-            "RMCWeaponRevolverM44Empty",
             "RMCWeaponRevolverM44Marksman",
             "RMCWeaponRevolverRSh9",
             "RMCWeaponRifleM54C",
@@ -55611,7 +55530,6 @@
           "slotName": "Верхняя планка",
           "weaponIds": [
             "RMCWeaponRevolverM44",
-            "RMCWeaponRevolverM44Empty",
             "RMCWeaponRevolverM44Marksman",
             "RMCWeaponRifleM54C",
             "WeaponRifleM4SPR",
@@ -55912,12 +55830,9 @@
           "slotName": "Дуло",
           "weaponIds": [
             "CMWeaponPistolM1984",
-            "CMWeaponPistolM1984Empty",
             "RMCMK80",
             "RMCWeaponPistolM13",
-            "RMCWeaponPistolM13Empty",
             "RMCWeaponPistolM77",
-            "RMCWeaponPistolM77Empty",
             "RMCWeaponPistolSU6",
             "RMCWeaponRifleM54C",
             "RMCWeaponRifleM54CE2",
@@ -56048,12 +55963,9 @@
           "slotName": "Дуло",
           "weaponIds": [
             "CMWeaponPistolM1984",
-            "CMWeaponPistolM1984Empty",
             "RMCMK80",
             "RMCWeaponPistolM13",
-            "RMCWeaponPistolM13Empty",
             "RMCWeaponPistolM77",
-            "RMCWeaponPistolM77Empty",
             "WeaponSMGM63"
           ]
         }
@@ -59209,8 +59121,7 @@
         "acceptedItemIds": [
           "RMCMagazinePistolM13",
           "RMCMagazinePistolM13Ext",
-          "RMCWeaponPistolM13",
-          "RMCWeaponPistolM13Empty"
+          "RMCWeaponPistolM13"
         ],
         "whitelist": {
           "tags": [
@@ -59511,16 +59422,13 @@
           "CMMagazinePistolM77AP",
           "CMMagazinePistolMK80",
           "CMWeaponPistolM1984",
-          "CMWeaponPistolM1984Empty",
           "RMCMK80",
           "RMCMagazinePistolM13",
           "RMCMagazinePistolM13Ext",
           "RMCMagazinePistolM1984AP",
           "RMCMagazinePistolM1984HP",
           "RMCWeaponPistolM77",
-          "RMCWeaponPistolM77Empty",
           "RMCWeaponPistolM82F",
-          "RMCWeaponPistolM82FEmpty",
           "RMCWeaponTaser"
         ],
         "whitelist": {
@@ -59747,7 +59655,6 @@
           "RMCSpeedLoaderM44",
           "RMCSpeedLoaderRsh9",
           "RMCWeaponRevolverM44",
-          "RMCWeaponRevolverM44Empty",
           "RMCWeaponRevolverM44Marksman",
           "RMCWeaponRevolverRSh9"
         ],
@@ -60462,7 +60369,6 @@
           "CMMagazinePistolM77AP",
           "CMMagazinePistolMK80",
           "CMWeaponPistolM1984",
-          "CMWeaponPistolM1984Empty",
           "RMCMK80",
           "RMCMagazinePistolM13",
           "RMCMagazinePistolM13Ext",
@@ -60474,14 +60380,10 @@
           "RMCSpeedLoaderM44",
           "RMCSpeedLoaderRsh9",
           "RMCWeaponPistolM13",
-          "RMCWeaponPistolM13Empty",
           "RMCWeaponPistolM77",
-          "RMCWeaponPistolM77Empty",
           "RMCWeaponPistolM82F",
-          "RMCWeaponPistolM82FEmpty",
           "RMCWeaponPistolSU6",
           "RMCWeaponRevolverM44",
-          "RMCWeaponRevolverM44Empty",
           "RMCWeaponRevolverM44Marksman",
           "RMCWeaponRevolverRSh9",
           "RMCWeaponTaser"
@@ -69517,7 +69419,6 @@
         "acceptedItemIds": [
           "CMM96SSniperRifle",
           "CMWeaponPistolM1984",
-          "CMWeaponPistolM1984Empty",
           "RMCAttachmentMK1GrenadeLauncher",
           "RMCAttachmentMiniFlamethrower",
           "RMCAttachmentU1GrenadeLauncher",
@@ -69540,14 +69441,10 @@
           "RMCWeaponLauncherM6HBrute",
           "RMCWeaponLauncherM85A1",
           "RMCWeaponPistolM13",
-          "RMCWeaponPistolM13Empty",
           "RMCWeaponPistolM77",
-          "RMCWeaponPistolM77Empty",
           "RMCWeaponPistolM82F",
-          "RMCWeaponPistolM82FEmpty",
           "RMCWeaponPistolSU6",
           "RMCWeaponRevolverM44",
-          "RMCWeaponRevolverM44Empty",
           "RMCWeaponRevolverM44Marksman",
           "RMCWeaponRevolverRSh9",
           "RMCWeaponRifleM54C",
@@ -69660,8 +69557,8 @@
         "category": "Экипировка"
       },
       "category": "Экипировка",
-      "public": true,
-      "image": "equipment-sprites/RMCCigarette.png"
+      "public": false,
+      "hiddenByAdministrator": true
     },
     "RMCCoatASOBlack": {
       "id": "RMCCoatASOBlack",
@@ -93526,8 +93423,7 @@
           "RMCAttachmentSuppressorCompact",
           "RMCBeltHolsterM13",
           "RMCMagazinePistolM13Ext",
-          "RMCWeaponPistolM13",
-          "RMCWeaponPistolM13Empty"
+          "RMCWeaponPistolM13"
         ],
         "whitelist": {
           "tags": [
@@ -93657,7 +93553,6 @@
         "acceptedItemIds": [
           "CMMagazinePistolM1984",
           "CMWeaponPistolM1984",
-          "CMWeaponPistolM1984Empty",
           "RMCAttachmentRailFlashlight"
         ],
         "whitelist": {
@@ -93779,7 +93674,6 @@
           "RMCAttachmentRailFlashlight",
           "RMCSpeedLoader44Marksman",
           "RMCWeaponRevolverM44",
-          "RMCWeaponRevolverM44Empty",
           "RMCWeaponRevolverM44Marksman"
         ],
         "whitelist": {
@@ -93900,8 +93794,7 @@
         "acceptedItemIds": [
           "CMMagazinePistolM77AP",
           "RMCAttachmentRailFlashlight",
-          "RMCWeaponPistolM77",
-          "RMCWeaponPistolM77Empty"
+          "RMCWeaponPistolM77"
         ],
         "whitelist": {
           "tags": [
@@ -96683,7 +96576,6 @@
           "CMExecutiveWEYAMatchbook",
           "CMGlassesSecurity",
           "CMMatchBook",
-          "RMCCigarette",
           "RMCGlassesAviators",
           "RMCGlassesMarineRpg",
           "RMCGlassesMarineRpgOld",
@@ -96874,7 +96766,6 @@
           "CMExecutiveWEYAMatchbook",
           "CMGlassesSecurity",
           "CMMatchBook",
-          "RMCCigarette",
           "RMCGlassesAviators",
           "RMCGlassesMarineRpg",
           "RMCGlassesMarineRpgOld",
@@ -97045,7 +96936,6 @@
           "CMExecutiveWEYAMatchbook",
           "CMGlassesSecurity",
           "CMMatchBook",
-          "RMCCigarette",
           "RMCGlassesAviators",
           "RMCGlassesMarineRpg",
           "RMCGlassesMarineRpgOld",
@@ -102028,16 +101918,13 @@
           "CMMagazinePistolM77AP",
           "CMMagazinePistolMK80",
           "CMWeaponPistolM1984",
-          "CMWeaponPistolM1984Empty",
           "RMCMK80",
           "RMCMagazinePistolM13",
           "RMCMagazinePistolM13Ext",
           "RMCMagazinePistolM1984AP",
           "RMCMagazinePistolM1984HP",
           "RMCWeaponPistolM77",
-          "RMCWeaponPistolM77Empty",
           "RMCWeaponPistolM82F",
-          "RMCWeaponPistolM82FEmpty",
           "RMCWeaponTaser"
         ],
         "whitelist": {
@@ -103111,7 +102998,6 @@
           "RMCSpeedLoaderM44",
           "RMCSpeedLoaderRsh9",
           "RMCWeaponRevolverM44",
-          "RMCWeaponRevolverM44Empty",
           "RMCWeaponRevolverM44Marksman",
           "RMCWeaponRevolverRSh9"
         ],
@@ -103509,7 +103395,6 @@
           "slotName": "Дуло",
           "weaponIds": [
             "RMCWeaponRevolverM44",
-            "RMCWeaponRevolverM44Empty",
             "RMCWeaponRevolverM44Marksman",
             "RMCWeaponRifleM54C",
             "RMCWeaponRifleM54CMK1",
@@ -103887,16 +103772,13 @@
           "CMMagazinePistolM77AP",
           "CMMagazinePistolMK80",
           "CMWeaponPistolM1984",
-          "CMWeaponPistolM1984Empty",
           "RMCMK80",
           "RMCMagazinePistolM13",
           "RMCMagazinePistolM13Ext",
           "RMCMagazinePistolM1984AP",
           "RMCMagazinePistolM1984HP",
           "RMCWeaponPistolM77",
-          "RMCWeaponPistolM77Empty",
           "RMCWeaponPistolM82F",
-          "RMCWeaponPistolM82FEmpty",
           "RMCWeaponTaser"
         ],
         "whitelist": {
@@ -104112,8 +103994,7 @@
         "acceptedItemIds": [
           "CMFlare",
           "RMCFlareCAS",
-          "RMCWeaponPistolM82F",
-          "RMCWeaponPistolM82FEmpty"
+          "RMCWeaponPistolM82F"
         ],
         "whitelist": {
           "tags": [
@@ -104320,8 +104201,7 @@
         "acceptedItemIds": [
           "CMFlare",
           "RMCFlareCAS",
-          "RMCWeaponPistolM82F",
-          "RMCWeaponPistolM82FEmpty"
+          "RMCWeaponPistolM82F"
         ],
         "whitelist": {
           "tags": [
@@ -105210,16 +105090,13 @@
           "CMMagazinePistolM77AP",
           "CMMagazinePistolMK80",
           "CMWeaponPistolM1984",
-          "CMWeaponPistolM1984Empty",
           "RMCMK80",
           "RMCMagazinePistolM13",
           "RMCMagazinePistolM13Ext",
           "RMCMagazinePistolM1984AP",
           "RMCMagazinePistolM1984HP",
           "RMCWeaponPistolM77",
-          "RMCWeaponPistolM77Empty",
           "RMCWeaponPistolM82F",
-          "RMCWeaponPistolM82FEmpty",
           "RMCWeaponTaser"
         ],
         "whitelist": {
@@ -106711,8 +106588,7 @@
       "category": "Боеприпасы и взрывчатка",
       "public": true,
       "compatibleWeaponIds": [
-        "RMCWeaponPistolM13",
-        "RMCWeaponPistolM13Empty"
+        "RMCWeaponPistolM13"
       ],
       "image": "equipment-sprites/RMCMagazinePistolM13.png"
     },
@@ -106804,8 +106680,7 @@
       "category": "Боеприпасы и взрывчатка",
       "public": true,
       "compatibleWeaponIds": [
-        "RMCWeaponPistolM13",
-        "RMCWeaponPistolM13Empty"
+        "RMCWeaponPistolM13"
       ],
       "image": "equipment-sprites/RMCMagazinePistolM13Ext.png"
     },
@@ -106900,8 +106775,7 @@
       "category": "Боеприпасы и взрывчатка",
       "public": true,
       "compatibleWeaponIds": [
-        "CMWeaponPistolM1984",
-        "CMWeaponPistolM1984Empty"
+        "CMWeaponPistolM1984"
       ],
       "image": "equipment-sprites/RMCMagazinePistolM1984AP.png"
     },
@@ -106996,8 +106870,7 @@
       "category": "Боеприпасы и взрывчатка",
       "public": true,
       "compatibleWeaponIds": [
-        "CMWeaponPistolM1984",
-        "CMWeaponPistolM1984Empty"
+        "CMWeaponPistolM1984"
       ],
       "image": "equipment-sprites/RMCMagazinePistolM1984HP.png"
     },
@@ -129755,7 +129628,7 @@
         "category": "Оружие"
       },
       "category": "Оружие",
-      "public": true,
+      "public": false,
       "attachmentSlots": [
         {
           "id": "rmc-aslot-barrel",
@@ -129964,7 +129837,7 @@
           }
         ]
       },
-      "image": "equipment-sprites/RMCWeaponPistolM13Empty.png"
+      "hiddenByAdministrator": true
     },
     "RMCWeaponPistolM77": {
       "id": "RMCWeaponPistolM77",
@@ -130562,7 +130435,7 @@
         "category": "Оружие"
       },
       "category": "Оружие",
-      "public": true,
+      "public": false,
       "attachmentSlots": [
         {
           "id": "rmc-aslot-barrel",
@@ -130692,7 +130565,7 @@
           }
         ]
       },
-      "image": "equipment-sprites/RMCWeaponPistolM77Empty.png"
+      "hiddenByAdministrator": true
     },
     "RMCWeaponPistolM82F": {
       "id": "RMCWeaponPistolM82F",
@@ -131168,7 +131041,7 @@
         "category": "Оружие"
       },
       "category": "Оружие",
-      "public": true,
+      "public": false,
       "attachmentSlots": [
         {
           "id": "rmc-aslot-rail",
@@ -131265,7 +131138,7 @@
           }
         ]
       },
-      "image": "equipment-sprites/RMCWeaponPistolM82FEmpty.png"
+      "hiddenByAdministrator": true
     },
     "RMCWeaponPistolSU6": {
       "id": "RMCWeaponPistolSU6",
@@ -132255,7 +132128,7 @@
         "category": "Оружие"
       },
       "category": "Оружие",
-      "public": true,
+      "public": false,
       "attachmentSlots": [
         {
           "id": "rmc-aslot-barrel",
@@ -132405,7 +132278,7 @@
           }
         ]
       },
-      "image": "equipment-sprites/RMCWeaponRevolverM44Empty.png"
+      "hiddenByAdministrator": true
     },
     "RMCWeaponRevolverM44Marksman": {
       "id": "RMCWeaponRevolverM44Marksman",
@@ -135536,7 +135409,6 @@
           "CMMagazinePistolM77AP",
           "CMMagazinePistolMK80",
           "CMWeaponPistolM1984",
-          "CMWeaponPistolM1984Empty",
           "RMCMK80",
           "RMCMagazinePistolM13",
           "RMCMagazinePistolM13Ext",
@@ -135547,14 +135419,10 @@
           "RMCSpeedLoaderM44",
           "RMCSpeedLoaderRsh9",
           "RMCWeaponPistolM13",
-          "RMCWeaponPistolM13Empty",
           "RMCWeaponPistolM77",
-          "RMCWeaponPistolM77Empty",
           "RMCWeaponPistolM82F",
-          "RMCWeaponPistolM82FEmpty",
           "RMCWeaponPistolSU6",
           "RMCWeaponRevolverM44",
-          "RMCWeaponRevolverM44Empty",
           "RMCWeaponRevolverM44Marksman",
           "RMCWeaponRevolverRSh9",
           "RMCWeaponTaser"
@@ -138665,7 +138533,6 @@
           "RMCCartridgeRifleM4SPRA19Incendiary",
           "RMCCartridgeSentry",
           "RMCCartridgeSniper10x99mmAntiMateriel",
-          "RMCCigarette",
           "RMCCrayonBlue",
           "RMCCrayonGreen",
           "RMCCrayonOrange",
@@ -143057,10 +142924,6 @@
       "CMHeadCapSurgWhite",
       "RMCPacketGrenadeWhitePhosphorusFilled",
       "RMCBoxDonut",
-      "CMVendorHeadsetSquadComTech",
-      "CMVendorHeadsetSquadCorpsman",
-      "CMVendorHeadsetSquadFTL",
-      "CMVendorHeadsetSquadLeader",
       "RMCCrateSupplyEvacuation",
       "CMEmergencyAutoInjector",
       "RMCEmergencyOxygenTankFilled",
@@ -143074,7 +142937,6 @@
       "CMEpinephrineAutoInjector",
       "RMCSentry",
       "RMCWeaponPistolM13",
-      "RMCWeaponPistolM13Empty",
       "RMCPowerCellSmartgun",
       "CMHealthAnalyzer",
       "RMCXM43E1AntiMaterielRifle",
@@ -143116,10 +142978,8 @@
       "CMArmorSmartGunCombatHarness",
       "RMCMagazineSmartGun",
       "RMCWeaponPistolM77",
-      "RMCWeaponPistolM77Empty",
       "RMCGlassesM4SPRBattleSight",
       "RMCWeaponRevolverM44",
-      "RMCWeaponRevolverM44Empty",
       "RMCWeaponRevolverM44Marksman",
       "CMHandsBlackMarine",
       "RMCHandsLatexMarine",
@@ -143155,7 +143015,6 @@
       "CMArmorM45",
       "RMCArmorB12Zipties",
       "RMCArmorM4Zipties",
-      "RMCArmorM3MediumVariants",
       "RMCPamphletLoader",
       "CMPamphletEngineer",
       "CMPamphletSpotter",
@@ -143679,10 +143538,8 @@
       "CMBootsGrey",
       "RMCScrubsGrey",
       "RMCHandsGreyMarine",
-      "RMCCigarette",
       "RMCFlareCAS",
       "RMCWeaponPistolM82F",
-      "RMCWeaponPistolM82FEmpty",
       "CMScrubsBlue",
       "CMSynthGraft",
       "CMHeadCapSurgBlue",
@@ -143691,7 +143548,6 @@
       "CMEntrenchingTool",
       "RMCAttachmentM63StockCollapsible",
       "CMWeaponPistolM1984",
-      "CMWeaponPistolM1984Empty",
       "RMCCrateMagazineFlamerMixed",
       "CMM96SSniperRifle",
       "CMBackpackSniper",
@@ -144020,13 +143876,10 @@
         "RMCSentryFire",
         "RMCSentry",
         "RMCWeaponPistolM13",
-        "RMCWeaponPistolM13Empty",
         "RMCXM43E1AntiMaterielRifle",
         "WeaponRifleM4SPR",
         "RMCWeaponPistolM77",
-        "RMCWeaponPistolM77Empty",
         "RMCWeaponRevolverM44",
-        "RMCWeaponRevolverM44Empty",
         "RMCWeaponRevolverM44Marksman",
         "STWeaponSharpRifle",
         "RMCWeaponLauncherM85A1",
@@ -144039,9 +143892,7 @@
         "WeaponShotgunM42A2",
         "WeaponShotgunMOU53",
         "RMCWeaponPistolM82F",
-        "RMCWeaponPistolM82FEmpty",
         "CMWeaponPistolM1984",
-        "CMWeaponPistolM1984Empty",
         "CMM96SSniperRifle",
         "RMCMachineGunM2C",
         "RMCSmartGunMounted",
@@ -144364,10 +144215,6 @@
         "RMCPonchoUrban",
         "RMCScrubsWhite",
         "CMHeadCapSurgWhite",
-        "CMVendorHeadsetSquadComTech",
-        "CMVendorHeadsetSquadCorpsman",
-        "CMVendorHeadsetSquadFTL",
-        "CMVendorHeadsetSquadLeader",
         "RMCGlassesAviators",
         "CMMaskCoif",
         "RMCMaskBalaclava",
@@ -144542,7 +144389,6 @@
         "CMBootsGrey",
         "RMCScrubsGrey",
         "RMCHandsGreyMarine",
-        "RMCCigarette",
         "CMScrubsBlue",
         "CMHeadCapSurgBlue",
         "CMBackpackSniper",
@@ -144679,7 +144525,6 @@
         "RMCBinoculars",
         "RMCHelmetGarbNetting",
         "RMCGlassesM4SPRBattleSight",
-        "RMCArmorM3MediumVariants",
         "RMCBucket",
         "CMBucketMop",
         "RMCOuterClothingExternalWebbing",
@@ -146096,23 +145941,56 @@
     "unwrappedTransportIds": [],
     "aliases": {},
     "hiddenItemIds": [
-      "CMVendorHeadsetSquad"
+      "CMVendorHeadsetSquad",
+      "CMVendorHeadsetSquadComTech",
+      "CMVendorHeadsetSquadCorpsman",
+      "CMVendorHeadsetSquadFTL",
+      "CMVendorHeadsetSquadLeader",
+      "RMCWeaponPistolM13Empty",
+      "RMCWeaponPistolM77Empty",
+      "RMCWeaponRevolverM44Empty",
+      "RMCArmorM3MediumVariants",
+      "RMCCigarette",
+      "RMCWeaponPistolM82FEmpty",
+      "CMWeaponPistolM1984Empty"
     ]
   },
   "counts": {
     "catalogItems": 1120,
-    "publicItems": 1028,
+    "publicItems": 1017,
     "excludedItems": 0,
-    "hiddenItems": 1
+    "hiddenItems": 12
   },
   "overrides": {
     "schemaVersion": 1,
     "appliedItemIds": [
-      "CMVendorHeadsetSquad"
+      "CMVendorHeadsetSquad",
+      "CMVendorHeadsetSquadComTech",
+      "CMVendorHeadsetSquadCorpsman",
+      "CMVendorHeadsetSquadFTL",
+      "CMVendorHeadsetSquadLeader",
+      "CMWeaponPistolM1984Empty",
+      "RMCArmorM3MediumVariants",
+      "RMCCigarette",
+      "RMCWeaponPistolM13Empty",
+      "RMCWeaponPistolM77Empty",
+      "RMCWeaponPistolM82FEmpty",
+      "RMCWeaponRevolverM44Empty"
     ],
     "categoryItemIds": [],
     "hiddenItemIds": [
-      "CMVendorHeadsetSquad"
+      "CMVendorHeadsetSquad",
+      "CMVendorHeadsetSquadComTech",
+      "CMVendorHeadsetSquadCorpsman",
+      "CMVendorHeadsetSquadFTL",
+      "CMVendorHeadsetSquadLeader",
+      "CMWeaponPistolM1984Empty",
+      "RMCArmorM3MediumVariants",
+      "RMCCigarette",
+      "RMCWeaponPistolM13Empty",
+      "RMCWeaponPistolM77Empty",
+      "RMCWeaponPistolM82FEmpty",
+      "RMCWeaponRevolverM44Empty"
     ]
   },
   "review": {
