@@ -136,6 +136,9 @@ PUBLIC_PROPERTY_COMPONENTS = {
     "RMCArmorVariant",
     "ClothingSpeedModifier",
     "ExplosionResistance",
+    "FixedItemSizeStorage",
+    "IgnoreContentsSize",
+    "LimitedStorage",
     "SolutionContainerManager",
     "Storage",
 }

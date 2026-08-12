@@ -369,6 +369,15 @@ def validate(
                 f"expected={expected_category}, actual={actual_category}"
             )
 
+    eod_properties = items.get("RMCArmorM3HeavySkull", {}).get("properties", {})
+    if "FixedItemSizeStorage" not in eod_properties:
+        raise RuntimeError("EOD armor fixed storage sizing is missing")
+
+    helmet_properties = items.get("ArmorHelmetM10", {}).get("properties", {})
+    for component_type in ("FixedItemSizeStorage", "IgnoreContentsSize", "LimitedStorage"):
+        if component_type not in helmet_properties:
+            raise RuntimeError(f"M10 helmet storage rule is missing: {component_type}")
+
     for item_id in public_ids:
         item = items[item_id]
         if "Item" in item.get("properties", {}):
