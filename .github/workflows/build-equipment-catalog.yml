@@ -1,6 +1,12 @@
 name: Build equipment catalog
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - "config/catalog-overrides.json"
+
   workflow_dispatch:
 
 permissions:
