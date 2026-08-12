@@ -42,6 +42,15 @@ def read_json(path: Path) -> dict[str, Any]:
     return data
 
 
+def read_catalog_overrides(path: Path) -> dict[str, Any]:
+    if not path.is_file():
+        return {"schemaVersion": 1, "items": {}}
+    document = read_json(path)
+    if document.get("schemaVersion") != 1 or not isinstance(document.get("items"), dict):
+        raise RuntimeError("Invalid catalog overrides document")
+    return document
+
+
 def configured_sources(path: Path) -> tuple[list[str], list[str]]:
     data = yaml.safe_load(path.read_text(encoding="utf-8"))
     if not isinstance(data, dict) or not isinstance(data.get("vendors"), list):
@@ -108,6 +117,7 @@ def validate(
     index: dict[str, Any],
     config: Path,
     sprites: Path,
+    overrides: dict[str, Any],
 ) -> None:
     if catalog.get("schemaVersion") != 3:
         raise RuntimeError("Unexpected equipment catalog schema")
@@ -207,6 +217,12 @@ def validate(
     public_ids = public_catalog.get("itemIds")
     candidate_ids = public_catalog.get("candidateItemIds")
     excluded_ids = public_catalog.get("excludedItemIds")
+    hidden_ids = public_catalog.get("hiddenItemIds")
+    category_overridden_ids = {
+        item_id
+        for item_id, override in overrides.get("items", {}).items()
+        if isinstance(override, dict) and isinstance(override.get("category"), str)
+    }
     unwrapped_cases = public_catalog.get("unwrappedCaseIds")
     unwrapped_transport = public_catalog.get("unwrappedTransportIds")
     aliases = public_catalog.get("aliases")
@@ -217,9 +233,15 @@ def validate(
         raise RuntimeError("Equipment candidate list is empty")
     if not isinstance(excluded_ids, list):
         raise RuntimeError("Missing excluded equipment list")
-    if set(public_ids) | set(excluded_ids) != set(candidate_ids):
+    if not isinstance(hidden_ids, list):
+        raise RuntimeError("Missing administrator-hidden equipment list")
+    if set(public_ids) | set(excluded_ids) | set(hidden_ids) != set(candidate_ids):
         raise RuntimeError("Candidate publication states do not form a complete partition")
-    if set(public_ids).intersection(excluded_ids):
+    if (
+        set(public_ids).intersection(excluded_ids)
+        or set(public_ids).intersection(hidden_ids)
+        or set(excluded_ids).intersection(hidden_ids)
+    ):
         raise RuntimeError("Equipment publication states overlap")
     if len(public_ids) != len(set(public_ids)):
         raise RuntimeError("Public equipment catalog contains duplicate items")
@@ -236,6 +258,13 @@ def validate(
             raise RuntimeError(
                 f"Alias {alias_id} has non-public canonical item {canonical_id}"
             )
+
+    for item_id in hidden_ids:
+        item = items.get(item_id)
+        if not isinstance(item, dict) or item.get("hiddenByAdministrator") is not True:
+            raise RuntimeError(f"Hidden override is not marked on item: {item_id}")
+        if item.get("public") is not False:
+            raise RuntimeError(f"Hidden override remains public on item: {item_id}")
     if not isinstance(categories, dict):
         raise RuntimeError("Missing public equipment categories")
     if list(categories) != EXPECTED_CATEGORIES:
@@ -404,15 +433,21 @@ def validate(
         item = items[item_id]
         if "Item" in item.get("properties", {}):
             raise RuntimeError(f"Internal item-size properties leaked publicly: {item_id}")
-        if "Attachable" in item.get("componentTypes", []):
+        if (
+            item_id not in category_overridden_ids
+            and "Attachable" in item.get("componentTypes", [])
+        ):
             if item.get("category") != "Обвесы":
                 raise RuntimeError(f"Attachment categorized incorrectly: {item_id}")
             if not isinstance(item.get("attachmentStats"), dict):
                 raise RuntimeError(f"Attachment statistics are missing: {item_id}")
-        if "RMCAmmoBox" in item.get("tags", []):
+        if (
+            item_id not in category_overridden_ids
+            and "RMCAmmoBox" in item.get("tags", [])
+        ):
             if item.get("category") != "Боеприпасы и взрывчатка":
                 raise RuntimeError(f"Ammo box categorized incorrectly: {item_id}")
-        if item.get("category") == "Броня":
+        if item_id not in category_overridden_ids and item.get("category") == "Броня":
             slots = {str(slot).casefold() for slot in item.get("equipmentSlots", [])}
             if not slots.intersection({"outerclothing", "head"}):
                 raise RuntimeError(f"Armor uses a forbidden equipment slot: {item_id}")
@@ -476,11 +511,17 @@ def validate(
     ):
         raise RuntimeError("M10 magazine capacity/projectile damage was not normalized")
     mounted_m56 = items.get("RMCSmartGunMounted", {})
-    if mounted_m56.get("category") != "Оружие" or not mounted_m56.get("weaponStats"):
+    if (
+        (
+            "RMCSmartGunMounted" not in category_overridden_ids
+            and mounted_m56.get("category") != "Оружие"
+        )
+        or not mounted_m56.get("weaponStats")
+    ):
         raise RuntimeError("M56D weapon card or normalized statistics are missing")
 
     pill_pouch_id = "RMCPouchFirstAidPills"
-    if pill_pouch_id not in public_ids:
+    if pill_pouch_id not in public_ids and pill_pouch_id not in hidden_ids:
         raise RuntimeError("Filled pill pouch is missing from public catalog")
     pill_packets = {
         relation.get("to")
@@ -488,15 +529,25 @@ def validate(
         if relation.get("from") == pill_pouch_id
         and relation.get("type") == "contains"
     }
-    if not pill_packets or not pill_packets.issubset(set(public_ids)):
+    visible_pill_packets = pill_packets - set(hidden_ids)
+    if (
+        pill_pouch_id in public_ids
+        and (
+            not pill_packets
+            or not visible_pill_packets.issubset(set(public_ids))
+        )
+    ):
         raise RuntimeError(
             f"Pill pouch contents were not recursively published: {sorted(pill_packets)}"
         )
-    if not pill_packets.issubset(
+    if pill_pouch_id in public_ids and not visible_pill_packets.issubset(
         set(items[pill_pouch_id].get("containsItemIds", []))
     ):
         raise RuntimeError("Pill pouch lost its forward Contains summary")
-    if "RMCBeltHolsterPistol" not in public_ids:
+    if (
+        "RMCBeltHolsterPistol" not in public_ids
+        and "RMCBeltHolsterPistol" not in hidden_ids
+    ):
         raise RuntimeError("Configured pistol holster is missing from public catalog")
 
     green_ap_magazines = {
@@ -505,17 +556,23 @@ def validate(
         "CMMagazineRifleM4SPRAP",
     }
     for item_id in green_ap_magazines:
+        if item_id in hidden_ids:
+            continue
         sprite_path = sprites / f"{item_id}.png"
         if not sprite_has_green_tint(sprite_path):
             raise RuntimeError(f"AP magazine lost its green sprite tint: {item_id}")
 
+    distinct_box_ids = {
+        "RMCBoxMagazinePistolM13",
+        "RMCBoxMagazineSMGM63",
+        "RMCBoxMagazineRifleM54C",
+        "RMCBoxMagazineRifleM54CAP",
+    } - set(hidden_ids)
     distinct_box_sprites = {
-        (sprites / "RMCBoxMagazinePistolM13.png").read_bytes(),
-        (sprites / "RMCBoxMagazineSMGM63.png").read_bytes(),
-        (sprites / "RMCBoxMagazineRifleM54C.png").read_bytes(),
-        (sprites / "RMCBoxMagazineRifleM54CAP.png").read_bytes(),
+        (sprites / f"{item_id}.png").read_bytes()
+        for item_id in distinct_box_ids
     }
-    if len(distinct_box_sprites) != 4:
+    if len(distinct_box_sprites) != len(distinct_box_ids):
         raise RuntimeError("Differently colored ammunition boxes rendered identically")
 
     grenade_box_ids = {
@@ -527,6 +584,8 @@ def validate(
     }
     grenade_box_sprites: set[bytes] = set()
     for item_id in grenade_box_ids:
+        if item_id in hidden_ids:
+            continue
         if item_id not in public_ids:
             raise RuntimeError(f"Grenade box missing from public catalog: {item_id}")
         layers = items[item_id].get("sprite", {}).get("layers", [])
@@ -547,10 +606,12 @@ def validate(
         if not open_layers or not all(layer.get("visible") is False for layer in open_layers):
             raise RuntimeError(f"Grenade box leaks its open layer: {item_id}")
         grenade_box_sprites.add((sprites / f"{item_id}.png").read_bytes())
-    if len(grenade_box_sprites) != len(grenade_box_ids):
+    if len(grenade_box_sprites) != len(grenade_box_ids - set(hidden_ids)):
         raise RuntimeError("Different grenade boxes rendered identically")
 
     for container_id in ("RMCCrateFlashlights", "RMCCrateGearPackFlare"):
+        if container_id in hidden_ids:
+            continue
         if container_id not in public_ids:
             raise RuntimeError(f"Lighting transport box is missing: {container_id}")
         content_ids = {
@@ -559,7 +620,8 @@ def validate(
             if relation.get("from") == container_id
             and relation.get("type") in {"contains", "bundleItem"}
         }
-        if not content_ids or not content_ids.issubset(set(public_ids)):
+        visible_content_ids = content_ids - set(hidden_ids)
+        if not content_ids or not visible_content_ids.issubset(set(public_ids)):
             raise RuntimeError(
                 f"Lighting box contents were not published with its box: {container_id}"
             )
@@ -605,6 +667,7 @@ def validate(
         "catalogItems": len(items),
         "publicItems": len(public_ids),
         "excludedItems": len(excluded_ids),
+        "hiddenItems": len(hidden_ids),
         "relations": len(relations),
     }
     for key, value in actual_source_counts.items():
@@ -617,11 +680,43 @@ def validate(
         "catalogItems": len(items),
         "publicItems": len(public_ids),
         "excludedItems": len(excluded_ids),
+        "hiddenItems": len(hidden_ids),
     }
     if counts != actual_counts:
         raise RuntimeError(
             f"Equipment count mismatch: stored={counts}, actual={actual_counts}"
         )
+
+    override_items = overrides.get("items", {})
+    override_summary = catalog.get("overrides")
+    if not isinstance(override_summary, dict):
+        raise RuntimeError("Missing catalog override summary")
+    expected_applied = sorted(override_items)
+    expected_hidden = sorted(
+        item_id
+        for item_id, override in override_items.items()
+        if isinstance(override, dict) and override.get("hidden") is True
+    )
+    expected_categories = sorted(
+        item_id
+        for item_id, override in override_items.items()
+        if isinstance(override, dict) and isinstance(override.get("category"), str)
+    )
+    if override_summary != {
+        "schemaVersion": 1,
+        "appliedItemIds": expected_applied,
+        "categoryItemIds": expected_categories,
+        "hiddenItemIds": expected_hidden,
+    }:
+        raise RuntimeError("Catalog override summary does not match overrides file")
+    if sorted(hidden_ids) != expected_hidden:
+        raise RuntimeError("Applied hidden items do not match overrides file")
+    for item_id, override in override_items.items():
+        if not isinstance(override, dict):
+            raise RuntimeError(f"Invalid override entry: {item_id}")
+        category = override.get("category")
+        if isinstance(category, str) and items.get(item_id, {}).get("category") != category:
+            raise RuntimeError(f"Category override was not applied: {item_id}")
 
     review = catalog.get("review")
     if not isinstance(review, dict) or review.get("policy") != "universal-functional-v3":
@@ -690,6 +785,7 @@ def validate(
     print(f"Catalog items: {len(items)}")
     print(f"Public equipment items: {len(public_ids)}")
     print(f"Excluded non-equipment items: {len(excluded_ids)}")
+    print(f"Administrator-hidden items: {len(hidden_ids)}")
     print(f"Relations: {len(relations)}")
     print("Equipment catalog validation passed")
 
@@ -700,12 +796,22 @@ def main() -> None:
     parser.add_argument("--index", type=Path, required=True)
     parser.add_argument("--config", type=Path, required=True)
     parser.add_argument("--sprites", type=Path, required=True)
+    parser.add_argument(
+        "--overrides",
+        type=Path,
+        help=(
+            "Administrator overrides JSON; defaults to "
+            "catalog-overrides.json next to --config"
+        ),
+    )
     args = parser.parse_args()
+    overrides_path = args.overrides or args.config.parent / "catalog-overrides.json"
     validate(
         read_json(args.catalog),
         read_json(args.index),
         args.config,
         args.sprites,
+        read_catalog_overrides(overrides_path),
     )
 
 
