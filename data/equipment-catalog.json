@@ -36946,7 +36946,7 @@
       "description": "{ \"\" }",
       "suffix": "",
       "types": [
-        "equipment"
+        "other"
       ],
       "tags": [],
       "componentTypes": [
@@ -36961,10 +36961,11 @@
         "signals": [
           "component:wearable-equipment"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Экипировка",
+      "category": "Другое",
       "public": false,
       "hiddenByAdministrator": true
     },
@@ -36975,7 +36976,7 @@
       "description": "{ \"\" }",
       "suffix": "",
       "types": [
-        "equipment"
+        "other"
       ],
       "tags": [],
       "componentTypes": [
@@ -36990,10 +36991,11 @@
         "signals": [
           "component:wearable-equipment"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Экипировка",
+      "category": "Другое",
       "public": false,
       "hiddenByAdministrator": true
     },
@@ -37004,7 +37006,7 @@
       "description": "{ \"\" }",
       "suffix": "",
       "types": [
-        "equipment"
+        "other"
       ],
       "tags": [],
       "componentTypes": [
@@ -37019,10 +37021,11 @@
         "signals": [
           "component:wearable-equipment"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Экипировка",
+      "category": "Другое",
       "public": false,
       "hiddenByAdministrator": true
     },
@@ -37033,7 +37036,7 @@
       "description": "{ \"\" }",
       "suffix": "",
       "types": [
-        "equipment"
+        "other"
       ],
       "tags": [],
       "componentTypes": [
@@ -37048,10 +37051,11 @@
         "signals": [
           "component:wearable-equipment"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Экипировка",
+      "category": "Другое",
       "public": false,
       "hiddenByAdministrator": true
     },
@@ -37460,7 +37464,7 @@
       "description": "Служебный пистолет M4A3, когда-то являвшийся стандартным оружием морской пехоты, но недавно замененный на боевой пистолет 88 M4. Стреляет пистолетными патронами калибра 9 мм.",
       "suffix": "Пустой",
       "types": [
-        "weapon"
+        "other"
       ],
       "tags": [
         "CMWeaponPistolM1984",
@@ -37666,10 +37670,11 @@
         "signals": [
           "Gun"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Оружие",
+      "category": "Другое",
       "public": false,
       "attachmentSlots": [
         {
@@ -48529,7 +48534,7 @@
       "description": "Стандартный нагрудный щиток КМП США M3 Pattern. Защищает грудь от баллистических снарядов, ножевых предметов и несчастных случаев. К нему пристегивается небольшой кожаный подсумок для ограниченного хранения.",
       "suffix": "",
       "types": [
-        "gear"
+        "other"
       ],
       "tags": [],
       "componentTypes": [
@@ -48561,10 +48566,11 @@
         "signals": [
           "component:installed-accessory"
         ],
-        "categoryId": "gear",
-        "category": "Снаряжение"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Снаряжение",
+      "category": "Другое",
       "public": false,
       "hiddenByAdministrator": true
     },
@@ -62538,7 +62544,7 @@
       "description": "Коробка фонариков, чтобы скрасить ваш день!",
       "suffix": "Заполненный",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -62622,10 +62628,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "storageStats": {
         "exactPlaces": 8,
@@ -63173,7 +63180,7 @@
       "description": "Коробка ИРП. Питательно, но не вкусно.",
       "suffix": "Заполненный",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -63264,10 +63271,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "storageStats": {
         "exactPlaces": 12,
@@ -64784,7 +64792,7 @@
       "description": "коробка для винтовочных магазинов.",
       "suffix": "Заполненый",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -64884,10 +64892,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "storageStats": {
         "exactPlaces": 10,
@@ -65504,7 +65513,7 @@
       "description": "Коробка сигнальных ракет M94, чтобы скрасить ваш день.",
       "suffix": "Заполненный",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -65599,10 +65608,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "storageStats": {
         "exactPlaces": 10,
@@ -69483,7 +69493,7 @@
       "description": "Нефильтрованный рулон табака и никотина. При курении такой сигареты в рот попадает еще больше смол и копоти.",
       "suffix": "",
       "types": [
-        "equipment"
+        "other"
       ],
       "tags": [
         "Cigarette",
@@ -69553,10 +69563,11 @@
         "signals": [
           "component:wearable-equipment"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Экипировка",
+      "category": "Другое",
       "public": false,
       "hiddenByAdministrator": true
     },
@@ -73164,7 +73175,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -73254,10 +73265,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCPowerCellSmartgun"
@@ -73378,7 +73390,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -73468,10 +73480,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCBoxBullets458"
@@ -73485,7 +73498,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -73575,10 +73588,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCBoxBulletsRifle"
@@ -73592,7 +73606,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -73682,10 +73696,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCBoxBulletsRifleAP"
@@ -73699,7 +73714,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -73789,10 +73804,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCBoxBulletsSMG"
@@ -73806,7 +73822,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -73896,10 +73912,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCBoxBulletsSMGAP"
@@ -73913,7 +73930,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -74003,10 +74020,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCBoxMagazineRevolverM44"
@@ -74020,7 +74038,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -74110,10 +74128,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "CMMagazineRifleM54CE2"
@@ -74127,7 +74146,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -74217,10 +74236,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCBoxMagazinePistolM1984"
@@ -74234,7 +74254,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -74324,10 +74344,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCBoxMagazinePistolM1984AP"
@@ -74341,7 +74362,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -74431,10 +74452,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCBoxMagazinePistolM1984HP"
@@ -74555,7 +74577,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -74645,10 +74667,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCBoxMagazinePistolMK80"
@@ -74662,7 +74685,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -74752,10 +74775,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCBoxMagazineRevolverM44Marksman"
@@ -74769,7 +74793,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -74859,10 +74883,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCBoxMagazineRifleM4SPR"
@@ -74876,7 +74901,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -74966,10 +74991,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCBoxMagazineRifleM4SPRAP"
@@ -74983,7 +75009,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -75073,10 +75099,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCBoxMagazineRifleM54C"
@@ -75090,7 +75117,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -75180,10 +75207,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCBoxMagazineRifleM54CAP"
@@ -75197,7 +75225,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -75287,10 +75315,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCBoxMagazineRifleM54CExt"
@@ -75304,7 +75333,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -75394,10 +75423,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCBoxMagazineSMGM63"
@@ -75411,7 +75441,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -75501,10 +75531,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCBoxMagazineSMGM63AP"
@@ -75518,7 +75549,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -75608,10 +75639,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCMagazineSentry"
@@ -75625,7 +75657,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -75715,10 +75747,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCMagazineSentryFire"
@@ -75732,7 +75765,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -75822,10 +75855,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCMagazineSentryFireBlue"
@@ -75839,7 +75873,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -75929,10 +75963,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCMagazineSentryFireSmoke"
@@ -75946,7 +75981,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -76036,10 +76071,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCMagazineSentryShotgun"
@@ -76053,7 +76089,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -76143,10 +76179,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCBoxMagazinePistolSU6"
@@ -76160,7 +76197,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -76250,10 +76287,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCBoxShellsBuckshot"
@@ -76267,7 +76305,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -76357,10 +76395,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCBoxShellsFlechette"
@@ -76374,7 +76413,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -76464,10 +76503,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCBoxShellsSlugs"
@@ -83149,7 +83189,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -83239,10 +83279,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCTankFlamerBGel"
@@ -83256,7 +83297,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -83346,10 +83387,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCTankFlamer",
@@ -83364,7 +83406,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -83454,10 +83496,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCMagazineM2C"
@@ -83471,7 +83514,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -83561,10 +83604,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCMagazineRifleM4SPRA19Impact"
@@ -83578,7 +83622,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -83668,10 +83712,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCMagazineRifleM4SPRA19Incendiary"
@@ -83685,7 +83730,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -83775,10 +83820,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCMagazineRifleM4SPRA19",
@@ -83794,7 +83840,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -83884,10 +83930,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCMagazineRifleM4SPRA19"
@@ -83901,7 +83948,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -83991,10 +84038,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "CMMagazineSniperM96SFlak"
@@ -84008,7 +84056,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -84098,10 +84146,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "CMMagazineSniperM96SIncendiary"
@@ -84115,7 +84164,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -84205,10 +84254,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "CMMagazineSniperM96S",
@@ -84224,7 +84274,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -84314,10 +84364,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "CMMagazineSniperM96S"
@@ -84331,7 +84382,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -84421,10 +84472,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCMagazineML66D"
@@ -84438,7 +84490,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -84528,10 +84580,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCTankFlamer"
@@ -84545,7 +84598,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -84635,10 +84688,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "CMMagazineRifleM54CE2"
@@ -84652,7 +84706,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -84742,10 +84796,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "CMMagazineRifleM54CE2HT"
@@ -84759,7 +84814,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -84849,10 +84904,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCMagazineSmartGun"
@@ -84866,7 +84922,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -84956,10 +85012,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "RMCMagazineSniperXM43E1AntiMateriel"
@@ -129398,7 +129455,7 @@
       "description": "Автоматический пистолет M10 — компактное, скорострельное вспомогательное оружие, разработанное для обороны в ближнем бою. С магазином на 40 патронов, он делает упор на скорострельность, а не на точность, обеспечивая эффективный подавляющий огонь на коротких дистанциях.",
       "suffix": "Пустой",
       "types": [
-        "weapon"
+        "other"
       ],
       "tags": [
         "RMCWeaponPistolM13",
@@ -129624,10 +129681,11 @@
         "signals": [
           "Gun"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Оружие",
+      "category": "Другое",
       "public": false,
       "attachmentSlots": [
         {
@@ -130211,7 +130269,7 @@
       "description": "Стандартное огнестрельное оружие морской пехоты. Также встречается в руках команд ЧВК Ве-Я. Стреляет 9-мм патронами, разрушающими броню, и может вести огонь очередями по 3 патрона.",
       "suffix": "Пустой",
       "types": [
-        "weapon"
+        "other"
       ],
       "tags": [
         "RMCWeaponPistolM77",
@@ -130431,10 +130489,11 @@
         "signals": [
           "Gun"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Оружие",
+      "category": "Другое",
       "public": false,
       "attachmentSlots": [
         {
@@ -130861,7 +130920,7 @@
       "description": "Сигнальный пистолет, выдаваемый операторам JTAC для использования с сигнальными ракетами. Поставляется с мини-прицелом. Один выстрел, одна... спасенная жизнь?",
       "suffix": "Empty",
       "types": [
-        "weapon"
+        "other"
       ],
       "tags": [
         "RMCFlareGun",
@@ -131037,10 +131096,11 @@
         "signals": [
           "Gun"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Оружие",
+      "category": "Другое",
       "public": false,
       "attachmentSlots": [
         {
@@ -131895,7 +131955,7 @@
       "description": "Крупнокалиберный револьвер, который иногда используется штурмовыми отрядами и офицерами морской пехоты, а также гражданскими правоохранительными органами. Стреляет патронами .44 Magnum.",
       "suffix": "Пустой",
       "types": [
-        "weapon"
+        "other"
       ],
       "tags": [
         "RMCRevolver",
@@ -132124,10 +132184,11 @@
         "signals": [
           "Gun"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Оружие",
+      "category": "Другое",
       "public": false,
       "attachmentSlots": [
         {
@@ -137247,7 +137308,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -137337,10 +137398,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "STMagazineSharpRifleExplosive"
@@ -137354,7 +137416,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -137444,10 +137506,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "STMagazineSharpRifleFlechette"
@@ -137461,7 +137524,7 @@
       "description": "Ящик с боеприпасами.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "other"
       ],
       "tags": [
         "Structure"
@@ -137551,10 +137614,11 @@
         "signals": [
           "container:ammunition-box"
         ],
-        "categoryId": "ammunition",
-        "category": "Боеприпасы и взрывчатка"
+        "categoryId": "other",
+        "category": "Другое",
+        "overriddenByAdministrator": true
       },
-      "category": "Боеприпасы и взрывчатка",
+      "category": "Другое",
       "public": true,
       "containsItemIds": [
         "STMagazineSharpRifleIncendiary"
@@ -143915,7 +143979,6 @@
         "RMCRocket84mmWhitePhosphorus",
         "RMCPacketGrenadeWhitePhosphorusCompoundFilled",
         "VehicleFlamerTankLZRN",
-        "RMCCrateMagazineNapthalUT",
         "RMCBoxMagazinePistolM1984HP",
         "RMCBoxBulletsRifle",
         "RMCPacketGrenadeWhitePhosphorusFilled",
@@ -143925,11 +143988,6 @@
         "RMCMagazineSentry",
         "RMCMagazineSentryShotgun",
         "RMCMagazineSmartGun",
-        "RMCCrateBoxMagazineSentryShotgun",
-        "RMCCrateBoxMagazineSentryFire",
-        "RMCCrateBoxMagazineSentryFireBlue",
-        "RMCCrateBoxMagazineSentryFireSmoke",
-        "RMCCrateBoxMagazineSentry",
         "RMCTankFlamerLarge",
         "RMCTankFlamerLargeX",
         "RMCTankFlamerLargeB",
@@ -143957,45 +144015,26 @@
         "RMCBoxShellsBuckshot",
         "RMCBoxShellsSlugs",
         "RMCBoxShellsFlechette",
-        "RMCBoxMRE",
         "RMCBoxMagazinePistolM77AP",
         "RMCCrateBoxMagazinePistolM77AP",
         "RMCBoxMagazinePistolM13",
         "RMCBoxMagazinePistolM13Ext",
         "RMCBoxMagazineSMGM63",
-        "RMCCrateBoxMagazineSMGM63",
-        "RMCCrateBoxMagazineSMGM63AP",
-        "RMCBoxMagazineRifleM54C",
-        "RMCCrateBoxMagazineRifleM54C",
-        "RMCCrateBoxMagazineRifleM54CAP",
-        "RMCCrateBoxMagazineRifleM54CExt",
         "RMCBoxMagazinePistolM1984",
         "RMCBoxMagazinePistolM1984AP",
-        "RMCCrateBoxMagazinePistolM1984HP",
-        "RMCCrateBoxMagazinePistolM1984",
-        "RMCCrateBoxMagazinePistolM1984AP",
         "RMCBoxMagazineRifleM4SPR",
-        "RMCCrateBoxMagazineRifleM4SPR",
-        "RMCCrateBoxMagazineRifleM4SPRAP",
         "RMCBoxMagazinePistolSU6",
-        "RMCCrateBoxMagazineSmartPistol",
         "RMCBoxMagazinePistolMK80",
-        "RMCCrateBoxMagazinePistolMK80",
         "RMCBoxMagazineSMGM63AP",
         "RMCBoxMagazineRifleM54CAP",
         "RMCBoxMagazineRifleM4SPRAP",
         "RMCBoxMagazineSMGM63Ext",
         "RMCBoxMagazineRifleM54CExt",
         "RMCBoxMagazineRifleM4SPRExt",
-        "RMCCrateBoxMagazineM54CE2",
         "RMCBoxShotgunBuckshot",
         "RMCBoxBullets458",
         "RMCBoxShotgunSlugs",
-        "RMCBoxPackFlare",
-        "RMCBoxFlashlights",
         "RMCBoxMagazineRevolverM44",
-        "RMCCrateBoxMagazineM44Revolver",
-        "RMCCrateBoxMagazineRevolverM44Marksman",
         "RMCBoxMagazineRevolverM44Marksman",
         "RMCBoxShotgunFlechette",
         "CMMagazinePistolM77AP",
@@ -144030,7 +144069,6 @@
         "CMMagazineRifleM54CExt",
         "CMMagazineRifleM4SPRExt",
         "RMCFlareCAS",
-        "RMCCrateMagazineFlamerMixed",
         "RMCSpeedLoaderM44",
         "RMCSpeedLoader44Marksman",
         "RMCSpeedLoaderRsh9",
@@ -144038,46 +144076,19 @@
         "RMCMagazineSentryFire",
         "RMCMagazineSentryFireBlue",
         "RMCMagazineSentryFireSmoke",
-        "RMCCrateMagazineBGel",
         "RMCMagazinePistolM13Ext",
         "RMCMagazineRifleM4SPRA19Impact",
         "CMMagazineSMGM63Ext",
         "CMFlare",
         "CleanerGrenade",
         "RMCHornetShellM74AGMS",
-        "RMCCrateBoxShellsShotgunBuckshot",
-        "RMCCrateBoxShellsShotgunSlugs",
-        "RMCCrateBoxShellsShotgunFlechette",
-        "RMCCrateBoxAmmo458",
-        "RMCCrateMagazineXM43E1Standard",
-        "RMCCrateMagazineSmartGun",
-        "RMCCrateBatterySmartGun",
         "RMCBoxBulletsSMGAP",
         "RMCBoxBulletsSMG",
         "RMCBoxBulletsRifleAP",
-        "RMCCrateBoxBulletsRifle",
-        "RMCCrateBoxBulletsRifleAP",
         "VehicleAmmoBoxGrenadeLauncher",
         "VehicleAmmoBoxSmokeLauncher",
-        "RMCCrateMagazineM2C",
-        "RMCCrateMagazineRifleM54CE2",
-        "RMCCrateMagazineRifleM54CE2HT",
-        "RMCCrateMagazineM4SPRCustomStandard",
-        "RMCCrateMagazineM4SPRCustomIncendiary",
-        "RMCCrateMagazineM4SPRCustomImpact",
-        "RMCCrateMagazineML66DDrum",
-        "RMCCrateMagazineM96SStandard",
-        "RMCCrateMagazineM96SIncendiary",
-        "RMCCrateMagazineM96SFlak",
-        "STCrateMagazineSharpExplosive",
-        "STCrateMagazineSharpIncendiary",
-        "STCrateMagazineSharpFlechette",
         "VehicleAmmoBoxFlareLauncher",
-        "RMCCrateBoxBulletsSMG",
-        "RMCCrateBoxBulletsSMGAP",
         "VehicleAmmoBoxRocketLauncher",
-        "RMCCrateMagazineM4SPRCustomMixed",
-        "RMCCrateMagazineM96SMixed",
         "VehicleAmmoBoxLTAA",
         "VehicleAmmoBoxAceAutocannon",
         "VehicleAmmoBoxLTBCannon",
@@ -144630,6 +144641,7 @@
         "RMCToolboxEmergencyFilled",
         "RMCCrateGearOverwatchCameraTripod",
         "RMCMREInstantPowderGrape",
+        "RMCCrateMagazineNapthalUT",
         "RMCKitPyroMini",
         "RMCKitCM54C",
         "RMCKitRifleM4SPR",
@@ -144643,6 +144655,11 @@
         "RMCBoxDonut",
         "RMCCrateSupplyEvacuation",
         "RMCVendorBundleCrewLeader",
+        "RMCCrateBoxMagazineSentryShotgun",
+        "RMCCrateBoxMagazineSentryFire",
+        "RMCCrateBoxMagazineSentryFireBlue",
+        "RMCCrateBoxMagazineSentryFireSmoke",
+        "RMCCrateBoxMagazineSentry",
         "RMCPamphletLoader",
         "CMPamphletEngineer",
         "CMPamphletSpotter",
@@ -144717,14 +144734,33 @@
         "RMCPacketGrenadeIncendiaryFilled",
         "CMPacketGrenadeHighExplosiveFilled",
         "CMPacketGrenadeFragFilled",
+        "RMCBoxMRE",
         "RMCPacketGrenadeBatonSlugHIRRFilled",
         "RMCBoxLatexGloves",
+        "RMCCrateBoxMagazineSMGM63",
+        "RMCCrateBoxMagazineSMGM63AP",
+        "RMCBoxMagazineRifleM54C",
+        "RMCCrateBoxMagazineRifleM54C",
+        "RMCCrateBoxMagazineRifleM54CAP",
+        "RMCCrateBoxMagazineRifleM54CExt",
+        "RMCCrateBoxMagazinePistolM1984HP",
+        "RMCCrateBoxMagazinePistolM1984",
+        "RMCCrateBoxMagazinePistolM1984AP",
+        "RMCCrateBoxMagazineRifleM4SPR",
+        "RMCCrateBoxMagazineRifleM4SPRAP",
+        "RMCCrateBoxMagazineSmartPistol",
+        "RMCCrateBoxMagazinePistolMK80",
+        "RMCCrateBoxMagazineM54CE2",
         "RMCCrayonBox",
         "RMCBoxBodyBag",
         "RMCBoxClaymoreMineFilled",
         "RMCPacketGrenadeM74AGMSStarShellFilled",
         "CMPacketGrenadeFragOldFilled",
         "RMCBoxLightsMixed",
+        "RMCBoxPackFlare",
+        "RMCBoxFlashlights",
+        "RMCCrateBoxMagazineM44Revolver",
+        "RMCCrateBoxMagazineRevolverM44Marksman",
         "RMCBoxSterileMask",
         "RMCBoxZiptie",
         "RMCBoxPillCanister",
@@ -144757,6 +144793,7 @@
         "CMSandbagEmpty25",
         "CMSandbagEmpty50",
         "RMCCrateSupplyJanitor",
+        "RMCCrateMagazineFlamerMixed",
         "CMElectroMatchbook",
         "CMExecutiveSelectMatchbook",
         "CMMatchBook",
@@ -144769,14 +144806,22 @@
         "RMCGuidebookSOP",
         "CMSheetGlass",
         "RMCTankReagentFuel",
+        "RMCCrateMagazineBGel",
         "RagItem",
         "RMCVendorBundleXOFormal",
         "CMSheetPhoron30",
         "CMSurgicalCaseFilled",
+        "RMCCrateBoxShellsShotgunBuckshot",
+        "RMCCrateBoxShellsShotgunSlugs",
+        "RMCCrateBoxShellsShotgunFlechette",
+        "RMCCrateBoxAmmo458",
+        "RMCCrateMagazineXM43E1Standard",
         "RMCCrateMedicalFirstAid",
         "RMCCratePyroTankTypeX",
         "RMCCratePyroTankTypeB",
+        "RMCCrateMagazineSmartGun",
         "RMCCrateHighCapacityPowerCell",
+        "RMCCrateBatterySmartGun",
         "RMCCrateClothingLargePouches",
         "RMCCrateRestrictedEquipmentArmorB12",
         "RMCCrateRestrictedEquipmentArmorM4",
@@ -144785,6 +144830,8 @@
         "RMCCrateM54CMK1",
         "RMCCrateM54CE2",
         "RMCCrateXM88",
+        "RMCCrateBoxBulletsRifle",
+        "RMCCrateBoxBulletsRifleAP",
         "RMCCrateAttachmentSuppressor",
         "RMCBoxHEDP",
         "RMCBoxHEFA",
@@ -144805,6 +144852,19 @@
         "RMCCrateFoodMRE",
         "RMCCrateSupplyInternals",
         "RMCCrateAttachmentCompensator",
+        "RMCCrateMagazineM2C",
+        "RMCCrateMagazineRifleM54CE2",
+        "RMCCrateMagazineRifleM54CE2HT",
+        "RMCCrateMagazineM4SPRCustomStandard",
+        "RMCCrateMagazineM4SPRCustomIncendiary",
+        "RMCCrateMagazineM4SPRCustomImpact",
+        "RMCCrateMagazineML66DDrum",
+        "RMCCrateMagazineM96SStandard",
+        "RMCCrateMagazineM96SIncendiary",
+        "RMCCrateMagazineM96SFlak",
+        "STCrateMagazineSharpExplosive",
+        "STCrateMagazineSharpIncendiary",
+        "STCrateMagazineSharpFlechette",
         "RMCCrateAttachmentMagneticHarness",
         "RMCCrateAttachmentMiniScope",
         "RMCCrateClothingMedicalPouches",
@@ -144829,6 +144889,8 @@
         "RMCCrateGrenadesAirburstFrag",
         "RMCCrateClothingDropPouch",
         "RMCCrateGearParachute",
+        "RMCCrateBoxBulletsSMG",
+        "RMCCrateBoxBulletsSMGAP",
         "RMCCrateAttachmentForegrip",
         "RMCCrateSU6",
         "RMCCrateMK80",
@@ -144885,6 +144947,8 @@
         "RMCCrateReplacementLights",
         "RMCCratePyroTankMixed",
         "RMCCrateGearBinoculars",
+        "RMCCrateMagazineM4SPRCustomMixed",
+        "RMCCrateMagazineM96SMixed",
         "RMCCrateM5DemoSpecMixed",
         "RMCCrateAttachmentBipod",
         "RMCCrateAttachmentGyro",
@@ -145971,13 +146035,131 @@
       "CMVendorHeadsetSquadLeader",
       "CMWeaponPistolM1984Empty",
       "RMCArmorM3MediumVariants",
+      "RMCBoxFlashlights",
+      "RMCBoxMRE",
+      "RMCBoxMagazineRifleM54C",
+      "RMCBoxPackFlare",
       "RMCCigarette",
+      "RMCCrateBatterySmartGun",
+      "RMCCrateBoxAmmo458",
+      "RMCCrateBoxBulletsRifle",
+      "RMCCrateBoxBulletsRifleAP",
+      "RMCCrateBoxBulletsSMG",
+      "RMCCrateBoxBulletsSMGAP",
+      "RMCCrateBoxMagazineM44Revolver",
+      "RMCCrateBoxMagazineM54CE2",
+      "RMCCrateBoxMagazinePistolM1984",
+      "RMCCrateBoxMagazinePistolM1984AP",
+      "RMCCrateBoxMagazinePistolM1984HP",
+      "RMCCrateBoxMagazinePistolMK80",
+      "RMCCrateBoxMagazineRevolverM44Marksman",
+      "RMCCrateBoxMagazineRifleM4SPR",
+      "RMCCrateBoxMagazineRifleM4SPRAP",
+      "RMCCrateBoxMagazineRifleM54C",
+      "RMCCrateBoxMagazineRifleM54CAP",
+      "RMCCrateBoxMagazineRifleM54CExt",
+      "RMCCrateBoxMagazineSMGM63",
+      "RMCCrateBoxMagazineSMGM63AP",
+      "RMCCrateBoxMagazineSentry",
+      "RMCCrateBoxMagazineSentryFire",
+      "RMCCrateBoxMagazineSentryFireBlue",
+      "RMCCrateBoxMagazineSentryFireSmoke",
+      "RMCCrateBoxMagazineSentryShotgun",
+      "RMCCrateBoxMagazineSmartPistol",
+      "RMCCrateBoxShellsShotgunBuckshot",
+      "RMCCrateBoxShellsShotgunFlechette",
+      "RMCCrateBoxShellsShotgunSlugs",
+      "RMCCrateMagazineBGel",
+      "RMCCrateMagazineFlamerMixed",
+      "RMCCrateMagazineM2C",
+      "RMCCrateMagazineM4SPRCustomImpact",
+      "RMCCrateMagazineM4SPRCustomIncendiary",
+      "RMCCrateMagazineM4SPRCustomMixed",
+      "RMCCrateMagazineM4SPRCustomStandard",
+      "RMCCrateMagazineM96SFlak",
+      "RMCCrateMagazineM96SIncendiary",
+      "RMCCrateMagazineM96SMixed",
+      "RMCCrateMagazineM96SStandard",
+      "RMCCrateMagazineML66DDrum",
+      "RMCCrateMagazineNapthalUT",
+      "RMCCrateMagazineRifleM54CE2",
+      "RMCCrateMagazineRifleM54CE2HT",
+      "RMCCrateMagazineSmartGun",
+      "RMCCrateMagazineXM43E1Standard",
       "RMCWeaponPistolM13Empty",
       "RMCWeaponPistolM77Empty",
       "RMCWeaponPistolM82FEmpty",
-      "RMCWeaponRevolverM44Empty"
+      "RMCWeaponRevolverM44Empty",
+      "STCrateMagazineSharpExplosive",
+      "STCrateMagazineSharpFlechette",
+      "STCrateMagazineSharpIncendiary"
     ],
-    "categoryItemIds": [],
+    "categoryItemIds": [
+      "CMVendorHeadsetSquadComTech",
+      "CMVendorHeadsetSquadCorpsman",
+      "CMVendorHeadsetSquadFTL",
+      "CMVendorHeadsetSquadLeader",
+      "CMWeaponPistolM1984Empty",
+      "RMCArmorM3MediumVariants",
+      "RMCBoxFlashlights",
+      "RMCBoxMRE",
+      "RMCBoxMagazineRifleM54C",
+      "RMCBoxPackFlare",
+      "RMCCigarette",
+      "RMCCrateBatterySmartGun",
+      "RMCCrateBoxAmmo458",
+      "RMCCrateBoxBulletsRifle",
+      "RMCCrateBoxBulletsRifleAP",
+      "RMCCrateBoxBulletsSMG",
+      "RMCCrateBoxBulletsSMGAP",
+      "RMCCrateBoxMagazineM44Revolver",
+      "RMCCrateBoxMagazineM54CE2",
+      "RMCCrateBoxMagazinePistolM1984",
+      "RMCCrateBoxMagazinePistolM1984AP",
+      "RMCCrateBoxMagazinePistolM1984HP",
+      "RMCCrateBoxMagazinePistolMK80",
+      "RMCCrateBoxMagazineRevolverM44Marksman",
+      "RMCCrateBoxMagazineRifleM4SPR",
+      "RMCCrateBoxMagazineRifleM4SPRAP",
+      "RMCCrateBoxMagazineRifleM54C",
+      "RMCCrateBoxMagazineRifleM54CAP",
+      "RMCCrateBoxMagazineRifleM54CExt",
+      "RMCCrateBoxMagazineSMGM63",
+      "RMCCrateBoxMagazineSMGM63AP",
+      "RMCCrateBoxMagazineSentry",
+      "RMCCrateBoxMagazineSentryFire",
+      "RMCCrateBoxMagazineSentryFireBlue",
+      "RMCCrateBoxMagazineSentryFireSmoke",
+      "RMCCrateBoxMagazineSentryShotgun",
+      "RMCCrateBoxMagazineSmartPistol",
+      "RMCCrateBoxShellsShotgunBuckshot",
+      "RMCCrateBoxShellsShotgunFlechette",
+      "RMCCrateBoxShellsShotgunSlugs",
+      "RMCCrateMagazineBGel",
+      "RMCCrateMagazineFlamerMixed",
+      "RMCCrateMagazineM2C",
+      "RMCCrateMagazineM4SPRCustomImpact",
+      "RMCCrateMagazineM4SPRCustomIncendiary",
+      "RMCCrateMagazineM4SPRCustomMixed",
+      "RMCCrateMagazineM4SPRCustomStandard",
+      "RMCCrateMagazineM96SFlak",
+      "RMCCrateMagazineM96SIncendiary",
+      "RMCCrateMagazineM96SMixed",
+      "RMCCrateMagazineM96SStandard",
+      "RMCCrateMagazineML66DDrum",
+      "RMCCrateMagazineNapthalUT",
+      "RMCCrateMagazineRifleM54CE2",
+      "RMCCrateMagazineRifleM54CE2HT",
+      "RMCCrateMagazineSmartGun",
+      "RMCCrateMagazineXM43E1Standard",
+      "RMCWeaponPistolM13Empty",
+      "RMCWeaponPistolM77Empty",
+      "RMCWeaponPistolM82FEmpty",
+      "RMCWeaponRevolverM44Empty",
+      "STCrateMagazineSharpExplosive",
+      "STCrateMagazineSharpFlechette",
+      "STCrateMagazineSharpIncendiary"
+    ],
     "hiddenItemIds": [
       "CMVendorHeadsetSquad",
       "CMVendorHeadsetSquadComTech",
