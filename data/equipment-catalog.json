@@ -36777,7 +36777,6 @@
       "category": "Другое",
       "public": true,
       "containsItemIds": [
-        "CMVendorHeadsetSquad",
         "CMHandsBlackMarine",
         "RMCJumpsuitMarinePatch",
         "CMBootsBlackFilled",
@@ -36946,7 +36945,6 @@
       "category": "Другое",
       "public": true,
       "containsItemIds": [
-        "CMVendorHeadsetSquad",
         "CMHandsBlackMarine",
         "RMCJumpsuitMarinePatch",
         "CMBootsBlackFilled"
@@ -36979,7 +36977,8 @@
         "category": "Экипировка"
       },
       "category": "Экипировка",
-      "public": true
+      "public": false,
+      "hiddenByAdministrator": true
     },
     "CMVendorHeadsetSquadComTech": {
       "id": "CMVendorHeadsetSquadComTech",
@@ -143058,7 +143057,6 @@
       "CMHeadCapSurgWhite",
       "RMCPacketGrenadeWhitePhosphorusFilled",
       "RMCBoxDonut",
-      "CMVendorHeadsetSquad",
       "CMVendorHeadsetSquadComTech",
       "CMVendorHeadsetSquadCorpsman",
       "CMVendorHeadsetSquadFTL",
@@ -144366,7 +144364,6 @@
         "RMCPonchoUrban",
         "RMCScrubsWhite",
         "CMHeadCapSurgWhite",
-        "CMVendorHeadsetSquad",
         "CMVendorHeadsetSquadComTech",
         "CMVendorHeadsetSquadCorpsman",
         "CMVendorHeadsetSquadFTL",
@@ -146097,12 +146094,26 @@
     ],
     "unwrappedCaseIds": [],
     "unwrappedTransportIds": [],
-    "aliases": {}
+    "aliases": {},
+    "hiddenItemIds": [
+      "CMVendorHeadsetSquad"
+    ]
   },
   "counts": {
     "catalogItems": 1120,
-    "publicItems": 1029,
-    "excludedItems": 0
+    "publicItems": 1028,
+    "excludedItems": 0,
+    "hiddenItems": 1
+  },
+  "overrides": {
+    "schemaVersion": 1,
+    "appliedItemIds": [
+      "CMVendorHeadsetSquad"
+    ],
+    "categoryItemIds": [],
+    "hiddenItemIds": [
+      "CMVendorHeadsetSquad"
+    ]
   },
   "review": {
     "policy": "universal-functional-v3",
