@@ -25,19 +25,15 @@ vendors:
   - id: ColMarTechCargoUniform
   - id: ColMarTechSeniorOfficerEquipment
 
-# Pick up newly added marine vendors automatically. Explicit ids above remain
-# useful as required sources: the validator will fail if one of them disappears.
-vendorDiscoveryPrefixes:
-  - ColMarTech
-
 # Cargo consoles expose RequisitionsComputer categories. Their orderable crates
-# seed the graph, but the shipping crates themselves never enter publicCatalog.
+# and every item reachable from them seed the graph. Crates, boxes and cases are
+# public catalog items too; the admin override layer decides what to hide later.
 cargoCatalogs:
   - id: CMASRSConsole
 
 # Everything reachable from the configured/discovered sources is published.
-# Manual cleanup belongs to the admin override layer; the automatic builder
-# only classifies items and unwraps transport-only packaging.
+# Manual cleanup belongs to the admin override layer. No vendor is discovered
+# by name prefix: only the ids listed above are allowed sources.
 classification:
   excludePrototypeIds: []
   categoryOverrides: {}

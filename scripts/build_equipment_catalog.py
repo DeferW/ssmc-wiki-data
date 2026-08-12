@@ -132,6 +132,7 @@ PUBLIC_PROPERTY_COMPONENTS = {
     "BallisticAmmoProvider",
     "CartridgeAmmo",
     "CMArmorPiercing",
+    "CMItemSlots",
     "Gun",
     "GunDamageModifier",
     "MagazineAmmoProvider",
@@ -164,6 +165,7 @@ PUBLIC_PROPERTY_COMPONENTS = {
     "ExplosionResistance",
     "FixedItemSizeStorage",
     "IgnoreContentsSize",
+    "Item",
     "LimitedStorage",
     "SolutionContainerManager",
     "Storage",
@@ -351,6 +353,45 @@ def read_entity_prototypes(game_source: Path) -> dict[str, EntityPrototype]:
 
     if not result:
         raise RuntimeError("No entity prototypes found")
+    return result
+
+
+def parse_box2i(value: Any) -> tuple[int, int, int, int] | None:
+    if isinstance(value, str):
+        parts = [part.strip() for part in value.split(",")]
+    elif isinstance(value, (list, tuple)):
+        parts = list(value)
+    else:
+        return None
+    if len(parts) != 4:
+        return None
+    try:
+        return tuple(int(part) for part in parts)  # type: ignore[return-value]
+    except (TypeError, ValueError):
+        return None
+
+
+def read_item_size_definitions(game_source: Path) -> dict[str, dict[str, Any]]:
+    """Read the same item-size prototypes used by SharedItemSystem."""
+    result: dict[str, dict[str, Any]] = {}
+    prototype_root = game_source / "Resources/Prototypes"
+    for path in sorted(prototype_root.rglob("item_size.yml")):
+        for raw in iter_prototype_documents(path):
+            if raw.get("type") != "itemSize" or not isinstance(raw.get("id"), str):
+                continue
+            boxes = [
+                box
+                for value in raw.get("defaultShape", [])
+                if (box := parse_box2i(value)) is not None
+            ]
+            if not boxes:
+                continue
+            result[raw["id"]] = {
+                "weight": raw.get("weight", 1),
+                "boxes": boxes,
+            }
+    if not result:
+        raise RuntimeError("No item-size prototypes were found")
     return result
 
 
@@ -551,12 +592,10 @@ def read_config(path: Path) -> dict[str, Any]:
         raise RuntimeError("Every configured source must have a string id")
     if len(set(ids)) != len(ids):
         raise RuntimeError("Duplicate source id in equipment config")
-    discovery_prefixes = data.get("vendorDiscoveryPrefixes", [])
-    if not isinstance(discovery_prefixes, list) or any(
-        not isinstance(prefix, str) or not prefix
-        for prefix in discovery_prefixes
-    ):
-        raise RuntimeError("vendorDiscoveryPrefixes must be a list of strings")
+    if "vendorDiscoveryPrefixes" in data:
+        raise RuntimeError(
+            "Automatic vendor discovery is disabled; list every source under vendors"
+        )
     policy = data.get("classification", {})
     if not isinstance(policy, dict):
         raise RuntimeError("Equipment classification policy must be a mapping")
@@ -1212,9 +1251,18 @@ def apply_closed_container_preview(layers: list[dict[str, Any]]) -> None:
     """Mirror the closed item icon used by vendors, not the opened UI state."""
     for layer in layers:
         maps = {name.casefold() for name in layer_map_names(layer)}
-        if any("openlayer" in name or "emptylayer" in name for name in maps):
+        if any(
+            name in {"open", "empty"}
+            or "openlayer" in name
+            or "emptylayer" in name
+            for name in maps
+        ):
             layer["visible"] = False
-        if any("closedlayer" in name for name in maps):
+        if any(
+            name in {"closed", "full", "lid"}
+            or "closedlayer" in name
+            for name in maps
+        ):
             layer["visible"] = True
 
 
@@ -1612,6 +1660,57 @@ def classification_result(
     return result
 
 
+def is_packaging_container(item: dict[str, Any]) -> bool:
+    """Return true for an actual box/crate/case, not every storage item."""
+    item_id = str(item.get("id", "")).casefold()
+    name = str(item.get("name", "")).casefold()
+    component_types = set(item.get("componentTypes", []))
+    has_container_mechanics = bool(
+        component_types.intersection(
+            {"Storage", "StorageFill", "CMItemSlots", "ContainerFill"}
+        )
+    )
+    if not has_container_mechanics:
+        return False
+    return any(
+        marker in item_id or marker in name
+        for marker in ("box", "crate", "case", "короб", "ящик", "кейс")
+    )
+
+
+def is_ammunition_or_magazine_box(item: dict[str, Any]) -> bool:
+    """Keep ammunition and magazine shipping boxes in the ammunition section."""
+    item_id = str(item.get("id", "")).casefold()
+    name = str(item.get("name", "")).casefold()
+    source_file = str(item.get("sourceFile", "")).casefold()
+    tags = {str(tag).casefold() for tag in item.get("tags", [])}
+    signal = f"{item_id} {name} {source_file}"
+    if "rmcammobox" in tags:
+        return True
+    return any(
+        marker in signal
+        for marker in (
+            "boxmagazine",
+            "boxbullets",
+            "boxshells",
+            "boxshotgun",
+            "crateammo",
+            "cratemagazine",
+            "crateboxmagazine",
+            "ammunition box",
+            "ammo box",
+            "magazine box",
+            "коробка магазинов",
+            "коробка патрон",
+            "коробка дроб",
+            "ящик боеприпасов",
+            "ящик магазинов",
+            "/crates/magazine_boxes",
+            "/crates/ammo",
+        )
+    )
+
+
 def classify_item(
     item: dict[str, Any],
     policy: dict[str, Any],
@@ -1673,6 +1772,22 @@ def classify_item(
         or "grenade" in folded_tags
         or "handgrenade" in folded_tags
     )
+
+    # Boxes, crates and cases are published as their own products. Their
+    # contents are classified independently; packaging itself defaults to
+    # "Другое" unless it is explicitly an ammunition/magazine container.
+    if is_packaging_container(item):
+        if is_ammunition_or_magazine_box(item):
+            return public(
+                "ammunition",
+                "ammunition or magazine box",
+                "container:ammunition-box",
+            )
+        return public(
+            "other",
+            "box, crate or case published as a separate catalog item",
+            "container:packaging",
+        )
 
     # Underbarrel launchers and shotguns still belong to attachments even when
     # they also contain a Gun component.
@@ -2083,6 +2198,8 @@ def state_alias_groups(
             load_state_container = (
                 "container" in item.get("types", [])
                 and "container" in ancestor.get("types", [])
+                and not is_packaging_container(item)
+                and not is_packaging_container(ancestor)
                 and (is_state_variant(item) or is_state_variant(ancestor))
             )
             stack_variant = (
@@ -2106,6 +2223,9 @@ def state_alias_groups(
         source_item = items[source]
         target_item = items[target]
         if (
+            not is_packaging_container(source_item)
+            and not is_packaging_container(target_item)
+            and
             normalized_identity_text(source_item.get("name"))
             == normalized_identity_text(target_item.get("name"))
         ):
@@ -2119,6 +2239,8 @@ def state_alias_groups(
         by_text: dict[tuple[str, str], list[str]] = defaultdict(list)
         for item_id in siblings:
             item = items[item_id]
+            if is_packaging_container(item):
+                continue
             by_text[
                 (
                     normalized_identity_text(item.get("name")),
@@ -2217,22 +2339,9 @@ def build_public_catalog(
     classification_policy: dict[str, Any],
 ) -> dict[str, Any]:
     physical_contents: dict[str, list[str]] = defaultdict(list)
-    generated_wrapper_ids: set[str] = set()
     for relation in relations:
         if relation.get("type") in PHYSICAL_CONTENT_RELATION_TYPES:
             physical_contents[relation["from"]].append(relation["to"])
-        if relation.get("type") == "mountedWeapon":
-            generated_wrapper_ids.add(relation["from"])
-        if relation.get("type") == "bundleItem":
-            generated_wrapper_ids.add(relation["from"])
-        if relation.get("type") == "mappedVariant":
-            generated_wrapper_ids.add(relation["from"])
-        if (
-            relation.get("type") == "variant"
-            and "RMCArmorVariant"
-            in items.get(str(relation.get("from", "")), {}).get("componentTypes", [])
-        ):
-            generated_wrapper_ids.add(relation["from"])
 
     public_candidates: set[str] = set()
     seed_ids: list[str] = []
@@ -2246,42 +2355,22 @@ def build_public_catalog(
             seed_ids.append(stock_id)
     queue = deque(seed_ids)
     visited: set[str] = set()
-    unwrapped_transport_ids: set[str] = set()
     while queue:
         item_id = queue.popleft()
         if item_id in visited:
             continue
         visited.add(item_id)
         item = items[item_id]
-        hidden = is_hidden_transport(
-            item_id,
-            item,
-            transport_container_ids,
-            generated_wrapper_ids,
-        )
-        if hidden:
-            unwrapped_transport_ids.add(item_id)
-        else:
-            public_candidates.add(item_id)
-        # Every physical container is recursive. Useful bags/pouches remain
-        # public while their actual contents receive their own cards.
+        public_candidates.add(item_id)
+        # Every configured product and every reachable content item is public.
+        # Boxes/crates are no longer silently replaced with their contents.
         queue.extend(physical_contents.get(item_id, []))
 
-    aliases, alias_groups = state_alias_groups(
-        public_candidates,
-        items,
-        relations,
-    )
-    configured_aliases = classification_policy.get("canonicalPrototypeIds", {})
-    for alias_id, canonical_id in sorted(configured_aliases.items()):
-        if alias_id not in public_candidates:
-            continue
-        if canonical_id not in public_candidates:
-            raise RuntimeError(
-                f"Configured canonical item {canonical_id} is not a public candidate "
-                f"for alias {alias_id}"
-            )
-        aliases[alias_id] = canonical_id
+    # Admin review needs every reachable prototype as its own card. Automatic
+    # canonical aliases used to hide filled/empty and wrapper variants before a
+    # human could inspect them, which contradicts the all-items source policy.
+    aliases = {item_id: item_id for item_id in public_candidates}
+    alias_groups: dict[str, list[str]] = {}
     public_ids = {aliases[item_id] for item_id in public_candidates}
     for canonical_id, members in alias_groups.items():
         if len(members) > 1:
@@ -2342,10 +2431,8 @@ def build_public_catalog(
         },
         "excludedItemIds": excluded_ids,
         "candidateItemIds": sorted(public_ids, key=sort_key),
-        "unwrappedCaseIds": sorted(
-            item_id for item_id in unwrapped_transport_ids if is_case_item(items[item_id])
-        ),
-        "unwrappedTransportIds": sorted(unwrapped_transport_ids),
+        "unwrappedCaseIds": [],
+        "unwrappedTransportIds": [],
         "aliases": {
             item_id: canonical_id
             for item_id, canonical_id in sorted(aliases.items())
@@ -2370,7 +2457,10 @@ def render_public_sprites(
         item = items[item_id]
         summary = item.get("sprite")
         if not isinstance(summary, dict):
-            failures.append(f"{item_id}: no Sprite component")
+            # Some configured vendor entries are selection wrappers rather than
+            # drawable entities. They remain public, with the site's normal
+            # missing-sprite placeholder, so "publish everything" stays true.
+            item.pop("image", None)
             continue
         filename = f"{item_id}.png"
         expected.add(filename)
@@ -2465,6 +2555,8 @@ def build_card(
         "componentTypes": sorted(components),
         "equipmentSlots": sorted(equipment_slots(components)),
         "properties": properties,
+        "itemSize": str(components.get("Item", {}).get("size", "Small")),
+        "itemShape": copy.deepcopy(components.get("Item", {}).get("shape")),
         "availability": availability,
         "directlyVended": bool(availability),
         "reachableFromVendors": sorted(reachable_vendors),
@@ -2628,10 +2720,10 @@ def populate_content_summaries(
     public_item_ids: set[str],
     aliases: dict[str, str],
 ) -> None:
-    """Expose only the forward 'contains' view; never an incoming provenance view."""
+    """Expose actual packed contents, not slots, armor variants or mounted parts."""
     contents: dict[str, set[str]] = defaultdict(set)
     for relation in relations:
-        if relation.get("type") not in PHYSICAL_CONTENT_RELATION_TYPES:
+        if relation.get("type") not in {"contains", "bundleItem"}:
             continue
         source = aliases.get(str(relation.get("from", "")), str(relation.get("from", "")))
         target = aliases.get(str(relation.get("to", "")), str(relation.get("to", "")))
@@ -2642,6 +2734,234 @@ def populate_content_summaries(
             target_ids,
             key=lambda item_id: (items[item_id]["name"].casefold(), item_id),
         )
+
+
+def box_cells(boxes: Iterable[tuple[int, int, int, int]]) -> set[tuple[int, int]]:
+    cells: set[tuple[int, int]] = set()
+    for left, bottom, right, top in boxes:
+        for y in range(bottom, top + 1):
+            for x in range(left, right + 1):
+                cells.add((x, y))
+    return cells
+
+
+def shape_cells(boxes: Iterable[tuple[int, int, int, int]]) -> set[tuple[int, int]]:
+    cells = box_cells(boxes)
+    if not cells:
+        return set()
+    min_x = min(x for x, _ in cells)
+    min_y = min(y for _, y in cells)
+    return {(x - min_x, y - min_y) for x, y in cells}
+
+
+def packing_capacity(
+    grid_boxes: Iterable[tuple[int, int, int, int]],
+    item_boxes: Iterable[tuple[int, int, int, int]],
+) -> int:
+    """Repeat RMC's non-rotating, first-available grid insertion for one size."""
+    valid = box_cells(grid_boxes)
+    shape = shape_cells(item_boxes)
+    if not valid or not shape:
+        return 0
+    min_x = min(x for x, _ in valid)
+    max_x = max(x for x, _ in valid)
+    min_y = min(y for _, y in valid)
+    max_y = max(y for _, y in valid)
+    occupied: set[tuple[int, int]] = set()
+    count = 0
+    while True:
+        placed: set[tuple[int, int]] | None = None
+        for y in range(min_y, max_y + 1):
+            for x in range(min_x, max_x + 1):
+                candidate = {(x + offset_x, y + offset_y) for offset_x, offset_y in shape}
+                if candidate.issubset(valid) and not candidate.intersection(occupied):
+                    placed = candidate
+                    break
+            if placed is not None:
+                break
+        if placed is None:
+            return count
+        occupied.update(placed)
+        count += 1
+
+
+def storage_whitelist_matches(rule: Any, item: dict[str, Any]) -> bool:
+    if not isinstance(rule, dict):
+        return True
+    component_types = set(item.get("componentTypes", []))
+    tags = set(item.get("tags", []))
+    size = str(item.get("itemSize", "Small"))
+    require_all = bool(rule.get("requireAll", False))
+    checks: list[bool] = []
+    components = rule.get("components")
+    if isinstance(components, list) and components:
+        component_checks = [str(component) in component_types for component in components]
+        checks.extend(component_checks if require_all else [any(component_checks)])
+    sizes = rule.get("sizes")
+    if isinstance(sizes, list) and sizes:
+        checks.append(size in {str(value) for value in sizes})
+    allowed_tags = rule.get("tags")
+    if isinstance(allowed_tags, list) and allowed_tags:
+        tag_checks = [str(tag) in tags for tag in allowed_tags]
+        checks.extend(tag_checks if require_all else [any(tag_checks)])
+    if not checks:
+        return require_all
+    return all(checks) if require_all else any(checks)
+
+
+def default_storage_max_size(
+    container_size: str,
+    item_sizes: dict[str, dict[str, Any]],
+) -> str:
+    ordered = sorted(
+        item_sizes,
+        key=lambda size_id: (item_sizes[size_id].get("weight", 1), size_id),
+    )
+    if container_size not in ordered:
+        return "Normal" if "Normal" in item_sizes else ordered[-1]
+    index = ordered.index(container_size)
+    return ordered[max(0, index - 1)]
+
+
+def parse_vector2i(value: Any, default: tuple[int, int]) -> tuple[int, int]:
+    if isinstance(value, str):
+        parts = [part.strip() for part in value.split(",")]
+    elif isinstance(value, (list, tuple)):
+        parts = list(value)
+    else:
+        return default
+    if len(parts) != 2:
+        return default
+    try:
+        return int(parts[0]), int(parts[1])
+    except (TypeError, ValueError):
+        return default
+
+
+def populate_storage_statistics(
+    items: dict[str, Any],
+    public_item_ids: set[str],
+    item_sizes: dict[str, dict[str, Any]],
+) -> None:
+    """Normalize grid storage into actual item counts instead of raw cell area."""
+    ordered_sizes = sorted(
+        item_sizes,
+        key=lambda size_id: (item_sizes[size_id].get("weight", 1), size_id),
+    )
+    for item_id in sorted(public_item_ids):
+        item = items[item_id]
+        properties = item.get("properties", {})
+        storage = properties.get("Storage")
+        cm_slots = properties.get("CMItemSlots")
+        stats: dict[str, Any] = {}
+
+        if isinstance(cm_slots, dict):
+            count = cm_slots.get("count", 1)
+            if isinstance(count, int) and count > 0:
+                stats["exactPlaces"] = count
+            starting_item = cm_slots.get("startingItem")
+            if isinstance(starting_item, str):
+                stats["acceptedItemIds"] = [starting_item]
+
+        if isinstance(storage, dict):
+            grid_boxes = [
+                box
+                for value in storage.get("grid", [])
+                if (box := parse_box2i(value)) is not None
+            ]
+            if grid_boxes:
+                stats["gridCells"] = len(box_cells(grid_boxes))
+                max_size = storage.get("maxItemSize")
+                if not isinstance(max_size, str):
+                    max_size = default_storage_max_size(
+                        str(item.get("itemSize", "Small")), item_sizes
+                    )
+                stats["maxItemSize"] = max_size
+
+                fixed = properties.get("FixedItemSizeStorage")
+                fixed_dimensions: tuple[int, int] | None = None
+                if isinstance(fixed, dict):
+                    fixed_dimensions = parse_vector2i(fixed.get("size"), (2, 2))
+                    width, height = fixed_dimensions
+                    fixed_boxes = [(0, 0, max(width - 1, 0), max(height - 1, 0))]
+                    stats["fixedItemDimensions"] = [width, height]
+                    stats["exactPlaces"] = packing_capacity(grid_boxes, fixed_boxes)
+
+                whitelist = storage.get("whitelist")
+                blacklist = storage.get("blacklist")
+                ignore = properties.get("IgnoreContentsSize")
+                ignore_items = ignore.get("items") if isinstance(ignore, dict) else None
+                allowed_sizes: set[str] = set()
+                accepted_item_ids: list[str] = []
+                for candidate_id, candidate in items.items():
+                    if candidate_id == item_id:
+                        continue
+                    if whitelist is not None and not storage_whitelist_matches(whitelist, candidate):
+                        continue
+                    if blacklist is not None and storage_whitelist_matches(blacklist, candidate):
+                        continue
+                    candidate_size = str(candidate.get("itemSize", "Small"))
+                    max_weight = item_sizes.get(max_size, {}).get("weight", 1)
+                    candidate_weight = item_sizes.get(candidate_size, {}).get("weight", 1)
+                    bypasses_size = isinstance(ignore_items, dict) and storage_whitelist_matches(
+                        ignore_items, candidate
+                    )
+                    if candidate_weight > max_weight and not bypasses_size:
+                        continue
+                    allowed_sizes.add(candidate_size)
+                    if len(accepted_item_ids) < 80:
+                        accepted_item_ids.append(candidate_id)
+
+                if whitelist is None:
+                    max_weight = item_sizes.get(max_size, {}).get("weight", 1)
+                    allowed_sizes = {
+                        size_id
+                        for size_id in ordered_sizes
+                        if item_sizes[size_id].get("weight", 1) <= max_weight
+                    }
+                capacities = []
+                for size_id in ordered_sizes:
+                    if size_id not in allowed_sizes:
+                        continue
+                    if fixed_dimensions is not None:
+                        count = stats.get("exactPlaces", 0)
+                    else:
+                        count = packing_capacity(
+                            grid_boxes,
+                            item_sizes[size_id].get("boxes", []),
+                        )
+                    if isinstance(count, int) and count > 0:
+                        capacities.append({"size": size_id, "count": count})
+                if capacities:
+                    stats["capacities"] = capacities
+                if accepted_item_ids:
+                    stats["acceptedItemIds"] = sorted(accepted_item_ids)
+                if isinstance(whitelist, dict):
+                    stats["whitelist"] = copy.deepcopy(whitelist)
+                if isinstance(blacklist, dict):
+                    stats["blacklist"] = copy.deepcopy(blacklist)
+                if isinstance(ignore_items, dict):
+                    stats["sizeExceptions"] = copy.deepcopy(ignore_items)
+
+        limited = properties.get("LimitedStorage")
+        if isinstance(limited, dict) and isinstance(limited.get("limits"), list):
+            special_limits: list[dict[str, Any]] = []
+            for limit in limited["limits"]:
+                if not isinstance(limit, dict):
+                    continue
+                count = limit.get("count", 1)
+                whitelist = limit.get("whitelist")
+                blacklist = limit.get("blacklist")
+                global_limit = whitelist is None and not blacklist
+                if global_limit and isinstance(count, int) and count > 0:
+                    current = stats.get("exactPlaces")
+                    stats["exactPlaces"] = min(current, count) if isinstance(current, int) else count
+                else:
+                    special_limits.append(copy.deepcopy(limit))
+            if special_limits:
+                stats["limits"] = special_limits
+        if stats:
+            item["storageStats"] = stats
 
 
 def populate_armor_statistics(
@@ -3029,22 +3349,13 @@ def build_catalog(
     config: dict[str, Any],
     localizer: Localizer,
     game_commit: str,
+    item_sizes: dict[str, dict[str, Any]],
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     resolver = PrototypeResolver(prototypes)
     required_vendor_ids = [entry["id"] for entry in config["vendors"]]
-    discovery_prefixes = tuple(config.get("vendorDiscoveryPrefixes", []))
-    discovered_vendor_ids = sorted(
-        prototype_id
-        for prototype_id in prototypes
-        if discovery_prefixes
-        and prototype_id.startswith(discovery_prefixes)
-        and not prototypes[prototype_id].abstract
-        and isinstance(
-            resolver.resolve(prototype_id)["components"].get("CMAutomatedVendor"),
-            dict,
-        )
-    )
-    vendor_ids = list(dict.fromkeys([*required_vendor_ids, *discovered_vendor_ids]))
+    # Source scope is deliberately explicit. A newly added ColMarTech prototype
+    # must be reviewed and added to config before it can affect the catalog.
+    vendor_ids = list(dict.fromkeys(required_vendor_ids))
     cargo_catalog_ids = [entry["id"] for entry in config.get("cargoCatalogs", [])]
     source_ids = [*vendor_ids, *cargo_catalog_ids]
     vendors: dict[str, Any] = {}
@@ -3388,6 +3699,11 @@ def build_catalog(
     )
     populate_armor_statistics(items, set(public_catalog["itemIds"]))
     populate_attachment_statistics(items, set(public_catalog["itemIds"]))
+    populate_storage_statistics(
+        items,
+        set(public_catalog["itemIds"]),
+        item_sizes,
+    )
 
     source_counts = {
         "indexedEntityPrototypes": len(prototypes),
@@ -3416,6 +3732,11 @@ def build_catalog(
         "reachableFromVendors",
     }
     for item in items.values():
+        item.pop("itemSize", None)
+        item.pop("itemShape", None)
+        properties = item.get("properties")
+        if isinstance(properties, dict):
+            properties.pop("Item", None)
         for key in provenance_keys:
             item.pop(key, None)
 
@@ -3545,6 +3866,7 @@ def main() -> None:
 
     prototypes = read_entity_prototypes(args.game_source)
     reagent_colors = read_reagent_colors(args.game_source)
+    item_sizes = read_item_size_definitions(args.game_source)
     config = read_config(args.config)
     locale_root = args.game_source / "Resources/Locale" / args.locale
     localizer = Localizer(read_fluent_messages(locale_root))
@@ -3553,6 +3875,7 @@ def main() -> None:
         config=config,
         localizer=localizer,
         game_commit=args.commit,
+        item_sizes=item_sizes,
     )
     catalog["review"] = build_review_section(catalog)
     render_public_sprites(

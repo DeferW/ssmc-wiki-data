@@ -126,7 +126,7 @@ def validate(
     source_counts = index.get("counts")
     public_catalog = catalog.get("publicCatalog")
 
-    if not isinstance(vendors, dict) or not set(expected_sources).issubset(vendors):
+    if not isinstance(vendors, dict) or set(expected_sources) != set(vendors):
         raise RuntimeError(
             f"Missing configured sources: expected={expected_sources}, "
             f"actual={list(vendors) if isinstance(vendors, dict) else vendors}"
@@ -223,24 +223,12 @@ def validate(
         raise RuntimeError("Equipment publication states overlap")
     if len(public_ids) != len(set(public_ids)):
         raise RuntimeError("Public equipment catalog contains duplicate items")
-    if not isinstance(unwrapped_cases, list):
+    if not isinstance(unwrapped_cases, list) or unwrapped_cases:
         raise RuntimeError("Invalid unwrapped equipment case list")
-    if not isinstance(unwrapped_transport, list) or not unwrapped_transport:
-        raise RuntimeError("No transport containers were unwrapped")
+    if not isinstance(unwrapped_transport, list) or unwrapped_transport:
+        raise RuntimeError("Transport containers must remain public")
     if not isinstance(aliases, dict):
         raise RuntimeError("Missing public item aliases")
-    leaked_transport = sorted(set(public_ids).intersection(unwrapped_transport))
-    if leaked_transport:
-        raise RuntimeError(
-            f"Transport containers leaked into public catalog: {leaked_transport}"
-        )
-    leaked_cargo_crates = sorted(
-        item_id for item_id in public_ids if item_id.startswith("RMCCrate")
-    )
-    if leaked_cargo_crates:
-        raise RuntimeError(
-            f"Cargo crates leaked into public catalog: {leaked_cargo_crates}"
-        )
     for alias_id, canonical_id in aliases.items():
         if alias_id in public_ids:
             raise RuntimeError(f"Alias leaked into public catalog: {alias_id}")
@@ -295,14 +283,17 @@ def validate(
                     )
                 break
         image = item.get("image")
-        if image != f"equipment-sprites/{item_id}.png":
-            raise RuntimeError(f"Public item has invalid image path: {item_id}")
-        sprite_path = sprites / f"{item_id}.png"
-        if not sprite_path.is_file() or sprite_path.stat().st_size == 0:
-            raise RuntimeError(f"Public item sprite is missing: {item_id}")
-        with Image.open(sprite_path) as image_file:
-            if image_file.convert("RGBA").getbbox() is None:
-                raise RuntimeError(f"Public item sprite is transparent: {item_id}")
+        if isinstance(item.get("sprite"), dict):
+            if image != f"equipment-sprites/{item_id}.png":
+                raise RuntimeError(f"Public item has invalid image path: {item_id}")
+            sprite_path = sprites / f"{item_id}.png"
+            if not sprite_path.is_file() or sprite_path.stat().st_size == 0:
+                raise RuntimeError(f"Public item sprite is missing: {item_id}")
+            with Image.open(sprite_path) as image_file:
+                if image_file.convert("RGBA").getbbox() is None:
+                    raise RuntimeError(f"Public item sprite is transparent: {item_id}")
+        elif image is not None:
+            raise RuntimeError(f"Sprite-less wrapper has an image path: {item_id}")
         if any(
             key in item
             for key in ("containedBy", "insideOf", "sourceContainerIds")
@@ -353,6 +344,9 @@ def validate(
         "RMCBoxMagazineRifleM54CAP": "Боеприпасы и взрывчатка",
         "RMCBoxBulletsRifle": "Боеприпасы и взрывчатка",
         "RMCBoxShotgunBuckshot": "Боеприпасы и взрывчатка",
+        "RMCBoxAGMF": "Другое",
+        "RMCCrateFlashlights": "Другое",
+        "RMCCrateGearPackFlare": "Другое",
         "CMM11Knife": "Ближний бой",
         "CMM2132Machete": "Ближний бой",
         "CMScalpel": "Медицина",
@@ -380,6 +374,32 @@ def validate(
         if component_type not in helmet_properties:
             raise RuntimeError(f"M10 helmet storage rule is missing: {component_type}")
 
+    shotgun_storage = items.get("RMCBoxShotgunBuckshot", {}).get("storageStats", {})
+    shotgun_capacities = {
+        entry.get("size"): entry.get("count")
+        for entry in shotgun_storage.get("capacities", [])
+        if isinstance(entry, dict)
+    }
+    if shotgun_capacities.get("Small") != 5:
+        raise RuntimeError(
+            f"Shotgun box capacity must follow the 2x2 item shape: {shotgun_capacities}"
+        )
+    grenade_storage = items.get("RMCBoxAGMF", {}).get("storageStats", {})
+    if grenade_storage.get("exactPlaces") != 25:
+        raise RuntimeError(
+            f"Grenade box must apply the global LimitedStorage cap: {grenade_storage}"
+        )
+    first_aid_storage = items.get("CMFirstAidKitFilled", {}).get("storageStats", {})
+    first_aid_capacities = {
+        entry.get("size"): entry.get("count")
+        for entry in first_aid_storage.get("capacities", [])
+        if isinstance(entry, dict)
+    }
+    if first_aid_capacities.get("Small") != 7:
+        raise RuntimeError(
+            f"First-aid kit capacity must be seven Small items: {first_aid_capacities}"
+        )
+
     for item_id in public_ids:
         item = items[item_id]
         if "Item" in item.get("properties", {}):
@@ -402,16 +422,8 @@ def validate(
             ):
                 raise RuntimeError(f"Armor statistics are missing: {item_id}")
 
-    if aliases.get("RMCWeaponPistolM13Empty") != "RMCWeaponPistolM13":
-        raise RuntimeError("M10 empty/load-state variants were not collapsed")
-    m10_public = {
-        "RMCWeaponPistolM13",
-        "RMCWeaponPistolM13Empty",
-    }.intersection(public_ids)
-    if m10_public != {"RMCWeaponPistolM13"}:
-        raise RuntimeError(f"Unexpected public M10 variants: {sorted(m10_public)}")
-    if "RMCML66DMountAssembled" in public_ids or "RMCML66DMountWeaponAssembledLoaded" in public_ids:
-        raise RuntimeError("Assembled ML66D state wrapper leaked into public catalog")
+    if aliases:
+        raise RuntimeError("Automatic aliases hide items from admin review")
 
     m54c = items.get("RMCWeaponRifleM54C", {})
     expected_slot_names = {"Дуло", "Верхняя планка", "Приклад", "Подствольный слот"}
@@ -484,10 +496,8 @@ def validate(
         set(items[pill_pouch_id].get("containsItemIds", []))
     ):
         raise RuntimeError("Pill pouch lost its forward Contains summary")
-    holster = items.get("RMCBeltHolsterPistol", {})
-    loadouts = holster.get("loadoutVariants")
-    if "RMCBeltHolsterPistol" not in public_ids or not isinstance(loadouts, list) or len(loadouts) < 2:
-        raise RuntimeError("Filled holster variants were not merged with their loadouts")
+    if "RMCBeltHolsterPistol" not in public_ids:
+        raise RuntimeError("Configured pistol holster is missing from public catalog")
 
     green_ap_magazines = {
         "CMMagazineSMGM63AP",
@@ -541,8 +551,8 @@ def validate(
         raise RuntimeError("Different grenade boxes rendered identically")
 
     for container_id in ("RMCCrateFlashlights", "RMCCrateGearPackFlare"):
-        if container_id in public_ids:
-            raise RuntimeError(f"Lighting transport box leaked publicly: {container_id}")
+        if container_id not in public_ids:
+            raise RuntimeError(f"Lighting transport box is missing: {container_id}")
         content_ids = {
             relation.get("to")
             for relation in relations
@@ -551,7 +561,7 @@ def validate(
         }
         if not content_ids or not content_ids.issubset(set(public_ids)):
             raise RuntimeError(
-                f"Lighting box contents were not published: {container_id}"
+                f"Lighting box contents were not published with its box: {container_id}"
             )
 
     relation_keys: set[str] = set()
