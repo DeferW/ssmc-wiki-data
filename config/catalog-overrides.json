@@ -24,6 +24,384 @@
     },
     "RMCOuterClothingExternalWebbing": {
       "category": "Экипировка"
+    },
+    "RMCWeaponPistolM13": {
+      "hidden": true
+    },
+    "RMCWeaponPistolM77Empty": {
+      "hidden": true
+    },
+    "RMCWeaponRevolverM44Empty": {
+      "hidden": true
+    },
+    "RMCWeaponPistolM82FEmpty": {
+      "hidden": true
+    },
+    "CMWeaponPistolM1984Empty": {
+      "hidden": true
+    },
+    "CMVendorHeadsetSquadComTech": {
+      "hidden": true
+    },
+    "CMVendorHeadsetSquadCorpsman": {
+      "hidden": true
+    },
+    "CMVendorHeadsetSquadFTL": {
+      "hidden": true
+    },
+    "CMVendorHeadsetSquadLeader": {
+      "hidden": true
+    },
+    "RMCCigarette": {
+      "hidden": true
+    },
+    "RMCCrateBoxMagazineSentryShotgun": {
+      "hidden": true
+    },
+    "RMCCrateBoxMagazineSentryFire": {
+      "hidden": true
+    },
+    "RMCCrateBoxMagazineSentryFireBlue": {
+      "hidden": true
+    },
+    "RMCCrateBoxMagazineSentryFireSmoke": {
+      "hidden": true
+    },
+    "RMCCrateBoxMagazineSentry": {
+      "hidden": true
+    },
+    "RMCCrateBoxMagazinePistolM77AP": {
+      "hidden": true
+    },
+    "RMCCrateBoxMagazineSMGM63AP": {
+      "hidden": true
+    },
+    "RMCCrateBoxMagazineSMGM63": {
+      "hidden": true
+    },
+    "RMCCrateBoxMagazineRifleM54CAP": {
+      "hidden": true
+    },
+    "RMCCrateBoxMagazineRifleM54C": {
+      "hidden": true
+    },
+    "RMCCrateBoxMagazineRifleM54CExt": {
+      "hidden": true
+    },
+    "RMCCrateBoxMagazinePistolM1984HP": {
+      "hidden": true
+    },
+    "RMCCrateBoxMagazinePistolM1984AP": {
+      "hidden": true
+    },
+    "RMCCrateBoxMagazinePistolM1984": {
+      "hidden": true
+    },
+    "RMCCrateBoxMagazineRifleM4SPRAP": {
+      "hidden": true
+    },
+    "RMCCrateBoxMagazineRifleM4SPR": {
+      "hidden": true
+    },
+    "RMCCrateBoxMagazineSmartPistol": {
+      "hidden": true
+    },
+    "RMCCrateBoxMagazinePistolMK80": {
+      "hidden": true
+    },
+    "RMCCrateBoxMagazineM54CE2": {
+      "hidden": true
+    },
+    "RMCCrateBoxMagazineRevolverM44Marksman": {
+      "hidden": true
+    },
+    "RMCCrateBoxMagazineM44Revolver": {
+      "hidden": true
+    },
+    "RMCCrateMagazineFlamerMixed": {
+      "hidden": true
+    },
+    "RMCCrateMagazineBGel": {
+      "hidden": true
+    },
+    "RMCCrateBoxShellsShotgunBuckshot": {
+      "hidden": true
+    },
+    "RMCCrateBoxShellsShotgunSlugs": {
+      "hidden": true
+    },
+    "RMCCrateBoxShellsShotgunFlechette": {
+      "hidden": true
+    },
+    "RMCCrateBoxAmmo458": {
+      "hidden": true
+    },
+    "RMCCrateMagazineXM43E1Standard": {
+      "hidden": true
+    },
+    "RMCCrateMagazineSmartGun": {
+      "hidden": true
+    },
+    "RMCCrateBatterySmartGun": {
+      "hidden": true
+    },
+    "RMCCrateBoxBulletsRifle": {
+      "hidden": true
+    },
+    "RMCCrateBoxBulletsRifleAP": {
+      "hidden": true
+    },
+    "RMCCrateMagazineM2C": {
+      "hidden": true
+    },
+    "RMCCrateMagazineRifleM54CE2": {
+      "hidden": true
+    },
+    "RMCCrateMagazineRifleM54CE2HT": {
+      "hidden": true
+    },
+    "RMCCrateMagazineM4SPRCustomStandard": {
+      "hidden": true
+    },
+    "RMCCrateMagazineM4SPRCustomIncendiary": {
+      "hidden": true
+    },
+    "RMCCrateMagazineM4SPRCustomImpact": {
+      "hidden": true
+    },
+    "RMCCrateMagazineML66DDrum": {
+      "hidden": true
+    },
+    "RMCCrateMagazineM96SIncendiary": {
+      "hidden": true
+    },
+    "RMCCrateMagazineM96SFlak": {
+      "hidden": true
+    },
+    "RMCCrateMagazineM96SStandard": {
+      "hidden": true
+    },
+    "STCrateMagazineSharpExplosive": {
+      "hidden": true
+    },
+    "STCrateMagazineSharpIncendiary": {
+      "hidden": true
+    },
+    "STCrateMagazineSharpFlechette": {
+      "hidden": true
+    },
+    "RMCCrateBoxBulletsSMG": {
+      "hidden": true
+    },
+    "RMCCrateBoxBulletsSMGAP": {
+      "hidden": true
+    },
+    "RMCCrateMagazineM4SPRCustomMixed": {
+      "hidden": true
+    },
+    "RMCCrateMagazineM96SMixed": {
+      "hidden": true
+    },
+    "RMCCrateMagazineNapthalUT": {
+      "hidden": true
+    },
+    "RMCBoxFlashlights": {
+      "category": "Снаряжение"
+    },
+    "RMCBoxPackFlare": {
+      "category": "Снаряжение"
+    },
+    "RMCBoxMRE": {
+      "category": "Другое"
+    },
+    "RMCArmorM3MediumVariants": {
+      "hidden": true
+    },
+    "RMCArmorM3LightVariants": {
+      "hidden": true
+    },
+    "RMCArmorM3HeavyVariants": {
+      "hidden": true
+    },
+    "RMCSynthResetKey": {
+      "category": "Снаряжение"
+    },
+    "RMCWebbingSurgicalGreen": {
+      "category": "Экипировка"
+    },
+    "RMCGasTankOxygenFilled": {
+      "category": "Другое"
+    },
+    "TrashBag": {
+      "category": "Другое"
+    },
+    "CMStunbaton": {
+      "category": "Ближний бой"
+    },
+    "RMCGlassesM4SPRBattleSight": {
+      "category": "Экипировка"
+    },
+    "CMFlash": {
+      "category": "Ближний бой"
+    },
+    "RMCHelmetGarbRainCover": {
+      "category": "Экипировка"
+    },
+    "CMWetSign": {
+      "category": "Другое"
+    },
+    "RMCTesla": {
+      "category": "Оружие"
+    },
+    "RMCBucket": {
+      "category": "Другое"
+    },
+    "CMBucketMop": {
+      "category": "Другое"
+    },
+    "RMCHelmetGarbUNMCFlair": {
+      "category": "Экипировка"
+    },
+    "RMCHelmetGarbGasmask": {
+      "category": "Экипировка"
+    },
+    "RMCM5CameraGear": {
+      "category": "Экипировка"
+    },
+    "CMWebbingBrown": {
+      "category": "Экипировка"
+    },
+    "RMCSprayBottleSpaceCleaner": {
+      "category": "Другое"
+    },
+    "RMCLightBulb": {
+      "category": "Другое"
+    },
+    "RMCToolWebbingSmallFilled": {
+      "category": "Экипировка"
+    },
+    "RMCMedicalApron": {
+      "category": "Экипировка"
+    },
+    "CMCigarettePackLuckySlothsMini": {
+      "category": "Другое"
+    },
+    "RMCWebbingLegPouch": {
+      "category": "Экипировка"
+    },
+    "RMCGlassesSmartGunSight": {
+      "category": "Экипировка"
+    },
+    "RMCHelmetGarbGunOil": {
+      "category": "Другое"
+    },
+    "RMCMortarKit": {
+      "category": "Оружие"
+    },
+    "RMCFlashlightPen": {
+      "category": "Экипировка"
+    },
+    "RMCLightTube": {
+      "category": "Другое"
+    },
+    "BedrollFolded": {
+      "category": "Другое"
+    },
+    "RMCM2CMount": {
+      "hidden": true
+    },
+    "RMCZipties": {
+      "category": "Другое"
+    },
+    "CMMop": {
+      "category": "Другое"
+    },
+    "RMCPDTLocatorTube": {
+      "category": "Другое"
+    },
+    "RMCLightReplacer": {
+      "category": "Другое"
+    },
+    "CMWebbingHolster": {
+      "category": "Экипировка"
+    },
+    "RMCWebbingDropPouch": {
+      "category": "Экипировка"
+    },
+    "CMWebbing": {
+      "category": "Экипировка"
+    },
+    "CMWebbingKnivesFilled": {
+      "category": "Экипировка"
+    },
+    "CMGlassesM42ScoutSight": {
+      "category": "Экипировка"
+    },
+    "RMCWebbingLegPouchBlack": {
+      "category": "Экипировка"
+    },
+    "RMCWebbingHolsterBlack": {
+      "category": "Экипировка"
+    },
+    "CMWebbingBlack": {
+      "category": "Экипировка"
+    },
+    "RMCWebbingBlackSmall": {
+      "category": "Экипировка"
+    },
+    "RMCWebbingDropPouchBlack": {
+      "category": "Экипировка"
+    },
+    "CMVendorBundleSquadMedicalEssentials": {
+      "category": "Другое"
+    },
+    "RMCVendorBundleCrewMedicalEssentialsDoctor": {
+      "category": "Другое"
+    },
+    "RMCSyringeCase": {
+      "category": "Медицина"
+    },
+    "CMSurgicalCaseFilled": {
+      "category": "Медицина"
+    },
+    "RMCPacketGrenadeM74AGMSHornetFilled": {
+      "category": "Боеприпасы и взрывчатка"
+    },
+    "RMCPacketGrenadeSmokeFilled": {
+      "category": "Боеприпасы и взрывчатка"
+    },
+    "RMCPacketGrenadeIncendiaryFilled": {
+      "category": "Боеприпасы и взрывчатка"
+    },
+    "RMCPacketGrenadeM74AGMIFilled": {
+      "category": "Боеприпасы и взрывчатка"
+    },
+    "RMCPacketGrenadeM74AGMSFilled": {
+      "category": "Боеприпасы и взрывчатка"
+    },
+    "CMPacketGrenadeFragFilled": {
+      "category": "Боеприпасы и взрывчатка"
+    },
+    "CMPacketGrenadeHighExplosiveFilled": {
+      "category": "Боеприпасы и взрывчатка"
+    },
+    "RMCBox458SOCOM": {
+      "category": "Боеприпасы и взрывчатка"
+    },
+    "RMCPacketGrenadeM74AGMFFilled": {
+      "category": "Боеприпасы и взрывчатка"
+    },
+    "RMCPacketGrenadeBatonSlugHIRRFilled": {
+      "category": "Боеприпасы и взрывчатка"
+    },
+    "RMCBoxClaymoreMineFilled": {
+      "category": "Боеприпасы и взрывчатка"
+    },
+    "RMCPacketGrenadeM74AGMSStarShellFilled": {
+      "category": "Боеприпасы и взрывчатка"
+    },
+    "CMPacketGrenadeFragOldFilled": {
+      "category": "Боеприпасы и взрывчатка"
     }
   }
 }
