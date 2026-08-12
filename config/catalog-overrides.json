@@ -3,6 +3,39 @@
   "items": {
     "CMVendorHeadsetSquad": {
       "hidden": true
+    },
+    "CMVendorHeadsetSquadComTech": {
+      "hidden": true
+    },
+    "CMVendorHeadsetSquadCorpsman": {
+      "hidden": true
+    },
+    "CMVendorHeadsetSquadFTL": {
+      "hidden": true
+    },
+    "CMVendorHeadsetSquadLeader": {
+      "hidden": true
+    },
+    "RMCWeaponPistolM13Empty": {
+      "hidden": true
+    },
+    "RMCWeaponPistolM77Empty": {
+      "hidden": true
+    },
+    "RMCWeaponRevolverM44Empty": {
+      "hidden": true
+    },
+    "CMWeaponPistolM1984Empty": {
+      "hidden": true
+    },
+    "RMCWeaponPistolM82FEmpty": {
+      "hidden": true
+    },
+    "RMCCigarette": {
+      "hidden": true
+    },
+    "RMCArmorM3MediumVariants": {
+      "hidden": true
     }
   }
 }
