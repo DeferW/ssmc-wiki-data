@@ -1,124 +1,160 @@
-# Химический каталог SSMC Wiki
+# Сборщики данных SSMC Wiki
 
-Репозиторий собирает химию из `MetalSage/space-stories-cm14` и публикует готовый файл для страницы `MC:Химия`.
+Репозиторий собирает данные из [`MetalSage/space-stories-cm14`](https://github.com/MetalSage/space-stories-cm14) и сохраняет готовые JSON и спрайты для вики.
 
-Вики не разбирает игровые YAML и XML сама. Она загружает один файл:
+## Навигация
 
-```text
-data/chemistry-catalog.json
-```
+- [Химия](#химия)
+- [Снаряжение](#снаряжение)
+- [Запуск сборки](#запуск-сборки)
+- [Настройки](#настройки)
+- [Результаты сборки](#результаты-сборки)
+- [Ошибки](#ошибки)
+- [Структура репозитория](#структура-репозитория)
 
-## Зачем нужен репозиторий
+## Химия
 
-Сборщик заранее выполняет тяжёлую часть работы:
+Workflow: [`.github/workflows/build-chemistry-catalog.yml`](.github/workflows/build-chemistry-catalog.yml)
 
-1. Читает реагенты и реакции RMC14 и Stories.
-2. Подтягивает базовые реагенты и наследуемые свойства.
-3. Подставляет русские названия и описания.
-4. Связывает рецепты с ингредиентами и продуктами.
-5. Распределяет карточки по вкладкам и подразделам.
-6. Проверяет результат перед публикацией.
+Сборщик:
 
-`MediaWiki:ScmcChemistry.js` получает готовый JSON и только рисует интерфейс. Категории на стороне вики не угадываются.
+1. Загружает химические YAML, XML-руководства и локализацию `ru-RU` из ветки `master` игры.
+2. Индексирует реагенты и реакции.
+3. Разрешает наследование прототипов.
+4. Связывает рецепты, ингредиенты и продукты.
+5. Распределяет реагенты по разделам.
+6. Проверяет итоговый каталог и сохраняет его в `data/`.
 
-## Источники
+Разделы каталога:
 
-Workflow загружает из ветки `master` игры только следующие пути:
+- `ordnance` — боевая химия;
+- `medicine` — медицина;
+- `drinks` — напитки;
+- `elements` — элементы;
+- `other` — остальные вещества.
 
-```text
-Resources/ServerInfo/Guidebook/_RMC14/Chemicals/OT.xml
-Resources/ServerInfo/Guidebook/_RMC14/Chemicals/Medicine.xml
-Resources/ServerInfo/Guidebook/_RMC14/Chemicals/RMCChemicals.xml
-Resources/ServerInfo/Guidebook/_RMC14/Guides/RMCGuideDrinks.xml
+Основные скрипты:
 
-Resources/Prototypes/_RMC14/Reagents
-Resources/Prototypes/_Stories/Reagents
-Resources/Prototypes/_RMC14/Recipes/Reactions
-Resources/Prototypes/_Stories/Recipes/Reactions
+- [`scripts/extract_guide_sections.py`](scripts/extract_guide_sections.py) — читает XML-руководства;
+- [`scripts/index_chemistry.py`](scripts/index_chemistry.py) — индексирует YAML-прототипы;
+- [`scripts/build_chemistry_catalog.py`](scripts/build_chemistry_catalog.py) — собирает итоговый каталог.
 
-Resources/Prototypes/Reagents
-Resources/Locale/ru-RU
-```
+## Снаряжение
 
-Три профильных руководства задают основные списки:
+Workflow: [`.github/workflows/build-equipment-catalog.yml`](.github/workflows/build-equipment-catalog.yml)
 
-- `OT.xml` — боевая химия;
-- `Medicine.xml` — медицина;
-- `RMCGuideDrinks.xml` — напитки.
+Сборщик:
 
-`RMCChemicals.xml` задаёт общие химические группы и их названия: элементы, медицина, наркотики, пиротехника, токсины, продукты, ботанические, биологические и прочее.
+1. Загружает прототипы, локализацию и текстуры из ветки `master` игры.
+2. Находит предметы через торговые автоматы и каталог карго.
+3. Разрешает наследование и связи между прототипами.
+4. Определяет названия, описания, характеристики и категории.
+5. Применяет администраторские изменения из [`config/catalog-overrides.json`](config/catalog-overrides.json).
+6. Создаёт PNG-спрайты публичных предметов.
+7. Проверяет JSON, связи, категории и спрайты.
 
-## Разделы каталога
+Основные файлы:
 
-Итоговый JSON содержит пять вкладок:
+- [`config/equipment-sources.yml`](config/equipment-sources.yml) — источники и правила автоматической классификации;
+- [`config/catalog-overrides.json`](config/catalog-overrides.json) — ручное скрытие предметов и смена категорий;
+- [`scripts/build_equipment_catalog.py`](scripts/build_equipment_catalog.py) — сборка каталога;
+- [`scripts/validate_equipment_catalog.py`](scripts/validate_equipment_catalog.py) — проверка результата.
 
-- `ordnance` — Боевая химия;
-- `medicine` — Медицина;
-- `drinks` — Напитки;
-- `elements` — Элементы;
-- `other` — Другие вещества.
+Overrides применяются после автоматической классификации. Поэтому ручное решение имеет приоритет над правилами сборщика.
 
-Порядок классификации:
+## Запуск сборки
 
-1. Реагент из профильного XML остаётся в указанном там разделе. Поэтому СГ-Нафталин попадает в боевую химию напрямую из `OT.xml`.
-2. Для остальных используется поле `group` из YAML и раздел из `RMCChemicals.xml`.
-3. Если нормальной группы нет, используются путь файла и метаболизм.
-4. Полностью нераспознанный реагент попадает в подраздел «Прочее».
+### Вручную
 
-Во вкладке «Другие вещества» подразделы создаются автоматически по фактическим данным. Пустые подразделы не показываются.
-
-Элементы вынесены в отдельную вкладку. Отсутствие рецепта не скрывает карточку: элемент всё равно остаётся доступен как справочная запись.
-
-Точечные исключения для неполно размеченных прототипов хранятся в `AUTO_SECTION_BY_ID` внутри `scripts/build_chemistry_catalog.py`. Готовые JSON вручную не редактируются.
-
-## Структура
-
-```text
-.github/workflows/build-chemistry-catalog.yml
-
-scripts/extract_guide_sections.py
-scripts/index_chemistry.py
-scripts/build_chemistry_catalog.py
-
-data/chemistry-guides.json
-data/chemistry-index.json
-data/chemistry-catalog.json
-```
-
-- `extract_guide_sections.py` читает четыре XML-руководства, включая `RMCChemicals.xml`.
-- `index_chemistry.py` индексирует YAML-прототипы.
-- `build_chemistry_catalog.py` разрешает наследование, локализацию, рецепты и классификацию.
-- `chemistry-catalog.json` — единственный файл из `data`, который читает вики.
-
-## Обновление
-
-1. Открыть `Actions`.
-2. Выбрать `Build chemistry catalog`.
-3. Нажать `Run workflow` для ветки `main`.
+1. Открыть вкладку **Actions** в GitHub.
+2. Выбрать **Build chemistry catalog** или **Build equipment catalog**.
+3. Нажать **Run workflow** и выбрать ветку `main`.
 4. Дождаться зелёной отметки.
-5. Обновить `MC:Химия` через `Ctrl + F5`.
 
-При успешной сборке workflow коммитит три файла из `data`. Если итог побайтово не изменился, новый коммит не создаётся и в логе появляется `Nothing changed`.
+### После изменения снаряжения в админке
 
-## Проверки
+Админка обновляет `config/catalog-overrides.json`. Если в workflow снаряжения настроен `push`-триггер для этого файла, сборка запускается автоматически. Иначе запустите **Build equipment catalog** вручную.
 
-Workflow отменяет публикацию, если:
+При успешной сборке GitHub Actions создаёт коммит только при наличии изменений. Сообщение `Nothing changed` означает, что итоговые файлы не изменились.
 
-- отсутствует `RMCChemicals.xml` или обязательная химическая группа;
-- каталог, список реакций или обязательная вкладка пусты;
-- один реагент попал в несколько вкладок;
-- пользовательский реагент потерялся при классификации;
-- рецепт ссылается на неизвестный реагент;
-- в каталог попали неподходящие базовые прототипы;
-- контрольные счётчики не совпали.
+## Настройки
 
-При ошибке старый рабочий JSON остаётся на месте.
+### Добавить источник снаряжения
 
-## Ограничения
+Откройте [`config/equipment-sources.yml`](config/equipment-sources.yml) и добавьте ID:
 
-- Обновление запускается вручную и читает только `master`.
-- Файлы вне перечисленных путей не индексируются.
-- Каталог рассчитан на локализацию `ru-RU`.
-- Новая структура YAML/XML может потребовать обновления сборщика.
-- Для новой группы из `RMCChemicals.xml` нужно один раз указать, в какую вкладку она входит.
-- Репозиторий должен быть публичным, иначе браузер вики не получит JSON без авторизации.
+- в `vendors` — для торгового автомата;
+- в `cargoCatalogs` — для каталога карго.
+
+После изменения запустите сборку снаряжения.
+
+### Скрыть предмет или сменить категорию
+
+Используйте админ-режим сайта. Он записывает изменения в [`config/catalog-overrides.json`](config/catalog-overrides.json).
+
+Формат записи:
+
+```json
+{
+  "schemaVersion": 1,
+  "items": {
+    "PrototypeId": {
+      "hidden": true
+    },
+    "AnotherPrototypeId": {
+      "category": "Другое"
+    }
+  }
+}
+```
+
+JSON не поддерживает комментарии и запятую после последнего поля объекта.
+
+### Изменить автоматическую классификацию
+
+В [`config/equipment-sources.yml`](config/equipment-sources.yml) доступны:
+
+- `excludePrototypeIds` — исключить прототип;
+- `includePrototypeIds` — принудительно включить;
+- `categoryOverrides` — назначить категорию;
+- `canonicalPrototypeIds` — заменить дублирующий ID каноническим.
+
+Эти правила нужны для ошибок или особенностей игровых данных. Обычные ручные изменения делаются через `catalog-overrides.json`.
+
+## Результаты сборки
+
+Файлы в `data/` создаются автоматически. Не редактируйте их вручную.
+
+| Файл | Назначение |
+| --- | --- |
+| [`data/chemistry-catalog.json`](data/chemistry-catalog.json) | готовый каталог химии для вики |
+| [`data/chemistry-guides.json`](data/chemistry-guides.json) | данные XML-руководств |
+| [`data/chemistry-index.json`](data/chemistry-index.json) | индекс реагентов и реакций |
+| [`data/equipment-catalog.json`](data/equipment-catalog.json) | готовый каталог снаряжения |
+| [`data/equipment-index.json`](data/equipment-index.json) | технический индекс снаряжения |
+| [`data/equipment-sprites/`](data/equipment-sprites/) | PNG-спрайты публичных предметов |
+
+## Ошибки
+
+### `Invalid catalog overrides JSON`
+
+Файл `config/catalog-overrides.json` содержит ошибку JSON. Откройте указанную в логе строку и проверьте кавычки, запятые и фигурные скобки.
+
+### `Unknown ... ID` или неизвестная категория
+
+В конфиге или overrides указан ID, которого нет в текущих игровых данных, либо неверное название категории. Исправьте указанную запись и повторите сборку.
+
+### Workflow завершился без нового коммита
+
+Если в логе есть `Nothing changed`, сборка прошла успешно, но результат совпал с уже опубликованными файлами.
+
+При любой ошибке workflow не публикует частично собранные данные: предыдущая рабочая версия остаётся в репозитории.
+
+## Структура репозитория
+
+```text
+.github/workflows/       GitHub Actions
+config/                  источники и ручные overrides
+scripts/                 сборщики и валидаторы
+data/                    готовые JSON и спрайты
+```
