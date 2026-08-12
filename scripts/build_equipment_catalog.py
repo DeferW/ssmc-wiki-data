@@ -2365,7 +2365,8 @@ def build_public_catalog(
         if item_id in visited:
             continue
         visited.add(item_id)
-        item = items[item_id]
+        if item_id not in items:
+            raise RuntimeError(f"Unknown item id reachable from public roots: {item_id}")
         public_candidates.add(item_id)
         # Every configured product and every reachable content item is public.
         # Boxes/crates are no longer silently replaced with their contents.
