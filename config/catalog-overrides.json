@@ -25,8 +25,8 @@
     "RMCOuterClothingExternalWebbing": {
       "category": "Экипировка"
     },
-    "RMCWeaponPistolM13Empty": {
-      "hidden": true
+    "RMCWeaponPistolM13": {
+      "hidden": false
     },
     "RMCWeaponPistolM77Empty": {
       "hidden": true
@@ -251,7 +251,7 @@
       "category": "Другое"
     },
     "RMCTesla": {
-      "category": "Оружие"
+      "category": "Снаряжение"
     },
     "RMCBucket": {
       "category": "Другое"
@@ -402,6 +402,12 @@
     },
     "CMPacketGrenadeFragOldFilled": {
       "category": "Боеприпасы и взрывчатка"
+    },
+    "RMCSentry": {
+      "category": "Снаряжение"
+    },
+    "RMCSentryFire": {
+      "category": "Снаряжение"
     }
   }
 }
