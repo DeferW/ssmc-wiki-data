@@ -1,33 +1,200 @@
-"CMVendorHeadsetSquadComTech": {
-  "hidden": true
-},
-"CMVendorHeadsetSquadCorpsman": {
-  "hidden": true
-},
-"CMVendorHeadsetSquadFTL": {
-  "hidden": true
-},
-"CMVendorHeadsetSquadLeader": {
-  "hidden": true
-},
-"RMCWeaponPistolM13Empty": {
-  "hidden": true
-},
-"RMCWeaponPistolM77Empty": {
-  "hidden": true
-},
-"RMCWeaponRevolverM44Empty": {
-  "hidden": true
-},
-"CMWeaponPistolM1984Empty": {
-  "hidden": true
-},
-"RMCWeaponPistolM82FEmpty": {
-  "hidden": true
-},
-"RMCCigarette": {
-  "hidden": true
-},
-"RMCArmorM3MediumVariants": {
-  "hidden": true
-},
+{
+  "schemaVersion": 1,
+  "items": {
+    "CMVendorHeadsetSquad": {
+      "hidden": true
+    },
+    "CMVendorHeadsetSquadComTech": {
+      "hidden": true
+    },
+    "CMVendorHeadsetSquadCorpsman": {
+      "hidden": true
+    },
+    "CMVendorHeadsetSquadFTL": {
+      "hidden": true
+    },
+    "CMVendorHeadsetSquadLeader": {
+      "hidden": true
+    },
+    "RMCWeaponPistolM13Empty": {
+      "hidden": true
+    },
+    "RMCWeaponPistolM77Empty": {
+      "hidden": true
+    },
+    "RMCWeaponRevolverM44Empty": {
+      "hidden": true
+    },
+    "CMWeaponPistolM1984Empty": {
+      "hidden": true
+    },
+    "RMCWeaponPistolM82FEmpty": {
+      "hidden": true
+    },
+    "RMCCigarette": {
+      "hidden": true
+    },
+    "RMCArmorM3MediumVariants": {
+      "hidden": true
+    },
+    "RMCCrateBoxMagazineSentryShotgun": {
+      "category": "Другое"
+    },
+    "RMCCrateBoxMagazineSentryFire": {
+      "category": "Другое"
+    },
+    "RMCCrateBoxMagazineSentryFireBlue": {
+      "category": "Другое"
+    },
+    "RMCCrateBoxMagazineSentryFireSmoke": {
+      "category": "Другое"
+    },
+    "RMCCrateBoxMagazineSentry": {
+      "category": "Другое"
+    },
+    "RMCBoxMRE": {
+      "category": "Другое"
+    },
+    "RMCCrateBoxMagazineSMGM63AP": {
+      "category": "Другое"
+    },
+    "RMCCrateBoxMagazineSMGM63": {
+      "category": "Другое"
+    },
+    "RMCBoxMagazineRifleM54C": {
+      "category": "Другое"
+    },
+    "RMCCrateBoxMagazineRifleM54CAP": {
+      "category": "Другое"
+    },
+    "RMCCrateBoxMagazineRifleM54C": {
+      "category": "Другое"
+    },
+    "RMCCrateBoxMagazineRifleM54CExt": {
+      "category": "Другое"
+    },
+    "RMCCrateBoxMagazinePistolM1984HP": {
+      "category": "Другое"
+    },
+    "RMCCrateBoxMagazinePistolM1984AP": {
+      "category": "Другое"
+    },
+    "RMCCrateBoxMagazinePistolM1984": {
+      "category": "Другое"
+    },
+    "RMCCrateBoxMagazineRifleM4SPRAP": {
+      "category": "Другое"
+    },
+    "RMCCrateBoxMagazineRifleM4SPR": {
+      "category": "Другое"
+    },
+    "RMCCrateBoxMagazineSmartPistol": {
+      "category": "Другое"
+    },
+    "RMCCrateBoxMagazinePistolMK80": {
+      "category": "Другое"
+    },
+    "RMCCrateBoxMagazineM54CE2": {
+      "category": "Другое"
+    },
+    "RMCBoxFlashlights": {
+      "category": "Другое"
+    },
+    "RMCBoxPackFlare": {
+      "category": "Другое"
+    },
+    "RMCCrateBoxMagazineRevolverM44Marksman": {
+      "category": "Другое"
+    },
+    "RMCCrateBoxMagazineM44Revolver": {
+      "category": "Другое"
+    },
+    "RMCCrateMagazineFlamerMixed": {
+      "category": "Другое"
+    },
+    "RMCCrateMagazineBGel": {
+      "category": "Другое"
+    },
+    "RMCCrateBoxShellsShotgunBuckshot": {
+      "category": "Другое"
+    },
+    "RMCCrateBoxShellsShotgunSlugs": {
+      "category": "Другое"
+    },
+    "RMCCrateBoxShellsShotgunFlechette": {
+      "category": "Другое"
+    },
+    "RMCCrateBoxAmmo458": {
+      "category": "Другое"
+    },
+    "RMCCrateMagazineXM43E1Standard": {
+      "category": "Другое"
+    },
+    "RMCCrateMagazineSmartGun": {
+      "category": "Другое"
+    },
+    "RMCCrateBatterySmartGun": {
+      "category": "Другое"
+    },
+    "RMCCrateBoxBulletsRifle": {
+      "category": "Другое"
+    },
+    "RMCCrateBoxBulletsRifleAP": {
+      "category": "Другое"
+    },
+    "RMCCrateMagazineM2C": {
+      "category": "Другое"
+    },
+    "RMCCrateMagazineRifleM54CE2": {
+      "category": "Другое"
+    },
+    "RMCCrateMagazineRifleM54CE2HT": {
+      "category": "Другое"
+    },
+    "RMCCrateMagazineM4SPRCustomStandard": {
+      "category": "Другое"
+    },
+    "RMCCrateMagazineM4SPRCustomIncendiary": {
+      "category": "Другое"
+    },
+    "RMCCrateMagazineM4SPRCustomImpact": {
+      "category": "Другое"
+    },
+    "RMCCrateMagazineML66DDrum": {
+      "category": "Другое"
+    },
+    "RMCCrateMagazineM96SIncendiary": {
+      "category": "Другое"
+    },
+    "RMCCrateMagazineM96SFlak": {
+      "category": "Другое"
+    },
+    "RMCCrateMagazineM96SStandard": {
+      "category": "Другое"
+    },
+    "STCrateMagazineSharpExplosive": {
+      "category": "Другое"
+    },
+    "STCrateMagazineSharpIncendiary": {
+      "category": "Другое"
+    },
+    "STCrateMagazineSharpFlechette": {
+      "category": "Другое"
+    },
+    "RMCCrateBoxBulletsSMG": {
+      "category": "Другое"
+    },
+    "RMCCrateBoxBulletsSMGAP": {
+      "category": "Другое"
+    },
+    "RMCCrateMagazineM4SPRCustomMixed": {
+      "category": "Другое"
+    },
+    "RMCCrateMagazineM96SMixed": {
+      "category": "Другое"
+    },
+    "RMCCrateMagazineNapthalUT": {
+      "category": "Другое"
+    }
+  }
+}
