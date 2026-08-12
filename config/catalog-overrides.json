@@ -18,6 +18,12 @@
     },
     "CMFlare": {
       "category": "Снаряжение"
+    },
+    "RMCHelmetGarbNetting": {
+      "category": "Экипировка"
+    },
+    "RMCOuterClothingExternalWebbing": {
+      "category": "Экипировка"
     }
   }
 }
