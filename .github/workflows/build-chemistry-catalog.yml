@@ -37,9 +37,9 @@ jobs:
             Resources/Locale/ru-RU
           sparse-checkout-cone-mode: false
 
-      - name: Install YAML parser
+      - name: Install catalog tools
         run: |
-          python3 -m pip install "PyYAML>=6,<7"
+          python3 -m pip install -r requirements.txt
 
       - name: Build chemistry data
         run: |
