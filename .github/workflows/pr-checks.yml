@@ -56,3 +56,8 @@ jobs:
             --index data/equipment-index.json \
             --config config/equipment-sources.yml \
             --sprites data/equipment-sprites
+
+      - name: Validate mob catalog
+        run: |
+          python3 scripts/validate_mob_catalog.py \
+            --catalog data/mob-catalog.json

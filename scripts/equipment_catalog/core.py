@@ -1,7 +1,6 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Any
+from prototype_resolution import EntityPrototype as EntityPrototype
 
 
 PHYSICAL_CONTENT_RELATION_TYPES = {
@@ -181,14 +180,3 @@ NON_MECHANICAL_COMPONENTS = {
     "Tag",
     "Transform",
 }
-
-
-@dataclass(frozen=True)
-class EntityPrototype:
-    id: str
-    parents: tuple[str, ...]
-    abstract: bool
-    source_file: str
-    origin: str
-    fields: dict[str, Any]
-    components: tuple[dict[str, Any], ...]
