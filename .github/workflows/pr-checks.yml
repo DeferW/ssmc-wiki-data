@@ -19,6 +19,21 @@ jobs:
       - name: Lint scripts
         run: ruff check scripts/
 
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7.0.1
+
+      - name: Install test tools
+        run: |
+          python3 -m pip install -r requirements.txt
+          python3 -m pip install pytest
+
+      - name: Run tests
+        run: python3 -m pytest scripts/
+
   validate-data:
     runs-on: ubuntu-latest
 
