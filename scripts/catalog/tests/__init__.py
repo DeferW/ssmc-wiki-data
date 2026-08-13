@@ -1,0 +1,2 @@
+"""Catalog builder tests."""
+

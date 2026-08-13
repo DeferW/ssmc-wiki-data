@@ -1,0 +1,2 @@
+"""Extensible equipment catalog builder."""
+

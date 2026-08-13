@@ -1,8 +1,8 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "items": {
     "CMVendorHeadsetSquad": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCSatchelGrenadeSpec": {
       "category": "Экипировка"
@@ -26,181 +26,181 @@
       "category": "Экипировка"
     },
     "RMCWeaponPistolM77Empty": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCWeaponRevolverM44Empty": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCWeaponPistolM82FEmpty": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "CMWeaponPistolM1984Empty": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "CMVendorHeadsetSquadComTech": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "CMVendorHeadsetSquadCorpsman": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "CMVendorHeadsetSquadFTL": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "CMVendorHeadsetSquadLeader": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCigarette": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateBoxMagazineSentryShotgun": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateBoxMagazineSentryFire": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateBoxMagazineSentryFireBlue": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateBoxMagazineSentryFireSmoke": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateBoxMagazineSentry": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateBoxMagazinePistolM77AP": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateBoxMagazineSMGM63AP": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateBoxMagazineSMGM63": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateBoxMagazineRifleM54CAP": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateBoxMagazineRifleM54C": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateBoxMagazineRifleM54CExt": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateBoxMagazinePistolM1984HP": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateBoxMagazinePistolM1984AP": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateBoxMagazinePistolM1984": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateBoxMagazineRifleM4SPRAP": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateBoxMagazineRifleM4SPR": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateBoxMagazineSmartPistol": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateBoxMagazinePistolMK80": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateBoxMagazineM54CE2": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateBoxMagazineRevolverM44Marksman": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateBoxMagazineM44Revolver": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateMagazineFlamerMixed": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateMagazineBGel": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateBoxShellsShotgunBuckshot": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateBoxShellsShotgunSlugs": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateBoxShellsShotgunFlechette": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateBoxAmmo458": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateMagazineXM43E1Standard": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateMagazineSmartGun": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateBatterySmartGun": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateBoxBulletsRifle": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateBoxBulletsRifleAP": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateMagazineM2C": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateMagazineRifleM54CE2": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateMagazineRifleM54CE2HT": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateMagazineM4SPRCustomStandard": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateMagazineM4SPRCustomIncendiary": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateMagazineM4SPRCustomImpact": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateMagazineML66DDrum": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateMagazineM96SIncendiary": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateMagazineM96SFlak": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateMagazineM96SStandard": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "STCrateMagazineSharpExplosive": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "STCrateMagazineSharpIncendiary": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "STCrateMagazineSharpFlechette": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateBoxBulletsSMG": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateBoxBulletsSMGAP": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateMagazineM4SPRCustomMixed": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateMagazineM96SMixed": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCCrateMagazineNapthalUT": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCBoxFlashlights": {
       "category": "Снаряжение"
@@ -212,13 +212,13 @@
       "category": "Другое"
     },
     "RMCArmorM3MediumVariants": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCArmorM3LightVariants": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCArmorM3HeavyVariants": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCSynthResetKey": {
       "category": "Снаряжение"
@@ -233,13 +233,13 @@
       "category": "Другое"
     },
     "CMStunbaton": {
-      "category": "Ближний бой"
+      "category": "Снаряжение"
     },
     "RMCGlassesM4SPRBattleSight": {
       "category": "Экипировка"
     },
     "CMFlash": {
-      "category": "Ближний бой"
+      "category": "Снаряжение"
     },
     "RMCHelmetGarbRainCover": {
       "category": "Экипировка"
@@ -305,7 +305,7 @@
       "category": "Другое"
     },
     "RMCM2CMount": {
-      "hidden": true
+      "category": "Скрытые"
     },
     "RMCZipties": {
       "category": "Другое"
@@ -362,49 +362,49 @@
       "category": "Медицина"
     },
     "RMCPacketGrenadeM74AGMSHornetFilled": {
-      "category": "Боеприпасы и взрывчатка"
+      "category": "Боезапас"
     },
     "RMCPacketGrenadeSmokeFilled": {
-      "category": "Боеприпасы и взрывчатка"
+      "category": "Боезапас"
     },
     "RMCPacketGrenadeIncendiaryFilled": {
-      "category": "Боеприпасы и взрывчатка"
+      "category": "Боезапас"
     },
     "RMCPacketGrenadeM74AGMIFilled": {
-      "category": "Боеприпасы и взрывчатка"
+      "category": "Боезапас"
     },
     "RMCPacketGrenadeM74AGMSFilled": {
-      "category": "Боеприпасы и взрывчатка"
+      "category": "Боезапас"
     },
     "CMPacketGrenadeFragFilled": {
-      "category": "Боеприпасы и взрывчатка"
+      "category": "Боезапас"
     },
     "CMPacketGrenadeHighExplosiveFilled": {
-      "category": "Боеприпасы и взрывчатка"
+      "category": "Боезапас"
     },
     "RMCBox458SOCOM": {
-      "category": "Боеприпасы и взрывчатка"
+      "category": "Боезапас"
     },
     "RMCPacketGrenadeM74AGMFFilled": {
-      "category": "Боеприпасы и взрывчатка"
+      "category": "Боезапас"
     },
     "RMCPacketGrenadeBatonSlugHIRRFilled": {
-      "category": "Боеприпасы и взрывчатка"
+      "category": "Боезапас"
     },
     "RMCBoxClaymoreMineFilled": {
-      "category": "Боеприпасы и взрывчатка"
+      "category": "Боезапас"
     },
     "RMCPacketGrenadeM74AGMSStarShellFilled": {
-      "category": "Боеприпасы и взрывчатка"
+      "category": "Боезапас"
     },
     "CMPacketGrenadeFragOldFilled": {
-      "category": "Боеприпасы и взрывчатка"
+      "category": "Боезапас"
     },
     "RMCSentryFire": {
       "category": "Снаряжение"
     },
     "RMCWeaponPistolM13Empty": {
-      "hidden": true
+      "category": "Скрытые"
     }
   }
 }

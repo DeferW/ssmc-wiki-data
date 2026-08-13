@@ -44,22 +44,24 @@ jobs:
         run: |
           GAME_COMMIT=$(git -C game-source rev-parse HEAD)
 
-          python3 scripts/build_equipment_catalog.py \
+          python3 -m scripts.catalog.build \
             --game-source game-source \
             --config config/equipment-sources.yml \
-            --index-output data/equipment-index.json \
-            --output data/equipment-catalog.json \
-            --sprites-output data/equipment-sprites \
+            --overrides config/catalog-overrides.json \
+            --index-output data/catalog/index.json \
+            --output data/catalog/catalog.json \
+            --sprites-output data/catalog/sprites \
             --commit "$GAME_COMMIT" \
             --locale ru-RU
 
       - name: Validate equipment catalog
         run: |
-          python3 scripts/validate_equipment_catalog.py \
-            --catalog data/equipment-catalog.json \
-            --index data/equipment-index.json \
+          python3 -m scripts.catalog.validate \
+            --catalog data/catalog/catalog.json \
+            --index data/catalog/index.json \
             --config config/equipment-sources.yml \
-            --sprites data/equipment-sprites
+            --overrides config/catalog-overrides.json \
+            --sprites data/catalog/sprites
 
       - name: Save equipment data
         run: |
@@ -67,9 +69,9 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add \
-            data/equipment-index.json \
-            data/equipment-catalog.json \
-            data/equipment-sprites
+            data/catalog/index.json \
+            data/catalog/catalog.json \
+            data/catalog/sprites
 
           if git diff --cached --quiet; then
             echo "Nothing changed"
