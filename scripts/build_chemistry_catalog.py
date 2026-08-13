@@ -9,31 +9,7 @@ from typing import Any
 
 import yaml
 
-
-class GameYamlLoader(yaml.SafeLoader):
-    """YAML loader that accepts SS14 custom tags."""
-
-
-def construct_tagged_value(
-    loader: GameYamlLoader,
-    tag_suffix: str,
-    node: yaml.Node,
-) -> Any:
-    if isinstance(node, yaml.MappingNode):
-        value = loader.construct_mapping(node, deep=True)
-    elif isinstance(node, yaml.SequenceNode):
-        value = loader.construct_sequence(node, deep=True)
-    else:
-        value = loader.construct_scalar(node)
-
-    return {
-        "yamlTag": f"!{tag_suffix}",
-        "value": value,
-    }
-
-
-GameYamlLoader.add_multi_constructor("!", construct_tagged_value)
-
+from chemistry_yaml import GameYamlLoader, normalize_parents
 
 FTL_MESSAGE_RE = re.compile(
     r"^([A-Za-z0-9][A-Za-z0-9_-]*)\s*=\s*(.*)$"
@@ -152,14 +128,6 @@ def read_chemical_group_sections(
         )
 
     return guide_path, group_sections
-
-
-def normalize_parents(value: Any) -> list[str]:
-    if isinstance(value, str):
-        return [value]
-    if isinstance(value, list):
-        return [item for item in value if isinstance(item, str)]
-    return []
 
 
 def read_upstream_reagents(game_source: Path) -> dict[str, dict[str, Any]]:
