@@ -1,5 +1,8 @@
 # SSMC Wiki Data
 
+Полное руководство по архитектуре обоих репозиториев находится в
+[`ssmc-wiki-app/docs/CONTRIBUTOR_GUIDE.md`](https://github.com/DeferW/ssmc-wiki-app/blob/main/docs/CONTRIBUTOR_GUIDE.md).
+
 Сборщики данных для веб-приложения Space Stories Marine Corps. Репозиторий не
 хранит вручную составленный список предметов: данные воспроизводимо строятся из
 актуальных прототипов игры.
