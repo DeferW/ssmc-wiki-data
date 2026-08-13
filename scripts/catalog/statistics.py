@@ -436,6 +436,53 @@ def populate_communication_statistics(
         item["communicationStats"] = stats
 
 
+def populate_skill_statistics(
+    items: dict[str, Any],
+    public_item_ids: set[str],
+) -> None:
+    """Publish the gameplay effects of instructional pamphlets.
+
+    SkillPamphlet is deliberately normalized into a small stable block so the
+    website does not need to understand arbitrary component payloads.
+    """
+    for item_id in sorted(public_item_ids):
+        item = items[item_id]
+        properties = item.get("properties", {})
+        pamphlet = properties.get("SkillPamphlet")
+        if not isinstance(pamphlet, dict):
+            continue
+
+        stats: dict[str, Any] = {}
+        for source_key, output_key in (
+            ("addSkills", "skills"),
+            ("skillCap", "skillCaps"),
+        ):
+            values = pamphlet.get(source_key)
+            if isinstance(values, dict) and values:
+                stats[output_key] = {
+                    str(skill_id): level
+                    for skill_id, level in sorted(values.items())
+                    if isinstance(level, (int, float)) and not isinstance(level, bool)
+                }
+
+        language = pamphlet.get("language")
+        if isinstance(language, str) and language:
+            stats["language"] = language
+        title = pamphlet.get("giveJobTitle")
+        if isinstance(title, str) and title:
+            stats["jobTitle"] = title
+        prefix = pamphlet.get("givePrefix")
+        if isinstance(prefix, str) and prefix:
+            stats["jobPrefix"] = prefix
+        if pamphlet.get("bypassSkill") is True:
+            stats["bypassesSkillRequirement"] = True
+        if pamphlet.get("bypassLimit") is True:
+            stats["bypassesPamphletLimit"] = True
+
+        if stats:
+            item["skillStats"] = stats
+
+
 def populate_weapon_statistics(
     items: dict[str, Any],
     relations: list[dict[str, Any]],

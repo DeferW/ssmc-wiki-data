@@ -27,6 +27,7 @@ from .statistics import (
     populate_armor_statistics,
     populate_attachment_statistics,
     populate_communication_statistics,
+    populate_skill_statistics,
     populate_solution_statistics,
     populate_storage_statistics,
     populate_weapon_statistics,
@@ -802,6 +803,7 @@ def build_catalog(
         public_catalog["aliases"],
     )
     populate_communication_statistics(items, set(public_catalog["itemIds"]))
+    populate_skill_statistics(items, set(public_catalog["itemIds"]))
     populate_solution_statistics(items, set(public_catalog["itemIds"]))
     populate_weapon_statistics(
         items,

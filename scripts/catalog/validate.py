@@ -124,6 +124,7 @@ def validate(
             "storageStats",
             "solutionStats",
             "communicationStats",
+            "skillStats",
         ):
             fail_if(block in item and not isinstance(item[block], dict), f"Invalid {block}: {item_id}")
         for offer in item.get("availability", []):

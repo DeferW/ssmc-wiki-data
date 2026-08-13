@@ -127,6 +127,8 @@ PUBLIC_PROPERTY_COMPONENTS = {
     "HeadsetMultiBroadcast",
     "RMCHeadset",
     "RMCStaticDefaultChannel",
+    # Training manuals and language pamphlets.
+    "SkillPamphlet",
 }
 
 

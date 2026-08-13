@@ -3,9 +3,34 @@ from scripts.catalog.statistics import (
     default_storage_max_size,
     packing_capacity,
     parse_vector2i,
+    populate_skill_statistics,
     shape_cells,
     storage_whitelist_matches,
 )
+
+
+def test_populate_skill_statistics_normalizes_pamphlet_effects():
+    items = {
+        "Pamphlet": {
+            "properties": {
+                "SkillPamphlet": {
+                    "addSkills": {"RMCSkillEngineer": 1},
+                    "skillCap": {"RMCSkillEngineer": 2},
+                    "language": "Russian",
+                    "bypassLimit": True,
+                }
+            }
+        }
+    }
+
+    populate_skill_statistics(items, {"Pamphlet"})
+
+    assert items["Pamphlet"]["skillStats"] == {
+        "skills": {"RMCSkillEngineer": 1},
+        "skillCaps": {"RMCSkillEngineer": 2},
+        "language": "Russian",
+        "bypassesPamphletLimit": True,
+    }
 
 
 def test_box_cells_single_1x1_box():
