@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 2,
+  "items": {
+    "RMCSentry": {
+      "category": "Снаряжение"
+    },
+    "CMVendorHeadsetSquad": {
+      "category": "Скрытые"
+    },
+    "CMVendorHeadsetSquadComTech": {
+      "category": "Скрытые"
+    },
+    "CMVendorHeadsetSquadCorpsman": {
+      "category": "Скрытые"
+    },
+    "CMVendorHeadsetSquadFTL": {
+      "category": "Скрытые"
+    },
+    "CMVendorHeadsetSquadLeader": {
+      "category": "Скрытые"
+    },
+    "RMCWeaponPistolM13Empty": {
+      "category": "Скрытые"
+    },
+    "RMCWeaponRevolverM44Empty": {
+      "category": "Скрытые"
+    },
+    "RMCWeaponPistolM77Empty": {
+      "category": "Скрытые"
+    },
+    "RMCWeaponPistolM82FEmpty": {
+      "category": "Скрытые"
+    },
+    "CMWeaponPistolM1984Empty": {
+      "category": "Скрытые"
+    },
+    "RMCBulletSentryFireProjectile": {
+      "category": "Скрытые"
+    },
+    "RMCProjectileM5510Brute": {
+      "category": "Скрытые"
+    },
+    "RMCProjectileTaser": {
+      "category": "Скрытые"
+    },
+    "RMCBulletSentryFireProjectileSmoke": {
+      "category": "Скрытые"
+    },
+    "RMCBulletSentryFireProjectileBlue": {
+      "category": "Скрытые"
+    },
+    "RMCProjectileRocket84mmWhitePhosphorus": {
+      "category": "Скрытые"
+    },
+    "RMCProjectileRocket84mm": {
+      "category": "Скрытые"
+    },
+    "RMCProjectileRocket84mmAntiArmor": {
+      "category": "Скрытые"
+    },
+    "RMCAirBurstProjectileSmoke": {
+      "category": "Скрытые"
+    },
+    "RMCAirBurstProjectileIncendiary": {
+      "category": "Скрытые"
+    },
+    "RMCAirBurstProjectileFrag": {
+      "category": "Скрытые"
+    },
+    "RMCAirBurstProjectileStarShell": {
+      "category": "Скрытые"
+    },
+    "RMCAirBurstProjectileHornet": {
+      "category": "Скрытые"
+    },
+    "RMCBatonSlugProjectile": {
+      "category": "Скрытые"
+    }
+  }
+}
