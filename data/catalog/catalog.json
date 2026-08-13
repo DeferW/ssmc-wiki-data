@@ -41851,7 +41851,29 @@
         "Tag"
       ],
       "equipmentSlots": [],
-      "properties": {},
+      "properties": {
+        "SkillPamphlet": {
+          "whitelists": [
+            {
+              "popup": "rmc-pamphlets-cant-use",
+              "restrictions": {
+                "components": [
+                  "Marine"
+                ]
+              }
+            }
+          ],
+          "addSkills": {
+            "RMCSkillEngineer": 1,
+            "RMCSkillConstruction": 1
+          },
+          "skillCap": {
+            "RMCSkillEngineer": 2,
+            "RMCSkillConstruction": 1
+          },
+          "bypassLimit": true
+        }
+      },
       "availability": [
         {
           "vendorId": "ColMarTechCargoGuns",
@@ -41908,6 +41930,17 @@
       },
       "category": "Другое",
       "public": true,
+      "skillStats": {
+        "skills": {
+          "RMCSkillConstruction": 1,
+          "RMCSkillEngineer": 1
+        },
+        "skillCaps": {
+          "RMCSkillConstruction": 1,
+          "RMCSkillEngineer": 2
+        },
+        "bypassesPamphletLimit": true
+      },
       "image": "sprites/CMPamphletEngineer.png"
     },
     "CMPamphletIntel": {
@@ -41947,7 +41980,32 @@
         "Tag"
       ],
       "equipmentSlots": [],
-      "properties": {},
+      "properties": {
+        "SkillPamphlet": {
+          "whitelists": [
+            {
+              "popup": "rmc-pamphlets-cant-use",
+              "restrictions": {
+                "components": [
+                  "Marine"
+                ]
+              }
+            }
+          ],
+          "addSkills": {
+            "RMCSkillIntel": 1
+          },
+          "skillCap": {
+            "RMCSkillIntel": 2
+          },
+          "addComps": [
+            {
+              "type": "ViewIntelObjectives"
+            }
+          ],
+          "bypassLimit": true
+        }
+      },
       "availability": [],
       "directlyVended": false,
       "sprite": {
@@ -41967,6 +42025,15 @@
       },
       "category": "Другое",
       "public": true,
+      "skillStats": {
+        "skills": {
+          "RMCSkillIntel": 1
+        },
+        "skillCaps": {
+          "RMCSkillIntel": 2
+        },
+        "bypassesPamphletLimit": true
+      },
       "image": "sprites/CMPamphletIntel.png"
     },
     "CMPamphletJTAC": {
@@ -42006,7 +42073,27 @@
         "Tag"
       ],
       "equipmentSlots": [],
-      "properties": {},
+      "properties": {
+        "SkillPamphlet": {
+          "whitelists": [
+            {
+              "popup": "rmc-pamphlets-cant-use",
+              "restrictions": {
+                "components": [
+                  "Marine"
+                ]
+              }
+            }
+          ],
+          "addSkills": {
+            "RMCSkillJtac": 1
+          },
+          "skillCap": {
+            "RMCSkillJtac": 2
+          },
+          "bypassLimit": true
+        }
+      },
       "availability": [
         {
           "vendorId": "ColMarTechCargoGuns",
@@ -42063,6 +42150,15 @@
       },
       "category": "Другое",
       "public": true,
+      "skillStats": {
+        "skills": {
+          "RMCSkillJtac": 1
+        },
+        "skillCaps": {
+          "RMCSkillJtac": 2
+        },
+        "bypassesPamphletLimit": true
+      },
       "image": "sprites/CMPamphletJTAC.png"
     },
     "CMPamphletPowerloader": {
@@ -42102,7 +42198,27 @@
         "Tag"
       ],
       "equipmentSlots": [],
-      "properties": {},
+      "properties": {
+        "SkillPamphlet": {
+          "whitelists": [
+            {
+              "popup": "rmc-pamphlets-cant-use",
+              "restrictions": {
+                "components": [
+                  "Marine"
+                ]
+              }
+            }
+          ],
+          "addSkills": {
+            "RMCSkillPowerLoader": 1
+          },
+          "skillCap": {
+            "RMCSkillPowerLoader": 2
+          },
+          "bypassLimit": true
+        }
+      },
       "availability": [
         {
           "vendorId": "ColMarTechCargoGuns",
@@ -42132,6 +42248,15 @@
       },
       "category": "Другое",
       "public": true,
+      "skillStats": {
+        "skills": {
+          "RMCSkillPowerLoader": 1
+        },
+        "skillCaps": {
+          "RMCSkillPowerLoader": 2
+        },
+        "bypassesPamphletLimit": true
+      },
       "image": "sprites/CMPamphletPowerloader.png"
     },
     "CMPamphletSpotter": {
@@ -42171,7 +42296,53 @@
         "Tag"
       ],
       "equipmentSlots": [],
-      "properties": {},
+      "properties": {
+        "SkillPamphlet": {
+          "whitelists": [
+            {
+              "popup": "rmc-pamphlets-cant-use",
+              "restrictions": {
+                "components": [
+                  "Marine"
+                ]
+              }
+            }
+          ],
+          "bypassSkill": true,
+          "addComps": [
+            {
+              "type": "SpotterWhitelist"
+            }
+          ],
+          "addSkills": {
+            "RMCSkillJtac": 1
+          },
+          "skillCap": {
+            "RMCSkillJtac": 2
+          },
+          "giveJobTitle": "rmc-job-name-spotter",
+          "givePrefix": "rmc-job-prefix-spotter",
+          "isAppendPrefix": false,
+          "giveIcon": {
+            "sprite": "_RMC14/Interface/job_icons/UNMC/marine.rsi",
+            "state": "hudsquad_ass"
+          },
+          "giveMapBlip": {
+            "sprite": "/Textures/_RMC14/Interface/map_blips.rsi",
+            "state": "spotter"
+          },
+          "jobWhitelists": [
+            {
+              "popup": "rmc-pamphlets-rifleman-warning",
+              "jobProto": "CMRifleman"
+            },
+            {
+              "popup": "rmc-pamphlets-rifleman-warning",
+              "jobProto": "CMPVERifleman"
+            }
+          ]
+        }
+      },
       "availability": [],
       "directlyVended": false,
       "sprite": {
@@ -42191,6 +42362,17 @@
       },
       "category": "Другое",
       "public": true,
+      "skillStats": {
+        "skills": {
+          "RMCSkillJtac": 1
+        },
+        "skillCaps": {
+          "RMCSkillJtac": 2
+        },
+        "jobTitle": "rmc-job-name-spotter",
+        "jobPrefix": "rmc-job-prefix-spotter",
+        "bypassesSkillRequirement": true
+      },
       "image": "sprites/CMPamphletSpotter.png"
     },
     "CMPelletShotgunBuckshot": {
@@ -140738,7 +140920,27 @@
         "Tag"
       ],
       "equipmentSlots": [],
-      "properties": {},
+      "properties": {
+        "SkillPamphlet": {
+          "whitelists": [
+            {
+              "popup": "rmc-pamphlets-cant-use",
+              "restrictions": {
+                "components": [
+                  "Marine"
+                ]
+              }
+            }
+          ],
+          "addSkills": {
+            "RMCSkillEngineer": 1
+          },
+          "skillCap": {
+            "RMCSkillEngineer": 2
+          },
+          "bypassLimit": true
+        }
+      },
       "availability": [],
       "directlyVended": false,
       "sprite": {
@@ -140758,6 +140960,15 @@
       },
       "category": "Другое",
       "public": true,
+      "skillStats": {
+        "skills": {
+          "RMCSkillEngineer": 1
+        },
+        "skillCaps": {
+          "RMCSkillEngineer": 2
+        },
+        "bypassesPamphletLimit": true
+      },
       "image": "sprites/RMCPamphletHeavyMachineGunner.png"
     },
     "RMCPamphletLoader": {
@@ -140797,7 +141008,48 @@
         "Tag"
       ],
       "equipmentSlots": [],
-      "properties": {},
+      "properties": {
+        "SkillPamphlet": {
+          "whitelists": [
+            {
+              "popup": "rmc-pamphlets-cant-use",
+              "restrictions": {
+                "components": [
+                  "Marine"
+                ]
+              }
+            }
+          ],
+          "bypassSkill": true,
+          "addSkills": {
+            "RMCSkillEngineer": 1
+          },
+          "skillCap": {
+            "RMCSkillEngineer": 2
+          },
+          "giveJobTitle": "rmc-job-name-loader",
+          "givePrefix": "rmc-job-prefix-loader",
+          "isAppendPrefix": false,
+          "giveIcon": {
+            "sprite": "_RMC14/Interface/job_icons/UNMC/marine.rsi",
+            "state": "hudsquad_load"
+          },
+          "giveMapBlip": {
+            "sprite": "/Textures/_RMC14/Interface/map_blips.rsi",
+            "state": "loader"
+          },
+          "jobWhitelists": [
+            {
+              "popup": "rmc-pamphlets-rifleman-warning",
+              "jobProto": "CMRifleman"
+            },
+            {
+              "popup": "rmc-pamphlets-rifleman-warning",
+              "jobProto": "CMPVERifleman"
+            }
+          ]
+        }
+      },
       "availability": [],
       "directlyVended": false,
       "sprite": {
@@ -140817,6 +141069,17 @@
       },
       "category": "Другое",
       "public": true,
+      "skillStats": {
+        "skills": {
+          "RMCSkillEngineer": 1
+        },
+        "skillCaps": {
+          "RMCSkillEngineer": 2
+        },
+        "jobTitle": "rmc-job-name-loader",
+        "jobPrefix": "rmc-job-prefix-loader",
+        "bypassesSkillRequirement": true
+      },
       "image": "sprites/RMCPamphletLoader.png"
     },
     "RMCParachute": {
