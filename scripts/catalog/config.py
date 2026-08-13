@@ -17,6 +17,8 @@ def read_config(path: Path) -> dict[str, Any]:
     data = yaml.safe_load(path.read_text(encoding="utf-8"))
     if not isinstance(data, dict):
         raise RuntimeError("Catalog config must be a mapping")
+    if data.get("schemaVersion") != 3:
+        raise RuntimeError("Catalog config must use schemaVersion 3")
     vendors = data.get("vendors")
     cargo_catalogs = data.get("cargoCatalogs", [])
     if not isinstance(vendors, list) or not vendors:
@@ -36,11 +38,20 @@ def read_config(path: Path) -> dict[str, Any]:
     policy = data.get("classification", {})
     if not isinstance(policy, dict):
         raise RuntimeError("Catalog classification policy must be a mapping")
-    for key in ("excludePrototypeIds", "includePrototypeIds"):
+    unknown_policy_keys = set(policy) - {
+        "excludePrototypeIds",
+        "categoryOverrides",
+    }
+    if unknown_policy_keys:
+        raise RuntimeError(
+            "Unknown catalog classification options: "
+            + ", ".join(sorted(unknown_policy_keys))
+        )
+    for key in ("excludePrototypeIds",):
         value = policy.get(key, [])
         if not isinstance(value, list) or any(not isinstance(item, str) for item in value):
             raise RuntimeError(f"classification.{key} must be a list of ids")
-    for key in ("categoryOverrides", "canonicalPrototypeIds"):
+    for key in ("categoryOverrides",):
         value = policy.get(key, {})
         if not isinstance(value, dict) or any(
             not isinstance(item_id, str) or not isinstance(target, str)
@@ -152,11 +163,6 @@ def apply_catalog_overrides(
 
     public_catalog["itemIds"] = ordered_public_ids
     public_catalog["categories"] = categories
-    public_catalog["aliases"] = {
-        alias_id: canonical_id
-        for alias_id, canonical_id in public_catalog["aliases"].items()
-        if canonical_id in public_ids
-    }
     hidden_ids = list(categories[PUBLIC_CATEGORY_LABELS["hidden"]])
     catalog["overrides"] = {
         "schemaVersion": 2,

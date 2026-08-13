@@ -13,6 +13,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7.0.1
 
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
       - name: Install ruff
         run: python3 -m pip install ruff
 
@@ -25,6 +30,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
 
       - name: Install test tools
         run: |
@@ -40,6 +50,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
 
       - name: Install catalog tools
         run: python3 -m pip install -r requirements.txt

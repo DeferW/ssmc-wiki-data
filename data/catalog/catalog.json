@@ -33074,7 +33074,7 @@
     },
     "CMIV": {
       "id": "CMIV",
-      "name": "Капельница (Капельница)",
+      "name": "Капельница",
       "baseName": "Капельница",
       "description": "Позволяет вводить кровь пациенту или забирать у него кровь для переливания.",
       "suffix": "Капельница, пустая",
@@ -33112,10 +33112,10 @@
           "sectionName": "Медицина",
           "tradeKey": "CMASRSConsole:cargo:7:1:entity1",
           "transportContainer": false,
-          "cost": 3500
+          "includedWithItemId": "RMCCrateFieldDoctor"
         }
       ],
-      "directlyVended": true,
+      "directlyVended": false,
       "sprite": {
         "sprite": "_RMC14/Structures/Machines/Medical/iv_drip.rsi",
         "layers": [
@@ -99744,6 +99744,9 @@
           "sectionName": "Медицина",
           "tradeKey": "CMASRSConsole:cargo:7:1:crate",
           "transportContainer": true,
+          "includedItemIds": [
+            "CMIV"
+          ],
           "cost": 3500
         }
       ],
@@ -183796,10 +183799,7 @@
       "RMCCrateClothingDropPouchBlack",
       "RMCCrateClothingWebbingBlack",
       "RMCCrateElectricalMaintenance"
-    ],
-    "unwrappedCaseIds": [],
-    "unwrappedTransportIds": [],
-    "aliases": {}
+    ]
   },
   "counts": {
     "catalogItems": 1120,

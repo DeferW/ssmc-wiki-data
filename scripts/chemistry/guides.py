@@ -3,7 +3,6 @@ from __future__ import annotations
 import argparse
 import json
 import re
-from datetime import datetime, timezone
 from pathlib import Path
 
 
@@ -76,7 +75,6 @@ def main() -> None:
             "branch": "master",
             "commit": args.commit,
         },
-        "generatedAt": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
         "guides": {
             key: parse_guide(path)
             for key, path in guides.items()

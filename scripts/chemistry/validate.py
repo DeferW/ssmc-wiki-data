@@ -32,6 +32,14 @@ def read_json(path: Path) -> dict[str, Any]:
 
 
 def validate(data: dict[str, Any]) -> None:
+    if data.get("schemaVersion") != 1:
+        raise RuntimeError(f"Unexpected schemaVersion: {data.get('schemaVersion')}")
+    source = data.get("source")
+    if not isinstance(source, dict) or not isinstance(source.get("commit"), str):
+        raise RuntimeError("Chemistry catalog has no source commit")
+    if "generatedAt" in data:
+        raise RuntimeError("Chemistry catalog must be deterministic; remove generatedAt")
+
     reagents = data.get("reagents", {})
     dependencies = data.get("dependencies", {})
     reactions = data.get("reactions", {})

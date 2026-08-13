@@ -128,9 +128,19 @@ def validate(
             "skillStats",
         ):
             fail_if(block in item and not isinstance(item[block], dict), f"Invalid {block}: {item_id}")
-        for offer in item.get("availability", []):
+        availability = item.get("availability", [])
+        for offer in availability:
             fail_if(not isinstance(offer, dict), f"Invalid offer: {item_id}")
             fail_if(not isinstance(offer.get("tradeKey"), str), f"Offer has no key: {item_id}")
+        expected_direct = any(
+            "stockForItemId" not in offer and "includedWithItemId" not in offer
+            for offer in availability
+            if isinstance(offer, dict)
+        )
+        fail_if(
+            item.get("directlyVended") is not expected_direct,
+            f"Direct offer marker mismatch: {item_id}",
+        )
 
     for item_id in categories[PUBLIC_CATEGORY_LABELS["hidden"]]:
         fail_if(item_id not in overrides.get("items", {}), f"Hidden item lacks override: {item_id}")
@@ -191,6 +201,56 @@ def validate(
         fail_if(not offers, f"Trade offer missing from catalog: {trade.get('key')}")
         if trade.get("sourceType") == "cargo" and "cost" in trade:
             fail_if(offers[0].get("cost") != trade["cost"], f"Cargo cost lost: {trade.get('key')}")
+        included_with = trade.get("includedWithItemId")
+        included_ids = trade.get("includedItemIds")
+        if included_with is not None:
+            fail_if(trade.get("sourceType") != "cargo", "Only cargo can define a bundle")
+            fail_if(not isinstance(included_with, str), "Invalid cargo bundle root")
+            fail_if(included_with == trade.get("itemId"), "Cargo bundle points to itself")
+            fail_if(included_with not in items, "Cargo bundle root is unknown")
+            fail_if("cost" in trade or "cost" in offers[0], "Bundle member has a direct price")
+            fail_if(
+                offers[0].get("includedWithItemId") != included_with,
+                "Cargo bundle root lost from availability",
+            )
+            matching_roots = [
+                candidate
+                for candidate in trades
+                if isinstance(candidate, dict)
+                and candidate.get("itemId") == included_with
+                and isinstance(candidate.get("includedItemIds"), list)
+                and trade.get("itemId") in candidate["includedItemIds"]
+                and candidate.get("vendorId") == trade.get("vendorId")
+                and candidate.get("sectionKey") == trade.get("sectionKey")
+                and candidate.get("position") == trade.get("position")
+            ]
+            fail_if(not matching_roots, "Cargo bundle member has no matching root offer")
+        if included_ids is not None:
+            fail_if(
+                not isinstance(included_ids, list)
+                or any(not isinstance(item_id, str) for item_id in included_ids),
+                "Invalid cargo bundle members",
+            )
+            fail_if(
+                any(item_id not in items for item_id in included_ids),
+                "Unknown cargo bundle member",
+            )
+            fail_if(
+                offers[0].get("includedItemIds") != included_ids,
+                "Cargo bundle members lost",
+            )
+            for included_id in included_ids:
+                matching_members = [
+                    candidate
+                    for candidate in trades
+                    if isinstance(candidate, dict)
+                    and candidate.get("itemId") == included_id
+                    and candidate.get("includedWithItemId") == trade.get("itemId")
+                    and candidate.get("vendorId") == trade.get("vendorId")
+                    and candidate.get("sectionKey") == trade.get("sectionKey")
+                    and candidate.get("position") == trade.get("position")
+                ]
+                fail_if(not matching_members, "Cargo bundle root has no matching member offer")
     offer_keys = {
         offer.get("tradeKey")
         for item in items.values()

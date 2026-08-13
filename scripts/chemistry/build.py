@@ -3,7 +3,6 @@ from __future__ import annotations
 import argparse
 import json
 import re
-from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -670,9 +669,6 @@ def main() -> None:
     result = {
         "schemaVersion": 1,
         "source": index["source"],
-        "generatedAt": datetime.now(timezone.utc).isoformat().replace(
-            "+00:00", "Z"
-        ),
         "locale": args.locale,
         "counts": {
             "customReagents": len(custom_records),

@@ -37,4 +37,3 @@ cargoCatalogs:
 classification:
   excludePrototypeIds: []
   categoryOverrides: {}
-  canonicalPrototypeIds: {}

@@ -6118,6 +6118,9 @@
       "itemId": "RMCCrateFieldDoctor",
       "name": "ящик полевого доктора (содержит снаряжение полевого доктора)",
       "transportContainer": true,
+      "includedItemIds": [
+        "CMIV"
+      ],
       "cost": 3500
     },
     {
@@ -6130,7 +6133,7 @@
       "itemId": "CMIV",
       "name": "Капельница",
       "transportContainer": false,
-      "cost": 3500
+      "includedWithItemId": "RMCCrateFieldDoctor"
     },
     {
       "key": "CMASRSConsole:cargo:7:2:crate",

@@ -57,12 +57,19 @@ def catalog_display_name(base_name: str, suffix: str) -> str:
         "слож",
         "собран",
     )
-    qualifiers = [
-        part.strip()
-        for part in suffix.split(",")
-        if part.strip()
-        and not part.strip().casefold().startswith(ignored_prefixes)
-    ]
+    qualifiers: list[str] = []
+    seen = {base_name.casefold()}
+    for part in suffix.split(","):
+        qualifier = part.strip()
+        normalized = qualifier.casefold()
+        if (
+            not qualifier
+            or normalized in seen
+            or normalized.startswith(ignored_prefixes)
+        ):
+            continue
+        qualifiers.append(qualifier)
+        seen.add(normalized)
     if not qualifiers:
         return base_name
     return f"{base_name} ({', '.join(qualifiers)})"
@@ -72,7 +79,6 @@ def build_public_catalog(
     trade_entries: list[dict[str, Any]],
     items: dict[str, Any],
     relations: list[dict[str, Any]],
-    transport_container_ids: set[str],
     classification_policy: dict[str, Any],
 ) -> dict[str, Any]:
     physical_contents: dict[str, list[str]] = defaultdict(list)
@@ -104,38 +110,9 @@ def build_public_catalog(
         # Boxes/crates are no longer silently replaced with their contents.
         queue.extend(physical_contents.get(item_id, []))
 
-    # Admin review needs every reachable prototype as its own card. Automatic
-    # canonical aliases used to hide filled/empty and wrapper variants before a
-    # human could inspect them, which contradicts the all-items source policy.
-    aliases = {item_id: item_id for item_id in public_candidates}
-    alias_groups: dict[str, list[str]] = {}
-    public_ids = {aliases[item_id] for item_id in public_candidates}
-    for canonical_id, members in alias_groups.items():
-        if len(members) > 1:
-            items[canonical_id]["aliases"] = [
-                member for member in members if member != canonical_id
-            ]
-            for member in members:
-                items[member]["canonicalItemId"] = canonical_id
-            if (
-                "container" in items[canonical_id].get("types", [])
-                and "armor" not in items[canonical_id].get("types", [])
-                and "weapon" not in items[canonical_id].get("types", [])
-            ):
-                loadouts = []
-                for member in members:
-                    content_ids = sorted(set(physical_contents.get(member, [])))
-                    if not content_ids:
-                        continue
-                    loadouts.append(
-                        {
-                            "itemId": member,
-                            "suffix": items[member].get("suffix", ""),
-                            "contentItemIds": content_ids,
-                        }
-                    )
-                if loadouts:
-                    items[canonical_id]["loadoutVariants"] = loadouts
+    # Every reachable prototype stays a separate card so the admin can review
+    # filled, empty and wrapper variants independently.
+    public_ids = public_candidates
 
     categories: dict[str, list[str]] = defaultdict(list)
     excluded_ids: list[str] = []
@@ -169,14 +146,53 @@ def build_public_catalog(
         },
         "excludedItemIds": excluded_ids,
         "candidateItemIds": sorted(public_ids, key=sort_key),
-        "unwrappedCaseIds": [],
-        "unwrappedTransportIds": [],
-        "aliases": {
-            item_id: canonical_id
-            for item_id, canonical_id in sorted(aliases.items())
-            if item_id != canonical_id and canonical_id in set(published_ids)
-        },
     }
+
+
+def cargo_payloads(raw_entry: dict[str, Any]) -> list[dict[str, Any]]:
+    """Normalize one cargo order without turning bundle parts into products.
+
+    The price belongs to the whole RequisitionsComputer entry. The crate (or the
+    first entity for an entry without a crate) is the purchasable root; remaining
+    entities are delivered with it and must not expose the same price separately.
+    """
+    ordered: list[tuple[str, bool]] = []
+    crate_id = raw_entry.get("crate")
+    if isinstance(crate_id, str):
+        ordered.append((crate_id, True))
+    entities = raw_entry.get("entities")
+    if isinstance(entities, list):
+        ordered.extend(
+            (item_id, False)
+            for item_id in entities
+            if isinstance(item_id, str)
+        )
+
+    unique: list[tuple[str, bool]] = []
+    seen: set[str] = set()
+    for item_id, is_transport in ordered:
+        if item_id in seen:
+            continue
+        seen.add(item_id)
+        unique.append((item_id, is_transport))
+    if not unique:
+        return []
+
+    root_id = unique[0][0]
+    included_ids = [item_id for item_id, _ in unique[1:]]
+    payloads: list[dict[str, Any]] = []
+    for item_id, is_transport in unique:
+        payload: dict[str, Any] = {
+            "itemId": item_id,
+            "transportContainer": is_transport,
+        }
+        if item_id == root_id:
+            if included_ids:
+                payload["includedItemIds"] = included_ids
+        else:
+            payload["includedWithItemId"] = root_id
+        payloads.append(payload)
+    return payloads
 
 
 def should_publish_component(component_type: str) -> bool:
@@ -194,6 +210,11 @@ def should_publish_component(component_type: str) -> bool:
             "RMCWeapon",
         )
     )
+
+
+def is_direct_offer(offer: dict[str, Any]) -> bool:
+    """Return whether the item itself is the product of the source offer."""
+    return "stockForItemId" not in offer and "includedWithItemId" not in offer
 
 
 def build_card(
@@ -242,7 +263,7 @@ def build_card(
         "itemSize": str(components.get("Item", {}).get("size", "Small")),
         "itemShape": copy.deepcopy(components.get("Item", {}).get("shape")),
         "availability": availability,
-        "directlyVended": bool(availability),
+        "directlyVended": any(is_direct_offer(offer) for offer in availability),
         "reachableFromVendors": sorted(reachable_vendors),
     }
     sprite = sprite_summary(components)
@@ -271,7 +292,6 @@ def populate_compatibility_summaries(
     items: dict[str, Any],
     relations: list[dict[str, Any]],
     public_item_ids: set[str],
-    aliases: dict[str, str],
 ) -> None:
     attachment_slots: dict[str, dict[str, set[str]]] = defaultdict(
         lambda: defaultdict(set)
@@ -287,14 +307,9 @@ def populate_compatibility_summaries(
     loaded: dict[str, dict[str, set[str]]] = defaultdict(lambda: defaultdict(set))
     outgoing: dict[str, list[dict[str, Any]]] = defaultdict(list)
 
-    def canonical(item_id: str) -> str:
-        return aliases.get(item_id, item_id)
-
     for relation in relations:
-        raw_source = str(relation.get("from", ""))
-        raw_target = str(relation.get("to", ""))
-        source = canonical(raw_source)
-        target = canonical(raw_target)
+        source = str(relation.get("from", ""))
+        target = str(relation.get("to", ""))
         relation_type = relation.get("type")
         canonical_relation = dict(relation)
         canonical_relation["from"] = source
@@ -402,7 +417,6 @@ def populate_content_summaries(
     items: dict[str, Any],
     relations: list[dict[str, Any]],
     public_item_ids: set[str],
-    aliases: dict[str, str],
 ) -> None:
     """Expose the resolved item graph in the public catalog.
 
@@ -414,8 +428,8 @@ def populate_content_summaries(
     contents: dict[str, set[str]] = defaultdict(set)
     outgoing: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for relation in relations:
-        source = aliases.get(str(relation.get("from", "")), str(relation.get("from", "")))
-        target = aliases.get(str(relation.get("to", "")), str(relation.get("to", "")))
+        source = str(relation.get("from", ""))
+        target = str(relation.get("to", ""))
         if source not in public_item_ids or target not in items or source == target:
             continue
         summary = {
@@ -464,7 +478,6 @@ def build_catalog(
     availability_by_item: dict[str, list[dict[str, Any]]] = defaultdict(list)
     reachable_vendors: dict[str, set[str]] = defaultdict(set)
     source_hints_by_item: dict[str, set[str]] = defaultdict(set)
-    transport_container_ids: set[str] = set()
     item_ids: set[str] = set()
     queue: deque[str] = deque()
 
@@ -633,20 +646,9 @@ def build_catalog(
             for entry_index, raw_entry in enumerate(raw_entries):
                 if not isinstance(raw_entry, dict):
                     continue
-                payload_ids: list[tuple[str, bool]] = []
-                crate_id = raw_entry.get("crate")
-                if isinstance(crate_id, str):
-                    payload_ids.append((crate_id, True))
-                    transport_container_ids.add(crate_id)
-                extras = raw_entry.get("entities")
-                if isinstance(extras, list):
-                    payload_ids.extend(
-                        (item_id, False)
-                        for item_id in extras
-                        if isinstance(item_id, str)
-                    )
-
-                for payload_index, (item_id, is_transport) in enumerate(payload_ids):
+                for payload_index, payload in enumerate(cargo_payloads(raw_entry)):
+                    item_id = payload["itemId"]
+                    is_transport = payload["transportContainer"]
                     if item_id not in prototypes:
                         raise RuntimeError(
                             f"Cargo catalog {catalog_id} references unknown item {item_id}"
@@ -669,7 +671,10 @@ def build_catalog(
                         ),
                         "transportContainer": is_transport,
                     }
-                    if "cost" in raw_entry:
+                    for key in ("includedItemIds", "includedWithItemId"):
+                        if key in payload:
+                            trade[key] = copy.deepcopy(payload[key])
+                    if "cost" in raw_entry and "includedWithItemId" not in payload:
                         trade["cost"] = copy.deepcopy(raw_entry["cost"])
                     trade_entries.append(trade)
                     section_trade_keys.append(trade_key)
@@ -681,6 +686,9 @@ def build_catalog(
                         "tradeKey": trade_key,
                         "transportContainer": is_transport,
                     }
+                    for key in ("includedItemIds", "includedWithItemId"):
+                        if key in trade:
+                            availability[key] = copy.deepcopy(trade[key])
                     if "cost" in trade:
                         availability["cost"] = copy.deepcopy(trade["cost"])
                     availability_by_item[item_id].append(availability)
@@ -787,20 +795,17 @@ def build_catalog(
         trade_entries,
         items,
         relations,
-        transport_container_ids,
         config.get("classification", {}),
     )
     populate_compatibility_summaries(
         items,
         relations,
         set(public_catalog["itemIds"]),
-        public_catalog["aliases"],
     )
     populate_content_summaries(
         items,
         relations,
         set(public_catalog["itemIds"]),
-        public_catalog["aliases"],
     )
     populate_communication_statistics(items, set(public_catalog["itemIds"]))
     populate_skill_statistics(items, set(public_catalog["itemIds"]))

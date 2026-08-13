@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import argparse
 import json
-from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -176,9 +175,6 @@ def main() -> None:
             "branch": "master",
             "commit": args.commit,
         },
-        "generatedAt": datetime.now(
-            timezone.utc
-        ).isoformat().replace("+00:00", "Z"),
         "sourceFileCounts": source_counts,
         "prototypeCounts": {
             "reagents": sum(
