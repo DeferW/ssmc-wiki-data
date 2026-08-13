@@ -50622,7 +50622,7 @@
       "description": "{ \"\" }",
       "suffix": "",
       "types": [
-        "equipment"
+        "hidden"
       ],
       "tags": [],
       "componentTypes": [
@@ -50639,10 +50639,13 @@
         "signals": [
           "component:wearable-equipment"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "hidden",
+        "category": "Скрытые",
+        "automaticCategory": "Экипировка",
+        "automaticCategoryId": "equipment",
+        "overriddenByAdministrator": true
       },
-      "category": "Экипировка",
+      "category": "Скрытые",
       "public": true,
       "relationships": [
         {
@@ -50689,7 +50692,8 @@
         "CMHeadsetFoxtrot",
         "CMHeadsetCharlie",
         "CMHeadsetEcho"
-      ]
+      ],
+      "edited": true
     },
     "CMVendorHeadsetSquadComTech": {
       "id": "CMVendorHeadsetSquadComTech",
@@ -50698,7 +50702,7 @@
       "description": "{ \"\" }",
       "suffix": "",
       "types": [
-        "equipment"
+        "hidden"
       ],
       "tags": [],
       "componentTypes": [
@@ -50715,10 +50719,13 @@
         "signals": [
           "component:wearable-equipment"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "hidden",
+        "category": "Скрытые",
+        "automaticCategory": "Экипировка",
+        "automaticCategoryId": "equipment",
+        "overriddenByAdministrator": true
       },
-      "category": "Экипировка",
+      "category": "Скрытые",
       "public": true,
       "relationships": [
         {
@@ -50765,7 +50772,8 @@
         "CMHeadsetFoxtrotEngineer",
         "CMHeadsetCharlieEngineer",
         "CMHeadsetEchoEngineer"
-      ]
+      ],
+      "edited": true
     },
     "CMVendorHeadsetSquadCorpsman": {
       "id": "CMVendorHeadsetSquadCorpsman",
@@ -50774,7 +50782,7 @@
       "description": "{ \"\" }",
       "suffix": "",
       "types": [
-        "equipment"
+        "hidden"
       ],
       "tags": [],
       "componentTypes": [
@@ -50791,10 +50799,13 @@
         "signals": [
           "component:wearable-equipment"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "hidden",
+        "category": "Скрытые",
+        "automaticCategory": "Экипировка",
+        "automaticCategoryId": "equipment",
+        "overriddenByAdministrator": true
       },
-      "category": "Экипировка",
+      "category": "Скрытые",
       "public": true,
       "relationships": [
         {
@@ -50841,7 +50852,8 @@
         "CMHeadsetFoxtrotMedic",
         "CMHeadsetCharlieMedic",
         "CMHeadsetEchoMedic"
-      ]
+      ],
+      "edited": true
     },
     "CMVendorHeadsetSquadFTL": {
       "id": "CMVendorHeadsetSquadFTL",
@@ -50850,7 +50862,7 @@
       "description": "{ \"\" }",
       "suffix": "",
       "types": [
-        "equipment"
+        "hidden"
       ],
       "tags": [],
       "componentTypes": [
@@ -50867,10 +50879,13 @@
         "signals": [
           "component:wearable-equipment"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "hidden",
+        "category": "Скрытые",
+        "automaticCategory": "Экипировка",
+        "automaticCategoryId": "equipment",
+        "overriddenByAdministrator": true
       },
-      "category": "Экипировка",
+      "category": "Скрытые",
       "public": true,
       "relationships": [
         {
@@ -50917,7 +50932,8 @@
         "CMHeadsetFoxtrotTeamLeader",
         "CMHeadsetCharlieTeamLeader",
         "CMHeadsetEchoTeamLeader"
-      ]
+      ],
+      "edited": true
     },
     "CMVendorHeadsetSquadLeader": {
       "id": "CMVendorHeadsetSquadLeader",
@@ -50926,7 +50942,7 @@
       "description": "{ \"\" }",
       "suffix": "",
       "types": [
-        "equipment"
+        "hidden"
       ],
       "tags": [],
       "componentTypes": [
@@ -50943,10 +50959,13 @@
         "signals": [
           "component:wearable-equipment"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "hidden",
+        "category": "Скрытые",
+        "automaticCategory": "Экипировка",
+        "automaticCategoryId": "equipment",
+        "overriddenByAdministrator": true
       },
-      "category": "Экипировка",
+      "category": "Скрытые",
       "public": true,
       "relationships": [
         {
@@ -50993,7 +51012,8 @@
         "CMHeadsetFoxtrotLeader",
         "CMHeadsetCharlieLeader",
         "CMHeadsetEchoLeader"
-      ]
+      ],
+      "edited": true
     },
     "CMWeaponPistolM1984": {
       "id": "CMWeaponPistolM1984",
@@ -51479,7 +51499,7 @@
       "description": "Служебный пистолет M4A3, когда-то являвшийся стандартным оружием морской пехоты, но недавно замененный на боевой пистолет 88 M4. Стреляет пистолетными патронами калибра 9 мм.",
       "suffix": "Пустой",
       "types": [
-        "weapon"
+        "hidden"
       ],
       "tags": [
         "CMWeaponPistolM1984",
@@ -51707,10 +51727,13 @@
         "signals": [
           "Gun"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "hidden",
+        "category": "Скрытые",
+        "automaticCategory": "Оружие",
+        "automaticCategoryId": "weapon",
+        "overriddenByAdministrator": true
       },
-      "category": "Оружие",
+      "category": "Скрытые",
       "public": true,
       "attachmentSlots": [
         {
@@ -51955,6 +51978,7 @@
           }
         ]
       },
+      "edited": true,
       "image": "sprites/CMWeaponPistolM1984Empty.png"
     },
     "CMWebbing": {
@@ -54601,7 +54625,7 @@
       "description": "Если вы можете видеть это, вы, вероятно, мертвы!",
       "suffix": "",
       "types": [
-        "ammunition"
+        "hidden"
       ],
       "tags": [],
       "componentTypes": [
@@ -54661,11 +54685,15 @@
         "signals": [
           "component:ammunition-or-explosive"
         ],
-        "categoryId": "ammunition",
-        "category": "Боезапас"
+        "categoryId": "hidden",
+        "category": "Скрытые",
+        "automaticCategory": "Боезапас",
+        "automaticCategoryId": "ammunition",
+        "overriddenByAdministrator": true
       },
-      "category": "Боезапас",
+      "category": "Скрытые",
       "public": true,
+      "edited": true,
       "image": "sprites/RMCAirBurstProjectileFrag.png"
     },
     "RMCAirBurstProjectileHornet": {
@@ -54675,7 +54703,7 @@
       "description": "Если вы можете видеть это, вы, вероятно, мертвы!",
       "suffix": "",
       "types": [
-        "ammunition"
+        "hidden"
       ],
       "tags": [],
       "componentTypes": [
@@ -54735,11 +54763,15 @@
         "signals": [
           "component:ammunition-or-explosive"
         ],
-        "categoryId": "ammunition",
-        "category": "Боезапас"
+        "categoryId": "hidden",
+        "category": "Скрытые",
+        "automaticCategory": "Боезапас",
+        "automaticCategoryId": "ammunition",
+        "overriddenByAdministrator": true
       },
-      "category": "Боезапас",
+      "category": "Скрытые",
       "public": true,
+      "edited": true,
       "image": "sprites/RMCAirBurstProjectileHornet.png"
     },
     "RMCAirBurstProjectileIncendiary": {
@@ -54749,7 +54781,7 @@
       "description": "Если вы можете видеть это, вы, вероятно, мертвы!",
       "suffix": "",
       "types": [
-        "ammunition"
+        "hidden"
       ],
       "tags": [],
       "componentTypes": [
@@ -54810,11 +54842,15 @@
         "signals": [
           "component:ammunition-or-explosive"
         ],
-        "categoryId": "ammunition",
-        "category": "Боезапас"
+        "categoryId": "hidden",
+        "category": "Скрытые",
+        "automaticCategory": "Боезапас",
+        "automaticCategoryId": "ammunition",
+        "overriddenByAdministrator": true
       },
-      "category": "Боезапас",
+      "category": "Скрытые",
       "public": true,
+      "edited": true,
       "image": "sprites/RMCAirBurstProjectileIncendiary.png"
     },
     "RMCAirBurstProjectileSmoke": {
@@ -54824,7 +54860,7 @@
       "description": "Если вы можете видеть это, вы, вероятно, мертвы!",
       "suffix": "",
       "types": [
-        "ammunition"
+        "hidden"
       ],
       "tags": [],
       "componentTypes": [
@@ -54886,11 +54922,15 @@
         "signals": [
           "component:ammunition-or-explosive"
         ],
-        "categoryId": "ammunition",
-        "category": "Боезапас"
+        "categoryId": "hidden",
+        "category": "Скрытые",
+        "automaticCategory": "Боезапас",
+        "automaticCategoryId": "ammunition",
+        "overriddenByAdministrator": true
       },
-      "category": "Боезапас",
+      "category": "Скрытые",
       "public": true,
+      "edited": true,
       "image": "sprites/RMCAirBurstProjectileSmoke.png"
     },
     "RMCAirBurstProjectileStarShell": {
@@ -54900,7 +54940,7 @@
       "description": "Если вы можете видеть это, вы, вероятно, мертвы!",
       "suffix": "",
       "types": [
-        "ammunition"
+        "hidden"
       ],
       "tags": [],
       "componentTypes": [
@@ -54961,11 +55001,15 @@
         "signals": [
           "component:ammunition-or-explosive"
         ],
-        "categoryId": "ammunition",
-        "category": "Боезапас"
+        "categoryId": "hidden",
+        "category": "Скрытые",
+        "automaticCategory": "Боезапас",
+        "automaticCategoryId": "ammunition",
+        "overriddenByAdministrator": true
       },
-      "category": "Боезапас",
+      "category": "Скрытые",
       "public": true,
+      "edited": true,
       "image": "sprites/RMCAirBurstProjectileStarShell.png"
     },
     "RMCAntiMaterielEquipmentCase": {
@@ -75065,7 +75109,7 @@
       "description": "Родственник резиновой пули M15, РПУВ картечь с резиновой пулей была отозвана из вооруженных сил и гражданской полиции из-за избытка пороха в подкалиберном корпусе. Теперь она используется в качестве несмертельного варианта в столкновениях с людьми, а иногда и с нелюдями. Исторически, РПУВ была невероятно популярна во время Арктурианского конфликта, так как ударная сила, как было установлено, надежно выводила из строя силы арктурианского сопротивления, ломая им ребра и пробивая легкие.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "hidden"
       ],
       "tags": [],
       "componentTypes": [
@@ -75133,11 +75177,15 @@
         "signals": [
           "component:ammunition-or-explosive"
         ],
-        "categoryId": "ammunition",
-        "category": "Боезапас"
+        "categoryId": "hidden",
+        "category": "Скрытые",
+        "automaticCategory": "Боезапас",
+        "automaticCategoryId": "ammunition",
+        "overriddenByAdministrator": true
       },
-      "category": "Боезапас",
+      "category": "Скрытые",
       "public": true,
+      "edited": true,
       "image": "sprites/RMCBatonSlugProjectile.png"
     },
     "RMCBeltConstruction": {
@@ -86593,7 +86641,7 @@
       "description": "Huh? You shouldn't be able to see this...",
       "suffix": "",
       "types": [
-        "ammunition"
+        "hidden"
       ],
       "tags": [],
       "componentTypes": [
@@ -86660,11 +86708,15 @@
         "signals": [
           "component:ammunition-or-explosive"
         ],
-        "categoryId": "ammunition",
-        "category": "Боезапас"
+        "categoryId": "hidden",
+        "category": "Скрытые",
+        "automaticCategory": "Боезапас",
+        "automaticCategoryId": "ammunition",
+        "overriddenByAdministrator": true
       },
-      "category": "Боезапас",
+      "category": "Скрытые",
       "public": true,
+      "edited": true,
       "image": "sprites/RMCBulletSentryFireProjectile.png"
     },
     "RMCBulletSentryFireProjectileBlue": {
@@ -86674,7 +86726,7 @@
       "description": "Что? Вы не должны были этого видеть...",
       "suffix": "",
       "types": [
-        "ammunition"
+        "hidden"
       ],
       "tags": [],
       "componentTypes": [
@@ -86741,11 +86793,15 @@
         "signals": [
           "component:ammunition-or-explosive"
         ],
-        "categoryId": "ammunition",
-        "category": "Боезапас"
+        "categoryId": "hidden",
+        "category": "Скрытые",
+        "automaticCategory": "Боезапас",
+        "automaticCategoryId": "ammunition",
+        "overriddenByAdministrator": true
       },
-      "category": "Боезапас",
+      "category": "Скрытые",
       "public": true,
+      "edited": true,
       "image": "sprites/RMCBulletSentryFireProjectileBlue.png"
     },
     "RMCBulletSentryFireProjectileSmoke": {
@@ -86755,7 +86811,7 @@
       "description": "Что? Вы не должны были этого видеть...",
       "suffix": "",
       "types": [
-        "ammunition"
+        "hidden"
       ],
       "tags": [],
       "componentTypes": [
@@ -86822,11 +86878,15 @@
         "signals": [
           "component:ammunition-or-explosive"
         ],
-        "categoryId": "ammunition",
-        "category": "Боезапас"
+        "categoryId": "hidden",
+        "category": "Скрытые",
+        "automaticCategory": "Боезапас",
+        "automaticCategoryId": "ammunition",
+        "overriddenByAdministrator": true
       },
-      "category": "Боезапас",
+      "category": "Скрытые",
       "public": true,
+      "edited": true,
       "image": "sprites/RMCBulletSentryFireProjectileSmoke.png"
     },
     "RMCBulletSniper10x99mmAntiMateriel": {
@@ -151903,7 +151963,7 @@
       "description": "Uh oh.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "hidden"
       ],
       "tags": [],
       "componentTypes": [
@@ -151961,11 +152021,15 @@
         "signals": [
           "component:ammunition-or-explosive"
         ],
-        "categoryId": "ammunition",
-        "category": "Боезапас"
+        "categoryId": "hidden",
+        "category": "Скрытые",
+        "automaticCategory": "Боезапас",
+        "automaticCategoryId": "ammunition",
+        "overriddenByAdministrator": true
       },
-      "category": "Боезапас",
+      "category": "Скрытые",
       "public": true,
+      "edited": true,
       "image": "sprites/RMCProjectileM5510Brute.png"
     },
     "RMCProjectileRocket84mm": {
@@ -151975,7 +152039,7 @@
       "description": "Ух ты.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "hidden"
       ],
       "tags": [],
       "componentTypes": [
@@ -152037,11 +152101,15 @@
         "signals": [
           "component:ammunition-or-explosive"
         ],
-        "categoryId": "ammunition",
-        "category": "Боезапас"
+        "categoryId": "hidden",
+        "category": "Скрытые",
+        "automaticCategory": "Боезапас",
+        "automaticCategoryId": "ammunition",
+        "overriddenByAdministrator": true
       },
-      "category": "Боезапас",
+      "category": "Скрытые",
       "public": true,
+      "edited": true,
       "image": "sprites/RMCProjectileRocket84mm.png"
     },
     "RMCProjectileRocket84mmAntiArmor": {
@@ -152051,7 +152119,7 @@
       "description": "Ух ты.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "hidden"
       ],
       "tags": [],
       "componentTypes": [
@@ -152119,11 +152187,15 @@
         "signals": [
           "component:ammunition-or-explosive"
         ],
-        "categoryId": "ammunition",
-        "category": "Боезапас"
+        "categoryId": "hidden",
+        "category": "Скрытые",
+        "automaticCategory": "Боезапас",
+        "automaticCategoryId": "ammunition",
+        "overriddenByAdministrator": true
       },
-      "category": "Боезапас",
+      "category": "Скрытые",
       "public": true,
+      "edited": true,
       "image": "sprites/RMCProjectileRocket84mmAntiArmor.png"
     },
     "RMCProjectileRocket84mmWhitePhosphorus": {
@@ -152133,7 +152205,7 @@
       "description": "Uh oh.",
       "suffix": "",
       "types": [
-        "ammunition"
+        "hidden"
       ],
       "tags": [],
       "componentTypes": [
@@ -152192,11 +152264,15 @@
         "signals": [
           "component:ammunition-or-explosive"
         ],
-        "categoryId": "ammunition",
-        "category": "Боезапас"
+        "categoryId": "hidden",
+        "category": "Скрытые",
+        "automaticCategory": "Боезапас",
+        "automaticCategoryId": "ammunition",
+        "overriddenByAdministrator": true
       },
-      "category": "Боезапас",
+      "category": "Скрытые",
       "public": true,
+      "edited": true,
       "image": "sprites/RMCProjectileRocket84mmWhitePhosphorus.png"
     },
     "RMCProjectileTaser": {
@@ -152206,7 +152282,7 @@
       "description": "Если вы можете видеть это, вы, вероятно, мертвы!",
       "suffix": "",
       "types": [
-        "ammunition"
+        "hidden"
       ],
       "tags": [],
       "componentTypes": [
@@ -152264,11 +152340,15 @@
         "signals": [
           "component:ammunition-or-explosive"
         ],
-        "categoryId": "ammunition",
-        "category": "Боезапас"
+        "categoryId": "hidden",
+        "category": "Скрытые",
+        "automaticCategory": "Боезапас",
+        "automaticCategoryId": "ammunition",
+        "overriddenByAdministrator": true
       },
-      "category": "Боезапас",
+      "category": "Скрытые",
       "public": true,
+      "edited": true,
       "image": "sprites/RMCProjectileTaser.png"
     },
     "RMCPyroSpecEquipmentCase": {
@@ -156300,7 +156380,7 @@
       "description": "Развертываемая, полуавтоматическая турель с возможностью наведения ИИ. Вооружена автопушкой M30 и барабанным магазином на 500 патронов.",
       "suffix": "",
       "types": [
-        "weapon"
+        "gear"
       ],
       "tags": [
         "RMCSentry"
@@ -156416,10 +156496,13 @@
         "signals": [
           "Gun"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "gear",
+        "category": "Снаряжение",
+        "automaticCategory": "Оружие",
+        "automaticCategoryId": "weapon",
+        "overriddenByAdministrator": true
       },
-      "category": "Оружие",
+      "category": "Снаряжение",
       "public": true,
       "weaponStats": {
         "fireModes": [
@@ -156433,6 +156516,7 @@
           "type": "MagazineAmmoProvider"
         }
       },
+      "edited": true,
       "image": "sprites/RMCSentry.png"
     },
     "RMCSentryFire": {
@@ -163749,7 +163833,7 @@
       "description": "Автоматический пистолет M10 — компактное, скорострельное вспомогательное оружие, разработанное для обороны в ближнем бою. С магазином на 40 патронов, он делает упор на скорострельность, а не на точность, обеспечивая эффективный подавляющий огонь на коротких дистанциях.",
       "suffix": "Пустой",
       "types": [
-        "weapon"
+        "hidden"
       ],
       "tags": [
         "RMCWeaponPistolM13",
@@ -163997,10 +164081,13 @@
         "signals": [
           "Gun"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "hidden",
+        "category": "Скрытые",
+        "automaticCategory": "Оружие",
+        "automaticCategoryId": "weapon",
+        "overriddenByAdministrator": true
       },
-      "category": "Оружие",
+      "category": "Скрытые",
       "public": true,
       "attachmentSlots": [
         {
@@ -164282,6 +164369,7 @@
           }
         ]
       },
+      "edited": true,
       "image": "sprites/RMCWeaponPistolM13Empty.png"
     },
     "RMCWeaponPistolM77": {
@@ -164735,7 +164823,7 @@
       "description": "Стандартное огнестрельное оружие морской пехоты. Также встречается в руках команд ЧВК Ве-Я. Стреляет 9-мм патронами, разрушающими броню, и может вести огонь очередями по 3 патрона.",
       "suffix": "Пустой",
       "types": [
-        "weapon"
+        "hidden"
       ],
       "tags": [
         "RMCWeaponPistolM77",
@@ -164977,10 +165065,13 @@
         "signals": [
           "Gun"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "hidden",
+        "category": "Скрытые",
+        "automaticCategory": "Оружие",
+        "automaticCategoryId": "weapon",
+        "overriddenByAdministrator": true
       },
-      "category": "Оружие",
+      "category": "Скрытые",
       "public": true,
       "attachmentSlots": [
         {
@@ -165178,6 +165269,7 @@
           }
         ]
       },
+      "edited": true,
       "image": "sprites/RMCWeaponPistolM77Empty.png"
     },
     "RMCWeaponPistolM82F": {
@@ -165499,7 +165591,7 @@
       "description": "Сигнальный пистолет, выдаваемый операторам JTAC для использования с сигнальными ракетами. Поставляется с мини-прицелом. Один выстрел, одна... спасенная жизнь?",
       "suffix": "Empty",
       "types": [
-        "weapon"
+        "hidden"
       ],
       "tags": [
         "RMCFlareGun",
@@ -165697,10 +165789,13 @@
         "signals": [
           "Gun"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "hidden",
+        "category": "Скрытые",
+        "automaticCategory": "Оружие",
+        "automaticCategoryId": "weapon",
+        "overriddenByAdministrator": true
       },
-      "category": "Оружие",
+      "category": "Скрытые",
       "public": true,
       "attachmentSlots": [
         {
@@ -165814,6 +165909,7 @@
           }
         ]
       },
+      "edited": true,
       "image": "sprites/RMCWeaponPistolM82FEmpty.png"
     },
     "RMCWeaponPistolSU6": {
@@ -166704,7 +166800,7 @@
       "description": "Крупнокалиберный револьвер, который иногда используется штурмовыми отрядами и офицерами морской пехоты, а также гражданскими правоохранительными органами. Стреляет патронами .44 Magnum.",
       "suffix": "Пустой",
       "types": [
-        "weapon"
+        "hidden"
       ],
       "tags": [
         "RMCRevolver",
@@ -166955,10 +167051,13 @@
         "signals": [
           "Gun"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "hidden",
+        "category": "Скрытые",
+        "automaticCategory": "Оружие",
+        "automaticCategoryId": "weapon",
+        "overriddenByAdministrator": true
       },
-      "category": "Оружие",
+      "category": "Скрытые",
       "public": true,
       "attachmentSlots": [
         {
@@ -167171,6 +167270,7 @@
           }
         ]
       },
+      "edited": true,
       "image": "sprites/RMCWeaponRevolverM44Empty.png"
     },
     "RMCWeaponRevolverM44Marksman": {
@@ -181444,15 +181544,11 @@
         "RMCWeaponLauncherM6HBrute",
         "RMCSmartGunUNMC",
         "RMCSentryFire",
-        "RMCSentry",
         "RMCWeaponPistolM13",
-        "RMCWeaponPistolM13Empty",
         "RMCXM43E1AntiMaterielRifle",
         "WeaponRifleM4SPR",
         "RMCWeaponPistolM77",
-        "RMCWeaponPistolM77Empty",
         "RMCWeaponRevolverM44",
-        "RMCWeaponRevolverM44Empty",
         "RMCWeaponRevolverM44Marksman",
         "STWeaponSharpRifle",
         "RMCWeaponLauncherM85A1",
@@ -181465,9 +181561,7 @@
         "WeaponShotgunM42A2",
         "WeaponShotgunMOU53",
         "RMCWeaponPistolM82F",
-        "RMCWeaponPistolM82FEmpty",
         "CMWeaponPistolM1984",
-        "CMWeaponPistolM1984Empty",
         "CMM96SSniperRifle",
         "RMCMachineGunM2C",
         "RMCSmartGunMounted",
@@ -181485,11 +181579,8 @@
         "RMCMortarShellIncendiary",
         "RMCMortarShellHE",
         "RMCMortarShellFlare",
-        "RMCProjectileRocket84mmAntiArmor",
         "RMCRocket84mmAntiArmor",
-        "RMCProjectileRocket84mm",
         "RMCRocket84mm",
-        "RMCProjectileRocket84mmWhitePhosphorus",
         "RMCRocket84mmWhitePhosphorus",
         "Bullet10x20mm",
         "Bullet10x20mmAP",
@@ -181503,7 +181594,6 @@
         "RMCBulletAutoPistol",
         "RMCNail7x45mm",
         "RMCPacketGrenadeWhitePhosphorusCompoundFilled",
-        "RMCBulletSentryFireProjectile",
         "VehicleFlamerTankLZRN",
         "RMCCrateMagazineNapthalUT",
         "RMCBoxMagazinePistolM1984HP",
@@ -181550,10 +181640,8 @@
         "CMPelletShotgunFlechette",
         "CMGrenadeSmoke",
         "RMC40MMGrenadeM74AGMS",
-        "RMCAirBurstProjectileSmoke",
         "RMCGrenadeIncendiary",
         "RMC40MMGrenadeM74AGMI",
-        "RMCAirBurstProjectileIncendiary",
         "CMBulletSniper10x28mmIncendiary",
         "RMCMagazineRifleM4SPRA19Incendiary",
         "RMCCartridgeRifleM4SPRA19Incendiary",
@@ -181627,14 +181715,9 @@
         "RMCMagazinePistolSU6",
         "CMMagazinePistolMK80",
         "RMCMagazineSMGNailgun",
-        "RMCProjectileTaser",
-        "RMCBulletSentryFireProjectileSmoke",
-        "RMCBulletSentryFireProjectileBlue",
-        "RMCAirBurstProjectileStarShell",
         "RMCStarShellM74AGMS",
         "CMGrenadeFragOld",
         "RMC40MMGrenadeM74AGMF",
-        "RMCAirBurstProjectileFrag",
         "RMCCartridgeRevolver44Marksman",
         "RMCCartridgeRevolver44",
         "RMCCartridgePistol45ACP",
@@ -181672,11 +181755,9 @@
         "RMCBulletPistol9mmHP",
         "CMBulletPistol9mm",
         "RMCBulletRsh9",
-        "RMCProjectileM5510Brute",
         "RMCRocketM5510Brute",
         "CMMagazineRifleM54CExt",
         "CMMagazineRifleM4SPRExt",
-        "RMCBatonSlugProjectile",
         "RMCFlareBullet",
         "RMCFlareCAS",
         "RMCFlareCASBullet",
@@ -181696,7 +181777,6 @@
         "CMFlare",
         "STBulletSharpFlechette",
         "CleanerGrenade",
-        "RMCAirBurstProjectileHornet",
         "RMCHornetShellM74AGMS",
         "RMCCrateBoxShellsShotgunBuckshot",
         "RMCCrateBoxShellsShotgunSlugs",
@@ -181870,11 +181950,6 @@
         "RMCPonchoUrban",
         "RMCScrubsWhite",
         "CMHeadCapSurgWhite",
-        "CMVendorHeadsetSquad",
-        "CMVendorHeadsetSquadComTech",
-        "CMVendorHeadsetSquadCorpsman",
-        "CMVendorHeadsetSquadFTL",
-        "CMVendorHeadsetSquadLeader",
         "RMCGlassesAviators",
         "CMMaskCoif",
         "RMCMaskBalaclava",
@@ -182185,6 +182260,7 @@
         "RMCPortableGeneratorPacmanMachineCircuitBoard",
         "RMCPDTLocatorTube",
         "RMCPortableGeneratorSuperPacmanMachineCircuitboard",
+        "RMCSentry",
         "RMCPowerCellSmartgun",
         "RMCVisorMedical",
         "RMCPowerCell",
@@ -182573,7 +182649,32 @@
         "RMCCrateClothingWebbingBlack",
         "RMCCrateElectricalMaintenance"
       ],
-      "Скрытые": []
+      "Скрытые": [
+        "RMCProjectileRocket84mmAntiArmor",
+        "RMCProjectileRocket84mm",
+        "RMCProjectileRocket84mmWhitePhosphorus",
+        "RMCBulletSentryFireProjectile",
+        "CMVendorHeadsetSquad",
+        "CMVendorHeadsetSquadComTech",
+        "CMVendorHeadsetSquadCorpsman",
+        "CMVendorHeadsetSquadFTL",
+        "CMVendorHeadsetSquadLeader",
+        "RMCWeaponPistolM13Empty",
+        "RMCWeaponPistolM77Empty",
+        "RMCWeaponRevolverM44Empty",
+        "RMCAirBurstProjectileSmoke",
+        "RMCAirBurstProjectileIncendiary",
+        "RMCProjectileTaser",
+        "RMCBulletSentryFireProjectileSmoke",
+        "RMCBulletSentryFireProjectileBlue",
+        "RMCAirBurstProjectileStarShell",
+        "RMCAirBurstProjectileFrag",
+        "RMCProjectileM5510Brute",
+        "RMCBatonSlugProjectile",
+        "RMCWeaponPistolM82FEmpty",
+        "CMWeaponPistolM1984Empty",
+        "RMCAirBurstProjectileHornet"
+      ]
     },
     "excludedItemIds": [],
     "candidateItemIds": [
@@ -183704,13 +183805,65 @@
     "catalogItems": 1120,
     "publicItems": 1118,
     "excludedItems": 0,
-    "editedItems": 0,
-    "hiddenItems": 0
+    "editedItems": 25,
+    "hiddenItems": 24
   },
   "overrides": {
     "schemaVersion": 2,
-    "appliedItemIds": [],
-    "editedItemIds": []
+    "appliedItemIds": [
+      "CMVendorHeadsetSquad",
+      "CMVendorHeadsetSquadComTech",
+      "CMVendorHeadsetSquadCorpsman",
+      "CMVendorHeadsetSquadFTL",
+      "CMVendorHeadsetSquadLeader",
+      "CMWeaponPistolM1984Empty",
+      "RMCAirBurstProjectileFrag",
+      "RMCAirBurstProjectileHornet",
+      "RMCAirBurstProjectileIncendiary",
+      "RMCAirBurstProjectileSmoke",
+      "RMCAirBurstProjectileStarShell",
+      "RMCBatonSlugProjectile",
+      "RMCBulletSentryFireProjectile",
+      "RMCBulletSentryFireProjectileBlue",
+      "RMCBulletSentryFireProjectileSmoke",
+      "RMCProjectileM5510Brute",
+      "RMCProjectileRocket84mm",
+      "RMCProjectileRocket84mmAntiArmor",
+      "RMCProjectileRocket84mmWhitePhosphorus",
+      "RMCProjectileTaser",
+      "RMCSentry",
+      "RMCWeaponPistolM13Empty",
+      "RMCWeaponPistolM77Empty",
+      "RMCWeaponPistolM82FEmpty",
+      "RMCWeaponRevolverM44Empty"
+    ],
+    "editedItemIds": [
+      "CMVendorHeadsetSquad",
+      "CMVendorHeadsetSquadComTech",
+      "CMVendorHeadsetSquadCorpsman",
+      "CMVendorHeadsetSquadFTL",
+      "CMVendorHeadsetSquadLeader",
+      "CMWeaponPistolM1984Empty",
+      "RMCAirBurstProjectileFrag",
+      "RMCAirBurstProjectileHornet",
+      "RMCAirBurstProjectileIncendiary",
+      "RMCAirBurstProjectileSmoke",
+      "RMCAirBurstProjectileStarShell",
+      "RMCBatonSlugProjectile",
+      "RMCBulletSentryFireProjectile",
+      "RMCBulletSentryFireProjectileBlue",
+      "RMCBulletSentryFireProjectileSmoke",
+      "RMCProjectileM5510Brute",
+      "RMCProjectileRocket84mm",
+      "RMCProjectileRocket84mmAntiArmor",
+      "RMCProjectileRocket84mmWhitePhosphorus",
+      "RMCProjectileTaser",
+      "RMCSentry",
+      "RMCWeaponPistolM13Empty",
+      "RMCWeaponPistolM77Empty",
+      "RMCWeaponPistolM82FEmpty",
+      "RMCWeaponRevolverM44Empty"
+    ]
   },
   "review": {
     "policy": "catalog-v4-functional",
