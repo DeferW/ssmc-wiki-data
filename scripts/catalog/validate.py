@@ -14,6 +14,7 @@ from scripts.catalog.core import (
     PUBLIC_CATEGORY_LABELS,
     PUBLIC_CATEGORY_ORDER,
 )
+from scripts.catalog.config import read_catalog_overrides
 
 
 def read_json(path: Path) -> dict[str, Any]:
@@ -245,7 +246,7 @@ def main() -> None:
         read_json(args.index),
         args.config,
         args.sprites,
-        read_json(overrides_path),
+        read_catalog_overrides(overrides_path),
     )
 
 

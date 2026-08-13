@@ -64,12 +64,18 @@ def read_catalog_overrides(path: Path) -> dict[str, Any]:
     `Скрытые` is a regular category. There is deliberately no boolean visibility
     switch: the application receives every catalog card and decides what to show.
     """
+    empty_document = {"schemaVersion": 2, "items": {}}
     if not path.is_file():
-        return {"schemaVersion": 2, "items": {}}
+        return empty_document
+    raw_text = path.read_text(encoding="utf-8")
+    if not raw_text.strip():
+        return empty_document
     try:
-        document = json.loads(path.read_text(encoding="utf-8"))
+        document = json.loads(raw_text)
     except json.JSONDecodeError as error:
         raise RuntimeError(f"Invalid catalog overrides JSON: {path}: {error}") from error
+    if document == {}:
+        return empty_document
     if not isinstance(document, dict) or document.get("schemaVersion") != 2:
         raise RuntimeError("Catalog overrides must use schemaVersion 2")
     if set(document) != {"schemaVersion", "items"}:
