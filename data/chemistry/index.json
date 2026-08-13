@@ -1,0 +1,6201 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "repository": "MetalSage/space-stories-cm14",
+    "branch": "master",
+    "commit": "d0bfa6b3645f82951647074306dd99339f394fdd"
+  },
+  "generatedAt": "2026-08-13T09:03:59.372338Z",
+  "sourceFileCounts": {
+    "Resources/Prototypes/_RMC14/Reagents": 16,
+    "Resources/Prototypes/_Stories/Reagents": 4,
+    "Resources/Prototypes/_RMC14/Recipes/Reactions": 8,
+    "Resources/Prototypes/_Stories/Recipes/Reactions": 1
+  },
+  "prototypeCounts": {
+    "reagents": 135,
+    "reactions": 77
+  },
+  "duplicates": {},
+  "entries": [
+    {
+      "type": "reaction",
+      "id": "BlueCuracao",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "Enzyme": {
+            "amount": 1
+          },
+          "RMCBlackGoo": {
+            "amount": 0.5
+          },
+          "JuiceOrange": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "BlueCuracao": 2
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "CMArithrazine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "CMDylovene": {
+            "amount": 1
+          },
+          "RMCPhosphorus": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "CMArithrazine": 2
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "CMBicaridine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "CMInaprovaline": {
+            "amount": 1
+          },
+          "RMCCarbon": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "CMBicaridine": 2
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "CMClonexadone",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "CMCryoxadone": {
+            "amount": 1
+          },
+          "RMCSodium": {
+            "amount": 1
+          },
+          "RMCPhoron": {
+            "amount": 5.1
+          }
+        },
+        "products": {
+          "CMClonexadone": 2,
+          "RMCPhoron": 5
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "CMCryoxadone",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "CMDexalin": {
+            "amount": 1
+          },
+          "Water": {
+            "amount": 1
+          },
+          "RMCOxygen": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "CMCryoxadone": 3
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "CMDermaline",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "RMCOxygen": {
+            "amount": 1
+          },
+          "RMCPhosphorus": {
+            "amount": 1
+          },
+          "CMKelotane": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "CMDermaline": 3
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "CMDexalin",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "RMCOxygen": {
+            "amount": 2
+          },
+          "RMCPhoron": {
+            "amount": 5.1
+          }
+        },
+        "products": {
+          "CMDexalin": 1,
+          "RMCPhoron": 5
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "CMDexalinPlus",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "CMDexalin": {
+            "amount": 1
+          },
+          "RMCCarbon": {
+            "amount": 1
+          },
+          "RMCIron": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "CMDexalinPlus": 3
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "CMDylovene",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "RMCSilicon": {
+            "amount": 1
+          },
+          "RMCPotassium": {
+            "amount": 1
+          },
+          "RMCNitrogen": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "CMDylovene": 3
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "CMEpinephrine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "RMCCarbon": {
+            "amount": 1
+          },
+          "RMCNitrogen": {
+            "amount": 1
+          },
+          "RMCOxygen": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "CMEpinephrine": 2
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "CMEthylredoxrazine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "RMCOxygen": {
+            "amount": 1
+          },
+          "CMDylovene": {
+            "amount": 1
+          },
+          "RMCCarbon": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "CMEthylredoxrazine": 3
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "CMImidazoline",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "priority": 10,
+        "reactants": {
+          "CMDylovene": {
+            "amount": 1
+          },
+          "RMCCarbon": {
+            "amount": 1
+          },
+          "RMCHydrogen": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "CMImidazoline": 2
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "CMInaprovaline",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "RMCOxygen": {
+            "amount": 1
+          },
+          "RMCCarbon": {
+            "amount": 1
+          },
+          "RMCSugar": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "CMInaprovaline": 3
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "CMKelotane",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "RMCSilicon": {
+            "amount": 1
+          },
+          "RMCCarbon": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "CMKelotane": 2
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "CMLeporazine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "RMCSilicon": {
+            "amount": 1
+          },
+          "RMCCopper": {
+            "amount": 1
+          },
+          "RMCPhoron": {
+            "amount": 5,
+            "catalyst": true
+          }
+        },
+        "products": {
+          "CMLeporazine": 2
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "CMMeralyne",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "RMCCarbon": {
+            "amount": 1
+          },
+          "Water": {
+            "amount": 1
+          },
+          "CMBicaridine": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "CMMeralyne": 3
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "CMTricordrazine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "CMInaprovaline": {
+            "amount": 1
+          },
+          "CMDylovene": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "CMTricordrazine": 2
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "CoffeeLiqueur",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "Enzyme": {
+            "amount": 1
+          },
+          "RMCBlackGoo": {
+            "amount": 0.5
+          },
+          "Coffee": {
+            "amount": 1
+          },
+          "Sugar": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "CoffeeLiqueur": 2
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "CookingMayoOliveOil",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "Vinegar": {
+            "amount": 5
+          },
+          "OilOlive": {
+            "amount": 5
+          },
+          "Egg": {
+            "amount": 6
+          }
+        },
+        "products": {
+          "Mayo": 15
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "CreateFriedEgg",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "impact": "Low",
+        "quantized": true,
+        "conserveEnergy": false,
+        "reactants": {
+          "TableSalt": {
+            "amount": 1
+          },
+          "Blackpepper": {
+            "amount": 1
+          },
+          "EggCooked": {
+            "amount": 5
+          }
+        },
+        "effects": [
+          {
+            "yamlTag": "!type:CreateEntityReactionEffect",
+            "value": {
+              "entity": "FoodMealFriedegg"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "CreateMeat",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "impact": "Low",
+        "quantized": true,
+        "conserveEnergy": false,
+        "reactants": {
+          "CMClonexadone": {
+            "amount": 1
+          },
+          "Blood": {
+            "amount": 5
+          }
+        },
+        "effects": [
+          {
+            "yamlTag": "!type:CreateEntityReactionEffect",
+            "value": {
+              "entity": "FoodMeat"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "Grenadine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "Enzyme": {
+            "amount": 1
+          },
+          "RMCBlackGoo": {
+            "amount": 0.5
+          },
+          "JuiceBerry": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "Grenadine": 2
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "Gunfire",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "requiredMixerCategories": [
+          "Stir"
+        ],
+        "reactants": {
+          "Tea": {
+            "amount": 4
+          },
+          "Rum": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "Gunfire": 5
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "IceCafe",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "requiredMixerCategories": [
+          "Stir"
+        ],
+        "reactants": {
+          "IcedCoffee": {
+            "amount": 3
+          },
+          "Milk": {
+            "amount": 2
+          }
+        },
+        "products": {
+          "IceCafe": 5
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "MangoAguaFresca",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "requiredMixerCategories": [
+          "Stir"
+        ],
+        "reactants": {
+          "Water": {
+            "amount": 2
+          },
+          "Sugar": {
+            "amount": 1
+          },
+          "RMCJuiceMango": {
+            "amount": 2
+          }
+        },
+        "products": {
+          "MangoAguaFresca": 5
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "MangoCooler",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "Vodka": {
+            "amount": 1
+          },
+          "LemonLime": {
+            "amount": 1
+          },
+          "RMCJuiceMango": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "MangoCooler": 3
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "MelonLiquor",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "Enzyme": {
+            "amount": 1
+          },
+          "RMCBlackGoo": {
+            "amount": 0.5
+          },
+          "JuiceWatermelon": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "MelonLiquor": 2
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCAluminiumMetalFoam",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/chemicals.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "impact": "High",
+        "priority": 10,
+        "reactants": {
+          "RMCAluminum": {
+            "amount": 0.6
+          },
+          "FoamingAgent": {
+            "amount": 0.2
+          },
+          "PolytrinicAcid": {
+            "amount": 0.2
+          }
+        },
+        "effects": [
+          {
+            "yamlTag": "!type:AreaReactionEffect",
+            "value": {
+              "duration": 10,
+              "prototypeId": "RMCAluminiumMetalFoamEffect",
+              "sound": {
+                "path": "/Audio/Effects/extinguish.ogg"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCBatter",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "Flour": {
+            "amount": 5
+          },
+          "OilOlive": {
+            "amount": 5
+          },
+          "Egg": {
+            "amount": 6
+          },
+          "Milk": {
+            "amount": 5
+          }
+        },
+        "products": {
+          "RMCBatter": 20
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCCLF3",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/pyrotechnic.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "priority": 10,
+        "reactants": {
+          "Water": {
+            "amount": 3
+          },
+          "RMCChlorine": {
+            "amount": 1
+          },
+          "RMCFluorine": {
+            "amount": 3
+          }
+        },
+        "products": {
+          "RMCCLF3": 3,
+          "RMCHydrogen": 6,
+          "RMCOxygen": 3
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCCLF3Bad",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/pyrotechnic.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "impact": "High",
+        "priority": 5,
+        "reactants": {
+          "RMCChlorine": {
+            "amount": 1
+          },
+          "RMCFluorine": {
+            "amount": 3
+          }
+        },
+        "effects": [
+          {
+            "yamlTag": "!type:SensitiveReactionExplosionEffect",
+            "value": {
+              "threshold": 0,
+              "explosionType": "RMC",
+              "maxIntensity": 100,
+              "intensityPerUnit": 0.25,
+              "intensitySlope": 4,
+              "maxTotalIntensity": 100
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCCherryJelly",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "minTemp": 342,
+        "reactants": {
+          "JuiceCherry": {
+            "amount": 1
+          },
+          "Sugar": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "RMCCherryJelly": 2
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCCitalopram",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "RMCBlackGoo": {
+            "amount": 0.5
+          },
+          "RMCMindbreakerToxin": {
+            "amount": 1
+          },
+          "RMCCarbon": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "RMCCitalopram": 3
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCCreateWater",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/other.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "RMCHydrogen": {
+            "amount": 2
+          },
+          "RMCOxygen": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "Water": 1
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCEthanoloxidation",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/other.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "CMEthylredoxrazine": {
+            "amount": 1
+          },
+          "RMCEthanol": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "Water": 2
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCEthanoloxidationV2",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/other.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "CMEthylredoxrazine": {
+            "amount": 1
+          },
+          "Ethanol": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "Water": 2
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCGrapeSoda",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "JuiceGrape": {
+            "amount": 2
+          },
+          "Cola": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "RMCGrapeSoda": 3
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCInstantApple",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "Water": {
+            "amount": 6
+          },
+          "RMCInstantJuicePowderApple": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "RMCInstantJuiceApple": 6
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCInstantGrape",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "Water": {
+            "amount": 6
+          },
+          "RMCInstantJuicePowderGrape": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "RMCInstantJuiceGrape": 6
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCInstantOrange",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "Water": {
+            "amount": 6
+          },
+          "RMCInstantJuicePowderOrange": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "RMCInstantJuiceOrange": 6
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCInstantPineapple",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "Water": {
+            "amount": 6
+          },
+          "RMCInstantJuicePowderPineapple": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "RMCInstantJuicePineapple": 6
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCInstantWatermelon",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "Water": {
+            "amount": 6
+          },
+          "RMCInstantJuicePowderWatermelon": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "RMCInstantJuiceWatermelon": 6
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCIronMetalFoam",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/chemicals.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "impact": "High",
+        "priority": 10,
+        "reactants": {
+          "RMCIron": {
+            "amount": 0.6
+          },
+          "FoamingAgent": {
+            "amount": 0.2
+          },
+          "PolytrinicAcid": {
+            "amount": 0.2
+          }
+        },
+        "effects": [
+          {
+            "yamlTag": "!type:AreaReactionEffect",
+            "value": {
+              "duration": 10,
+              "prototypeId": "RMCIronMetalFoamEffect",
+              "sound": {
+                "path": "/Audio/Effects/extinguish.ogg"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCLexorin",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/toxins.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "priority": 5,
+        "reactants": {
+          "RMCPhoron": {
+            "amount": 1
+          },
+          "RMCHydrogen": {
+            "amount": 1
+          },
+          "RMCNitrogen": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "RMCLexorin": 3
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCLipozine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "TableSalt": {
+            "amount": 1
+          },
+          "RMCEthanol": {
+            "amount": 1
+          },
+          "RMCRadium": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "RMCLipozine": 3
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCMethane",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/pyrotechnic.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "RMCHydrogen": {
+            "amount": 4
+          },
+          "RMCCarbon": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "RMCMethane": 1
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCMethylphenidate",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "RMCBlackGoo": {
+            "amount": 0.5
+          },
+          "RMCMindbreakerToxin": {
+            "amount": 1
+          },
+          "RMCHydrogen": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "RMCMethylphenidate": 3
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCMilkshake",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "requiredMixerCategories": [
+          "Stir"
+        ],
+        "reactants": {
+          "Milk": {
+            "amount": 1
+          },
+          "IceCream": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "RMCMilkshake": 2
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCMindbreakerToxin",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/narcotics.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "RMCBlackGoo": {
+            "amount": 0.5
+          },
+          "RMCSilicon": {
+            "amount": 1
+          },
+          "RMCHydrogen": {
+            "amount": 1
+          },
+          "CMDylovene": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "RMCMindbreakerToxin": 3
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCNapalm",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/pyrotechnic.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "priority": 10,
+        "reactants": {
+          "Water": {
+            "amount": 1
+          },
+          "RMCPhoron": {
+            "amount": 1
+          },
+          "RMCAluminum": {
+            "amount": 1
+          },
+          "RMCSulphuricAcid": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "RMCNapalm": 1,
+          "RMCHydrogen": 2,
+          "RMCOxygen": 1
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCNapalmBad",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/pyrotechnic.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "impact": "High",
+        "priority": 5,
+        "reactants": {
+          "RMCPhoron": {
+            "amount": 1
+          },
+          "RMCAluminum": {
+            "amount": 1
+          },
+          "RMCSulphuricAcid": {
+            "amount": 1
+          }
+        },
+        "effects": [
+          {
+            "yamlTag": "!type:SensitiveReactionExplosionEffect",
+            "value": {
+              "threshold": 0,
+              "explosionType": "RMC",
+              "maxIntensity": 100,
+              "intensityPerUnit": 0.33,
+              "intensitySlope": 4,
+              "maxTotalIntensity": 100
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCNapalmHighCombustion",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/pyrotechnic.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "RMCNapalm": {
+            "amount": 1
+          },
+          "RMCCLF3": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "RMCNapalmHighCombustion": 2
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCNapalmSticky",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/pyrotechnic.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "RMCNapalm": {
+            "amount": 1
+          },
+          "RMCWeldingFuel": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "RMCNapalmSticky": 2
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCParoxetine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/medicine.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "RMCBlackGoo": {
+            "amount": 0.5
+          },
+          "RMCMindbreakerToxin": {
+            "amount": 1
+          },
+          "RMCOxygen": {
+            "amount": 1
+          },
+          "CMInaprovaline": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "RMCParoxetine": 3
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCPotassiumExplosion",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/chemicals.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "impact": "High",
+        "priority": 20,
+        "reactants": {
+          "Water": {
+            "amount": 1
+          },
+          "RMCPotassium": {
+            "amount": 1
+          }
+        },
+        "effects": [
+          {
+            "yamlTag": "!type:ExplosionReactionEffect",
+            "value": {
+              "explosionType": "RMC",
+              "maxIntensity": 100,
+              "intensityPerUnit": 0.5,
+              "intensitySlope": 4,
+              "maxTotalIntensity": 100
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCSmoke",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/chemicals.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "priority": 10,
+        "impact": "High",
+        "reactants": {
+          "RMCPhosphorus": {
+            "amount": 0.5
+          },
+          "RMCPotassium": {
+            "amount": 0.5
+          },
+          "RMCSugar": {
+            "amount": 0.5
+          }
+        },
+        "effects": [
+          {
+            "yamlTag": "!type:AreaReactionEffect",
+            "value": {
+              "duration": 10,
+              "prototypeId": "RMCSmokeChemical",
+              "sound": {
+                "path": "/Audio/Effects/smoke.ogg"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCSpaceDrugs",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/narcotics.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "RMCBlackGoo": {
+            "amount": 0.5
+          },
+          "RMCMercury": {
+            "amount": 1
+          },
+          "RMCSugar": {
+            "amount": 1
+          },
+          "RMCLithium": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "RMCSpaceDrugs": 3
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCSulphuricAcid",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/elements.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "priority": 5,
+        "reactants": {
+          "RMCHydrogen": {
+            "amount": 2
+          },
+          "RMCSulfur": {
+            "amount": 1
+          },
+          "RMCOxygen": {
+            "amount": 4
+          }
+        },
+        "products": {
+          "RMCSulphuricAcid": 1
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCTableSalt",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/chemicals.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "RMCChlorine": {
+            "amount": 1
+          },
+          "RMCSodium": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "RMCTableSalt": 2
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCVirusFood",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/other.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "Water": {
+            "amount": 1
+          },
+          "Milk": {
+            "amount": 1
+          },
+          "RMCOxygen": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "RMCVirusFood": 3
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCVodka",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "Enzyme": {
+            "amount": 1
+          },
+          "RMCBlackGoo": {
+            "amount": 0.5
+          },
+          "JuicePotato": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "Vodka": 2
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "Sake",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "Enzyme": {
+            "amount": 1
+          },
+          "RMCBlackGoo": {
+            "amount": 0.5
+          },
+          "Rice": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "Sake": 2
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "Sidecar",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "Cognac": {
+            "amount": 2
+          },
+          "JuiceOrange": {
+            "amount": 1
+          },
+          "JuiceLemon": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "Sidecar": 4
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "SwissLemonade",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "requiredMixerCategories": [
+          "Shake"
+        ],
+        "reactants": {
+          "JuiceLime": {
+            "amount": 1
+          },
+          "Cream": {
+            "amount": 2
+          },
+          "Water": {
+            "amount": 2
+          }
+        },
+        "products": {
+          "SwissLemonade": 5
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "Wine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Recipes/Reactions/ingredients.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "Enzyme": {
+            "amount": 1
+          },
+          "RMCBlackGoo": {
+            "amount": 0.5
+          },
+          "JuiceGrape": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "Wine": 2
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCANFO",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Recipes/Reactions/explosives.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "RMCAmmoniumNitrate": {
+            "amount": 2
+          },
+          "RMCWeldingFuel": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "RMCANFO": 2
+        },
+        "effects": [
+          {
+            "yamlTag": "!type:SensitiveReactionExplosionEffect",
+            "value": {
+              "threshold": 60.001,
+              "explosionType": "RMC",
+              "maxIntensity": 100,
+              "intensityPerUnit": 1,
+              "intensitySlope": 4,
+              "maxTotalIntensity": 100
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCAmmonia",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Recipes/Reactions/explosives.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "RMCHydrogen": {
+            "amount": 3
+          },
+          "RMCNitrogen": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "RMCAmmonia": 3
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCAmmoniumNitrate",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Recipes/Reactions/explosives.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "RMCAmmonia": {
+            "amount": 1
+          },
+          "RMCPolytrinicAcid": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "RMCAmmoniumNitrate": 2
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCCyclonite",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Recipes/Reactions/explosives.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "RMCHexamine": {
+            "amount": 1
+          },
+          "RMCPolytrinicAcid": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "RMCCyclonite": 1
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCFormaldehyde",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Recipes/Reactions/explosives.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "priority": 5,
+        "reactionFlags": [
+          "Smoking"
+        ],
+        "storiesConfig": {
+          "smokeSpreadDivisor": 50.0,
+          "smokeVolumeScale": 0.05
+        },
+        "reactants": {
+          "RMCMethane": {
+            "amount": 1
+          },
+          "RMCOxygen": {
+            "amount": 1
+          },
+          "RMCPhoron": {
+            "amount": 1
+          },
+          "RMCSilver": {
+            "amount": 5,
+            "catalyst": true
+          }
+        },
+        "products": {
+          "RMCFormaldehyde": 3
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCGlycerol",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Recipes/Reactions/explosives.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "RMCCornOil": {
+            "amount": 3
+          },
+          "RMCSulphuricAcid": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "RMCGlycerol": 1
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCHexamine",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Recipes/Reactions/explosives.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactionFlags": [
+          "Bubbling"
+        ],
+        "reactants": {
+          "RMCAmmonia": {
+            "amount": 2
+          },
+          "RMCFormaldehyde": {
+            "amount": 3
+          }
+        },
+        "products": {
+          "RMCHexamine": 3
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCNitroglycerin",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Recipes/Reactions/explosives.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "RMCGlycerol": {
+            "amount": 1
+          },
+          "RMCPolytrinicAcid": {
+            "amount": 1
+          },
+          "RMCSulphuricAcid": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "RMCNitroglycerin": 2
+        },
+        "effects": [
+          {
+            "yamlTag": "!type:SensitiveReactionExplosionEffect",
+            "value": {
+              "threshold": 5.001,
+              "explosionType": "RMC",
+              "maxIntensity": 100,
+              "intensityPerUnit": 1,
+              "intensitySlope": 4,
+              "maxTotalIntensity": 100
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCOctogen",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Recipes/Reactions/explosives.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "priority": 5,
+        "reactants": {
+          "RMCParaformaldehyde": {
+            "amount": 1
+          },
+          "RMCAmmoniumNitrate": {
+            "amount": 1
+          },
+          "RMCHexamine": {
+            "amount": 1
+          },
+          "RMCPolytrinicAcid": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "RMCOctogen": 2
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCParaformaldehyde",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Recipes/Reactions/explosives.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "RMCFormaldehyde": {
+            "amount": 1
+          },
+          "RMCFrostOil": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "RMCParaformaldehyde": 1
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCPolytrinicAcid",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Recipes/Reactions/explosives.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "RMCSulphuricAcid": {
+            "amount": 1
+          },
+          "RMCChlorine": {
+            "amount": 1
+          },
+          "RMCPotassium": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "RMCPolytrinicAcid": 3
+        }
+      }
+    },
+    {
+      "type": "reaction",
+      "id": "RMCPotassiumHydroxide",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Recipes/Reactions/explosives.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "reactants": {
+          "Water": {
+            "amount": 1
+          },
+          "RMCPotassium": {
+            "amount": 1
+          }
+        },
+        "products": {
+          "RMCPotassiumHydroxide": 1
+        },
+        "effects": [
+          {
+            "yamlTag": "!type:SensitiveReactionExplosionEffect",
+            "value": {
+              "threshold": 0,
+              "explosionType": "RMC",
+              "maxIntensity": 100,
+              "intensityPerUnit": 1,
+              "intensitySlope": 4,
+              "maxTotalIntensity": 100
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "CMArithrazine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine",
+        "Arithrazine"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-cmarithrazine",
+        "desc": "reagent-desc-cmarithrazine",
+        "color": "#3c8529",
+        "overdose": 15,
+        "criticalOverdose": 25,
+        "metabolisms": {
+          "Medicine": {
+            "metabolismRate": 0.03,
+            "effects": [
+              {
+                "yamlTag": "!type:Antitoxic",
+                "value": {
+                  "potency": 1
+                }
+              },
+              {
+                "yamlTag": "!type:Biocidic",
+                "value": {
+                  "potency": 1
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "CMBicaridine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine",
+        "Bicaridine"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-cmbicaridine",
+        "desc": "reagent-desc-cmbicaridine",
+        "color": "#ed4847",
+        "overdose": 30,
+        "criticalOverdose": 50,
+        "metabolisms": {
+          "Medicine": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:Neogenetic",
+                "value": {
+                  "potency": 2
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "CMClonexadone",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine",
+        "CMCryoxadone"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-cmclonexadone",
+        "desc": "reagent-desc-cmclonexadone",
+        "color": "#51b4db",
+        "metabolisms": {
+          "Medicine": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:EqualHealthChange",
+                "value": {
+                  "conditions": [
+                    {
+                      "yamlTag": "!type:Temperature",
+                      "value": {
+                        "max": 170
+                      }
+                    }
+                  ],
+                  "damage": [
+                    {
+                      "Brute": -2.25
+                    },
+                    {
+                      "Burn": -2.25
+                    },
+                    {
+                      "Toxin": -3
+                    },
+                    {
+                      "Genetic": -1.5
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "CMCryoxadone",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine",
+        "Cryoxadone"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-cmcryoxadone",
+        "desc": "reagent-desc-cmcryoxadone",
+        "color": "#4acaca",
+        "metabolisms": {
+          "Medicine": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:EqualHealthChange",
+                "value": {
+                  "conditions": [
+                    {
+                      "yamlTag": "!type:Temperature",
+                      "value": {
+                        "max": 170
+                      }
+                    }
+                  ],
+                  "damage": [
+                    {
+                      "Brute": -1
+                    },
+                    {
+                      "Burn": -1
+                    },
+                    {
+                      "Toxin": -1.5
+                    },
+                    {
+                      "Airloss": -0.5
+                    },
+                    {
+                      "Genetic": -1
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "CMDermaline",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine",
+        "Dermaline"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-cmdermaline",
+        "desc": "reagent-desc-cmdermaline",
+        "color": "#e2972e",
+        "overdose": 15,
+        "criticalOverdose": 25,
+        "metabolisms": {
+          "Medicine": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:Anticorrosive",
+                "value": {
+                  "potency": 3
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "CMDexalin",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine",
+        "Dexalin"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-cmdexalin",
+        "desc": "reagent-desc-cmdexalin",
+        "color": "#1f28a7",
+        "overdose": 30,
+        "criticalOverdose": 50,
+        "metabolisms": {
+          "Medicine": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:Oxygenating",
+                "value": {
+                  "potency": 4
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "CMDexalinPlus",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine",
+        "DexalinPlus"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-cmdexalinplus",
+        "desc": "reagent-desc-cmdexalinplus",
+        "color": "#5887D5",
+        "overdose": 15,
+        "criticalOverdose": 25,
+        "metabolisms": {
+          "Medicine": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:Oxygenating",
+                "value": {
+                  "potency": 6
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "CMDylovene",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine",
+        "Dylovene"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-cmdylovene",
+        "desc": "reagent-desc-cmdylovene",
+        "color": "#3fc92a",
+        "overdose": 30,
+        "criticalOverdose": 50,
+        "metabolisms": {
+          "Medicine": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:Antitoxic",
+                "value": {
+                  "potency": 2
+                }
+              },
+              {
+                "yamlTag": "!type:Antihallucinogenic",
+                "value": {
+                  "potency": 2
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "CMEpinephrine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine",
+        "Epinephrine"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-cmepinephrine",
+        "desc": "reagent-desc-cmepinephrine",
+        "color": "#6bd43c",
+        "overdose": 10.5,
+        "criticalOverdose": 20,
+        "metabolisms": {
+          "Medicine": {
+            "metabolismRate": 0.2,
+            "effects": [
+              {
+                "yamlTag": "!type:Electrogenetic",
+                "value": {
+                  "potency": 2
+                }
+              },
+              {
+                "yamlTag": "!type:HealthChange",
+                "value": {
+                  "conditions": [
+                    {
+                      "yamlTag": "!type:ReagentThreshold",
+                      "value": {
+                        "min": 10.5
+                      }
+                    }
+                  ],
+                  "damage": {
+                    "groups": {
+                      "Toxin": 0.38
+                    }
+                  }
+                }
+              },
+              {
+                "yamlTag": "!type:HealthChange",
+                "value": {
+                  "conditions": [
+                    {
+                      "yamlTag": "!type:ReagentThreshold",
+                      "value": {
+                        "min": 20
+                      }
+                    }
+                  ],
+                  "damage": {
+                    "types": {
+                      "Asphyxiation": 1.5
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "CMEthylredoxrazine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine",
+        "Ethylredoxrazine"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-cmethylredoxrazine",
+        "desc": "reagent-desc-cmethylredoxrazine",
+        "color": "#605048",
+        "overdose": 30,
+        "criticalOverdose": 50,
+        "metabolisms": {
+          "Medicine": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:Focusing",
+                "value": {
+                  "potency": 3
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "CMImidazoline",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine",
+        "CMDylovene"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-cmimidazoline",
+        "desc": "reagent-desc-cmimidazoline",
+        "color": "#C8A5DC",
+        "overdose": 30,
+        "criticalOverdose": 50,
+        "metabolisms": {
+          "Medicine": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:ChemHealEyeDamage",
+                "value": ""
+              },
+              {
+                "yamlTag": "!type:HealthChange",
+                "value": {
+                  "conditions": [
+                    {
+                      "yamlTag": "!type:ReagentThreshold",
+                      "value": {
+                        "min": 30
+                      }
+                    }
+                  ],
+                  "damage": {
+                    "groups": {
+                      "Toxin": 0.5
+                    }
+                  }
+                }
+              },
+              {
+                "yamlTag": "!type:HealthChange",
+                "value": {
+                  "conditions": [
+                    {
+                      "yamlTag": "!type:ReagentThreshold",
+                      "value": {
+                        "min": 50
+                      }
+                    }
+                  ],
+                  "damage": {
+                    "groups": {
+                      "Brute": 0.5,
+                      "Burn": 0.5,
+                      "Toxin": 1.5
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "CMInaprovaline",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine",
+        "Inaprovaline"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-cminaprovaline",
+        "desc": "reagent-desc-cminaprovaline",
+        "color": "#fe33cb",
+        "overdose": 60,
+        "criticalOverdose": 100,
+        "metabolisms": {
+          "Medicine": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:HealthChange",
+                "value": {
+                  "conditions": [
+                    {
+                      "yamlTag": "!type:MobStateCondition",
+                      "value": {
+                        "mobstate": "Critical"
+                      }
+                    }
+                  ],
+                  "damage": {
+                    "types": {
+                      "Asphyxiation": -1
+                    }
+                  }
+                }
+              },
+              {
+                "yamlTag": "!type:Jitter",
+                "value": {
+                  "conditions": [
+                    {
+                      "yamlTag": "!type:ReagentThreshold",
+                      "value": {
+                        "min": 60
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "yamlTag": "!type:GenericStatusEffect",
+                "value": {
+                  "conditions": [
+                    {
+                      "yamlTag": "!type:ReagentThreshold",
+                      "value": {
+                        "min": 60
+                      }
+                    }
+                  ],
+                  "key": "Unconscious",
+                  "component": "RMCUnconscious",
+                  "time": 40,
+                  "type": "Add",
+                  "refresh": true
+                }
+              },
+              {
+                "yamlTag": "!type:GenericStatusEffect",
+                "value": {
+                  "conditions": [
+                    {
+                      "yamlTag": "!type:ReagentThreshold",
+                      "value": {
+                        "min": 100
+                      }
+                    }
+                  ],
+                  "key": "Unconscious",
+                  "component": "RMCUnconscious",
+                  "probability": 0.05,
+                  "time": 10,
+                  "type": "Add",
+                  "refresh": true
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "CMKelotane",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine",
+        "Kelotane"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-cmkelotane",
+        "desc": "reagent-desc-cmkelotane",
+        "color": "#f5e123",
+        "overdose": 30,
+        "criticalOverdose": 50,
+        "metabolisms": {
+          "Medicine": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:Anticorrosive",
+                "value": {
+                  "potency": 2
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "CMLeporazine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine",
+        "Leporazine"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-cmleporazine",
+        "desc": "reagent-desc-cmleporazine",
+        "color": "#a03919",
+        "overdose": 30,
+        "criticalOverdose": 50,
+        "metabolisms": {
+          "Medicine": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:Thermostabilizing",
+                "value": {
+                  "potency": 2
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "CMMeralyne",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine",
+        "CMBicaridine"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-cmmeralyne",
+        "desc": "reagent-desc-cmmeralyne",
+        "color": "#b40000",
+        "overdose": 15,
+        "criticalOverdose": 25,
+        "metabolisms": {
+          "Medicine": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:Neogenetic",
+                "value": {
+                  "potency": 3
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "CMReagent",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/base_reagent.yml",
+      "parents": [],
+      "abstract": true,
+      "definition": {
+        "isCM": true
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "CMReagentMedicine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/base_reagent.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": true,
+      "definition": {
+        "group": "Medicine"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "CMSodaBase",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/soda.yml",
+      "parents": [
+        "BaseSoda"
+      ],
+      "abstract": true,
+      "definition": {}
+    },
+    {
+      "type": "reagent",
+      "id": "CMSodaBobdaBlue",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/soda.yml",
+      "parents": [
+        "CMSodaBase"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-bobda-blue",
+        "desc": "reagent-desc-bobda-blue",
+        "physicalDesc": "reagent-physical-desc-fizzy",
+        "flavor": "soda",
+        "color": "#005B96"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "CMSodaBobdaCherry",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/soda.yml",
+      "parents": [
+        "CMSodaBase"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-bobda-cherry",
+        "desc": "reagent-desc-bobda-cherry",
+        "physicalDesc": "reagent-physical-desc-fizzy",
+        "flavor": "soda",
+        "color": "#800000"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "CMSodaBobdaClassic",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/soda.yml",
+      "parents": [
+        "CMSodaBase"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-bobda-classic",
+        "desc": "reagent-desc-bobda-classic",
+        "physicalDesc": "reagent-physical-desc-fizzy",
+        "flavor": "soda",
+        "color": "#802b00"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "CMSodaBobdaCranberry",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/soda.yml",
+      "parents": [
+        "CMSodaBase"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-bobda-cranberry",
+        "desc": "reagent-desc-bobda-cranberry",
+        "physicalDesc": "reagent-physical-desc-fizzy",
+        "flavor": "soda",
+        "color": "#950714"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "CMSodaBobdaGrape",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/soda.yml",
+      "parents": [
+        "CMSodaBase"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-bobda-grape",
+        "desc": "reagent-desc-bobda-grape",
+        "physicalDesc": "reagent-physical-desc-fizzy",
+        "flavor": "soda",
+        "color": "#421C52"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "CMSodaBobdaLime",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/soda.yml",
+      "parents": [
+        "CMSodaBase"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-bobda-lime",
+        "desc": "reagent-desc-bobda-lime",
+        "physicalDesc": "reagent-physical-desc-fizzy",
+        "flavor": "soda",
+        "color": "#421C52"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "CMSodaBobdaPeach",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/soda.yml",
+      "parents": [
+        "CMSodaBase"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-bobda-peach",
+        "desc": "reagent-desc-bobda-peach",
+        "physicalDesc": "reagent-physical-desc-fizzy",
+        "flavor": "soda",
+        "color": "#FFE5B4"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "CMSodaBobdaPineapple",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/soda.yml",
+      "parents": [
+        "CMSodaBase"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-bobda-pineapple",
+        "desc": "reagent-desc-bobda-pineapple",
+        "physicalDesc": "reagent-physical-desc-fizzy",
+        "flavor": "soda",
+        "color": "#FEEB75"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "CMSodaBobdaVanilla",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/soda.yml",
+      "parents": [
+        "CMSodaBase"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-bobda-vanilla",
+        "desc": "reagent-desc-bobda-vanilla",
+        "physicalDesc": "reagent-physical-desc-fizzy",
+        "flavor": "soda",
+        "color": "#F9E5BC"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "CMSodaFruitBeer",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/soda.yml",
+      "parents": [
+        "CMSodaBase"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-fruit-beer",
+        "desc": "reagent-desc-fruit-beer",
+        "physicalDesc": "reagent-physical-desc-fizzy",
+        "flavor": "soda",
+        "color": "#100800"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "CMTricordrazine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine",
+        "Tricordrazine"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-cmtricordrazine",
+        "desc": "reagent-desc-cmtricordrazine",
+        "color": "#d87f2b",
+        "overdose": 30,
+        "criticalOverdose": 50,
+        "metabolisms": {
+          "Medicine": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:Neogenetic",
+                "value": {
+                  "potency": 1
+                }
+              },
+              {
+                "yamlTag": "!type:Anticorrosive",
+                "value": {
+                  "potency": 1
+                }
+              },
+              {
+                "yamlTag": "!type:Antitoxic",
+                "value": {
+                  "potency": 1
+                }
+              },
+              {
+                "yamlTag": "!type:Oxygenating",
+                "value": {
+                  "potency": 1
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "Gunfire",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/other_drinks.yml",
+      "parents": [
+        "BaseAlcohol"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-gunfire",
+        "desc": "reagent-desc-gunfire",
+        "physicalDesc": "reagent-physical-desc-sweet",
+        "flavor": "bitter",
+        "color": "#F88F00",
+        "metamorphicSprite": {
+          "sprite": "_RMC14/Objects/Consumable/Drinks/gunfire.rsi",
+          "state": "icon_empty"
+        },
+        "metamorphicMaxFillLevels": 5,
+        "metamorphicFillBaseName": "fill-",
+        "metamorphicChangeColor": false
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "IceCafe",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/other_drinks.yml",
+      "parents": [
+        "BaseDrink"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-ice-cafe",
+        "desc": "reagent-desc-ice-cafe",
+        "physicalDesc": "reagent-physical-desc-sweet",
+        "flavor": "bitter",
+        "color": "#F88F00",
+        "metamorphicSprite": {
+          "sprite": "_RMC14/Objects/Consumable/Drinks/icecafe.rsi",
+          "state": "icon_empty"
+        },
+        "metamorphicMaxFillLevels": 5,
+        "metamorphicFillBaseName": "fill-",
+        "metamorphicChangeColor": false
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "MangoAguaFresca",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/other_drinks.yml",
+      "parents": [
+        "BaseDrink"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-mango-agua-fresca",
+        "desc": "reagent-desc-mango-agua-fresca",
+        "physicalDesc": "reagent-physical-desc-sweet",
+        "flavor": "sweet",
+        "color": "#FFBF34",
+        "metamorphicSprite": {
+          "sprite": "_RMC14/Objects/Consumable/Drinks/mango_agua_fresca.rsi",
+          "state": "icon_empty"
+        },
+        "metamorphicMaxFillLevels": 5,
+        "metamorphicFillBaseName": "fill-",
+        "metamorphicChangeColor": false
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "MangoCooler",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/other_drinks.yml",
+      "parents": [
+        "BaseAlcohol"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-mango-cooler",
+        "desc": "reagent-desc-mango-cooler",
+        "physicalDesc": "reagent-physical-desc-sweet",
+        "flavor": "sweet",
+        "color": "#C19128",
+        "metamorphicSprite": {
+          "sprite": "_RMC14/Objects/Consumable/Drinks/mango_cooler.rsi",
+          "state": "icon_empty"
+        },
+        "metamorphicMaxFillLevels": 4,
+        "metamorphicFillBaseName": "fill-",
+        "metamorphicChangeColor": false
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCAluminum",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmc-aluminum",
+        "group": "Elements",
+        "desc": "reagent-desc-rmc-aluminum",
+        "physicalDesc": "reagent-physical-desc-metallic",
+        "flavor": "metallic",
+        "color": "#A8A8A8",
+        "unknown": true,
+        "metabolisms": {
+          "Medicine": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:ChemVomit",
+                "value": {
+                  "probability": 0
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCAntiZed",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagent",
+        "AmbuzolPlus"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmcantized",
+        "desc": "reagent-desc-rmcantized",
+        "physicalDesc": "reagent-physical-desc-crisp",
+        "flavor": "medicine",
+        "color": "#5FB0C7",
+        "metabolisms": {
+          "Medicine": {
+            "effects": [
+              {
+                "yamlTag": "!type:CureZombieInfection",
+                "value": {
+                  "innoculate": true,
+                  "conditions": [
+                    {
+                      "yamlTag": "!type:ReagentThreshold",
+                      "value": {
+                        "min": 5
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCBGel",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/pyrotechnic.yml",
+      "parents": [
+        "RMCBaseNapalm"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmcbgel",
+        "desc": "reagent-desc-rmcbgel",
+        "color": "#00dd00",
+        "intensity": 15,
+        "duration": 50,
+        "radius": 7,
+        "burnColor": "#00dd00",
+        "fireEntity": "RMCTileFireGreen"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCBaseNapalm",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/pyrotechnic.yml",
+      "parents": [
+        "CMReagent",
+        "BasePyrotechnic"
+      ],
+      "abstract": true,
+      "definition": {
+        "physicalDesc": "reagent-physical-desc-shiny",
+        "flavor": "bitter",
+        "metabolisms": {
+          "Poison": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:Oxidizing",
+                "value": {
+                  "potency": 6
+                }
+              },
+              {
+                "yamlTag": "!type:Fueling",
+                "value": {
+                  "potency": 7
+                }
+              },
+              {
+                "yamlTag": "!type:Flowing",
+                "value": {
+                  "potency": 1
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCBatter",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/ingredients.yml",
+      "parents": [
+        "BaseJuice"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmc-batter",
+        "desc": "reagent-desc-rmc-batter",
+        "physicalDesc": "reagent-physical-desc-creamy",
+        "flavor": "creamy",
+        "color": "#FFFDD0"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCBlackGoo",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/toxins.yml",
+      "parents": [
+        "CMReagent",
+        "Romerol"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmcblackgoo",
+        "desc": "reagent-desc-rmcblackgoo",
+        "physicalDesc": "reagent-physical-desc-unidentifiable",
+        "flavor": "bitter",
+        "color": "#0a0b0d",
+        "worksOnTheDead": true,
+        "unknown": true,
+        "metabolisms": {
+          "Medicine": {
+            "effects": [
+              {
+                "yamlTag": "!type:CauseZombieInfection",
+                "value": {
+                  "conditions": [
+                    {
+                      "yamlTag": "!type:ReagentThreshold",
+                      "value": {
+                        "min": 5
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCCLF3",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/pyrotechnic.yml",
+      "parents": [
+        "CMReagent",
+        "BasePyrotechnic"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmcclf3",
+        "desc": "reagent-desc-rmcclf3",
+        "physicalDesc": "reagent-physical-desc-shiny",
+        "flavor": "bitter",
+        "color": "#00FFFF",
+        "burnColor": "#ff9300",
+        "metabolisms": {
+          "Poison": {
+            "metabolismRate": 1.0,
+            "effects": [
+              {
+                "yamlTag": "!type:Corrosive",
+                "value": {
+                  "potency": 6
+                }
+              },
+              {
+                "yamlTag": "!type:Toxic",
+                "value": {
+                  "potency": 6
+                }
+              },
+              {
+                "yamlTag": "!type:Oxidizing",
+                "value": {
+                  "potency": 9
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCCarbon",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-carbon",
+        "group": "Elements",
+        "desc": "reagent-desc-carbon",
+        "physicalDesc": "reagent-physical-desc-crystalline",
+        "flavor": "bitter",
+        "color": "#1C1300",
+        "unknown": true,
+        "durationMod": 1,
+        "burnColor": "#ffd700",
+        "burncolormod": 3,
+        "metabolisms": {
+          "Medicine": {
+            "metabolismRate": 0.01,
+            "effects": [
+              {
+                "yamlTag": "!type:ChemVomit",
+                "value": {
+                  "probability": 0
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCCherryJelly",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/ingredients.yml",
+      "parents": [
+        "BaseJuice"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmc-cherry-jelly",
+        "desc": "reagent-desc-rmc-cherry-jelly",
+        "physicalDesc": "reagent-physical-desc-sweet",
+        "flavor": "cherry",
+        "color": "#801E28",
+        "recognizable": true,
+        "metabolisms": {
+          "Food": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:Nutritious",
+                "value": {
+                  "potency": 2,
+                  "nutFactor": 1,
+                  "nutMetabolism": 0.1
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCChloralhydrate",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/toxins.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmc-chloral-hydrate",
+        "desc": "reagent-desc-rmc-chloral-hydrate",
+        "physicalDesc": "reagent-physical-desc-nondescript",
+        "color": "#000067",
+        "flavor": "bitter",
+        "unknown": true,
+        "toxin": true,
+        "overdose": 15,
+        "criticalOverdose": 25,
+        "metabolisms": {
+          "Poison": {
+            "metabolismRate": 0.05,
+            "effects": [
+              {
+                "yamlTag": "!type:Toxic",
+                "value": {
+                  "potency": 1
+                }
+              },
+              {
+                "yamlTag": "!type:Emote",
+                "value": {
+                  "emote": "Yawn",
+                  "showInChat": true,
+                  "probability": 0.25
+                }
+              },
+              {
+                "yamlTag": "!type:GenericStatusEffect",
+                "value": {
+                  "conditions": [
+                    {
+                      "yamlTag": "!type:ReagentThreshold",
+                      "value": {
+                        "min": 15
+                      }
+                    }
+                  ],
+                  "key": "Unconscious",
+                  "component": "RMCUnconscious",
+                  "type": "Add",
+                  "time": 3,
+                  "refresh": false
+                }
+              },
+              {
+                "yamlTag": "!type:HealthChange",
+                "value": {
+                  "conditions": [
+                    {
+                      "yamlTag": "!type:ReagentThreshold",
+                      "value": {
+                        "min": 25
+                      }
+                    }
+                  ],
+                  "damage": {
+                    "types": {
+                      "Asphyxiation": 15
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCChlorine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-chlorine",
+        "group": "Elements",
+        "desc": "reagent-desc-chlorine",
+        "physicalDesc": "reagent-physical-desc-gaseous",
+        "flavor": "bitter",
+        "color": "#808080",
+        "unknown": true,
+        "overdose": 30,
+        "criticalOverdose": 50,
+        "metabolisms": {
+          "Poison": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:Biocidic",
+                "value": {
+                  "potency": 1
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCChocolateDrink",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/packaged_drinks.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "name": "rmc-reagent-name-chocolate-drink",
+        "color": "#61450e",
+        "flavor": "chocolate",
+        "desc": "rmc-reagent-desc-chocolate-drink",
+        "physicalDesc": "reagent-physical-desc-creamy",
+        "metabolisms": {
+          "Drink": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:SatiateHunger",
+                "value": {
+                  "factor": 4
+                }
+              },
+              {
+                "yamlTag": "!type:SatiateThirst",
+                "value": {
+                  "factor": 0.2
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCCitalopram",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "RMCMethylphenidate"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmccitalopram",
+        "desc": "reagent-desc-rmccitalopram",
+        "color": "#C8A5DC",
+        "metabolisms": {
+          "Medicine": {
+            "metabolismRate": 0.01,
+            "effects": [
+              {
+                "yamlTag": "!type:PopupMessage",
+                "value": {
+                  "type": "Local",
+                  "messages": [
+                    "antidepressant-effect-rmccitalopram"
+                  ],
+                  "probability": 0.05
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCCocoMilk",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/packaged_drinks.yml",
+      "parents": [
+        "RMCDrinkBase"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "rmc-reagent-name-coco-milk",
+        "desc": "rmc-reagent-desc-coco-milk",
+        "physicalDesc": "reagent-physical-desc-creamy",
+        "color": "#DFDFC7",
+        "flavor": "rmccocomilk"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCCopper",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-copper",
+        "group": "Elements",
+        "desc": "reagent-desc-copper",
+        "physicalDesc": "reagent-physical-desc-metallic",
+        "flavor": "metallic",
+        "color": "#6E3B08",
+        "burnColor": "#78be5a",
+        "burncolormod": 4,
+        "metabolisms": {
+          "Medicine": {
+            "metabolismRate": 0.01,
+            "effects": [
+              {
+                "yamlTag": "!type:ChemVomit",
+                "value": {
+                  "probability": 0
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCCyanide",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/toxins.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "rmc-reagent-name-cyanide",
+        "desc": "rmc-reagent-desc-cyanide",
+        "physicalDesc": "reagent-physical-desc-pungent",
+        "color": "#CF3600",
+        "toxin": true,
+        "metabolisms": {
+          "Poison": {
+            "metabolismRate": 0.2,
+            "effects": [
+              {
+                "yamlTag": "!type:Hypoxemic",
+                "value": {
+                  "potency": 4
+                }
+              },
+              {
+                "yamlTag": "!type:GenericStatusEffect",
+                "value": {
+                  "key": "Drowsiness",
+                  "component": "Drowsiness",
+                  "time": 4,
+                  "type": "Add",
+                  "refresh": false
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCDrinkBase",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/base.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": true,
+      "definition": {
+        "group": "Drinks",
+        "color": "#E78108",
+        "unknown": true,
+        "metabolisms": {
+          "Drink": {
+            "metabolismRate": 0.2,
+            "effects": [
+              {
+                "yamlTag": "!type:SatiateHunger",
+                "value": {
+                  "factor": 0.125
+                }
+              },
+              {
+                "yamlTag": "!type:SatiateThirst",
+                "value": {
+                  "factor": 0.4
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCEthanol",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement",
+        "BaseAlcohol"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-ethanol",
+        "desc": "reagent-desc-ethanol",
+        "slipData": {
+          "requiredSlipSpeed": 3.5
+        },
+        "physicalDesc": "reagent-physical-desc-strong-smelling",
+        "flavor": "alcohol",
+        "color": "#404030",
+        "burnColor": "#6897f7",
+        "burncolormod": 2,
+        "metabolisms": {
+          "Alcohol": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:Drunk",
+                "value": {
+                  "boozePower": 6.38
+                }
+              },
+              {
+                "yamlTag": "!type:Drunk",
+                "value": {
+                  "conditions": [
+                    {
+                      "yamlTag": "!type:ReagentThreshold",
+                      "value": {
+                        "min": 60
+                      }
+                    }
+                  ],
+                  "boozePower": 9.69
+                }
+              },
+              {
+                "yamlTag": "!type:HealthChange",
+                "value": {
+                  "conditions": [
+                    {
+                      "yamlTag": "!type:ReagentThreshold",
+                      "value": {
+                        "min": 60
+                      }
+                    }
+                  ],
+                  "damage": {
+                    "groups": {
+                      "Toxin": 0.625,
+                      "Airloss": 1.25
+                    }
+                  }
+                }
+              },
+              {
+                "yamlTag": "!type:ChemVomit",
+                "value": {
+                  "conditions": [
+                    {
+                      "yamlTag": "!type:ReagentThreshold",
+                      "value": {
+                        "min": 60
+                      }
+                    }
+                  ],
+                  "probability": 0.12
+                }
+              },
+              {
+                "yamlTag": "!type:Drunk",
+                "value": {
+                  "conditions": [
+                    {
+                      "yamlTag": "!type:ReagentThreshold",
+                      "value": {
+                        "min": 100
+                      }
+                    }
+                  ],
+                  "boozePower": 13.125
+                }
+              },
+              {
+                "yamlTag": "!type:HealthChange",
+                "value": {
+                  "conditions": [
+                    {
+                      "yamlTag": "!type:ReagentThreshold",
+                      "value": {
+                        "min": 100
+                      }
+                    }
+                  ],
+                  "damage": {
+                    "groups": {
+                      "Toxin": 1.2,
+                      "Airloss": 2.5
+                    }
+                  }
+                }
+              },
+              {
+                "yamlTag": "!type:ChemVomit",
+                "value": {
+                  "conditions": [
+                    {
+                      "yamlTag": "!type:ReagentThreshold",
+                      "value": {
+                        "min": 100
+                      }
+                    }
+                  ],
+                  "probability": 0.25
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCFluorine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-fluorine",
+        "group": "Elements",
+        "desc": "reagent-desc-fluorine",
+        "physicalDesc": "reagent-physical-desc-gaseous",
+        "flavor": "bitter",
+        "color": "#808080",
+        "overdose": 30,
+        "criticalOverdose": 50,
+        "metabolisms": {
+          "Poison": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:Toxic",
+                "value": {
+                  "potency": 1
+                }
+              },
+              {
+                "yamlTag": "!type:HealthChange",
+                "value": {
+                  "damage": {
+                    "groups": {
+                      "Burn": 0.25,
+                      "Toxin": 0.125
+                    }
+                  }
+                }
+              },
+              {
+                "yamlTag": "!type:HealthChange",
+                "value": {
+                  "conditions": [
+                    {
+                      "yamlTag": "!type:ReagentThreshold",
+                      "value": {
+                        "min": 30
+                      }
+                    }
+                  ],
+                  "damage": {
+                    "groups": {
+                      "Burn": 0.5,
+                      "Toxin": 0.25
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCGenericToxin",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/toxins.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmcgenerictoxin",
+        "desc": "reagent-desc-rmcgenerictoxin",
+        "physicalDesc": "reagent-physical-desc-pungent",
+        "color": "#CF3600",
+        "unknown": true,
+        "toxin": true,
+        "metabolisms": {
+          "Poison": {
+            "metabolismRate": 0.05,
+            "effects": [
+              {
+                "yamlTag": "!type:Toxic",
+                "value": {
+                  "potency": 1
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCGold",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-gold",
+        "group": "Elements",
+        "desc": "reagent-desc-gold",
+        "physicalDesc": "reagent-physical-desc-metallic",
+        "flavor": "metallic",
+        "color": "#F7C430",
+        "metabolisms": {
+          "Medicine": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:ChemVomit",
+                "value": {
+                  "probability": 0
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCGrapeSoda",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/other_drinks.yml",
+      "parents": [
+        "BaseDrink"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-grapesoda",
+        "desc": "reagent-desc-grapesoda",
+        "physicalDesc": "reagent-physical-desc-sweet",
+        "flavor": "sweet",
+        "color": "#421C52",
+        "metamorphicSprite": {
+          "sprite": "_RMC14/Objects/Consumable/Drinks/grapesoda.rsi",
+          "state": "icon_empty"
+        },
+        "metamorphicMaxFillLevels": 5,
+        "metamorphicFillBaseName": "fill-",
+        "metamorphicChangeColor": false
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCHydrogen",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-hydrogen",
+        "group": "Elements",
+        "desc": "reagent-desc-hydrogen",
+        "physicalDesc": "reagent-physical-desc-gaseous",
+        "flavor": "bitter",
+        "color": "#808080",
+        "durationMod": -0.5,
+        "radiusMod": 0.2,
+        "intensityMod": -0.5,
+        "explosive": true,
+        "power": 0.15,
+        "falloffModifier": 0,
+        "burnColor": "#b6f8ff",
+        "burncolormod": 2,
+        "metabolisms": {
+          "Medicine": {
+            "metabolismRate": 0.01,
+            "effects": [
+              {
+                "yamlTag": "!type:ChemVomit",
+                "value": {
+                  "probability": 0
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCInstantJuiceApple",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/powdered_mixes.yml",
+      "parents": [
+        "BaseDrink"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-instant-apple",
+        "desc": "reagent-desc-instant-apple",
+        "physicalDesc": "reagent-physical-desc-sweet",
+        "flavor": "apple",
+        "color": "#F59A40"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCInstantJuiceGrape",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/powdered_mixes.yml",
+      "parents": [
+        "BaseDrink"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-instant-grape",
+        "desc": "reagent-desc-instant-grape",
+        "physicalDesc": "reagent-physical-desc-sweet",
+        "flavor": "grape",
+        "color": "#863333"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCInstantJuiceOrange",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/powdered_mixes.yml",
+      "parents": [
+        "BaseDrink"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-instant-orange",
+        "desc": "reagent-desc-instant-orange",
+        "physicalDesc": "reagent-physical-desc-sweet",
+        "flavor": "orange",
+        "color": "#E78108"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCInstantJuicePineapple",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/powdered_mixes.yml",
+      "parents": [
+        "BaseDrink"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-instant-pineapple",
+        "desc": "reagent-desc-instant-pineapple",
+        "physicalDesc": "reagent-physical-desc-sweet",
+        "flavor": "pineapple",
+        "color": "#FFC000"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCInstantJuicePowderApple",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/powdered_mixes.yml",
+      "parents": [
+        "BaseDrink"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-instant-apple-powder",
+        "desc": "reagent-desc-instant-apple-powder",
+        "physicalDesc": "reagent-physical-desc-sweet",
+        "flavor": "sweet",
+        "color": "#365E30"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCInstantJuicePowderGrape",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/powdered_mixes.yml",
+      "parents": [
+        "BaseDrink"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-instant-grape-powder",
+        "desc": "reagent-desc-instant-grape-powder",
+        "physicalDesc": "reagent-physical-desc-sweet",
+        "flavor": "sweet",
+        "color": "#863333"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCInstantJuicePowderOrange",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/powdered_mixes.yml",
+      "parents": [
+        "BaseDrink"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-instant-orange-powder",
+        "desc": "reagent-desc-instant-orange-powder",
+        "physicalDesc": "reagent-physical-desc-sweet",
+        "flavor": "sweet",
+        "color": "#E78108"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCInstantJuicePowderPineapple",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/powdered_mixes.yml",
+      "parents": [
+        "BaseDrink"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-instant-pineapple-powder",
+        "desc": "reagent-desc-instant-pineapple-powder",
+        "physicalDesc": "reagent-physical-desc-sweet",
+        "flavor": "sweet",
+        "color": "#FFC000"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCInstantJuicePowderWatermelon",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/powdered_mixes.yml",
+      "parents": [
+        "BaseDrink"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-instant-watermelon-powder",
+        "desc": "reagent-desc-instant-watermelon-powder",
+        "physicalDesc": "reagent-physical-desc-sweet",
+        "flavor": "sweet",
+        "color": "#863333"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCInstantJuiceWatermelon",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/powdered_mixes.yml",
+      "parents": [
+        "BaseDrink"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-instant-watermelon",
+        "desc": "reagent-desc-instant-watermelon",
+        "physicalDesc": "reagent-physical-desc-sweet",
+        "flavor": "watermelon",
+        "color": "#A71D1D"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCIron",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-iron",
+        "group": "Elements",
+        "desc": "reagent-desc-iron",
+        "physicalDesc": "reagent-physical-desc-metallic",
+        "flavor": "metallic",
+        "color": "#a19d94",
+        "overdose": 30,
+        "criticalOverdose": 50,
+        "metabolisms": {
+          "Medicine": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:Hemogenic",
+                "value": {
+                  "potency": 3
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCJuiceBug",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/packaged_drinks.yml",
+      "parents": [
+        "RMCDrinkBase"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "rmc-reagent-name-juice-bug",
+        "desc": "rmc-reagent-desc-juice-bug",
+        "physicalDesc": "reagent-physical-desc-bubbly",
+        "color": "#2ca314",
+        "flavor": "rmckiwi"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCJuiceMango",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/juice.yml",
+      "parents": [
+        "BaseJuice"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "rmc-reagent-name-juice-mango",
+        "desc": "rmc-reagent-desc-juice-mango",
+        "physicalDesc": "reagent-physical-desc-citric",
+        "flavor": "rmcmango",
+        "color": "#FFBF34",
+        "metamorphicSprite": {
+          "sprite": "Objects/Consumable/Drinks/orangejuiceglass.rsi",
+          "state": "icon_empty"
+        },
+        "metamorphicMaxFillLevels": 5,
+        "metamorphicFillBaseName": "fill-",
+        "metamorphicChangeColor": false
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCLexorin",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/toxins.yml",
+      "parents": [
+        "CMReagent",
+        "Lexorin"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmclexorin",
+        "desc": "reagent-desc-rmclexorin",
+        "physicalDesc": "reagent-physical-desc-pungent",
+        "color": "#C8A5DC",
+        "toxin": true,
+        "overdose": 30,
+        "criticalOverdose": 50,
+        "metabolisms": {
+          "Poison": {
+            "metabolismRate": 0.05,
+            "effects": [
+              {
+                "yamlTag": "!type:Hypoxemic",
+                "value": {
+                  "potency": 8
+                }
+              },
+              {
+                "yamlTag": "!type:Biocidic",
+                "value": {
+                  "potency": 1
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCLipozine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine",
+        "Lipozine"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmclipozine",
+        "desc": "reagent-desc-rmclipozine",
+        "color": "#BBEDA4",
+        "overdose": 30,
+        "criticalOverdose": 50,
+        "metabolisms": {
+          "Medicine": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:Ketogenic",
+                "value": {
+                  "potency": 4
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCLithium",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-lithium",
+        "group": "Elements",
+        "desc": "reagent-desc-lithium",
+        "physicalDesc": "reagent-physical-desc-shiny",
+        "flavor": "metallic",
+        "color": "#808080",
+        "unknown": true,
+        "intensity": 8,
+        "duration": -3,
+        "radius": 0,
+        "intensityMod": 0.15,
+        "radiusMod": 0,
+        "burnColor": "#ff356f",
+        "burncolormod": 5,
+        "metabolisms": {
+          "Poison": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:Oxidizing",
+                "value": {
+                  "potency": 1
+                }
+              },
+              {
+                "yamlTag": "!type:HealthChange",
+                "value": {
+                  "damage": {
+                    "types": {
+                      "Poison": 0.05
+                    }
+                  }
+                }
+              },
+              {
+                "yamlTag": "!type:Emote",
+                "value": {
+                  "emote": "Scream",
+                  "probability": 0.05
+                }
+              },
+              {
+                "yamlTag": "!type:Emote",
+                "value": {
+                  "emote": "Laugh",
+                  "probability": 0.05
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCMercury",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-mercury",
+        "group": "Elements",
+        "desc": "reagent-desc-mercury",
+        "physicalDesc": "reagent-physical-desc-shiny",
+        "flavor": "metallic",
+        "color": "#484848",
+        "unknown": true,
+        "metabolisms": {
+          "Poison": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:GenericStatusEffect",
+                "value": {
+                  "key": "Stutter",
+                  "component": "ScrambledAccent"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCMethane",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/pyrotechnic.yml",
+      "parents": [
+        "CMReagent",
+        "BasePyrotechnic"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmcmethane",
+        "desc": "reagent-desc-rmcmethane",
+        "physicalDesc": "reagent-physical-desc-shiny",
+        "flavor": "bitter",
+        "color": "#0064C8",
+        "toxin": true,
+        "explosive": true,
+        "power": 0.15,
+        "burnColor": "#00a5ff",
+        "burncolormod": 1.5,
+        "metabolisms": {
+          "Poison": {
+            "metabolismRate": 0.2,
+            "effects": [
+              {
+                "yamlTag": "!type:Toxic",
+                "value": {
+                  "potency": 2
+                }
+              },
+              {
+                "yamlTag": "!type:Flowing",
+                "value": {
+                  "potency": 3
+                }
+              },
+              {
+                "yamlTag": "!type:Viscous",
+                "value": {
+                  "potency": 3
+                }
+              },
+              {
+                "yamlTag": "!type:Fueling",
+                "value": {
+                  "potency": 2
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCMethylphenidate",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmcmethylphenidate",
+        "desc": "reagent-desc-rmcmethylphenidate",
+        "physicalDesc": "reagent-physical-desc-crystalline",
+        "flavor": "medicine",
+        "color": "#C8A5DC",
+        "metabolisms": {
+          "Medicine": {
+            "metabolismRate": 0.01,
+            "effects": [
+              {
+                "yamlTag": "!type:PopupMessage",
+                "value": {
+                  "type": "Local",
+                  "messages": [
+                    "antidepressant-effect-rmcmethylphenidate"
+                  ],
+                  "probability": 0.05
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCMilkshake",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/other_drinks.yml",
+      "parents": [
+        "BaseDrink"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmc-milkshake",
+        "desc": "reagent-desc-rmc-milkshake",
+        "physicalDesc": "reagent-physical-desc-creamy",
+        "flavor": "creamy",
+        "color": "#DFC6AF",
+        "metamorphicSprite": {
+          "sprite": "_RMC14/Objects/Consumable/Drinks/milkshake.rsi",
+          "state": "icon_empty"
+        },
+        "metamorphicMaxFillLevels": 4,
+        "metamorphicFillBaseName": "fill-",
+        "metamorphicChangeColor": true
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCMindbreakerToxin",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/toxins.yml",
+      "parents": [
+        "CMReagent",
+        "MindbreakerToxin"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmcmindbreakertoxin",
+        "desc": "reagent-desc-rmcmindbreakertoxin",
+        "color": "#B31008",
+        "unknown": true,
+        "toxin": true,
+        "overdose": 30,
+        "criticalOverdose": 50,
+        "metabolisms": {
+          "Poison": {
+            "metabolismRate": 0.05,
+            "effects": [
+              {
+                "yamlTag": "!type:ModifyStatusEffect",
+                "value": {
+                  "effectProto": "StatusEffectSeeingRainbow",
+                  "type": "Add",
+                  "time": 2,
+                  "refresh": false
+                }
+              },
+              {
+                "yamlTag": "!type:Emote",
+                "value": {
+                  "emote": "Laugh",
+                  "showInChat": true,
+                  "probability": 0.05
+                }
+              },
+              {
+                "yamlTag": "!type:Jitter",
+                "value": ""
+              },
+              {
+                "yamlTag": "!type:GenericStatusEffect",
+                "value": {
+                  "conditions": [
+                    {
+                      "yamlTag": "!type:ReagentThreshold",
+                      "value": {
+                        "min": 50
+                      }
+                    }
+                  ],
+                  "key": "Unconscious",
+                  "component": "RMCUnconscious",
+                  "type": "Add",
+                  "time": 40,
+                  "refresh": true
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCMolecularAcid",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/toxins.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmcmolecularacid",
+        "desc": "reagent-desc-rmcmolecularacid",
+        "physicalDesc": "reagent-physical-desc-acidic",
+        "color": "#669900",
+        "unknown": true,
+        "toxin": true,
+        "metabolisms": {
+          "Poison": {
+            "metabolismRate": 0.05,
+            "effects": [
+              {
+                "yamlTag": "!type:Toxic",
+                "value": {
+                  "potency": 1
+                }
+              },
+              {
+                "yamlTag": "!type:Corrosive",
+                "value": {
+                  "potency": 2
+                }
+              },
+              {
+                "yamlTag": "!type:PopupMessage",
+                "value": {
+                  "type": "Local",
+                  "visualType": "SmallCaution",
+                  "messages": [
+                    "rmc-body-stings"
+                  ],
+                  "probability": 0.2
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCNapalm",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/pyrotechnic.yml",
+      "parents": [
+        "RMCBaseNapalm"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmcnapalm",
+        "desc": "reagent-desc-rmcnapalm",
+        "color": "#ffb300",
+        "intensity": 27,
+        "duration": 38,
+        "radius": 2,
+        "fireEntity": "RMCTileFireNapalmBase",
+        "burnColor": "#D05006"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCNapalmB",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/pyrotechnic.yml",
+      "parents": [
+        "RMCBaseNapalm"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmcnapalm-b",
+        "desc": "reagent-desc-rmcnapalm-b",
+        "color": "#00dd00",
+        "intensity": 15,
+        "duration": 50,
+        "radius": 6,
+        "burnColor": "#00dd00",
+        "fireEntity": "RMCTileFireGreen",
+        "fireSpread": true
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCNapalmE",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/pyrotechnic.yml",
+      "parents": [
+        "RMCBaseNapalm"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmcnapalm-e",
+        "desc": "reagent-desc-rmcnapalm-e",
+        "color": "#800080",
+        "intensity": 15,
+        "duration": 50,
+        "radius": 6,
+        "burnColor": "#800080",
+        "firePenetrating": true,
+        "fireEntity": "RMCTileFireNapalmE"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCNapalmEX",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/pyrotechnic.yml",
+      "parents": [
+        "RMCBaseNapalm"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmcnapalm-ex",
+        "desc": "reagent-desc-rmcnapalm-ex",
+        "color": "#641dd6",
+        "intensity": 40,
+        "duration": 40,
+        "radius": 6,
+        "burnColor": "#641dd6",
+        "firePenetrating": true,
+        "fireEntity": "RMCTileFireNapalmEX"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCNapalmHighCombustion",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/pyrotechnic.yml",
+      "parents": [
+        "RMCBaseNapalm"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmcnapalm-hc",
+        "desc": "reagent-desc-rmcnapalm-hc",
+        "color": "#c51c1c",
+        "intensity": 45,
+        "duration": 10,
+        "radius": 5,
+        "intensityMod": -4.5,
+        "durationMod": -1.0,
+        "radiusMod": -0.5,
+        "burnColor": "#c51c1c",
+        "fireEntity": "RMCTileFireHCNapalm"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCNapalmSticky",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/pyrotechnic.yml",
+      "parents": [
+        "RMCBaseNapalm"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmcnapalm-sticky",
+        "desc": "reagent-desc-rmcnapalm-sticky",
+        "color": "#f8e3b2",
+        "intensity": 15,
+        "duration": 50,
+        "radius": 5,
+        "intensityMod": -1.5,
+        "durationMod": -5.0,
+        "radiusMod": -0.5,
+        "burnColor": "#f8e3b2",
+        "fireEntity": "RMCTileFireStickyNapalm"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCNapalmUT",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/pyrotechnic.yml",
+      "parents": [
+        "RMCBaseNapalm"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmcnapalm-ut",
+        "desc": "reagent-desc-rmcnapalm-ut",
+        "color": "#DD9B00",
+        "intensity": 30,
+        "duration": 20,
+        "radius": 5,
+        "burnColor": "#EE6515"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCNapalmUTTank",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/pyrotechnic.yml",
+      "parents": [
+        "RMCNapalmUT"
+      ],
+      "abstract": false,
+      "definition": {
+        "intensity": 30,
+        "duration": 20,
+        "radius": 7
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCNapalmWeak",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/pyrotechnic.yml",
+      "parents": [
+        "RMCBaseNapalm"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmcnapalm-ut",
+        "desc": "reagent-desc-rmcnapalm-ut",
+        "color": "#DD9B00",
+        "intensity": 15,
+        "duration": 20,
+        "radius": 5,
+        "burnColor": "#EE6515"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCNapalmX",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/pyrotechnic.yml",
+      "parents": [
+        "RMCBaseNapalm"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmcrapalm-x",
+        "desc": "reagent-desc-rmcrapalm-x",
+        "color": "#00b8ff",
+        "intensity": 40,
+        "duration": 40,
+        "radius": 6,
+        "burnColor": "#00b8ff",
+        "fireEntity": "RMCTileFireBlue"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCNitrogen",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-nitrogen",
+        "desc": "reagent-desc-nitrogen",
+        "physicalDesc": "reagent-physical-desc-gaseous",
+        "flavor": "bitter",
+        "color": "#808080",
+        "unknown": true,
+        "metabolisms": {
+          "Medicine": {
+            "metabolismRate": 0.01,
+            "effects": [
+              {
+                "yamlTag": "!type:ChemVomit",
+                "value": {
+                  "probability": 0
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCOxygen",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-oxygen",
+        "desc": "reagent-desc-oxygen",
+        "physicalDesc": "reagent-physical-desc-gaseous",
+        "flavor": "bitter",
+        "color": "#808080",
+        "unknown": true,
+        "intensityMod": 0.75,
+        "radiusMod": -0.08,
+        "durationMod": 0,
+        "burnColor": "#58daff",
+        "burncolormod": 2,
+        "metabolisms": {
+          "Poison": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:Oxidizing",
+                "value": {
+                  "potency": 2
+                }
+              }
+            ]
+          },
+          "Medicine": {
+            "metabolismRate": 0.01,
+            "effects": [
+              {
+                "yamlTag": "!type:ChemVomit",
+                "value": {
+                  "probability": 0
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCParoxetine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "RMCMethylphenidate"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmcparoxetine",
+        "desc": "reagent-desc-rmcparoxetine",
+        "color": "#C8A5DC",
+        "metabolisms": {
+          "Medicine": {
+            "metabolismRate": 0.01,
+            "effects": [
+              {
+                "yamlTag": "!type:PopupMessage",
+                "value": {
+                  "type": "Local",
+                  "messages": [
+                    "antidepressant-effect-rmcparoxetine"
+                  ],
+                  "probability": 0.05
+                }
+              },
+              {
+                "yamlTag": "!type:ModifyStatusEffect",
+                "value": {
+                  "effectProto": "StatusEffectSeeingRainbow",
+                  "type": "Add",
+                  "time": 1.5,
+                  "refresh": false
+                }
+              },
+              {
+                "yamlTag": "!type:Jitter",
+                "value": ""
+              },
+              {
+                "yamlTag": "!type:Emote",
+                "value": {
+                  "emote": "Laugh",
+                  "showInChat": true,
+                  "probability": 0.05
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCPeanutButter",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/ingredients.yml",
+      "parents": [
+        "BaseJuice"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmc-peanut-butter",
+        "desc": "reagent-desc-rmc-peanut-butter",
+        "physicalDesc": "reagent-physical-desc-creamy",
+        "flavor": "nutty",
+        "color": "#BE893F"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCPhoron",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/pyrotechnic.yml",
+      "parents": [
+        "CMReagent",
+        "BasePyrotechnic"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmcphoron",
+        "desc": "reagent-desc-rmcphoron",
+        "physicalDesc": "reagent-physical-desc-shiny",
+        "flavor": "bitter",
+        "color": "#E71B00",
+        "toxin": true,
+        "intensityMod": 0.4,
+        "durationMod": -0.8,
+        "radiusMod": 0.05,
+        "burnColor": "#e01e1e",
+        "burncolormod": 3,
+        "tileReactions": [
+          {
+            "yamlTag": "!type:FlammableTileReaction",
+            "value": {}
+          }
+        ],
+        "reactiveEffects": {
+          "Flammable": {
+            "methods": [
+              "Touch"
+            ],
+            "effects": [
+              {
+                "yamlTag": "!type:FlammableReaction",
+                "value": {
+                  "multiplier": 0.2
+                }
+              }
+            ]
+          }
+        },
+        "metabolisms": {
+          "Poison": {
+            "metabolismRate": 0.05,
+            "effects": [
+              {
+                "yamlTag": "!type:HealthChange",
+                "value": {
+                  "damage": {
+                    "types": {
+                      "Poison": 0.25
+                    }
+                  }
+                }
+              },
+              {
+                "yamlTag": "!type:FlammableReaction",
+                "value": {
+                  "multiplier": 0.2
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCPhosphorus",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-phosphorus",
+        "group": "Elements",
+        "desc": "reagent-desc-phosphorus",
+        "physicalDesc": "reagent-physical-desc-powdery",
+        "flavor": "metallic",
+        "color": "#832828",
+        "unknown": true,
+        "intensityMod": 1,
+        "durationMod": 0.1,
+        "radiusMod": -0.12,
+        "burnColor": "#ffdba4",
+        "burncolormod": 5,
+        "metabolisms": {
+          "Medicine": {
+            "metabolismRate": 0.01,
+            "effects": [
+              {
+                "yamlTag": "!type:ChemVomit",
+                "value": {
+                  "probability": 0
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCPlatinum",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmc-platinum",
+        "group": "Elements",
+        "desc": "reagent-desc-rmc-platinum",
+        "physicalDesc": "reagent-physical-desc-reasonably-metallic",
+        "flavor": "metallic",
+        "color": "#edf5ff",
+        "boilingPoint": 3825.0,
+        "meltingPoint": 1768.0
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCPotassium",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-potassium",
+        "group": "Elements",
+        "desc": "reagent-desc-potassium",
+        "physicalDesc": "reagent-physical-desc-shiny",
+        "flavor": "metallic",
+        "color": "#A0A0A0",
+        "unknown": true,
+        "metabolisms": {
+          "Medicine": {
+            "metabolismRate": 0.01,
+            "effects": [
+              {
+                "yamlTag": "!type:ChemVomit",
+                "value": {
+                  "probability": 0
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCPsilocybin",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/narcotics.yml",
+      "parents": [
+        "RMCSpaceDrugs"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmcpsilocybin",
+        "desc": "reagent-desc-rmcpsilocybin",
+        "color": "#E700E7",
+        "metabolisms": {
+          "Narcotic": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:Emote",
+                "value": {
+                  "emote": "Laugh",
+                  "showInChat": true,
+                  "probability": 0.05
+                }
+              },
+              {
+                "yamlTag": "!type:ModifyStatusEffect",
+                "value": {
+                  "effectProto": "StatusEffectSeeingRainbow",
+                  "type": "Add",
+                  "time": 15,
+                  "refresh": true
+                }
+              },
+              {
+                "yamlTag": "!type:Jitter",
+                "value": {
+                  "conditions": [
+                    {
+                      "yamlTag": "!type:ReagentThreshold",
+                      "value": {
+                        "min": 30
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "yamlTag": "!type:GenericStatusEffect",
+                "value": {
+                  "conditions": [
+                    {
+                      "yamlTag": "!type:ReagentThreshold",
+                      "value": {
+                        "min": 50
+                      }
+                    }
+                  ],
+                  "key": "Unconscious",
+                  "component": "RMCUnconscious",
+                  "type": "Add",
+                  "time": 40,
+                  "refresh": true
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCR189",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/pyrotechnic.yml",
+      "parents": [
+        "RMCBaseNapalm"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmcr189",
+        "desc": "reagent-desc-rmcr189",
+        "color": "#ffe49c",
+        "intensity": 50,
+        "duration": 30,
+        "radius": 6,
+        "burnColor": "#ffe49c",
+        "firePenetrating": true,
+        "fireEntity": "RMCTileFireR189"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCRadium",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement",
+        "Uranium"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-radium",
+        "group": "Elements",
+        "desc": "reagent-desc-radium",
+        "physicalDesc": "reagent-physical-desc-glowing",
+        "flavor": "metallic",
+        "color": "#C7C7C7",
+        "unknown": true,
+        "metabolisms": {
+          "Poison": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:Carcinogenic",
+                "value": {
+                  "potency": 2
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCReagentElement",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/base_reagent.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": true,
+      "definition": {
+        "group": "Elements"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCRussianRed",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine",
+        "CMArithrazine"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmcrussianred",
+        "desc": "reagent-desc-rmcrussianred",
+        "color": "#ce2727",
+        "overdose": 20,
+        "criticalOverdose": 30,
+        "metabolisms": {
+          "Medicine": {
+            "metabolismRate": 0.5,
+            "effects": [
+              {
+                "yamlTag": "!type:Antitoxic",
+                "value": {
+                  "potency": 1
+                }
+              },
+              {
+                "yamlTag": "!type:Biocidic",
+                "value": {
+                  "potency": 2
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCSilicon",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-silicon",
+        "group": "Elements",
+        "desc": "reagent-desc-silicon",
+        "physicalDesc": "reagent-physical-desc-crystalline",
+        "flavor": "metallic",
+        "color": "#A8A8A8",
+        "unknown": true,
+        "metabolisms": {
+          "Medicine": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:ChemVomit",
+                "value": {
+                  "probability": 0
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCSilver",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-silver",
+        "group": "Elements",
+        "desc": "reagent-desc-silver",
+        "physicalDesc": "reagent-physical-desc-reasonably-metallic",
+        "flavor": "metallic",
+        "color": "#D0D0D0",
+        "unknown": true,
+        "metabolisms": {
+          "Medicine": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:ChemVomit",
+                "value": {
+                  "probability": 0
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCSodium",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-sodium",
+        "group": "Elements",
+        "desc": "reagent-desc-sodium",
+        "physicalDesc": "reagent-physical-desc-metallic",
+        "flavor": "bitter",
+        "color": "#808080",
+        "unknown": true,
+        "metabolisms": {
+          "Medicine": {
+            "metabolismRate": 0.01,
+            "effects": [
+              {
+                "yamlTag": "!type:ChemVomit",
+                "value": {
+                  "probability": 0
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCSoyMilk",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/packaged_drinks.yml",
+      "parents": [
+        "RMCDrinkBase"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "rmc-reagent-name-soy-milk",
+        "desc": "rmc-reagent-desc-soy-milk",
+        "physicalDesc": "reagent-physical-desc-creamy",
+        "color": "#DFDFC7",
+        "flavor": "rmcsoymilk"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCSpaceDrugs",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/narcotics.yml",
+      "parents": [
+        "CMReagent",
+        "SpaceDrugs"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmcspacedrugs",
+        "desc": "reagent-desc-rmcspacedrugs",
+        "physicalDesc": "reagent-physical-desc-syrupy",
+        "flavor": "bitter",
+        "color": "#60A584",
+        "unknown": true,
+        "toxin": true,
+        "metabolisms": {
+          "Narcotic": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:Emote",
+                "value": {
+                  "emote": "Laugh",
+                  "showInChat": true,
+                  "probability": 0.05
+                }
+              },
+              {
+                "yamlTag": "!type:ModifyStatusEffect",
+                "value": {
+                  "effectProto": "StatusEffectSeeingRainbow",
+                  "type": "Add",
+                  "time": 10,
+                  "refresh": true
+                }
+              },
+              {
+                "yamlTag": "!type:Jitter",
+                "value": {
+                  "conditions": [
+                    {
+                      "yamlTag": "!type:ReagentThreshold",
+                      "value": {
+                        "min": 30
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "yamlTag": "!type:GenericStatusEffect",
+                "value": {
+                  "conditions": [
+                    {
+                      "yamlTag": "!type:ReagentThreshold",
+                      "value": {
+                        "min": 50
+                      }
+                    }
+                  ],
+                  "key": "Unconscious",
+                  "component": "RMCUnconscious",
+                  "type": "Add",
+                  "time": 40,
+                  "refresh": true
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCSpecialBlendWhiskey",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/alcohol.yml",
+      "parents": [
+        "Whiskey"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "rmc-reagent-name-special-whiskey",
+        "desc": "rmc-reagent-desc-special-whiskey",
+        "flavor": "rmcwhiskey"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCSprinkles",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/ingredients.yml",
+      "parents": [],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmc-sprinkles",
+        "desc": "reagent-desc-rmc-sprinkles",
+        "physicalDesc": "reagent-physical-desc-sweet",
+        "flavor": "sweet",
+        "color": "#FF00FF",
+        "recognizable": true,
+        "metabolisms": {
+          "Food": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:Nutritious",
+                "value": {
+                  "potency": 2,
+                  "nutFactor": 1,
+                  "nutMetabolism": 0.1
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCSugar",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-sugar",
+        "group": "Foods",
+        "desc": "reagent-desc-sugar",
+        "physicalDesc": "reagent-physical-desc-sweet",
+        "flavor": "sweet",
+        "color": "white",
+        "unknown": true,
+        "metabolisms": {
+          "Food": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:Nutritious",
+                "value": {
+                  "potency": 1
+                }
+              }
+            ]
+          }
+        },
+        "metamorphicSprite": {
+          "sprite": "Objects/Consumable/Drinks/sugarglass.rsi",
+          "state": "icon_empty"
+        },
+        "metamorphicMaxFillLevels": 7,
+        "metamorphicFillBaseName": "fill-",
+        "metamorphicChangeColor": false
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCSulfur",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-sulfur",
+        "group": "Elements",
+        "desc": "reagent-desc-sulfur",
+        "physicalDesc": "reagent-physical-desc-powdery",
+        "flavor": "bitter",
+        "color": "#BF8C00",
+        "unknown": true,
+        "metabolisms": {
+          "Medicine": {
+            "metabolismRate": 0.01,
+            "effects": [
+              {
+                "yamlTag": "!type:ChemVomit",
+                "value": {
+                  "probability": 0
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCSulphuricAcid",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmc-sulphuric-acid",
+        "group": "Toxins",
+        "desc": "reagent-desc-rmc-sulphuric-acid",
+        "physicalDesc": "reagent-physical-desc-oily",
+        "flavor": "acid",
+        "color": "#DB5008",
+        "unknown": true,
+        "toxin": true,
+        "metabolisms": {
+          "Poison": {
+            "metabolismRate": 0.05,
+            "effects": [
+              {
+                "yamlTag": "!type:Toxic",
+                "value": {
+                  "potency": 1
+                }
+              },
+              {
+                "yamlTag": "!type:Corrosive",
+                "value": {
+                  "potency": 3
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCSynthBlood",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/synth_blood.yml",
+      "parents": [
+        "Blood"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "rmc-reagent-name-synth-blood",
+        "desc": "rmc-reagent-desc-synth-blood",
+        "physicalDesc": "reagent-physical-desc-oily",
+        "color": "#EEEEEE",
+        "unknown": true,
+        "flavor": "funny"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCUltrazine",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/medicine.yml",
+      "parents": [
+        "CMReagentMedicine",
+        "Stimulants"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmcultrazine",
+        "desc": "reagent-desc-rmcultrazine",
+        "color": "#ffe043",
+        "overdose": 30,
+        "criticalOverdose": 50,
+        "metabolisms": {
+          "Narcotic": {
+            "metabolismRate": 0.0167,
+            "effects": [
+              {
+                "yamlTag": "!type:MovespeedModifier",
+                "value": {
+                  "walkSpeedModifier": 1.3,
+                  "sprintSpeedModifier": 1.3
+                }
+              },
+              {
+                "yamlTag": "!type:GenericStatusEffect",
+                "value": {
+                  "key": "StaminaModifier",
+                  "component": "StaminaModifier",
+                  "time": 3,
+                  "type": "Add"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCUranium",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/elements.yml",
+      "parents": [
+        "RMCReagentElement"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-uranium",
+        "group": "Elements",
+        "desc": "reagent-desc-uranium",
+        "physicalDesc": "reagent-physical-desc-metallic",
+        "flavor": "metallic",
+        "color": "#B8B8C0",
+        "unknown": true,
+        "metabolisms": {
+          "Poison": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:Carcinogenic",
+                "value": {
+                  "potency": 2
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCVirusFood",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/other.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmcvirusfood",
+        "desc": "reagent-desc-rmcvirusfood",
+        "physicalDesc": "reagent-physical-desc-opaque",
+        "color": "#899613",
+        "metabolisms": {
+          "Food": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:Nutritious",
+                "value": {
+                  "potency": 2,
+                  "nutFactor": 2,
+                  "nutMetabolism": 0.1
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "Sidecar",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/other_drinks.yml",
+      "parents": [
+        "BaseAlcohol"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-sidecar",
+        "desc": "reagent-desc-sidecar",
+        "physicalDesc": "reagent-physical-desc-sweet",
+        "flavor": "sweet",
+        "color": "#C19128",
+        "metamorphicSprite": {
+          "sprite": "_RMC14/Objects/Consumable/Drinks/sidecar.rsi",
+          "state": "icon_empty"
+        },
+        "metamorphicMaxFillLevels": 5,
+        "metamorphicFillBaseName": "fill-",
+        "metamorphicChangeColor": false
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "SwissLemonade",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Reagents/Consumable/Drink/other_drinks.yml",
+      "parents": [
+        "BaseDrink"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-swiss-lemonade",
+        "desc": "reagent-desc-swiss-lemonade",
+        "physicalDesc": "reagent-physical-desc-sweet",
+        "flavor": "bitter",
+        "color": "#CECAAD",
+        "metamorphicSprite": {
+          "sprite": "_RMC14/Objects/Consumable/Drinks/swiss_lemonade.rsi",
+          "state": "icon_empty"
+        },
+        "metamorphicMaxFillLevels": 4,
+        "metamorphicFillBaseName": "fill-",
+        "metamorphicChangeColor": false
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCANFO",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Reagents/explosives.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmc-anfo",
+        "desc": "reagent-desc-rmc-anfo",
+        "physicalDesc": "reagent-physical-desc-grainy",
+        "color": "#E0E0E0",
+        "explosive": true,
+        "power": 1.0,
+        "falloffModifier": -0.6
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCAmmonia",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Reagents/explosives.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmc-ammonia",
+        "desc": "reagent-desc-rmc-ammonia",
+        "physicalDesc": "reagent-physical-desc-pungent",
+        "color": "#404030",
+        "metabolisms": {
+          "Poison": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:Toxic",
+                "value": {
+                  "potency": 3
+                }
+              },
+              {
+                "yamlTag": "!type:Nutritious",
+                "value": {
+                  "potency": 2
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCAmmoniumNitrate",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Reagents/explosives.yml",
+      "parents": [
+        "CMReagent",
+        "BasePyrotechnic"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmc-ammonium-nitrate",
+        "desc": "reagent-desc-rmc-ammonium-nitrate",
+        "physicalDesc": "reagent-physical-desc-crystalline",
+        "color": "#E5E5E5",
+        "explosive": true,
+        "power": 0.4,
+        "falloffModifier": 1.5,
+        "intensityMod": 0.5,
+        "durationMod": -0.2,
+        "radiusMod": 0,
+        "burnColor": "#ff9900"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCCornOil",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Reagents/explosives.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": false,
+      "definition": {
+        "group": "Foods",
+        "name": "reagent-name-rmc-cornoil",
+        "desc": "reagent-desc-rmc-cornoil",
+        "physicalDesc": "reagent-physical-desc-oily",
+        "flavor": "oily",
+        "color": "#302000",
+        "recognizable": true,
+        "metabolisms": {
+          "Food": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:Nutritious",
+                "value": {
+                  "potency": 2,
+                  "nutFactor": 20,
+                  "nutMetabolism": 0.1
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCCyclonite",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Reagents/explosives.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmc-cyclonite",
+        "desc": "reagent-desc-rmc-cyclonite",
+        "physicalDesc": "reagent-physical-desc-crystalline",
+        "color": "#E3E0BA",
+        "explosive": true,
+        "power": 1.5,
+        "falloffModifier": -0.4,
+        "metabolisms": {
+          "Poison": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:HealthChange",
+                "value": {
+                  "damage": {
+                    "types": {
+                      "Poison": 1
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCFormaldehyde",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Reagents/explosives.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmc-formaldehyde",
+        "desc": "reagent-desc-rmc-formaldehyde",
+        "physicalDesc": "reagent-physical-desc-strong-smelling",
+        "color": "#808080cc",
+        "metabolisms": {
+          "Poison": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:Toxic",
+                "value": {
+                  "potency": 3
+                }
+              },
+              {
+                "yamlTag": "!type:Carcinogenic",
+                "value": {
+                  "potency": 2
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCFrostOil",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Reagents/explosives.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmc-frostoil",
+        "desc": "reagent-desc-rmc-frostoil",
+        "physicalDesc": "reagent-physical-desc-frosty",
+        "color": "#B31008"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCGlycerol",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Reagents/explosives.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmc-glycerol",
+        "desc": "reagent-desc-rmc-glycerol",
+        "physicalDesc": "reagent-physical-desc-syrupy",
+        "color": "#808080",
+        "metabolisms": {
+          "Poison": {
+            "metabolismRate": 0.005,
+            "effects": []
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCHexamine",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Reagents/explosives.yml",
+      "parents": [
+        "CMReagent",
+        "BasePyrotechnic"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmc-hexamine",
+        "desc": "reagent-desc-rmc-hexamine",
+        "physicalDesc": "reagent-physical-desc-crystalline",
+        "color": "#F0F0F0",
+        "durationMod": 0.5,
+        "burnColor": "#ff9900"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCNitroglycerin",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Reagents/explosives.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmc-nitroglycerin",
+        "desc": "reagent-desc-rmc-nitroglycerin",
+        "physicalDesc": "reagent-physical-desc-volatile",
+        "color": "#808080",
+        "explosive": true,
+        "power": 1.0,
+        "falloffModifier": -0.5,
+        "metabolisms": {
+          "Poison": {
+            "metabolismRate": 0.005,
+            "effects": []
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCOctogen",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Reagents/explosives.yml",
+      "parents": [
+        "CMReagent",
+        "BasePyrotechnic"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmc-octogen",
+        "desc": "reagent-desc-rmc-octogen",
+        "physicalDesc": "reagent-physical-desc-crystalline",
+        "color": "#F5F5F5",
+        "explosive": true,
+        "power": 2.0,
+        "falloffModifier": -0.2,
+        "metabolisms": {
+          "Poison": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:Oxidizing",
+                "value": {
+                  "potency": 2
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCParaformaldehyde",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Reagents/explosives.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmc-paraformaldehyde",
+        "desc": "reagent-desc-rmc-paraformaldehyde",
+        "physicalDesc": "reagent-physical-desc-crystalline",
+        "color": "#E0E0E0",
+        "metabolisms": {
+          "Poison": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:Toxic",
+                "value": {
+                  "potency": 2
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCPolytrinicAcid",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Reagents/explosives.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmc-pacid",
+        "desc": "reagent-desc-rmc-pacid",
+        "physicalDesc": "reagent-physical-desc-acidic",
+        "color": "#8E18A9"
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCPotassiumChlorophoride",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Reagents/toxic.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmc-potassium-chlorophoride",
+        "desc": "reagent-desc-rmc-potassium-chlorophoride",
+        "physicalDesc": "reagent-physical-desc-crystalline",
+        "color": "#FFFFFF",
+        "toxin": true,
+        "overdose": 20,
+        "metabolisms": {
+          "Poison": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:Hypoxemic",
+                "value": {
+                  "potency": 4
+                }
+              },
+              {
+                "yamlTag": "!type:Toxic",
+                "value": {
+                  "potency": 6
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCPotassiumHydroxide",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Reagents/explosives.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmc-potassium-hydroxide",
+        "desc": "reagent-desc-rmc-potassium-hydroxide",
+        "physicalDesc": "reagent-physical-desc-alkaline",
+        "color": "#FFFFFF",
+        "explosive": true,
+        "power": 0.5,
+        "falloffModifier": 0
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCTableSalt",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Reagents/other.yml",
+      "parents": [
+        "CMReagent"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-table-salt",
+        "desc": "reagent-desc-table-salt",
+        "physicalDesc": "reagent-physical-desc-crystalline",
+        "color": "#FFFFFF",
+        "intensityMod": 0.1,
+        "burnColor": "#ffff00",
+        "burncolormod": 2
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "RMCWeldingFuel",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Reagents/explosives.yml",
+      "parents": [
+        "CMReagent",
+        "BasePyrotechnic"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "reagent-name-rmc-fuel",
+        "desc": "reagent-desc-rmc-fuel",
+        "physicalDesc": "reagent-physical-desc-oily",
+        "color": "#660000",
+        "intensity": 10,
+        "duration": 10,
+        "radius": 4,
+        "explosive": true,
+        "power": 0.12,
+        "falloffModifier": -0.1,
+        "burnColor": "#ff9900",
+        "metabolisms": {
+          "Poison": {
+            "metabolismRate": 0.1,
+            "effects": [
+              {
+                "yamlTag": "!type:Fueling",
+                "value": {
+                  "potency": 5
+                }
+              },
+              {
+                "yamlTag": "!type:Oxidizing",
+                "value": {
+                  "potency": 3
+                }
+              },
+              {
+                "yamlTag": "!type:Viscous",
+                "value": {
+                  "potency": 4
+                }
+              },
+              {
+                "yamlTag": "!type:Toxic",
+                "value": {
+                  "potency": 1
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "reagent",
+      "id": "STHunterBlood",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Reagents/hunter_blood.yml",
+      "parents": [
+        "Blood"
+      ],
+      "abstract": false,
+      "definition": {
+        "name": "st-reagent-name-hunter-blood",
+        "desc": "st-reagent-desc-hunter-blood",
+        "physicalDesc": "st-reagent-physical-desc-hunter-blood",
+        "color": "#5A934A",
+        "unknown": true,
+        "flavor": "acid"
+      }
+    }
+  ]
+}

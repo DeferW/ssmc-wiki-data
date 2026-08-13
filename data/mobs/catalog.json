@@ -1,0 +1,913 @@
+{
+  "schemaVersion": 1,
+  "source": "MetalSage/space-stories-cm14",
+  "gameCommit": "d0bfa6b3645f82951647074306dd99339f394fdd",
+  "locale": "ru-RU",
+  "marine": {
+    "sourcePrototypeId": "RMCBaseMobSpeciesOrganic",
+    "thresholds": {
+      "critical": 150,
+      "dead": 200
+    }
+  },
+  "xenoCastes": {
+    "CMXenoBurrower": {
+      "id": "CMXenoBurrower",
+      "name": "Бурильщик",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/burrower.yml",
+      "parents": [
+        "CMXenoDeveloped",
+        "CMXenoTail",
+        "CMXenoFlammable",
+        "RMCXenoSpeechSounds",
+        "RMCXenoCommendationReceiver",
+        "RMCXenoMobCollision",
+        "RMCXenoVentCrawler"
+      ],
+      "thresholds": {
+        "critical": 500,
+        "dead": 600
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 25,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 40,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "CMXenoCarrier": {
+      "id": "CMXenoCarrier",
+      "name": "Носитель",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/carrier.yml",
+      "parents": [
+        "RMCXenoCarrierBase"
+      ],
+      "thresholds": {
+        "critical": 650,
+        "dead": 750
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 0,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 20,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "CMXenoDefender": {
+      "id": "CMXenoDefender",
+      "name": "Защитник",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/defender.yml",
+      "parents": [
+        "CMXenoDefenderBase"
+      ],
+      "thresholds": {
+        "critical": 500,
+        "dead": 600
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 35,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 70,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "CMXenoDefenderSteelcrest": {
+      "id": "CMXenoDefenderSteelcrest",
+      "name": "Защитник",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/defender.yml",
+      "parents": [
+        "CMXenoDefenderBase"
+      ],
+      "thresholds": {
+        "critical": 500,
+        "dead": 600
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 35,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 70,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "CMXenoDrone": {
+      "id": "CMXenoDrone",
+      "name": "Дрон",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/drone.yml",
+      "parents": [
+        "CMXenoDroneBase"
+      ],
+      "thresholds": {
+        "critical": 500,
+        "dead": 600
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 0,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 0,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "CMXenoDroneGardener": {
+      "id": "CMXenoDroneGardener",
+      "name": "Дрон",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/drone.yml",
+      "parents": [
+        "CMXenoDroneBase"
+      ],
+      "thresholds": {
+        "critical": 500,
+        "dead": 600
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 0,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 0,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "CMXenoDroneHealer": {
+      "id": "CMXenoDroneHealer",
+      "name": "Дрон",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/drone.yml",
+      "parents": [
+        "CMXenoDroneBase"
+      ],
+      "thresholds": {
+        "critical": 500,
+        "dead": 600
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 0,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 0,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "CMXenoHivelord": {
+      "id": "CMXenoHivelord",
+      "name": "Повелитель улья",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/hivelord.yml",
+      "parents": [
+        "CMXenoHivelordBase"
+      ],
+      "thresholds": {
+        "critical": 550,
+        "dead": 650
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 0,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 10,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "CMXenoHivelordDesigner": {
+      "id": "CMXenoHivelordDesigner",
+      "name": "Повелитель улья",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/hivelord.yml",
+      "parents": [
+        "CMXenoHivelordBase"
+      ],
+      "thresholds": {
+        "critical": 550,
+        "dead": 650
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 0,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 10,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "CMXenoHivelordResinWhisperer": {
+      "id": "CMXenoHivelordResinWhisperer",
+      "name": "Повелитель улья",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/hivelord.yml",
+      "parents": [
+        "CMXenoHivelordBase"
+      ],
+      "thresholds": {
+        "critical": 550,
+        "dead": 650
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 0,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 10,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "CMXenoLarva": {
+      "id": "CMXenoLarva",
+      "name": "Личинка",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/larva.yml",
+      "parents": [
+        "CMXenoUndeveloped",
+        "CMXenoFlammable",
+        "RMCXenoVentCrawler"
+      ],
+      "thresholds": {
+        "critical": 35,
+        "dead": 70
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 0,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 0,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "CMXenoLesserDrone": {
+      "id": "CMXenoLesserDrone",
+      "name": "Малый дрон",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/lesser_drone.yml",
+      "parents": [
+        "CMXenoDeveloped",
+        "CMXenoTail",
+        "CMXenoFlammable",
+        "RMCXenoSpeechSounds",
+        "RMCXenoVentCrawler"
+      ],
+      "thresholds": {
+        "critical": null,
+        "dead": 160
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 0,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 0,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "CMXenoLurker": {
+      "id": "CMXenoLurker",
+      "name": "Охотник",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/lurker.yml",
+      "parents": [
+        "CMXenoTail",
+        "RMCXenoLurkerBase"
+      ],
+      "thresholds": {
+        "critical": 450,
+        "dead": 550
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 0,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 20,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "CMXenoParasite": {
+      "id": "CMXenoParasite",
+      "name": "Лицехват",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/parasite.yml",
+      "parents": [
+        "CMXenoParasiteBase"
+      ],
+      "thresholds": {
+        "critical": null,
+        "dead": 35
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 0,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 0,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "CMXenoPraetorian": {
+      "id": "CMXenoPraetorian",
+      "name": "Преторианец",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/praetorian.yml",
+      "parents": [
+        "CMXenoPraetorianBase"
+      ],
+      "thresholds": {
+        "critical": 650,
+        "dead": 750
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 25,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 40,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "CMXenoQueen": {
+      "id": "CMXenoQueen",
+      "name": "Королева",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/queen.yml",
+      "parents": [
+        "RMCXenoQueenBase"
+      ],
+      "thresholds": {
+        "critical": 500,
+        "dead": 600
+      },
+      "maturedThresholds": {
+        "critical": 1000,
+        "dead": 1100
+      },
+      "armor": {
+        "xenoArmor": 25,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 100,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "CMXenoRavager": {
+      "id": "CMXenoRavager",
+      "name": "Разрушитель",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/ravager.yml",
+      "parents": [
+        "RMCXenoRavagerBase"
+      ],
+      "thresholds": {
+        "critical": 650,
+        "dead": 750
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 25,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 80,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "CMXenoRunner": {
+      "id": "CMXenoRunner",
+      "name": "Бегун",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/runner.yml",
+      "parents": [
+        "CMXenoRunnerBase"
+      ],
+      "thresholds": {
+        "critical": 230,
+        "dead": 330
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 0,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 10,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "CMXenoSentinel": {
+      "id": "CMXenoSentinel",
+      "name": "Страж",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/sentinel.yml",
+      "parents": [
+        "CMXenoDeveloped",
+        "CMXenoTail",
+        "CMXenoFlammable",
+        "RMCXenoSpeechSounds",
+        "RMCXenoCommendationReceiver",
+        "RMCXenoMobCollision",
+        "RMCXenoVentCrawler"
+      ],
+      "thresholds": {
+        "critical": 500,
+        "dead": 600
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 0,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 10,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "CMXenoSpitter": {
+      "id": "CMXenoSpitter",
+      "name": "Плеватель",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/spitter.yml",
+      "parents": [
+        "CMXenoDeveloped",
+        "CMXenoTail",
+        "CMXenoFlammable",
+        "RMCXenoSpeechSounds",
+        "RMCXenoCommendationReceiver",
+        "RMCXenoMobCollision",
+        "RMCXenoVentCrawler"
+      ],
+      "thresholds": {
+        "critical": 550,
+        "dead": 650
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 15,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 20,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "CMXenoWarrior": {
+      "id": "CMXenoWarrior",
+      "name": "Воин",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/warrior.yml",
+      "parents": [
+        "CMXenoDeveloped",
+        "CMXenoTail",
+        "CMXenoFlammable",
+        "RMCXenoSpeechSounds",
+        "RMCXenoCommendationReceiver",
+        "RMCXenoMobCollision"
+      ],
+      "thresholds": {
+        "critical": 500,
+        "dead": 600
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 20,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 40,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "RMCXenoBoiler": {
+      "id": "RMCXenoBoiler",
+      "name": "Бойлер",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/boiler.yml",
+      "parents": [
+        "CMXenoBoiler"
+      ],
+      "thresholds": {
+        "critical": 650,
+        "dead": 750
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 20,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 20,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "RMCXenoBoilerSapper": {
+      "id": "RMCXenoBoilerSapper",
+      "name": "Бойлер",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/boiler.yml",
+      "parents": [
+        "CMXenoBoiler"
+      ],
+      "thresholds": {
+        "critical": 590,
+        "dead": 690
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 0,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 20,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "RMCXenoCarrierEggsac": {
+      "id": "RMCXenoCarrierEggsac",
+      "name": "Носитель",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/carrier.yml",
+      "parents": [
+        "RMCXenoCarrierBase"
+      ],
+      "thresholds": {
+        "critical": 650,
+        "dead": 750
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 0,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 20,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "RMCXenoCrusher": {
+      "id": "RMCXenoCrusher",
+      "name": "Крушитель",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/crusher.yml",
+      "parents": [
+        "CMXenoCrusherBase"
+      ],
+      "thresholds": {
+        "critical": 700,
+        "dead": 800
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 30,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 100,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "RMCXenoCrusherCharger": {
+      "id": "RMCXenoCrusherCharger",
+      "name": "Крушитель",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/crusher.yml",
+      "parents": [
+        "CMXenoCrusherBase"
+      ],
+      "thresholds": {
+        "critical": 780,
+        "dead": 880
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 20,
+        "frontalArmor": 30,
+        "sideArmor": 15,
+        "explosionArmor": 100,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "RMCXenoKing": {
+      "id": "RMCXenoKing",
+      "name": "Король",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/king.yml",
+      "parents": [
+        "CMXenoDeveloped",
+        "CMXenoTail",
+        "CMXenoFlammable",
+        "RMCXenoSpeechSounds",
+        "RMCXenoMobCollision"
+      ],
+      "thresholds": {
+        "critical": 1500,
+        "dead": 1600
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 45,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 70,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "RMCXenoLesserCarrier": {
+      "id": "RMCXenoLesserCarrier",
+      "name": "Малый Носитель",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/fun.yml",
+      "parents": [
+        "CMXenoDeveloped",
+        "CMXenoTail",
+        "CMXenoFlammable",
+        "RMCXenoSpeechSounds"
+      ],
+      "thresholds": {
+        "critical": null,
+        "dead": 200
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 0,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 10,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "RMCXenoLurkerVampire": {
+      "id": "RMCXenoLurkerVampire",
+      "name": "Охотник",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/lurker.yml",
+      "parents": [
+        "RMCXenoLurkerBase"
+      ],
+      "thresholds": {
+        "critical": 390,
+        "dead": 490
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 20,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 20,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "RMCXenoParasiteWatcher": {
+      "id": "RMCXenoParasiteWatcher",
+      "name": "Лицехват",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/parasite.yml",
+      "parents": [
+        "CMXenoParasiteBase"
+      ],
+      "thresholds": {
+        "critical": null,
+        "dead": 35
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 0,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 0,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "RMCXenoPraetorianDancer": {
+      "id": "RMCXenoPraetorianDancer",
+      "name": "Преторианец",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/praetorian.yml",
+      "parents": [
+        "CMXenoPraetorianBase"
+      ],
+      "thresholds": {
+        "critical": 650,
+        "dead": 750
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 20,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 40,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "RMCXenoPraetorianOppressor": {
+      "id": "RMCXenoPraetorianOppressor",
+      "name": "Преторианец",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/praetorian.yml",
+      "parents": [
+        "CMXenoPraetorianBase"
+      ],
+      "thresholds": {
+        "critical": 650,
+        "dead": 750
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 25,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 60,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "RMCXenoPraetorianValkyrie": {
+      "id": "RMCXenoPraetorianValkyrie",
+      "name": "Преторианец",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/praetorian.yml",
+      "parents": [
+        "CMXenoPraetorianBase"
+      ],
+      "thresholds": {
+        "critical": 650,
+        "dead": 750
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 35,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 40,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "RMCXenoPraetorianVanguard": {
+      "id": "RMCXenoPraetorianVanguard",
+      "name": "Преторианец",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/praetorian.yml",
+      "parents": [
+        "CMXenoPraetorianBase"
+      ],
+      "thresholds": {
+        "critical": 590,
+        "dead": 690
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 25,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 40,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "RMCXenoRavagerBerserker": {
+      "id": "RMCXenoRavagerBerserker",
+      "name": "Разрушитель",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/ravager.yml",
+      "parents": [
+        "RMCXenoRavagerBase"
+      ],
+      "thresholds": {
+        "critical": 590,
+        "dead": 690
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 30,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 80,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "RMCXenoRavagerHedgehog": {
+      "id": "RMCXenoRavagerHedgehog",
+      "name": "Разрушитель",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/ravager.yml",
+      "parents": [
+        "RMCXenoRavagerBase"
+      ],
+      "thresholds": {
+        "critical": 650,
+        "dead": 750
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 25,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 100,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "RMCXenoRunnerAcider": {
+      "id": "RMCXenoRunnerAcider",
+      "name": "Бегун",
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/runner.yml",
+      "parents": [
+        "CMXenoRunnerBase"
+      ],
+      "thresholds": {
+        "critical": 345,
+        "dead": 445
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 15,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 10,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "STXenoDespoiler": {
+      "id": "STXenoDespoiler",
+      "name": "Дисбойлер",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Entities/Mobs/Xeno/despoiler.yml",
+      "parents": [
+        "CMXenoDeveloped",
+        "CMXenoTail",
+        "CMXenoFlammable",
+        "RMCXenoSpeechSounds",
+        "RMCXenoCommendationReceiver",
+        "RMCXenoMobCollision"
+      ],
+      "thresholds": {
+        "critical": 650,
+        "dead": 750
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 25,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 20,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "STXenoWarriorBoxer": {
+      "id": "STXenoWarriorBoxer",
+      "name": "Воин",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Entities/Mobs/Xeno/warrior.yml",
+      "parents": [
+        "CMXenoDeveloped",
+        "CMXenoTail",
+        "CMXenoFlammable",
+        "RMCXenoSpeechSounds",
+        "RMCXenoCommendationReceiver",
+        "RMCXenoMobCollision"
+      ],
+      "thresholds": {
+        "critical": 500,
+        "dead": 600
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 25,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 45,
+        "immuneToArmorPiercing": false
+      }
+    },
+    "STXenoWarriorBulwark": {
+      "id": "STXenoWarriorBulwark",
+      "name": "Воин",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Entities/Mobs/Xeno/warrior.yml",
+      "parents": [
+        "CMXenoDeveloped",
+        "CMXenoTail",
+        "CMXenoFlammable",
+        "RMCXenoSpeechSounds",
+        "RMCXenoCommendationReceiver",
+        "RMCXenoMobCollision"
+      ],
+      "thresholds": {
+        "critical": 600,
+        "dead": 700
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 30,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 50,
+        "immuneToArmorPiercing": false
+      }
+    }
+  },
+  "counts": {
+    "xenoCastes": 40
+  }
+}

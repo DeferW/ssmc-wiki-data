@@ -1,160 +1,115 @@
-# Сборщики данных SSMC Wiki
+# SSMC Wiki Data
 
-Репозиторий собирает данные из [`MetalSage/space-stories-cm14`](https://github.com/MetalSage/space-stories-cm14) и сохраняет готовые JSON и спрайты для вики.
+Сборщики данных для веб-приложения Space Stories Marine Corps. Репозиторий не
+хранит вручную составленный список предметов: данные воспроизводимо строятся из
+актуальных прототипов игры.
 
-## Навигация
+## Структура
 
-- [Химия](#химия)
-- [Снаряжение](#снаряжение)
-- [Запуск сборки](#запуск-сборки)
-- [Настройки](#настройки)
-- [Результаты сборки](#результаты-сборки)
-- [Ошибки](#ошибки)
-- [Структура репозитория](#структура-репозитория)
+```text
+config/
+  catalog-sources.yml       автоматы и каталоги карго — корни обхода
+  catalog-overrides.json    только редакторские категории
+scripts/
+  common/                   общий YAML resolver и Fluent-локализация
+  catalog/                  предметный каталог
+  chemistry/                химия
+  mobs/                     параметры людей и каст ксеноморфов
+data/
+  catalog/                  catalog.json, технический index.json, sprites/
+  chemistry/                catalog.json, index.json, guides.json
+  mobs/                     catalog.json
+```
 
-## Химия
+Модули не импортируют друг друга. Общий код находится только в
+`scripts/common`, поэтому новый сборщик можно добавить отдельной папкой, не
+связывая его с каталогом или химией.
 
-Workflow: [`.github/workflows/build-chemistry-catalog.yml`](.github/workflows/build-chemistry-catalog.yml)
+## Как работает каталог
 
-Сборщик:
+1. `config/catalog-sources.yml` задаёт торговые автоматы и компьютеры карго.
+2. Сборщик читает их предложения и запускает обход графа прототипов.
+3. Обход раскрывает ящики, кейсы, наборы, слоты, установленные обвесы,
+   гарнитуры, магазины, патроны и снаряды до конечных предметов.
+4. Для каждого предмета извлекаются только подходящие механические блоки:
+   стрельба, защита, хранение, растворы, связь, совместимость и связи
+   содержимого. Блок не зависит от итоговой категории — приложение само решает,
+   что отображать на карточке.
+5. Автоклассификатор назначает ровно один раздел.
+6. `config/catalog-overrides.json` меняет разделы после автоклассификации. При
+   реальном изменении карточка получает `edited: true`.
+7. Генерируются публичный `catalog.json`, диагностический `index.json` и PNG.
 
-1. Загружает химические YAML, XML-руководства и локализацию `ru-RU` из ветки `master` игры.
-2. Индексирует реагенты и реакции.
-3. Разрешает наследование прототипов.
-4. Связывает рецепты, ингредиенты и продукты.
-5. Распределяет реагенты по разделам.
-6. Проверяет итоговый каталог и сохраняет его в `data/`.
+Разделы: `Оружие`, `Боезапас`, `Обвесы`, `Броня`, `Экипировка`, `Медицина`,
+`Снаряжение`, `Другое`, `Скрытые`.
 
-Разделы каталога:
-
-- `ordnance` — боевая химия;
-- `medicine` — медицина;
-- `drinks` — напитки;
-- `elements` — элементы;
-- `other` — остальные вещества.
-
-Основные скрипты:
-
-- [`scripts/extract_guide_sections.py`](scripts/extract_guide_sections.py) — читает XML-руководства;
-- [`scripts/index_chemistry.py`](scripts/index_chemistry.py) — индексирует YAML-прототипы;
-- [`scripts/build_chemistry_catalog.py`](scripts/build_chemistry_catalog.py) — собирает итоговый каталог.
-
-## Снаряжение
-
-Workflow: [`.github/workflows/build-equipment-catalog.yml`](.github/workflows/build-equipment-catalog.yml)
-
-Сборщик:
-
-1. Загружает прототипы, локализацию и текстуры из ветки `master` игры.
-2. Находит предметы через торговые автоматы и каталог карго.
-3. Разрешает наследование и связи между прототипами.
-4. Определяет названия, описания, характеристики и категории.
-5. Применяет администраторские изменения из [`config/catalog-overrides.json`](config/catalog-overrides.json).
-6. Создаёт PNG-спрайты публичных предметов.
-7. Проверяет JSON, связи, категории и спрайты.
-
-Основные файлы:
-
-- [`config/equipment-sources.yml`](config/equipment-sources.yml) — источники и правила автоматической классификации;
-- [`config/catalog-overrides.json`](config/catalog-overrides.json) — ручное скрытие предметов и смена категорий;
-- [`scripts/build_equipment_catalog.py`](scripts/build_equipment_catalog.py) — сборка каталога;
-- [`scripts/validate_equipment_catalog.py`](scripts/validate_equipment_catalog.py) — проверка результата.
-
-Overrides применяются после автоматической классификации. Поэтому ручное решение имеет приоритет над правилами сборщика.
-
-## Запуск сборки
-
-### Вручную
-
-1. Открыть вкладку **Actions** в GitHub.
-2. Выбрать **Build chemistry catalog** или **Build equipment catalog**.
-3. Нажать **Run workflow** и выбрать ветку `main`.
-4. Дождаться зелёной отметки.
-
-### После изменения снаряжения в админке
-
-Админка обновляет `config/catalog-overrides.json`. Если в workflow снаряжения настроен `push`-триггер для этого файла, сборка запускается автоматически. Иначе запустите **Build equipment catalog** вручную.
-
-При успешной сборке GitHub Actions создаёт коммит только при наличии изменений. Сообщение `Nothing changed` означает, что итоговые файлы не изменились.
-
-## Настройки
-
-### Добавить источник снаряжения
-
-Откройте [`config/equipment-sources.yml`](config/equipment-sources.yml) и добавьте ID:
-
-- в `vendors` — для торгового автомата;
-- в `cargoCatalogs` — для каталога карго.
-
-После изменения запустите сборку снаряжения.
-
-### Скрыть предмет или сменить категорию
-
-Используйте админ-режим сайта. Он записывает изменения в [`config/catalog-overrides.json`](config/catalog-overrides.json).
-
-Формат записи:
+`Скрытые` — обычный раздел, доступный приложению. Автоматически предмет туда
+попасть не может; используется override вида:
 
 ```json
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "items": {
-    "PrototypeId": {
-      "hidden": true
-    },
-    "AnotherPrototypeId": {
-      "category": "Другое"
-    }
+    "PrototypeId": { "category": "Скрытые" }
   }
 }
 ```
 
-JSON не поддерживает комментарии и запятую после последнего поля объекта.
+### Публичный и технический JSON
 
-### Изменить автоматическую классификацию
+Приложение должно читать `data/catalog/catalog.json`. В нём есть:
 
-В [`config/equipment-sources.yml`](config/equipment-sources.yml) доступны:
+- карточки и категории;
+- источники и предложения покупки, включая стоимость заказов карго;
+- содержимое и другие связи предметов, включая ключи гарнитур;
+- все доступные нормализованные блоки характеристик независимо от раздела;
+- спрайты и результат редакторских overrides.
 
-- `excludePrototypeIds` — исключить прототип;
-- `includePrototypeIds` — принудительно включить;
-- `categoryOverrides` — назначить категорию;
-- `canonicalPrototypeIds` — заменить дублирующий ID каноническим.
+`data/catalog/index.json` предназначен для диагностики сборщика: там находятся
+полные торговые записи, сырой граф связей и происхождение прототипов. Контрактом
+веб-приложения он не является.
 
-Эти правила нужны для ошибок или особенностей игровых данных. Обычные ручные изменения делаются через `catalog-overrides.json`.
+## Файлы `scripts/catalog`
 
-## Результаты сборки
+- `build.py` — CLI и полный сборочный конвейер.
+- `catalog.py` — обход источников и графа, сборка карточек и JSON-документов.
+- `classification.py` — механические признаки и правила категорий.
+- `config.py` — строгая проверка sources/overrides и применение overrides.
+- `core.py` — константы категорий, слотов и публикуемых компонентов.
+- `prototypes.py` — специфичные для каталога парсеры размеров и реагентов;
+  общий resolver переэкспортируется из `scripts/common`.
+- `relations.py` — содержимое, загрузка, снаряды и совместимость.
+- `statistics.py` — нормализованные характеристики карточек.
+- `sprites.py` — рендер PNG из игровых RSI.
+- `reporting.py` — запись JSON, review и сравнение со старой сборкой.
+- `validate.py` — проверка публичного контракта и согласованности с index.
+- `test_*.py` — модульные тесты.
 
-Файлы в `data/` создаются автоматически. Не редактируйте их вручную.
+## Локальный запуск
 
-| Файл | Назначение |
-| --- | --- |
-| [`data/chemistry-catalog.json`](data/chemistry-catalog.json) | готовый каталог химии для вики |
-| [`data/chemistry-guides.json`](data/chemistry-guides.json) | данные XML-руководств |
-| [`data/chemistry-index.json`](data/chemistry-index.json) | индекс реагентов и реакций |
-| [`data/equipment-catalog.json`](data/equipment-catalog.json) | готовый каталог снаряжения |
-| [`data/equipment-index.json`](data/equipment-index.json) | технический индекс снаряжения |
-| [`data/equipment-sprites/`](data/equipment-sprites/) | PNG-спрайты публичных предметов |
+Из корня репозитория:
 
-## Ошибки
+```bash
+python -m pip install -r requirements.txt
 
-### `Invalid catalog overrides JSON`
+python -m scripts.catalog.build \
+  --game-source /path/to/space-stories-cm14 \
+  --config config/catalog-sources.yml \
+  --index-output data/catalog/index.json \
+  --output data/catalog/catalog.json \
+  --sprites-output data/catalog/sprites \
+  --commit GAME_COMMIT \
+  --locale ru-RU
 
-Файл `config/catalog-overrides.json` содержит ошибку JSON. Откройте указанную в логе строку и проверьте кавычки, запятые и фигурные скобки.
+python -m scripts.catalog.validate \
+  --catalog data/catalog/catalog.json \
+  --index data/catalog/index.json \
+  --config config/catalog-sources.yml \
+  --sprites data/catalog/sprites
 
-### `Unknown ... ID` или неизвестная категория
-
-В конфиге или overrides указан ID, которого нет в текущих игровых данных, либо неверное название категории. Исправьте указанную запись и повторите сборку.
-
-### Workflow завершился без нового коммита
-
-Если в логе есть `Nothing changed`, сборка прошла успешно, но результат совпал с уже опубликованными файлами.
-
-При любой ошибке workflow не публикует частично собранные данные: предыдущая рабочая версия остаётся в репозитории.
-
-## Структура репозитория
-
-```text
-.github/workflows/       GitHub Actions
-config/                  источники и ручные overrides
-scripts/                 сборщики и валидаторы
-data/                    готовые JSON и спрайты
+python -m pytest scripts
 ```
+
+GitHub Actions содержит отдельную ручную сборку для каждого модуля и общие PR
+проверки. Публикующие workflows используют одну concurrency-группу, чтобы два
+бота не пытались одновременно записать разные `data/` в ветку `main`.

@@ -46,18 +46,18 @@ jobs:
 
       - name: Validate chemistry catalog
         run: |
-          python3 scripts/validate_chemistry_catalog.py \
-            --catalog data/chemistry-catalog.json
+          python3 -m scripts.chemistry.validate \
+            --catalog data/chemistry/catalog.json
 
-      - name: Validate equipment catalog
+      - name: Validate catalog
         run: |
-          python3 scripts/validate_equipment_catalog.py \
-            --catalog data/equipment-catalog.json \
-            --index data/equipment-index.json \
-            --config config/equipment-sources.yml \
-            --sprites data/equipment-sprites
+          python3 -m scripts.catalog.validate \
+            --catalog data/catalog/catalog.json \
+            --index data/catalog/index.json \
+            --config config/catalog-sources.yml \
+            --sprites data/catalog/sprites
 
       - name: Validate mob catalog
         run: |
-          python3 scripts/validate_mob_catalog.py \
-            --catalog data/mob-catalog.json
+          python3 -m scripts.mobs.validate \
+            --catalog data/mobs/catalog.json

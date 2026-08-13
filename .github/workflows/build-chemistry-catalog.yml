@@ -7,7 +7,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: build-chemistry-catalog
+  group: publish-generated-data
   cancel-in-progress: false
 
 jobs:
@@ -45,27 +45,27 @@ jobs:
         run: |
           GAME_COMMIT=$(git -C game-source rev-parse HEAD)
 
-          python3 scripts/extract_guide_sections.py \
+          python3 -m scripts.chemistry.guides \
             --game-source game-source \
-            --output data/chemistry-guides.json \
+            --output data/chemistry/guides.json \
             --commit "$GAME_COMMIT"
 
-          python3 scripts/index_chemistry.py \
+          python3 -m scripts.chemistry.index \
             --game-source game-source \
-            --output data/chemistry-index.json \
+            --output data/chemistry/index.json \
             --commit "$GAME_COMMIT"
 
-          python3 scripts/build_chemistry_catalog.py \
-            --index data/chemistry-index.json \
-            --guides data/chemistry-guides.json \
+          python3 -m scripts.chemistry.build \
+            --index data/chemistry/index.json \
+            --guides data/chemistry/guides.json \
             --game-source game-source \
-            --output data/chemistry-catalog.json \
+            --output data/chemistry/catalog.json \
             --locale ru-RU
 
       - name: Validate chemistry catalog
         run: |
-          python3 scripts/validate_chemistry_catalog.py \
-            --catalog data/chemistry-catalog.json
+          python3 -m scripts.chemistry.validate \
+            --catalog data/chemistry/catalog.json
 
       - name: Save chemistry data
         run: |
@@ -73,9 +73,9 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add \
-            data/chemistry-guides.json \
-            data/chemistry-index.json \
-            data/chemistry-catalog.json
+            data/chemistry/guides.json \
+            data/chemistry/index.json \
+            data/chemistry/catalog.json
 
           if git diff --cached --quiet; then
             echo "Nothing changed"

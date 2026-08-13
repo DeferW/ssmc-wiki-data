@@ -1,0 +1,79 @@
+name: Build catalog
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "config/catalog-overrides.json"
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-generated-data
+  cancel-in-progress: false
+
+jobs:
+  build-catalog:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download wiki data repository
+        uses: actions/checkout@v7.0.1
+
+      - name: Download game sources
+        uses: actions/checkout@v7.0.1
+        with:
+          repository: MetalSage/space-stories-cm14
+          ref: master
+          path: game-source
+          sparse-checkout: |
+            Resources/Prototypes
+            Resources/Locale/ru-RU
+            Resources/Textures
+          sparse-checkout-cone-mode: false
+
+      - name: Install catalog tools
+        run: |
+          python3 -m pip install -r requirements.txt
+
+      - name: Build catalog data
+        run: |
+          GAME_COMMIT=$(git -C game-source rev-parse HEAD)
+
+          python3 -m scripts.catalog.build \
+            --game-source game-source \
+            --config config/catalog-sources.yml \
+            --index-output data/catalog/index.json \
+            --output data/catalog/catalog.json \
+            --sprites-output data/catalog/sprites \
+            --commit "$GAME_COMMIT" \
+            --locale ru-RU
+
+      - name: Validate catalog
+        run: |
+          python3 -m scripts.catalog.validate \
+            --catalog data/catalog/catalog.json \
+            --index data/catalog/index.json \
+            --config config/catalog-sources.yml \
+            --sprites data/catalog/sprites
+
+      - name: Save catalog data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add \
+            data/catalog/index.json \
+            data/catalog/catalog.json \
+            data/catalog/sprites
+
+          if git diff --cached --quiet; then
+            echo "Nothing changed"
+          else
+            git commit -m "Build catalog"
+            git push
+          fi

@@ -1,0 +1,40 @@
+schemaVersion: 3
+
+# These sources seed the catalog. The builder follows their current
+# contents and technical dependencies instead of storing today's item list.
+vendors:
+  - id: ColMarTechCargoGuns
+  - id: ColMarTechCargoAmmo
+  - id: ColMarTechCargoAttachments
+  - id: ColMarTechSurplus
+  - id: ColMarTechGuns
+  - id: ColMarTechMunitions
+  - id: ColMarTechUtilities
+  - id: ColMarTechSGGear
+  - id: ColMarTechSWSGear
+  - id: ColMarTechSLGear
+  - id: ColMarTechFLGear
+  - id: ColMarTechSCTGear
+  - id: ColMarTechMedicalGear
+  - id: ColMarTechSCTEquipment
+  - id: ColMarTechMedicalEquipment
+  - id: ColMarTechFLEquipment
+  - id: ColMarTechSGEquipment
+  - id: ColMarTechSWSEquipment
+  - id: ColMarTechSLEquipment
+  - id: ColMarTechCargoUniform
+  - id: ColMarTechSeniorOfficerEquipment
+
+# Cargo consoles expose RequisitionsComputer categories. Their orderable crates
+# and every item reachable from them seed the graph. Crates, boxes and cases are
+# public catalog items too; the admin override layer decides what to hide later.
+cargoCatalogs:
+  - id: CMASRSConsole
+
+# Everything reachable from the configured/discovered sources is published.
+# Manual cleanup belongs to the admin override layer. No vendor is discovered
+# by name prefix: only the ids listed above are allowed sources.
+classification:
+  excludePrototypeIds: []
+  categoryOverrides: {}
+  canonicalPrototypeIds: {}
