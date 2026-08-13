@@ -8,7 +8,7 @@ from typing import Any
 
 import yaml
 
-from scripts.chemistry.yaml_loader import GameYamlLoader, normalize_parents
+from scripts.common.yaml import GameYamlLoader, normalize_parents
 
 SOURCE_ROOTS = [
     {

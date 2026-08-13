@@ -9,7 +9,7 @@ from typing import Any
 
 import yaml
 
-from scripts.chemistry.yaml_loader import GameYamlLoader, normalize_parents
+from scripts.common.yaml import GameYamlLoader, normalize_parents
 
 FTL_MESSAGE_RE = re.compile(
     r"^([A-Za-z0-9][A-Za-z0-9_-]*)\s*=\s*(.*)$"

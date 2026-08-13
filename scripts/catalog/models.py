@@ -32,21 +32,6 @@ CATEGORY_ALIASES = {
     "Ближний бой": CATEGORY_GEAR,
 }
 
-OWNERSHIP_RELATIONS = frozenset(
-    {
-        "contains",
-        "slotItem",
-        "bundleItem",
-        "variant",
-        "mappedVariant",
-        "mountedWeapon",
-        "loadedWith",
-        "installedAttachment",
-        "fires",
-    }
-)
-
-
 @dataclass(frozen=True)
 class Prototype:
     id: str
@@ -85,4 +70,3 @@ class Classification:
 
 def normalized_category(value: str) -> str:
     return CATEGORY_ALIASES.get(value, value)
-
