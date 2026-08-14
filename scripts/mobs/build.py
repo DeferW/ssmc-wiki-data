@@ -78,6 +78,20 @@ def armor_from_component(component: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def strain_name(components: dict[str, Any], localizer: Localizer) -> str | None:
+    """XenoStrainComponent.name is a bare Fluent key (not an `{ent-...}`
+    reference) naming the caste's strain, e.g. "stories-xeno-bulwark-name"
+    -> "Бастион". Castes with no strain (the default/base variant) have no
+    XenoStrain component at all."""
+    strain = components.get("XenoStrain")
+    if not isinstance(strain, dict):
+        return None
+    key = strain.get("name")
+    if not isinstance(key, str):
+        return None
+    return localizer.resolve_key(key)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Build the SSMC mob catalog from live game sources")
     parser.add_argument("--game-source", required=True, type=Path)
@@ -131,6 +145,7 @@ def main() -> None:
         xeno_castes[prototype.id] = {
             "id": prototype.id,
             "name": name,
+            "strainName": strain_name(components, localizer),
             "origin": prototype.origin,
             "sourceFile": prototype.source_file,
             "parents": list(prototype.parents),

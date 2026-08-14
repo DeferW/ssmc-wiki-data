@@ -7,7 +7,9 @@ from scripts.mobs.build import (
     invert_thresholds,
     is_xeno_mob_source_file,
     matured_thresholds,
+    strain_name,
 )
+from scripts.common.localization import Localizer
 from scripts.common.prototypes import EntityPrototype, PrototypeResolver
 
 
@@ -94,6 +96,28 @@ def test_matured_thresholds_missing_fields_raises():
 
 def test_capitalize_first_uppercases_first_letter():
     assert capitalize_first("воин") == "Воин"
+
+
+def test_strain_name_resolves_the_localized_key():
+    # Real data: STXenoWarriorBulwark carries `type: XenoStrain, name:
+    # stories-xeno-bulwark-name`, and xeno-strains.ftl defines that key as
+    # "Бастион" — a plain top-level Fluent message, not an `ent-...` entity
+    # attribute reference.
+    localizer = Localizer({"stories-xeno-bulwark-name": "Бастион"})
+    components = {"XenoStrain": {"name": "stories-xeno-bulwark-name"}}
+    assert strain_name(components, localizer) == "Бастион"
+
+
+def test_strain_name_none_when_component_absent():
+    # The default/base variant of a caste family has no XenoStrain component.
+    localizer = Localizer({})
+    assert strain_name({}, localizer) is None
+
+
+def test_strain_name_none_when_key_unresolvable():
+    localizer = Localizer({})
+    components = {"XenoStrain": {"name": "missing-key"}}
+    assert strain_name(components, localizer) is None
 
 
 def make_prototype(prototype_id, parents=(), abstract=False, components=(), source_file="test.yml"):
