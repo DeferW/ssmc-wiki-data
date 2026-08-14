@@ -979,8 +979,8 @@
       "maturedThresholds": null,
       "armor": {
         "xenoArmor": 30,
-        "frontalArmor": 0,
-        "sideArmor": 0,
+        "frontalArmor": 10,
+        "sideArmor": 10,
         "explosionArmor": 50,
         "immuneToArmorPiercing": false
       },

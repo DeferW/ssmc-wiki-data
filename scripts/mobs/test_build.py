@@ -2,6 +2,7 @@ import pytest
 
 from scripts.mobs.build import (
     EXCLUDED_XENO_CASTE_IDS,
+    apply_bulwark_passive,
     armor_from_component,
     capitalize_first,
     invert_thresholds,
@@ -96,6 +97,28 @@ def test_matured_thresholds_missing_fields_raises():
 
 def test_capitalize_first_uppercases_first_letter():
     assert capitalize_first("воин") == "Воин"
+
+
+def test_apply_bulwark_passive_adds_unconditional_frontal_and_side_bonus():
+    # Real data: STXenoWarriorBulwark's base CMArmor has frontalArmor=0,
+    # sideArmor=0, but it also carries a bare `type: BulwarkPassive` (no field
+    # overrides), whose component defaults are PassiveFrontalBonus=10,
+    # PassiveSideBonus=10 -- applied with no Active/toggle guard at all.
+    armor = {"xenoArmor": 30, "frontalArmor": 0, "sideArmor": 0, "explosionArmor": 50, "immuneToArmorPiercing": False}
+    result = apply_bulwark_passive(armor, {"BulwarkPassive": {}})
+    assert result == {"xenoArmor": 30, "frontalArmor": 10, "sideArmor": 10, "explosionArmor": 50, "immuneToArmorPiercing": False}
+
+
+def test_apply_bulwark_passive_noop_when_component_absent():
+    armor = {"xenoArmor": 20, "frontalArmor": 0, "sideArmor": 0, "explosionArmor": 0, "immuneToArmorPiercing": False}
+    assert apply_bulwark_passive(armor, {}) == armor
+
+
+def test_apply_bulwark_passive_respects_explicit_overrides():
+    armor = {"xenoArmor": 30, "frontalArmor": 0, "sideArmor": 0, "explosionArmor": 50, "immuneToArmorPiercing": False}
+    result = apply_bulwark_passive(armor, {"BulwarkPassive": {"passiveFrontalBonus": 5, "passiveSideBonus": 2}})
+    assert result["frontalArmor"] == 5
+    assert result["sideArmor"] == 2
 
 
 def test_strain_name_resolves_the_localized_key():

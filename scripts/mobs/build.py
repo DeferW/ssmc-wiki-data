@@ -78,6 +78,20 @@ def armor_from_component(component: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def apply_bulwark_passive(armor: dict[str, Any], components: dict[str, Any]) -> dict[str, Any]:
+    """BulwarkPassiveSystem.OnGetArmor adds PassiveFrontalBonus/PassiveSideBonus
+    to CMGetArmorEvent with no Active/toggle guard at all — a permanent trait
+    of the Bulwark strain, unlike the Encased Plates ability, so it belongs in
+    the caste's base armor numbers rather than a togglable ability."""
+    passive = components.get("BulwarkPassive")
+    if not isinstance(passive, dict):
+        return armor
+    armor = dict(armor)
+    armor["frontalArmor"] += passive.get("passiveFrontalBonus", 10)
+    armor["sideArmor"] += passive.get("passiveSideBonus", 10)
+    return armor
+
+
 def strain_name(components: dict[str, Any], localizer: Localizer) -> str | None:
     """XenoStrainComponent.name is a bare Fluent key (not an `{ent-...}`
     reference) naming the caste's strain, e.g. "stories-xeno-bulwark-name"
@@ -153,7 +167,7 @@ def main() -> None:
                 thresholds_component.get("thresholds", {})
             ),
             "maturedThresholds": matured_thresholds(components.get("XenoMaturing")),
-            "armor": armor_from_component(armor_component),
+            "armor": apply_bulwark_passive(armor_from_component(armor_component), components),
             "sprite": None,
         }
 
