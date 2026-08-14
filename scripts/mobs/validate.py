@@ -5,6 +5,8 @@ import json
 from pathlib import Path
 from typing import Any
 
+from scripts.mobs.build import RMC_SIZES
+
 MIN_XENO_CASTES = 20
 
 EXPECTED_ARMOR_KEYS = {
@@ -66,6 +68,8 @@ def validate(data: dict[str, Any], sprites_path: Path) -> None:
         strain_name = caste.get("strainName")
         if strain_name is not None and (not isinstance(strain_name, str) or not strain_name):
             raise RuntimeError(f"Xeno caste has an invalid strainName: {caste_id}")
+        if caste.get("size") not in RMC_SIZES:
+            raise RuntimeError(f"Xeno caste has an unknown size: {caste_id}")
         source_file = caste.get("sourceFile")
         if not isinstance(source_file, str) or "Mobs/Xeno/" not in source_file:
             raise RuntimeError(f"Xeno caste has an unexpected sourceFile: {caste_id}")

@@ -17620,6 +17620,9 @@
       ],
       "equipmentSlots": [],
       "properties": {
+        "AimedShotEffect": {
+          "extraHits": 2
+        },
         "CMArmorPiercing": {
           "amount": 50
         },
@@ -17720,6 +17723,10 @@
       ],
       "equipmentSlots": [],
       "properties": {
+        "AimedShotEffect": {
+          "extraHits": 1,
+          "superSlowDuration": 14
+        },
         "CMArmorPiercing": {
           "amount": 0
         },
@@ -17820,6 +17827,11 @@
       ],
       "equipmentSlots": [],
       "properties": {
+        "AimedShotEffect": {
+          "extraHits": 0,
+          "fireStacksOnHit": 10,
+          "blindDuration": 5
+        },
         "CMArmorPiercing": {
           "amount": 20
         },
@@ -35573,6 +35585,7 @@
         "suitStorage"
       ],
       "properties": {
+        "AimedShot": {},
         "AttachableHolder": {
           "slots": {
             "rmc-aslot-rail": {
@@ -35921,6 +35934,7 @@
             "shotsToMaxScatter": 4
           }
         },
+        "aimedShot": {},
         "ammoProvider": {
           "type": "MagazineAmmoProvider"
         },
@@ -35962,6 +35976,9 @@
                       "ignoreModifiers": true
                     }
                   ]
+                },
+                "aimedShotEffect": {
+                  "extraHits": 2
                 }
               }
             ]
@@ -36003,6 +36020,10 @@
                       "ignoreModifiers": true
                     }
                   ]
+                },
+                "aimedShotEffect": {
+                  "extraHits": 1,
+                  "superSlowDuration": 14
                 }
               }
             ]
@@ -36045,6 +36066,11 @@
                       "ignoreModifiers": true
                     }
                   ]
+                },
+                "aimedShotEffect": {
+                  "extraHits": 0,
+                  "fireStacksOnHit": 10,
+                  "blindDuration": 5
                 }
               }
             ]
@@ -89384,6 +89410,9 @@
       ],
       "equipmentSlots": [],
       "properties": {
+        "AimedShotEffect": {
+          "extraHits": 0.8
+        },
         "CMArmorPiercing": {
           "amount": 75
         },
@@ -179748,6 +179777,10 @@
         "suitStorage"
       ],
       "properties": {
+        "AimedShot": {
+          "aimDuration": 2,
+          "aimedShotCooldown": 4.5
+        },
         "AttachableHolder": {
           "slots": {
             "rmc-aslot-rail": {
@@ -180063,6 +180096,11 @@
             "shotsToMaxScatter": 4
           }
         },
+        "aimedShot": {
+          "aimDuration": 2,
+          "aimedShotCooldown": 4.5
+        },
+        "hasFocusedShooting": true,
         "ammoProvider": {
           "type": "MagazineAmmoProvider"
         },
@@ -180105,6 +180143,9 @@
                       "ignoreModifiers": true
                     }
                   ]
+                },
+                "aimedShotEffect": {
+                  "extraHits": 0.8
                 }
               }
             ]

@@ -535,6 +535,9 @@ def populate_weapon_statistics(
         falloff = properties.get("RMCProjectileDamageFalloff")
         if isinstance(falloff, dict) and falloff:
             result["damageFalloff"] = copy.deepcopy(falloff)
+        aimed_effect = properties.get("AimedShotEffect")
+        if isinstance(aimed_effect, dict) and aimed_effect:
+            result["aimedShotEffect"] = copy.deepcopy(aimed_effect)
         return result
 
     for weapon_id in sorted(public_item_ids):
@@ -647,6 +650,19 @@ def populate_weapon_statistics(
             stats["weaponDamageFalloff"] = copy.deepcopy(weapon_falloff)
         if isinstance(selective.get("modifiers"), dict):
             stats["fireModeModifiers"] = copy.deepcopy(selective["modifiers"])
+
+        # AimedShotComponent is present (often bare) on every sniper rifle via
+        # RMCBaseWeaponSniperRifle; only weapons overriding aimDuration/
+        # aimedShotCooldown (e.g. XM43E1) carry explicit fields here, so an
+        # empty dict here still means "has the ability, uses C# defaults".
+        if "AimedShot" in item.get("componentTypes", []):
+            aimed_shot = properties.get("AimedShot")
+            stats["aimedShot"] = copy.deepcopy(aimed_shot) if isinstance(aimed_shot, dict) else {}
+        # RMCFocusedShootingSystem ramps AimedShotEffect's bonus damage based on
+        # consecutive aimed shots landed on the same target; currently only
+        # XM43E1 carries this component, always bare (fixed C# defaults).
+        if "RMCFocusedShooting" in item.get("componentTypes", []):
+            stats["hasFocusedShooting"] = True
 
         provider_type = None
         provider: dict[str, Any] = {}

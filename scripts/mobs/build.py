@@ -92,6 +92,21 @@ def apply_bulwark_passive(armor: dict[str, Any], components: dict[str, Any]) -> 
     return armor
 
 
+RMC_SIZES = ("Small", "Humanoid", "VerySmallXeno", "SmallXeno", "Xeno", "Big", "Immobile")
+
+
+def rmc_size(components: dict[str, Any]) -> str:
+    """RMCSizeComponent.Size gates several mechanics (stopping power stun
+    thresholds, RMCFocusedShootingSystem's bonus-damage tiers) by an ordered
+    scale; the component itself defaults to Xeno when absent."""
+    size_component = components.get("RMCSize")
+    if isinstance(size_component, dict):
+        size = size_component.get("size")
+        if size in RMC_SIZES:
+            return size
+    return "Xeno"
+
+
 def strain_name(components: dict[str, Any], localizer: Localizer) -> str | None:
     """XenoStrainComponent.name is a bare Fluent key (not an `{ent-...}`
     reference) naming the caste's strain, e.g. "stories-xeno-bulwark-name"
@@ -160,6 +175,7 @@ def main() -> None:
             "id": prototype.id,
             "name": name,
             "strainName": strain_name(components, localizer),
+            "size": rmc_size(components),
             "origin": prototype.origin,
             "sourceFile": prototype.source_file,
             "parents": list(prototype.parents),
