@@ -7,6 +7,7 @@ from typing import Any
 
 from scripts.common.localization import Localizer, read_fluent_messages
 from scripts.common.prototypes import PrototypeResolver, read_entity_prototypes
+from scripts.mobs.sprites import render_mob_sprites, sprite_path_from_component
 
 MARINE_BASE_PROTOTYPE_ID = "RMCBaseMobSpeciesOrganic"
 
@@ -81,6 +82,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Build the SSMC mob catalog from live game sources")
     parser.add_argument("--game-source", required=True, type=Path)
     parser.add_argument("--output", required=True, type=Path)
+    parser.add_argument("--sprites-output", required=True, type=Path)
     parser.add_argument("--locale", default="ru-RU")
     parser.add_argument("--commit", default="unknown")
     args = parser.parse_args()
@@ -102,6 +104,7 @@ def main() -> None:
     }
 
     xeno_castes: dict[str, Any] = {}
+    sprite_paths: dict[str, str] = {}
     for prototype in prototypes.values():
         if prototype.abstract:
             continue
@@ -121,6 +124,10 @@ def main() -> None:
             localizer.entity_text(prototype.id, None, resolved["fields"].get("name"))
         )
 
+        sprite_path = sprite_path_from_component(components.get("Sprite"))
+        if sprite_path is not None:
+            sprite_paths[prototype.id] = sprite_path
+
         xeno_castes[prototype.id] = {
             "id": prototype.id,
             "name": name,
@@ -132,10 +139,15 @@ def main() -> None:
             ),
             "maturedThresholds": matured_thresholds(components.get("XenoMaturing")),
             "armor": armor_from_component(armor_component),
+            "sprite": None,
         }
 
     if not xeno_castes:
         raise RuntimeError("No xeno castes were discovered")
+
+    render_mob_sprites(args.game_source, args.sprites_output, sprite_paths)
+    for caste_id in sprite_paths:
+        xeno_castes[caste_id]["sprite"] = f"sprites/{caste_id}.png"
 
     result = {
         "schemaVersion": 1,

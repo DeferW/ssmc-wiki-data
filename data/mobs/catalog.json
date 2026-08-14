@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "source": "MetalSage/space-stories-cm14",
-  "gameCommit": "d0bfa6b3645f82951647074306dd99339f394fdd",
+  "gameCommit": "02e284c922077d01b184349e4d4bdc0b9584e026",
   "locale": "ru-RU",
   "marine": {
     "sourcePrototypeId": "RMCBaseMobSpeciesOrganic",
@@ -36,7 +36,8 @@
         "sideArmor": 0,
         "explosionArmor": 40,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/CMXenoBurrower.png"
     },
     "CMXenoCarrier": {
       "id": "CMXenoCarrier",
@@ -57,7 +58,8 @@
         "sideArmor": 0,
         "explosionArmor": 20,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/CMXenoCarrier.png"
     },
     "CMXenoDefender": {
       "id": "CMXenoDefender",
@@ -78,7 +80,8 @@
         "sideArmor": 0,
         "explosionArmor": 70,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/CMXenoDefender.png"
     },
     "CMXenoDefenderSteelcrest": {
       "id": "CMXenoDefenderSteelcrest",
@@ -99,7 +102,8 @@
         "sideArmor": 0,
         "explosionArmor": 70,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/CMXenoDefenderSteelcrest.png"
     },
     "CMXenoDrone": {
       "id": "CMXenoDrone",
@@ -120,7 +124,8 @@
         "sideArmor": 0,
         "explosionArmor": 0,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/CMXenoDrone.png"
     },
     "CMXenoDroneGardener": {
       "id": "CMXenoDroneGardener",
@@ -141,7 +146,8 @@
         "sideArmor": 0,
         "explosionArmor": 0,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/CMXenoDroneGardener.png"
     },
     "CMXenoDroneHealer": {
       "id": "CMXenoDroneHealer",
@@ -162,7 +168,8 @@
         "sideArmor": 0,
         "explosionArmor": 0,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/CMXenoDroneHealer.png"
     },
     "CMXenoHivelord": {
       "id": "CMXenoHivelord",
@@ -183,7 +190,8 @@
         "sideArmor": 0,
         "explosionArmor": 10,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/CMXenoHivelord.png"
     },
     "CMXenoHivelordDesigner": {
       "id": "CMXenoHivelordDesigner",
@@ -204,7 +212,8 @@
         "sideArmor": 0,
         "explosionArmor": 10,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/CMXenoHivelordDesigner.png"
     },
     "CMXenoHivelordResinWhisperer": {
       "id": "CMXenoHivelordResinWhisperer",
@@ -225,7 +234,8 @@
         "sideArmor": 0,
         "explosionArmor": 10,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/CMXenoHivelordResinWhisperer.png"
     },
     "CMXenoLarva": {
       "id": "CMXenoLarva",
@@ -248,7 +258,8 @@
         "sideArmor": 0,
         "explosionArmor": 0,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/CMXenoLarva.png"
     },
     "CMXenoLesserDrone": {
       "id": "CMXenoLesserDrone",
@@ -273,7 +284,8 @@
         "sideArmor": 0,
         "explosionArmor": 0,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/CMXenoLesserDrone.png"
     },
     "CMXenoLurker": {
       "id": "CMXenoLurker",
@@ -295,7 +307,8 @@
         "sideArmor": 0,
         "explosionArmor": 20,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/CMXenoLurker.png"
     },
     "CMXenoParasite": {
       "id": "CMXenoParasite",
@@ -316,7 +329,8 @@
         "sideArmor": 0,
         "explosionArmor": 0,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/CMXenoParasite.png"
     },
     "CMXenoPraetorian": {
       "id": "CMXenoPraetorian",
@@ -337,7 +351,8 @@
         "sideArmor": 0,
         "explosionArmor": 40,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/CMXenoPraetorian.png"
     },
     "CMXenoQueen": {
       "id": "CMXenoQueen",
@@ -361,7 +376,8 @@
         "sideArmor": 0,
         "explosionArmor": 100,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/CMXenoQueen.png"
     },
     "CMXenoRavager": {
       "id": "CMXenoRavager",
@@ -382,7 +398,8 @@
         "sideArmor": 0,
         "explosionArmor": 80,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/CMXenoRavager.png"
     },
     "CMXenoRunner": {
       "id": "CMXenoRunner",
@@ -403,7 +420,8 @@
         "sideArmor": 0,
         "explosionArmor": 10,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/CMXenoRunner.png"
     },
     "CMXenoSentinel": {
       "id": "CMXenoSentinel",
@@ -430,7 +448,8 @@
         "sideArmor": 0,
         "explosionArmor": 10,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/CMXenoSentinel.png"
     },
     "CMXenoSpitter": {
       "id": "CMXenoSpitter",
@@ -457,7 +476,8 @@
         "sideArmor": 0,
         "explosionArmor": 20,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/CMXenoSpitter.png"
     },
     "CMXenoWarrior": {
       "id": "CMXenoWarrior",
@@ -483,7 +503,8 @@
         "sideArmor": 0,
         "explosionArmor": 40,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/CMXenoWarrior.png"
     },
     "RMCXenoBoiler": {
       "id": "RMCXenoBoiler",
@@ -504,7 +525,8 @@
         "sideArmor": 0,
         "explosionArmor": 20,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/RMCXenoBoiler.png"
     },
     "RMCXenoBoilerSapper": {
       "id": "RMCXenoBoilerSapper",
@@ -525,7 +547,8 @@
         "sideArmor": 0,
         "explosionArmor": 20,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/RMCXenoBoilerSapper.png"
     },
     "RMCXenoCarrierEggsac": {
       "id": "RMCXenoCarrierEggsac",
@@ -546,7 +569,8 @@
         "sideArmor": 0,
         "explosionArmor": 20,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/RMCXenoCarrierEggsac.png"
     },
     "RMCXenoCrusher": {
       "id": "RMCXenoCrusher",
@@ -567,7 +591,8 @@
         "sideArmor": 0,
         "explosionArmor": 100,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/RMCXenoCrusher.png"
     },
     "RMCXenoCrusherCharger": {
       "id": "RMCXenoCrusherCharger",
@@ -588,7 +613,8 @@
         "sideArmor": 15,
         "explosionArmor": 100,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/RMCXenoCrusherCharger.png"
     },
     "RMCXenoKing": {
       "id": "RMCXenoKing",
@@ -613,7 +639,8 @@
         "sideArmor": 0,
         "explosionArmor": 70,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/RMCXenoKing.png"
     },
     "RMCXenoLesserCarrier": {
       "id": "RMCXenoLesserCarrier",
@@ -637,7 +664,8 @@
         "sideArmor": 0,
         "explosionArmor": 10,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/RMCXenoLesserCarrier.png"
     },
     "RMCXenoLurkerVampire": {
       "id": "RMCXenoLurkerVampire",
@@ -658,7 +686,8 @@
         "sideArmor": 0,
         "explosionArmor": 20,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/RMCXenoLurkerVampire.png"
     },
     "RMCXenoParasiteWatcher": {
       "id": "RMCXenoParasiteWatcher",
@@ -679,7 +708,8 @@
         "sideArmor": 0,
         "explosionArmor": 0,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/RMCXenoParasiteWatcher.png"
     },
     "RMCXenoPraetorianDancer": {
       "id": "RMCXenoPraetorianDancer",
@@ -700,7 +730,8 @@
         "sideArmor": 0,
         "explosionArmor": 40,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/RMCXenoPraetorianDancer.png"
     },
     "RMCXenoPraetorianOppressor": {
       "id": "RMCXenoPraetorianOppressor",
@@ -721,7 +752,8 @@
         "sideArmor": 0,
         "explosionArmor": 60,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/RMCXenoPraetorianOppressor.png"
     },
     "RMCXenoPraetorianValkyrie": {
       "id": "RMCXenoPraetorianValkyrie",
@@ -742,7 +774,8 @@
         "sideArmor": 0,
         "explosionArmor": 40,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/RMCXenoPraetorianValkyrie.png"
     },
     "RMCXenoPraetorianVanguard": {
       "id": "RMCXenoPraetorianVanguard",
@@ -763,7 +796,8 @@
         "sideArmor": 0,
         "explosionArmor": 40,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/RMCXenoPraetorianVanguard.png"
     },
     "RMCXenoRavagerBerserker": {
       "id": "RMCXenoRavagerBerserker",
@@ -784,7 +818,8 @@
         "sideArmor": 0,
         "explosionArmor": 80,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/RMCXenoRavagerBerserker.png"
     },
     "RMCXenoRavagerHedgehog": {
       "id": "RMCXenoRavagerHedgehog",
@@ -805,7 +840,8 @@
         "sideArmor": 0,
         "explosionArmor": 100,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/RMCXenoRavagerHedgehog.png"
     },
     "RMCXenoRunnerAcider": {
       "id": "RMCXenoRunnerAcider",
@@ -826,7 +862,30 @@
         "sideArmor": 0,
         "explosionArmor": 10,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/RMCXenoRunnerAcider.png"
+    },
+    "STXenoCrusher": {
+      "id": "STXenoCrusher",
+      "name": "Крушитель",
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Entities/Mobs/Xeno/crusher.yml",
+      "parents": [
+        "STXenoCrusherBase"
+      ],
+      "thresholds": {
+        "critical": 700,
+        "dead": 800
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 30,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 100,
+        "immuneToArmorPiercing": false
+      },
+      "sprite": "sprites/STXenoCrusher.png"
     },
     "STXenoDespoiler": {
       "id": "STXenoDespoiler",
@@ -852,7 +911,8 @@
         "sideArmor": 0,
         "explosionArmor": 20,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/STXenoDespoiler.png"
     },
     "STXenoWarriorBoxer": {
       "id": "STXenoWarriorBoxer",
@@ -878,7 +938,8 @@
         "sideArmor": 0,
         "explosionArmor": 45,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/STXenoWarriorBoxer.png"
     },
     "STXenoWarriorBulwark": {
       "id": "STXenoWarriorBulwark",
@@ -904,10 +965,11 @@
         "sideArmor": 0,
         "explosionArmor": 50,
         "immuneToArmorPiercing": false
-      }
+      },
+      "sprite": "sprites/STXenoWarriorBulwark.png"
     }
   },
   "counts": {
-    "xenoCastes": 40
+    "xenoCastes": 41
   }
 }

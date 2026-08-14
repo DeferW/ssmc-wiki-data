@@ -37,7 +37,7 @@ def validate_thresholds(thresholds: Any, label: str) -> None:
             )
 
 
-def validate(data: dict[str, Any]) -> None:
+def validate(data: dict[str, Any], sprites_path: Path) -> None:
     if data.get("schemaVersion") != 1:
         raise RuntimeError(f"Unexpected schemaVersion: {data.get('schemaVersion')}")
 
@@ -70,6 +70,13 @@ def validate(data: dict[str, Any]) -> None:
         if caste.get("maturedThresholds") is not None:
             validate_thresholds(caste["maturedThresholds"], f"{caste_id} (matured)")
 
+        sprite = caste.get("sprite")
+        if sprite is not None:
+            if sprite != f"sprites/{caste_id}.png":
+                raise RuntimeError(f"Xeno caste has an unexpected sprite path: {caste_id}")
+            if not (sprites_path / f"{caste_id}.png").is_file():
+                raise RuntimeError(f"Missing xeno sprite file: {caste_id}")
+
         armor = caste.get("armor")
         if not isinstance(armor, dict) or set(armor) != EXPECTED_ARMOR_KEYS:
             raise RuntimeError(f"Xeno caste has invalid armor keys: {caste_id}")
@@ -86,6 +93,16 @@ def validate(data: dict[str, Any]) -> None:
     if counts != expected_counts:
         raise RuntimeError(f"Count mismatch: stored={counts}, actual={expected_counts}")
 
+    expected_sprites = {
+        f"{caste_id}.png"
+        for caste_id, caste in xeno_castes.items()
+        if caste.get("sprite") is not None
+    }
+    actual_sprites = {path.name for path in sprites_path.glob("*.png")}
+    extra_sprites = sorted(actual_sprites - expected_sprites)
+    if extra_sprites:
+        raise RuntimeError("Unexpected extra sprite files: " + ", ".join(extra_sprites))
+
     print(f'Marine thresholds: {marine["thresholds"]}')
     print(f"Xeno castes: {len(xeno_castes)}")
     print("Mob catalog validation passed")
@@ -94,8 +111,9 @@ def validate(data: dict[str, Any]) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Validate mob catalog output")
     parser.add_argument("--catalog", type=Path, required=True)
+    parser.add_argument("--sprites", type=Path, required=True)
     args = parser.parse_args()
-    validate(read_json(args.catalog))
+    validate(read_json(args.catalog), args.sprites)
 
 
 if __name__ == "__main__":
