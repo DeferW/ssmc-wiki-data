@@ -75,4 +75,5 @@ jobs:
       - name: Validate mob catalog
         run: |
           python3 -m scripts.mobs.validate \
-            --catalog data/mobs/catalog.json
+            --catalog data/mobs/catalog.json \
+            --sprites data/mobs/sprites
