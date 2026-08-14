@@ -24,6 +24,8 @@ vendors:
   - id: ColMarTechSLEquipment
   - id: ColMarTechCargoUniform
   - id: ColMarTechSeniorOfficerEquipment
+  - id: ColMarTechExecutiveOfficerWeapon
+  - id: ColMarTechCommandingOfficerWeapon
 
 # Cargo consoles expose RequisitionsComputer categories. Their orderable crates
 # and every item reachable from them seed the graph. Crates, boxes and cases are
