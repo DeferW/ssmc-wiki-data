@@ -4,9 +4,76 @@ from scripts.catalog.statistics import (
     packing_capacity,
     parse_vector2i,
     populate_skill_statistics,
+    populate_weapon_statistics,
     shape_cells,
     storage_whitelist_matches,
 )
+
+
+def _sniper_items(weapon_aimed_shot: dict, has_focused_shooting: bool) -> dict:
+    weapon_components = ["Gun", "AimedShot"]
+    if has_focused_shooting:
+        weapon_components.append("RMCFocusedShooting")
+    return {
+        "Rifle": {
+            "componentTypes": weapon_components,
+            "properties": {
+                "Gun": {"selectedMode": "SemiAuto"},
+                "AimedShot": weapon_aimed_shot,
+            },
+            "ammunitionPaths": [
+                {
+                    "magazineId": "Mag",
+                    "cartridgeIds": ["Cartridge"],
+                    "projectileIds": ["Bullet"],
+                }
+            ],
+        },
+        "Mag": {"properties": {"BallisticAmmoProvider": {"capacity": 10}}},
+        "Bullet": {
+            "name": "Bullet",
+            "properties": {
+                "Projectile": {"damage": {"types": {"Piercing": 70}}},
+                "AimedShotEffect": {"extraHits": 2},
+            },
+        },
+    }
+
+
+def test_populate_weapon_statistics_includes_bare_aimed_shot_as_empty_dict():
+    # AimedShotComponent is often inherited bare (e.g. M96S via
+    # RMCBaseWeaponSniperRifle) -- an empty dict here still means "has the
+    # ability, C# defaults apply", distinguishing it from not having AimedShot.
+    items = _sniper_items(weapon_aimed_shot={}, has_focused_shooting=False)
+
+    populate_weapon_statistics(items, relations=[], public_item_ids={"Rifle"})
+
+    assert items["Rifle"]["weaponStats"]["aimedShot"] == {}
+    assert "hasFocusedShooting" not in items["Rifle"]["weaponStats"]
+
+
+def test_populate_weapon_statistics_includes_overridden_aimed_shot_fields():
+    items = _sniper_items(
+        weapon_aimed_shot={"aimDuration": 2, "aimedShotCooldown": 4.5},
+        has_focused_shooting=True,
+    )
+
+    populate_weapon_statistics(items, relations=[], public_item_ids={"Rifle"})
+
+    assert items["Rifle"]["weaponStats"]["aimedShot"] == {
+        "aimDuration": 2,
+        "aimedShotCooldown": 4.5,
+    }
+    assert items["Rifle"]["weaponStats"]["hasFocusedShooting"] is True
+
+
+def test_populate_weapon_statistics_includes_projectile_aimed_shot_effect():
+    items = _sniper_items(weapon_aimed_shot={}, has_focused_shooting=False)
+
+    populate_weapon_statistics(items, relations=[], public_item_ids={"Rifle"})
+
+    projectile = items["Rifle"]["weaponStats"]["ammunition"][0]["projectiles"][0]
+    assert projectile["aimedShotEffect"] == {"extraHits": 2}
 
 
 def test_populate_skill_statistics_normalizes_pamphlet_effects():

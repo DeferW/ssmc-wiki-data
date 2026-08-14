@@ -79,6 +79,8 @@ WEARABLE_STORAGE_SLOTS = {
 
 PUBLIC_PROPERTY_COMPONENTS = {
     # Weapons and ammunition.
+    "AimedShot",
+    "AimedShotEffect",
     "BallisticAmmoProvider",
     "CartridgeAmmo",
     "CMArmorPiercing",

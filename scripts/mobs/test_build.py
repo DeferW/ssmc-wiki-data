@@ -8,6 +8,7 @@ from scripts.mobs.build import (
     invert_thresholds,
     is_xeno_mob_source_file,
     matured_thresholds,
+    rmc_size,
     strain_name,
 )
 from scripts.common.localization import Localizer
@@ -141,6 +142,19 @@ def test_strain_name_none_when_key_unresolvable():
     localizer = Localizer({})
     components = {"XenoStrain": {"name": "missing-key"}}
     assert strain_name(components, localizer) is None
+
+
+def test_rmc_size_reads_the_component_value():
+    assert rmc_size({"RMCSize": {"size": "Big"}}) == "Big"
+
+
+def test_rmc_size_defaults_to_xeno_when_component_absent():
+    # RMCSizeComponent.Size defaults to Xeno in the C# component itself.
+    assert rmc_size({}) == "Xeno"
+
+
+def test_rmc_size_defaults_to_xeno_when_value_unrecognized():
+    assert rmc_size({"RMCSize": {"size": "NotARealSize"}}) == "Xeno"
 
 
 def make_prototype(prototype_id, parents=(), abstract=False, components=(), source_file="test.yml"):
