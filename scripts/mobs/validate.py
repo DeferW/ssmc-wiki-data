@@ -63,6 +63,9 @@ def validate(data: dict[str, Any], sprites_path: Path) -> None:
             raise RuntimeError(f"Xeno caste id mismatch: {caste_id}")
         if not isinstance(caste.get("name"), str) or not caste["name"]:
             raise RuntimeError(f"Xeno caste has no name: {caste_id}")
+        strain_name = caste.get("strainName")
+        if strain_name is not None and (not isinstance(strain_name, str) or not strain_name):
+            raise RuntimeError(f"Xeno caste has an invalid strainName: {caste_id}")
         source_file = caste.get("sourceFile")
         if not isinstance(source_file, str) or "Mobs/Xeno/" not in source_file:
             raise RuntimeError(f"Xeno caste has an unexpected sourceFile: {caste_id}")

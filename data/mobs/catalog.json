@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "source": "MetalSage/space-stories-cm14",
-  "gameCommit": "02e284c922077d01b184349e4d4bdc0b9584e026",
+  "gameCommit": "d0bfa6b3645f82951647074306dd99339f394fdd",
   "locale": "ru-RU",
   "marine": {
     "sourcePrototypeId": "RMCBaseMobSpeciesOrganic",
@@ -14,6 +14,7 @@
     "CMXenoBurrower": {
       "id": "CMXenoBurrower",
       "name": "Бурильщик",
+      "strainName": null,
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/burrower.yml",
       "parents": [
@@ -42,6 +43,7 @@
     "CMXenoCarrier": {
       "id": "CMXenoCarrier",
       "name": "Носитель",
+      "strainName": null,
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/carrier.yml",
       "parents": [
@@ -64,6 +66,7 @@
     "CMXenoDefender": {
       "id": "CMXenoDefender",
       "name": "Защитник",
+      "strainName": null,
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/defender.yml",
       "parents": [
@@ -86,6 +89,7 @@
     "CMXenoDefenderSteelcrest": {
       "id": "CMXenoDefenderSteelcrest",
       "name": "Защитник",
+      "strainName": "Стальной гребень",
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/defender.yml",
       "parents": [
@@ -108,6 +112,7 @@
     "CMXenoDrone": {
       "id": "CMXenoDrone",
       "name": "Дрон",
+      "strainName": null,
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/drone.yml",
       "parents": [
@@ -130,6 +135,7 @@
     "CMXenoDroneGardener": {
       "id": "CMXenoDroneGardener",
       "name": "Дрон",
+      "strainName": "Садовник",
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/drone.yml",
       "parents": [
@@ -152,6 +158,7 @@
     "CMXenoDroneHealer": {
       "id": "CMXenoDroneHealer",
       "name": "Дрон",
+      "strainName": "Целитель",
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/drone.yml",
       "parents": [
@@ -174,6 +181,7 @@
     "CMXenoHivelord": {
       "id": "CMXenoHivelord",
       "name": "Повелитель улья",
+      "strainName": null,
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/hivelord.yml",
       "parents": [
@@ -196,6 +204,7 @@
     "CMXenoHivelordDesigner": {
       "id": "CMXenoHivelordDesigner",
       "name": "Повелитель улья",
+      "strainName": "Дизайнер",
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/hivelord.yml",
       "parents": [
@@ -218,6 +227,7 @@
     "CMXenoHivelordResinWhisperer": {
       "id": "CMXenoHivelordResinWhisperer",
       "name": "Повелитель улья",
+      "strainName": "Смоляной Шептун",
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/hivelord.yml",
       "parents": [
@@ -240,6 +250,7 @@
     "CMXenoLarva": {
       "id": "CMXenoLarva",
       "name": "Личинка",
+      "strainName": null,
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/larva.yml",
       "parents": [
@@ -264,6 +275,7 @@
     "CMXenoLesserDrone": {
       "id": "CMXenoLesserDrone",
       "name": "Малый дрон",
+      "strainName": null,
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/lesser_drone.yml",
       "parents": [
@@ -290,6 +302,7 @@
     "CMXenoLurker": {
       "id": "CMXenoLurker",
       "name": "Охотник",
+      "strainName": null,
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/lurker.yml",
       "parents": [
@@ -313,6 +326,7 @@
     "CMXenoParasite": {
       "id": "CMXenoParasite",
       "name": "Лицехват",
+      "strainName": null,
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/parasite.yml",
       "parents": [
@@ -335,6 +349,7 @@
     "CMXenoPraetorian": {
       "id": "CMXenoPraetorian",
       "name": "Преторианец",
+      "strainName": null,
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/praetorian.yml",
       "parents": [
@@ -357,6 +372,7 @@
     "CMXenoQueen": {
       "id": "CMXenoQueen",
       "name": "Королева",
+      "strainName": null,
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/queen.yml",
       "parents": [
@@ -382,6 +398,7 @@
     "CMXenoRavager": {
       "id": "CMXenoRavager",
       "name": "Разрушитель",
+      "strainName": null,
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/ravager.yml",
       "parents": [
@@ -404,6 +421,7 @@
     "CMXenoRunner": {
       "id": "CMXenoRunner",
       "name": "Бегун",
+      "strainName": null,
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/runner.yml",
       "parents": [
@@ -426,6 +444,7 @@
     "CMXenoSentinel": {
       "id": "CMXenoSentinel",
       "name": "Страж",
+      "strainName": null,
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/sentinel.yml",
       "parents": [
@@ -454,6 +473,7 @@
     "CMXenoSpitter": {
       "id": "CMXenoSpitter",
       "name": "Плеватель",
+      "strainName": null,
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/spitter.yml",
       "parents": [
@@ -482,6 +502,7 @@
     "CMXenoWarrior": {
       "id": "CMXenoWarrior",
       "name": "Воин",
+      "strainName": null,
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/warrior.yml",
       "parents": [
@@ -509,6 +530,7 @@
     "RMCXenoBoiler": {
       "id": "RMCXenoBoiler",
       "name": "Бойлер",
+      "strainName": null,
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/boiler.yml",
       "parents": [
@@ -531,6 +553,7 @@
     "RMCXenoBoilerSapper": {
       "id": "RMCXenoBoilerSapper",
       "name": "Бойлер",
+      "strainName": "Сапёр",
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/boiler.yml",
       "parents": [
@@ -553,6 +576,7 @@
     "RMCXenoCarrierEggsac": {
       "id": "RMCXenoCarrierEggsac",
       "name": "Носитель",
+      "strainName": "Кокон",
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/carrier.yml",
       "parents": [
@@ -575,6 +599,7 @@
     "RMCXenoCrusher": {
       "id": "RMCXenoCrusher",
       "name": "Крушитель",
+      "strainName": null,
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/crusher.yml",
       "parents": [
@@ -597,6 +622,7 @@
     "RMCXenoCrusherCharger": {
       "id": "RMCXenoCrusherCharger",
       "name": "Крушитель",
+      "strainName": "Таран",
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/crusher.yml",
       "parents": [
@@ -619,6 +645,7 @@
     "RMCXenoKing": {
       "id": "RMCXenoKing",
       "name": "Король",
+      "strainName": null,
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/king.yml",
       "parents": [
@@ -645,6 +672,7 @@
     "RMCXenoLesserCarrier": {
       "id": "RMCXenoLesserCarrier",
       "name": "Малый Носитель",
+      "strainName": null,
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/fun.yml",
       "parents": [
@@ -670,6 +698,7 @@
     "RMCXenoLurkerVampire": {
       "id": "RMCXenoLurkerVampire",
       "name": "Охотник",
+      "strainName": "Вампир",
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/lurker.yml",
       "parents": [
@@ -692,6 +721,7 @@
     "RMCXenoParasiteWatcher": {
       "id": "RMCXenoParasiteWatcher",
       "name": "Лицехват",
+      "strainName": "Наблюдатель",
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/parasite.yml",
       "parents": [
@@ -714,6 +744,7 @@
     "RMCXenoPraetorianDancer": {
       "id": "RMCXenoPraetorianDancer",
       "name": "Преторианец",
+      "strainName": "Танцор",
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/praetorian.yml",
       "parents": [
@@ -736,6 +767,7 @@
     "RMCXenoPraetorianOppressor": {
       "id": "RMCXenoPraetorianOppressor",
       "name": "Преторианец",
+      "strainName": "Угнетатель",
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/praetorian.yml",
       "parents": [
@@ -758,6 +790,7 @@
     "RMCXenoPraetorianValkyrie": {
       "id": "RMCXenoPraetorianValkyrie",
       "name": "Преторианец",
+      "strainName": "Валькирия",
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/praetorian.yml",
       "parents": [
@@ -780,6 +813,7 @@
     "RMCXenoPraetorianVanguard": {
       "id": "RMCXenoPraetorianVanguard",
       "name": "Преторианец",
+      "strainName": "Авангард",
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/praetorian.yml",
       "parents": [
@@ -802,6 +836,7 @@
     "RMCXenoRavagerBerserker": {
       "id": "RMCXenoRavagerBerserker",
       "name": "Разрушитель",
+      "strainName": "Берсерк",
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/ravager.yml",
       "parents": [
@@ -824,6 +859,7 @@
     "RMCXenoRavagerHedgehog": {
       "id": "RMCXenoRavagerHedgehog",
       "name": "Разрушитель",
+      "strainName": "Ёж",
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/ravager.yml",
       "parents": [
@@ -846,6 +882,7 @@
     "RMCXenoRunnerAcider": {
       "id": "RMCXenoRunnerAcider",
       "name": "Бегун",
+      "strainName": "Окислитель",
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/runner.yml",
       "parents": [
@@ -865,31 +902,10 @@
       },
       "sprite": "sprites/RMCXenoRunnerAcider.png"
     },
-    "STXenoCrusher": {
-      "id": "STXenoCrusher",
-      "name": "Крушитель",
-      "origin": "stories",
-      "sourceFile": "Resources/Prototypes/_Stories/Entities/Mobs/Xeno/crusher.yml",
-      "parents": [
-        "STXenoCrusherBase"
-      ],
-      "thresholds": {
-        "critical": 700,
-        "dead": 800
-      },
-      "maturedThresholds": null,
-      "armor": {
-        "xenoArmor": 30,
-        "frontalArmor": 0,
-        "sideArmor": 0,
-        "explosionArmor": 100,
-        "immuneToArmorPiercing": false
-      },
-      "sprite": "sprites/STXenoCrusher.png"
-    },
     "STXenoDespoiler": {
       "id": "STXenoDespoiler",
       "name": "Дисбойлер",
+      "strainName": null,
       "origin": "stories",
       "sourceFile": "Resources/Prototypes/_Stories/Entities/Mobs/Xeno/despoiler.yml",
       "parents": [
@@ -917,6 +933,7 @@
     "STXenoWarriorBoxer": {
       "id": "STXenoWarriorBoxer",
       "name": "Воин",
+      "strainName": "Боксёр",
       "origin": "stories",
       "sourceFile": "Resources/Prototypes/_Stories/Entities/Mobs/Xeno/warrior.yml",
       "parents": [
@@ -944,6 +961,7 @@
     "STXenoWarriorBulwark": {
       "id": "STXenoWarriorBulwark",
       "name": "Воин",
+      "strainName": "Бастион",
       "origin": "stories",
       "sourceFile": "Resources/Prototypes/_Stories/Entities/Mobs/Xeno/warrior.yml",
       "parents": [
@@ -970,6 +988,6 @@
     }
   },
   "counts": {
-    "xenoCastes": 41
+    "xenoCastes": 40
   }
 }
