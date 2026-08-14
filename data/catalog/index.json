@@ -23,7 +23,9 @@
     "ColMarTechSWSEquipment",
     "ColMarTechSLEquipment",
     "ColMarTechCargoUniform",
-    "ColMarTechSeniorOfficerEquipment"
+    "ColMarTechSeniorOfficerEquipment",
+    "ColMarTechExecutiveOfficerWeapon",
+    "ColMarTechCommandingOfficerWeapon"
   ],
   "configuredCargoCatalogIds": [
     "CMASRSConsole"
@@ -50,6 +52,8 @@
     "ColMarTechSLEquipment",
     "ColMarTechCargoUniform",
     "ColMarTechSeniorOfficerEquipment",
+    "ColMarTechExecutiveOfficerWeapon",
+    "ColMarTechCommandingOfficerWeapon",
     "CMASRSConsole"
   ],
   "vendors": {
@@ -3733,6 +3737,267 @@
             "ColMarTechSeniorOfficerEquipment:75:5",
             "ColMarTechSeniorOfficerEquipment:75:6",
             "ColMarTechSeniorOfficerEquipment:75:7"
+          ]
+        }
+      ]
+    },
+    "ColMarTechExecutiveOfficerWeapon": {
+      "id": "ColMarTechExecutiveOfficerWeapon",
+      "name": "КолМорТех Стойка Оружия Исполнительного Офицера",
+      "description": "Автоматизированная стойка боевого снаряжения для исполнительного офицера. В ней представлен достойный выбор оружия, предназначенного только для второго командира корабля.",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Structures/Machines/Vending/Crew/command.yml",
+      "sections": [
+        {
+          "key": "ColMarTechExecutiveOfficerWeapon:0",
+          "name": "Captain's Primary",
+          "position": 0,
+          "hasBoxes": false,
+          "tradeKeys": [
+            "ColMarTechExecutiveOfficerWeapon:0:0",
+            "ColMarTechExecutiveOfficerWeapon:0:1"
+          ]
+        },
+        {
+          "key": "ColMarTechExecutiveOfficerWeapon:1",
+          "name": "Primary Ammunition",
+          "position": 1,
+          "hasBoxes": false,
+          "tradeKeys": [
+            "ColMarTechExecutiveOfficerWeapon:1:0",
+            "ColMarTechExecutiveOfficerWeapon:1:1",
+            "ColMarTechExecutiveOfficerWeapon:1:2",
+            "ColMarTechExecutiveOfficerWeapon:1:3",
+            "ColMarTechExecutiveOfficerWeapon:1:4"
+          ]
+        },
+        {
+          "key": "ColMarTechExecutiveOfficerWeapon:2",
+          "name": "Specilisation Kit",
+          "position": 2,
+          "hasBoxes": false,
+          "tradeKeys": [
+            "ColMarTechExecutiveOfficerWeapon:2:0",
+            "ColMarTechExecutiveOfficerWeapon:2:1"
+          ]
+        },
+        {
+          "key": "ColMarTechExecutiveOfficerWeapon:3",
+          "name": "Explosives",
+          "position": 3,
+          "hasBoxes": false,
+          "tradeKeys": [
+            "ColMarTechExecutiveOfficerWeapon:3:0",
+            "ColMarTechExecutiveOfficerWeapon:3:1",
+            "ColMarTechExecutiveOfficerWeapon:3:2"
+          ]
+        },
+        {
+          "key": "ColMarTechExecutiveOfficerWeapon:4",
+          "name": "Rail Attachments",
+          "position": 4,
+          "hasBoxes": false,
+          "tradeKeys": [
+            "ColMarTechExecutiveOfficerWeapon:4:0",
+            "ColMarTechExecutiveOfficerWeapon:4:1",
+            "ColMarTechExecutiveOfficerWeapon:4:2",
+            "ColMarTechExecutiveOfficerWeapon:4:3",
+            "ColMarTechExecutiveOfficerWeapon:4:4"
+          ]
+        },
+        {
+          "key": "ColMarTechExecutiveOfficerWeapon:5",
+          "name": "Underbarrel Attachments",
+          "position": 5,
+          "hasBoxes": false,
+          "tradeKeys": [
+            "ColMarTechExecutiveOfficerWeapon:5:0",
+            "ColMarTechExecutiveOfficerWeapon:5:1",
+            "ColMarTechExecutiveOfficerWeapon:5:2",
+            "ColMarTechExecutiveOfficerWeapon:5:3",
+            "ColMarTechExecutiveOfficerWeapon:5:4",
+            "ColMarTechExecutiveOfficerWeapon:5:5",
+            "ColMarTechExecutiveOfficerWeapon:5:6"
+          ]
+        },
+        {
+          "key": "ColMarTechExecutiveOfficerWeapon:6",
+          "name": "Barrel Attachments",
+          "position": 6,
+          "hasBoxes": false,
+          "tradeKeys": [
+            "ColMarTechExecutiveOfficerWeapon:6:0",
+            "ColMarTechExecutiveOfficerWeapon:6:1",
+            "ColMarTechExecutiveOfficerWeapon:6:2",
+            "ColMarTechExecutiveOfficerWeapon:6:3"
+          ]
+        },
+        {
+          "key": "ColMarTechExecutiveOfficerWeapon:7",
+          "name": "Other Supplies",
+          "position": 7,
+          "hasBoxes": false,
+          "tradeKeys": [
+            "ColMarTechExecutiveOfficerWeapon:7:0",
+            "ColMarTechExecutiveOfficerWeapon:7:1",
+            "ColMarTechExecutiveOfficerWeapon:7:2",
+            "ColMarTechExecutiveOfficerWeapon:7:3",
+            "ColMarTechExecutiveOfficerWeapon:7:4",
+            "ColMarTechExecutiveOfficerWeapon:7:5",
+            "ColMarTechExecutiveOfficerWeapon:7:6",
+            "ColMarTechExecutiveOfficerWeapon:7:7",
+            "ColMarTechExecutiveOfficerWeapon:7:8",
+            "ColMarTechExecutiveOfficerWeapon:7:9",
+            "ColMarTechExecutiveOfficerWeapon:7:10",
+            "ColMarTechExecutiveOfficerWeapon:7:11",
+            "ColMarTechExecutiveOfficerWeapon:7:12",
+            "ColMarTechExecutiveOfficerWeapon:7:13",
+            "ColMarTechExecutiveOfficerWeapon:7:14"
+          ]
+        }
+      ]
+    },
+    "ColMarTechCommandingOfficerWeapon": {
+      "id": "ColMarTechCommandingOfficerWeapon",
+      "name": "КолМорТех Стойка Оружия Командующего Офицера",
+      "description": "Автоматизированная стойка боевого снаряжения для командующего офицера. В нем представлен богатый выбор оружия, предназначенного только для высших офицеров КМП США.",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Structures/Machines/Vending/Crew/command.yml",
+      "sections": [
+        {
+          "key": "ColMarTechCommandingOfficerWeapon:0",
+          "name": "Commander's Primary",
+          "position": 0,
+          "hasBoxes": false,
+          "tradeKeys": [
+            "ColMarTechCommandingOfficerWeapon:0:0",
+            "ColMarTechCommandingOfficerWeapon:0:1"
+          ]
+        },
+        {
+          "key": "ColMarTechCommandingOfficerWeapon:1",
+          "name": "Commander's Secondary Belt",
+          "position": 1,
+          "hasBoxes": false,
+          "tradeKeys": [
+            "ColMarTechCommandingOfficerWeapon:1:0",
+            "ColMarTechCommandingOfficerWeapon:1:1"
+          ]
+        },
+        {
+          "key": "ColMarTechCommandingOfficerWeapon:2",
+          "name": "Ceremonial Weapon",
+          "position": 2,
+          "hasBoxes": false,
+          "tradeKeys": [
+            "ColMarTechCommandingOfficerWeapon:2:0"
+          ]
+        },
+        {
+          "key": "ColMarTechCommandingOfficerWeapon:3",
+          "name": "Primary Ammunition",
+          "position": 3,
+          "hasBoxes": false,
+          "tradeKeys": [
+            "ColMarTechCommandingOfficerWeapon:3:0",
+            "ColMarTechCommandingOfficerWeapon:3:1",
+            "ColMarTechCommandingOfficerWeapon:3:2",
+            "ColMarTechCommandingOfficerWeapon:3:3",
+            "ColMarTechCommandingOfficerWeapon:3:4"
+          ]
+        },
+        {
+          "key": "ColMarTechCommandingOfficerWeapon:4",
+          "name": "Sidearm Ammunition",
+          "position": 4,
+          "hasBoxes": false,
+          "tradeKeys": [
+            "ColMarTechCommandingOfficerWeapon:4:0",
+            "ColMarTechCommandingOfficerWeapon:4:1",
+            "ColMarTechCommandingOfficerWeapon:4:2",
+            "ColMarTechCommandingOfficerWeapon:4:3"
+          ]
+        },
+        {
+          "key": "ColMarTechCommandingOfficerWeapon:5",
+          "name": "Shotgun Ammunition",
+          "position": 5,
+          "hasBoxes": false,
+          "tradeKeys": [
+            "ColMarTechCommandingOfficerWeapon:5:0",
+            "ColMarTechCommandingOfficerWeapon:5:1",
+            "ColMarTechCommandingOfficerWeapon:5:2"
+          ]
+        },
+        {
+          "key": "ColMarTechCommandingOfficerWeapon:6",
+          "name": "Special Ammunition",
+          "position": 6,
+          "hasBoxes": false,
+          "tradeKeys": [
+            "ColMarTechCommandingOfficerWeapon:6:0",
+            "ColMarTechCommandingOfficerWeapon:6:1"
+          ]
+        },
+        {
+          "key": "ColMarTechCommandingOfficerWeapon:7",
+          "name": "Explosives",
+          "position": 7,
+          "hasBoxes": false,
+          "tradeKeys": [
+            "ColMarTechCommandingOfficerWeapon:7:0",
+            "ColMarTechCommandingOfficerWeapon:7:1",
+            "ColMarTechCommandingOfficerWeapon:7:2"
+          ]
+        },
+        {
+          "key": "ColMarTechCommandingOfficerWeapon:8",
+          "name": "Rail Attachments",
+          "position": 8,
+          "hasBoxes": false,
+          "tradeKeys": [
+            "ColMarTechCommandingOfficerWeapon:8:0",
+            "ColMarTechCommandingOfficerWeapon:8:1",
+            "ColMarTechCommandingOfficerWeapon:8:2",
+            "ColMarTechCommandingOfficerWeapon:8:3"
+          ]
+        },
+        {
+          "key": "ColMarTechCommandingOfficerWeapon:9",
+          "name": "Helmet Visors",
+          "position": 9,
+          "hasBoxes": false,
+          "tradeKeys": [
+            "ColMarTechCommandingOfficerWeapon:9:0",
+            "ColMarTechCommandingOfficerWeapon:9:1",
+            "ColMarTechCommandingOfficerWeapon:9:2"
+          ]
+        },
+        {
+          "key": "ColMarTechCommandingOfficerWeapon:10",
+          "name": "Underbarrel Attachments",
+          "position": 10,
+          "hasBoxes": false,
+          "tradeKeys": [
+            "ColMarTechCommandingOfficerWeapon:10:0",
+            "ColMarTechCommandingOfficerWeapon:10:1",
+            "ColMarTechCommandingOfficerWeapon:10:2",
+            "ColMarTechCommandingOfficerWeapon:10:3",
+            "ColMarTechCommandingOfficerWeapon:10:4",
+            "ColMarTechCommandingOfficerWeapon:10:5",
+            "ColMarTechCommandingOfficerWeapon:10:6"
+          ]
+        },
+        {
+          "key": "ColMarTechCommandingOfficerWeapon:11",
+          "name": "Barrel Attachments",
+          "position": 11,
+          "hasBoxes": false,
+          "tradeKeys": [
+            "ColMarTechCommandingOfficerWeapon:11:0",
+            "ColMarTechCommandingOfficerWeapon:11:1",
+            "ColMarTechCommandingOfficerWeapon:11:2",
+            "ColMarTechCommandingOfficerWeapon:11:3",
+            "ColMarTechCommandingOfficerWeapon:11:4",
+            "ColMarTechCommandingOfficerWeapon:11:5"
           ]
         }
       ]
@@ -9572,6 +9837,1023 @@
       "name": "стандартные операционные процедуры",
       "amount": 10,
       "spawn": 1
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:0:0",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:0",
+      "sectionName": "Commander's Primary",
+      "position": 0,
+      "itemId": "RMCM59ACaseAP",
+      "name": "M59A Prototype Rifle",
+      "amount": null,
+      "spawn": 1
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:0:1",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:0",
+      "sectionName": "Commander's Primary",
+      "position": 1,
+      "itemId": "CMCOSmartGunOperatorEquipmentCaseBelt",
+      "name": "Commander's Smartgun",
+      "amount": null,
+      "spawn": 1,
+      "recommended": true
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:10:0",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:10",
+      "sectionName": "Underbarrel Attachments",
+      "position": 0,
+      "itemId": "RMCAttachmentLaserSight",
+      "name": "лазерный прицел",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:10:1",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:10",
+      "sectionName": "Underbarrel Attachments",
+      "position": 1,
+      "itemId": "RMCAttachmentAngledGrip",
+      "name": "угловая рукоятка",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:10:2",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:10",
+      "sectionName": "Underbarrel Attachments",
+      "position": 2,
+      "itemId": "RMCAttachmentVerticalGrip",
+      "name": "вертикальная рукоятка",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:10:3",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:10",
+      "sectionName": "Underbarrel Attachments",
+      "position": 3,
+      "itemId": "RMCAttachmentU7UnderbarrelShotgun",
+      "name": "подствольный дробовик U7",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:10:4",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:10",
+      "sectionName": "Underbarrel Attachments",
+      "position": 4,
+      "itemId": "RMCAttachmentUnderbarrelExtinguisher",
+      "name": "подствольный огнетушитель HME-12",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:10:5",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:10",
+      "sectionName": "Underbarrel Attachments",
+      "position": 5,
+      "itemId": "RMCAttachmentMiniFlamethrower",
+      "name": "мини-огнемет",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:10:6",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:10",
+      "sectionName": "Underbarrel Attachments",
+      "position": 6,
+      "itemId": "RMCAttachmentU1GrenadeLauncher",
+      "name": "подствольный гранатомет U1",
+      "amount": null,
+      "spawn": 1,
+      "points": 5
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:11:0",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:11",
+      "sectionName": "Barrel Attachments",
+      "position": 0,
+      "itemId": "RMCAttachmentExtendedBarrel",
+      "name": "удлиненный ствол",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:11:1",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:11",
+      "sectionName": "Barrel Attachments",
+      "position": 1,
+      "itemId": "RMCAttachmentExtendedCompensator",
+      "name": "удлинённый дульный тормоз AB-RVX",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:11:2",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:11",
+      "sectionName": "Barrel Attachments",
+      "position": 2,
+      "itemId": "RMCAttachmentRecoilCompensator",
+      "name": "дульный тормоз",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:11:3",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:11",
+      "sectionName": "Barrel Attachments",
+      "position": 3,
+      "itemId": "RMCAttachmentRecoilCompensatorM13",
+      "name": "удлинённый дульный тормоз М13",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:11:4",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:11",
+      "sectionName": "Barrel Attachments",
+      "position": 4,
+      "itemId": "RMCAttachmentSuppressor",
+      "name": "глушитель",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:11:5",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:11",
+      "sectionName": "Barrel Attachments",
+      "position": 5,
+      "itemId": "RMCAttachmentSuppressorCompact",
+      "name": "компактный глушитель",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:1:0",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:1",
+      "sectionName": "Commander's Secondary Belt",
+      "position": 0,
+      "itemId": "RMCD50WinterWyvernBeltFilledAmmo",
+      "name": "кобура для пистолета общего образца M276",
+      "amount": null,
+      "spawn": 1
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:1:1",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:1",
+      "sectionName": "Commander's Secondary Belt",
+      "position": 1,
+      "itemId": "RMCMatebaBeltFilledAmmo",
+      "name": "кобура M276 для матёбы",
+      "amount": null,
+      "spawn": 1
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:2:0",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:2",
+      "sectionName": "Ceremonial Weapon",
+      "position": 0,
+      "itemId": "RMCScabbardCeremonialFilled",
+      "name": "Commander's Ceremonial Sabre",
+      "amount": null,
+      "spawn": 1
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:3:0",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:3",
+      "sectionName": "Primary Ammunition",
+      "position": 0,
+      "itemId": "CMMagazineRifleM54CMK1",
+      "name": "магазин M41A MK1 (10x24 мм)",
+      "amount": null,
+      "spawn": 1,
+      "points": 30,
+      "recommended": true
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:3:1",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:3",
+      "sectionName": "Primary Ammunition",
+      "position": 1,
+      "itemId": "CMMagazineRifleM54CMK1AP",
+      "name": "магазин M41A MK1 ББ (10x24 мм)",
+      "amount": null,
+      "spawn": 1,
+      "points": 40,
+      "recommended": true
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:3:2",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:3",
+      "sectionName": "Primary Ammunition",
+      "position": 2,
+      "itemId": "CMMagazineRifleM54CExt",
+      "name": "расширенный магазин M41A (10x24 мм)",
+      "amount": null,
+      "spawn": 1,
+      "points": 20
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:3:3",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:3",
+      "sectionName": "Primary Ammunition",
+      "position": 3,
+      "itemId": "CMMagazineRifleM54CAP",
+      "name": "бронебойный магазин M41A (10x24 мм)",
+      "amount": null,
+      "spawn": 1,
+      "points": 20
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:3:4",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:3",
+      "sectionName": "Primary Ammunition",
+      "position": 4,
+      "itemId": "RMCMagazineSmartGun",
+      "name": "боевой магазин M56B (10x30 мм)",
+      "amount": null,
+      "spawn": 1,
+      "points": 20
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:4:0",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:4",
+      "sectionName": "Sidearm Ammunition",
+      "position": 0,
+      "itemId": "RMCSpeedLoaderMatebaHighImpact",
+      "name": "скоростной патрон Матебы \"Ударная волна\" (.454).",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:4:1",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:4",
+      "sectionName": "Sidearm Ammunition",
+      "position": 1,
+      "itemId": "RMCSpeedLoaderMatebaHIAP",
+      "name": "бронебойный скоростной патрон Матебы \"Ударная волна\" (.454).",
+      "amount": null,
+      "spawn": 1,
+      "points": 20
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:4:2",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:4",
+      "sectionName": "Sidearm Ammunition",
+      "position": 2,
+      "itemId": "RMCMagazinePistolHandcannonHI",
+      "name": "магазин повышенной мощности для пистолета-пушки \"Перегрин\" ( .50 )",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:4:3",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:4",
+      "sectionName": "Sidearm Ammunition",
+      "position": 3,
+      "itemId": "RMCMagazinePistolHandcannonHIAP",
+      "name": "бронебойный магазин повышенной мощности для пистолета-пушки \"Перегрин\" ( .50 )",
+      "amount": null,
+      "spawn": 1,
+      "points": 20
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:5:0",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:5",
+      "sectionName": "Shotgun Ammunition",
+      "position": 0,
+      "itemId": "RMCBoxShotgunBuckshot",
+      "name": "коробка патронами для дробовика",
+      "amount": null,
+      "spawn": 1,
+      "points": 20
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:5:1",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:5",
+      "sectionName": "Shotgun Ammunition",
+      "position": 1,
+      "itemId": "RMCBoxShotgunSlugs",
+      "name": "коробка с пулями",
+      "amount": null,
+      "spawn": 1,
+      "points": 20
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:5:2",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:5",
+      "sectionName": "Shotgun Ammunition",
+      "position": 2,
+      "itemId": "RMCBoxShotgunFlechette",
+      "name": "коробка флешеттой",
+      "amount": null,
+      "spawn": 1,
+      "points": 20
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:6:0",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:6",
+      "sectionName": "Special Ammunition",
+      "position": 0,
+      "itemId": "RMCMagazineRifleM54CRubber",
+      "name": "резиновый магазин M41A (10x24 мм)",
+      "amount": null,
+      "spawn": 1,
+      "points": 10
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:6:1",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:6",
+      "sectionName": "Special Ammunition",
+      "position": 1,
+      "itemId": "RMCBoxShotgunBeanbag",
+      "name": "коробка бобовыми пулями для дробовика",
+      "amount": null,
+      "spawn": 1,
+      "points": 10
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:7:0",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:7",
+      "sectionName": "Explosives",
+      "position": 0,
+      "itemId": "CMPacketGrenadeHighExplosiveFilled",
+      "name": "коробка гранат ОКГ",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:7:1",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:7",
+      "sectionName": "Explosives",
+      "position": 1,
+      "itemId": "CMPacketGrenadeFragFilled",
+      "name": "коробка гранат ОППГ",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:7:2",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:7",
+      "sectionName": "Explosives",
+      "position": 2,
+      "itemId": "RMCPacketGrenadeWhitePhosphorusFilled",
+      "name": "WPDP grenade packet",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:8:0",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:8",
+      "sectionName": "Rail Attachments",
+      "position": 0,
+      "itemId": "RMCAttachmentS5RedDotSight",
+      "name": "прицел S5 с красной точкой",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:8:1",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:8",
+      "sectionName": "Rail Attachments",
+      "position": 1,
+      "itemId": "RMCAttachmentS5MicroRedDotSight",
+      "name": "микроприцел S5 с красной точкой",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:8:2",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:8",
+      "sectionName": "Rail Attachments",
+      "position": 2,
+      "itemId": "RMCAttachmentS6ReflexSight",
+      "name": "рефлекторный прицел S6",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:8:3",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:8",
+      "sectionName": "Rail Attachments",
+      "position": 3,
+      "itemId": "RMCAttachmentS42xTelescopicMiniscope",
+      "name": "S4 2x телескопический мини-скоп",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:9:0",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:9",
+      "sectionName": "Helmet Visors",
+      "position": 0,
+      "itemId": "RMCVisorNightVision",
+      "name": "оптический прибор ночного видения",
+      "amount": null,
+      "spawn": 1,
+      "points": 10,
+      "recommended": true
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:9:1",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:9",
+      "sectionName": "Helmet Visors",
+      "position": 1,
+      "itemId": "RMCVisorWelding",
+      "name": "сварочный визор",
+      "amount": null,
+      "spawn": 1,
+      "points": 5
+    },
+    {
+      "key": "ColMarTechCommandingOfficerWeapon:9:2",
+      "vendorId": "ColMarTechCommandingOfficerWeapon",
+      "sectionKey": "ColMarTechCommandingOfficerWeapon:9",
+      "sectionName": "Helmet Visors",
+      "position": 2,
+      "itemId": "RMCVisorMedicalAdvanced",
+      "name": "продвинутый медицинский визор",
+      "amount": null,
+      "spawn": 1,
+      "points": 5
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:0:0",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:0",
+      "sectionName": "Captain's Primary",
+      "position": 0,
+      "itemId": "RMCM54CMK1CaseAP",
+      "name": "M54C MK1 assault rifle",
+      "amount": null,
+      "spawn": 1
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:0:1",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:0",
+      "sectionName": "Captain's Primary",
+      "position": 1,
+      "itemId": "RMCVendorBundleXOShotgun",
+      "name": "M890 тактический дробовик",
+      "amount": null,
+      "spawn": 1
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:1:0",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:1",
+      "sectionName": "Primary Ammunition",
+      "position": 0,
+      "itemId": "CMMagazineRifleM54CMK1",
+      "name": "магазин M41A MK1 (10x24 мм)",
+      "amount": null,
+      "spawn": 1,
+      "points": 40,
+      "recommended": true
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:1:1",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:1",
+      "sectionName": "Primary Ammunition",
+      "position": 1,
+      "itemId": "CMMagazineRifleM54CMK1AP",
+      "name": "магазин M41A MK1 ББ (10x24 мм)",
+      "amount": null,
+      "spawn": 1,
+      "points": 60,
+      "recommended": true
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:1:2",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:1",
+      "sectionName": "Primary Ammunition",
+      "position": 2,
+      "itemId": "RMCBoxShotgunBuckshot",
+      "name": "коробка патронами для дробовика",
+      "amount": null,
+      "spawn": 1,
+      "points": 20
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:1:3",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:1",
+      "sectionName": "Primary Ammunition",
+      "position": 3,
+      "itemId": "RMCBoxShotgunSlugs",
+      "name": "коробка с пулями",
+      "amount": null,
+      "spawn": 1,
+      "points": 20
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:1:4",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:1",
+      "sectionName": "Primary Ammunition",
+      "position": 4,
+      "itemId": "RMCBoxShotgunFlechette",
+      "name": "коробка флешеттой",
+      "amount": null,
+      "spawn": 1,
+      "points": 20
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:2:0",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:2",
+      "sectionName": "Specilisation Kit",
+      "position": 0,
+      "itemId": "CMVendorBundleSquadMedicalEssentials",
+      "name": "необходимый медицинский набор",
+      "amount": null,
+      "spawn": 1
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:2:1",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:2",
+      "sectionName": "Specilisation Kit",
+      "position": 1,
+      "itemId": "CMVendorBundleCombatTechnicianEssentials",
+      "name": "необходимый набор инженера",
+      "amount": null,
+      "spawn": 1
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:3:0",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:3",
+      "sectionName": "Explosives",
+      "position": 0,
+      "itemId": "CMPacketGrenadeHighExplosiveFilled",
+      "name": "коробка гранат ОКГ",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:3:1",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:3",
+      "sectionName": "Explosives",
+      "position": 1,
+      "itemId": "CMPacketGrenadeFragFilled",
+      "name": "коробка гранат ОППГ",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:3:2",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:3",
+      "sectionName": "Explosives",
+      "position": 2,
+      "itemId": "RMCPacketGrenadeWhitePhosphorusFilled",
+      "name": "WPDP grenade packet",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:4:0",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:4",
+      "sectionName": "Rail Attachments",
+      "position": 0,
+      "itemId": "RMCAttachmentMagneticHarness",
+      "name": "магнитный жгут",
+      "amount": null,
+      "spawn": 1,
+      "points": 12
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:4:1",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:4",
+      "sectionName": "Rail Attachments",
+      "position": 1,
+      "itemId": "RMCAttachmentS5RedDotSight",
+      "name": "прицел S5 с красной точкой",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:4:2",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:4",
+      "sectionName": "Rail Attachments",
+      "position": 2,
+      "itemId": "RMCAttachmentS5MicroRedDotSight",
+      "name": "микроприцел S5 с красной точкой",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:4:3",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:4",
+      "sectionName": "Rail Attachments",
+      "position": 3,
+      "itemId": "RMCAttachmentS6ReflexSight",
+      "name": "рефлекторный прицел S6",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:4:4",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:4",
+      "sectionName": "Rail Attachments",
+      "position": 4,
+      "itemId": "RMCAttachmentS42xTelescopicMiniscope",
+      "name": "S4 2x телескопический мини-скоп",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:5:0",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:5",
+      "sectionName": "Underbarrel Attachments",
+      "position": 0,
+      "itemId": "RMCAttachmentLaserSight",
+      "name": "лазерный прицел",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:5:1",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:5",
+      "sectionName": "Underbarrel Attachments",
+      "position": 1,
+      "itemId": "RMCAttachmentAngledGrip",
+      "name": "угловая рукоятка",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:5:2",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:5",
+      "sectionName": "Underbarrel Attachments",
+      "position": 2,
+      "itemId": "RMCAttachmentVerticalGrip",
+      "name": "вертикальная рукоятка",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:5:3",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:5",
+      "sectionName": "Underbarrel Attachments",
+      "position": 3,
+      "itemId": "RMCAttachmentU7UnderbarrelShotgun",
+      "name": "подствольный дробовик U7",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:5:4",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:5",
+      "sectionName": "Underbarrel Attachments",
+      "position": 4,
+      "itemId": "RMCAttachmentUnderbarrelExtinguisher",
+      "name": "подствольный огнетушитель HME-12",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:5:5",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:5",
+      "sectionName": "Underbarrel Attachments",
+      "position": 5,
+      "itemId": "RMCAttachmentMiniFlamethrower",
+      "name": "мини-огнемет",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:5:6",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:5",
+      "sectionName": "Underbarrel Attachments",
+      "position": 6,
+      "itemId": "RMCAttachmentU1GrenadeLauncher",
+      "name": "подствольный гранатомет U1",
+      "amount": null,
+      "spawn": 1,
+      "points": 5
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:6:0",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:6",
+      "sectionName": "Barrel Attachments",
+      "position": 0,
+      "itemId": "RMCAttachmentExtendedBarrel",
+      "name": "удлиненный ствол",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:6:1",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:6",
+      "sectionName": "Barrel Attachments",
+      "position": 1,
+      "itemId": "RMCAttachmentExtendedCompensator",
+      "name": "удлинённый дульный тормоз AB-RVX",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:6:2",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:6",
+      "sectionName": "Barrel Attachments",
+      "position": 2,
+      "itemId": "RMCAttachmentRecoilCompensator",
+      "name": "дульный тормоз",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:6:3",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:6",
+      "sectionName": "Barrel Attachments",
+      "position": 3,
+      "itemId": "RMCAttachmentSuppressor",
+      "name": "глушитель",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:7:0",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:7",
+      "sectionName": "Other Supplies",
+      "position": 0,
+      "itemId": "CMHandsInsulated",
+      "name": "изолированные перчатки",
+      "amount": null,
+      "spawn": 1,
+      "points": 3
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:7:1",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:7",
+      "sectionName": "Other Supplies",
+      "position": 1,
+      "itemId": "CMHandsBlackInsulated",
+      "name": "чёрные изолированные перчатки",
+      "amount": null,
+      "spawn": 1,
+      "points": 3
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:7:10",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:7",
+      "sectionName": "Other Supplies",
+      "position": 10,
+      "itemId": "SprayBottleSpaceCleaner",
+      "name": "космический очиститель",
+      "amount": null,
+      "spawn": 1,
+      "points": 2
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:7:11",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:7",
+      "sectionName": "Other Supplies",
+      "position": 11,
+      "itemId": "RMCWhistle",
+      "name": "свисток",
+      "amount": null,
+      "spawn": 1,
+      "points": 5
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:7:12",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:7",
+      "sectionName": "Other Supplies",
+      "position": 12,
+      "itemId": "RMCFlashlight",
+      "name": "фонарик",
+      "amount": null,
+      "spawn": 1,
+      "points": 1
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:7:13",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:7",
+      "sectionName": "Other Supplies",
+      "position": 13,
+      "itemId": "RMCSynthResetKey",
+      "name": "ключ перезагрузки синтетических устройств Ве-Я",
+      "amount": null,
+      "spawn": 1,
+      "points": 10
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:7:14",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:7",
+      "sectionName": "Other Supplies",
+      "position": 14,
+      "itemId": "RMCVisorWelding",
+      "name": "сварочный визор",
+      "amount": null,
+      "spawn": 1,
+      "points": 5
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:7:2",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:7",
+      "sectionName": "Other Supplies",
+      "position": 2,
+      "itemId": "RMCPouchMacheteFilled",
+      "name": "подсумок для мачете M2132 образца H6B",
+      "amount": null,
+      "spawn": 1,
+      "points": 5
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:7:3",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:7",
+      "sectionName": "Other Supplies",
+      "position": 3,
+      "itemId": "RMCBackpackRTO",
+      "name": "комплект радиотелефонов КМП США",
+      "amount": null,
+      "spawn": 1,
+      "points": 15
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:7:4",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:7",
+      "sectionName": "Other Supplies",
+      "position": 4,
+      "itemId": "RMCMotionDetector",
+      "name": "детектор движения",
+      "amount": null,
+      "spawn": 1,
+      "points": 5
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:7:5",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:7",
+      "sectionName": "Other Supplies",
+      "position": 5,
+      "itemId": "CMEntrenchingTool",
+      "name": "складная лопата",
+      "amount": null,
+      "spawn": 1,
+      "points": 1
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:7:6",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:7",
+      "sectionName": "Other Supplies",
+      "position": 6,
+      "itemId": "RMCBinoculars",
+      "name": "бинокль",
+      "amount": null,
+      "spawn": 1,
+      "points": 5
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:7:7",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:7",
+      "sectionName": "Other Supplies",
+      "position": 7,
+      "itemId": "RMCRangefinder",
+      "name": "дальномер",
+      "amount": null,
+      "spawn": 1,
+      "points": 8
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:7:8",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:7",
+      "sectionName": "Other Supplies",
+      "position": 8,
+      "itemId": "RMCLaserDesignator",
+      "name": "лазерный целеуказатель",
+      "amount": null,
+      "spawn": 1,
+      "points": 12
+    },
+    {
+      "key": "ColMarTechExecutiveOfficerWeapon:7:9",
+      "vendorId": "ColMarTechExecutiveOfficerWeapon",
+      "sectionKey": "ColMarTechExecutiveOfficerWeapon:7",
+      "sectionName": "Other Supplies",
+      "position": 9,
+      "itemId": "RMCFulton20",
+      "name": "фултон",
+      "amount": null,
+      "spawn": 1,
+      "points": 5
     },
     {
       "key": "ColMarTechFLEquipment:0:0",
@@ -22808,6 +24090,41 @@
       "quantity": 2
     },
     {
+      "from": "CMCOSmartGunOperatorEquipmentCaseBelt",
+      "to": "CMArmorSmartGunCombatHarness",
+      "type": "contains",
+      "position": 3,
+      "quantity": 1
+    },
+    {
+      "from": "CMCOSmartGunOperatorEquipmentCaseBelt",
+      "to": "CMBeltSmartGunOperatorFilled",
+      "type": "contains",
+      "position": 4,
+      "quantity": 1
+    },
+    {
+      "from": "CMCOSmartGunOperatorEquipmentCaseBelt",
+      "to": "RMCGlassesSmartGunSight",
+      "type": "contains",
+      "position": 0,
+      "quantity": 1
+    },
+    {
+      "from": "CMCOSmartGunOperatorEquipmentCaseBelt",
+      "to": "RMCPowerCellSmartgun",
+      "type": "contains",
+      "position": 2,
+      "quantity": 1
+    },
+    {
+      "from": "CMCOSmartGunOperatorEquipmentCaseBelt",
+      "to": "RMCSmartGunCO",
+      "type": "contains",
+      "position": 1,
+      "quantity": 1
+    },
+    {
       "from": "CMCartridge10x20mm",
       "to": "Bullet10x20mm",
       "type": "fires",
@@ -24094,6 +25411,12 @@
       "type": "contains",
       "position": 0,
       "quantity": 16
+    },
+    {
+      "from": "CMShellShotgunBeanbag",
+      "to": "CMPelletShotgunBeanbag",
+      "type": "fires",
+      "quantity": 1
     },
     {
       "from": "CMShellShotgunBuckshot",
@@ -25541,6 +26864,13 @@
       "quantity": 20
     },
     {
+      "from": "RMCBoxShotgunBeanbag",
+      "to": "CMShellShotgunBeanbag",
+      "type": "contains",
+      "position": 0,
+      "quantity": 5
+    },
+    {
       "from": "RMCBoxShotgunBuckshot",
       "to": "CMShellShotgunBuckshot",
       "type": "contains",
@@ -25631,6 +26961,18 @@
       "quantity": 1
     },
     {
+      "from": "RMCCartridgePistolHandcannonHI",
+      "to": "RMCBulletPistolHandcannonHI",
+      "type": "fires",
+      "quantity": 1
+    },
+    {
+      "from": "RMCCartridgePistolHandcannonHIAP",
+      "to": "RMCBulletPistolHandcannonHIAP",
+      "type": "fires",
+      "quantity": 1
+    },
+    {
       "from": "RMCCartridgeRevolver44",
       "to": "CMBulletRevolver44",
       "type": "fires",
@@ -25643,8 +26985,26 @@
       "quantity": 1
     },
     {
+      "from": "RMCCartridgeRevolverMatebaHIAP",
+      "to": "RMCBulletMatebaHighImpactArmorPiercing",
+      "type": "fires",
+      "quantity": 1
+    },
+    {
+      "from": "RMCCartridgeRevolverMatebaHighImpact",
+      "to": "RMCBulletMatebaHighImpact",
+      "type": "fires",
+      "quantity": 1
+    },
+    {
       "from": "RMCCartridgeRevolverRsh9",
       "to": "RMCBulletRsh9",
+      "type": "fires",
+      "quantity": 1
+    },
+    {
+      "from": "RMCCartridgeRifle10x24mmRubber",
+      "to": "BulletRifle10x24mmRubber",
       "type": "fires",
       "quantity": 1
     },
@@ -27660,6 +29020,20 @@
       "quantity": 1
     },
     {
+      "from": "RMCD50WinterWyvernBeltFilledAmmo",
+      "to": "RMCMagazinePistolHandcannonHI",
+      "type": "contains",
+      "position": 0,
+      "quantity": 4
+    },
+    {
+      "from": "RMCD50WinterWyvernBeltFilledAmmo",
+      "to": "RMCMagazinePistolHandcannonHIAP",
+      "type": "contains",
+      "position": 1,
+      "quantity": 2
+    },
+    {
       "from": "RMCDemoSpecEquipmentCase",
       "to": "CMMagazinePistolMK80",
       "type": "contains",
@@ -28517,6 +29891,27 @@
       "quantity": 1
     },
     {
+      "from": "RMCM54CMK1CaseAP",
+      "to": "CMMagazineRifleM54CMK1AP",
+      "type": "contains",
+      "position": 1,
+      "quantity": 1
+    },
+    {
+      "from": "RMCM54CMK1CaseAP",
+      "to": "CMMagazineRifleM54CMK1AP",
+      "type": "contains",
+      "position": 2,
+      "quantity": 1
+    },
+    {
+      "from": "RMCM54CMK1CaseAP",
+      "to": "RMCWeaponRifleM54CMK1AP",
+      "type": "contains",
+      "position": 0,
+      "quantity": 1
+    },
+    {
       "from": "RMCM54CMK2Case",
       "to": "CMMagazineRifleM54C",
       "type": "contains",
@@ -28547,6 +29942,27 @@
     {
       "from": "RMCM54CMK2Case",
       "to": "RMCWeaponRifleM54C",
+      "type": "contains",
+      "position": 0,
+      "quantity": 1
+    },
+    {
+      "from": "RMCM59ACaseAP",
+      "to": "CMMagazineRifleM54CMK1AP",
+      "type": "contains",
+      "position": 1,
+      "quantity": 1
+    },
+    {
+      "from": "RMCM59ACaseAP",
+      "to": "CMMagazineRifleM54CMK1AP",
+      "type": "contains",
+      "position": 2,
+      "quantity": 1
+    },
+    {
+      "from": "RMCM59ACaseAP",
+      "to": "RMCWeaponRifleM59A",
       "type": "contains",
       "position": 0,
       "quantity": 1
@@ -28784,6 +30200,18 @@
       "quantity": 700
     },
     {
+      "from": "RMCMagazinePistolHandcannonHI",
+      "to": "RMCCartridgePistolHandcannonHI",
+      "type": "loadedWith",
+      "quantity": 7
+    },
+    {
+      "from": "RMCMagazinePistolHandcannonHIAP",
+      "to": "RMCCartridgePistolHandcannonHIAP",
+      "type": "loadedWith",
+      "quantity": 7
+    },
+    {
       "from": "RMCMagazinePistolM13",
       "to": "RMCCartridgeAutoPistol",
       "type": "loadedWith",
@@ -28842,6 +30270,17 @@
       "quantity": 18
     },
     {
+      "from": "RMCMagazineRifleM54CRubber",
+      "to": "RMCCartridgeRifle10x24mmRubber",
+      "type": "loadedWith",
+      "quantity": 40
+    },
+    {
+      "from": "RMCMagazineRifleM54CRubber",
+      "to": "RMCBoxBulletsRifle",
+      "type": "refillableBy"
+    },
+    {
       "from": "RMCMagazineSMGNailgun",
       "to": "RMCCartridge7x45mm",
       "type": "loadedWith",
@@ -28893,6 +30332,20 @@
       "to": "RMCCartridgeSniper10x99mmAntiMateriel",
       "type": "loadedWith",
       "quantity": 8
+    },
+    {
+      "from": "RMCMatebaBeltFilledAmmo",
+      "to": "RMCSpeedLoaderMatebaHIAP",
+      "type": "contains",
+      "position": 0,
+      "quantity": 2
+    },
+    {
+      "from": "RMCMatebaBeltFilledAmmo",
+      "to": "RMCSpeedLoaderMatebaHighImpact",
+      "type": "contains",
+      "position": 1,
+      "quantity": 3
     },
     {
       "from": "RMCNailgunTactical",
@@ -29350,6 +30803,14 @@
       "quantity": 1
     },
     {
+      "from": "RMCScabbardCeremonialFilled",
+      "to": "RMCCeremonialSword",
+      "type": "contains",
+      "container": "item",
+      "position": 0,
+      "quantity": 1
+    },
+    {
       "from": "RMCScabbardMacheteFilled",
       "to": "CMM2132Machete",
       "type": "contains",
@@ -29477,6 +30938,32 @@
       "quantity": 1
     },
     {
+      "from": "RMCSmartGunCO",
+      "to": "RMCAttachmentRailFlashlight",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-rail"
+    },
+    {
+      "from": "RMCSmartGunCO",
+      "to": "RMCMagazineSmartGun",
+      "type": "compatibleMagazine",
+      "slot": "gun_magazine"
+    },
+    {
+      "from": "RMCSmartGunCO",
+      "to": "RMCMagazineSmartGun",
+      "type": "loadedWith",
+      "slot": "gun_magazine",
+      "quantity": 1
+    },
+    {
+      "from": "RMCSmartGunCO",
+      "to": "RMCPowerCellSmartgun",
+      "type": "loadedWith",
+      "slot": "cell_slot",
+      "quantity": 1
+    },
+    {
       "from": "RMCSmartGunMounted",
       "to": "RMCMagazineML66D",
       "type": "compatibleMagazine",
@@ -29519,6 +31006,18 @@
       "to": "RMCCartridgeRevolver44",
       "type": "loadedWith",
       "quantity": 7
+    },
+    {
+      "from": "RMCSpeedLoaderMatebaHIAP",
+      "to": "RMCCartridgeRevolverMatebaHIAP",
+      "type": "loadedWith",
+      "quantity": 6
+    },
+    {
+      "from": "RMCSpeedLoaderMatebaHighImpact",
+      "to": "RMCCartridgeRevolverMatebaHighImpact",
+      "type": "loadedWith",
+      "quantity": 6
     },
     {
       "from": "RMCSpeedLoaderRsh9",
@@ -29888,6 +31387,27 @@
       "quantity": 1
     },
     {
+      "from": "RMCVendorBundleXOShotgun",
+      "to": "CMShellShotgunBuckshot",
+      "type": "bundleItem",
+      "position": 1,
+      "quantity": 1
+    },
+    {
+      "from": "RMCVendorBundleXOShotgun",
+      "to": "CMShellShotgunSlugs",
+      "type": "bundleItem",
+      "position": 2,
+      "quantity": 1
+    },
+    {
+      "from": "RMCVendorBundleXOShotgun",
+      "to": "WeaponShotgunM890",
+      "type": "bundleItem",
+      "position": 0,
+      "quantity": 1
+    },
+    {
       "from": "RMCVisorNightVision",
       "to": "RMCPowerCellSuper",
       "type": "loadedWith",
@@ -30006,6 +31526,12 @@
     },
     {
       "from": "RMCWeaponPistolM13",
+      "to": "RMCAttachmentExtendedCompensator",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-barrel"
+    },
+    {
+      "from": "RMCWeaponPistolM13",
       "to": "RMCAttachmentM13StockCollapsible",
       "type": "compatibleAttachment",
       "slot": "rmc-aslot-stock"
@@ -30092,6 +31618,12 @@
     {
       "from": "RMCWeaponPistolM13Empty",
       "to": "RMCAttachmentExtendedBarrel",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-barrel"
+    },
+    {
+      "from": "RMCWeaponPistolM13Empty",
+      "to": "RMCAttachmentExtendedCompensator",
       "type": "compatibleAttachment",
       "slot": "rmc-aslot-barrel"
     },
@@ -30443,6 +31975,12 @@
     },
     {
       "from": "RMCWeaponRevolverM44",
+      "to": "RMCAttachmentExtendedCompensator",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-barrel"
+    },
+    {
+      "from": "RMCWeaponRevolverM44",
       "to": "RMCAttachmentLaserSight",
       "type": "compatibleAttachment",
       "slot": "rmc-aslot-underbarrel"
@@ -30522,6 +32060,12 @@
     },
     {
       "from": "RMCWeaponRevolverM44Empty",
+      "to": "RMCAttachmentExtendedCompensator",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-barrel"
+    },
+    {
+      "from": "RMCWeaponRevolverM44Empty",
       "to": "RMCAttachmentLaserSight",
       "type": "compatibleAttachment",
       "slot": "rmc-aslot-underbarrel"
@@ -30589,6 +32133,12 @@
     {
       "from": "RMCWeaponRevolverM44Marksman",
       "to": "RMCAttachmentExtendedBarrel",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-barrel"
+    },
+    {
+      "from": "RMCWeaponRevolverM44Marksman",
+      "to": "RMCAttachmentExtendedCompensator",
       "type": "compatibleAttachment",
       "slot": "rmc-aslot-barrel"
     },
@@ -30711,6 +32261,12 @@
     {
       "from": "RMCWeaponRifleM54C",
       "to": "RMCAttachmentExtendedBarrel",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-barrel"
+    },
+    {
+      "from": "RMCWeaponRifleM54C",
+      "to": "RMCAttachmentExtendedCompensator",
       "type": "compatibleAttachment",
       "slot": "rmc-aslot-barrel"
     },
@@ -30854,6 +32410,12 @@
     },
     {
       "from": "RMCWeaponRifleM54C",
+      "to": "RMCMagazineRifleM54CRubber",
+      "type": "compatibleMagazine",
+      "slot": "gun_magazine"
+    },
+    {
+      "from": "RMCWeaponRifleM54C",
       "to": "RMCAttachmentM54CStockCollapsible",
       "type": "installedAttachment",
       "slot": "rmc-aslot-stock",
@@ -30883,6 +32445,12 @@
       "to": "RMCAttachmentBurstFireAssembly",
       "type": "compatibleAttachment",
       "slot": "rmc-aslot-underbarrel"
+    },
+    {
+      "from": "RMCWeaponRifleM54CE2",
+      "to": "RMCAttachmentExtendedCompensator",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-barrel"
     },
     {
       "from": "RMCWeaponRifleM54CE2",
@@ -31071,6 +32639,287 @@
     {
       "from": "RMCWeaponRifleM54CMK1",
       "to": "CMMagazineRifleM54CMK1",
+      "type": "loadedWith",
+      "slot": "gun_magazine",
+      "quantity": 1
+    },
+    {
+      "from": "RMCWeaponRifleM54CMK1AP",
+      "to": "RMCAttachmentM54CMK1StockCollapsible",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-stock"
+    },
+    {
+      "from": "RMCWeaponRifleM54CMK1AP",
+      "to": "RMCAttachmentM54CStockCollapsible",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-stock"
+    },
+    {
+      "from": "RMCWeaponRifleM54CMK1AP",
+      "to": "RMCAttachmentMK1GrenadeLauncher",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-underbarrel"
+    },
+    {
+      "from": "RMCWeaponRifleM54CMK1AP",
+      "to": "RMCAttachmentMagneticHarness",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-rail"
+    },
+    {
+      "from": "RMCWeaponRifleM54CMK1AP",
+      "to": "RMCAttachmentRailFlashlight",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-rail"
+    },
+    {
+      "from": "RMCWeaponRifleM54CMK1AP",
+      "to": "RMCAttachmentS5RedDotSight",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-rail"
+    },
+    {
+      "from": "RMCWeaponRifleM54CMK1AP",
+      "to": "RMCAttachmentS6ReflexSight",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-rail"
+    },
+    {
+      "from": "RMCWeaponRifleM54CMK1AP",
+      "to": "RMCAttachmentSuppressor",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-barrel"
+    },
+    {
+      "from": "RMCWeaponRifleM54CMK1AP",
+      "to": "RMCAttachmentU7UnderbarrelShotgun",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-underbarrel"
+    },
+    {
+      "from": "RMCWeaponRifleM54CMK1AP",
+      "to": "RMCAttachmentUnderbarrelExtinguisher",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-underbarrel"
+    },
+    {
+      "from": "RMCWeaponRifleM54CMK1AP",
+      "to": "RMCAttachmentUnderbarrelExtinguisherSpec",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-underbarrel"
+    },
+    {
+      "from": "RMCWeaponRifleM54CMK1AP",
+      "to": "RMCM5Bayonet",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-barrel"
+    },
+    {
+      "from": "RMCWeaponRifleM54CMK1AP",
+      "to": "CMMagazineRifleM54CMK1",
+      "type": "compatibleMagazine",
+      "slot": "gun_magazine"
+    },
+    {
+      "from": "RMCWeaponRifleM54CMK1AP",
+      "to": "CMMagazineRifleM54CMK1AP",
+      "type": "compatibleMagazine",
+      "slot": "gun_magazine"
+    },
+    {
+      "from": "RMCWeaponRifleM54CMK1AP",
+      "to": "RMCAttachmentM54CMK1StockCollapsible",
+      "type": "installedAttachment",
+      "slot": "rmc-aslot-stock",
+      "quantity": 1
+    },
+    {
+      "from": "RMCWeaponRifleM54CMK1AP",
+      "to": "RMCAttachmentMK1GrenadeLauncher",
+      "type": "installedAttachment",
+      "slot": "rmc-aslot-underbarrel",
+      "quantity": 1
+    },
+    {
+      "from": "RMCWeaponRifleM54CMK1AP",
+      "to": "CMMagazineRifleM54CMK1AP",
+      "type": "loadedWith",
+      "slot": "gun_magazine",
+      "quantity": 1
+    },
+    {
+      "from": "RMCWeaponRifleM59A",
+      "to": "RMCAttachmentAngledGrip",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-underbarrel"
+    },
+    {
+      "from": "RMCWeaponRifleM59A",
+      "to": "RMCAttachmentBipod",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-underbarrel"
+    },
+    {
+      "from": "RMCWeaponRifleM59A",
+      "to": "RMCAttachmentExtendedBarrel",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-barrel"
+    },
+    {
+      "from": "RMCWeaponRifleM59A",
+      "to": "RMCAttachmentExtendedCompensator",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-barrel"
+    },
+    {
+      "from": "RMCWeaponRifleM59A",
+      "to": "RMCAttachmentFlashlightGrip",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-underbarrel"
+    },
+    {
+      "from": "RMCWeaponRifleM59A",
+      "to": "RMCAttachmentM54CMK1StockCollapsible",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-stock"
+    },
+    {
+      "from": "RMCWeaponRifleM59A",
+      "to": "RMCAttachmentM54CStockCollapsible",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-stock"
+    },
+    {
+      "from": "RMCWeaponRifleM59A",
+      "to": "RMCAttachmentMagneticHarness",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-rail"
+    },
+    {
+      "from": "RMCWeaponRifleM59A",
+      "to": "RMCAttachmentMiniFlamethrower",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-underbarrel"
+    },
+    {
+      "from": "RMCWeaponRifleM59A",
+      "to": "RMCAttachmentRailFlashlight",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-rail"
+    },
+    {
+      "from": "RMCWeaponRifleM59A",
+      "to": "RMCAttachmentS42xTelescopicMiniscope",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-rail"
+    },
+    {
+      "from": "RMCWeaponRifleM59A",
+      "to": "RMCAttachmentS5RedDotSight",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-rail"
+    },
+    {
+      "from": "RMCWeaponRifleM59A",
+      "to": "RMCAttachmentS6ReflexSight",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-rail"
+    },
+    {
+      "from": "RMCWeaponRifleM59A",
+      "to": "RMCAttachmentS84xTelescopicScope",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-rail"
+    },
+    {
+      "from": "RMCWeaponRifleM59A",
+      "to": "RMCAttachmentSuppressor",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-barrel"
+    },
+    {
+      "from": "RMCWeaponRifleM59A",
+      "to": "RMCAttachmentU1GrenadeLauncher",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-underbarrel"
+    },
+    {
+      "from": "RMCWeaponRifleM59A",
+      "to": "RMCAttachmentU7UnderbarrelShotgun",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-underbarrel"
+    },
+    {
+      "from": "RMCWeaponRifleM59A",
+      "to": "RMCAttachmentUnderbarrelExtinguisher",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-underbarrel"
+    },
+    {
+      "from": "RMCWeaponRifleM59A",
+      "to": "RMCAttachmentUnderbarrelExtinguisherSpec",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-underbarrel"
+    },
+    {
+      "from": "RMCWeaponRifleM59A",
+      "to": "RMCAttachmentVerticalGrip",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-underbarrel"
+    },
+    {
+      "from": "RMCWeaponRifleM59A",
+      "to": "RMCM5Bayonet",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-barrel"
+    },
+    {
+      "from": "RMCWeaponRifleM59A",
+      "to": "CMMagazineRifleM54C",
+      "type": "compatibleMagazine",
+      "slot": "gun_magazine"
+    },
+    {
+      "from": "RMCWeaponRifleM59A",
+      "to": "CMMagazineRifleM54CAP",
+      "type": "compatibleMagazine",
+      "slot": "gun_magazine"
+    },
+    {
+      "from": "RMCWeaponRifleM59A",
+      "to": "CMMagazineRifleM54CExt",
+      "type": "compatibleMagazine",
+      "slot": "gun_magazine"
+    },
+    {
+      "from": "RMCWeaponRifleM59A",
+      "to": "CMMagazineRifleM54CMK1",
+      "type": "compatibleMagazine",
+      "slot": "gun_magazine"
+    },
+    {
+      "from": "RMCWeaponRifleM59A",
+      "to": "CMMagazineRifleM54CMK1AP",
+      "type": "compatibleMagazine",
+      "slot": "gun_magazine"
+    },
+    {
+      "from": "RMCWeaponRifleM59A",
+      "to": "RMCMagazineRifleM54CRubber",
+      "type": "compatibleMagazine",
+      "slot": "gun_magazine"
+    },
+    {
+      "from": "RMCWeaponRifleM59A",
+      "to": "RMCAttachmentM54CStockCollapsible",
+      "type": "installedAttachment",
+      "slot": "rmc-aslot-stock",
+      "quantity": 1
+    },
+    {
+      "from": "RMCWeaponRifleM59A",
+      "to": "CMMagazineRifleM54CMK1AP",
       "type": "loadedWith",
       "slot": "gun_magazine",
       "quantity": 1
@@ -31375,6 +33224,12 @@
     {
       "from": "WeaponRifleM4SPR",
       "to": "RMCAttachmentExtendedBarrel",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-barrel"
+    },
+    {
+      "from": "WeaponRifleM4SPR",
+      "to": "RMCAttachmentExtendedCompensator",
       "type": "compatibleAttachment",
       "slot": "rmc-aslot-barrel"
     },
@@ -31705,6 +33560,12 @@
     },
     {
       "from": "WeaponSMGM63",
+      "to": "RMCAttachmentExtendedCompensator",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-barrel"
+    },
+    {
+      "from": "WeaponSMGM63",
       "to": "RMCAttachmentFlashlightGrip",
       "type": "compatibleAttachment",
       "slot": "rmc-aslot-underbarrel"
@@ -31933,6 +33794,80 @@
       "slot": "rmc-aslot-barrel"
     },
     {
+      "from": "WeaponShotgunM890",
+      "to": "RMCAttachmentExtendedBarrel",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-barrel"
+    },
+    {
+      "from": "WeaponShotgunM890",
+      "to": "RMCAttachmentM890Stock",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-stock"
+    },
+    {
+      "from": "WeaponShotgunM890",
+      "to": "RMCAttachmentMagneticHarness",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-rail"
+    },
+    {
+      "from": "WeaponShotgunM890",
+      "to": "RMCAttachmentRailFlashlight",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-rail"
+    },
+    {
+      "from": "WeaponShotgunM890",
+      "to": "RMCAttachmentRecoilCompensator",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-barrel"
+    },
+    {
+      "from": "WeaponShotgunM890",
+      "to": "RMCAttachmentS5RedDotSight",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-rail"
+    },
+    {
+      "from": "WeaponShotgunM890",
+      "to": "RMCAttachmentS6ReflexSight",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-rail"
+    },
+    {
+      "from": "WeaponShotgunM890",
+      "to": "RMCAttachmentU1GrenadeLauncher",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-underbarrel"
+    },
+    {
+      "from": "WeaponShotgunM890",
+      "to": "RMCM5Bayonet",
+      "type": "compatibleAttachment",
+      "slot": "rmc-aslot-barrel"
+    },
+    {
+      "from": "WeaponShotgunM890",
+      "to": "RMCAttachmentM890Stock",
+      "type": "installedAttachment",
+      "slot": "rmc-aslot-stock",
+      "quantity": 1
+    },
+    {
+      "from": "WeaponShotgunM890",
+      "to": "RMCAttachmentU1GrenadeLauncher",
+      "type": "installedAttachment",
+      "slot": "rmc-aslot-underbarrel",
+      "quantity": 1
+    },
+    {
+      "from": "WeaponShotgunM890",
+      "to": "CMShellShotgunSlugs",
+      "type": "loadedWith",
+      "quantity": 8
+    },
+    {
       "from": "WeaponShotgunMOU53",
       "to": "RMCAttachmentAngledGrip",
       "type": "compatibleAttachment",
@@ -32025,18 +33960,18 @@
   ],
   "counts": {
     "indexedEntityPrototypes": 25596,
-    "vendors": 21,
+    "vendors": 23,
     "cargoCatalogs": 1,
-    "sources": 22,
-    "sections": 279,
-    "tradeEntries": 1598,
-    "directItemPrototypes": 715,
-    "catalogItems": 1120,
-    "publicItems": 1118,
+    "sources": 24,
+    "sections": 299,
+    "tradeEntries": 1683,
+    "directItemPrototypes": 731,
+    "catalogItems": 1152,
+    "publicItems": 1150,
     "excludedItems": 0,
-    "relations": 1406,
-    "catalogEntityPrototypes": 1120,
-    "resolvedEntityPrototypes": 1531,
+    "relations": 1510,
+    "catalogEntityPrototypes": 1152,
+    "resolvedEntityPrototypes": 1569,
     "editedItems": 198,
     "hiddenItems": 65
   },
@@ -32105,6 +34040,14 @@
       "abstract": false,
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/Rifles/m54c_heavy_rifle.yml"
+    },
+    "BulletRifle10x24mmRubber": {
+      "parents": [
+        "RMCBaseBullet"
+      ],
+      "abstract": false,
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/Ammunition/Magazines/riotammo.yml"
     },
     "BulletRifleM4SPRA19": {
       "parents": [
@@ -32603,6 +34546,14 @@
       "abstract": false,
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Medical/healing.yml"
+    },
+    "CMCOSmartGunOperatorEquipmentCaseBelt": {
+      "parents": [
+        "CMCOSmartGunOperatorEquipmentCase"
+      ],
+      "abstract": false,
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Cases/smartgunner_loadouts.yml"
     },
     "CMCartridge10x20mm": {
       "parents": [
@@ -34176,6 +36127,14 @@
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Misc/pamphlets.yml"
     },
+    "CMPelletShotgunBeanbag": {
+      "parents": [
+        "CMPelletShotgunBase"
+      ],
+      "abstract": false,
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/Shotguns/shotgun_pellets.yml"
+    },
     "CMPelletShotgunBuckshot": {
       "parents": [
         "CMPelletShotgunBase"
@@ -34503,6 +36462,14 @@
       "abstract": false,
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Materials/Sheets/metal.yml"
+    },
+    "CMShellShotgunBeanbag": {
+      "parents": [
+        "CMShellShotgunBase"
+      ],
+      "abstract": false,
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/Shotguns/shotgun_handfuls.yml"
     },
     "CMShellShotgunBuckshot": {
       "parents": [
@@ -35243,6 +37210,14 @@
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/Attachments/barrel_attachments.yml"
     },
+    "RMCAttachmentExtendedCompensator": {
+      "parents": [
+        "RMCAttachmentExtendedBarrel"
+      ],
+      "abstract": false,
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/Attachments/barrel_attachments.yml"
+    },
     "RMCAttachmentFlashlightGrip": {
       "parents": [
         "RMCUnderAttachmentBase",
@@ -35351,6 +37326,14 @@
     "RMCAttachmentM63StockCollapsible": {
       "parents": [
         "RMCStockAttachmentCollapsibleBase"
+      ],
+      "abstract": false,
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/Attachments/stock_attachments.yml"
+    },
+    "RMCAttachmentM890Stock": {
+      "parents": [
+        "RMCStockAttachmentBase"
       ],
       "abstract": false,
       "origin": "rmc14",
@@ -36064,6 +38047,14 @@
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/Ammunition/Boxes/magazine_boxes.yml"
     },
+    "RMCBoxShotgunBeanbag": {
+      "parents": [
+        "RMCBoxShotgunBase"
+      ],
+      "abstract": false,
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/Shotguns/shotgun_boxes.yml"
+    },
     "RMCBoxShotgunBuckshot": {
       "parents": [
         "RMCBoxShotgunBase"
@@ -36152,6 +38143,22 @@
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/HMGs/m2c.yml"
     },
+    "RMCBulletMatebaHighImpact": {
+      "parents": [
+        "CMBulletBase"
+      ],
+      "abstract": false,
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/Revolvers/mateba.yml"
+    },
+    "RMCBulletMatebaHighImpactArmorPiercing": {
+      "parents": [
+        "RMCBulletMatebaHighImpact"
+      ],
+      "abstract": false,
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/Revolvers/mateba.yml"
+    },
     "RMCBulletPistol45ACP": {
       "parents": [
         "CMBulletBase"
@@ -36167,6 +38174,22 @@
       "abstract": false,
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/Pistols/m1984_pistol.yml"
+    },
+    "RMCBulletPistolHandcannonHI": {
+      "parents": [
+        "CMBulletBase"
+      ],
+      "abstract": false,
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/Pistols/peregrine_handcannon.yml"
+    },
+    "RMCBulletPistolHandcannonHIAP": {
+      "parents": [
+        "RMCBulletPistolHandcannonHI"
+      ],
+      "abstract": false,
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/Pistols/peregrine_handcannon.yml"
     },
     "RMCBulletRevolver44Marksman": {
       "parents": [
@@ -36312,6 +38335,22 @@
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/Pistols/mk80_pistol.yml"
     },
+    "RMCCartridgePistolHandcannonHI": {
+      "parents": [
+        "CMCartridgePistolBase"
+      ],
+      "abstract": false,
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/Pistols/peregrine_handcannon.yml"
+    },
+    "RMCCartridgePistolHandcannonHIAP": {
+      "parents": [
+        "CMCartridgePistolBase"
+      ],
+      "abstract": false,
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/Pistols/peregrine_handcannon.yml"
+    },
     "RMCCartridgeRevolver44": {
       "parents": [
         "CMCartridgePistolBase"
@@ -36328,6 +38367,22 @@
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/Revolvers/m44_revolver.yml"
     },
+    "RMCCartridgeRevolverMatebaHIAP": {
+      "parents": [
+        "CMCartridgePistolBase"
+      ],
+      "abstract": false,
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/Revolvers/mateba.yml"
+    },
+    "RMCCartridgeRevolverMatebaHighImpact": {
+      "parents": [
+        "CMCartridgePistolBase"
+      ],
+      "abstract": false,
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/Revolvers/mateba.yml"
+    },
     "RMCCartridgeRevolverRsh9": {
       "parents": [
         "CMCartridgePistolBase"
@@ -36335,6 +38390,14 @@
       "abstract": false,
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/Revolvers/rs9.yml"
+    },
+    "RMCCartridgeRifle10x24mmRubber": {
+      "parents": [
+        "CMBaseCartridgeRifle"
+      ],
+      "abstract": false,
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/Ammunition/Magazines/riotammo.yml"
     },
     "RMCCartridgeRifleM4SPRA19": {
       "parents": [
@@ -36391,6 +38454,14 @@
       "abstract": false,
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Cases/gun_cases.yml"
+    },
+    "RMCCeremonialSword": {
+      "parents": [
+        "CMM2132Machete"
+      ],
+      "abstract": false,
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Melee/knife.yml"
     },
     "RMCCigarette": {
       "parents": [
@@ -37937,6 +40008,14 @@
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Fun/crayons.yml"
     },
+    "RMCD50WinterWyvernBeltFilledAmmo": {
+      "parents": [
+        "RMCBeltHolsterPistol"
+      ],
+      "abstract": false,
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Catalog/Fills/Clothing/belt.yml"
+    },
     "RMCDemoSpecEquipmentCase": {
       "parents": [
         "RMCBaseEquipmentCase"
@@ -38788,7 +40867,23 @@
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Cases/gun_cases.yml"
     },
+    "RMCM54CMK1CaseAP": {
+      "parents": [
+        "RMCGunCaseBase"
+      ],
+      "abstract": false,
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Cases/gun_cases.yml"
+    },
     "RMCM54CMK2Case": {
+      "parents": [
+        "RMCGunCaseBase"
+      ],
+      "abstract": false,
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Cases/gun_cases.yml"
+    },
+    "RMCM59ACaseAP": {
       "parents": [
         "RMCGunCaseBase"
       ],
@@ -38970,6 +41065,22 @@
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/HMGs/ml66d.yml"
     },
+    "RMCMagazinePistolHandcannonHI": {
+      "parents": [
+        "CMBaseMagazinePistol"
+      ],
+      "abstract": false,
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/Pistols/peregrine_handcannon.yml"
+    },
+    "RMCMagazinePistolHandcannonHIAP": {
+      "parents": [
+        "CMBaseMagazinePistol"
+      ],
+      "abstract": false,
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/Pistols/peregrine_handcannon.yml"
+    },
     "RMCMagazinePistolM13": {
       "parents": [
         "CMBaseMagazinePistol"
@@ -39033,6 +41144,14 @@
       "abstract": false,
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/Rifles/m4spr_scout_rifle.yml"
+    },
+    "RMCMagazineRifleM54CRubber": {
+      "parents": [
+        "CMMagazineRifleM54C"
+      ],
+      "abstract": false,
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/Ammunition/Magazines/riotammo.yml"
     },
     "RMCMagazineSMGNailgun": {
       "parents": [
@@ -39129,6 +41248,14 @@
       "abstract": false,
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Consumables/Smokeables/matches.yml"
+    },
+    "RMCMatebaBeltFilledAmmo": {
+      "parents": [
+        "RMCMatebaBelt"
+      ],
+      "abstract": false,
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Catalog/Fills/Clothing/belt.yml"
     },
     "RMCMedevacStretcherFolded": {
       "parents": [
@@ -40068,6 +42195,14 @@
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Clothing/Back/satchels.yml"
     },
+    "RMCScabbardCeremonialFilled": {
+      "parents": [
+        "RMCScabbardCeremonial"
+      ],
+      "abstract": false,
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Clothing/Back/scabbards.yml"
+    },
     "RMCScabbardMacheteFilled": {
       "parents": [
         "RMCScabbardMachete"
@@ -40213,6 +42348,14 @@
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Materials/Sheets/plastic.yml"
     },
+    "RMCSmartGunCO": {
+      "parents": [
+        "RMCSmartGunNoCamo"
+      ],
+      "abstract": false,
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/SmartGuns/smart_gun.yml"
+    },
     "RMCSmartGunMounted": {
       "parents": [
         "CMBaseWeaponGun",
@@ -40245,6 +42388,22 @@
       "abstract": false,
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/Revolvers/m44_revolver.yml"
+    },
+    "RMCSpeedLoaderMatebaHIAP": {
+      "parents": [
+        "RMCBaseSpeedLoaderMateba"
+      ],
+      "abstract": false,
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/Revolvers/mateba.yml"
+    },
+    "RMCSpeedLoaderMatebaHighImpact": {
+      "parents": [
+        "RMCBaseSpeedLoaderMateba"
+      ],
+      "abstract": false,
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/Revolvers/mateba.yml"
     },
     "RMCSpeedLoaderRsh9": {
       "parents": [
@@ -40442,6 +42601,14 @@
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Structures/Machines/Vending/Crew/command.yml"
     },
     "RMCVendorBundleXOFormal": {
+      "parents": [
+        "CMVendorBundleRiflemanApparel"
+      ],
+      "abstract": false,
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Structures/Machines/Vending/Crew/command.yml"
+    },
+    "RMCVendorBundleXOShotgun": {
       "parents": [
         "CMVendorBundleRiflemanApparel"
       ],
@@ -40664,6 +42831,23 @@
       "abstract": false,
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/Rifles/m54c_mk1_rifle.yml"
+    },
+    "RMCWeaponRifleM54CMK1AP": {
+      "parents": [
+        "RMCWeaponRifleM54CMK1"
+      ],
+      "abstract": false,
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/Rifles/m54c_mk1_rifle.yml"
+    },
+    "RMCWeaponRifleM59A": {
+      "parents": [
+        "CMBaseWeaponRifle",
+        "RMCBaseWeaponMagazineVisuals"
+      ],
+      "abstract": false,
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/Rifles/m59a_prototype_rifle.yml"
     },
     "RMCWeaponTaser": {
       "parents": [
@@ -41058,6 +43242,15 @@
       "abstract": false,
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/Shotguns/m42a2_shotgun.yml"
+    },
+    "WeaponShotgunM890": {
+      "parents": [
+        "RMCBaseWeaponShotgun",
+        "RMCBaseAttachableHolder"
+      ],
+      "abstract": false,
+      "origin": "rmc14",
+      "sourceFile": "Resources/Prototypes/_RMC14/Entities/Objects/Weapons/Guns/Shotguns/m890_shotgun.yml"
     },
     "WeaponShotgunMOU53": {
       "parents": [
