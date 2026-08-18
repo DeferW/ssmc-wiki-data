@@ -81709,7 +81709,7 @@
       "description": "A secure box holding 25 30mm CCDP Chemical Compound grenades. Highly flammable, don't store near the flamer fuel.",
       "suffix": "",
       "types": [
-        "weapon"
+        "ammunition"
       ],
       "tags": [],
       "componentTypes": [
@@ -81805,13 +81805,13 @@
         "signals": [
           "container:packaging"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие",
+        "categoryId": "ammunition",
+        "category": "Боезапас",
         "automaticCategory": "Другое",
         "automaticCategoryId": "other",
         "overriddenByAdministrator": true
       },
-      "category": "Оружие",
+      "category": "Боезапас",
       "public": true,
       "relationships": [
         {
@@ -189504,7 +189504,6 @@
     ],
     "categories": {
       "Оружие": [
-        "RMCBoxCCDP",
         "RMCWeaponLauncherM5ATL",
         "RMCWeaponLauncherM6HBrute",
         "RMCSmartGunUNMC",
@@ -189548,6 +189547,7 @@
       ],
       "Боезапас": [
         "RMCGrenadeWhitePhosphorusCompound",
+        "RMCBoxCCDP",
         "RMCGrenadeWhitePhosphorus",
         "RMCMortarShellIncendiary",
         "RMCMortarShellHE",
