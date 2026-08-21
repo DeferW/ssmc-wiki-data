@@ -12,7 +12,9 @@ from scripts.maps.core import (
     build_catalog,
     directory_size,
     discover_active_maps,
+    discover_insert_paths,
     package_render,
+    package_insert_renders,
     resource_path,
     write_json,
     write_overlays,
@@ -28,7 +30,9 @@ def main() -> None:
     parser.add_argument("--assets-output", type=Path)
     parser.add_argument("--rendered-input", type=Path)
     parser.add_argument("--render-list-output", type=Path)
+    parser.add_argument("--insert-render-list-output", type=Path)
     parser.add_argument("--discovery-only", action="store_true")
+    parser.add_argument("--rendered-inserts-input", type=Path)
     parser.add_argument("--commit", required=True)
     parser.add_argument("--tile-size", type=int, default=DEFAULT_TILE_SIZE)
     parser.add_argument("--render-scale", type=float, default=DEFAULT_RENDER_SCALE)
@@ -39,6 +43,12 @@ def main() -> None:
     prototypes = read_entity_prototypes(args.game_source)
     resolver = PrototypeResolver(prototypes)
     maps = discover_active_maps(args.game_source, prototypes, resolver)
+    insert_paths = (
+        discover_insert_paths(args.game_source, maps, prototypes, resolver)
+        if args.insert_render_list_output is not None
+        or args.rendered_inserts_input is not None
+        else []
+    )
 
     if args.render_list_output is not None:
         args.render_list_output.parent.mkdir(parents=True, exist_ok=True)
@@ -49,8 +59,18 @@ def main() -> None:
             ),
             encoding="utf-8",
         )
+    if args.insert_render_list_output is not None:
+        args.insert_render_list_output.parent.mkdir(parents=True, exist_ok=True)
+        args.insert_render_list_output.write_text(
+            "".join(
+                str(resource_path(args.game_source, insert_path).resolve()) + "\n"
+                for insert_path in insert_paths
+            ),
+            encoding="utf-8",
+        )
     if args.discovery_only:
         print(f"Discovered active maps: {len(maps)}")
+        print(f"Discovered unique map inserts: {len(insert_paths)}")
         return
     if args.output is None or args.assets_output is None:
         parser.error("--output and --assets-output are required unless --discovery-only is used")
@@ -72,6 +92,15 @@ def main() -> None:
                 scale=args.render_scale,
                 quality=args.webp_quality,
             )
+    if args.rendered_inserts_input is not None:
+        package_insert_renders(
+            args.rendered_inserts_input,
+            args.assets_output,
+            insert_paths,
+            tile_size=args.tile_size,
+            scale=args.render_scale,
+            quality=args.webp_quality,
+        )
 
     assets_bytes = directory_size(args.assets_output, exclude={args.output})
     catalog = build_catalog(maps, args.commit, assets_bytes)

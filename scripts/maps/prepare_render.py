@@ -4,6 +4,8 @@ import argparse
 import re
 from pathlib import Path
 
+from scripts.maps.core import insert_render_key
+
 
 COMPONENT_RE = re.compile(r"^(?P<indent>[ ]*)- type: (?P<type>[^ #\r\n]+)[ ]*(?:#.*)?(?:\r?\n)?$")
 ACTORS_RE = re.compile(r"^(?P<indent>[ ]*)actors:[ ]*(?:#.*)?(?:\r?\n)?$")
@@ -86,7 +88,24 @@ def sanitize_map_text(text: str) -> tuple[str, int]:
     return "".join(result), removed
 
 
-def prepare_render_maps(render_list: Path, output: Path, output_list: Path) -> int:
+def _resource_identifier(source: Path) -> str:
+    parts = source.resolve().parts
+    try:
+        resource_index = next(
+            index for index, part in enumerate(parts) if part.casefold() == "resources"
+        )
+    except StopIteration as error:
+        raise ValueError(f"Render source is outside a Resources directory: {source}") from error
+    return "/" + Path(*parts[resource_index + 1 :]).as_posix()
+
+
+def prepare_render_maps(
+    render_list: Path,
+    output: Path,
+    output_list: Path,
+    *,
+    unique_names: bool = False,
+) -> int:
     sources = [Path(line) for line in render_list.read_text(encoding="utf-8").splitlines() if line]
     output.mkdir(parents=True, exist_ok=True)
     prepared: list[Path] = []
@@ -94,11 +113,16 @@ def prepare_render_maps(render_list: Path, output: Path, output_list: Path) -> i
     removed = 0
 
     for source in sources:
-        name = source.name.casefold()
+        destination_name = (
+            f"{insert_render_key(_resource_identifier(source))}{source.suffix}"
+            if unique_names
+            else source.name
+        )
+        name = destination_name.casefold()
         if name in names:
-            raise ValueError(f"Duplicate map filename in render list: {source.name}")
+            raise ValueError(f"Duplicate prepared map filename: {destination_name}")
         names.add(name)
-        destination = output / source.name
+        destination = output / destination_name
         clean_text, count = sanitize_map_text(source.read_text(encoding="utf-8-sig"))
         destination.write_text(clean_text, encoding="utf-8", newline="")
         prepared.append(destination.resolve())
@@ -114,9 +138,15 @@ def main() -> None:
     parser.add_argument("--render-list", required=True, type=Path)
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--output-list", required=True, type=Path)
+    parser.add_argument("--unique-names", action="store_true")
     args = parser.parse_args()
 
-    removed = prepare_render_maps(args.render_list, args.output, args.output_list)
+    removed = prepare_render_maps(
+        args.render_list,
+        args.output,
+        args.output_list,
+        unique_names=args.unique_names,
+    )
     print(f"Prepared render maps; removed transient UI blocks: {removed}")
 
 

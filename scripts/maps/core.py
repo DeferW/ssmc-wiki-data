@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import math
 import re
@@ -18,7 +19,7 @@ from scripts.common.prototypes import (
 )
 
 SCHEMA_VERSION = 1
-OVERLAY_SCHEMA_VERSION = 2
+OVERLAY_SCHEMA_VERSION = 3
 TILES_SCHEMA_VERSION = 3
 DEFAULT_TILE_SIZE = 512
 DEFAULT_RENDER_SCALE = 1.0
@@ -56,6 +57,12 @@ def map_slug(path: str) -> str:
     if not slug:
         raise RuntimeError(f"Cannot derive a public id from map path: {path}")
     return slug
+
+
+def insert_render_key(path: str) -> str:
+    """Return a stable collision-proof renderer name for an insert map."""
+    digest = hashlib.sha256(path.encode("utf-8")).hexdigest()[:10]
+    return f"{map_slug(path)}-{digest}"
 
 
 def _prototype_documents(root: Path) -> Iterable[dict[str, Any]]:
@@ -420,7 +427,12 @@ def build_overlay(
         insert_occurrences, nested = _extract_occurrences(
             insert_document, prototypes, resolver, registry
         )
-        insert_maps[insert_path] = {"occurrences": insert_occurrences}
+        render_key = insert_render_key(insert_path)
+        insert_maps[insert_path] = {
+            "occurrences": insert_occurrences,
+            "areas": _area_grid(insert_document, prototypes, resolver),
+            "tiles": f"inserts/{render_key}/tiles.json",
+        }
         pending.update(nested - visited)
 
     return {
@@ -431,6 +443,49 @@ def build_overlay(
         "insertMaps": dict(sorted(insert_maps.items())),
         "areas": _area_grid(document, prototypes, resolver),
     }
+
+
+def discover_insert_paths(
+    game_source: Path,
+    maps: list[dict[str, Any]],
+    prototypes: dict[str, EntityPrototype],
+    resolver: PrototypeResolver,
+) -> list[str]:
+    paths: set[str] = set()
+    pending: set[str] = set()
+
+    def collect(document: dict[str, Any]) -> set[str]:
+        result: set[str] = set()
+        for group in document["entities"]:
+            if not isinstance(group, dict):
+                continue
+            prototype_id = group.get("proto")
+            if not isinstance(prototype_id, str) or prototype_id not in prototypes:
+                continue
+            insert = resolver.resolve(prototype_id)["components"].get("MapInsert")
+            if not isinstance(insert, dict):
+                continue
+            variations = insert.get("variations", [])
+            if not isinstance(variations, list):
+                continue
+            for variation in variations:
+                if isinstance(variation, dict) and isinstance(variation.get("spawn"), str):
+                    result.add(variation["spawn"])
+        return result
+
+    for entry in maps:
+        pending.update(collect(_load_map(resource_path(game_source, entry["mapPath"]))))
+    while pending:
+        insert_path = min(pending)
+        pending.remove(insert_path)
+        if insert_path in paths:
+            continue
+        paths.add(insert_path)
+        local_path = resource_path(game_source, insert_path)
+        if not local_path.is_file():
+            raise FileNotFoundError(f"MapInsert does not exist: {insert_path}")
+        pending.update(collect(_load_map(local_path)) - paths)
+    return sorted(paths)
 
 
 def write_json(path: Path, data: Any, *, compact: bool = False) -> None:
@@ -534,17 +589,17 @@ def _save_tiles(
     return levels
 
 
-def package_render(
+def _package_render_tiles(
     rendered_root: Path,
     output_root: Path,
-    entry: dict[str, Any],
+    render_key: str,
+    relative_root: Path,
     *,
     tile_size: int,
     scale: float,
     quality: int,
 ) -> None:
-    short_name = Path(entry["mapPath"]).stem
-    render_root = rendered_root / short_name
+    render_root = rendered_root / render_key
     viewer_path = render_root / "map.json"
     if not viewer_path.is_file():
         raise FileNotFoundError(f"Renderer did not produce viewer data: {viewer_path}")
@@ -553,7 +608,7 @@ def package_render(
     if not isinstance(grids, list) or not grids:
         raise RuntimeError(f"Renderer viewer data has no grids: {viewer_path}")
 
-    map_root = output_root / entry["id"] / "tiles"
+    map_root = output_root / relative_root / "tiles"
     if map_root.exists():
         shutil.rmtree(map_root)
     manifest_grids: list[dict[str, Any]] = []
@@ -606,9 +661,73 @@ def package_render(
         "renderScale": scale,
         "grids": manifest_grids,
     }
-    manifest_path = output_root / entry["id"] / "tiles.json"
+    manifest_path = output_root / relative_root / "tiles.json"
     write_json(manifest_path, manifest, compact=True)
+
+
+def package_render(
+    rendered_root: Path,
+    output_root: Path,
+    entry: dict[str, Any],
+    *,
+    tile_size: int,
+    scale: float,
+    quality: int,
+) -> None:
+    _package_render_tiles(
+        rendered_root,
+        output_root,
+        Path(entry["mapPath"]).stem,
+        Path(entry["id"]),
+        tile_size=tile_size,
+        scale=scale,
+        quality=quality,
+    )
     entry["tiles"] = (Path(entry["id"]) / "tiles.json").as_posix()
+
+
+def package_insert_render(
+    rendered_root: Path,
+    output_root: Path,
+    insert_path: str,
+    *,
+    tile_size: int,
+    scale: float,
+    quality: int,
+) -> None:
+    render_key = insert_render_key(insert_path)
+    _package_render_tiles(
+        rendered_root,
+        output_root,
+        render_key,
+        Path("inserts") / render_key,
+        tile_size=tile_size,
+        scale=scale,
+        quality=quality,
+    )
+
+
+def package_insert_renders(
+    rendered_root: Path,
+    output_root: Path,
+    insert_paths: list[str],
+    *,
+    tile_size: int,
+    scale: float,
+    quality: int,
+) -> None:
+    insert_root = output_root / "inserts"
+    if insert_root.exists():
+        shutil.rmtree(insert_root)
+    for insert_path in insert_paths:
+        package_insert_render(
+            rendered_root,
+            output_root,
+            insert_path,
+            tile_size=tile_size,
+            scale=scale,
+            quality=quality,
+        )
 
 
 def directory_size(path: Path, *, exclude: set[Path] | None = None) -> int:

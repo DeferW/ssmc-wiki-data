@@ -11,6 +11,8 @@ from scripts.maps.core import (
     _save_tiles,
     build_overlay,
     discover_active_maps,
+    insert_render_key,
+    package_insert_render,
     package_render,
     parse_vector,
 )
@@ -155,7 +157,10 @@ def test_overlay_keeps_spawner_locations_options_and_insert_markers(tmp_path: Pa
     )
     assert overlay["occurrences"]["Loot"] == [[1.5, 2.5, 0.0, 7]]
     assert overlay["prototypes"]["Loot"]["components"]["RandomSpawner"]["prototypes"] == ["A", "B"]
-    assert overlay["insertMaps"]["/Maps/_Stories/Inserts/new.yml"]["occurrences"]["Loot"] == [[5.0, 6.0]]
+    insert = overlay["insertMaps"]["/Maps/_Stories/Inserts/new.yml"]
+    assert insert["occurrences"]["Loot"] == [[5.0, 6.0]]
+    assert insert["tiles"].startswith("inserts/new-")
+    assert insert["tiles"].endswith("/tiles.json")
 
 
 def test_overlay_compacts_area_support_into_row_runs(tmp_path: Path):
@@ -234,7 +239,7 @@ def test_overlay_compacts_area_support_into_row_runs(tmp_path: Path):
         PrototypeResolver(prototypes),
     )
 
-    assert overlay["schemaVersion"] == 2
+    assert overlay["schemaVersion"] == 3
     assert overlay["areas"] == {
         "types": [
             ["AreaInside", "Medical", 129],
@@ -283,6 +288,31 @@ def test_package_render_keeps_renderer_world_bounds(tmp_path: Path):
     package_render(rendered, output, entry, tile_size=512, scale=1, quality=82)
     manifest = json.loads((output / "test/tiles.json").read_text(encoding="utf-8"))
     assert manifest["grids"][0]["worldMin"] == {"X": -50, "Y": -125}
+
+
+def test_package_insert_render_uses_stable_public_path(tmp_path: Path):
+    insert_path = "/Maps/_RMC14/Inserts/Test/room.yml"
+    render_key = insert_render_key(insert_path)
+    rendered = tmp_path / "rendered"
+    render_root = rendered / render_key
+    render_root.mkdir(parents=True)
+    Image.new("RGBA", (32, 32), (255, 0, 0, 255)).save(render_root / "grid.webp")
+    (render_root / "map.json").write_text(
+        json.dumps({"Grids": [{"Url": f"{render_key}/grid.webp"}]}),
+        encoding="utf-8",
+    )
+
+    output = tmp_path / "output"
+    package_insert_render(
+        rendered,
+        output,
+        insert_path,
+        tile_size=512,
+        scale=1,
+        quality=82,
+    )
+
+    assert (output / "inserts" / render_key / "tiles.json").is_file()
 
 
 def test_parse_vector_rejects_bad_values():
@@ -339,3 +369,21 @@ def test_prepare_render_maps_keeps_renderer_filenames(tmp_path: Path):
     prepared = Path((tmp_path / "prepared-list.txt").read_text(encoding="utf-8").strip())
     assert prepared.name == "almayer.yml"
     assert prepared.read_text(encoding="utf-8") == "entities: []\n"
+
+
+def test_prepare_render_maps_gives_inserts_unique_stable_names(tmp_path: Path):
+    source = tmp_path / "game" / "Resources" / "Maps" / "_RMC14" / "Inserts" / "Test" / "room.yml"
+    source.parent.mkdir(parents=True)
+    source.write_text("entities: []\n", encoding="utf-8")
+    render_list = tmp_path / "insert-render-list.txt"
+    render_list.write_text(f"{source}\n", encoding="utf-8")
+
+    prepare_render_maps(
+        render_list,
+        tmp_path / "prepared",
+        tmp_path / "prepared-list.txt",
+        unique_names=True,
+    )
+
+    prepared = Path((tmp_path / "prepared-list.txt").read_text(encoding="utf-8").strip())
+    assert prepared.name == f"{insert_render_key('/Maps/_RMC14/Inserts/Test/room.yml')}.yml"
