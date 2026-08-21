@@ -47,9 +47,11 @@ jobs:
         run: python3 -m pip install -r requirements.txt
 
       - name: Discover active SSMC maps
+        id: game-source
         run: |
           GAME_COMMIT=$(git -C game-source rev-parse HEAD)
           echo "GAME_COMMIT=$GAME_COMMIT" >> "$GITHUB_ENV"
+          echo "commit=$GAME_COMMIT" >> "$GITHUB_OUTPUT"
 
           python3 -m scripts.maps.build \
             --game-source game-source \
@@ -72,7 +74,7 @@ jobs:
         uses: actions/cache/restore@v5
         with:
           path: rendered-maps
-          key: raw-map-renders-v3-${{ runner.os }}-${{ env.GAME_COMMIT }}-${{ hashFiles('scripts/maps/prepare_render.py', 'scripts/maps/renderer-world-bounds.patch') }}
+          key: raw-map-renders-v3-${{ runner.os }}-${{ steps.game-source.outputs.commit }}-${{ hashFiles('scripts/maps/prepare_render.py', 'scripts/maps/renderer-world-bounds.patch') }}
 
       - name: Render maps with the game renderer
         if: steps.rendered-map-cache.outputs.cache-hit != 'true'
@@ -120,7 +122,7 @@ jobs:
         uses: actions/cache/save@v5
         with:
           path: rendered-maps
-          key: raw-map-renders-v3-${{ runner.os }}-${{ env.GAME_COMMIT }}-${{ hashFiles('scripts/maps/prepare_render.py', 'scripts/maps/renderer-world-bounds.patch') }}
+          key: raw-map-renders-v3-${{ runner.os }}-${{ steps.game-source.outputs.commit }}-${{ hashFiles('scripts/maps/prepare_render.py', 'scripts/maps/renderer-world-bounds.patch') }}
 
       - name: Build compact overlays and lazy tile pyramids
         run: |
@@ -153,5 +155,9 @@ jobs:
             echo "Nothing changed"
           else
             git commit -m "Build map data"
-            git push
+            # A manual commit can land while the expensive renderer is running.
+            # Replay generated data on the current branch tip instead of losing
+            # the completed build to a non-fast-forward push rejection.
+            git pull --rebase origin "$GITHUB_REF_NAME"
+            git push origin "HEAD:$GITHUB_REF_NAME"
           fi
