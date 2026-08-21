@@ -137598,6 +137598,7 @@
             "collection": "GenericHit"
           }
         },
+        "Overheat": {},
         "RMCSelectiveFire": {
           "baseFireModes": [
             "FullAuto"
@@ -137718,6 +137719,17 @@
             "shotsToMaxScatter": 125
           }
         },
+        "overheat": {
+          "maxHeat": 40,
+          "heatPerShot": 1,
+          "cooldownRate": 2,
+          "emergencyCooldownMultiplier": 0.375,
+          "emergencyCooldownDelaySeconds": 1,
+          "damage": {
+            "Heat": 30
+          },
+          "shotsToOverheatFromCold": 40
+        },
         "ammoProvider": {
           "type": "MagazineAmmoProvider"
         },
@@ -137772,18 +137784,7 @@
               }
             ]
           }
-        ],
-        "overheat": {
-          "maxHeat": 40,
-          "heatPerShot": 1,
-          "cooldownRate": 2,
-          "emergencyCooldownMultiplier": 0.375,
-          "emergencyCooldownDelaySeconds": 1,
-          "damage": {
-            "Heat": 30
-          },
-          "shotsToOverheatFromCold": 40
-        }
+        ]
       },
       "image": "sprites/RMCMachineGunM2C.png"
     },
@@ -162153,6 +162154,25 @@
             "shotsToMaxScatter": 80
           }
         },
+        "ammoModes": [
+          {
+            "id": "0",
+            "nameId": "rmc-toggleable-ammo-highly-precise",
+            "damage": {
+              "Piercing": 30
+            },
+            "armorPiercing": 0
+          },
+          {
+            "id": "1",
+            "nameId": "rmc-toggleable-ammo-armor-shredding",
+            "damage": {
+              "Piercing": 20
+            },
+            "armorPiercing": 40
+          }
+        ],
+        "defaultAmmoModeIndex": 0,
         "ammoProvider": {
           "type": "MagazineAmmoProvider"
         },
@@ -162205,26 +162225,7 @@
             "ammoId": "RMCPowerCellSmartgun",
             "ammoName": "Аккумулятор для умного оружия M56"
           }
-        ],
-        "ammoModes": [
-          {
-            "id": "0",
-            "nameId": "rmc-toggleable-ammo-highly-precise",
-            "damage": {
-              "Piercing": 30
-            },
-            "armorPiercing": 0
-          },
-          {
-            "id": "1",
-            "nameId": "rmc-toggleable-ammo-armor-shredding",
-            "damage": {
-              "Piercing": 20
-            },
-            "armorPiercing": 40
-          }
-        ],
-        "defaultAmmoModeIndex": 0
+        ]
       },
       "image": "sprites/RMCSmartGunCO.png"
     },
@@ -162915,6 +162916,25 @@
             "shotsToMaxScatter": 80
           }
         },
+        "ammoModes": [
+          {
+            "id": "0",
+            "nameId": "rmc-toggleable-ammo-highly-precise",
+            "damage": {
+              "Piercing": 30
+            },
+            "armorPiercing": 0
+          },
+          {
+            "id": "1",
+            "nameId": "rmc-toggleable-ammo-armor-shredding",
+            "damage": {
+              "Piercing": 20
+            },
+            "armorPiercing": 40
+          }
+        ],
+        "defaultAmmoModeIndex": 0,
         "ammoProvider": {
           "type": "MagazineAmmoProvider"
         },
@@ -162967,26 +162987,7 @@
             "ammoId": "RMCPowerCellSmartgun",
             "ammoName": "Аккумулятор для умного оружия M56"
           }
-        ],
-        "ammoModes": [
-          {
-            "id": "0",
-            "nameId": "rmc-toggleable-ammo-highly-precise",
-            "damage": {
-              "Piercing": 30
-            },
-            "armorPiercing": 0
-          },
-          {
-            "id": "1",
-            "nameId": "rmc-toggleable-ammo-armor-shredding",
-            "damage": {
-              "Piercing": 20
-            },
-            "armorPiercing": 40
-          }
-        ],
-        "defaultAmmoModeIndex": 0
+        ]
       },
       "image": "sprites/RMCSmartGunUNMC.png"
     },
