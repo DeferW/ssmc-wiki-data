@@ -13,7 +13,8 @@
         "STAlmayer",
         "STAlmayerLowPop"
       ],
-      "overlay": "almayer/overlay.json"
+      "overlay": "almayer/overlay.json",
+      "tiles": "almayer/tiles.json"
     },
     {
       "id": "arctic-valley",
@@ -25,7 +26,8 @@
         "RMCPlanetArcticValley"
       ],
       "camouflage": "Snow",
-      "overlay": "arctic-valley/overlay.json"
+      "overlay": "arctic-valley/overlay.json",
+      "tiles": "arctic-valley/tiles.json"
     },
     {
       "id": "corsat",
@@ -37,7 +39,8 @@
         "RMCPlanetCorsat"
       ],
       "camouflage": "Classic",
-      "overlay": "corsat/overlay.json"
+      "overlay": "corsat/overlay.json",
+      "tiles": "corsat/tiles.json"
     },
     {
       "id": "jungle-delta",
@@ -49,7 +52,8 @@
         "RMCPlanetJungleDelta"
       ],
       "camouflage": "Jungle",
-      "overlay": "jungle-delta/overlay.json"
+      "overlay": "jungle-delta/overlay.json",
+      "tiles": "jungle-delta/tiles.json"
     },
     {
       "id": "chances",
@@ -72,7 +76,8 @@
         "CMPaperBin20": "CMPaperBin5",
         "CMPaperBin10": "CMPaperBin5"
       },
-      "overlay": "chances/overlay.json"
+      "overlay": "chances/overlay.json",
+      "tiles": "chances/tiles.json"
     },
     {
       "id": "lv624",
@@ -105,7 +110,8 @@
         "CMPaperBin20": "CMPaperBin5",
         "CMPaperBin10": "CMPaperBin5"
       },
-      "overlay": "lv624/overlay.json"
+      "overlay": "lv624/overlay.json",
+      "tiles": "lv624/tiles.json"
     },
     {
       "id": "hybrisa-greenshift",
@@ -117,7 +123,8 @@
         "RMCPlanetHybrisaRepaired"
       ],
       "camouflage": "Urban",
-      "overlay": "hybrisa-greenshift/overlay.json"
+      "overlay": "hybrisa-greenshift/overlay.json",
+      "tiles": "hybrisa-greenshift/tiles.json"
     },
     {
       "id": "hybrisa",
@@ -151,7 +158,8 @@
         "CMPaperBin20": "CMPaperBin5",
         "CMPaperBin10": "CMPaperBin5"
       },
-      "overlay": "hybrisa/overlay.json"
+      "overlay": "hybrisa/overlay.json",
+      "tiles": "hybrisa/tiles.json"
     },
     {
       "id": "sorokyne-repaired",
@@ -163,7 +171,8 @@
         "RMCPlanetSorokyneRepaired"
       ],
       "camouflage": "Jungle",
-      "overlay": "sorokyne-repaired/overlay.json"
+      "overlay": "sorokyne-repaired/overlay.json",
+      "tiles": "sorokyne-repaired/tiles.json"
     },
     {
       "id": "sorokyne",
@@ -197,7 +206,8 @@
         "CMPaperBin20": "CMPaperBin5",
         "CMPaperBin10": "CMPaperBin5"
       },
-      "overlay": "sorokyne/overlay.json"
+      "overlay": "sorokyne/overlay.json",
+      "tiles": "sorokyne/tiles.json"
     },
     {
       "id": "trijent",
@@ -231,7 +241,8 @@
         "CMPaperBin20": "CMPaperBin5",
         "CMPaperBin10": "CMPaperBin5"
       },
-      "overlay": "trijent/overlay.json"
+      "overlay": "trijent/overlay.json",
+      "tiles": "trijent/tiles.json"
     },
     {
       "id": "prison",
@@ -265,7 +276,8 @@
         "CMPaperBin20": "CMPaperBin5",
         "CMPaperBin10": "CMPaperBin5"
       },
-      "overlay": "prison/overlay.json"
+      "overlay": "prison/overlay.json",
+      "tiles": "prison/tiles.json"
     },
     {
       "id": "varadero",
@@ -294,7 +306,8 @@
         "CMPaperBin20": "CMPaperBin5",
         "CMPaperBin10": "CMPaperBin5"
       },
-      "overlay": "varadero/overlay.json"
+      "overlay": "varadero/overlay.json",
+      "tiles": "varadero/tiles.json"
     },
     {
       "id": "kutjevo",
@@ -323,7 +336,8 @@
         "CMPaperBin20": "CMPaperBin5",
         "CMPaperBin10": "CMPaperBin5"
       },
-      "overlay": "kutjevo/overlay.json"
+      "overlay": "kutjevo/overlay.json",
+      "tiles": "kutjevo/tiles.json"
     },
     {
       "id": "shiva",
@@ -356,7 +370,8 @@
         "CMPaperBin20": "CMPaperBin5",
         "CMPaperBin10": "CMPaperBin5"
       },
-      "overlay": "shiva/overlay.json"
+      "overlay": "shiva/overlay.json",
+      "tiles": "shiva/tiles.json"
     },
     {
       "id": "solaris",
@@ -389,13 +404,14 @@
         "CMPaperBin20": "CMPaperBin5",
         "CMPaperBin10": "CMPaperBin5"
       },
-      "overlay": "solaris/overlay.json"
+      "overlay": "solaris/overlay.json",
+      "tiles": "solaris/tiles.json"
     }
   ],
   "counts": {
     "maps": 16,
     "ships": 1,
     "planets": 15,
-    "assetBytes": 522702
+    "assetBytes": 133147198
   }
 }
