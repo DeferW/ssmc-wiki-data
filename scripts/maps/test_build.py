@@ -126,6 +126,7 @@ def test_tile_pyramid_is_sparse_and_webp(tmp_path: Path):
             image.putpixel((x, y), (255, 0, 0, 255))
     levels = _save_tiles(image, tmp_path, tile_size=512, quality=80)
     assert [level["z"] for level in levels] == [0, 1]
+    assert [level["lossless"] for level in levels] == [False, True]
     assert levels[1]["tiles"] == [[0, 0]]
     with Image.open(tmp_path / "1/0-0.webp") as tile:
         assert tile.format == "WEBP"

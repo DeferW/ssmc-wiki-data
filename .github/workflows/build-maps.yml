@@ -64,7 +64,15 @@ jobs:
             --output render-input \
             --output-list prepared-render-list.txt
 
+      - name: Restore unchanged raw map renders
+        id: rendered-map-cache
+        uses: actions/cache/restore@v5
+        with:
+          path: rendered-maps
+          key: raw-map-renders-v1-${{ runner.os }}-${{ env.GAME_COMMIT }}-${{ hashFiles('scripts/maps/prepare_render.py') }}
+
       - name: Render maps with the game renderer
+        if: steps.rendered-map-cache.outputs.cache-hit != 'true'
         working-directory: game-source
         run: |
           mapfile -t MAP_FILES < ../prepared-render-list.txt
@@ -102,6 +110,15 @@ jobs:
             fi
           fi
 
+      # Save before packaging so a size/encoding failure does not force the
+      # expensive game renderer to repeat unchanged work on the next run.
+      - name: Save raw map renders
+        if: steps.rendered-map-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v5
+        with:
+          path: rendered-maps
+          key: raw-map-renders-v1-${{ runner.os }}-${{ env.GAME_COMMIT }}-${{ hashFiles('scripts/maps/prepare_render.py') }}
+
       - name: Build compact overlays and lazy tile pyramids
         run: |
           python3 -m scripts.maps.build \
@@ -110,17 +127,17 @@ jobs:
             --output data/maps/catalog.json \
             --assets-output data/maps \
             --commit "$GAME_COMMIT" \
-            --render-scale 0.5 \
+            --render-scale 1 \
             --tile-size 512 \
             --webp-quality 82 \
-            --max-assets-bytes 26214400
+            --max-assets-bytes 536870912
 
       - name: Validate map data and size budget
         run: |
           python3 -m scripts.maps.validate \
             --catalog data/maps/catalog.json \
             --assets data/maps \
-            --max-assets-bytes 26214400
+            --max-assets-bytes 536870912
 
       - name: Save map data
         run: |

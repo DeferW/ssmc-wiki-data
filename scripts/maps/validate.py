@@ -7,7 +7,12 @@ from typing import Any
 
 from PIL import Image
 
-from scripts.maps.core import OVERLAY_SCHEMA_VERSION, SCHEMA_VERSION, TILES_SCHEMA_VERSION
+from scripts.maps.core import (
+    DEFAULT_MAX_ASSET_BYTES,
+    OVERLAY_SCHEMA_VERSION,
+    SCHEMA_VERSION,
+    TILES_SCHEMA_VERSION,
+)
 
 
 def read_json(path: Path) -> Any:
@@ -70,6 +75,10 @@ def validate(catalog_path: Path, assets_root: Path, max_assets_bytes: int) -> No
         manifest = read_json(manifest_path)
         if manifest.get("schemaVersion") != TILES_SCHEMA_VERSION:
             raise RuntimeError(f"Invalid tile schema: {map_id}")
+        if manifest.get("renderScale") != 1:
+            raise RuntimeError(f"Map is not published at native resolution: {map_id}")
+        if manifest.get("maxZoomLossless") is not True:
+            raise RuntimeError(f"Map maximum zoom is not lossless: {map_id}")
         tile_size = manifest.get("tileSize")
         if not isinstance(tile_size, int) or tile_size < 128:
             raise RuntimeError(f"Invalid tile size: {map_id}")
@@ -77,7 +86,10 @@ def validate(catalog_path: Path, assets_root: Path, max_assets_bytes: int) -> No
             pattern = grid.get("path")
             if not isinstance(pattern, str):
                 raise RuntimeError(f"Grid has no tile pattern: {map_id}")
-            for level in grid.get("levels", []):
+            levels = grid.get("levels", [])
+            if not levels or levels[-1].get("lossless") is not True:
+                raise RuntimeError(f"Map maximum tile level is not lossless: {map_id}")
+            for level in levels:
                 zoom = level.get("z")
                 for coordinate in level.get("tiles", []):
                     x, y = coordinate
@@ -126,7 +138,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Validate the SSMC map dataset")
     parser.add_argument("--catalog", required=True, type=Path)
     parser.add_argument("--assets", required=True, type=Path)
-    parser.add_argument("--max-assets-bytes", type=int, default=25 * 1024 * 1024)
+    parser.add_argument("--max-assets-bytes", type=int, default=DEFAULT_MAX_ASSET_BYTES)
     args = parser.parse_args()
     validate(args.catalog, args.assets, args.max_assets_bytes)
 

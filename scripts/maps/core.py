@@ -21,9 +21,9 @@ SCHEMA_VERSION = 1
 OVERLAY_SCHEMA_VERSION = 1
 TILES_SCHEMA_VERSION = 1
 DEFAULT_TILE_SIZE = 512
-DEFAULT_RENDER_SCALE = 0.5
+DEFAULT_RENDER_SCALE = 1.0
 DEFAULT_WEBP_QUALITY = 82
-DEFAULT_MAX_ASSET_BYTES = 25 * 1024 * 1024
+DEFAULT_MAX_ASSET_BYTES = 512 * 1024 * 1024
 
 
 def resource_path(game_source: Path, path: str) -> Path:
@@ -381,6 +381,7 @@ def _save_tiles(
     levels: list[dict[str, Any]] = []
     for zoom in range(max_zoom + 1):
         divisor = 2 ** (max_zoom - zoom)
+        lossless = zoom == max_zoom
         size = _level_size(image.width, image.height, divisor)
         level_image = image if divisor == 1 else image.resize(size, Image.Resampling.NEAREST)
         present: list[list[int]] = []
@@ -397,17 +398,21 @@ def _save_tiles(
                 )
                 tile = level_image.crop(box)
                 alpha = tile.getchannel("A")
-                if alpha.getbbox() is None:
+                is_empty = alpha.getbbox() is None
+                alpha.close()
+                if is_empty:
+                    tile.close()
                     continue
                 level_root.mkdir(parents=True, exist_ok=True)
                 tile.save(
                     level_root / f"{x}-{y}.webp",
                     "WEBP",
                     quality=quality,
-                    method=6,
-                    lossless=False,
+                    method=4 if lossless else 6,
+                    lossless=lossless,
                     exact=True,
                 )
+                tile.close()
                 present.append([x, y])
         if level_image is not image:
             level_image.close()
@@ -418,6 +423,7 @@ def _save_tiles(
                 "height": size[1],
                 "columns": columns,
                 "rows": rows,
+                "lossless": lossless,
                 "tiles": present,
             }
         )
@@ -464,11 +470,16 @@ def package_render(
                 max(1, round(rgba.width * scale)),
                 max(1, round(rgba.height * scale)),
             )
-            scaled = rgba.resize(scaled_size, Image.Resampling.NEAREST)
+            scaled = (
+                rgba
+                if scaled_size == rgba.size
+                else rgba.resize(scaled_size, Image.Resampling.NEAREST)
+            )
             levels = _save_tiles(
                 scaled, map_root / f"g{index}", tile_size, quality
             )
-            scaled.close()
+            if scaled is not rgba:
+                scaled.close()
             rgba.close()
         manifest_grids.append(
             {
@@ -486,6 +497,7 @@ def package_render(
         "tileSize": tile_size,
         "format": "webp",
         "quality": quality,
+        "maxZoomLossless": True,
         "renderScale": scale,
         "grids": manifest_grids,
     }

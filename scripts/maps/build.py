@@ -56,8 +56,8 @@ def main() -> None:
         parser.error("--output and --assets-output are required unless --discovery-only is used")
     if args.tile_size < 128 or args.tile_size > 2048:
         parser.error("--tile-size must be between 128 and 2048")
-    if not 0 < args.render_scale <= 1:
-        parser.error("--render-scale must be greater than 0 and at most 1")
+    if args.render_scale != 1:
+        parser.error("--render-scale must be 1; published maps preserve native resolution")
     if not 1 <= args.webp_quality <= 100:
         parser.error("--webp-quality must be between 1 and 100")
 
