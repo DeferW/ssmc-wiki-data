@@ -58,3 +58,31 @@ index c460853..4f02eaf 100644
      public EntityUid? GridUid { get; set; }
  
      public RenderedGridImage(Image<T> image)
+diff --git a/Content.MapRenderer/Painters/EntityPainter.cs b/Content.MapRenderer/Painters/EntityPainter.cs
+--- a/Content.MapRenderer/Painters/EntityPainter.cs
++++ b/Content.MapRenderer/Painters/EntityPainter.cs
+@@ -140,7 +140,7 @@ public void Run(Image canvas, EntityData entity, SharedTransformSystem xformSyst
+             var (imgX, imgY) = rsi?.Size ?? (EyeManager.PixelsPerMeter, EyeManager.PixelsPerMeter);
+             var offsetX = (int)(entity.Sprite.Offset.X + customOffset.X) * EyeManager.PixelsPerMeter;
+-            var offsetY = (int)(entity.Sprite.Offset.Y + customOffset.X) * EyeManager.PixelsPerMeter;
++            var offsetY = (int)(entity.Sprite.Offset.Y + customOffset.Y) * EyeManager.PixelsPerMeter;
+             image.Mutate(o => o
+                 .DrawImage(coloredImage, PixelColorBlendingMode.Multiply, PixelAlphaCompositionMode.SrcAtop, 1)
+                 .Resize(imgX, imgY)
+                 .Flip(FlipMode.Vertical)
+diff --git a/Content.MapRenderer/Program.cs b/Content.MapRenderer/Program.cs
+index 9d7843bcd0..729ab65706 100644
+--- a/Content.MapRenderer/Program.cs
++++ b/Content.MapRenderer/Program.cs
+@@ -222,7 +222,10 @@ private static async Task Run(
+                             case OutputFormat.webp:
+                                 var encoder = new WebpEncoder
+                                 {
+-                                    Method = WebpEncodingMethod.BestQuality,
++                                    // This full image is an intermediate input for the tile packager.
++                                    // Lossless preserves identical pixels; fastest avoids spending minutes
++                                    // optimizing a file that will immediately be decoded again.
++                                    Method = WebpEncodingMethod.Fastest,
+                                     FileFormat = WebpFileFormatType.Lossless,
+                                     TransparentColorMode = WebpTransparentColorMode.Preserve
+                                 };

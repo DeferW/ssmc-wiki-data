@@ -19,11 +19,12 @@ from scripts.common.prototypes import (
 
 SCHEMA_VERSION = 1
 OVERLAY_SCHEMA_VERSION = 1
-TILES_SCHEMA_VERSION = 2
+TILES_SCHEMA_VERSION = 3
 DEFAULT_TILE_SIZE = 512
 DEFAULT_RENDER_SCALE = 1.0
 DEFAULT_WEBP_QUALITY = 82
 DEFAULT_MAX_ASSET_BYTES = 512 * 1024 * 1024
+STORIES_SHIP_PROTOTYPE_ID = "STAlmayer"
 
 
 def resource_path(game_source: Path, path: str) -> Path:
@@ -52,44 +53,35 @@ def _prototype_documents(root: Path) -> Iterable[dict[str, Any]]:
         yield from iter_prototype_documents(path)
 
 
-def _stories_game_maps(game_source: Path) -> list[dict[str, Any]]:
+def _stories_ship_maps(game_source: Path) -> list[dict[str, Any]]:
     root = game_source / "Resources/Prototypes/_Stories"
     if not root.is_dir():
         raise FileNotFoundError(f"Missing SSMC prototype directory: {root}")
 
     game_maps: dict[str, dict[str, Any]] = {}
-    pooled_ids: set[str] = set()
     for raw in _prototype_documents(root):
         if raw.get("type") == "gameMap" and isinstance(raw.get("id"), str):
             game_maps[raw["id"]] = raw
-        elif raw.get("type") == "gameMapPool":
-            maps = raw.get("maps", [])
-            if isinstance(maps, list):
-                pooled_ids.update(value for value in maps if isinstance(value, str))
 
-    by_path: dict[str, dict[str, Any]] = {}
-    for prototype_id in sorted(pooled_ids):
-        raw = game_maps.get(prototype_id)
-        if raw is None:
-            raise RuntimeError(f"SSMC map pool references unknown gameMap: {prototype_id}")
-        path = raw.get("mapPath")
-        if not isinstance(path, str) or not path.startswith("/Maps/_Stories/"):
-            raise RuntimeError(
-                f"SSMC gameMap {prototype_id} must point to /Maps/_Stories/: {path!r}"
-            )
-        entry = by_path.setdefault(
-            path,
-            {
-                "id": map_slug(path),
-                "name": str(raw.get("mapName") or prototype_id),
-                "kind": "ship",
-                "mapPath": path,
-                "origin": map_origin(path),
-                "sourcePrototypeIds": [],
-            },
+    prototype_id = STORIES_SHIP_PROTOTYPE_ID
+    raw = game_maps.get(prototype_id)
+    if raw is None:
+        raise RuntimeError(f"Missing required SSMC ship gameMap: {prototype_id}")
+    path = raw.get("mapPath")
+    if not isinstance(path, str) or not path.startswith("/Maps/_Stories/"):
+        raise RuntimeError(
+            f"SSMC gameMap {prototype_id} must point to /Maps/_Stories/: {path!r}"
         )
-        entry["sourcePrototypeIds"].append(prototype_id)
-    return list(by_path.values())
+    return [
+        {
+            "id": map_slug(path),
+            "name": str(raw.get("mapName") or prototype_id),
+            "kind": "ship",
+            "mapPath": path,
+            "origin": map_origin(path),
+            "sourcePrototypeIds": [prototype_id],
+        }
+    ]
 
 
 def discover_active_maps(
@@ -97,14 +89,14 @@ def discover_active_maps(
     prototypes: dict[str, EntityPrototype],
     resolver: PrototypeResolver,
 ) -> list[dict[str, Any]]:
-    """Discover maps reachable from SSMC pools and live planet prototypes.
+    """Discover the Almayer and live planets enabled for map rotation.
 
-    The directory name is deliberately not used to decide whether a colony is
-    active. SSMC currently references several updated maps under ``_RMC14``;
-    the live RMCPlanetMapPrototype component is the source of truth.
+    Planet names and paths are deliberately not hard-coded. The resolved
+    RMCPlanetMapPrototype component is the source of truth, including inherited
+    ``inRotation`` values; the game's component default is true when omitted.
     """
 
-    maps = _stories_game_maps(game_source)
+    maps = _stories_ship_maps(game_source)
     paths = {entry["mapPath"] for entry in maps}
 
     for prototype_id in sorted(prototypes):
@@ -114,6 +106,13 @@ def discover_active_maps(
         resolved = resolver.resolve(prototype_id)
         planet = resolved["components"].get("RMCPlanetMapPrototype")
         if not isinstance(planet, dict):
+            continue
+        in_rotation = planet.get("inRotation", True)
+        if not isinstance(in_rotation, bool):
+            raise RuntimeError(
+                f"Planet {prototype_id} has invalid inRotation value: {in_rotation!r}"
+            )
+        if not in_rotation:
             continue
         path = planet.get("map")
         if not isinstance(path, str) or not path.startswith("/Maps/"):

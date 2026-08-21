@@ -42,29 +42,66 @@ def write_yaml(path: Path, data: object) -> None:
     path.write_text(yaml.safe_dump(data, sort_keys=False), encoding="utf-8")
 
 
-def test_discovery_uses_stories_ship_and_live_planet_path(tmp_path: Path):
+def test_discovery_uses_almayer_and_only_planets_in_rotation(tmp_path: Path):
     write_yaml(
         tmp_path / "Resources/Prototypes/_Stories/Maps/maps.yml",
         [
-            {"type": "gameMap", "id": "STShip", "mapName": "Ship", "mapPath": "/Maps/_Stories/ship.yml"},
-            {"type": "gameMapPool", "id": "STPool", "maps": ["STShip"]},
+            {"type": "gameMap", "id": "STAlmayer", "mapName": "Almayer", "mapPath": "/Maps/_Stories/almayer.yml"},
+            {"type": "gameMap", "id": "STAlmayerLowPop", "mapName": "Almayer LowPop", "mapPath": "/Maps/_Stories/almayer.yml"},
+            {"type": "gameMap", "id": "STOtherShip", "mapName": "Other", "mapPath": "/Maps/_Stories/other.yml"},
+            {"type": "gameMapPool", "id": "STPool", "maps": ["STAlmayer", "STOtherShip"]},
         ],
     )
-    write_yaml(tmp_path / "Resources/Maps/_Stories/ship.yml", {"entities": []})
+    write_yaml(tmp_path / "Resources/Maps/_Stories/almayer.yml", {"entities": []})
+    write_yaml(tmp_path / "Resources/Maps/_Stories/other.yml", {"entities": []})
     write_yaml(tmp_path / "Resources/Maps/_RMC14/planet.yml", {"entities": []})
-    write_yaml(tmp_path / "Resources/Maps/_RMC14/old_ship.yml", {"entities": []})
+    write_yaml(tmp_path / "Resources/Maps/_RMC14/pve.yml", {"entities": []})
     prototypes = {
         "RMCPlanet": make_prototype(
             "RMCPlanet",
             components=({"type": "RMCPlanetMapPrototype", "map": "/Maps/_RMC14/planet.yml"},),
             fields={"name": "Planet"},
-        )
+        ),
+        "RMCPvePlanet": make_prototype(
+            "RMCPvePlanet",
+            components=({"type": "RMCPlanetMapPrototype", "map": "/Maps/_RMC14/pve.yml", "inRotation": False},),
+            fields={"name": "PVE Planet"},
+        ),
     }
     maps = discover_active_maps(tmp_path, prototypes, PrototypeResolver(prototypes))
     assert [entry["mapPath"] for entry in maps] == [
-        "/Maps/_Stories/ship.yml",
+        "/Maps/_Stories/almayer.yml",
         "/Maps/_RMC14/planet.yml",
     ]
+    assert maps[0]["sourcePrototypeIds"] == ["STAlmayer"]
+
+
+def test_discovery_respects_inherited_in_rotation(tmp_path: Path):
+    write_yaml(
+        tmp_path / "Resources/Prototypes/_Stories/Maps/maps.yml",
+        [
+            {"type": "gameMap", "id": "STAlmayer", "mapName": "Almayer", "mapPath": "/Maps/_Stories/almayer.yml"},
+            {"type": "gameMap", "id": "STAlmayerLowPop", "mapName": "Almayer LowPop", "mapPath": "/Maps/_Stories/almayer.yml"},
+        ],
+    )
+    write_yaml(tmp_path / "Resources/Maps/_Stories/almayer.yml", {"entities": []})
+    write_yaml(tmp_path / "Resources/Maps/_RMC14/inherited.yml", {"entities": []})
+    prototypes = {
+        "PlanetBase": make_prototype(
+            "PlanetBase",
+            abstract=True,
+            components=({"type": "RMCPlanetMapPrototype", "inRotation": False},),
+        ),
+        "InheritedPvePlanet": make_prototype(
+            "InheritedPvePlanet",
+            parents=("PlanetBase",),
+            components=({"type": "RMCPlanetMapPrototype", "map": "/Maps/_RMC14/inherited.yml"},),
+        ),
+    }
+
+    maps = discover_active_maps(tmp_path, prototypes, PrototypeResolver(prototypes))
+
+    assert [entry["mapPath"] for entry in maps] == ["/Maps/_Stories/almayer.yml"]
 
 
 def test_overlay_keeps_spawner_locations_options_and_insert_markers(tmp_path: Path):
