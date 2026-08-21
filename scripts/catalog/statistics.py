@@ -1,11 +1,26 @@
 from __future__ import annotations
 
 import copy
+import math
 from collections import defaultdict
 from typing import Any, Iterable
 
 from .classification import has_meaningful_armor
 from .prototypes import parse_box2i
+
+
+# OverheatComponent's C# defaults. Bare YAML components deliberately inherit
+# these values, so a YAML-only resolver otherwise loses all useful numbers.
+# Keep this block in sync with Content.Shared/_RMC14/Weapons/Ranged/Overheat/
+# OverheatComponent.cs when the game changes the component defaults.
+OVERHEAT_DEFAULTS: dict[str, Any] = {
+    "maxHeat": 40,
+    "heatPerShot": 1,
+    "cooldownRate": 2,
+    "emergencyCooldownMultiplier": 0.375,
+    "emergencyCooldownDelay": 1,
+    "damage": {"types": {"Heat": 30}},
+}
 
 
 def box_cells(boxes: Iterable[tuple[int, int, int, int]]) -> set[tuple[int, int]]:
@@ -483,6 +498,79 @@ def populate_skill_statistics(
             item["skillStats"] = stats
 
 
+def populate_weapon_special_statistics(
+    item: dict[str, Any],
+    stats: dict[str, Any],
+) -> None:
+    """Add weapon mechanics that can also be backfilled into an old catalog."""
+    properties = item.get("properties", {})
+
+    def number(value: Any) -> int | float | None:
+        if isinstance(value, bool) or not isinstance(value, (int, float)):
+            return None
+        return value
+
+    toggleable_ammo = properties.get("GunToggleableAmmo")
+    if isinstance(toggleable_ammo, dict):
+        raw_settings = toggleable_ammo.get("settings")
+        if isinstance(raw_settings, list):
+            ammo_modes: list[dict[str, Any]] = []
+            for index, raw_setting in enumerate(raw_settings):
+                if not isinstance(raw_setting, dict):
+                    continue
+                mode: dict[str, Any] = {"id": str(index)}
+                name = raw_setting.get("name")
+                if isinstance(name, str) and name:
+                    mode["nameId"] = name
+                damage = raw_setting.get("damage")
+                if isinstance(damage, dict) and isinstance(damage.get("types"), dict):
+                    mode["damage"] = copy.deepcopy(damage["types"])
+                piercing = number(raw_setting.get("armorPiercing"))
+                if piercing is not None:
+                    mode["armorPiercing"] = piercing
+                ammo_modes.append(mode)
+            if ammo_modes:
+                selected_setting = toggleable_ammo.get("setting", 0)
+                stats["ammoModes"] = ammo_modes
+                stats["defaultAmmoModeIndex"] = (
+                    selected_setting
+                    if isinstance(selected_setting, int)
+                    and not isinstance(selected_setting, bool)
+                    and 0 <= selected_setting < len(ammo_modes)
+                    else 0
+                )
+
+    if "Overheat" not in item.get("componentTypes", []):
+        return
+    raw_overheat = properties.get("Overheat")
+    if not isinstance(raw_overheat, dict):
+        raw_overheat = {}
+    overheat: dict[str, Any] = {}
+    for key in (
+        "maxHeat",
+        "heatPerShot",
+        "cooldownRate",
+        "emergencyCooldownMultiplier",
+    ):
+        value = number(raw_overheat.get(key, OVERHEAT_DEFAULTS[key]))
+        if value is not None:
+            overheat[key] = value
+    delay = raw_overheat.get(
+        "emergencyCooldownDelay",
+        OVERHEAT_DEFAULTS["emergencyCooldownDelay"],
+    )
+    if isinstance(delay, (int, float)) and not isinstance(delay, bool):
+        overheat["emergencyCooldownDelaySeconds"] = delay
+    damage = raw_overheat.get("damage", OVERHEAT_DEFAULTS["damage"])
+    if isinstance(damage, dict) and isinstance(damage.get("types"), dict):
+        overheat["damage"] = copy.deepcopy(damage["types"])
+    max_heat = number(overheat.get("maxHeat"))
+    heat_per_shot = number(overheat.get("heatPerShot"))
+    if max_heat is not None and heat_per_shot is not None and heat_per_shot > 0:
+        overheat["shotsToOverheatFromCold"] = math.ceil(max_heat / heat_per_shot)
+    stats["overheat"] = overheat
+
+
 def populate_weapon_statistics(
     items: dict[str, Any],
     relations: list[dict[str, Any]],
@@ -650,6 +738,8 @@ def populate_weapon_statistics(
             stats["weaponDamageFalloff"] = copy.deepcopy(weapon_falloff)
         if isinstance(selective.get("modifiers"), dict):
             stats["fireModeModifiers"] = copy.deepcopy(selective["modifiers"])
+
+        populate_weapon_special_statistics(item, stats)
 
         # AimedShotComponent is present (often bare) on every sniper rifle via
         # RMCBaseWeaponSniperRifle; only weapons overriding aimDuration/

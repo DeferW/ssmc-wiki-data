@@ -76,6 +76,70 @@ def test_populate_weapon_statistics_includes_projectile_aimed_shot_effect():
     assert projectile["aimedShotEffect"] == {"extraHits": 2}
 
 
+def test_populate_weapon_statistics_normalizes_toggleable_ammo_modes():
+    items = {
+        "SmartGun": {
+            "componentTypes": ["Gun", "GunToggleableAmmo"],
+            "properties": {
+                "Gun": {},
+                "GunToggleableAmmo": {
+                    "settings": [
+                        {
+                            "name": "rmc-toggleable-ammo-highly-precise",
+                            "damage": {"types": {"Piercing": 30}},
+                            "armorPiercing": 0,
+                        },
+                        {
+                            "name": "rmc-toggleable-ammo-armor-shredding",
+                            "damage": {"types": {"Piercing": 20}},
+                            "armorPiercing": 40,
+                        },
+                    ]
+                },
+            },
+        }
+    }
+
+    populate_weapon_statistics(items, relations=[], public_item_ids={"SmartGun"})
+
+    assert items["SmartGun"]["weaponStats"]["ammoModes"] == [
+        {
+            "id": "0",
+            "nameId": "rmc-toggleable-ammo-highly-precise",
+            "damage": {"Piercing": 30},
+            "armorPiercing": 0,
+        },
+        {
+            "id": "1",
+            "nameId": "rmc-toggleable-ammo-armor-shredding",
+            "damage": {"Piercing": 20},
+            "armorPiercing": 40,
+        },
+    ]
+    assert items["SmartGun"]["weaponStats"]["defaultAmmoModeIndex"] == 0
+
+
+def test_populate_weapon_statistics_expands_bare_overheat_defaults():
+    items = {
+        "M2C": {
+            "componentTypes": ["Gun", "Overheat"],
+            "properties": {"Gun": {}, "Overheat": {}},
+        }
+    }
+
+    populate_weapon_statistics(items, relations=[], public_item_ids={"M2C"})
+
+    assert items["M2C"]["weaponStats"]["overheat"] == {
+        "maxHeat": 40,
+        "heatPerShot": 1,
+        "cooldownRate": 2,
+        "emergencyCooldownMultiplier": 0.375,
+        "emergencyCooldownDelaySeconds": 1,
+        "damage": {"Heat": 30},
+        "shotsToOverheatFromCold": 40,
+    }
+
+
 def test_populate_skill_statistics_normalizes_pamphlet_effects():
     items = {
         "Pamphlet": {
