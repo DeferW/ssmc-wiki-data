@@ -12,6 +12,7 @@ from scripts.maps.core import (
     discover_active_maps,
     parse_vector,
 )
+from scripts.maps.prepare_render import prepare_render_maps, sanitize_map_text
 
 
 def make_prototype(
@@ -133,3 +134,50 @@ def test_tile_pyramid_is_sparse_and_webp(tmp_path: Path):
 def test_parse_vector_rejects_bad_values():
     assert parse_vector("1.25,-2") == [1.25, -2.0]
     assert parse_vector("bad") is None
+
+
+def test_render_sanitizer_removes_only_transient_ui_state():
+    source = """- proto: RMCBookcase
+  entities:
+  - uid: 18502
+    components:
+    - type: Transform
+      pos: -0.5,81.5
+    - type: UserInterface
+      interfaces:
+        enum.StorageUiKey.Key: StorageBoundUserInterface
+      actors:
+        enum.StorageUiKey.Key:
+        - invalid
+      requireInputValidation: false
+    - type: ActiveUserInterface
+      key: invalid
+    - type: Physics
+"""
+    clean, removed = sanitize_map_text(source)
+    assert removed == 2
+    assert "actors:" not in clean
+    assert "ActiveUserInterface" not in clean
+    assert "interfaces:" in clean
+    assert "requireInputValidation: false" in clean
+    assert "- type: Transform" in clean
+    assert "- type: Physics" in clean
+
+
+def test_prepare_render_maps_keeps_renderer_filenames(tmp_path: Path):
+    source = tmp_path / "source" / "almayer.yml"
+    source.parent.mkdir()
+    source.write_text("entities: []\n", encoding="utf-8")
+    render_list = tmp_path / "render-list.txt"
+    render_list.write_text(f"{source}\n", encoding="utf-8")
+
+    removed = prepare_render_maps(
+        render_list,
+        tmp_path / "prepared",
+        tmp_path / "prepared-list.txt",
+    )
+
+    assert removed == 0
+    prepared = Path((tmp_path / "prepared-list.txt").read_text(encoding="utf-8").strip())
+    assert prepared.name == "almayer.yml"
+    assert prepared.read_text(encoding="utf-8") == "entities: []\n"

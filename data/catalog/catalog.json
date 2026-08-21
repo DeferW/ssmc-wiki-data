@@ -5196,6 +5196,7 @@
         "CMArmorPiercing": {
           "amount": 5
         },
+        "HoloTargeting": {},
         "Projectile": {
           "impactEffect": "BulletImpactEffect",
           "damage": {
@@ -175204,6 +175205,13 @@
                       "falloff": 4
                     }
                   ]
+                },
+                "holoTargeting": {
+                  "stacksPerHit": 10,
+                  "maxStacks": 100,
+                  "decayPerSecond": 5,
+                  "decayDelaySeconds": 5,
+                  "damageMultiplierPerStack": 0.001
                 }
               }
             ]

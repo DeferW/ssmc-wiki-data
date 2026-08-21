@@ -88,6 +88,7 @@ PUBLIC_PROPERTY_COMPONENTS = {
     "Gun",
     "GunDamageModifier",
     "GunToggleableAmmo",
+    "HoloTargeting",
     "MagazineAmmoProvider",
     "Overheat",
     "Projectile",

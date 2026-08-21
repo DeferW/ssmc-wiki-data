@@ -76,6 +76,44 @@ def test_populate_weapon_statistics_includes_projectile_aimed_shot_effect():
     assert projectile["aimedShotEffect"] == {"extraHits": 2}
 
 
+def test_populate_weapon_statistics_expands_holo_targeting_defaults():
+    items = _sniper_items(weapon_aimed_shot={}, has_focused_shooting=False)
+    items["Bullet"]["componentTypes"] = ["Projectile", "HoloTargeting"]
+    items["Bullet"]["properties"]["HoloTargeting"] = {}
+
+    populate_weapon_statistics(items, relations=[], public_item_ids={"Rifle"})
+
+    projectile = items["Rifle"]["weaponStats"]["ammunition"][0]["projectiles"][0]
+    assert projectile["holoTargeting"] == {
+        "stacksPerHit": 10,
+        "maxStacks": 100,
+        "decayPerSecond": 5,
+        "decayDelaySeconds": 5,
+        "damageMultiplierPerStack": 0.001,
+    }
+
+
+def test_populate_weapon_statistics_preserves_holo_targeting_overrides():
+    items = _sniper_items(weapon_aimed_shot={}, has_focused_shooting=False)
+    items["Bullet"]["componentTypes"] = ["Projectile", "HoloTargeting"]
+    items["Bullet"]["properties"]["HoloTargeting"] = {
+        "stacks": 20,
+        "maxStacks": 80,
+        "decay": 4,
+    }
+
+    populate_weapon_statistics(items, relations=[], public_item_ids={"Rifle"})
+
+    projectile = items["Rifle"]["weaponStats"]["ammunition"][0]["projectiles"][0]
+    assert projectile["holoTargeting"] == {
+        "stacksPerHit": 20,
+        "maxStacks": 80,
+        "decayPerSecond": 4,
+        "decayDelaySeconds": 5,
+        "damageMultiplierPerStack": 0.001,
+    }
+
+
 def test_populate_weapon_statistics_normalizes_toggleable_ammo_modes():
     items = {
         "SmartGun": {

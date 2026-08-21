@@ -22,6 +22,17 @@ OVERHEAT_DEFAULTS: dict[str, Any] = {
     "damage": {"types": {"Heat": 30}},
 }
 
+# HoloTargetingComponent's C# defaults. Damage amplification itself is applied
+# by RMCHoloTargetedSystem as ``1 + stacks / 1000``; the target waits five
+# seconds after the latest hit before removing ``decay`` stacks each second.
+HOLO_TARGETING_DEFAULTS: dict[str, int | float] = {
+    "stacks": 10,
+    "maxStacks": 100,
+    "decay": 5,
+    "decayDelaySeconds": 5,
+    "damageMultiplierPerStack": 0.001,
+}
+
 
 def box_cells(boxes: Iterable[tuple[int, int, int, int]]) -> set[tuple[int, int]]:
     cells: set[tuple[int, int]] = set()
@@ -626,6 +637,29 @@ def populate_weapon_statistics(
         aimed_effect = properties.get("AimedShotEffect")
         if isinstance(aimed_effect, dict) and aimed_effect:
             result["aimedShotEffect"] = copy.deepcopy(aimed_effect)
+        if "HoloTargeting" in projectile.get("componentTypes", []):
+            raw_holo = properties.get("HoloTargeting")
+            if not isinstance(raw_holo, dict):
+                raw_holo = {}
+            result["holoTargeting"] = {
+                "stacksPerHit": number(
+                    raw_holo.get("stacks", HOLO_TARGETING_DEFAULTS["stacks"])
+                ),
+                "maxStacks": number(
+                    raw_holo.get(
+                        "maxStacks", HOLO_TARGETING_DEFAULTS["maxStacks"]
+                    )
+                ),
+                "decayPerSecond": number(
+                    raw_holo.get("decay", HOLO_TARGETING_DEFAULTS["decay"])
+                ),
+                "decayDelaySeconds": HOLO_TARGETING_DEFAULTS[
+                    "decayDelaySeconds"
+                ],
+                "damageMultiplierPerStack": HOLO_TARGETING_DEFAULTS[
+                    "damageMultiplierPerStack"
+                ],
+            }
         return result
 
     for weapon_id in sorted(public_item_ids):

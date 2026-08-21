@@ -54,10 +54,20 @@ jobs:
             --discovery-only \
             --commit "$GAME_COMMIT"
 
+      # Some saved maps contain stale runtime UI actor references. They are not
+      # visual/map data and the headless renderer correctly rejects them. Keep
+      # the game checkout untouched and render sanitized temporary copies.
+      - name: Prepare temporary map copies for rendering
+        run: |
+          python3 -m scripts.maps.prepare_render \
+            --render-list render-list.txt \
+            --output render-input \
+            --output-list prepared-render-list.txt
+
       - name: Render maps with the game renderer
         working-directory: game-source
         run: |
-          mapfile -t MAP_FILES < ../render-list.txt
+          mapfile -t MAP_FILES < ../prepared-render-list.txt
 
           dotnet run \
             --project Content.MapRenderer \
