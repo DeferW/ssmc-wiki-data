@@ -54,9 +54,9 @@ jobs:
             --discovery-only \
             --commit "$GAME_COMMIT"
 
-      # Some saved maps contain stale runtime UI actor references. They are not
-      # visual/map data and the headless renderer correctly rejects them. Keep
-      # the game checkout untouched and render sanitized temporary copies.
+      # Saved maps can contain stale runtime UI or device-link state. It is not
+      # visual/map data and the headless renderer correctly rejects invalid
+      # references. Keep the checkout untouched and sanitize every render copy.
       - name: Prepare temporary map copies for rendering
         run: |
           python3 -m scripts.maps.prepare_render \
@@ -69,15 +69,38 @@ jobs:
         run: |
           mapfile -t MAP_FILES < ../prepared-render-list.txt
 
-          dotnet run \
-            --project Content.MapRenderer \
-            --configuration Release \
-            -- \
-            --files \
-            --viewer \
-            --format webp \
-            --output "$GITHUB_WORKSPACE/rendered-maps" \
-            "${MAP_FILES[@]}"
+          if ! dotnet run \
+              --project Content.MapRenderer \
+              --configuration Release \
+              -- \
+              --files \
+              --viewer \
+              --format webp \
+              --output "$GITHUB_WORKSPACE/rendered-maps" \
+              "${MAP_FILES[@]}"; then
+            echo "::warning::Batch render failed; checking every map separately"
+            FAILED_MAPS=()
+
+            for MAP_FILE in "${MAP_FILES[@]}"; do
+              if ! dotnet run \
+                  --no-build \
+                  --project Content.MapRenderer \
+                  --configuration Release \
+                  -- \
+                  --files \
+                  --viewer \
+                  --format webp \
+                  --output "$GITHUB_WORKSPACE/rendered-maps" \
+                  "$MAP_FILE"; then
+                FAILED_MAPS+=("$MAP_FILE")
+              fi
+            done
+
+            if (( ${#FAILED_MAPS[@]} > 0 )); then
+              printf '::error::Maps rejected by the game renderer: %s\n' "${FAILED_MAPS[*]}"
+              exit 1
+            fi
+          fi
 
       - name: Build compact overlays and lazy tile pyramids
         run: |

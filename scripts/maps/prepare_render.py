@@ -8,6 +8,17 @@ from pathlib import Path
 COMPONENT_RE = re.compile(r"^(?P<indent>[ ]*)- type: (?P<type>[^ #\r\n]+)[ ]*(?:#.*)?(?:\r?\n)?$")
 ACTORS_RE = re.compile(r"^(?P<indent>[ ]*)actors:[ ]*(?:#.*)?(?:\r?\n)?$")
 
+# These map overrides drive live server state but cannot change the static image.
+# Old maps may contain values that no longer exist in current prototypes, causing
+# Content.MapRenderer to abort while initializing entities. Strip them from every
+# temporary render copy, so the protection also covers newly added maps.
+NON_VISUAL_RUNTIME_COMPONENTS = frozenset(
+    {
+        "ActiveUserInterface",
+        "DoorSignalControl",
+    }
+)
+
 
 def _indent(line: str) -> int | None:
     if not line.strip():
@@ -19,9 +30,9 @@ def sanitize_map_text(text: str) -> tuple[str, int]:
     """Remove serialized UI session state that the headless renderer cannot load.
 
     UserInterface itself is retained because it can contain static map overrides. Only
-    its runtime actor references and the transient ActiveUserInterface component are
-    removed. The edit is deliberately line based so the rest of the engine YAML stays
-    byte-for-byte intact, including tags that a generic YAML dumper may not preserve.
+    runtime fields and non-visual components that can hold obsolete prototype references
+    are removed. The edit is deliberately line based so engine-specific YAML tags are
+    left intact instead of being rewritten by a generic YAML dumper.
     """
     lines = text.splitlines(keepends=True)
     result: list[str] = []
@@ -38,7 +49,7 @@ def sanitize_map_text(text: str) -> tuple[str, int]:
 
         component_indent = len(component.group("indent"))
         component_type = component.group("type")
-        if component_type == "ActiveUserInterface":
+        if component_type in NON_VISUAL_RUNTIME_COMPONENTS:
             removed += 1
             index += 1
             while index < len(lines):

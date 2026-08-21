@@ -152,12 +152,16 @@ def test_render_sanitizer_removes_only_transient_ui_state():
       requireInputValidation: false
     - type: ActiveUserInterface
       key: invalid
+    - type: DoorSignalControl
+      openPort: Entrance to the Center
     - type: Physics
 """
     clean, removed = sanitize_map_text(source)
-    assert removed == 2
+    assert removed == 3
     assert "actors:" not in clean
     assert "ActiveUserInterface" not in clean
+    assert "DoorSignalControl" not in clean
+    assert "Entrance to the Center" not in clean
     assert "interfaces:" in clean
     assert "requireInputValidation: false" in clean
     assert "- type: Transform" in clean
