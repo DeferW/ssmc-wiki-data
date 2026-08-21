@@ -1,0 +1,60 @@
+diff --git a/Content.MapRenderer/MapViewerData.cs b/Content.MapRenderer/MapViewerData.cs
+index b58d0c6..7125a5a 100644
+--- a/Content.MapRenderer/MapViewerData.cs
++++ b/Content.MapRenderer/MapViewerData.cs
+@@ -20,6 +20,7 @@ public sealed class GridLayer
+ {
+     public string GridId { get; set; } = string.Empty;
+     public Position Offset { get; set; }
++    public Position WorldMin { get; set; }
+     public bool Tiled { get; set; } = false;
+     public string Url { get; set; }
+     public Extent Extent { get; set; }
+@@ -31,6 +32,7 @@ public GridLayer(RenderedGridImage<Rgba32> gridImage, string url)
+             GridId = gridImage.GridUid.Value.GetHashCode().ToString();
+ 
+         Offset = new Position(gridImage.Offset);
++        WorldMin = new Position(gridImage.WorldMin);
+         Extent = new Extent(gridImage.Image.Width, gridImage.Image.Height);
+         Url = url;
+     }
+diff --git a/Content.MapRenderer/Painters/MapPainter.cs b/Content.MapRenderer/Painters/MapPainter.cs
+index 991fa74..ff5673a 100644
+--- a/Content.MapRenderer/Painters/MapPainter.cs
++++ b/Content.MapRenderer/Painters/MapPainter.cs
+@@ -204,11 +204,15 @@ await server.WaitPost(() =>
+                 var maxY = tiles.Max(t => t.Y);
+                 var w = (maxX - minX + 1) * tileXSize;
+                 var h = (maxY - minY + 1) * tileYSize;
++                var worldMin = new Vector2(grid.LocalAABB.Left, grid.LocalAABB.Bottom);
+                 var customOffset = new Vector2();
+ 
+                 //MapGrids don't have LocalAABB, so we offset them to align the bottom left corner with 0,0 coordinates
+                 if (grid.LocalAABB.IsEmpty())
++                {
+                     customOffset = new Vector2(-minX, -minY);
++                    worldMin = new Vector2(minX * grid.TileSize, minY * grid.TileSize);
++                }
+ 
+                 var gridCanvas = new Image<Rgba32>(w, h);
+ 
+@@ -224,6 +228,7 @@ await server.WaitPost(() =>
+                 {
+                     GridUid = uid,
+                     Offset = xformSystem.GetWorldPosition(uid),
++                    WorldMin = worldMin,
+                 };
+ 
+                 yield return renderedImage;
+diff --git a/Content.MapRenderer/RenderedGridImage.cs b/Content.MapRenderer/RenderedGridImage.cs
+index c460853..4f02eaf 100644
+--- a/Content.MapRenderer/RenderedGridImage.cs
++++ b/Content.MapRenderer/RenderedGridImage.cs
+@@ -10,6 +10,7 @@ public sealed class RenderedGridImage<T> where T : unmanaged, IPixel<T>
+ {
+     public Image<T> Image;
+     public Vector2 Offset { get; set; } = Vector2.Zero;
++    public Vector2 WorldMin { get; set; } = Vector2.Zero;
+     public EntityUid? GridUid { get; set; }
+ 
+     public RenderedGridImage(Image<T> image)

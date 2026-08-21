@@ -86,6 +86,13 @@ def validate(catalog_path: Path, assets_root: Path, max_assets_bytes: int) -> No
             pattern = grid.get("path")
             if not isinstance(pattern, str):
                 raise RuntimeError(f"Grid has no tile pattern: {map_id}")
+            world_min = grid.get("worldMin")
+            if (
+                not isinstance(world_min, dict)
+                or not isinstance(world_min.get("X"), (int, float))
+                or not isinstance(world_min.get("Y"), (int, float))
+            ):
+                raise RuntimeError(f"Grid has no world bounds: {map_id}")
             levels = grid.get("levels", [])
             if not levels or levels[-1].get("lossless") is not True:
                 raise RuntimeError(f"Map maximum tile level is not lossless: {map_id}")

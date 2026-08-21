@@ -19,7 +19,7 @@ from scripts.common.prototypes import (
 
 SCHEMA_VERSION = 1
 OVERLAY_SCHEMA_VERSION = 1
-TILES_SCHEMA_VERSION = 1
+TILES_SCHEMA_VERSION = 2
 DEFAULT_TILE_SIZE = 512
 DEFAULT_RENDER_SCALE = 1.0
 DEFAULT_WEBP_QUALITY = 82
@@ -485,6 +485,7 @@ def package_render(
             {
                 "id": str(grid.get("GridId", grid.get("gridId", index))),
                 "offset": grid.get("Offset", grid.get("offset", {"X": 0, "Y": 0})),
+                "worldMin": grid.get("WorldMin", grid.get("worldMin")),
                 "extent": grid.get("Extent", grid.get("extent")),
                 "pixelsPerMeter": 32 * scale,
                 "path": f"tiles/g{index}/{{z}}/{{x}}-{{y}}.webp",

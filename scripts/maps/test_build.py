@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
 import yaml
@@ -10,6 +11,7 @@ from scripts.maps.core import (
     _save_tiles,
     build_overlay,
     discover_active_maps,
+    package_render,
     parse_vector,
 )
 from scripts.maps.prepare_render import prepare_render_maps, sanitize_map_text
@@ -130,6 +132,34 @@ def test_tile_pyramid_is_sparse_and_webp(tmp_path: Path):
     assert levels[1]["tiles"] == [[0, 0]]
     with Image.open(tmp_path / "1/0-0.webp") as tile:
         assert tile.format == "WEBP"
+
+
+def test_package_render_keeps_renderer_world_bounds(tmp_path: Path):
+    rendered = tmp_path / "rendered"
+    render_root = rendered / "test"
+    render_root.mkdir(parents=True)
+    Image.new("RGBA", (64, 32), (255, 0, 0, 255)).save(render_root / "grid.webp")
+    (render_root / "map.json").write_text(
+        json.dumps(
+            {
+                "Grids": [
+                    {
+                        "GridId": "1",
+                        "Url": "test/grid.webp",
+                        "Offset": {"X": 0, "Y": 0},
+                        "WorldMin": {"X": -50, "Y": -125},
+                        "Extent": {"X1": 0, "Y1": 0, "X2": 64, "Y2": 32},
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    output = tmp_path / "output"
+    entry = {"id": "test", "mapPath": "/Maps/test.yml"}
+    package_render(rendered, output, entry, tile_size=512, scale=1, quality=82)
+    manifest = json.loads((output / "test/tiles.json").read_text(encoding="utf-8"))
+    assert manifest["grids"][0]["worldMin"] == {"X": -50, "Y": -125}
 
 
 def test_parse_vector_rejects_bad_values():

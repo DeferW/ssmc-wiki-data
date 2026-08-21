@@ -40,6 +40,9 @@ jobs:
         with:
           global-json-file: game-source/global.json
 
+      - name: Add world bounds to renderer metadata
+        run: git -C game-source apply ../scripts/maps/renderer-world-bounds.patch
+
       - name: Install map builder tools
         run: python3 -m pip install -r requirements.txt
 
@@ -69,7 +72,7 @@ jobs:
         uses: actions/cache/restore@v5
         with:
           path: rendered-maps
-          key: raw-map-renders-v1-${{ runner.os }}-${{ env.GAME_COMMIT }}-${{ hashFiles('scripts/maps/prepare_render.py') }}
+          key: raw-map-renders-v2-${{ runner.os }}-${{ env.GAME_COMMIT }}-${{ hashFiles('scripts/maps/prepare_render.py', 'scripts/maps/renderer-world-bounds.patch') }}
 
       - name: Render maps with the game renderer
         if: steps.rendered-map-cache.outputs.cache-hit != 'true'
@@ -117,7 +120,7 @@ jobs:
         uses: actions/cache/save@v5
         with:
           path: rendered-maps
-          key: raw-map-renders-v1-${{ runner.os }}-${{ env.GAME_COMMIT }}-${{ hashFiles('scripts/maps/prepare_render.py') }}
+          key: raw-map-renders-v2-${{ runner.os }}-${{ env.GAME_COMMIT }}-${{ hashFiles('scripts/maps/prepare_render.py', 'scripts/maps/renderer-world-bounds.patch') }}
 
       - name: Build compact overlays and lazy tile pyramids
         run: |

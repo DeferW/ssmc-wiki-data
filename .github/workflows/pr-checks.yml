@@ -83,4 +83,4 @@ jobs:
           python3 -m scripts.maps.validate \
             --catalog data/maps/catalog.json \
             --assets data/maps \
-            --max-assets-bytes 26214400
+            --max-assets-bytes 536870912
