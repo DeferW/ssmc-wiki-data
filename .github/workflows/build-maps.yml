@@ -1,0 +1,104 @@
+name: Build map data
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-generated-data
+  cancel-in-progress: false
+
+jobs:
+  build-maps:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+
+    steps:
+      - name: Download wiki data repository
+        uses: actions/checkout@v7.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      # Content.MapRenderer is part of the game and depends on the complete
+      # content solution plus RobustToolbox. A sparse asset checkout cannot
+      # reproduce entity visuals correctly.
+      - name: Download the exact game renderer and sources
+        uses: actions/checkout@v7.0.1
+        with:
+          repository: MetalSage/space-stories-cm14
+          ref: master
+          path: game-source
+          submodules: recursive
+
+      - name: Set up game .NET SDK
+        uses: actions/setup-dotnet@v5
+        with:
+          global-json-file: game-source/global.json
+
+      - name: Install map builder tools
+        run: python3 -m pip install -r requirements.txt
+
+      - name: Discover active SSMC maps
+        run: |
+          GAME_COMMIT=$(git -C game-source rev-parse HEAD)
+          echo "GAME_COMMIT=$GAME_COMMIT" >> "$GITHUB_ENV"
+
+          python3 -m scripts.maps.build \
+            --game-source game-source \
+            --render-list-output render-list.txt \
+            --discovery-only \
+            --commit "$GAME_COMMIT"
+
+      - name: Render maps with the game renderer
+        working-directory: game-source
+        run: |
+          mapfile -t MAP_FILES < ../render-list.txt
+
+          dotnet run \
+            --project Content.MapRenderer \
+            --configuration Release \
+            -- \
+            --files \
+            --viewer \
+            --format webp \
+            --output "$GITHUB_WORKSPACE/rendered-maps" \
+            "${MAP_FILES[@]}"
+
+      - name: Build compact overlays and lazy tile pyramids
+        run: |
+          python3 -m scripts.maps.build \
+            --game-source game-source \
+            --rendered-input rendered-maps \
+            --output data/maps/catalog.json \
+            --assets-output data/maps \
+            --commit "$GAME_COMMIT" \
+            --render-scale 0.5 \
+            --tile-size 512 \
+            --webp-quality 82 \
+            --max-assets-bytes 26214400
+
+      - name: Validate map data and size budget
+        run: |
+          python3 -m scripts.maps.validate \
+            --catalog data/maps/catalog.json \
+            --assets data/maps \
+            --max-assets-bytes 26214400
+
+      - name: Save map data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/maps
+
+          if git diff --cached --quiet; then
+            echo "Nothing changed"
+          else
+            git commit -m "Build map data"
+            git push
+          fi

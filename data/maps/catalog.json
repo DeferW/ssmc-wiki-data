@@ -1,0 +1,401 @@
+{
+  "schemaVersion": 1,
+  "source": "MetalSage/space-stories-cm14",
+  "gameCommit": "d0bfa6b3645f82951647074306dd99339f394fdd",
+  "maps": [
+    {
+      "id": "almayer",
+      "name": "ВКСШ Алмайер",
+      "kind": "ship",
+      "mapPath": "/Maps/_Stories/almayer.yml",
+      "origin": "stories",
+      "sourcePrototypeIds": [
+        "STAlmayer",
+        "STAlmayerLowPop"
+      ],
+      "overlay": "almayer/overlay.json"
+    },
+    {
+      "id": "arctic-valley",
+      "name": "Arctic Valley",
+      "kind": "planet",
+      "mapPath": "/Maps/_RMC14/PVE/arctic_valley.yml",
+      "origin": "rmc14",
+      "sourcePrototypeIds": [
+        "RMCPlanetArcticValley"
+      ],
+      "camouflage": "Snow",
+      "overlay": "arctic-valley/overlay.json"
+    },
+    {
+      "id": "corsat",
+      "name": "CORSAT",
+      "kind": "planet",
+      "mapPath": "/Maps/_RMC14/PVE/corsat.yml",
+      "origin": "rmc14",
+      "sourcePrototypeIds": [
+        "RMCPlanetCorsat"
+      ],
+      "camouflage": "Classic",
+      "overlay": "corsat/overlay.json"
+    },
+    {
+      "id": "jungle-delta",
+      "name": "Jungle Delta",
+      "kind": "planet",
+      "mapPath": "/Maps/_RMC14/PVE/jungle_delta.yml",
+      "origin": "rmc14",
+      "sourcePrototypeIds": [
+        "RMCPlanetJungleDelta"
+      ],
+      "camouflage": "Jungle",
+      "overlay": "jungle-delta/overlay.json"
+    },
+    {
+      "id": "chances",
+      "name": "LV-522 Притензия Шанса",
+      "kind": "planet",
+      "mapPath": "/Maps/_RMC14/chances.yml",
+      "origin": "rmc14",
+      "sourcePrototypeIds": [
+        "RMCPlanetChances"
+      ],
+      "camouflage": "Classic",
+      "replacements": {
+        "RMCWeaponMar50LMG": "RMCSpawnerRandomGunRifleMed",
+        "RMCMagazineMar50LMG": null,
+        "RMCBoxShotgunIncendiaryBuckshot": "RMCItemPoolBuckshot",
+        "RMCBoxShotgunIncendiary": "RMCItemPoolBuckshot",
+        "CMShellShotgunIncendiaryBuckshot": "CMShellShotgunBuckshot",
+        "CMShellShotgunIncendiary": "CMShellShotgunBuckshot",
+        "CMPaperBin30": "CMPaperBin5",
+        "CMPaperBin20": "CMPaperBin5",
+        "CMPaperBin10": "CMPaperBin5"
+      },
+      "overlay": "chances/overlay.json"
+    },
+    {
+      "id": "lv624",
+      "name": "LV-624 Lazarus Landing",
+      "kind": "planet",
+      "mapPath": "/Maps/_RMC14/lv624.yml",
+      "origin": "rmc14",
+      "sourcePrototypeIds": [
+        "RMCPlanetLV624"
+      ],
+      "camouflage": "Jungle",
+      "nightmareScenarios": [
+        {
+          "scenarioName": "asset_protection",
+          "scenarioProbability": 0.1
+        },
+        {
+          "scenarioName": "none",
+          "scenarioProbability": 0.9
+        }
+      ],
+      "replacements": {
+        "RMCWeaponMar50LMG": "RMCSpawnerRandomGunRifleMed",
+        "RMCMagazineMar50LMG": null,
+        "RMCBoxShotgunIncendiaryBuckshot": "RMCItemPoolBuckshot",
+        "RMCBoxShotgunIncendiary": "RMCItemPoolBuckshot",
+        "CMShellShotgunIncendiaryBuckshot": "CMShellShotgunBuckshot",
+        "CMShellShotgunIncendiary": "CMShellShotgunBuckshot",
+        "CMPaperBin30": "CMPaperBin5",
+        "CMPaperBin20": "CMPaperBin5",
+        "CMPaperBin10": "CMPaperBin5"
+      },
+      "overlay": "lv624/overlay.json"
+    },
+    {
+      "id": "hybrisa-greenshift",
+      "name": "LV-759 Hybrisa Prospera (Repaired)",
+      "kind": "planet",
+      "mapPath": "/Maps/_RMC14/PVE/hybrisa_greenshift.yml",
+      "origin": "rmc14",
+      "sourcePrototypeIds": [
+        "RMCPlanetHybrisaRepaired"
+      ],
+      "camouflage": "Urban",
+      "overlay": "hybrisa-greenshift/overlay.json"
+    },
+    {
+      "id": "hybrisa",
+      "name": "LV-759 Гибриса Проспера",
+      "kind": "planet",
+      "mapPath": "/Maps/_RMC14/hybrisa.yml",
+      "origin": "rmc14",
+      "sourcePrototypeIds": [
+        "RMCPlanetHybrisa"
+      ],
+      "camouflage": "Urban",
+      "minPlayers": 130,
+      "nightmareScenarios": [
+        {
+          "scenarioName": "tse_airbase",
+          "scenarioProbability": 0.3
+        },
+        {
+          "scenarioName": "none",
+          "scenarioProbability": 0.7
+        }
+      ],
+      "replacements": {
+        "RMCWeaponMar50LMG": "RMCSpawnerRandomGunRifleMed",
+        "RMCMagazineMar50LMG": null,
+        "RMCBoxShotgunIncendiaryBuckshot": "RMCItemPoolBuckshot",
+        "RMCBoxShotgunIncendiary": "RMCItemPoolBuckshot",
+        "CMShellShotgunIncendiaryBuckshot": "CMShellShotgunBuckshot",
+        "CMShellShotgunIncendiary": "CMShellShotgunBuckshot",
+        "CMPaperBin30": "CMPaperBin5",
+        "CMPaperBin20": "CMPaperBin5",
+        "CMPaperBin10": "CMPaperBin5"
+      },
+      "overlay": "hybrisa/overlay.json"
+    },
+    {
+      "id": "sorokyne-repaired",
+      "name": "LV-976 - Sorokyne Strata (Repaired)",
+      "kind": "planet",
+      "mapPath": "/Maps/_RMC14/PVE/sorokyne_repaired.yml",
+      "origin": "rmc14",
+      "sourcePrototypeIds": [
+        "RMCPlanetSorokyneRepaired"
+      ],
+      "camouflage": "Jungle",
+      "overlay": "sorokyne-repaired/overlay.json"
+    },
+    {
+      "id": "sorokyne",
+      "name": "LV-976 Sorokyne Strata",
+      "kind": "planet",
+      "mapPath": "/Maps/_RMC14/sorokyne.yml",
+      "origin": "rmc14",
+      "sourcePrototypeIds": [
+        "RMCPlanetSorokyne"
+      ],
+      "camouflage": "Jungle",
+      "minPlayers": 130,
+      "nightmareScenarios": [
+        {
+          "scenarioName": "spp_sof",
+          "scenarioProbability": 0.4
+        },
+        {
+          "scenarioName": "none",
+          "scenarioProbability": 0.6
+        }
+      ],
+      "replacements": {
+        "RMCWeaponMar50LMG": "RMCSpawnerRandomGunRifleMed",
+        "RMCMagazineMar50LMG": null,
+        "RMCBoxShotgunIncendiaryBuckshot": "RMCItemPoolBuckshot",
+        "RMCBoxShotgunIncendiary": "RMCItemPoolBuckshot",
+        "CMShellShotgunIncendiaryBuckshot": "CMShellShotgunBuckshot",
+        "CMShellShotgunIncendiary": "CMShellShotgunBuckshot",
+        "CMPaperBin30": "CMPaperBin5",
+        "CMPaperBin20": "CMPaperBin5",
+        "CMPaperBin10": "CMPaperBin5"
+      },
+      "overlay": "sorokyne/overlay.json"
+    },
+    {
+      "id": "trijent",
+      "name": "Дамба Триджент",
+      "kind": "planet",
+      "mapPath": "/Maps/_RMC14/trijent.yml",
+      "origin": "rmc14",
+      "sourcePrototypeIds": [
+        "RMCPlanetTrijent"
+      ],
+      "camouflage": "Desert",
+      "minPlayers": 130,
+      "nightmareScenarios": [
+        {
+          "scenarioName": "none",
+          "scenarioProbability": 0.6
+        },
+        {
+          "scenarioName": "spp_bar",
+          "scenarioProbability": 0.4
+        }
+      ],
+      "replacements": {
+        "RMCWeaponMar50LMG": "RMCSpawnerRandomGunRifleMed",
+        "RMCMagazineMar50LMG": null,
+        "RMCBoxShotgunIncendiaryBuckshot": "RMCItemPoolBuckshot",
+        "RMCBoxShotgunIncendiary": "RMCItemPoolBuckshot",
+        "CMShellShotgunIncendiaryBuckshot": "CMShellShotgunBuckshot",
+        "CMShellShotgunIncendiary": "CMShellShotgunBuckshot",
+        "CMPaperBin30": "CMPaperBin5",
+        "CMPaperBin20": "CMPaperBin5",
+        "CMPaperBin10": "CMPaperBin5"
+      },
+      "overlay": "trijent/overlay.json"
+    },
+    {
+      "id": "prison",
+      "name": "Научный Комплекс Фиорины",
+      "kind": "planet",
+      "mapPath": "/Maps/_RMC14/prison.yml",
+      "origin": "rmc14",
+      "sourcePrototypeIds": [
+        "RMCPlanetFiorina"
+      ],
+      "camouflage": "Classic",
+      "minPlayers": 130,
+      "nightmareScenarios": [
+        {
+          "scenarioName": "riot_in_progress",
+          "scenarioProbability": 0.15
+        },
+        {
+          "scenarioName": "none",
+          "scenarioProbability": 0.85
+        }
+      ],
+      "replacements": {
+        "RMCWeaponMar50LMG": "RMCSpawnerRandomGunRifleMed",
+        "RMCMagazineMar50LMG": null,
+        "RMCBoxShotgunIncendiaryBuckshot": "RMCItemPoolBuckshot",
+        "RMCBoxShotgunIncendiary": "RMCItemPoolBuckshot",
+        "CMShellShotgunIncendiaryBuckshot": "CMShellShotgunBuckshot",
+        "CMShellShotgunIncendiary": "CMShellShotgunBuckshot",
+        "CMPaperBin30": "CMPaperBin5",
+        "CMPaperBin20": "CMPaperBin5",
+        "CMPaperBin10": "CMPaperBin5"
+      },
+      "overlay": "prison/overlay.json"
+    },
+    {
+      "id": "varadero",
+      "name": "Новый Варадеро",
+      "kind": "planet",
+      "mapPath": "/Maps/_RMC14/varadero.yml",
+      "origin": "rmc14",
+      "sourcePrototypeIds": [
+        "RMCPlanetVaradero"
+      ],
+      "camouflage": "Jungle",
+      "nightmareScenarios": [
+        {
+          "scenarioName": "none",
+          "scenarioProbability": 1
+        }
+      ],
+      "replacements": {
+        "RMCWeaponMar50LMG": "RMCSpawnerRandomGunRifleMed",
+        "RMCMagazineMar50LMG": null,
+        "RMCBoxShotgunIncendiaryBuckshot": "RMCItemPoolBuckshot",
+        "RMCBoxShotgunIncendiary": "RMCItemPoolBuckshot",
+        "CMShellShotgunIncendiaryBuckshot": "CMShellShotgunBuckshot",
+        "CMShellShotgunIncendiary": "CMShellShotgunBuckshot",
+        "CMPaperBin30": "CMPaperBin5",
+        "CMPaperBin20": "CMPaperBin5",
+        "CMPaperBin10": "CMPaperBin5"
+      },
+      "overlay": "varadero/overlay.json"
+    },
+    {
+      "id": "kutjevo",
+      "name": "ПЗ Кутьево",
+      "kind": "planet",
+      "mapPath": "/Maps/_RMC14/kutjevo.yml",
+      "origin": "rmc14",
+      "sourcePrototypeIds": [
+        "RMCPlanetKutjevo"
+      ],
+      "camouflage": "Desert",
+      "nightmareScenarios": [
+        {
+          "scenarioName": "none",
+          "scenarioProbability": 1
+        }
+      ],
+      "replacements": {
+        "RMCWeaponMar50LMG": "RMCSpawnerRandomGunRifleMed",
+        "RMCMagazineMar50LMG": null,
+        "RMCBoxShotgunIncendiaryBuckshot": "RMCItemPoolBuckshot",
+        "RMCBoxShotgunIncendiary": "RMCItemPoolBuckshot",
+        "CMShellShotgunIncendiaryBuckshot": "CMShellShotgunBuckshot",
+        "CMShellShotgunIncendiary": "CMShellShotgunBuckshot",
+        "CMPaperBin30": "CMPaperBin5",
+        "CMPaperBin20": "CMPaperBin5",
+        "CMPaperBin10": "CMPaperBin5"
+      },
+      "overlay": "kutjevo/overlay.json"
+    },
+    {
+      "id": "shiva",
+      "name": "Снежный Шар Шивы",
+      "kind": "planet",
+      "mapPath": "/Maps/_RMC14/shiva.yml",
+      "origin": "rmc14",
+      "sourcePrototypeIds": [
+        "RMCPlanetShiva"
+      ],
+      "camouflage": "Snow",
+      "nightmareScenarios": [
+        {
+          "scenarioName": "panic_room_hold",
+          "scenarioProbability": 0.15
+        },
+        {
+          "scenarioName": "none",
+          "scenarioProbability": 0.85
+        }
+      ],
+      "replacements": {
+        "RMCWeaponMar50LMG": "RMCSpawnerRandomGunRifleMed",
+        "RMCMagazineMar50LMG": null,
+        "RMCBoxShotgunIncendiaryBuckshot": "RMCItemPoolBuckshot",
+        "RMCBoxShotgunIncendiary": "RMCItemPoolBuckshot",
+        "CMShellShotgunIncendiaryBuckshot": "CMShellShotgunBuckshot",
+        "CMShellShotgunIncendiary": "CMShellShotgunBuckshot",
+        "CMPaperBin30": "CMPaperBin5",
+        "CMPaperBin20": "CMPaperBin5",
+        "CMPaperBin10": "CMPaperBin5"
+      },
+      "overlay": "shiva/overlay.json"
+    },
+    {
+      "id": "solaris",
+      "name": "Хребет Солярис",
+      "kind": "planet",
+      "mapPath": "/Maps/_RMC14/solaris.yml",
+      "origin": "rmc14",
+      "sourcePrototypeIds": [
+        "RMCPlanetSolaris"
+      ],
+      "camouflage": "Desert",
+      "nightmareScenarios": [
+        {
+          "scenarioName": "crashlanding_offices",
+          "scenarioProbability": 0.2
+        },
+        {
+          "scenarioName": "none",
+          "scenarioProbability": 0.8
+        }
+      ],
+      "replacements": {
+        "RMCWeaponMar50LMG": "RMCSpawnerRandomGunRifleMed",
+        "RMCMagazineMar50LMG": null,
+        "RMCBoxShotgunIncendiaryBuckshot": "RMCBoxShotgunBuckshot",
+        "RMCBoxShotgunIncendiary": "RMCBoxShotgunBuckshot",
+        "CMShellShotgunIncendiaryBuckshot": "CMShellShotgunBuckshot",
+        "CMShellShotgunIncendiary": "CMShellShotgunBuckshot",
+        "CMPaperBin30": "CMPaperBin5",
+        "CMPaperBin20": "CMPaperBin5",
+        "CMPaperBin10": "CMPaperBin5"
+      },
+      "overlay": "solaris/overlay.json"
+    }
+  ],
+  "counts": {
+    "maps": 16,
+    "ships": 1,
+    "planets": 15,
+    "assetBytes": 522702
+  }
+}

@@ -20,20 +20,24 @@ flowchart LR
     Catalog["scripts/catalog/"]
     Chemistry["scripts/chemistry/"]
     Mobs["scripts/mobs/"]
+    Maps["scripts/maps/"]
     CatalogData["data/catalog/"]
     ChemistryData["data/chemistry/"]
     MobsData["data/mobs/"]
+    MapsData["data/maps/"]
     App["ssmc-wiki-app"]
 
     Game --> Catalog
     Game --> Chemistry
     Game --> Mobs
+    Game --> Maps
     Config --> Catalog
     Common --> Catalog
     Common --> Mobs
     Catalog --> CatalogData --> App
     Chemistry --> ChemistryData --> App
     Mobs --> MobsData --> App
+    Maps --> MapsData --> App
 ```
 
 Каждый предметный модуль изолирован в `scripts/<module>/` и пишет только в
@@ -48,10 +52,12 @@ scripts/
   catalog/                  каталог предметов
   chemistry/                реагенты, реакции и guidebook
   mobs/                     параметры людей и каст ксеноморфов
+  maps/                     активные карты, маркеры, спавнеры и WebP-тайлы
 data/
   catalog/                  публичный каталог, диагностика и PNG
   chemistry/                публичный каталог и промежуточные индексы
   mobs/                     публичный каталог мобов
+  maps/                     каталог карт и лениво загружаемые данные каждой карты
 .github/workflows/          сборка, публикация и PR-проверки
 ```
 
@@ -170,6 +176,27 @@ JSON должен быть байт-в-байт одинаковым.
 поля и разумное минимальное количество каст. Публичный файл —
 `data/mobs/catalog.json`.
 
+### Maps
+
+`scripts/maps/build.py` не перебирает все файлы из `Resources/Maps`. Источники
+активного набора — SSMC `gameMapPool` из `_Stories` и живые компоненты
+`RMCPlanetMapPrototype` текущего игрового checkout. Поэтому ванильные станции,
+тестовые карты и старый RMC Almayer исключены, а колонии под `_RMC14`, на которые
+по-прежнему ссылается SSMC, остаются в наборе. Путь из прототипа, а не имя папки,
+является источником истины.
+
+Публичная точка входа — `data/maps/catalog.json`. Для каждой карты отдельно
+записывается компактный `overlay.json`: координаты маркеров и спавнеров,
+унаследованные параметры случайного лута, точки `MapInsert`, все их варианты,
+вероятности, сценарии и маркеры внутри вставок. Полные сущности map YAML в
+публичные данные не копируются.
+
+Изображение создаёт штатный `Content.MapRenderer` самой игры. Сборщик уменьшает
+его до 50%, режет на разреженные WebP-тайлы 512×512 и строит пирамиду масштабов.
+Клиенту достаточно загрузить `catalog.json`, затем один manifest выбранной карты
+и только видимые тайлы нужного масштаба. Жёсткий лимит всего `data/maps/` — 25
+MiB; превышение останавливает workflow.
+
 ## Локальная разработка
 
 Требуется Python 3.11+ и локальный checkout
@@ -245,12 +272,29 @@ python -m scripts.mobs.validate \
   --catalog data/mobs/catalog.json
 ```
 
+Собрать метаданные и overlay карт без повторного рендера:
+
+```bash
+python -m scripts.maps.build \
+  --game-source /path/to/space-stories-cm14 \
+  --output data/maps/catalog.json \
+  --assets-output data/maps \
+  --commit GAME_COMMIT
+
+python -m scripts.maps.validate \
+  --catalog data/maps/catalog.json \
+  --assets data/maps
+```
+
+Полная сборка изображений выполняется ручным workflow `build-maps.yml`: он
+использует `Content.MapRenderer`, затем формирует ленивую тайловую пирамиду.
+
 ## GitHub Actions и вклад в проект
 
 - `pr-checks.yml` запускает Ruff, все тесты и валидаторы текущих данных.
-- `build-catalog.yml` автоматически пересобирает каталог при изменении его кода
-  или конфигурации; также поддерживает ручной запуск.
-- `build-chemistry-catalog.yml` и `build-mobs.yml` запускаются вручную.
+- `build-catalog.yml`, `build-chemistry-catalog.yml` и `build-mobs.yml`
+  запускаются только вручную через `workflow_dispatch`.
+- `build-maps.yml` вручную рендерит и публикует карты с лимитом размера.
 - Все публикующие workflow используют одну concurrency-группу, чтобы боты не
   перезаписали параллельные изменения в `data/`.
 

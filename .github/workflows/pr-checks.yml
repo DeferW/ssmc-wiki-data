@@ -77,3 +77,10 @@ jobs:
           python3 -m scripts.mobs.validate \
             --catalog data/mobs/catalog.json \
             --sprites data/mobs/sprites
+
+      - name: Validate map data
+        run: |
+          python3 -m scripts.maps.validate \
+            --catalog data/maps/catalog.json \
+            --assets data/maps \
+            --max-assets-bytes 26214400

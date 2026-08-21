@@ -1,16 +1,6 @@
 name: Build catalog
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - "config/catalog-overrides.json"
-      - "config/catalog-sources.yml"
-      - "scripts/catalog/**"
-      - "scripts/common/**"
-      - "requirements.txt"
-
   workflow_dispatch:
 
 permissions:
