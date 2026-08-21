@@ -10,50 +10,10 @@
       "mapPath": "/Maps/_Stories/almayer.yml",
       "origin": "stories",
       "sourcePrototypeIds": [
-        "STAlmayer",
-        "STAlmayerLowPop"
+        "STAlmayer"
       ],
       "overlay": "almayer/overlay.json",
       "tiles": "almayer/tiles.json"
-    },
-    {
-      "id": "arctic-valley",
-      "name": "Arctic Valley",
-      "kind": "planet",
-      "mapPath": "/Maps/_RMC14/PVE/arctic_valley.yml",
-      "origin": "rmc14",
-      "sourcePrototypeIds": [
-        "RMCPlanetArcticValley"
-      ],
-      "camouflage": "Snow",
-      "overlay": "arctic-valley/overlay.json",
-      "tiles": "arctic-valley/tiles.json"
-    },
-    {
-      "id": "corsat",
-      "name": "CORSAT",
-      "kind": "planet",
-      "mapPath": "/Maps/_RMC14/PVE/corsat.yml",
-      "origin": "rmc14",
-      "sourcePrototypeIds": [
-        "RMCPlanetCorsat"
-      ],
-      "camouflage": "Classic",
-      "overlay": "corsat/overlay.json",
-      "tiles": "corsat/tiles.json"
-    },
-    {
-      "id": "jungle-delta",
-      "name": "Jungle Delta",
-      "kind": "planet",
-      "mapPath": "/Maps/_RMC14/PVE/jungle_delta.yml",
-      "origin": "rmc14",
-      "sourcePrototypeIds": [
-        "RMCPlanetJungleDelta"
-      ],
-      "camouflage": "Jungle",
-      "overlay": "jungle-delta/overlay.json",
-      "tiles": "jungle-delta/tiles.json"
     },
     {
       "id": "chances",
@@ -114,19 +74,6 @@
       "tiles": "lv624/tiles.json"
     },
     {
-      "id": "hybrisa-greenshift",
-      "name": "LV-759 Hybrisa Prospera (Repaired)",
-      "kind": "planet",
-      "mapPath": "/Maps/_RMC14/PVE/hybrisa_greenshift.yml",
-      "origin": "rmc14",
-      "sourcePrototypeIds": [
-        "RMCPlanetHybrisaRepaired"
-      ],
-      "camouflage": "Urban",
-      "overlay": "hybrisa-greenshift/overlay.json",
-      "tiles": "hybrisa-greenshift/tiles.json"
-    },
-    {
       "id": "hybrisa",
       "name": "LV-759 Гибриса Проспера",
       "kind": "planet",
@@ -160,19 +107,6 @@
       },
       "overlay": "hybrisa/overlay.json",
       "tiles": "hybrisa/tiles.json"
-    },
-    {
-      "id": "sorokyne-repaired",
-      "name": "LV-976 - Sorokyne Strata (Repaired)",
-      "kind": "planet",
-      "mapPath": "/Maps/_RMC14/PVE/sorokyne_repaired.yml",
-      "origin": "rmc14",
-      "sourcePrototypeIds": [
-        "RMCPlanetSorokyneRepaired"
-      ],
-      "camouflage": "Jungle",
-      "overlay": "sorokyne-repaired/overlay.json",
-      "tiles": "sorokyne-repaired/tiles.json"
     },
     {
       "id": "sorokyne",
@@ -409,9 +343,9 @@
     }
   ],
   "counts": {
-    "maps": 16,
+    "maps": 11,
     "ships": 1,
-    "planets": 15,
-    "assetBytes": 133147657
+    "planets": 10,
+    "assetBytes": 105095059
   }
 }
