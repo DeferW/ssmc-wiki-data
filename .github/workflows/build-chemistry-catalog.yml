@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build-catalog:
+  build-chemistry:
     runs-on: ubuntu-latest
 
     steps:
