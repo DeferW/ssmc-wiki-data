@@ -18,13 +18,24 @@ from scripts.common.prototypes import (
 )
 
 SCHEMA_VERSION = 1
-OVERLAY_SCHEMA_VERSION = 1
+OVERLAY_SCHEMA_VERSION = 2
 TILES_SCHEMA_VERSION = 3
 DEFAULT_TILE_SIZE = 512
 DEFAULT_RENDER_SCALE = 1.0
 DEFAULT_WEBP_QUALITY = 82
 DEFAULT_MAX_ASSET_BYTES = 512 * 1024 * 1024
 STORIES_SHIP_PROTOTYPE_ID = "STAlmayer"
+AREA_SUPPORT_FIELDS = (
+    "CAS",
+    "fulton",
+    "lasing",
+    "mortarPlacement",
+    "mortarFire",
+    "medevac",
+    "paradropping",
+    "OB",
+    "supplyDrop",
+)
 
 
 def resource_path(game_source: Path, path: str) -> Path:
@@ -289,6 +300,99 @@ def _extract_occurrences(
     return result, insert_paths
 
 
+def _area_position(value: Any) -> tuple[int, int] | None:
+    if not isinstance(value, str):
+        return None
+    parts = value.split(",")
+    if len(parts) != 2:
+        return None
+    try:
+        return int(parts[0]), int(parts[1])
+    except ValueError:
+        return None
+
+
+def _area_grid(
+    document: dict[str, Any],
+    prototypes: dict[str, EntityPrototype],
+    resolver: PrototypeResolver,
+) -> dict[str, Any] | None:
+    cells: dict[tuple[int, int], str] = {}
+    for group in document["entities"]:
+        if not isinstance(group, dict):
+            continue
+        entities = group.get("entities", [])
+        if not isinstance(entities, list):
+            continue
+        for entity in entities:
+            if not isinstance(entity, dict):
+                continue
+            components = entity.get("components", [])
+            if not isinstance(components, list):
+                continue
+            for component in components:
+                if not isinstance(component, dict) or component.get("type") != "AreaGrid":
+                    continue
+                areas = component.get("areas", {})
+                if not isinstance(areas, dict):
+                    continue
+                for raw_position, prototype_id in areas.items():
+                    position = _area_position(raw_position)
+                    if position is None or not isinstance(prototype_id, str):
+                        raise RuntimeError(
+                            f"Invalid AreaGrid entry: {raw_position!r}: {prototype_id!r}"
+                        )
+                    if prototype_id not in prototypes:
+                        raise RuntimeError(f"AreaGrid references unknown area: {prototype_id}")
+                    cells[position] = prototype_id
+
+    if not cells:
+        return None
+
+    type_ids = sorted(set(cells.values()))
+    type_index = {prototype_id: index for index, prototype_id in enumerate(type_ids)}
+    types: list[list[Any]] = []
+    for prototype_id in type_ids:
+        resolved = resolver.resolve(prototype_id)
+        area = resolved["components"].get("Area")
+        if not isinstance(area, dict):
+            raise RuntimeError(f"AreaGrid prototype has no Area component: {prototype_id}")
+        support_mask = 0
+        for bit, field in enumerate(AREA_SUPPORT_FIELDS):
+            value = area.get(field, False)
+            if not isinstance(value, bool):
+                raise RuntimeError(
+                    f"Area {prototype_id} has invalid {field} value: {value!r}"
+                )
+            if value:
+                support_mask |= 1 << bit
+        types.append(
+            [prototype_id, str(resolved["fields"].get("name") or prototype_id), support_mask]
+        )
+
+    by_row: dict[int, list[tuple[int, int]]] = {}
+    for (x, y), prototype_id in cells.items():
+        by_row.setdefault(y, []).append((x, type_index[prototype_id]))
+
+    rows: list[list[int]] = []
+    for y in sorted(by_row):
+        positions = sorted(by_row[y])
+        row = [y]
+        start_x, current_type = positions[0]
+        previous_x = start_x
+        for x, area_type in positions[1:]:
+            if x == previous_x + 1 and area_type == current_type:
+                previous_x = x
+                continue
+            row.extend((start_x, previous_x - start_x + 1, current_type))
+            start_x = previous_x = x
+            current_type = area_type
+        row.extend((start_x, previous_x - start_x + 1, current_type))
+        rows.append(row)
+
+    return {"types": types, "rows": rows}
+
+
 def build_overlay(
     game_source: Path,
     map_path: str,
@@ -325,6 +429,7 @@ def build_overlay(
         "prototypes": dict(sorted(registry.items())),
         "occurrences": dict(sorted(occurrences.items())),
         "insertMaps": dict(sorted(insert_maps.items())),
+        "areas": _area_grid(document, prototypes, resolver),
     }
 
 

@@ -158,6 +158,92 @@ def test_overlay_keeps_spawner_locations_options_and_insert_markers(tmp_path: Pa
     assert overlay["insertMaps"]["/Maps/_Stories/Inserts/new.yml"]["occurrences"]["Loot"] == [[5.0, 6.0]]
 
 
+def test_overlay_compacts_area_support_into_row_runs(tmp_path: Path):
+    prototypes = {
+        "AreaBase": make_prototype(
+            "AreaBase",
+            abstract=True,
+            components=(
+                {
+                    "type": "Area",
+                    "CAS": True,
+                    "fulton": True,
+                    "lasing": True,
+                    "mortarPlacement": True,
+                    "mortarFire": True,
+                    "medevac": True,
+                    "paradropping": True,
+                    "OB": True,
+                    "supplyDrop": True,
+                },
+            ),
+        ),
+        "AreaOutside": make_prototype(
+            "AreaOutside",
+            parents=("AreaBase",),
+            fields={"name": "Colony Grounds"},
+        ),
+        "AreaInside": make_prototype(
+            "AreaInside",
+            parents=("AreaBase",),
+            components=(
+                {
+                    "type": "Area",
+                    "fulton": False,
+                    "lasing": False,
+                    "mortarPlacement": False,
+                    "mortarFire": False,
+                    "medevac": False,
+                    "paradropping": False,
+                    "supplyDrop": False,
+                },
+            ),
+            fields={"name": "Medical"},
+        ),
+    }
+    write_yaml(
+        tmp_path / "Resources/Maps/_RMC14/map.yml",
+        {
+            "entities": [
+                {
+                    "proto": "",
+                    "entities": [
+                        {
+                            "components": [
+                                {
+                                    "type": "AreaGrid",
+                                    "areas": {
+                                        "0,0": "AreaOutside",
+                                        "1,0": "AreaOutside",
+                                        "2,0": "AreaInside",
+                                        "0,1": "AreaInside",
+                                    },
+                                }
+                            ]
+                        }
+                    ],
+                }
+            ]
+        },
+    )
+
+    overlay = build_overlay(
+        tmp_path,
+        "/Maps/_RMC14/map.yml",
+        prototypes,
+        PrototypeResolver(prototypes),
+    )
+
+    assert overlay["schemaVersion"] == 2
+    assert overlay["areas"] == {
+        "types": [
+            ["AreaInside", "Medical", 129],
+            ["AreaOutside", "Colony Grounds", 511],
+        ],
+        "rows": [[0, 0, 2, 1, 2, 1, 0], [1, 0, 1, 0]],
+    }
+
+
 def test_tile_pyramid_is_sparse_and_webp(tmp_path: Path):
     image = Image.new("RGBA", (1024, 512), (0, 0, 0, 0))
     for x in range(512):
