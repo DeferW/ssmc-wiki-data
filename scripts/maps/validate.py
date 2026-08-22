@@ -19,6 +19,55 @@ def read_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def validate_tiles(
+    manifest_path: Path,
+    label: str,
+    expected_files: set[Path],
+) -> None:
+    resolved_manifest = manifest_path.resolve()
+    if resolved_manifest in expected_files:
+        return
+    expected_files.add(resolved_manifest)
+    manifest = read_json(manifest_path)
+    if manifest.get("schemaVersion") != TILES_SCHEMA_VERSION:
+        raise RuntimeError(f"Invalid tile schema: {label}")
+    if manifest.get("renderScale") != 1:
+        raise RuntimeError(f"Map is not published at native resolution: {label}")
+    if manifest.get("maxZoomLossless") is not True:
+        raise RuntimeError(f"Map maximum zoom is not lossless: {label}")
+    tile_size = manifest.get("tileSize")
+    if not isinstance(tile_size, int) or tile_size < 128:
+        raise RuntimeError(f"Invalid tile size: {label}")
+    for grid in manifest.get("grids", []):
+        pattern = grid.get("path")
+        if not isinstance(pattern, str):
+            raise RuntimeError(f"Grid has no tile pattern: {label}")
+        world_min = grid.get("worldMin")
+        if (
+            not isinstance(world_min, dict)
+            or not isinstance(world_min.get("X"), (int, float))
+            or not isinstance(world_min.get("Y"), (int, float))
+        ):
+            raise RuntimeError(f"Grid has no world bounds: {label}")
+        levels = grid.get("levels", [])
+        if not levels or levels[-1].get("lossless") is not True:
+            raise RuntimeError(f"Map maximum tile level is not lossless: {label}")
+        for level in levels:
+            zoom = level.get("z")
+            for coordinate in level.get("tiles", []):
+                x, y = coordinate
+                relative = pattern.format(z=zoom, x=x, y=y)
+                tile_path = manifest_path.parent / relative
+                expected_files.add(tile_path.resolve())
+                if not tile_path.is_file():
+                    raise RuntimeError(f"Missing map tile: {tile_path}")
+                with Image.open(tile_path) as image:
+                    if image.format != "WEBP":
+                        raise RuntimeError(f"Map tile is not WebP: {tile_path}")
+                    if image.width > tile_size or image.height > tile_size:
+                        raise RuntimeError(f"Oversized map tile: {tile_path}")
+
+
 def validate(catalog_path: Path, assets_root: Path, max_assets_bytes: int) -> None:
     data = read_json(catalog_path)
     if not isinstance(data, dict) or data.get("schemaVersion") != SCHEMA_VERSION:
@@ -62,8 +111,14 @@ def validate(catalog_path: Path, assets_root: Path, max_assets_bytes: int) -> No
             raise RuntimeError(f"Overlay has no prototype registry: {map_id}")
         if not isinstance(overlay.get("occurrences"), dict):
             raise RuntimeError(f"Overlay has no occurrences: {map_id}")
-        if not isinstance(overlay.get("insertMaps"), dict):
+        insert_maps = overlay.get("insertMaps")
+        if not isinstance(insert_maps, dict):
             raise RuntimeError(f"Overlay has no insert maps: {map_id}")
+        for insert_path, insert in insert_maps.items():
+            if not isinstance(insert, dict) or not isinstance(insert.get("tiles"), str):
+                raise RuntimeError(f"Insert map has no tiles: {insert_path}")
+            insert_manifest_path = assets_root / insert["tiles"]
+            validate_tiles(insert_manifest_path, insert_path, expected_files)
 
         tiles_relative = entry.get("tiles")
         if tiles_relative is None:
@@ -71,45 +126,7 @@ def validate(catalog_path: Path, assets_root: Path, max_assets_bytes: int) -> No
         if not isinstance(tiles_relative, str):
             raise RuntimeError(f"Invalid tiles path: {map_id}")
         manifest_path = assets_root / tiles_relative
-        expected_files.add(manifest_path.resolve())
-        manifest = read_json(manifest_path)
-        if manifest.get("schemaVersion") != TILES_SCHEMA_VERSION:
-            raise RuntimeError(f"Invalid tile schema: {map_id}")
-        if manifest.get("renderScale") != 1:
-            raise RuntimeError(f"Map is not published at native resolution: {map_id}")
-        if manifest.get("maxZoomLossless") is not True:
-            raise RuntimeError(f"Map maximum zoom is not lossless: {map_id}")
-        tile_size = manifest.get("tileSize")
-        if not isinstance(tile_size, int) or tile_size < 128:
-            raise RuntimeError(f"Invalid tile size: {map_id}")
-        for grid in manifest.get("grids", []):
-            pattern = grid.get("path")
-            if not isinstance(pattern, str):
-                raise RuntimeError(f"Grid has no tile pattern: {map_id}")
-            world_min = grid.get("worldMin")
-            if (
-                not isinstance(world_min, dict)
-                or not isinstance(world_min.get("X"), (int, float))
-                or not isinstance(world_min.get("Y"), (int, float))
-            ):
-                raise RuntimeError(f"Grid has no world bounds: {map_id}")
-            levels = grid.get("levels", [])
-            if not levels or levels[-1].get("lossless") is not True:
-                raise RuntimeError(f"Map maximum tile level is not lossless: {map_id}")
-            for level in levels:
-                zoom = level.get("z")
-                for coordinate in level.get("tiles", []):
-                    x, y = coordinate
-                    relative = pattern.format(z=zoom, x=x, y=y)
-                    tile_path = assets_root / map_id / relative
-                    expected_files.add(tile_path.resolve())
-                    if not tile_path.is_file():
-                        raise RuntimeError(f"Missing map tile: {tile_path}")
-                    with Image.open(tile_path) as image:
-                        if image.format != "WEBP":
-                            raise RuntimeError(f"Map tile is not WebP: {tile_path}")
-                        if image.width > tile_size or image.height > tile_size:
-                            raise RuntimeError(f"Oversized map tile: {tile_path}")
+        validate_tiles(manifest_path, map_id, expected_files)
 
     actual_files = {
         path.resolve() for path in assets_root.rglob("*") if path.is_file()
