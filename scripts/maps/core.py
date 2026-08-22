@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import base64
 import hashlib
 import json
 import math
@@ -19,7 +20,7 @@ from scripts.common.prototypes import (
 )
 
 SCHEMA_VERSION = 1
-OVERLAY_SCHEMA_VERSION = 3
+OVERLAY_SCHEMA_VERSION = 4
 TILES_SCHEMA_VERSION = 3
 DEFAULT_TILE_SIZE = 512
 DEFAULT_RENDER_SCALE = 1.0
@@ -400,6 +401,80 @@ def _area_grid(
     return {"types": types, "rows": rows}
 
 
+def _tile_footprint(document: dict[str, Any]) -> dict[str, Any] | None:
+    """Return compact non-space tile runs that approximate MapInsertSmimsh fixtures."""
+    tilemap = document.get("tilemap", {})
+    if not isinstance(tilemap, dict):
+        return None
+    space_ids = {
+        int(raw_id)
+        for raw_id, prototype_id in tilemap.items()
+        if isinstance(raw_id, (int, str))
+        and str(raw_id).isdigit()
+        and prototype_id == "Space"
+    }
+    cells: set[tuple[int, int]] = set()
+    for group in document["entities"]:
+        if not isinstance(group, dict):
+            continue
+        entities = group.get("entities", [])
+        if not isinstance(entities, list):
+            continue
+        for entity in entities:
+            if not isinstance(entity, dict):
+                continue
+            components = entity.get("components", [])
+            if not isinstance(components, list):
+                continue
+            for component in components:
+                if not isinstance(component, dict) or component.get("type") != "MapGrid":
+                    continue
+                chunks = component.get("chunks", {})
+                if not isinstance(chunks, dict):
+                    continue
+                for chunk in chunks.values():
+                    if not isinstance(chunk, dict) or not isinstance(chunk.get("tiles"), str):
+                        continue
+                    index = _area_position(chunk.get("ind"))
+                    if index is None:
+                        continue
+                    raw = base64.b64decode(chunk["tiles"], validate=True)
+                    if len(raw) % 256 != 0:
+                        raise RuntimeError(f"Invalid MapGrid chunk payload: {len(raw)} bytes")
+                    tile_bytes = len(raw) // 256
+                    if tile_bytes < 2:
+                        raise RuntimeError(f"Invalid serialized tile size: {tile_bytes}")
+                    for offset in range(256):
+                        start = offset * tile_bytes
+                        tile_id = int.from_bytes(raw[start:start + 2], "little")
+                        if tile_id in space_ids:
+                            continue
+                        cells.add((
+                            index[0] * 16 + offset % 16,
+                            index[1] * 16 + offset // 16,
+                        ))
+    if not cells:
+        return None
+
+    by_row: dict[int, list[int]] = {}
+    for x, y in cells:
+        by_row.setdefault(y, []).append(x)
+    rows: list[list[int]] = []
+    for y in sorted(by_row):
+        positions = sorted(by_row[y])
+        row = [y]
+        start = previous = positions[0]
+        for x in positions[1:]:
+            if x == previous + 1:
+                previous = x
+                continue
+            row.extend((start, previous - start + 1))
+            start = previous = x
+        row.extend((start, previous - start + 1))
+        rows.append(row)
+    return {"rows": rows}
+
+
 def build_overlay(
     game_source: Path,
     map_path: str,
@@ -431,6 +506,7 @@ def build_overlay(
         insert_maps[insert_path] = {
             "occurrences": insert_occurrences,
             "areas": _area_grid(insert_document, prototypes, resolver),
+            "footprint": _tile_footprint(insert_document),
             "tiles": f"inserts/{render_key}/tiles.json",
         }
         pending.update(nested - visited)

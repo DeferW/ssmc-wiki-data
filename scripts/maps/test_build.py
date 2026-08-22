@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import base64
 import json
 from pathlib import Path
 
@@ -9,6 +10,7 @@ from PIL import Image
 from scripts.common.prototypes import EntityPrototype, PrototypeResolver
 from scripts.maps.core import (
     _save_tiles,
+    _tile_footprint,
     build_overlay,
     discover_active_maps,
     insert_render_key,
@@ -21,12 +23,36 @@ from scripts.maps.prepare_render import prepare_render_maps, sanitize_map_text
 
 def test_renderer_patch_keeps_fractional_sprite_offsets_and_reuses_pool():
     patch = (Path(__file__).with_name("renderer-world-bounds.patch")).read_text(encoding="utf-8")
-    assert "MathF.Round((entity.Sprite.Offset.X + customOffset.X) * EyeManager.PixelsPerMeter)" in patch
-    assert "MathF.Round((entity.Sprite.Offset.Y + customOffset.Y) * EyeManager.PixelsPerMeter)" in patch
+    assert "Matrix3x2.CreateRotation((float) (entity.Sprite.Rotation + transformRotation).Theta)" in patch
+    assert "MathF.Round((rotatedOffset.X + customOffset.X) * EyeManager.PixelsPerMeter)" in patch
+    assert "MathF.Round((rotatedOffset.Y + customOffset.Y) * EyeManager.PixelsPerMeter)" in patch
+    assert "var spriteRotation = (float) entity.Sprite.Rotation.Degrees" in patch
     assert "offsetX - image.Width / 2" in patch
     assert "offsetY - image.Height / 2" in patch
     assert "+                Fresh = false" in patch
     assert "+                Dirty = true" in patch
+
+
+def test_insert_footprint_excludes_space_tiles():
+    records = bytearray(256 * 7)
+    records[0:2] = (3).to_bytes(2, "little")
+    records[7:9] = (8).to_bytes(2, "little")
+    document = {
+        "tilemap": {0: "Space", 3: "CMFloorSteel", 8: "Space"},
+        "entities": [{
+            "entities": [{
+                "components": [{
+                    "type": "MapGrid",
+                    "chunks": {"0,0": {"ind": "-1,2", "tiles": base64.b64encode(records).decode()}},
+                }],
+            }],
+        }],
+    }
+
+    footprint = _tile_footprint(document)
+
+    assert footprint is not None
+    assert footprint["rows"] == [[32, -16, 1]]
 
 
 def test_map_workflow_resumes_after_renderer_process_crash():
@@ -261,7 +287,7 @@ def test_overlay_compacts_area_support_into_row_runs(tmp_path: Path):
         PrototypeResolver(prototypes),
     )
 
-    assert overlay["schemaVersion"] == 3
+    assert overlay["schemaVersion"] == 4
     assert overlay["areas"] == {
         "types": [
             ["AreaInside", "Medical", 129],

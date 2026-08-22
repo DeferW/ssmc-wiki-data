@@ -74,18 +74,41 @@ index c460853..4f02eaf 100644
 diff --git a/Content.MapRenderer/Painters/EntityPainter.cs b/Content.MapRenderer/Painters/EntityPainter.cs
 --- a/Content.MapRenderer/Painters/EntityPainter.cs
 +++ b/Content.MapRenderer/Painters/EntityPainter.cs
-@@ -140,8 +140,8 @@ public void Run(Image canvas, EntityData entity, SharedTransformSystem xformSyst
+@@ -7,5 +7,6 @@ using Robust.Client.ResourceManagement;
+ using Robust.Shared.ContentPack;
+ using Robust.Shared.GameObjects;
++using Robust.Shared.Maths;
+ using Robust.Shared.Timing;
+ using SixLabors.ImageSharp;
+ using SixLabors.ImageSharp.PixelFormats;
+@@ -129,5 +130,5 @@ public void Run(Image canvas, EntityData entity, SharedTransformSystem xformSyst
+-            var spriteRotation = 0f;
++            var spriteRotation = (float) entity.Sprite.Rotation.Degrees;
+             if (!entity.Sprite.NoRotation && !entity.Sprite.SnapCardinals && _sprite.LayerGetDirectionCount((SpriteComponent.Layer)layer) == 1)
+             {
+-                spriteRotation = (float)worldRotation.Degrees;
++                spriteRotation += (float)worldRotation.Degrees;
+             }
+@@ -140,8 +141,16 @@ public void Run(Image canvas, EntityData entity, SharedTransformSystem xformSyst
              var (imgX, imgY) = rsi?.Size ?? (EyeManager.PixelsPerMeter, EyeManager.PixelsPerMeter);
 -            var offsetX = (int)(entity.Sprite.Offset.X + customOffset.X) * EyeManager.PixelsPerMeter;
 -            var offsetY = (int)(entity.Sprite.Offset.Y + customOffset.X) * EyeManager.PixelsPerMeter;
-+            var offsetX = (int) MathF.Round((entity.Sprite.Offset.X + customOffset.X) * EyeManager.PixelsPerMeter);
-+            var offsetY = (int) MathF.Round((entity.Sprite.Offset.Y + customOffset.Y) * EyeManager.PixelsPerMeter);
++            var transformRotation = entity.Sprite.NoRotation
++                ? Angle.Zero
++                : entity.Sprite.SnapCardinals
++                    ? worldRotation - worldRotation.RoundToCardinalAngle()
++                    : worldRotation;
++            var rotatedOffset = Vector2.Transform(
++                entity.Sprite.Offset,
++                Matrix3x2.CreateRotation((float) (entity.Sprite.Rotation + transformRotation).Theta));
++            var offsetX = (int) MathF.Round((rotatedOffset.X + customOffset.X) * EyeManager.PixelsPerMeter);
++            var offsetY = (int) MathF.Round((rotatedOffset.Y + customOffset.Y) * EyeManager.PixelsPerMeter);
              image.Mutate(o => o
                  .DrawImage(coloredImage, PixelColorBlendingMode.Multiply, PixelAlphaCompositionMode.SrcAtop, 1)
                  .Resize(imgX, imgY)
                  .Flip(FlipMode.Vertical)
                  .Rotate(spriteRotation));
-@@ -149,4 +149,4 @@ public void Run(Image canvas, EntityData entity, SharedTransformSystem xformSyst
+@@ -149,4 +158,4 @@ public void Run(Image canvas, EntityData entity, SharedTransformSystem xformSyst
 -            var pointX = (int)entity.X + offsetX - imgX / 2;
 -            var pointY = (int)entity.Y + offsetY - imgY / 2;
 +            var pointX = (int) MathF.Round(entity.X) + offsetX - image.Width / 2;
