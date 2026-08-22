@@ -22,6 +22,19 @@ diff --git a/Content.MapRenderer/Painters/MapPainter.cs b/Content.MapRenderer/Pa
 index 991fa74..ff5673a 100644
 --- a/Content.MapRenderer/Painters/MapPainter.cs
 +++ b/Content.MapRenderer/Painters/MapPainter.cs
+@@ -47,9 +47,10 @@ namespace Content.MapRenderer.Painters
+             var poolSettings = new PoolSettings
+             {
+                 DummyTicker = false,
+                 Connected = true,
+-                Destructive = true,
+-                Fresh = true,
++                Destructive = false,
++                Fresh = false,
++                Dirty = true,
+                 // Seriously whoever made MapPainter use GameMapPrototype I wish you step on a lego one time.
+                 Map = _map is RenderMapPrototype prototype ? prototype.Prototype : PoolManager.TestMap,
+             };
 @@ -204,11 +204,15 @@ await server.WaitPost(() =>
                  var maxY = tiles.Max(t => t.Y);
                  var w = (maxX - minX + 1) * tileXSize;
@@ -61,15 +74,25 @@ index c460853..4f02eaf 100644
 diff --git a/Content.MapRenderer/Painters/EntityPainter.cs b/Content.MapRenderer/Painters/EntityPainter.cs
 --- a/Content.MapRenderer/Painters/EntityPainter.cs
 +++ b/Content.MapRenderer/Painters/EntityPainter.cs
-@@ -140,7 +140,7 @@ public void Run(Image canvas, EntityData entity, SharedTransformSystem xformSyst
+@@ -140,8 +140,8 @@ public void Run(Image canvas, EntityData entity, SharedTransformSystem xformSyst
              var (imgX, imgY) = rsi?.Size ?? (EyeManager.PixelsPerMeter, EyeManager.PixelsPerMeter);
-             var offsetX = (int)(entity.Sprite.Offset.X + customOffset.X) * EyeManager.PixelsPerMeter;
+-            var offsetX = (int)(entity.Sprite.Offset.X + customOffset.X) * EyeManager.PixelsPerMeter;
 -            var offsetY = (int)(entity.Sprite.Offset.Y + customOffset.X) * EyeManager.PixelsPerMeter;
-+            var offsetY = (int)(entity.Sprite.Offset.Y + customOffset.Y) * EyeManager.PixelsPerMeter;
++            var offsetX = (int) MathF.Round((entity.Sprite.Offset.X + customOffset.X) * EyeManager.PixelsPerMeter);
++            var offsetY = (int) MathF.Round((entity.Sprite.Offset.Y + customOffset.Y) * EyeManager.PixelsPerMeter);
              image.Mutate(o => o
                  .DrawImage(coloredImage, PixelColorBlendingMode.Multiply, PixelAlphaCompositionMode.SrcAtop, 1)
                  .Resize(imgX, imgY)
                  .Flip(FlipMode.Vertical)
+                 .Rotate(spriteRotation));
+@@ -149,4 +149,4 @@ public void Run(Image canvas, EntityData entity, SharedTransformSystem xformSyst
+-            var pointX = (int)entity.X + offsetX - imgX / 2;
+-            var pointY = (int)entity.Y + offsetY - imgY / 2;
++            var pointX = (int) MathF.Round(entity.X) + offsetX - image.Width / 2;
++            var pointY = (int) MathF.Round(entity.Y) + offsetY - image.Height / 2;
+             canvas.Mutate(o => o.DrawImage(image, new Point(pointX, pointY), 1));
+         }
+     }
 diff --git a/Content.MapRenderer/Program.cs b/Content.MapRenderer/Program.cs
 index 9d7843bcd0..729ab65706 100644
 --- a/Content.MapRenderer/Program.cs

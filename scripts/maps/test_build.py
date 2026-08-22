@@ -19,6 +19,16 @@ from scripts.maps.core import (
 from scripts.maps.prepare_render import prepare_render_maps, sanitize_map_text
 
 
+def test_renderer_patch_keeps_fractional_sprite_offsets_and_reuses_pool():
+    patch = (Path(__file__).with_name("renderer-world-bounds.patch")).read_text(encoding="utf-8")
+    assert "MathF.Round((entity.Sprite.Offset.X + customOffset.X) * EyeManager.PixelsPerMeter)" in patch
+    assert "MathF.Round((entity.Sprite.Offset.Y + customOffset.Y) * EyeManager.PixelsPerMeter)" in patch
+    assert "offsetX - image.Width / 2" in patch
+    assert "offsetY - image.Height / 2" in patch
+    assert "+                Fresh = false" in patch
+    assert "+                Dirty = true" in patch
+
+
 def make_prototype(
     prototype_id: str,
     *,

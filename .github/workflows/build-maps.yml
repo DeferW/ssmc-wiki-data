@@ -13,7 +13,9 @@ concurrency:
 jobs:
   build-maps:
     runs-on: ubuntu-latest
-    timeout-minutes: 360
+    # A healthy uncached run reuses one game pair and should finish far sooner.
+    # Stop a regression instead of silently spending the six-hour job maximum.
+    timeout-minutes: 120
 
     steps:
       - name: Download wiki data repository
@@ -83,47 +85,34 @@ jobs:
         uses: actions/cache/restore@v5
         with:
           path: rendered-maps
-          key: raw-map-renders-v3-${{ runner.os }}-${{ steps.game-source.outputs.commit }}-${{ hashFiles('scripts/maps/prepare_render.py', 'scripts/maps/renderer-world-bounds.patch') }}
-          restore-keys: |
-            raw-map-renders-v3-${{ runner.os }}-${{ steps.game-source.outputs.commit }}-
+          key: raw-map-renders-v4-${{ runner.os }}-${{ steps.game-source.outputs.commit }}-${{ hashFiles('scripts/maps/prepare_render.py', 'scripts/maps/renderer-world-bounds.patch') }}
 
       - name: Render maps with the game renderer
-        if: steps.rendered-map-cache.outputs.cache-matched-key == ''
+        if: steps.rendered-map-cache.outputs.cache-hit != 'true'
         working-directory: game-source
         run: |
           mapfile -t MAP_FILES < ../prepared-render-list.txt
 
-          if ! dotnet run \
-              --project Content.MapRenderer \
-              --configuration Release \
-              -- \
-              --files \
-              --viewer \
-              --format webp \
-              --output "$GITHUB_WORKSPACE/rendered-maps" \
-              "${MAP_FILES[@]}"; then
-            echo "::warning::Batch render failed; checking every map separately"
-            FAILED_MAPS=()
+          dotnet run \
+            --project Content.MapRenderer \
+            --configuration Release \
+            -- \
+            --files \
+            --viewer \
+            --format webp \
+            --output "$GITHUB_WORKSPACE/rendered-maps" \
+            "${MAP_FILES[@]}"
 
-            for MAP_FILE in "${MAP_FILES[@]}"; do
-              if ! dotnet run \
-                  --no-build \
-                  --project Content.MapRenderer \
-                  --configuration Release \
-                  -- \
-                  --files \
-                  --viewer \
-                  --format webp \
-                  --output "$GITHUB_WORKSPACE/rendered-maps" \
-                  "$MAP_FILE"; then
-                FAILED_MAPS+=("$MAP_FILE")
-              fi
-            done
-
-            if (( ${#FAILED_MAPS[@]} > 0 )); then
-              printf '::error::Maps rejected by the game renderer: %s\n' "${FAILED_MAPS[*]}"
-              exit 1
+          MISSING_MAPS=()
+          for MAP_FILE in "${MAP_FILES[@]}"; do
+            MAP_NAME=$(basename "${MAP_FILE%.*}")
+            if [[ ! -s "$GITHUB_WORKSPACE/rendered-maps/$MAP_NAME/map.json" ]]; then
+              MISSING_MAPS+=("$MAP_FILE")
             fi
+          done
+          if (( ${#MISSING_MAPS[@]} > 0 )); then
+            printf '::error::Renderer produced no output for maps: %s\n' "${MISSING_MAPS[*]}"
+            exit 1
           fi
 
       # Save before packaging so a size/encoding failure does not force the
@@ -133,14 +122,14 @@ jobs:
         uses: actions/cache/save@v5
         with:
           path: rendered-maps
-          key: raw-map-renders-v3-${{ runner.os }}-${{ steps.game-source.outputs.commit }}-${{ hashFiles('scripts/maps/prepare_render.py', 'scripts/maps/renderer-world-bounds.patch') }}
+          key: raw-map-renders-v4-${{ runner.os }}-${{ steps.game-source.outputs.commit }}-${{ hashFiles('scripts/maps/prepare_render.py', 'scripts/maps/renderer-world-bounds.patch') }}
 
       - name: Restore unchanged raw map insert renders
         id: rendered-insert-cache
         uses: actions/cache/restore@v5
         with:
           path: rendered-inserts
-          key: raw-map-insert-renders-v1-${{ runner.os }}-${{ steps.game-source.outputs.commit }}-${{ hashFiles('scripts/maps/prepare_render.py', 'scripts/maps/renderer-world-bounds.patch') }}
+          key: raw-map-insert-renders-v2-${{ runner.os }}-${{ steps.game-source.outputs.commit }}-${{ hashFiles('scripts/maps/prepare_render.py', 'scripts/maps/renderer-world-bounds.patch') }}
 
       - name: Render map inserts with the game renderer
         if: steps.rendered-insert-cache.outputs.cache-hit != 'true'
@@ -148,42 +137,31 @@ jobs:
         run: |
           mapfile -t MAP_FILES < ../prepared-insert-render-list.txt
           DOTNET_BUILD_ARGS=()
-          if [[ "${{ steps.rendered-map-cache.outputs.cache-matched-key }}" == "" ]]; then
+          if [[ "${{ steps.rendered-map-cache.outputs.cache-hit }}" != "true" ]]; then
             DOTNET_BUILD_ARGS+=(--no-build)
           fi
 
-          if ! dotnet run \
-              "${DOTNET_BUILD_ARGS[@]}" \
-              --project Content.MapRenderer \
-              --configuration Release \
-              -- \
-              --files \
-              --viewer \
-              --format webp \
-              --output "$GITHUB_WORKSPACE/rendered-inserts" \
-              "${MAP_FILES[@]}"; then
-            echo "::warning::Batch insert render failed; checking every insert separately"
-            FAILED_MAPS=()
+          dotnet run \
+            "${DOTNET_BUILD_ARGS[@]}" \
+            --project Content.MapRenderer \
+            --configuration Release \
+            -- \
+            --files \
+            --viewer \
+            --format webp \
+            --output "$GITHUB_WORKSPACE/rendered-inserts" \
+            "${MAP_FILES[@]}"
 
-            for MAP_FILE in "${MAP_FILES[@]}"; do
-              if ! dotnet run \
-                  --no-build \
-                  --project Content.MapRenderer \
-                  --configuration Release \
-                  -- \
-                  --files \
-                  --viewer \
-                  --format webp \
-                  --output "$GITHUB_WORKSPACE/rendered-inserts" \
-                  "$MAP_FILE"; then
-                FAILED_MAPS+=("$MAP_FILE")
-              fi
-            done
-
-            if (( ${#FAILED_MAPS[@]} > 0 )); then
-              printf '::error::Map inserts rejected by the game renderer: %s\n' "${FAILED_MAPS[*]}"
-              exit 1
+          MISSING_INSERTS=()
+          for MAP_FILE in "${MAP_FILES[@]}"; do
+            MAP_NAME=$(basename "${MAP_FILE%.*}")
+            if [[ ! -s "$GITHUB_WORKSPACE/rendered-inserts/$MAP_NAME/map.json" ]]; then
+              MISSING_INSERTS+=("$MAP_FILE")
             fi
+          done
+          if (( ${#MISSING_INSERTS[@]} > 0 )); then
+            printf '::error::Renderer produced no output for inserts: %s\n' "${MISSING_INSERTS[*]}"
+            exit 1
           fi
 
       - name: Save raw map insert renders
@@ -191,7 +169,7 @@ jobs:
         uses: actions/cache/save@v5
         with:
           path: rendered-inserts
-          key: raw-map-insert-renders-v1-${{ runner.os }}-${{ steps.game-source.outputs.commit }}-${{ hashFiles('scripts/maps/prepare_render.py', 'scripts/maps/renderer-world-bounds.patch') }}
+          key: raw-map-insert-renders-v2-${{ runner.os }}-${{ steps.game-source.outputs.commit }}-${{ hashFiles('scripts/maps/prepare_render.py', 'scripts/maps/renderer-world-bounds.patch') }}
 
       - name: Build compact overlays and lazy tile pyramids
         run: |
