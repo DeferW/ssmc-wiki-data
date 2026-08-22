@@ -37,6 +37,8 @@ def test_map_workflow_resumes_after_renderer_process_crash():
     assert 'PENDING_INSERTS=("${MAP_FILES[@]}")' in workflow
     assert workflow.count("Renderer made no progress") == 2
     assert workflow.count("--no-build") >= 2
+    assert workflow.count("dotnet build Content.MapRenderer --configuration Release") == 2
+    assert "dotnet build --project" not in workflow
 
 
 def make_prototype(

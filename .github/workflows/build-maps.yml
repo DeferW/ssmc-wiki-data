@@ -92,7 +92,7 @@ jobs:
         working-directory: game-source
         run: |
           mapfile -t MAP_FILES < ../prepared-render-list.txt
-          dotnet build --project Content.MapRenderer --configuration Release
+          dotnet build Content.MapRenderer --configuration Release
 
           PENDING_MAPS=("${MAP_FILES[@]}")
           ATTEMPT=0
@@ -152,7 +152,7 @@ jobs:
         run: |
           mapfile -t MAP_FILES < ../prepared-insert-render-list.txt
           if [[ "${{ steps.rendered-map-cache.outputs.cache-hit }}" == "true" ]]; then
-            dotnet build --project Content.MapRenderer --configuration Release
+            dotnet build Content.MapRenderer --configuration Release
           fi
 
           PENDING_INSERTS=("${MAP_FILES[@]}")
