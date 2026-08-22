@@ -29,6 +29,16 @@ def test_renderer_patch_keeps_fractional_sprite_offsets_and_reuses_pool():
     assert "+                Dirty = true" in patch
 
 
+def test_map_workflow_resumes_after_renderer_process_crash():
+    workflow = (Path(__file__).parents[2] / ".github" / "workflows" / "build-maps.yml").read_text(
+        encoding="utf-8"
+    )
+    assert 'PENDING_MAPS=("${MAP_FILES[@]}")' in workflow
+    assert 'PENDING_INSERTS=("${MAP_FILES[@]}")' in workflow
+    assert workflow.count("Renderer made no progress") == 2
+    assert workflow.count("--no-build") >= 2
+
+
 def make_prototype(
     prototype_id: str,
     *,

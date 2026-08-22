@@ -92,28 +92,43 @@ jobs:
         working-directory: game-source
         run: |
           mapfile -t MAP_FILES < ../prepared-render-list.txt
+          dotnet build --project Content.MapRenderer --configuration Release
 
-          dotnet run \
-            --project Content.MapRenderer \
-            --configuration Release \
-            -- \
-            --files \
-            --viewer \
-            --format webp \
-            --output "$GITHUB_WORKSPACE/rendered-maps" \
-            "${MAP_FILES[@]}"
+          PENDING_MAPS=("${MAP_FILES[@]}")
+          ATTEMPT=0
+          while (( ${#PENDING_MAPS[@]} > 0 )); do
+            ((ATTEMPT += 1))
+            printf 'Renderer pass %d: %d map(s) remaining\n' "$ATTEMPT" "${#PENDING_MAPS[@]}"
 
-          MISSING_MAPS=()
-          for MAP_FILE in "${MAP_FILES[@]}"; do
-            MAP_NAME=$(basename "${MAP_FILE%.*}")
-            if [[ ! -s "$GITHUB_WORKSPACE/rendered-maps/$MAP_NAME/map.json" ]]; then
-              MISSING_MAPS+=("$MAP_FILE")
+            set +e
+            dotnet run \
+              --no-build \
+              --project Content.MapRenderer \
+              --configuration Release \
+              -- \
+              --files \
+              --viewer \
+              --format webp \
+              --output "$GITHUB_WORKSPACE/rendered-maps" \
+              "${PENDING_MAPS[@]}"
+            RENDER_STATUS=$?
+            set -e
+
+            NEXT_PENDING=()
+            for MAP_FILE in "${PENDING_MAPS[@]}"; do
+              MAP_NAME=$(basename "${MAP_FILE%.*}")
+              if [[ ! -s "$GITHUB_WORKSPACE/rendered-maps/$MAP_NAME/map.json" ]]; then
+                NEXT_PENDING+=("$MAP_FILE")
+              fi
+            done
+
+            if (( ${#NEXT_PENDING[@]} == ${#PENDING_MAPS[@]} )); then
+              printf '::error::Renderer made no progress (exit %d). Still missing: %s\n' \
+                "$RENDER_STATUS" "${NEXT_PENDING[*]}"
+              exit 1
             fi
+            PENDING_MAPS=("${NEXT_PENDING[@]}")
           done
-          if (( ${#MISSING_MAPS[@]} > 0 )); then
-            printf '::error::Renderer produced no output for maps: %s\n' "${MISSING_MAPS[*]}"
-            exit 1
-          fi
 
       # Save before packaging so a size/encoding failure does not force the
       # expensive game renderer to repeat unchanged work on the next run.
@@ -136,33 +151,45 @@ jobs:
         working-directory: game-source
         run: |
           mapfile -t MAP_FILES < ../prepared-insert-render-list.txt
-          DOTNET_BUILD_ARGS=()
-          if [[ "${{ steps.rendered-map-cache.outputs.cache-hit }}" != "true" ]]; then
-            DOTNET_BUILD_ARGS+=(--no-build)
+          if [[ "${{ steps.rendered-map-cache.outputs.cache-hit }}" == "true" ]]; then
+            dotnet build --project Content.MapRenderer --configuration Release
           fi
 
-          dotnet run \
-            "${DOTNET_BUILD_ARGS[@]}" \
-            --project Content.MapRenderer \
-            --configuration Release \
-            -- \
-            --files \
-            --viewer \
-            --format webp \
-            --output "$GITHUB_WORKSPACE/rendered-inserts" \
-            "${MAP_FILES[@]}"
+          PENDING_INSERTS=("${MAP_FILES[@]}")
+          ATTEMPT=0
+          while (( ${#PENDING_INSERTS[@]} > 0 )); do
+            ((ATTEMPT += 1))
+            printf 'Renderer pass %d: %d insert(s) remaining\n' "$ATTEMPT" "${#PENDING_INSERTS[@]}"
 
-          MISSING_INSERTS=()
-          for MAP_FILE in "${MAP_FILES[@]}"; do
-            MAP_NAME=$(basename "${MAP_FILE%.*}")
-            if [[ ! -s "$GITHUB_WORKSPACE/rendered-inserts/$MAP_NAME/map.json" ]]; then
-              MISSING_INSERTS+=("$MAP_FILE")
+            set +e
+            dotnet run \
+              --no-build \
+              --project Content.MapRenderer \
+              --configuration Release \
+              -- \
+              --files \
+              --viewer \
+              --format webp \
+              --output "$GITHUB_WORKSPACE/rendered-inserts" \
+              "${PENDING_INSERTS[@]}"
+            RENDER_STATUS=$?
+            set -e
+
+            NEXT_PENDING=()
+            for MAP_FILE in "${PENDING_INSERTS[@]}"; do
+              MAP_NAME=$(basename "${MAP_FILE%.*}")
+              if [[ ! -s "$GITHUB_WORKSPACE/rendered-inserts/$MAP_NAME/map.json" ]]; then
+                NEXT_PENDING+=("$MAP_FILE")
+              fi
+            done
+
+            if (( ${#NEXT_PENDING[@]} == ${#PENDING_INSERTS[@]} )); then
+              printf '::error::Renderer made no progress (exit %d). Still missing: %s\n' \
+                "$RENDER_STATUS" "${NEXT_PENDING[*]}"
+              exit 1
             fi
+            PENDING_INSERTS=("${NEXT_PENDING[@]}")
           done
-          if (( ${#MISSING_INSERTS[@]} > 0 )); then
-            printf '::error::Renderer produced no output for inserts: %s\n' "${MISSING_INSERTS[*]}"
-            exit 1
-          fi
 
       - name: Save raw map insert renders
         if: steps.rendered-insert-cache.outputs.cache-hit != 'true'
