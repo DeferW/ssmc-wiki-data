@@ -89,6 +89,9 @@ diff --git a/Content.MapRenderer/Painters/EntityPainter.cs b/Content.MapRenderer
 -                spriteRotation = (float)worldRotation.Degrees;
 +                spriteRotation += (float)worldRotation.Degrees;
              }
+@@ -137,1 +138,1 @@ public void Run(Image canvas, EntityData entity, SharedTransformSystem xformSyst
+-            var imageColor = Color.FromRgba(colorMix.RByte, colorMix.GByte, colorMix.BByte, colorMix.AByte);
++            var imageColor = SixLabors.ImageSharp.Color.FromRgba(colorMix.RByte, colorMix.GByte, colorMix.BByte, colorMix.AByte);
 @@ -140,8 +141,16 @@ public void Run(Image canvas, EntityData entity, SharedTransformSystem xformSyst
              var (imgX, imgY) = rsi?.Size ?? (EyeManager.PixelsPerMeter, EyeManager.PixelsPerMeter);
 -            var offsetX = (int)(entity.Sprite.Offset.X + customOffset.X) * EyeManager.PixelsPerMeter;
