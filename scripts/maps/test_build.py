@@ -23,10 +23,11 @@ from scripts.maps.prepare_render import prepare_render_maps, sanitize_map_text
 
 def test_renderer_patch_keeps_fractional_sprite_offsets_and_reuses_pool():
     patch = (Path(__file__).with_name("renderer-world-bounds.patch")).read_text(encoding="utf-8")
-    assert "Matrix3x2.CreateRotation((float) (entity.Sprite.Rotation + transformRotation).Theta)" in patch
-    assert "MathF.Round((rotatedOffset.X + customOffset.X) * EyeManager.PixelsPerMeter)" in patch
-    assert "MathF.Round((rotatedOffset.Y + customOffset.Y) * EyeManager.PixelsPerMeter)" in patch
-    assert "var spriteRotation = (float) entity.Sprite.Rotation.Degrees" in patch
+    assert "Matrix3x2.Multiply(entity.Sprite.LocalMatrix, entityMatrix)" in patch
+    assert "concreteLayer.GetLayerDrawMatrix(drawDirection, out var layerMatrix)" in patch
+    assert "Vector2.Transform(Vector2.Zero, transform)" in patch
+    assert "MathF.Round((localCenter.X + customOffset.X) * EyeManager.PixelsPerMeter)" in patch
+    assert "MathF.Round((localCenter.Y + customOffset.Y) * EyeManager.PixelsPerMeter)" in patch
     assert "offsetX - image.Width / 2" in patch
     assert "offsetY - image.Height / 2" in patch
     assert "+                Fresh = false" in patch
@@ -183,6 +184,12 @@ def test_overlay_keeps_spawner_locations_options_and_insert_markers(tmp_path: Pa
             ),
             source_file="Resources/Prototypes/_Stories/Entities/Markers/insert.yml",
         ),
+        "Survivor": make_prototype(
+            "Survivor",
+            components=({"type": "SpawnPoint", "job_id": "CMSurvivor"},),
+            fields={"name": "Survivor spawn"},
+            source_file="Resources/Prototypes/_RMC14/Roles/Jobs/Survivor/test.yml",
+        ),
     }
     write_yaml(
         tmp_path / "Resources/Maps/_RMC14/map.yml",
@@ -190,6 +197,7 @@ def test_overlay_keeps_spawner_locations_options_and_insert_markers(tmp_path: Pa
             "entities": [
                 {"proto": "Loot", "entities": [{"components": [{"type": "Transform", "pos": "1.5,2.5", "parent": 7}]}]},
                 {"proto": "Insert", "entities": [{"components": [{"type": "Transform", "pos": "3,4"}]}]},
+                {"proto": "Survivor", "entities": [{"components": [{"type": "Transform", "pos": "7.5,8.5"}]}]},
             ]
         },
     )
@@ -204,6 +212,8 @@ def test_overlay_keeps_spawner_locations_options_and_insert_markers(tmp_path: Pa
         PrototypeResolver(prototypes),
     )
     assert overlay["occurrences"]["Loot"] == [[1.5, 2.5, 0.0, 7]]
+    assert overlay["occurrences"]["Survivor"] == [[7.5, 8.5]]
+    assert overlay["prototypes"]["Survivor"]["components"]["SpawnPoint"]["job_id"] == "CMSurvivor"
     assert overlay["prototypes"]["Loot"]["components"]["RandomSpawner"]["prototypes"] == ["A", "B"]
     insert = overlay["insertMaps"]["/Maps/_Stories/Inserts/new.yml"]
     assert insert["occurrences"]["Loot"] == [[5.0, 6.0]]

@@ -72,36 +72,98 @@ index c460853..4f02eaf 100644
  
      public RenderedGridImage(Image<T> image)
 diff --git a/Content.MapRenderer/Painters/EntityPainter.cs b/Content.MapRenderer/Painters/EntityPainter.cs
+index 0c751b8..3daf220 100644
 --- a/Content.MapRenderer/Painters/EntityPainter.cs
 +++ b/Content.MapRenderer/Painters/EntityPainter.cs
-@@ -129,5 +129,5 @@ public void Run(Image canvas, EntityData entity, SharedTransformSystem xformSyst
--            var spriteRotation = 0f;
-+            var spriteRotation = (float) entity.Sprite.Rotation.Degrees;
-             if (!entity.Sprite.NoRotation && !entity.Sprite.SnapCardinals && _sprite.LayerGetDirectionCount((SpriteComponent.Layer)layer) == 1)
-             {
--                spriteRotation = (float)worldRotation.Degrees;
-+                spriteRotation += (float)worldRotation.Degrees;
+@@ -6,6 +6,7 @@
+ using Robust.Client.ResourceManagement;
+ using Robust.Shared.ContentPack;
+ using Robust.Shared.GameObjects;
++using Robust.Shared.Maths;
+ using Robust.Shared.Timing;
+ using SixLabors.ImageSharp;
+ using SixLabors.ImageSharp.PixelFormats;
+@@ -109,10 +110,11 @@ public void Run(Image canvas, EntityData entity, SharedTransformSystem xformSyst
+                 return (targetX * rsi.Size.X, targetY * rsi.Size.Y, rsi.Size.X, rsi.Size.Y);
              }
-@@ -140,8 +140,14 @@ public void Run(Image canvas, EntityData entity, SharedTransformSystem xformSyst
-             var (imgX, imgY) = rsi?.Size ?? (EyeManager.PixelsPerMeter, EyeManager.PixelsPerMeter);
+ 
+-            var dir = _sprite.LayerGetDirectionCount((SpriteComponent.Layer)layer) switch
++            var effectiveDirection = layer.EffectiveDirection(worldRotation);
++            var dir = _sprite.LayerGetDirectionCount((SpriteComponent.Layer)layer) switch
+             {
+                 0 => 0,
+-                _ => (int)layer.EffectiveDirection(worldRotation)
++                _ => (int)effectiveDirection
+             };
+ 
+             var (x, y, width, height) = GetRsiFrame(rsi, image, entity, layer, dir);
+@@ -126,28 +128,56 @@ public void Run(Image canvas, EntityData entity, SharedTransformSystem xformSyst
+ 
+             image.Mutate(o => o.Crop(rect));
+ 
+-            var spriteRotation = 0f;
+-            if (!entity.Sprite.NoRotation && !entity.Sprite.SnapCardinals && _sprite.LayerGetDirectionCount((SpriteComponent.Layer)layer) == 1)
+-            {
+-                spriteRotation = (float)worldRotation.Degrees;
+-            }
+-
+             var colorMix = entity.Sprite.Color * layer.Color;
+-            var imageColor = Color.FromRgba(colorMix.RByte, colorMix.GByte, colorMix.BByte, colorMix.AByte);
++            var imageColor = SixLabors.ImageSharp.Color.FromRgba(colorMix.RByte, colorMix.GByte, colorMix.BByte, colorMix.AByte);
+             var coloredImage = new Image<Rgba32>(image.Width, image.Height);
+             coloredImage.Mutate(o => o.BackgroundColor(imageColor));
+ 
+-            var (imgX, imgY) = rsi?.Size ?? (EyeManager.PixelsPerMeter, EyeManager.PixelsPerMeter);
 -            var offsetX = (int)(entity.Sprite.Offset.X + customOffset.X) * EyeManager.PixelsPerMeter;
 -            var offsetY = (int)(entity.Sprite.Offset.Y + customOffset.X) * EyeManager.PixelsPerMeter;
-+            var transformRotation = entity.Sprite.NoRotation || entity.Sprite.SnapCardinals
-+                ? worldRotation - worldRotation
-+                : worldRotation;
-+            var rotatedOffset = Vector2.Transform(
-+                entity.Sprite.Offset,
-+                Matrix3x2.CreateRotation((float) (entity.Sprite.Rotation + transformRotation).Theta));
-+            var offsetX = (int) MathF.Round((rotatedOffset.X + customOffset.X) * EyeManager.PixelsPerMeter);
-+            var offsetY = (int) MathF.Round((rotatedOffset.Y + customOffset.Y) * EyeManager.PixelsPerMeter);
++            // Reproduce the same matrix chain as SpriteSystem.Render instead of
++            // approximating it with Sprite.Rotation/Offset.  The old renderer lost
++            // per-layer offsets, rotations and directional transforms, which moved
++            // rotated wall lights, posters and multipart vehicles between tiles.
++            var concreteLayer = (SpriteComponent.Layer) layer;
++            var cardinal = entity.Sprite.NoRotation || !entity.Sprite.SnapCardinals
++                ? Angle.Zero
++                : worldRotation.RoundToCardinalAngle();
++            var entityRotation = entity.Sprite.NoRotation
++                ? Angle.Zero
++                : worldRotation - cardinal;
++            var entityMatrix = Matrix3Helpers.CreateTransform(Vector2.Zero, entityRotation);
++            var spriteMatrix = Matrix3x2.Multiply(entity.Sprite.LocalMatrix, entityMatrix);
++            var drawDirection = rsi != null && rsi.TryGetState(layer.RsiState, out var drawState)
++                ? SpriteComponent.Layer.GetDirection(
++                    drawState.RsiDirections,
++                    worldRotation.Reduced().FlipPositive())
++                : effectiveDirection;
++            concreteLayer.GetLayerDrawMatrix(drawDirection, out var layerMatrix);
++            var transform = Matrix3x2.Multiply(layerMatrix, spriteMatrix);
++
++            var localCenter = Vector2.Transform(Vector2.Zero, transform);
++            var axisX = Vector2.TransformNormal(Vector2.UnitX, transform);
++            var axisY = Vector2.TransformNormal(Vector2.UnitY, transform);
++            var scaleX = axisX.Length();
++            var scaleY = axisY.Length();
++            if (transform.GetDeterminant() < 0)
++                scaleY = -scaleY;
++
++            var (baseWidth, baseHeight) = rsi?.Size ?? (EyeManager.PixelsPerMeter, EyeManager.PixelsPerMeter);
++            var offsetX = (int) MathF.Round((localCenter.X + customOffset.X) * EyeManager.PixelsPerMeter);
++            var offsetY = (int) MathF.Round((localCenter.Y + customOffset.Y) * EyeManager.PixelsPerMeter);
++            var imgX = Math.Max(1, (int) MathF.Round(baseWidth * MathF.Abs(scaleX)));
++            var imgY = Math.Max(1, (int) MathF.Round(baseHeight * MathF.Abs(scaleY)));
              image.Mutate(o => o
                  .DrawImage(coloredImage, PixelColorBlendingMode.Multiply, PixelAlphaCompositionMode.SrcAtop, 1)
                  .Resize(imgX, imgY)
-                 .Flip(FlipMode.Vertical)
-                 .Rotate(spriteRotation));
-@@ -149,4 +155,4 @@ public void Run(Image canvas, EntityData entity, SharedTransformSystem xformSyst
+-                .Flip(FlipMode.Vertical)
+-                .Rotate(spriteRotation));
+-
 -            var pointX = (int)entity.X + offsetX - imgX / 2;
 -            var pointY = (int)entity.Y + offsetY - imgY / 2;
++                .Flip(FlipMode.Vertical));
++            if (scaleY < 0)
++                image.Mutate(o => o.Flip(FlipMode.Vertical));
++            var rotation = MathF.Atan2(axisX.Y, axisX.X) * 180f / MathF.PI;
++            image.Mutate(o => o.Rotate(rotation));
++
 +            var pointX = (int) MathF.Round(entity.X) + offsetX - image.Width / 2;
 +            var pointY = (int) MathF.Round(entity.Y) + offsetY - image.Height / 2;
              canvas.Mutate(o => o.DrawImage(image, new Point(pointX, pointY), 1));

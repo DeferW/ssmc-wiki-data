@@ -213,7 +213,7 @@ def semantic_component_types(components: dict[str, Any]) -> list[str]:
     return sorted(
         component_type
         for component_type in components
-        if component_type == "MapInsert" or "Spawner" in component_type
+        if component_type in {"MapInsert", "SpawnPoint"} or "Spawner" in component_type
     )
 
 
