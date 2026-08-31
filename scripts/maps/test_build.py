@@ -9,6 +9,7 @@ from PIL import Image
 
 from scripts.common.prototypes import EntityPrototype, PrototypeResolver
 from scripts.maps.core import (
+    _static_item_occurrences,
     _save_tiles,
     _tile_footprint,
     build_overlay,
@@ -86,6 +87,69 @@ def make_prototype(
         fields=fields or {},
         components=components,
     )
+
+
+def test_static_items_include_only_unanchored_grid_children():
+    prototypes = {
+        "Grid": make_prototype(
+            "Grid",
+            components=({"type": "Transform"}, {"type": "MapGrid"}),
+        ),
+        "Plasteel": make_prototype(
+            "Plasteel",
+            components=({"type": "Transform"}, {"type": "Item"}),
+        ),
+        "TurretUpgrade": make_prototype(
+            "TurretUpgrade",
+            components=({"type": "Transform"}, {"type": "Item"}),
+        ),
+        "Pipe": make_prototype(
+            "Pipe",
+            components=({"type": "Transform", "anchored": True}, {"type": "Item"}),
+        ),
+        "Container": make_prototype(
+            "Container",
+            components=({"type": "Transform"},),
+        ),
+        "InternalItem": make_prototype(
+            "InternalItem",
+            components=({"type": "Transform"}, {"type": "Item"}),
+        ),
+    }
+    document = {
+        "entities": [
+            {"proto": "Grid", "entities": [{"uid": 1, "components": [
+                {"type": "Transform", "pos": "0,0"},
+                {"type": "MapGrid"},
+            ]}]},
+            {"proto": "Plasteel", "entities": [{"uid": 2, "components": [
+                {"type": "Transform", "pos": "1,2", "parent": 1},
+            ]}]},
+            {"proto": "TurretUpgrade", "entities": [{"uid": 3, "components": [
+                {"type": "Transform", "pos": "3,4", "parent": 1},
+            ]}]},
+            {"proto": "Pipe", "entities": [{"uid": 4, "components": [
+                {"type": "Transform", "pos": "5,6", "parent": 1},
+            ]}]},
+            {"proto": "Container", "entities": [{"uid": 5, "components": [
+                {"type": "Transform", "pos": "7,8", "parent": 1},
+            ]}]},
+            {"proto": "InternalItem", "entities": [{"uid": 6, "components": [
+                {"type": "Transform", "pos": "0,0", "parent": 5},
+            ]}]},
+        ],
+    }
+
+    occurrences = _static_item_occurrences(
+        document,
+        prototypes,
+        PrototypeResolver(prototypes),
+    )
+
+    assert occurrences == {
+        "Plasteel": [[1.0, 2.0]],
+        "TurretUpgrade": [[3.0, 4.0]],
+    }
 
 
 def write_yaml(path: Path, data: object) -> None:

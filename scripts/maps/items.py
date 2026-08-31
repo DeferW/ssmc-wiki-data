@@ -28,7 +28,7 @@ def static_item_classification(
     prototype_id: str,
     resolved: dict[str, Any],
 ) -> dict[str, Any] | None:
-    """Classify every concrete placed item without maintaining an allow-list."""
+    """Classify any concrete Item; map placement decides whether it is collectable."""
     if resolved.get("abstract") is True:
         return None
     components = resolved["components"]
