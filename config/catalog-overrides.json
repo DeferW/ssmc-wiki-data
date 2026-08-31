@@ -594,6 +594,15 @@
     },
     "RMCFlareBullet": {
       "category": "Скрытые"
+    },
+    "RMCWeaponRevolverM44Marksman": {
+      "category": "Скрытые"
+    },
+    "RMCWeaponRifleM54CMK1AP": {
+      "category": "Скрытые"
+    },
+    "RMCSmartGunUNMC": {
+      "category": "Скрытые"
     }
   }
 }
