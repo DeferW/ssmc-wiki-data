@@ -19,31 +19,6 @@ STATIC_ITEM_SCHEMA_VERSION = 1
 STATIC_ITEM_CATALOG_PATH = "static-items.json"
 STATIC_ITEM_SPRITE_PATH = "static-item-sprites"
 
-USEFUL_CATEGORIES = {
-    "weapon",
-    "ammunition",
-    "attachment",
-    "armor",
-    "equipment",
-    "medicine",
-    "gear",
-}
-JUNK_COMPONENTS = {
-    "Material",
-    "Produce",
-    "Projectile",
-    "Seed",
-    "Stack",
-}
-JUNK_PATH_PARTS = (
-    "/botany/",
-    "/food/",
-    "/materials/",
-    "/plants/",
-    "/trash/",
-)
-
-
 def _tags(components: dict[str, Any]) -> set[str]:
     raw = components.get("Tag", {}).get("tags", [])
     return {value for value in raw if isinstance(value, str)} if isinstance(raw, list) else set()
@@ -53,26 +28,15 @@ def static_item_classification(
     prototype_id: str,
     resolved: dict[str, Any],
 ) -> dict[str, Any] | None:
-    """Classify a useful placed item without maintaining a prototype allow-list."""
+    """Classify every concrete placed item without maintaining an allow-list."""
     if resolved.get("abstract") is True:
         return None
     components = resolved["components"]
     component_types = set(components)
-    is_metal_stack = prototype_id.startswith("CMSheetMetal")
-    if "Item" not in component_types or (
-        JUNK_COMPONENTS & component_types and not is_metal_stack
-    ):
+    if "Item" not in component_types:
         return None
     tags = _tags(components)
-    if "CartridgeAmmo" in component_types and not {"Flare", "RMCFlare"} & tags:
-        return None
-    folded_path = str(resolved.get("sourceFile", "")).replace("\\", "/").casefold()
-    if not is_metal_stack and any(part in folded_path for part in JUNK_PATH_PARTS):
-        return None
-    if any(tag.casefold() in {"trash", "food", "produce", "seed"} for tag in tags):
-        return None
-
-    classification = classify_item(
+    return classify_item(
         {
             "id": prototype_id,
             "name": str(resolved["fields"].get("name") or prototype_id),
@@ -84,17 +48,6 @@ def static_item_classification(
         },
         {},
     )
-    category_id = classification.get("categoryId")
-    if category_id in USEFUL_CATEGORIES:
-        return classification
-    if is_metal_stack:
-        return classification
-
-    # Catalog classification deliberately puts every shipping box in "other".
-    # Keep a filled utility/medical container, but not empty packaging or decor.
-    if category_id == "other" and component_types.intersection({"ContainerFill", "StorageFill"}):
-        return classification
-    return None
 
 
 def build_static_item_catalog(

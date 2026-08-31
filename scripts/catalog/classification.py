@@ -255,7 +255,16 @@ def is_packaging_container(item: dict[str, Any]) -> bool:
     component_types = set(item.get("componentTypes", []))
     has_container_mechanics = bool(
         component_types.intersection(
-            {"Storage", "StorageFill", "CMItemSlots", "ContainerFill"}
+            {
+                "Storage",
+                "StorageFill",
+                "CMItemSlots",
+                "ContainerFill",
+                "CrateOpenable",
+                "EntityTableContainerFill",
+                "ItemSlots",
+                "SpawnOnTerminate",
+            }
         )
     )
     if not has_container_mechanics:
@@ -266,15 +275,29 @@ def is_packaging_container(item: dict[str, Any]) -> bool:
     )
 
 
+def is_shipping_crate(item: dict[str, Any]) -> bool:
+    """Distinguish map/cargo crates from portable ammunition boxes."""
+    if not is_packaging_container(item):
+        return False
+    item_id = str(item.get("id", "")).casefold()
+    source_file = str(item.get("sourceFile", "")).replace("\\", "/").casefold()
+    component_types = set(item.get("componentTypes", []))
+    return (
+        "Item" not in component_types
+        or item_id.startswith("rmccrate")
+        or "/structures/storage/securecrates" in source_file
+        or "/structures/storage/crates" in source_file
+    )
+
+
 def is_ammunition_or_magazine_box(item: dict[str, Any]) -> bool:
-    """Keep ammunition and magazine shipping boxes in the ammunition section."""
+    """Recognize portable ammunition boxes, never full-sized cargo crates."""
+    if is_shipping_crate(item):
+        return False
     item_id = str(item.get("id", "")).casefold()
     name = str(item.get("name", "")).casefold()
     source_file = str(item.get("sourceFile", "")).casefold()
-    tags = {str(tag).casefold() for tag in item.get("tags", [])}
     signal = f"{item_id} {name} {source_file}"
-    if "rmcammobox" in tags:
-        return True
     return any(
         marker in signal
         for marker in (
@@ -282,19 +305,95 @@ def is_ammunition_or_magazine_box(item: dict[str, Any]) -> bool:
             "boxbullets",
             "boxshells",
             "boxshotgun",
-            "crateammo",
-            "cratemagazine",
-            "crateboxmagazine",
+            "packetgrenade",
+            "boxclaymore",
+            "boxccdp",
+            "boxhedp",
+            "boxhefa",
+            "boxagmf",
+            "boxagmi",
+            "box458socom",
             "ammunition box",
             "ammo box",
             "magazine box",
             "коробка магазинов",
             "коробка патрон",
             "коробка дроб",
-            "ящик боеприпасов",
-            "ящик магазинов",
-            "/crates/magazine_boxes",
-            "/crates/ammo",
+            "коробка боеприпасов",
+            "коробка гранат",
+        )
+    )
+
+
+def is_utility_supply_box(item: dict[str, Any]) -> bool:
+    item_id = str(item.get("id", "")).casefold()
+    return any(marker in item_id for marker in ("boxmre", "boxpackflare", "boxflashlights"))
+
+
+def is_technical_hidden_item(item: dict[str, Any]) -> bool:
+    """Hide runtime helpers and non-player-facing variants using stable signals."""
+    item_id = str(item.get("id", ""))
+    folded_id = item_id.casefold()
+    component_types = set(item.get("componentTypes", []))
+    suffix = str(item.get("suffix", "")).strip().casefold()
+    availability = item.get("availability")
+    has_availability = isinstance(availability, list) and bool(availability)
+
+    if "CMVendorMapToSquad" in component_types:
+        return True
+    if "Item" not in component_types and component_types.intersection(
+        {"Projectile", "RMCArmorVariant"}
+    ):
+        return True
+    if folded_id.endswith("empty") or folded_id.startswith("stcartridgesharp"):
+        return True
+    if {
+        "WeaponMount",
+        "Foldable",
+        "Strap",
+    }.issubset(component_types):
+        return True
+    if (
+        "Gun" in component_types
+        and not has_availability
+        and suffix in {"ap", "unmc", "марксманский", "marksman", "пустой", "empty"}
+    ):
+        return True
+    return False
+
+
+def is_miscellaneous_item(item: dict[str, Any]) -> bool:
+    """Recognize ordinary supplies that should not be promoted to field gear."""
+    item_id = str(item.get("id", "")).casefold()
+    component_types = set(item.get("componentTypes", []))
+    tags = {str(tag).casefold() for tag in item.get("tags", [])}
+    if component_types.intersection({"GasTank", "MachineBoard", "PDTLocator"}):
+        return True
+    if tags.intersection({"gastank", "trash", "trashbag", "cigarette"}):
+        return True
+    return any(
+        marker in item_id
+        for marker in (
+            "bucket",
+            "mop",
+            "wetsign",
+            "spraybottle",
+            "spacecleaner",
+            "lightbulb",
+            "lighttube",
+            "cigarette",
+            "trashbag",
+            "inflatabledoor",
+            "inflatablewall",
+            "handcuff",
+            "ziptie",
+            "bedroll",
+            "helmetgarbgunoil",
+            "overwatchcameratripod",
+            "radiohandheld",
+            "pdtlocator",
+            "machinecircuitboard",
+            "circuitboard",
         )
     )
 
@@ -353,43 +452,6 @@ def classify_item(
         or "handgrenade" in folded_tags
     )
 
-    # Boxes, crates and cases are published as their own products. Their
-    # contents are classified independently; packaging itself defaults to
-    # "Другое" unless it is explicitly an ammunition/magazine container.
-    if is_packaging_container(item):
-        if is_ammunition_or_magazine_box(item):
-            return public(
-                "ammunition",
-                "ammunition or magazine box",
-                "container:ammunition-box",
-            )
-        return public(
-            "other",
-            "box, crate or case published as a separate catalog item",
-            "container:packaging",
-        )
-
-    # Underbarrel launchers and shotguns still belong to attachments even when
-    # they also contain a Gun component.
-    if "Attachable" in component_types:
-        return public("attachment", "dedicated attachment component", "Attachable")
-    if has_gun:
-        return public("weapon", "dedicated firearm component", "Gun")
-    if has_ammo or has_explosive:
-        return public(
-            "ammunition",
-            "ammunition, grenade or explosive item",
-            "component:ammunition-or-explosive",
-        )
-    if (
-        "/objects/weapons/throwable/packets" in folded_path
-        and ("Storage" in component_types or "CMItemSlots" in component_types)
-    ):
-        return public(
-            "ammunition",
-            "grenade packet or ammunition box",
-            "path:throwable-packet",
-        )
     cm_armor = properties.get("CMArmor")
     armor_components = {
         key: value
@@ -405,6 +467,32 @@ def classify_item(
             for value in cm_armor.values()
         )
     )
+
+    if is_technical_hidden_item(item):
+        return public(
+            "hidden",
+            "runtime helper, projectile or internal item variant",
+            "technical:hidden",
+        )
+
+    if is_miscellaneous_item(item):
+        return public(
+            "other",
+            "ordinary supply, consumable, replacement part or utility object",
+            "item:miscellaneous",
+        )
+
+    # Full-sized cargo/map crates are structures rather than portable ammo
+    # boxes. They always live in "Другое"; their contents are separate cards.
+    if is_shipping_crate(item):
+        return public(
+            "other",
+            "full-sized cargo or map crate",
+            "container:shipping-crate",
+        )
+
+    # Protection wins over incidental grenade/ammunition signals. This keeps
+    # helmets and armored clothing out of "Боезапас".
     if meaningful_armor and slots.intersection({"outerclothing", "head"}):
         return public(
             "armor",
@@ -413,6 +501,106 @@ def classify_item(
             "slot:armor-or-head",
         )
 
+    if is_packaging_container(item) and is_utility_supply_box(item):
+        return public("gear", "portable field-supply box", "container:utility-box")
+
+    if component_types.intersection({"Sentry", "Turret"}):
+        return public(
+            "gear",
+            "deployable sentry or automated field support",
+            "component:sentry",
+        )
+
+    if (
+        "Mortar" in component_types
+        or "Stunbaton" in component_types
+        or (
+            "Flash" in component_types
+            and "LimitedCharges" in component_types
+            and "MeleeWeapon" in component_types
+        )
+        or is_dedicated_melee_weapon(item_id, component_types, tags)
+    ):
+        return public(
+            "weapon",
+            "dedicated melee, incapacitation or crew-served weapon",
+            "component:weapon",
+        )
+
+    # Underbarrel launchers and shotguns still belong to attachments even when
+    # they also contain a Gun component. Firearms win over their Clothing slots.
+    if "Attachable" in component_types:
+        return public("attachment", "dedicated attachment component", "Attachable")
+    if has_gun:
+        return public("weapon", "dedicated firearm component", "Gun")
+
+    is_flare = (
+        "Flare" in component_types
+        or "RMCFlare" in component_types
+        or "flare" in folded_id
+        or bool({"flare", "rmcflare"}.intersection(folded_tags))
+    )
+    if (
+        is_flare
+        or "SkillPamphlet" in component_types
+        or "Whistle" in component_types
+        or "UseOnSynthBlocked" in component_types
+        or "synthresetkey" in folded_id
+    ):
+        return public(
+            "gear",
+            "field utility, signalling device or training item",
+            "component:field-utility",
+        )
+
+    has_storage = "Storage" in component_types or "CMItemSlots" in component_types
+    is_wearable_storage = has_storage and bool(slots.intersection(WEARABLE_STORAGE_SLOTS))
+    is_standard_wearable = (
+        "Clothing" in component_types
+        and bool(slots.intersection(WEARABLE_EQUIPMENT_SLOTS))
+    )
+    is_patch = (
+        "patch" in folded_id
+        or any("patch" in tag for tag in folded_tags)
+        or has_any_component(component_types, ("uniformaccessory", "patch"))
+    )
+    is_headset = "headset" in folded_id or has_any_component(component_types, ("headset",))
+    if (
+        is_patch
+        or is_headset
+        or "Webbing" in component_types
+        or "HelmetAccessory" in component_types
+        or is_wearable_storage
+        or is_standard_wearable
+    ):
+        return public(
+            "equipment",
+            "wearable clothing, storage or installed uniform accessory",
+            "component:wearable-equipment",
+        )
+
+    if is_packaging_container(item) and is_ammunition_or_magazine_box(item):
+        return public(
+            "ammunition",
+            "portable ammunition or magazine box",
+            "container:ammunition-box",
+        )
+
+    if has_ammo or has_explosive:
+        return public(
+            "ammunition",
+            "ammunition, grenade or explosive item",
+            "component:ammunition-or-explosive",
+        )
+    if (
+        "/objects/weapons/throwable/packets" in folded_path
+        and ("Storage" in component_types or "CMItemSlots" in component_types)
+    ):
+        return public(
+            "ammunition",
+            "grenade packet or ammunition box",
+            "path:throwable-packet",
+        )
     medical_object_path = "/entities/objects/medical/" in folded_path
     medical_box_path = "/catalog/fills/boxes/medical" in folded_path
     medical_delivery = (
@@ -422,6 +610,8 @@ def classify_item(
         or "Syringe" in component_types
         or "pillcanister" in folded_id
         or "packetpills" in folded_id
+        or "syringecase" in folded_id
+        or "surgicalcase" in folded_id
     )
     medical_solution = medical_object_path and (
         "CMRefillableSolution" in component_types
@@ -505,12 +695,11 @@ def classify_item(
             "component:medicine",
         )
 
-    if is_dedicated_melee_weapon(item_id, component_types, tags):
+    if is_packaging_container(item):
         return public(
-            "gear",
-            "dedicated melee weapon or single-purpose hand tool",
-            "MeleeWeapon",
-            "sharp-signal",
+            "other",
+            "box or case published as a separate catalog item",
+            "container:packaging",
         )
 
     strong_tool = (
@@ -533,31 +722,6 @@ def classify_item(
             "gear",
             "dedicated hand tool or single-purpose utility item",
             "component:tool",
-        )
-
-    is_patch = (
-        "patch" in folded_id
-        or any("patch" in tag for tag in folded_tags)
-        or has_any_component(component_types, ("uniformaccessory", "patch"))
-    )
-    is_headset = (
-        "headset" in folded_id
-        or has_any_component(component_types, ("headset",))
-    )
-    has_storage = "Storage" in component_types or "CMItemSlots" in component_types
-    is_wearable_storage = has_storage and bool(slots.intersection(WEARABLE_STORAGE_SLOTS))
-    is_standard_wearable = (
-        "Clothing" in component_types
-        and bool(slots.intersection(WEARABLE_EQUIPMENT_SLOTS))
-    )
-
-    # Patches and radio headsets are equipment even when their prototypes use
-    # accessory components instead of an ordinary Clothing slot.
-    if is_patch or is_headset:
-        return public(
-            "equipment",
-            "patch or radio headset",
-            "component:wearable-equipment",
         )
 
     advanced_field_device = (
@@ -595,15 +759,6 @@ def classify_item(
             "gear",
             "advanced field device, weapon support or encryption component",
             "component:gear",
-        )
-
-    # Clothing and wearable storage belong together. Medical pouches are
-    # already caught by the higher-priority medical rule.
-    if is_wearable_storage or is_standard_wearable:
-        return public(
-            "equipment",
-            "standard wearable or wearable storage",
-            "component:wearable-equipment",
         )
 
     # Tools, complex field technology and single-purpose utility objects share

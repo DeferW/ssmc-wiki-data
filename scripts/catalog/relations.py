@@ -55,17 +55,21 @@ def content_relations(
             if not isinstance(entries, list):
                 continue
             for position, entry in enumerate(entries):
-                if isinstance(entry, str):
-                    result.append(
-                        {
-                            "from": prototype_id,
-                            "to": entry,
-                            "type": "contains",
-                            "container": str(container_name),
-                            "position": position,
-                            "quantity": 1,
-                        }
-                    )
+                item_id = entry if isinstance(entry, str) else entry.get("id") if isinstance(entry, dict) else None
+                if isinstance(item_id, str):
+                    relation = {
+                        "from": prototype_id,
+                        "to": item_id,
+                        "type": "contains",
+                        "container": str(container_name),
+                        "position": position,
+                        "quantity": entry.get("amount", 1) if isinstance(entry, dict) else 1,
+                    }
+                    if isinstance(entry, dict):
+                        for key in ("maxAmount", "prob", "orGroup"):
+                            if key in entry:
+                                relation[key] = entry[key]
+                    result.append(relation)
 
     cm_slots = components.get("CMItemSlots", {})
     starting_item = cm_slots.get("startingItem")

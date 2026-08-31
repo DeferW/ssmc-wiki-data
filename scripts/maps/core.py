@@ -12,6 +12,9 @@ from typing import Any, Iterable
 import yaml
 from PIL import Image
 
+from scripts.catalog.core import PHYSICAL_CONTENT_RELATION_TYPES
+from scripts.catalog.relations import content_relations
+
 from scripts.common.prototypes import (
     EntityPrototype,
     GameYamlLoader,
@@ -71,6 +74,55 @@ def _prototype_documents(root: Path) -> Iterable[dict[str, Any]]:
     files = sorted([*root.rglob("*.yml"), *root.rglob("*.yaml")])
     for path in files:
         yield from iter_prototype_documents(path)
+
+
+def read_entity_table_members(game_source: Path) -> dict[str, set[str]]:
+    """Flatten possible entity ids from EntityTable selectors and references."""
+    direct: dict[str, set[str]] = {}
+    references: dict[str, set[str]] = {}
+
+    def collect(value: Any, ids: set[str], refs: set[str]) -> None:
+        if isinstance(value, list):
+            for entry in value:
+                collect(entry, ids, refs)
+            return
+        if not isinstance(value, dict):
+            return
+        for key, entry in value.items():
+            if key == "id" and isinstance(entry, str):
+                ids.add(entry)
+            elif key == "tableId" and isinstance(entry, str):
+                refs.add(entry)
+            else:
+                collect(entry, ids, refs)
+
+    for document in _prototype_documents(game_source / "Resources/Prototypes"):
+        if document.get("type") != "entityTable" or not isinstance(document.get("id"), str):
+            continue
+        table_id = document["id"]
+        ids: set[str] = set()
+        refs: set[str] = set()
+        collect(document.get("table"), ids, refs)
+        direct[table_id] = ids
+        references[table_id] = refs
+
+    resolved: dict[str, set[str]] = {}
+
+    def resolve(table_id: str, active: set[str] | None = None) -> set[str]:
+        if table_id in resolved:
+            return resolved[table_id]
+        active = set() if active is None else active
+        if table_id in active:
+            return set()
+        active.add(table_id)
+        members = set(direct.get(table_id, ()))
+        for reference in references.get(table_id, ()):
+            members.update(resolve(reference, active))
+        active.remove(table_id)
+        resolved[table_id] = members
+        return members
+
+    return {table_id: resolve(table_id) for table_id in direct}
 
 
 def _stories_ship_maps(game_source: Path) -> list[dict[str, Any]]:
@@ -277,6 +329,7 @@ def _static_item_occurrences(
     document: dict[str, Any],
     prototypes: dict[str, EntityPrototype],
     resolver: PrototypeResolver,
+    entity_tables: dict[str, set[str]] | None = None,
 ) -> dict[str, list[list[Any]]]:
     """Return useful placed items using world positions, including container children."""
     transforms: dict[Any, tuple[list[float], float, Any]] = {}
@@ -332,12 +385,101 @@ def _static_item_occurrences(
         resolved_transforms[uid] = result
         return result
 
+    contained_item_cache: dict[str, set[str]] = {}
+    entity_tables = entity_tables or {}
+
+    def spawned_targets(components: dict[str, Any]) -> set[str]:
+        result: set[str] = set()
+
+        def add_entries(value: Any, *, include_mapping_values: bool = False) -> None:
+            entries = value if isinstance(value, list) else [value]
+            for entry in entries:
+                if isinstance(entry, str):
+                    result.add(entry)
+                elif isinstance(entry, dict):
+                    item_id = entry.get("id")
+                    if isinstance(item_id, str):
+                        result.add(item_id)
+                    if include_mapping_values and not isinstance(item_id, str):
+                        for key, mapped in entry.items():
+                            if isinstance(key, str) and key != "id":
+                                result.add(key)
+                            if isinstance(mapped, str):
+                                result.add(mapped)
+
+        add_entries(components.get("CrateOpenable", {}).get("spawn"))
+        add_entries(components.get("SpawnOnTerminate", {}).get("spawn"))
+        add_entries(components.get("RandomSpawner", {}).get("prototypes"), include_mapping_values=True)
+        add_entries(components.get("GunSpawner", {}).get("prototypes"), include_mapping_values=True)
+        return result
+
+    def selector_members(value: Any) -> tuple[set[str], set[str]]:
+        if isinstance(value, list):
+            ids: set[str] = set()
+            refs: set[str] = set()
+            for entry in value:
+                child_ids, child_refs = selector_members(entry)
+                ids.update(child_ids)
+                refs.update(child_refs)
+            return ids, refs
+        if not isinstance(value, dict):
+            return set(), set()
+        ids = {
+            entry
+            for key, entry in value.items()
+            if key == "id" and isinstance(entry, str)
+        }
+        refs = {
+            entry
+            for key, entry in value.items()
+            if key == "tableId" and isinstance(entry, str)
+        }
+        for key, entry in value.items():
+            if key not in {"id", "tableId"}:
+                child_ids, child_refs = selector_members(entry)
+                ids.update(child_ids)
+                refs.update(child_refs)
+        return ids, refs
+
+    def contained_items(prototype_id: str, active: set[str] | None = None) -> set[str]:
+        if prototype_id in contained_item_cache:
+            return contained_item_cache[prototype_id]
+        if prototype_id not in prototypes:
+            return set()
+        active = set() if active is None else active
+        if prototype_id in active:
+            return set()
+        active.add(prototype_id)
+        resolved = resolver.resolve(prototype_id)
+        found: set[str] = set()
+        if static_item_classification(prototype_id, resolved) is not None:
+            found.add(prototype_id)
+        for relation in content_relations(prototype_id, resolved):
+            if relation.get("type") not in PHYSICAL_CONTENT_RELATION_TYPES:
+                continue
+            target = relation.get("to")
+            if isinstance(target, str):
+                found.update(contained_items(target, active))
+        for target in spawned_targets(resolved["components"]):
+            found.update(contained_items(target, active))
+        for component_name in ("EntityTableContainerFill", "EntityTableSpawner"):
+            component = resolved["components"].get(component_name)
+            direct_targets, table_ids = selector_members(component)
+            for target in direct_targets:
+                found.update(contained_items(target, active))
+            for table_id in table_ids:
+                for target in entity_tables.get(table_id, ()):
+                    found.update(contained_items(target, active))
+        active.remove(prototype_id)
+        contained_item_cache[prototype_id] = found
+        return found
+
     result: dict[str, list[list[Any]]] = {}
     for prototype_id, entities in entities_by_prototype:
         if prototype_id not in prototypes:
             continue
-        resolved = resolver.resolve(prototype_id)
-        if static_item_classification(prototype_id, resolved) is None:
+        item_ids = contained_items(prototype_id)
+        if not item_ids:
             continue
         points: list[list[Any]] = []
         for entity in entities:
@@ -350,7 +492,8 @@ def _static_item_occurrences(
                 point.append(rotation)
             points.append(point)
         if points:
-            result[prototype_id] = points
+            for item_id in item_ids:
+                result.setdefault(item_id, []).extend(points)
     return result
 
 
@@ -562,11 +705,12 @@ def build_overlay(
     map_path: str,
     prototypes: dict[str, EntityPrototype],
     resolver: PrototypeResolver,
+    entity_tables: dict[str, set[str]] | None = None,
 ) -> dict[str, Any]:
     registry: dict[str, Any] = {}
     document = _load_map(resource_path(game_source, map_path))
     occurrences, pending = _extract_occurrences(document, prototypes, resolver, registry)
-    item_occurrences = _static_item_occurrences(document, prototypes, resolver)
+    item_occurrences = _static_item_occurrences(document, prototypes, resolver, entity_tables)
     insert_maps: dict[str, Any] = {}
     visited: set[str] = set()
 
@@ -588,7 +732,7 @@ def build_overlay(
         render_key = insert_render_key(insert_path)
         insert_maps[insert_path] = {
             "occurrences": insert_occurrences,
-            "itemOccurrences": _static_item_occurrences(insert_document, prototypes, resolver),
+            "itemOccurrences": _static_item_occurrences(insert_document, prototypes, resolver, entity_tables),
             "areas": _area_grid(insert_document, prototypes, resolver),
             "footprint": _tile_footprint(insert_document),
             "tiles": f"inserts/{render_key}/tiles.json",
@@ -676,9 +820,10 @@ def write_overlays(
             ):
                 shutil.rmtree(child)
     item_ids: set[str] = set()
+    entity_tables = read_entity_table_members(game_source)
     for entry in maps:
         overlay = build_overlay(
-            game_source, entry["mapPath"], prototypes, resolver
+            game_source, entry["mapPath"], prototypes, resolver, entity_tables
         )
         item_ids.update(overlay["itemOccurrences"])
         for insert in overlay["insertMaps"].values():

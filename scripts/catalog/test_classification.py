@@ -50,7 +50,7 @@ def test_classify_item_armor_via_meaningful_cmarmor_and_slot():
 def test_classify_item_melee_via_dedicated_melee_weapon():
     item = {"id": "RMCKnifeCombat", "componentTypes": ["MeleeWeapon"], "tags": []}
     result = classify_item(item, EMPTY_POLICY)
-    assert result["categoryId"] == "gear"
+    assert result["categoryId"] == "weapon"
 
 
 def test_classify_item_medicine_via_pill_component():
@@ -76,6 +76,62 @@ def test_classify_item_packaging_box_defaults_to_other():
     result = classify_item(item, EMPTY_POLICY)
     assert result["categoryId"] == "other"
     assert "container" in result["signals"][0]
+
+
+def test_classify_shipping_ammo_crate_as_other_but_portable_box_as_ammo():
+    crate = {
+        "id": "RMCCrateGrenadesFrag",
+        "name": "wooden ammunition crate",
+        "componentTypes": ["CrateOpenable"],
+        "tags": [],
+    }
+    box = {
+        "id": "RMCBoxMagazineRifle",
+        "name": "magazine box",
+        "componentTypes": ["Item", "Storage"],
+        "tags": [],
+    }
+    assert classify_item(crate, EMPTY_POLICY)["categoryId"] == "other"
+    assert classify_item(box, EMPTY_POLICY)["categoryId"] == "ammunition"
+
+
+def test_classify_armored_helmet_before_incidental_grenade_signal():
+    item = {
+        "id": "RMCHelmetGrenadeProtection",
+        "componentTypes": ["Clothing"],
+        "equipmentSlots": ["head"],
+        "properties": {"CMArmor": {"bullet": 10}},
+        "tags": [],
+    }
+    assert classify_item(item, EMPTY_POLICY)["categoryId"] == "armor"
+
+
+def test_classify_runtime_projectile_as_hidden():
+    item = {
+        "id": "RMCBulletInternal",
+        "componentTypes": ["Projectile"],
+        "tags": [],
+    }
+    assert classify_item(item, EMPTY_POLICY)["categoryId"] == "hidden"
+
+
+def test_classify_wearable_grenade_belt_as_equipment_before_ammunition():
+    item = {
+        "id": "RMCBeltGrenade",
+        "componentTypes": ["Clothing", "Storage"],
+        "equipmentSlots": ["belt"],
+        "tags": [],
+    }
+    assert classify_item(item, EMPTY_POLICY)["categoryId"] == "equipment"
+
+
+def test_classify_sentry_as_gear_before_gun():
+    item = {
+        "id": "RMCSentry",
+        "componentTypes": ["Item", "Gun", "Sentry", "Turret"],
+        "tags": [],
+    }
+    assert classify_item(item, EMPTY_POLICY)["categoryId"] == "gear"
 
 
 def test_has_meaningful_armor_true_for_nonzero_stat():
