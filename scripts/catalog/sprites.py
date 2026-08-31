@@ -338,6 +338,9 @@ def render_public_sprites(
     items: dict[str, Any],
     public_item_ids: list[str],
     reagent_colors: dict[str, str],
+    *,
+    image_prefix: str = "sprites",
+    strict: bool = True,
 ) -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
     expected: set[str] = set()
@@ -359,7 +362,7 @@ def render_public_sprites(
             preview = render_sprite_preview(game_source, summary, reagent_colors)
             preview.save(output_dir / filename, format="PNG", optimize=True)
             summary["file"] = filename
-            item["image"] = f"sprites/{filename}"
+            item["image"] = f"{image_prefix.rstrip('/')}/{filename}"
             solution = summary.get("solutionPreview")
             if isinstance(solution, dict) and solution.get("reagents"):
                 signature = json.dumps(
@@ -369,19 +372,32 @@ def render_public_sprites(
                 solution_images[digest].append((item_id, signature))
         except Exception as error:  # Collect every missing/broken sprite in one run.
             failures.append(f"{item_id}: {error}")
+            if not strict:
+                expected.discard(filename)
+                item.pop("image", None)
+                failed_path = output_dir / filename
+                if failed_path.is_file():
+                    failed_path.unlink()
 
     for path in output_dir.glob("*.png"):
         if path.name not in expected:
             path.unlink()
-    if failures:
+    if failures and strict:
         raise RuntimeError("Unable to render equipment sprites:\n" + "\n".join(failures))
+    if failures:
+        print("Skipped map item sprites:\n" + "\n".join(failures))
     ambiguous = [
         sorted(item_id for item_id, _ in entries)
         for entries in solution_images.values()
         if len({signature for _, signature in entries}) > 1
     ]
-    if ambiguous:
+    if ambiguous and strict:
         raise RuntimeError(
             "Different filled solutions rendered as identical sprites:\n"
+            + "\n".join(", ".join(group) for group in ambiguous)
+        )
+    if ambiguous:
+        print(
+            "Map items with identical filled-solution sprites:\n"
             + "\n".join(", ".join(group) for group in ambiguous)
         )

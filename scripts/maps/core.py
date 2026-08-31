@@ -18,9 +18,10 @@ from scripts.common.prototypes import (
     PrototypeResolver,
     iter_prototype_documents,
 )
+from scripts.maps.items import STATIC_ITEM_CATALOG_PATH, static_item_classification
 
 SCHEMA_VERSION = 1
-OVERLAY_SCHEMA_VERSION = 4
+OVERLAY_SCHEMA_VERSION = 5
 TILES_SCHEMA_VERSION = 3
 DEFAULT_TILE_SIZE = 512
 DEFAULT_RENDER_SCALE = 1.0
@@ -272,6 +273,87 @@ def _occurrence(raw: dict[str, Any]) -> list[Any] | None:
     return result
 
 
+def _static_item_occurrences(
+    document: dict[str, Any],
+    prototypes: dict[str, EntityPrototype],
+    resolver: PrototypeResolver,
+) -> dict[str, list[list[Any]]]:
+    """Return useful placed items using world positions, including container children."""
+    transforms: dict[Any, tuple[list[float], float, Any]] = {}
+    entities_by_prototype: list[tuple[str, list[dict[str, Any]]]] = []
+    for group in document["entities"]:
+        if not isinstance(group, dict):
+            continue
+        prototype_id = group.get("proto")
+        entities = group.get("entities", [])
+        if not isinstance(prototype_id, str) or not isinstance(entities, list):
+            continue
+        valid_entities = [entity for entity in entities if isinstance(entity, dict)]
+        entities_by_prototype.append((prototype_id, valid_entities))
+        for entity in valid_entities:
+            uid = entity.get("uid")
+            if uid is None:
+                continue
+            for component in entity.get("components", []):
+                if not isinstance(component, dict) or component.get("type") != "Transform":
+                    continue
+                transforms[uid] = (
+                    parse_vector(component.get("pos")) or [0.0, 0.0],
+                    parse_rotation(component.get("rot")),
+                    component.get("parent"),
+                )
+                break
+
+    resolved_transforms: dict[Any, tuple[float, float, float]] = {}
+
+    def world_transform(uid: Any, active: set[Any] | None = None) -> tuple[float, float, float]:
+        if uid in resolved_transforms:
+            return resolved_transforms[uid]
+        local = transforms.get(uid)
+        if local is None:
+            return 0.0, 0.0, 0.0
+        active = set() if active is None else active
+        if uid in active:
+            return local[0][0], local[0][1], local[1]
+        active.add(uid)
+        position, rotation, parent = local
+        if parent is None or parent not in transforms:
+            result = position[0], position[1], rotation
+        else:
+            parent_x, parent_y, parent_rotation = world_transform(parent, active)
+            cosine = math.cos(parent_rotation)
+            sine = math.sin(parent_rotation)
+            result = (
+                parent_x + position[0] * cosine - position[1] * sine,
+                parent_y + position[0] * sine + position[1] * cosine,
+                parent_rotation + rotation,
+            )
+        active.remove(uid)
+        resolved_transforms[uid] = result
+        return result
+
+    result: dict[str, list[list[Any]]] = {}
+    for prototype_id, entities in entities_by_prototype:
+        if prototype_id not in prototypes:
+            continue
+        resolved = resolver.resolve(prototype_id)
+        if static_item_classification(prototype_id, resolved) is None:
+            continue
+        points: list[list[Any]] = []
+        for entity in entities:
+            uid = entity.get("uid")
+            if uid not in transforms:
+                continue
+            x, y, rotation = world_transform(uid)
+            point: list[Any] = [x, y]
+            if rotation:
+                point.append(rotation)
+            points.append(point)
+        if points:
+            result[prototype_id] = points
+    return result
+
+
 def _extract_occurrences(
     document: dict[str, Any],
     prototypes: dict[str, EntityPrototype],
@@ -484,6 +566,7 @@ def build_overlay(
     registry: dict[str, Any] = {}
     document = _load_map(resource_path(game_source, map_path))
     occurrences, pending = _extract_occurrences(document, prototypes, resolver, registry)
+    item_occurrences = _static_item_occurrences(document, prototypes, resolver)
     insert_maps: dict[str, Any] = {}
     visited: set[str] = set()
 
@@ -505,6 +588,7 @@ def build_overlay(
         render_key = insert_render_key(insert_path)
         insert_maps[insert_path] = {
             "occurrences": insert_occurrences,
+            "itemOccurrences": _static_item_occurrences(insert_document, prototypes, resolver),
             "areas": _area_grid(insert_document, prototypes, resolver),
             "footprint": _tile_footprint(insert_document),
             "tiles": f"inserts/{render_key}/tiles.json",
@@ -516,6 +600,7 @@ def build_overlay(
         "mapPath": map_path,
         "prototypes": dict(sorted(registry.items())),
         "occurrences": dict(sorted(occurrences.items())),
+        "itemOccurrences": dict(sorted(item_occurrences.items())),
         "insertMaps": dict(sorted(insert_maps.items())),
         "areas": _area_grid(document, prototypes, resolver),
     }
@@ -580,7 +665,7 @@ def write_overlays(
     maps: list[dict[str, Any]],
     prototypes: dict[str, EntityPrototype],
     resolver: PrototypeResolver,
-) -> None:
+) -> set[str]:
     active_ids = {entry["id"] for entry in maps}
     if output_root.is_dir():
         for child in output_root.iterdir():
@@ -590,16 +675,21 @@ def write_overlays(
                 and ((child / "overlay.json").is_file() or (child / "tiles.json").is_file())
             ):
                 shutil.rmtree(child)
+    item_ids: set[str] = set()
     for entry in maps:
         overlay = build_overlay(
             game_source, entry["mapPath"], prototypes, resolver
         )
+        item_ids.update(overlay["itemOccurrences"])
+        for insert in overlay["insertMaps"].values():
+            item_ids.update(insert["itemOccurrences"])
         relative = Path(entry["id"]) / "overlay.json"
         write_json(output_root / relative, overlay, compact=True)
         entry["overlay"] = relative.as_posix()
         existing_tiles = output_root / entry["id"] / "tiles.json"
         if existing_tiles.is_file():
             entry["tiles"] = (Path(entry["id"]) / "tiles.json").as_posix()
+    return item_ids
 
 
 def _level_size(width: int, height: int, divisor: int) -> tuple[int, int]:
@@ -822,6 +912,7 @@ def build_catalog(
         "schemaVersion": SCHEMA_VERSION,
         "source": "MetalSage/space-stories-cm14",
         "gameCommit": game_commit,
+        "items": STATIC_ITEM_CATALOG_PATH,
         "maps": maps,
         "counts": {
             "maps": len(maps),

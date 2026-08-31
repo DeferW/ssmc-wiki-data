@@ -19,6 +19,7 @@ from scripts.maps.core import (
     write_json,
     write_overlays,
 )
+from scripts.maps.items import STATIC_ITEM_CATALOG_PATH, build_static_item_catalog
 
 
 def main() -> None:
@@ -81,7 +82,17 @@ def main() -> None:
     if not 1 <= args.webp_quality <= 100:
         parser.error("--webp-quality must be between 1 and 100")
 
-    write_overlays(args.game_source, args.assets_output, maps, prototypes, resolver)
+    static_item_ids = write_overlays(
+        args.game_source, args.assets_output, maps, prototypes, resolver
+    )
+    static_item_catalog = build_static_item_catalog(
+        args.game_source,
+        args.assets_output,
+        static_item_ids,
+        resolver,
+        args.commit,
+    )
+    write_json(args.assets_output / STATIC_ITEM_CATALOG_PATH, static_item_catalog)
     if args.rendered_input is not None:
         for entry in maps:
             package_render(
@@ -119,6 +130,7 @@ def main() -> None:
     print(f"Planets: {catalog['counts']['planets']}")
     print(f"Map asset bytes: {assets_bytes}")
     print(f"Published map bytes: {published_bytes}")
+    print(f"Searchable static map items: {static_item_catalog['counts']['items']}")
 
 
 if __name__ == "__main__":

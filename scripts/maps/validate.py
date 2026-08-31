@@ -13,6 +13,7 @@ from scripts.maps.core import (
     SCHEMA_VERSION,
     TILES_SCHEMA_VERSION,
 )
+from scripts.maps.items import STATIC_ITEM_SCHEMA_VERSION
 
 
 def read_json(path: Path) -> Any:
@@ -79,6 +80,33 @@ def validate(catalog_path: Path, assets_root: Path, max_assets_bytes: int) -> No
     paths: set[str] = set()
     expected_files: set[Path] = {catalog_path.resolve()}
 
+    items_relative = data.get("items")
+    if not isinstance(items_relative, str):
+        raise RuntimeError("Map catalog has no static item catalog")
+    items_path = assets_root / items_relative
+    expected_files.add(items_path.resolve())
+    static_items = read_json(items_path)
+    if static_items.get("schemaVersion") != STATIC_ITEM_SCHEMA_VERSION:
+        raise RuntimeError("Invalid static item catalog schema")
+    item_registry = static_items.get("items")
+    if not isinstance(item_registry, dict):
+        raise RuntimeError("Static item catalog has no item registry")
+    for item_id, item in item_registry.items():
+        if not isinstance(item, dict) or item.get("id") != item_id:
+            raise RuntimeError(f"Invalid static item: {item_id}")
+        image_relative = item.get("image")
+        if image_relative is None:
+            continue
+        if not isinstance(image_relative, str):
+            raise RuntimeError(f"Invalid static item image: {item_id}")
+        image_path = assets_root / image_relative
+        expected_files.add(image_path.resolve())
+        if not image_path.is_file():
+            raise RuntimeError(f"Missing static item image: {image_path}")
+        with Image.open(image_path) as image:
+            if image.format != "PNG":
+                raise RuntimeError(f"Static item sprite is not PNG: {image_path}")
+
     for entry in maps:
         if not isinstance(entry, dict):
             raise RuntimeError("Map entry is not an object")
@@ -111,12 +139,21 @@ def validate(catalog_path: Path, assets_root: Path, max_assets_bytes: int) -> No
             raise RuntimeError(f"Overlay has no prototype registry: {map_id}")
         if not isinstance(overlay.get("occurrences"), dict):
             raise RuntimeError(f"Overlay has no occurrences: {map_id}")
+        item_occurrences = overlay.get("itemOccurrences")
+        if not isinstance(item_occurrences, dict):
+            raise RuntimeError(f"Overlay has no static item occurrences: {map_id}")
+        unknown_items = set(item_occurrences) - set(item_registry)
+        if unknown_items:
+            raise RuntimeError(f"Overlay references unknown static items: {sorted(unknown_items)}")
         insert_maps = overlay.get("insertMaps")
         if not isinstance(insert_maps, dict):
             raise RuntimeError(f"Overlay has no insert maps: {map_id}")
         for insert_path, insert in insert_maps.items():
             if not isinstance(insert, dict) or not isinstance(insert.get("tiles"), str):
                 raise RuntimeError(f"Insert map has no tiles: {insert_path}")
+            insert_items = insert.get("itemOccurrences")
+            if not isinstance(insert_items, dict) or set(insert_items) - set(item_registry):
+                raise RuntimeError(f"Invalid static items in insert map: {insert_path}")
             insert_manifest_path = assets_root / insert["tiles"]
             validate_tiles(insert_manifest_path, insert_path, expected_files)
 
