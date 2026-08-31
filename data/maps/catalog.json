@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "source": "MetalSage/space-stories-cm14",
   "gameCommit": "d0bfa6b3645f82951647074306dd99339f394fdd",
+  "items": "static-items.json",
   "maps": [
     {
       "id": "almayer",
@@ -346,6 +347,6 @@
     "maps": 11,
     "ships": 1,
     "planets": 10,
-    "assetBytes": 114873601
+    "assetBytes": 117688615
   }
 }
