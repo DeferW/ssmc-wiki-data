@@ -74,5 +74,6 @@ jobs:
             echo "Nothing changed"
           else
             git commit -m "Build catalog"
-            git push
+            git pull --rebase origin "$GITHUB_REF_NAME"
+            git push origin "HEAD:$GITHUB_REF_NAME"
           fi
