@@ -162558,7 +162558,7 @@
       "description": "The actual firearm in the Smart Gun System. Essentially a heavy, mobile machinegun.",
       "suffix": "UNMC",
       "types": [
-        "weapon"
+        "hidden"
       ],
       "tags": [],
       "componentTypes": [
@@ -162810,10 +162810,13 @@
         "signals": [
           "Gun"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "hidden",
+        "category": "Скрытые",
+        "automaticCategory": "Оружие",
+        "automaticCategoryId": "weapon",
+        "overriddenByAdministrator": true
       },
-      "category": "Оружие",
+      "category": "Скрытые",
       "public": true,
       "attachmentSlots": [
         {
@@ -163002,6 +163005,7 @@
           }
         ]
       },
+      "edited": true,
       "image": "sprites/RMCSmartGunUNMC.png"
     },
     "RMCSpeedLoader44Marksman": {
@@ -173024,7 +173028,7 @@
       "description": "Крупнокалиберный револьвер, который иногда используется штурмовыми отрядами и офицерами морской пехоты, а также гражданскими правоохранительными органами. Стреляет патронами .44 Magnum.",
       "suffix": "Марксманский",
       "types": [
-        "weapon"
+        "hidden"
       ],
       "tags": [
         "RMCRevolver",
@@ -173256,10 +173260,13 @@
         "signals": [
           "Gun"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "hidden",
+        "category": "Скрытые",
+        "automaticCategory": "Оружие",
+        "automaticCategoryId": "weapon",
+        "overriddenByAdministrator": true
       },
-      "category": "Оружие",
+      "category": "Скрытые",
       "public": true,
       "attachmentSlots": [
         {
@@ -173488,6 +173495,7 @@
           }
         ]
       },
+      "edited": true,
       "image": "sprites/RMCWeaponRevolverM44Marksman.png"
     },
     "RMCWeaponRevolverRSh9": {
@@ -175831,7 +175839,7 @@
       "description": "Устаревший вариант штурмовой винтовки, широко используемой в Корпусе морской пехоты. Использует безгильзовые патроны калибра 10х24мм.",
       "suffix": "AP",
       "types": [
-        "weapon"
+        "hidden"
       ],
       "tags": [
         "RMCWeaponRifleM54CMK1"
@@ -176078,10 +176086,13 @@
         "signals": [
           "Gun"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "hidden",
+        "category": "Скрытые",
+        "automaticCategory": "Оружие",
+        "automaticCategoryId": "weapon",
+        "overriddenByAdministrator": true
       },
-      "category": "Оружие",
+      "category": "Скрытые",
       "public": true,
       "attachmentSlots": [
         {
@@ -176414,6 +176425,7 @@
           }
         ]
       },
+      "edited": true,
       "image": "sprites/RMCWeaponRifleM54CMK1AP.png"
     },
     "RMCWeaponRifleM59A": {
@@ -189586,13 +189598,11 @@
       "Оружие": [
         "RMCWeaponLauncherM5ATL",
         "RMCWeaponLauncherM6HBrute",
-        "RMCSmartGunUNMC",
         "RMCWeaponPistolM13",
         "RMCXM43E1AntiMaterielRifle",
         "WeaponRifleM4SPR",
         "RMCWeaponPistolM77",
         "RMCWeaponRevolverM44",
-        "RMCWeaponRevolverM44Marksman",
         "STWeaponSharpRifle",
         "CMFlash",
         "RMCWeaponLauncherM85A1",
@@ -189620,7 +189630,6 @@
         "RMCSmartGunCO",
         "RMCWeaponPistolSU6",
         "RMCWeaponRifleM54CMK1",
-        "RMCWeaponRifleM54CMK1AP",
         "RMCWeaponRifleM54C",
         "RMCWeaponRevolverRSh9",
         "CMStunbaton"
@@ -190700,6 +190709,7 @@
         "RMCBulletAutoPistol",
         "RMCNail7x45mm",
         "RMCBulletSentryFireProjectile",
+        "RMCSmartGunUNMC",
         "CMVendorHeadsetSquad",
         "CMVendorHeadsetSquadComTech",
         "CMVendorHeadsetSquadCorpsman",
@@ -190709,6 +190719,7 @@
         "RMCBulletSniper10x99mmAntiMateriel",
         "RMCWeaponPistolM77Empty",
         "RMCWeaponRevolverM44Empty",
+        "RMCWeaponRevolverM44Marksman",
         "RMCArmorM3MediumVariants",
         "STCartridgeSharpExplosive",
         "STCartridgeSharpIncendiary",
@@ -190749,7 +190760,8 @@
         "CMWeaponPistolM1984Empty",
         "RMCM2CMount",
         "RMCArmorM3HeavyVariants",
-        "RMCAirBurstProjectileHornet"
+        "RMCAirBurstProjectileHornet",
+        "RMCWeaponRifleM54CMK1AP"
       ]
     },
     "excludedItemIds": [],
@@ -191910,8 +191922,8 @@
     "catalogItems": 1152,
     "publicItems": 1150,
     "excludedItems": 0,
-    "editedItems": 198,
-    "hiddenItems": 65
+    "editedItems": 201,
+    "hiddenItems": 68
   },
   "overrides": {
     "schemaVersion": 2,
@@ -192091,6 +192103,7 @@
       "RMCProjectileTaser",
       "RMCSentry",
       "RMCSentryFire",
+      "RMCSmartGunUNMC",
       "RMCSprayBottleSpaceCleaner",
       "RMCSynthResetKey",
       "RMCSyringeCase",
@@ -192099,6 +192112,8 @@
       "RMCWeaponPistolM77Empty",
       "RMCWeaponPistolM82FEmpty",
       "RMCWeaponRevolverM44Empty",
+      "RMCWeaponRevolverM44Marksman",
+      "RMCWeaponRifleM54CMK1AP",
       "RMCWebbingBlackSmall",
       "RMCWebbingDropPouch",
       "RMCWebbingDropPouchBlack",
@@ -192291,6 +192306,7 @@
       "RMCProjectileTaser",
       "RMCSentry",
       "RMCSentryFire",
+      "RMCSmartGunUNMC",
       "RMCSprayBottleSpaceCleaner",
       "RMCSynthResetKey",
       "RMCSyringeCase",
@@ -192299,6 +192315,8 @@
       "RMCWeaponPistolM77Empty",
       "RMCWeaponPistolM82FEmpty",
       "RMCWeaponRevolverM44Empty",
+      "RMCWeaponRevolverM44Marksman",
+      "RMCWeaponRifleM54CMK1AP",
       "RMCWebbingBlackSmall",
       "RMCWebbingDropPouch",
       "RMCWebbingDropPouchBlack",
