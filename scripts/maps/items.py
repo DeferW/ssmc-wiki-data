@@ -3,13 +3,16 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-from scripts.catalog.catalog import build_card
+from scripts.catalog.catalog import build_catalog
 from scripts.catalog.classification import classify_item, equipment_slots
-from scripts.catalog.core import PUBLIC_CATEGORY_LABELS, PUBLIC_CATEGORY_ORDER
-from scripts.catalog.prototypes import read_reagent_colors
+from scripts.catalog.config import read_config
+from scripts.catalog.prototypes import (
+    read_item_size_definitions,
+    read_reagent_colors,
+)
 from scripts.catalog.sprites import render_public_sprites
 from scripts.common.localization import Localizer, read_fluent_messages
-from scripts.common.prototypes import PrototypeResolver
+from scripts.common.prototypes import EntityPrototype, PrototypeResolver
 
 
 STATIC_ITEM_SCHEMA_VERSION = 1
@@ -55,13 +58,16 @@ def static_item_classification(
         return None
     components = resolved["components"]
     component_types = set(components)
-    if "Item" not in component_types or JUNK_COMPONENTS & component_types:
+    is_metal_stack = prototype_id.startswith("CMSheetMetal")
+    if "Item" not in component_types or (
+        JUNK_COMPONENTS & component_types and not is_metal_stack
+    ):
         return None
     tags = _tags(components)
     if "CartridgeAmmo" in component_types and not {"Flare", "RMCFlare"} & tags:
         return None
     folded_path = str(resolved.get("sourceFile", "")).replace("\\", "/").casefold()
-    if any(part in folded_path for part in JUNK_PATH_PARTS):
+    if not is_metal_stack and any(part in folded_path for part in JUNK_PATH_PARTS):
         return None
     if any(tag.casefold() in {"trash", "food", "produce", "seed"} for tag in tags):
         return None
@@ -81,6 +87,8 @@ def static_item_classification(
     category_id = classification.get("categoryId")
     if category_id in USEFUL_CATEGORIES:
         return classification
+    if is_metal_stack:
+        return classification
 
     # Catalog classification deliberately puts every shipping box in "other".
     # Keep a filled utility/medical container, but not empty packaging or decor.
@@ -93,51 +101,39 @@ def build_static_item_catalog(
     game_source: Path,
     output_root: Path,
     prototype_ids: set[str],
+    prototypes: dict[str, EntityPrototype],
     resolver: PrototypeResolver,
     game_commit: str,
 ) -> dict[str, Any]:
     localizer = Localizer(read_fluent_messages(game_source / "Resources/Locale/ru-RU"))
-    items: dict[str, Any] = {}
-    categories: dict[str, list[str]] = {
-        PUBLIC_CATEGORY_LABELS[category_id]: [] for category_id in PUBLIC_CATEGORY_ORDER
-    }
-
+    selected_ids: set[str] = set()
     for prototype_id in sorted(prototype_ids):
         resolved = resolver.resolve(prototype_id)
-        classification = static_item_classification(prototype_id, resolved)
-        if classification is None:
-            continue
-        card = build_card(prototype_id, resolved, localizer, [], set(), set())
-        category_id = str(classification["categoryId"])
-        category = str(classification["category"])
-        card["classification"] = classification
-        card["category"] = category
-        card["types"] = [category_id]
-        card["public"] = True
-        # Map search needs identity, text and mechanical search signals. Full
-        # catalog statistics can be added later without bloating map payloads.
-        items[prototype_id] = {
-            key: card[key]
-            for key in (
-                "id",
-                "name",
-                "baseName",
-                "description",
-                "suffix",
-                "types",
-                "tags",
-                "componentTypes",
-                "equipmentSlots",
-                "sprite",
-                "classification",
-                "category",
-                "public",
-            )
-            if key in card
-        }
-        categories.setdefault(category, []).append(prototype_id)
+        if static_item_classification(prototype_id, resolved) is not None:
+            selected_ids.add(prototype_id)
 
-    item_ids = sorted(items, key=lambda value: (str(items[value]["name"]).casefold(), value))
+    _, full_catalog = build_catalog(
+        prototypes=prototypes,
+        config=read_config(
+            Path(__file__).resolve().parents[2] / "config/catalog-sources.yml"
+        ),
+        localizer=localizer,
+        game_commit=game_commit,
+        item_sizes=read_item_size_definitions(game_source),
+        additional_item_ids=selected_ids,
+    )
+    items = {
+        item_id: full_catalog["items"][item_id]
+        for item_id in selected_ids
+        if item_id in full_catalog["items"]
+    }
+    item_ids = sorted(
+        items,
+        key=lambda value: (str(items[value]["name"]).casefold(), value),
+    )
+    categories: dict[str, list[str]] = {}
+    for item_id in item_ids:
+        categories.setdefault(str(items[item_id]["category"]), []).append(item_id)
     render_public_sprites(
         game_source,
         output_root / STATIC_ITEM_SPRITE_PATH,
@@ -147,9 +143,6 @@ def build_static_item_catalog(
         image_prefix=STATIC_ITEM_SPRITE_PATH,
         strict=False,
     )
-    for item in items.values():
-        item.pop("sprite", None)
-
     catalog = {
         "schemaVersion": STATIC_ITEM_SCHEMA_VERSION,
         "gameCommit": game_commit,

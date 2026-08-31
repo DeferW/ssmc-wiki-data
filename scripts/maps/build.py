@@ -89,6 +89,7 @@ def main() -> None:
         args.game_source,
         args.assets_output,
         static_item_ids,
+        prototypes,
         resolver,
         args.commit,
     )

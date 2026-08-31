@@ -80,6 +80,7 @@ def build_public_catalog(
     items: dict[str, Any],
     relations: list[dict[str, Any]],
     classification_policy: dict[str, Any],
+    additional_item_ids: set[str] | None = None,
 ) -> dict[str, Any]:
     physical_contents: dict[str, list[str]] = defaultdict(list)
     for relation in relations:
@@ -96,6 +97,7 @@ def build_public_catalog(
         stock_id = stock.get("itemId") if isinstance(stock, dict) else None
         if isinstance(stock_id, str):
             seed_ids.append(stock_id)
+    seed_ids.extend(sorted(additional_item_ids or ()))
     queue = deque(seed_ids)
     visited: set[str] = set()
     while queue:
@@ -119,6 +121,17 @@ def build_public_catalog(
     sort_key = lambda value: (items[value]["name"].casefold(), value)
     for item_id in sorted(public_ids, key=sort_key):
         classification = classify_item(items[item_id], classification_policy)
+        if (
+            classification["status"] == "excluded"
+            and item_id in (additional_item_ids or ())
+        ):
+            classification = {
+                **classification,
+                "status": "included",
+                "category": PUBLIC_CATEGORY_LABELS["other"],
+                "categoryId": "other",
+                "reason": "Полезный предмет, установленный на карте",
+            }
         items[item_id]["classification"] = classification
         status = classification["status"]
         if status == "excluded":
@@ -484,6 +497,7 @@ def build_catalog(
     localizer: Localizer,
     game_commit: str,
     item_sizes: dict[str, dict[str, Any]],
+    additional_item_ids: set[str] | None = None,
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     resolver = PrototypeResolver(prototypes)
     required_vendor_ids = [entry["id"] for entry in config["vendors"]]
@@ -499,6 +513,14 @@ def build_catalog(
     source_hints_by_item: dict[str, set[str]] = defaultdict(set)
     item_ids: set[str] = set()
     queue: deque[str] = deque()
+
+    for item_id in sorted(additional_item_ids or ()):
+        if item_id not in prototypes:
+            raise RuntimeError(
+                f"Additional catalog root references unknown item {item_id}"
+            )
+        item_ids.add(item_id)
+        queue.append(item_id)
 
     for vendor_id in vendor_ids:
         vendor = resolver.resolve(vendor_id)
@@ -817,6 +839,7 @@ def build_catalog(
         items,
         relations,
         config.get("classification", {}),
+        additional_item_ids,
     )
     populate_compatibility_summaries(
         items,
@@ -881,6 +904,9 @@ def build_catalog(
         "catalogItems": len(items),
         "publicItems": len(public_catalog["itemIds"]),
         "excludedItems": len(public_catalog["excludedItemIds"]),
+        "hiddenItems": len(
+            public_catalog["categories"][PUBLIC_CATEGORY_LABELS["hidden"]]
+        ),
     }
 
     public_sources = {

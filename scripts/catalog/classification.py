@@ -313,22 +313,12 @@ def classify_item(
     folded_tags = {tag.casefold() for tag in tags}
 
     excluded_ids = set(policy.get("excludePrototypeIds", []))
-    category_overrides = policy.get("categoryOverrides", {})
     if item_id in excluded_ids:
         return classification_result(
             "excluded",
             reason="prototype explicitly excluded by classification policy",
             signals=("config:excludePrototypeIds",),
         )
-    override = category_overrides.get(item_id)
-    if isinstance(override, str):
-        return classification_result(
-            "public",
-            category_id=override,
-            reason="category explicitly assigned by classification policy",
-            signals=("config:categoryOverrides",),
-        )
-
     def public(category_id: str, reason: str, *signals: str) -> dict[str, Any]:
         return classification_result(
             "public",

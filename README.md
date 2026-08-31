@@ -19,7 +19,7 @@ SSMC Wiki — неофициальная модульная база данны�
 ## Общая архитектура
 
 ```text
-исходники игры + config
+исходники игры + config сборщика
             ↓
 ssmc-wiki-data/scripts/<module>
 read → resolve → normalize → validate → publish

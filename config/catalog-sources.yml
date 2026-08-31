@@ -29,13 +29,11 @@ vendors:
 
 # Cargo consoles expose RequisitionsComputer categories. Their orderable crates
 # and every item reachable from them seed the graph. Crates, boxes and cases are
-# public catalog items too; the admin override layer decides what to hide later.
+# public catalog items too.
 cargoCatalogs:
   - id: CMASRSConsole
 
-# Everything reachable from the configured/discovered sources is published.
-# Manual cleanup belongs to the admin override layer. No vendor is discovered
-# by name prefix: only the ids listed above are allowed sources.
+# Everything reachable from the configured sources is published. No vendor is
+# discovered by name prefix: only the ids listed above are allowed sources.
 classification:
   excludePrototypeIds: []
-  categoryOverrides: {}

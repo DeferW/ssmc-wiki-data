@@ -14,7 +14,6 @@ from scripts.catalog.core import (
     PUBLIC_CATEGORY_LABELS,
     PUBLIC_CATEGORY_ORDER,
 )
-from scripts.catalog.config import read_catalog_overrides
 
 
 def read_json(path: Path) -> dict[str, Any]:
@@ -53,7 +52,6 @@ def validate(
     index: dict[str, Any],
     config_path: Path,
     sprites_path: Path,
-    overrides: dict[str, Any],
 ) -> None:
     fail_if(catalog.get("schemaVersion") != 4, "Catalog must use schemaVersion 4")
     fail_if(index.get("schemaVersion") != 3, "Index must use schemaVersion 3")
@@ -141,31 +139,6 @@ def validate(
             item.get("directlyVended") is not expected_direct,
             f"Direct offer marker mismatch: {item_id}",
         )
-
-    for item_id in categories[PUBLIC_CATEGORY_LABELS["hidden"]]:
-        fail_if(item_id not in overrides.get("items", {}), f"Hidden item lacks override: {item_id}")
-
-    override_items = overrides.get("items")
-    fail_if(overrides.get("schemaVersion") != 2, "Overrides must use schemaVersion 2")
-    fail_if(not isinstance(override_items, dict), "Overrides items must be an object")
-    edited_ids: list[str] = []
-    for item_id, override in override_items.items():
-        fail_if(item_id not in public_ids, f"Override target is not published: {item_id}")
-        fail_if(not isinstance(override, dict), f"Invalid override: {item_id}")
-        category = override.get("category")
-        fail_if(items[item_id].get("category") != category, f"Override not applied: {item_id}")
-        automatic = items[item_id].get("classification", {}).get("automaticCategory")
-        if automatic != category:
-            edited_ids.append(item_id)
-            fail_if(items[item_id].get("edited") is not True, f"Missing edited marker: {item_id}")
-        else:
-            fail_if("edited" in items[item_id], f"Redundant edited marker: {item_id}")
-    expected_override_summary = {
-        "schemaVersion": 2,
-        "appliedItemIds": sorted(override_items),
-        "editedItemIds": sorted(edited_ids),
-    }
-    fail_if(catalog.get("overrides") != expected_override_summary, "Override summary mismatch")
 
     outgoing: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for relation in relations:
@@ -277,7 +250,6 @@ def validate(
     fail_if(counts.get("catalogItems") != len(items), "Catalog item count mismatch")
     fail_if(counts.get("publicItems") != len(public_ids), "Public item count mismatch")
     fail_if(counts.get("excludedItems") != len(excluded_ids), "Excluded count mismatch")
-    fail_if(counts.get("editedItems") != len(edited_ids), "Edited count mismatch")
     fail_if(
         counts.get("hiddenItems") != len(categories[PUBLIC_CATEGORY_LABELS["hidden"]]),
         "Hidden category count mismatch",
@@ -298,15 +270,12 @@ def main() -> None:
     parser.add_argument("--index", type=Path, required=True)
     parser.add_argument("--config", type=Path, required=True)
     parser.add_argument("--sprites", type=Path, required=True)
-    parser.add_argument("--overrides", type=Path)
     args = parser.parse_args()
-    overrides_path = args.overrides or args.config.parent / "catalog-overrides.json"
     validate(
         read_json(args.catalog),
         read_json(args.index),
         args.config,
         args.sprites,
-        read_catalog_overrides(overrides_path),
     )
 
 

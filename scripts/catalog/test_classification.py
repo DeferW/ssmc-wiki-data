@@ -7,22 +7,14 @@ from scripts.catalog.classification import (
     source_category_hint,
 )
 
-EMPTY_POLICY: dict = {"excludePrototypeIds": [], "categoryOverrides": {}}
+EMPTY_POLICY: dict = {"excludePrototypeIds": []}
 
 
 def test_classify_item_excluded_by_policy():
     item = {"id": "Secret", "componentTypes": [], "tags": []}
-    policy = {"excludePrototypeIds": ["Secret"], "categoryOverrides": {}}
+    policy = {"excludePrototypeIds": ["Secret"]}
     result = classify_item(item, policy)
     assert result["status"] == "excluded"
-
-
-def test_classify_item_category_override_wins():
-    item = {"id": "Weird", "componentTypes": ["Gun"], "tags": []}
-    policy = {"excludePrototypeIds": [], "categoryOverrides": {"Weird": "gear"}}
-    result = classify_item(item, policy)
-    assert result["status"] == "public"
-    assert result["categoryId"] == "gear"
 
 
 def test_classify_item_weapon_via_gun_component():

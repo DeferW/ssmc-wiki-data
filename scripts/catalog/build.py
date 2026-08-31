@@ -6,11 +6,7 @@ from pathlib import Path
 from typing import Any
 
 from scripts.catalog.catalog import build_catalog
-from scripts.catalog.config import (
-    apply_catalog_overrides,
-    read_catalog_overrides,
-    read_config,
-)
+from scripts.catalog.config import read_config
 from scripts.common.localization import Localizer, read_fluent_messages
 from scripts.catalog.prototypes import (
     read_entity_prototypes,
@@ -34,14 +30,6 @@ def main() -> None:
     parser.add_argument("--index-output", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--sprites-output", type=Path, required=True)
-    parser.add_argument(
-        "--overrides",
-        type=Path,
-        help=(
-            "Administrator overrides JSON; defaults to "
-            "catalog-overrides.json next to --config"
-        ),
-    )
     parser.add_argument("--commit", required=True)
     parser.add_argument("--locale", default="ru-RU")
     args = parser.parse_args()
@@ -68,9 +56,6 @@ def main() -> None:
         game_commit=args.commit,
         item_sizes=item_sizes,
     )
-    overrides_path = args.overrides or args.config.parent / "catalog-overrides.json"
-    overrides = read_catalog_overrides(overrides_path)
-    apply_catalog_overrides(catalog, index, overrides)
     catalog["review"] = build_review_section(catalog)
     render_public_sprites(
         game_source=args.game_source,
