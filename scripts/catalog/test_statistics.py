@@ -76,6 +76,22 @@ def test_populate_weapon_statistics_includes_projectile_aimed_shot_effect():
     assert projectile["aimedShotEffect"] == {"extraHits": 2}
 
 
+def test_populate_weapon_statistics_includes_projectile_spread():
+    items = _sniper_items(weapon_aimed_shot={}, has_focused_shooting=False)
+    items["Bullet"]["componentTypes"] = ["Projectile", "ProjectileSpread"]
+    items["Bullet"]["properties"]["ProjectileSpread"] = {
+        "proto": "Bullet",
+        "count": 4,
+        "spread": 15,
+    }
+
+    populate_weapon_statistics(items, relations=[], public_item_ids={"Rifle"})
+
+    projectile = items["Rifle"]["weaponStats"]["ammunition"][0]["projectiles"][0]
+    assert projectile["projectilesPerShot"] == 4
+    assert projectile["spreadDegrees"] == 15
+
+
 def test_populate_weapon_statistics_expands_holo_targeting_defaults():
     items = _sniper_items(weapon_aimed_shot={}, has_focused_shooting=False)
     items["Bullet"]["componentTypes"] = ["Projectile", "HoloTargeting"]

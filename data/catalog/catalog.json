@@ -43340,6 +43340,11 @@
             "path": "/Audio/_RMC14/Bullets/bullet_impact1.ogg"
           }
         },
+        "ProjectileSpread": {
+          "proto": "CMPelletShotgunBuckshot",
+          "count": 4,
+          "spread": 15
+        },
         "RMCProjectileAccuracy": {
           "accuracy": 60,
           "thresholds": [
@@ -43436,6 +43441,11 @@
           "soundHit": {
             "path": "/Audio/_RMC14/Bullets/bullet_impact1.ogg"
           }
+        },
+        "ProjectileSpread": {
+          "proto": "CMPelletShotgunFlechette",
+          "count": 4,
+          "spread": 6
         },
         "RMCProjectileAccuracy": {
           "accuracy": 60
@@ -48692,7 +48702,7 @@
         {
           "type": "fires",
           "itemId": "CMPelletShotgunBuckshot",
-          "quantity": 1
+          "quantity": 4
         }
       ],
       "containsItemIds": [
@@ -48787,7 +48797,7 @@
         {
           "type": "fires",
           "itemId": "CMPelletShotgunFlechette",
-          "quantity": 1
+          "quantity": 4
         }
       ],
       "containsItemIds": [
@@ -74815,6 +74825,8 @@
               {
                 "projectileId": "CMPelletShotgunBuckshot",
                 "name": "Дробь",
+                "projectilesPerShot": 4,
+                "spreadDegrees": 15,
                 "damage": {
                   "Piercing": 65
                 },
@@ -187210,6 +187222,8 @@
               {
                 "projectileId": "CMPelletShotgunBuckshot",
                 "name": "Дробь",
+                "projectilesPerShot": 4,
+                "spreadDegrees": 15,
                 "damage": {
                   "Piercing": 65
                 },
@@ -187251,6 +187265,8 @@
               {
                 "projectileId": "CMPelletShotgunFlechette",
                 "name": "Дротик",
+                "projectilesPerShot": 4,
+                "spreadDegrees": 6,
                 "damage": {
                   "Piercing": 30
                 },
@@ -187762,6 +187778,8 @@
               {
                 "projectileId": "CMPelletShotgunBuckshot",
                 "name": "Дробь",
+                "projectilesPerShot": 4,
+                "spreadDegrees": 15,
                 "damage": {
                   "Piercing": 65
                 },
@@ -187803,6 +187821,8 @@
               {
                 "projectileId": "CMPelletShotgunFlechette",
                 "name": "Дротик",
+                "projectilesPerShot": 4,
+                "spreadDegrees": 6,
                 "damage": {
                   "Piercing": 30
                 },
@@ -188338,6 +188358,8 @@
               {
                 "projectileId": "CMPelletShotgunFlechette",
                 "name": "Дротик",
+                "projectilesPerShot": 4,
+                "spreadDegrees": 6,
                 "damage": {
                   "Piercing": 30
                 },

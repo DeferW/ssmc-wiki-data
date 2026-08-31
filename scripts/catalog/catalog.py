@@ -459,6 +459,25 @@ def populate_content_summaries(
         )
 
 
+def apply_projectile_spread_quantities(
+    items: dict[str, Any],
+    relations: list[dict[str, Any]],
+) -> None:
+    """Make a cartridge's `fires` quantity describe its final projectile count."""
+    for relation in relations:
+        if relation.get("type") != "fires":
+            continue
+        projectile = items.get(str(relation.get("to", "")))
+        if not isinstance(projectile, dict):
+            continue
+        spread = projectile.get("properties", {}).get("ProjectileSpread")
+        if not isinstance(spread, dict):
+            continue
+        count = spread.get("count", 1)
+        if isinstance(count, int) and not isinstance(count, bool) and count > 0:
+            relation["quantity"] = count
+
+
 def build_catalog(
     prototypes: dict[str, EntityPrototype],
     config: dict[str, Any],
@@ -779,6 +798,8 @@ def build_catalog(
             reachable_vendors[item_id],
             source_hints_by_item[item_id],
         )
+
+    apply_projectile_spread_quantities(items, relations)
 
     relations.sort(
         key=lambda item: (

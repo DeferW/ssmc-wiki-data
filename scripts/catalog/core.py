@@ -92,6 +92,7 @@ PUBLIC_PROPERTY_COMPONENTS = {
     "MagazineAmmoProvider",
     "Overheat",
     "Projectile",
+    "ProjectileSpread",
     "ProjectileBatteryAmmoProvider",
     "RevolverAmmoProvider",
     "RMCFlamerAmmoProvider",

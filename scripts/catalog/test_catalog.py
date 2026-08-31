@@ -1,10 +1,26 @@
 from scripts.catalog.catalog import (
+    apply_projectile_spread_quantities,
     capitalize_first,
     cargo_payloads,
     catalog_display_name,
     is_direct_offer,
     should_publish_component,
 )
+
+
+def test_projectile_spread_updates_fires_quantity():
+    items = {
+        "Buckshot": {
+            "properties": {"ProjectileSpread": {"count": 4, "spread": 15}}
+        }
+    }
+    relations = [
+        {"from": "Shell", "to": "Buckshot", "type": "fires", "quantity": 1}
+    ]
+
+    apply_projectile_spread_quantities(items, relations)
+
+    assert relations[0]["quantity"] == 4
 
 
 def test_capitalize_first_uppercases_first_letter():

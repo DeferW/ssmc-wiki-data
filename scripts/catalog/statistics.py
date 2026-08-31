@@ -612,6 +612,16 @@ def populate_weapon_statistics(
             "projectileId": projectile_id,
             "name": projectile.get("name", projectile_id),
         }
+        if "ProjectileSpread" in projectile.get("componentTypes", []):
+            spread = properties.get("ProjectileSpread")
+            if not isinstance(spread, dict):
+                spread = {}
+            count = number(spread.get("count", 1))
+            angle = number(spread.get("spread", 5))
+            if count is not None:
+                result["projectilesPerShot"] = max(1, int(count))
+            if angle is not None:
+                result["spreadDegrees"] = angle
         damage = projectile_component.get("damage")
         if isinstance(damage, dict):
             damage_types = damage.get("types")
