@@ -31441,12 +31441,6 @@
     },
     {
       "from": "RMCWeaponFlamerSpec",
-      "to": "RMCAttachmentUnderbarrelExtinguisher",
-      "type": "compatibleAttachment",
-      "slot": "rmc-aslot-underbarrel"
-    },
-    {
-      "from": "RMCWeaponFlamerSpec",
       "to": "RMCAttachmentUnderbarrelExtinguisherSpec",
       "type": "installedAttachment",
       "slot": "rmc-aslot-underbarrel",
@@ -32732,18 +32726,6 @@
     },
     {
       "from": "RMCWeaponRifleM59A",
-      "to": "RMCAttachmentM54CMK1StockCollapsible",
-      "type": "compatibleAttachment",
-      "slot": "rmc-aslot-stock"
-    },
-    {
-      "from": "RMCWeaponRifleM59A",
-      "to": "RMCAttachmentM54CStockCollapsible",
-      "type": "compatibleAttachment",
-      "slot": "rmc-aslot-stock"
-    },
-    {
-      "from": "RMCWeaponRifleM59A",
       "to": "RMCAttachmentMagneticHarness",
       "type": "compatibleAttachment",
       "slot": "rmc-aslot-rail"
@@ -33753,12 +33735,6 @@
     },
     {
       "from": "WeaponShotgunM890",
-      "to": "RMCAttachmentU1GrenadeLauncher",
-      "type": "compatibleAttachment",
-      "slot": "rmc-aslot-underbarrel"
-    },
-    {
-      "from": "WeaponShotgunM890",
       "to": "RMCM5Bayonet",
       "type": "compatibleAttachment",
       "slot": "rmc-aslot-barrel"
@@ -33879,7 +33855,7 @@
     "catalogItems": 1152,
     "publicItems": 1150,
     "excludedItems": 0,
-    "relations": 1495,
+    "relations": 1491,
     "catalogEntityPrototypes": 1152,
     "resolvedEntityPrototypes": 1569
   },

@@ -35676,6 +35676,16 @@
       "public": true,
       "attachmentSlots": [
         {
+          "id": "rmc-aslot-rail",
+          "name": "Верхняя планка",
+          "compatibleItemIds": [],
+          "installedItemIds": [
+            "RMCM96SIntegratedScope"
+          ],
+          "locked": true,
+          "startingItemId": "RMCM96SIntegratedScope"
+        },
+        {
           "id": "rmc-aslot-underbarrel",
           "name": "Подствольный слот",
           "compatibleItemIds": [
@@ -69412,8 +69422,7 @@
           "weaponIds": [
             "RMCWeaponRifleM54C",
             "RMCWeaponRifleM54CMK1",
-            "RMCWeaponRifleM54CMK1AP",
-            "RMCWeaponRifleM59A"
+            "RMCWeaponRifleM54CMK1AP"
           ]
         }
       ],
@@ -69425,8 +69434,7 @@
             "weaponIds": [
               "RMCWeaponRifleM54C",
               "RMCWeaponRifleM54CMK1",
-              "RMCWeaponRifleM54CMK1AP",
-              "RMCWeaponRifleM59A"
+              "RMCWeaponRifleM54CMK1AP"
             ]
           }
         ],
@@ -69672,8 +69680,7 @@
           "weaponIds": [
             "RMCWeaponRifleM54C",
             "RMCWeaponRifleM54CMK1",
-            "RMCWeaponRifleM54CMK1AP",
-            "RMCWeaponRifleM59A"
+            "RMCWeaponRifleM54CMK1AP"
           ]
         }
       ],
@@ -69685,8 +69692,7 @@
             "weaponIds": [
               "RMCWeaponRifleM54C",
               "RMCWeaponRifleM54CMK1",
-              "RMCWeaponRifleM54CMK1AP",
-              "RMCWeaponRifleM59A"
+              "RMCWeaponRifleM54CMK1AP"
             ]
           }
         ],
@@ -74196,8 +74202,7 @@
           "slotName": "Подствольный слот",
           "weaponIds": [
             "RMCWeaponRifleM54C",
-            "RMCWeaponRifleM59A",
-            "WeaponShotgunM890"
+            "RMCWeaponRifleM59A"
           ]
         }
       ],
@@ -74336,8 +74341,7 @@
             "slotName": "Подствольный слот",
             "weaponIds": [
               "RMCWeaponRifleM54C",
-              "RMCWeaponRifleM59A",
-              "WeaponShotgunM890"
+              "RMCWeaponRifleM59A"
             ]
           }
         ],
@@ -74764,7 +74768,6 @@
           "slotName": "Подствольный слот",
           "weaponIds": [
             "RMCWeaponFlamer",
-            "RMCWeaponFlamerSpec",
             "RMCWeaponRifleM54C",
             "RMCWeaponRifleM54CE2",
             "RMCWeaponRifleM54CMK1",
@@ -74796,7 +74799,6 @@
             "slotName": "Подствольный слот",
             "weaponIds": [
               "RMCWeaponFlamer",
-              "RMCWeaponFlamerSpec",
               "RMCWeaponRifleM54C",
               "RMCWeaponRifleM54CE2",
               "RMCWeaponRifleM54CMK1",
@@ -135175,6 +135177,16 @@
             "RMCAttachmentS6ReflexSight"
           ],
           "installedItemIds": []
+        },
+        {
+          "id": "rmc-aslot-underbarrel",
+          "name": "Подствольный слот",
+          "compatibleItemIds": [],
+          "installedItemIds": [
+            "RMCAttachmentLaserLightModule"
+          ],
+          "locked": true,
+          "startingItemId": "RMCAttachmentLaserLightModule"
         }
       ],
       "magazineSlots": [
@@ -167107,12 +167119,12 @@
         {
           "id": "rmc-aslot-underbarrel",
           "name": "Подствольный слот",
-          "compatibleItemIds": [
-            "RMCAttachmentUnderbarrelExtinguisher"
-          ],
+          "compatibleItemIds": [],
           "installedItemIds": [
             "RMCAttachmentUnderbarrelExtinguisherSpec"
-          ]
+          ],
+          "locked": true,
+          "startingItemId": "RMCAttachmentUnderbarrelExtinguisherSpec"
         }
       ],
       "relationships": [
@@ -167125,11 +167137,6 @@
           "type": "compatibleAttachment",
           "itemId": "RMCAttachmentRailFlashlight",
           "slot": "rmc-aslot-rail"
-        },
-        {
-          "type": "compatibleAttachment",
-          "itemId": "RMCAttachmentUnderbarrelExtinguisher",
-          "slot": "rmc-aslot-underbarrel"
         },
         {
           "type": "installedAttachment",
@@ -170360,7 +170367,8 @@
           ],
           "installedItemIds": [
             "RMCAttachmentS42xTelescopicMiniscope"
-          ]
+          ],
+          "startingItemId": "RMCAttachmentS42xTelescopicMiniscope"
         }
       ],
       "relationships": [
@@ -170691,7 +170699,8 @@
           ],
           "installedItemIds": [
             "RMCAttachmentS42xTelescopicMiniscope"
-          ]
+          ],
+          "startingItemId": "RMCAttachmentS42xTelescopicMiniscope"
         }
       ],
       "relationships": [
@@ -173336,7 +173345,8 @@
           ],
           "installedItemIds": [
             "RMCAttachmentM54CStockCollapsible"
-          ]
+          ],
+          "startingItemId": "RMCAttachmentM54CStockCollapsible"
         },
         {
           "id": "rmc-aslot-underbarrel",
@@ -173355,7 +173365,8 @@
           ],
           "installedItemIds": [
             "RMCAttachmentU1GrenadeLauncher"
-          ]
+          ],
+          "startingItemId": "RMCAttachmentU1GrenadeLauncher"
         }
       ],
       "magazineSlots": [
@@ -174081,7 +174092,8 @@
           ],
           "installedItemIds": [
             "RMCAttachmentBipod"
-          ]
+          ],
+          "startingItemId": "RMCAttachmentBipod"
         }
       ],
       "magazineSlots": [
@@ -174657,7 +174669,8 @@
           ],
           "installedItemIds": [
             "RMCAttachmentM54CMK1StockCollapsible"
-          ]
+          ],
+          "startingItemId": "RMCAttachmentM54CMK1StockCollapsible"
         },
         {
           "id": "rmc-aslot-underbarrel",
@@ -174669,7 +174682,8 @@
           ],
           "installedItemIds": [
             "RMCAttachmentMK1GrenadeLauncher"
-          ]
+          ],
+          "startingItemId": "RMCAttachmentMK1GrenadeLauncher"
         }
       ],
       "magazineSlots": [
@@ -175243,7 +175257,8 @@
           ],
           "installedItemIds": [
             "RMCAttachmentM54CMK1StockCollapsible"
-          ]
+          ],
+          "startingItemId": "RMCAttachmentM54CMK1StockCollapsible"
         },
         {
           "id": "rmc-aslot-underbarrel",
@@ -175255,7 +175270,8 @@
           ],
           "installedItemIds": [
             "RMCAttachmentMK1GrenadeLauncher"
-          ]
+          ],
+          "startingItemId": "RMCAttachmentMK1GrenadeLauncher"
         }
       ],
       "magazineSlots": [
@@ -175840,13 +175856,12 @@
         {
           "id": "rmc-aslot-stock",
           "name": "Приклад",
-          "compatibleItemIds": [
-            "RMCAttachmentM54CMK1StockCollapsible",
-            "RMCAttachmentM54CStockCollapsible"
-          ],
+          "compatibleItemIds": [],
           "installedItemIds": [
             "RMCAttachmentM54CStockCollapsible"
-          ]
+          ],
+          "locked": true,
+          "startingItemId": "RMCAttachmentM54CStockCollapsible"
         },
         {
           "id": "rmc-aslot-underbarrel",
@@ -175987,16 +176002,6 @@
           "type": "compatibleAttachment",
           "itemId": "RMCAttachmentS84xTelescopicScope",
           "slot": "rmc-aslot-rail"
-        },
-        {
-          "type": "compatibleAttachment",
-          "itemId": "RMCAttachmentM54CMK1StockCollapsible",
-          "slot": "rmc-aslot-stock"
-        },
-        {
-          "type": "compatibleAttachment",
-          "itemId": "RMCAttachmentM54CStockCollapsible",
-          "slot": "rmc-aslot-stock"
         },
         {
           "type": "compatibleAttachment",
@@ -179116,6 +179121,16 @@
       "category": "Оружие",
       "public": true,
       "attachmentSlots": [
+        {
+          "id": "rmc-aslot-rail",
+          "name": "Верхняя планка",
+          "compatibleItemIds": [],
+          "installedItemIds": [
+            "RMCXM43E1IntegratedScope"
+          ],
+          "locked": true,
+          "startingItemId": "RMCXM43E1IntegratedScope"
+        },
         {
           "id": "rmc-aslot-underbarrel",
           "name": "Подствольный слот",
@@ -185363,7 +185378,8 @@
           ],
           "installedItemIds": [
             "RMCAttachmentM63StockCollapsible"
-          ]
+          ],
+          "startingItemId": "RMCAttachmentM63StockCollapsible"
         },
         {
           "id": "rmc-aslot-underbarrel",
@@ -186599,17 +186615,18 @@
           ],
           "installedItemIds": [
             "RMCAttachmentM890Stock"
-          ]
+          ],
+          "startingItemId": "RMCAttachmentM890Stock"
         },
         {
           "id": "rmc-aslot-underbarrel",
           "name": "Подствольный слот",
-          "compatibleItemIds": [
-            "RMCAttachmentU1GrenadeLauncher"
-          ],
+          "compatibleItemIds": [],
           "installedItemIds": [
             "RMCAttachmentU1GrenadeLauncher"
-          ]
+          ],
+          "locked": true,
+          "startingItemId": "RMCAttachmentU1GrenadeLauncher"
         }
       ],
       "relationships": [
@@ -186652,11 +186669,6 @@
           "type": "compatibleAttachment",
           "itemId": "RMCAttachmentM890Stock",
           "slot": "rmc-aslot-stock"
-        },
-        {
-          "type": "compatibleAttachment",
-          "itemId": "RMCAttachmentU1GrenadeLauncher",
-          "slot": "rmc-aslot-underbarrel"
         },
         {
           "type": "installedAttachment",
