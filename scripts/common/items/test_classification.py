@@ -266,6 +266,31 @@ def test_map_loaded_weapon_tableware_and_metal_use_player_facing_categories():
     assert classify_item(metal, EMPTY_POLICY)["categoryId"] == "gear"
 
 
+def test_incidental_components_do_not_override_primary_item_role():
+    clothing = {
+        "id": "Uniform",
+        "componentTypes": ["Item", "Clothing", "Food", "SuitSensor"],
+        "equipmentSlots": ["innerclothing"],
+    }
+    mortar_flare = {
+        "id": "MortarFlare",
+        "componentTypes": ["Item", "Flare", "MortarShell"],
+    }
+    equipment_case = {
+        "id": "GrenadeEquipmentCase",
+        "componentTypes": ["Item", "Storage", "StorageFill", "RemoveOnlyStorage"],
+    }
+    leader_armor_fill = {
+        "id": "LeaderArmorZipties",
+        "componentTypes": ["Item", "CMArmor", "StorageFill", "PDTBraceletHolderTarget"],
+    }
+
+    assert classify_item(clothing, EMPTY_POLICY)["categoryId"] == "equipment"
+    assert classify_item(mortar_flare, EMPTY_POLICY)["categoryId"] == "ammunition"
+    assert classify_item(equipment_case, EMPTY_POLICY)["categoryId"] == "other"
+    assert classify_item(leader_armor_fill, EMPTY_POLICY)["categoryId"] == "hidden"
+
+
 def test_infer_types_detects_weapon():
     assert "weapon" in infer_types("RMCWeaponM13", {"Gun": {}}, set())
 

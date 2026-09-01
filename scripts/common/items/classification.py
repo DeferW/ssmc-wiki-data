@@ -365,6 +365,13 @@ def is_technical_hidden_item(
         "Strap",
     }.issubset(component_types):
         return True
+    if {
+        "PDTBraceletHolderTarget",
+        "StorageFill",
+    }.issubset(component_types) and component_types.intersection(
+        {"CMArmor", "CMHardArmor", "RMCArmor"}
+    ):
+        return True
     if (
         "Gun" in component_types
         and not placed_on_map
@@ -373,6 +380,17 @@ def is_technical_hidden_item(
             "ap", "unmc", "марксманский", "marksman", "пустой", "empty",
             "заполненная", "заполненный", "заряженная", "заряженный", "filled", "loaded",
         }
+    ):
+        return True
+    if (
+        not placed_on_map
+        and not has_availability
+        and suffix in {
+            "заполненная", "заполненный", "заполнено", "заряженная",
+            "заряженный", "filled", "loaded",
+        }
+        and "StorageFill" in component_types
+        and component_types.intersection({"CMArmor", "CMHardArmor", "RMCArmor"})
     ):
         return True
     return False
@@ -387,9 +405,12 @@ def is_miscellaneous_item(item: dict[str, Any]) -> bool:
     # mechanics, but SpaceGarbage + Utensil describes their actual purpose.
     if {"SpaceGarbage", "Utensil"}.issubset(component_types):
         return True
-    if component_types.intersection({"GasTank", "MachineBoard", "PDTLocator"}):
+    if component_types.intersection({"Drink", "GasTank", "MachineBoard", "PDTLocator", "PacifismAllowedGun"}):
         return True
-    if tags.intersection({"gastank", "trash", "trashbag", "cigarette"}):
+    if tags.intersection({
+        "book", "cigarette", "doorelectronics", "folder", "gastank", "payload",
+        "pen", "rmccircuitboard", "toyrubberduck", "trash", "trashbag", "write",
+    }):
         return True
     return any(
         marker in item_id
@@ -530,6 +551,25 @@ def classify_item(
             "slot:armor-or-head",
         )
 
+    if "cmfirstaidkit" in folded_tags:
+        return public("medicine", "portable first-aid kit", "tag:first-aid-kit")
+
+    primary_clothing_slots = {
+        "innerclothing", "jumpsuit", "head", "eyes", "gloves", "hands",
+        "shoes", "feet", "mask", "mouth", "neck", "outerclothing",
+    }
+    if (
+        "Clothing" in component_types
+        and bool(slots.intersection(primary_clothing_slots))
+        and not has_gun
+        and "MeleeWeapon" not in component_types
+    ) or "handcuffs" in folded_tags or "briefcase" in folded_tags:
+        return public(
+            "equipment",
+            "clothing or portable equipment assigned to its primary wearable role",
+            "component:primary-wearable",
+        )
+
     if is_packaging_container(item) and is_utility_supply_box(item):
         return public("gear", "portable field-supply box", "container:utility-box")
 
@@ -553,6 +593,21 @@ def classify_item(
         return public("other", "station utility weapon", "component:stunbaton")
     if "Flash" in component_types and "LimitedCharges" in component_types:
         return public("gear", "field incapacitation device", "component:flash")
+
+    if "MeleeWeapon" in component_types and "/hydroponics/" in folded_path:
+        return public("other", "hydroponics hand tool", "path:hydroponics-tool")
+
+    if "MeleeWeapon" in component_types and folded_tags.intersection({"machete", "throwingknife"}):
+        return public("gear", "portable field blade", "tag:field-blade")
+
+    if (
+        "MeleeWeapon" in component_types
+        and (
+            component_types.intersection({"Tool", "Utensil", "ItemToggleMeleeWeapon"})
+            or folded_tags.intersection({"botanyhatchet", "fireaxe", "kitchenknife", "pickaxe", "stpredatorgear"})
+        )
+    ):
+        return public("other", "civilian, ceremonial or utility melee object", "component:utility-melee")
 
     if (
         is_dedicated_melee_weapon(item_id, component_types, tags)
@@ -579,7 +634,7 @@ def classify_item(
         or bool({"flare", "rmcflare"}.intersection(folded_tags))
     )
     if (
-        is_flare
+        (is_flare and not has_ammo)
         or "SkillPamphlet" in component_types
         or "Whistle" in component_types
         or "synthresetkey" in folded_id
@@ -617,6 +672,9 @@ def classify_item(
             "wearable clothing, storage or installed uniform accessory",
             "component:wearable-equipment",
         )
+
+    if is_packaging_container(item) and {"RemoveOnlyStorage", "StorageFill"}.issubset(component_types) and not has_ammo:
+        return public("other", "portable equipment case", "container:equipment-case")
 
     if is_packaging_container(item) and is_ammunition_or_magazine_box(item):
         return public(
