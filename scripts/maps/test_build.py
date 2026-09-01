@@ -9,6 +9,7 @@ from PIL import Image
 
 from scripts.common.prototypes import EntityPrototype, PrototypeResolver
 from scripts.maps.core import (
+    OVERLAY_SCHEMA_VERSION,
     _static_item_occurrences,
     _save_tiles,
     _tile_footprint,
@@ -361,7 +362,7 @@ def test_overlay_compacts_area_support_into_row_runs(tmp_path: Path):
         PrototypeResolver(prototypes),
     )
 
-    assert overlay["schemaVersion"] == 4
+    assert overlay["schemaVersion"] == OVERLAY_SCHEMA_VERSION
     assert overlay["areas"] == {
         "types": [
             ["AreaInside", "Medical", 129],

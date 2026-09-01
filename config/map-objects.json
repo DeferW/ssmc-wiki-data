@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "groups": [
+    {
+      "id": "alcohol-dispensers",
+      "name": "Раздатчики алкоголя",
+      "detail": "автоматы и стационарные раздатчики напитков",
+      "objects": [
+        { "id": "CMDispenserBooze", "name": "Раздатчик алкоголя" },
+        { "id": "CMVendorBooze", "name": "Автомат с алкоголем" },
+        { "id": "BoozeDispenser", "name": "Раздатчик алкоголя" },
+        { "id": "BoozeDispenserEmpty", "name": "Пустой раздатчик алкоголя" },
+        { "id": "VendingMachineBooze", "name": "Автомат с алкоголем" }
+      ]
+    },
+    {
+      "id": "medical-dispensers",
+      "name": "Раздатчики медицины",
+      "detail": "NanoMed и другие медицинские автоматы",
+      "objects": [
+        { "id": "CMMedilinkSupplyPort", "name": "Медицинский порт снабжения" },
+        { "id": "CMVendorMedical", "name": "Медицинский автомат" },
+        { "id": "CMVendorMedicalAllAccess", "name": "Медицинский автомат общего доступа" },
+        { "id": "ColMarTechMarineMedical", "name": "ColMarTech: медицина" },
+        { "id": "ColMarTechMarineMedicalPowered", "name": "ColMarTech: медицина" },
+        { "id": "RMCNanoMed", "name": "NanoMed" },
+        { "id": "RMCNanoMedLimited", "name": "NanoMed (ограниченный)" },
+        { "id": "RMCVendorMedicalPVE", "name": "Медицинский автомат" },
+        { "id": "RMCBobdaMed", "name": "Медицинский Bobda" },
+        { "id": "VendingMachineMedical", "name": "Медицинский автомат" },
+        { "id": "VendingMachineWallMedical", "name": "Настенный медицинский автомат" }
+      ]
+    },
+    {
+      "id": "vehicles-and-wheels",
+      "name": "Машины и колёса",
+      "detail": "размещённые на карте машины и запасные колёса",
+      "objects": [
+        { "id": "VehicleVan", "name": "Фургон" },
+        { "id": "VehicleBoxVan", "name": "Грузовой фургон" },
+        { "id": "VehiclePizzaVan", "name": "Фургон доставки" },
+        { "id": "RMCVanWheel", "name": "Колесо фургона" }
+      ]
+    },
+    {
+      "id": "welding-fuel",
+      "name": "Баки сварочного топлива",
+      "detail": "стационарные ёмкости с топливом для сварки",
+      "objects": [
+        { "id": "RMCTankReagentFuel", "name": "Бак сварочного топлива" },
+        { "id": "RMCTankFuel", "name": "Топливный бак" },
+        { "id": "WeldingFuelTank", "name": "Бак сварочного топлива" },
+        { "id": "WeldingFuelTankFull", "name": "Полный бак сварочного топлива" },
+        { "id": "WeldingFuelTankHighCapacity", "name": "Большой бак сварочного топлива" },
+        { "id": "STTankReagentFuelHunter", "name": "Бак сварочного топлива" }
+      ]
+    }
+  ]
+}

@@ -5,8 +5,8 @@ import math
 from collections import defaultdict
 from typing import Any, Iterable
 
-from .classification import has_meaningful_armor
-from .prototypes import parse_box2i
+from scripts.common.items.classification import has_meaningful_armor
+from scripts.common.items.prototypes import parse_box2i
 
 
 # OverheatComponent's C# defaults. Bare YAML components deliberately inherit

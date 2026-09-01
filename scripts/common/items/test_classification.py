@@ -1,4 +1,4 @@
-from scripts.catalog.classification import (
+from scripts.common.items.classification import (
     classify_item,
     has_meaningful_armor,
     infer_types,
@@ -136,13 +136,13 @@ def test_classify_wearable_grenade_belt_as_equipment_before_ammunition():
     assert classify_item(item, EMPTY_POLICY)["categoryId"] == "equipment"
 
 
-def test_classify_sentry_with_gun_as_weapon():
+def test_classify_sentry_with_gun_as_deployable_gear():
     item = {
         "id": "RMCSentry",
         "componentTypes": ["Item", "Gun", "Sentry", "Turret"],
         "tags": [],
     }
-    assert classify_item(item, EMPTY_POLICY)["categoryId"] == "weapon"
+    assert classify_item(item, EMPTY_POLICY)["categoryId"] == "gear"
 
 
 def test_classify_magazine_with_suit_storage_slot_as_ammunition():

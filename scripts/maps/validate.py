@@ -145,6 +145,13 @@ def validate(catalog_path: Path, assets_root: Path, max_assets_bytes: int) -> No
         unknown_items = set(item_occurrences) - set(item_registry)
         if unknown_items:
             raise RuntimeError(f"Overlay references unknown static items: {sorted(unknown_items)}")
+        object_groups = overlay.get("objectGroups")
+        object_registry = overlay.get("objectPrototypes")
+        object_occurrences = overlay.get("objectOccurrences")
+        if not isinstance(object_groups, list) or not isinstance(object_registry, dict):
+            raise RuntimeError(f"Overlay has no configured object registry: {map_id}")
+        if not isinstance(object_occurrences, dict) or set(object_occurrences) - set(object_registry):
+            raise RuntimeError(f"Invalid configured objects in map: {map_id}")
         insert_maps = overlay.get("insertMaps")
         if not isinstance(insert_maps, dict):
             raise RuntimeError(f"Overlay has no insert maps: {map_id}")
@@ -154,6 +161,9 @@ def validate(catalog_path: Path, assets_root: Path, max_assets_bytes: int) -> No
             insert_items = insert.get("itemOccurrences")
             if not isinstance(insert_items, dict) or set(insert_items) - set(item_registry):
                 raise RuntimeError(f"Invalid static items in insert map: {insert_path}")
+            insert_objects = insert.get("objectOccurrences")
+            if not isinstance(insert_objects, dict) or set(insert_objects) - set(object_registry):
+                raise RuntimeError(f"Invalid configured objects in insert map: {insert_path}")
             insert_manifest_path = assets_root / insert["tiles"]
             validate_tiles(insert_manifest_path, insert_path, expected_files)
 

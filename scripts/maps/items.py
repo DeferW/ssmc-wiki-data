@@ -3,15 +3,12 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-from scripts.catalog.catalog import build_catalog
-from scripts.catalog.classification import classify_item, equipment_slots
-from scripts.catalog.config import read_config
-from scripts.catalog.prototypes import (
-    read_item_size_definitions,
+from scripts.catalog.api import build_catalog_documents
+from scripts.common.items.classification import classify_item, equipment_slots
+from scripts.common.items.prototypes import (
     read_reagent_colors,
 )
-from scripts.catalog.sprites import render_public_sprites
-from scripts.common.localization import Localizer, read_fluent_messages
+from scripts.common.items.sprites import render_public_sprites
 from scripts.common.prototypes import EntityPrototype, PrototypeResolver
 
 
@@ -58,21 +55,17 @@ def build_static_item_catalog(
     resolver: PrototypeResolver,
     game_commit: str,
 ) -> dict[str, Any]:
-    localizer = Localizer(read_fluent_messages(game_source / "Resources/Locale/ru-RU"))
     selected_ids: set[str] = set()
     for prototype_id in sorted(prototype_ids):
         resolved = resolver.resolve(prototype_id)
         if static_item_classification(prototype_id, resolved) is not None:
             selected_ids.add(prototype_id)
 
-    _, full_catalog = build_catalog(
+    _, full_catalog = build_catalog_documents(
+        game_source=game_source,
+        config_path=Path(__file__).resolve().parents[2] / "config/catalog-sources.yml",
         prototypes=prototypes,
-        config=read_config(
-            Path(__file__).resolve().parents[2] / "config/catalog-sources.yml"
-        ),
-        localizer=localizer,
         game_commit=game_commit,
-        item_sizes=read_item_size_definitions(game_source),
         additional_item_ids=selected_ids,
     )
     items = {

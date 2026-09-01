@@ -3,7 +3,7 @@ from __future__ import annotations
 import re
 from typing import Any, Iterable
 
-from .core import (
+from .categories import (
     PUBLIC_CATEGORY_LABELS,
     SOURCE_CATEGORY_HINTS,
     WEARABLE_EQUIPMENT_SLOTS,
@@ -364,7 +364,10 @@ def is_technical_hidden_item(item: dict[str, Any]) -> bool:
     if (
         "Gun" in component_types
         and not has_availability
-        and suffix in {"ap", "unmc", "марксманский", "marksman", "пустой", "empty"}
+        and suffix in {
+            "ap", "unmc", "марксманский", "marksman", "пустой", "empty",
+            "заполненная", "заполненный", "заряженная", "заряженный", "filled", "loaded",
+        }
     ):
         return True
     return False
@@ -519,15 +522,23 @@ def classify_item(
     if is_packaging_container(item) and is_utility_supply_box(item):
         return public("gear", "portable field-supply box", "container:utility-box")
 
+    # These strong mechanics describe the item's primary role and must win
+    # over incidental MeleeWeapon/Gun components inherited by many utilities.
+    if "Attachable" in component_types:
+        return public("attachment", "dedicated attachment component", "Attachable")
+    if has_any_component(component_types, ("surgerytool", "scalpel")):
+        return public("medicine", "surgical instrument", "component:surgery-tool")
+    if component_types.intersection({"VehicleTurretAttachment", "HardpointItem"}):
+        return public("other", "vehicle-installed part", "component:vehicle-part")
+    if has_any_component(component_types, ("sentry", "turret", "weaponmount")) or "Mortar" in component_types:
+        return public("gear", "deployable weapon support", "component:weapon-support")
+    if "Stunbaton" in component_types:
+        return public("other", "station utility weapon", "component:stunbaton")
+    if "Flash" in component_types and "LimitedCharges" in component_types:
+        return public("gear", "field incapacitation device", "component:flash")
+
     if (
-        "Mortar" in component_types
-        or "Stunbaton" in component_types
-        or (
-            "Flash" in component_types
-            and "LimitedCharges" in component_types
-            and "MeleeWeapon" in component_types
-        )
-        or is_dedicated_melee_weapon(item_id, component_types, tags)
+        is_dedicated_melee_weapon(item_id, component_types, tags)
     ):
         return public(
             "weapon",
@@ -537,8 +548,6 @@ def classify_item(
 
     # Underbarrel launchers and shotguns still belong to attachments even when
     # they also contain a Gun component. Firearms win over their Clothing slots.
-    if "Attachable" in component_types:
-        return public("attachment", "dedicated attachment component", "Attachable")
     if has_gun:
         return public(
             "weapon",

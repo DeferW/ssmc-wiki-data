@@ -1,4 +1,4 @@
-from scripts.catalog.prototypes import normalize_parents, origin_from_path, parse_box2i
+from scripts.common.items.prototypes import normalize_parents, origin_from_path, parse_box2i
 
 
 def test_normalize_parents_single_string():

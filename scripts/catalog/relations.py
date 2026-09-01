@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 from typing import Any
 
-from .prototypes import PrototypeResolver
+from scripts.common.items.prototypes import PrototypeResolver
 
 
 def relation_key(relation: dict[str, Any]) -> str:

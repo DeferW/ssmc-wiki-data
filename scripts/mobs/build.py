@@ -7,6 +7,7 @@ from typing import Any
 
 from scripts.common.localization import Localizer, read_fluent_messages
 from scripts.common.prototypes import PrototypeResolver, read_entity_prototypes
+from scripts.mobs.constants import RMC_SIZES
 from scripts.mobs.sprites import render_mob_sprites, sprite_path_from_component
 
 MARINE_BASE_PROTOTYPE_ID = "RMCBaseMobSpeciesOrganic"
@@ -90,9 +91,6 @@ def apply_bulwark_passive(armor: dict[str, Any], components: dict[str, Any]) -> 
     armor["frontalArmor"] += passive.get("passiveFrontalBonus", 10)
     armor["sideArmor"] += passive.get("passiveSideBonus", 10)
     return armor
-
-
-RMC_SIZES = ("Small", "Humanoid", "VerySmallXeno", "SmallXeno", "Xeno", "Big", "Immobile")
 
 
 def rmc_size(components: dict[str, Any]) -> str:

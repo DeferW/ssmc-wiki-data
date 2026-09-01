@@ -19,9 +19,10 @@ from scripts.common.prototypes import (
     iter_prototype_documents,
 )
 from scripts.maps.items import STATIC_ITEM_CATALOG_PATH, static_item_classification
+from scripts.maps.objects import load_map_object_config
 
 SCHEMA_VERSION = 1
-OVERLAY_SCHEMA_VERSION = 5
+OVERLAY_SCHEMA_VERSION = 6
 TILES_SCHEMA_VERSION = 3
 DEFAULT_TILE_SIZE = 512
 DEFAULT_RENDER_SCALE = 1.0
@@ -380,6 +381,26 @@ def _static_item_occurrences(
     return result
 
 
+def _configured_object_occurrences(
+    document: dict[str, Any], configured_ids: set[str]
+) -> dict[str, list[list[Any]]]:
+    """Return positions only for non-item prototypes selected in map-objects.json."""
+    result: dict[str, list[list[Any]]] = {}
+    for group in document["entities"]:
+        if not isinstance(group, dict):
+            continue
+        prototype_id = group.get("proto")
+        if prototype_id not in configured_ids:
+            continue
+        entities = group.get("entities", [])
+        if not isinstance(entities, list):
+            continue
+        points = [point for raw in entities if isinstance(raw, dict) if (point := _occurrence(raw))]
+        if points:
+            result[prototype_id] = points
+    return result
+
+
 def _extract_occurrences(
     document: dict[str, Any],
     prototypes: dict[str, EntityPrototype],
@@ -593,6 +614,10 @@ def build_overlay(
     document = _load_map(resource_path(game_source, map_path))
     occurrences, pending = _extract_occurrences(document, prototypes, resolver, registry)
     item_occurrences = _static_item_occurrences(document, prototypes, resolver)
+    object_config = load_map_object_config()
+    object_registry = object_config["prototypes"]
+    object_ids = set(object_registry)
+    object_occurrences = _configured_object_occurrences(document, object_ids)
     insert_maps: dict[str, Any] = {}
     visited: set[str] = set()
 
@@ -615,6 +640,7 @@ def build_overlay(
         insert_maps[insert_path] = {
             "occurrences": insert_occurrences,
             "itemOccurrences": _static_item_occurrences(insert_document, prototypes, resolver),
+            "objectOccurrences": _configured_object_occurrences(insert_document, object_ids),
             "areas": _area_grid(insert_document, prototypes, resolver),
             "footprint": _tile_footprint(insert_document),
             "tiles": f"inserts/{render_key}/tiles.json",
@@ -627,6 +653,9 @@ def build_overlay(
         "prototypes": dict(sorted(registry.items())),
         "occurrences": dict(sorted(occurrences.items())),
         "itemOccurrences": dict(sorted(item_occurrences.items())),
+        "objectGroups": object_config["groups"],
+        "objectPrototypes": dict(sorted(object_registry.items())),
+        "objectOccurrences": dict(sorted(object_occurrences.items())),
         "insertMaps": dict(sorted(insert_maps.items())),
         "areas": _area_grid(document, prototypes, resolver),
     }

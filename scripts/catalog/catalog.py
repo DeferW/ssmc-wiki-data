@@ -4,7 +4,7 @@ import copy
 from collections import defaultdict, deque
 from typing import Any
 
-from .classification import (
+from scripts.common.items.classification import (
     classify_item,
     equipment_slots,
     infer_types,
@@ -20,9 +20,9 @@ from .core import (
     SLOT_LABELS,
 )
 from scripts.common.localization import Localizer
-from .prototypes import PrototypeResolver
+from scripts.common.items.prototypes import PrototypeResolver
 from .relations import add_compatibility_relations, add_relation, content_relations
-from .sprites import sprite_summary
+from scripts.common.items.sprites import sprite_summary
 from .statistics import (
     populate_armor_statistics,
     populate_attachment_statistics,

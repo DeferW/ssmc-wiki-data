@@ -12,6 +12,7 @@ from scripts.maps.core import (
     TILES_SCHEMA_VERSION,
 )
 from scripts.maps.validate import validate
+from scripts.maps.items import STATIC_ITEM_SCHEMA_VERSION
 
 
 def write_json(path: Path, value: object) -> None:
@@ -54,11 +55,25 @@ def make_dataset(tmp_path: Path) -> tuple[Path, Path]:
             "mapPath": "/Maps/_Stories/test.yml",
             "prototypes": {},
             "occurrences": {},
+            "itemOccurrences": {},
+            "objectGroups": [],
+            "objectPrototypes": {},
+            "objectOccurrences": {},
             "insertMaps": {
                 "/Maps/_Stories/Inserts/test.yml": {
-                    "tiles": "inserts/test-insert/tiles.json"
+                    "tiles": "inserts/test-insert/tiles.json",
+                    "itemOccurrences": {},
+                    "objectOccurrences": {}
                 }
             },
+        },
+    )
+    write_json(
+        assets_root / "static-items.json",
+        {
+            "schemaVersion": STATIC_ITEM_SCHEMA_VERSION,
+            "items": {},
+            "publicCatalog": {"itemIds": [], "categories": {}},
         },
     )
     asset_bytes = sum(path.stat().st_size for path in assets_root.rglob("*") if path.is_file())
@@ -67,6 +82,7 @@ def make_dataset(tmp_path: Path) -> tuple[Path, Path]:
         catalog_path,
         {
             "schemaVersion": SCHEMA_VERSION,
+            "items": "static-items.json",
             "maps": [
                 {
                     "id": "test-map",

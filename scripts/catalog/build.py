@@ -5,12 +5,9 @@ import json
 from pathlib import Path
 from typing import Any
 
-from scripts.catalog.catalog import build_catalog
-from scripts.catalog.config import read_config
-from scripts.common.localization import Localizer, read_fluent_messages
-from scripts.catalog.prototypes import (
+from scripts.catalog.api import build_catalog_documents
+from scripts.common.items.prototypes import (
     read_entity_prototypes,
-    read_item_size_definitions,
     read_reagent_colors,
 )
 from scripts.catalog.reporting import (
@@ -18,7 +15,7 @@ from scripts.catalog.reporting import (
     print_previous_catalog_comparison,
     write_json,
 )
-from scripts.catalog.sprites import render_public_sprites
+from scripts.common.items.sprites import render_public_sprites
 
 
 def main() -> None:
@@ -45,16 +42,12 @@ def main() -> None:
 
     prototypes = read_entity_prototypes(args.game_source)
     reagent_colors = read_reagent_colors(args.game_source)
-    item_sizes = read_item_size_definitions(args.game_source)
-    config = read_config(args.config)
-    locale_root = args.game_source / "Resources/Locale" / args.locale
-    localizer = Localizer(read_fluent_messages(locale_root))
-    index, catalog = build_catalog(
+    index, catalog = build_catalog_documents(
+        game_source=args.game_source,
+        config_path=args.config,
         prototypes=prototypes,
-        config=config,
-        localizer=localizer,
         game_commit=args.commit,
-        item_sizes=item_sizes,
+        locale=args.locale,
     )
     catalog["review"] = build_review_section(catalog)
     render_public_sprites(

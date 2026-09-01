@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from scripts.mobs.build import RMC_SIZES
+from scripts.mobs.constants import RMC_SIZES
 
 MIN_XENO_CASTES = 20
 
