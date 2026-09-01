@@ -66,8 +66,6 @@ WEARABLE_EQUIPMENT_SLOTS = {
     "belt",
     "back",
     "outerclothing",
-    "suitstorage",
-    "suit_storage",
 }
 
 
@@ -78,8 +76,6 @@ WEARABLE_STORAGE_SLOTS = {
     "belt",
     "back",
     "outerclothing",
-    "suitstorage",
-    "suit_storage",
 }
 
 

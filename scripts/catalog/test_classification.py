@@ -115,6 +115,17 @@ def test_classify_runtime_projectile_as_hidden():
     assert classify_item(item, EMPTY_POLICY)["categoryId"] == "hidden"
 
 
+def test_classify_real_item_without_sprite_as_hidden():
+    item = {
+        "id": "RMCBrokenInternalItem",
+        "origin": "RMCBrokenInternalItem",
+        "sourceFile": "/Entities/Internal/broken.yml",
+        "componentTypes": ["Item"],
+        "tags": [],
+    }
+    assert classify_item(item, EMPTY_POLICY)["categoryId"] == "hidden"
+
+
 def test_classify_wearable_grenade_belt_as_equipment_before_ammunition():
     item = {
         "id": "RMCBeltGrenade",
@@ -125,13 +136,71 @@ def test_classify_wearable_grenade_belt_as_equipment_before_ammunition():
     assert classify_item(item, EMPTY_POLICY)["categoryId"] == "equipment"
 
 
-def test_classify_sentry_as_gear_before_gun():
+def test_classify_sentry_with_gun_as_weapon():
     item = {
         "id": "RMCSentry",
         "componentTypes": ["Item", "Gun", "Sentry", "Turret"],
         "tags": [],
     }
+    assert classify_item(item, EMPTY_POLICY)["categoryId"] == "weapon"
+
+
+def test_classify_magazine_with_suit_storage_slot_as_ammunition():
+    item = {
+        "id": "CMMagazineRifleM54C",
+        "componentTypes": ["Item", "Clothing", "BallisticAmmoProvider"],
+        "equipmentSlots": ["suitStorage"],
+        "tags": [],
+    }
+    assert classify_item(item, EMPTY_POLICY)["categoryId"] == "ammunition"
+
+
+def test_classify_nailgun_as_weapon_despite_back_slot():
+    item = {
+        "id": "RMCNailgunTactical",
+        "componentTypes": ["Item", "Nailgun", "MagazineAmmoProvider", "Clothing"],
+        "equipmentSlots": ["back", "suitStorage"],
+        "tags": [],
+    }
+    assert classify_item(item, EMPTY_POLICY)["categoryId"] == "weapon"
+
+
+def test_classify_handheld_radio_as_other():
+    item = {
+        "id": "RadioHandheld",
+        "componentTypes": ["Item", "RadioMicrophone"],
+        "tags": [],
+    }
+    assert classify_item(item, EMPTY_POLICY)["categoryId"] == "other"
+
+
+def test_classify_belt_compatible_tool_as_gear_not_equipment():
+    item = {
+        "id": "CMCrowbar",
+        "componentTypes": ["Item", "Clothing", "Tool", "MeleeWeapon"],
+        "equipmentSlots": ["Belt", "Suitstorage"],
+        "tags": [],
+    }
     assert classify_item(item, EMPTY_POLICY)["categoryId"] == "gear"
+
+
+def test_classify_back_compatible_ammo_box_as_ammunition():
+    item = {
+        "id": "RMCBoxBulletsRifle",
+        "componentTypes": ["Item", "Clothing", "BulletBox"],
+        "equipmentSlots": ["Back"],
+        "tags": [],
+    }
+    assert classify_item(item, EMPTY_POLICY)["categoryId"] == "ammunition"
+
+
+def test_classify_stethoscope_as_medicine_not_uniform_accessory():
+    item = {
+        "id": "RMCStethoscope",
+        "componentTypes": ["Item", "RMCStethoscope", "UniformAccessory"],
+        "tags": [],
+    }
+    assert classify_item(item, EMPTY_POLICY)["categoryId"] == "medicine"
 
 
 def test_has_meaningful_armor_true_for_nonzero_stat():

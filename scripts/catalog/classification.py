@@ -339,6 +339,14 @@ def is_technical_hidden_item(item: dict[str, Any]) -> bool:
     availability = item.get("availability")
     has_availability = isinstance(availability, list) and bool(availability)
 
+    # Real catalog cards carry origin/sourceFile. A drawable Item without any
+    # sprite summary is a broken/internal prototype, not a useful public card.
+    if (
+        (item.get("origin") or item.get("sourceFile"))
+        and "Item" in component_types
+        and not isinstance(item.get("sprite"), dict)
+    ):
+        return True
     if "CMVendorMapToSquad" in component_types:
         return True
     if "Item" not in component_types and component_types.intersection(
@@ -430,7 +438,14 @@ def classify_item(
     if not isinstance(properties, dict):
         properties = {}
     slots = {str(slot).casefold() for slot in item.get("equipmentSlots", [])}
-    has_gun = "Gun" in component_types or "RMCFlamerAmmoProvider" in component_types
+    # A weapon is identified by the mechanic that actually launches a shot,
+    # not by its name or wearable storage slots. Nailguns use their own firing
+    # component instead of Gun.
+    has_gun = (
+        "Gun" in component_types
+        or "RMCFlamerAmmoProvider" in component_types
+        or "Nailgun" in component_types
+    )
     has_ammo = (
         "Projectile" in component_types
         or "ProjectileGrenade" in component_types
@@ -504,13 +519,6 @@ def classify_item(
     if is_packaging_container(item) and is_utility_supply_box(item):
         return public("gear", "portable field-supply box", "container:utility-box")
 
-    if component_types.intersection({"Sentry", "Turret"}):
-        return public(
-            "gear",
-            "deployable sentry or automated field support",
-            "component:sentry",
-        )
-
     if (
         "Mortar" in component_types
         or "Stunbaton" in component_types
@@ -532,7 +540,11 @@ def classify_item(
     if "Attachable" in component_types:
         return public("attachment", "dedicated attachment component", "Attachable")
     if has_gun:
-        return public("weapon", "dedicated firearm component", "Gun")
+        return public(
+            "weapon",
+            "item has a dedicated projectile-launching mechanic",
+            "component:projectile-launcher",
+        )
 
     is_flare = (
         "Flare" in component_types
@@ -544,7 +556,6 @@ def classify_item(
         is_flare
         or "SkillPamphlet" in component_types
         or "Whistle" in component_types
-        or "UseOnSynthBlocked" in component_types
         or "synthresetkey" in folded_id
     ):
         return public(
@@ -553,25 +564,27 @@ def classify_item(
             "component:field-utility",
         )
 
-    has_storage = "Storage" in component_types or "CMItemSlots" in component_types
+    has_storage = "Storage" in component_types
     is_wearable_storage = has_storage and bool(slots.intersection(WEARABLE_STORAGE_SLOTS))
-    is_standard_wearable = (
-        "Clothing" in component_types
-        and bool(slots.intersection(WEARABLE_EQUIPMENT_SLOTS))
-    )
     is_patch = (
         "patch" in folded_id
         or any("patch" in tag for tag in folded_tags)
         or has_any_component(component_types, ("uniformaccessory", "patch"))
     )
-    is_headset = "headset" in folded_id or has_any_component(component_types, ("headset",))
+
+    # Stethoscopes are uniform accessories mechanically, but their primary
+    # purpose is medical and must win over the wearable signal.
+    if has_any_component(component_types, ("stethoscope",)):
+        return public("medicine", "medical diagnostic instrument", "component:medicine")
+
+    # Real containers worn as belts, pouches or backpacks must stay equipment
+    # even when their names mention grenades or ammunition. Ordinary objects
+    # merely allowed in a belt/suit-storage slot do not pass this rule.
     if (
         is_patch
-        or is_headset
         or "Webbing" in component_types
         or "HelmetAccessory" in component_types
         or is_wearable_storage
-        or is_standard_wearable
     ):
         return public(
             "equipment",
@@ -727,11 +740,6 @@ def classify_item(
     advanced_field_device = (
         "WeaponMount" in component_types
         or has_any_component(component_types, ("sentry", "turret", "mortar", "weaponmount"))
-        or "encryption" in folded_id
-        or has_any_component(
-            component_types,
-            ("encryption",),
-        )
         or has_any_component(
             component_types,
             (
@@ -798,8 +806,6 @@ def classify_item(
                 "lightbulb",
                 "lighttube",
                 "circuitboard",
-                "encryptionkey",
-                "encryption",
             )
         )
     ):
@@ -809,22 +815,9 @@ def classify_item(
             "component:gear-or-tool",
         )
 
-    if (
-        "Clothing" in component_types
-        or slots
-        or "/entities/clothing/" in folded_path
-    ):
-        return public(
-            "gear",
-            "non-standard wearable or installed clothing accessory",
-            "component:installed-accessory",
-        )
-
     if has_any_component(
         component_types,
         (
-            "radio",
-            "camera",
             "handheldlight",
             "flare",
             "flash",
@@ -833,12 +826,26 @@ def classify_item(
         ),
     ) or any(
         word in folded_id
-        for word in ("whistle", "ziptie", "bedroll", "gasmask")
+        for word in ("whistle", "ziptie", "bedroll")
     ):
         return public(
             "gear",
             "single-purpose field item",
             "component:gear",
+        )
+
+    # Clothing is intentionally late: the game also gives this component to
+    # tools, lights, ammo boxes and other objects merely compatible with a
+    # wearable slot. Their actual mechanics were classified above.
+    is_standard_wearable = (
+        "Clothing" in component_types
+        and bool(slots.intersection(WEARABLE_EQUIPMENT_SLOTS))
+    )
+    if is_standard_wearable:
+        return public(
+            "equipment",
+            "clothing assigned to a real wearable equipment slot",
+            "component:wearable-equipment",
         )
 
     return public(
