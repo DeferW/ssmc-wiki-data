@@ -313,6 +313,8 @@ def add_compatibility_relations(
             for slot_name, slot in attachment_slots.items():
                 if not isinstance(slot, dict):
                     continue
+                if slot.get("locked") is True:
+                    continue
                 whitelist = slot.get("whitelist")
                 blacklist = slot.get("blacklist")
                 for attachment_id in sorted(attachments):

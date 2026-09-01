@@ -352,15 +352,30 @@ def populate_compatibility_summaries(
         elif relation_type == "loadedWith":
             loaded[source][raw_slot].add(target)
 
-    for weapon_id, slots in attachment_slots.items():
+    for weapon_id in sorted(set(attachment_slots) | set(installed)):
+        slots = attachment_slots.get(weapon_id, {})
+        holder = items[weapon_id].get("properties", {}).get("AttachableHolder", {})
+        raw_slots = holder.get("slots", {}) if isinstance(holder, dict) else {}
         items[weapon_id]["attachmentSlots"] = [
             {
                 "id": raw_slot,
                 "name": slot_label(raw_slot),
-                "compatibleItemIds": sorted(attachment_ids),
+                "compatibleItemIds": sorted(slots.get(raw_slot, set())),
                 "installedItemIds": sorted(installed[weapon_id].get(raw_slot, set())),
+                **(
+                    {"locked": True}
+                    if isinstance(raw_slots.get(raw_slot), dict)
+                    and raw_slots[raw_slot].get("locked") is True
+                    else {}
+                ),
+                **(
+                    {"startingItemId": raw_slots[raw_slot]["startingAttachable"]}
+                    if isinstance(raw_slots.get(raw_slot), dict)
+                    and isinstance(raw_slots[raw_slot].get("startingAttachable"), str)
+                    else {}
+                ),
             }
-            for raw_slot, attachment_ids in sorted(slots.items())
+            for raw_slot in sorted(set(slots) | set(installed[weapon_id]))
         ]
     for attachment_id, slots in attachment_weapons.items():
         items[attachment_id]["attachableTo"] = [
