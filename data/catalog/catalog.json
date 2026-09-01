@@ -35676,16 +35676,6 @@
       "public": true,
       "attachmentSlots": [
         {
-          "id": "rmc-aslot-rail",
-          "name": "Верхняя планка",
-          "compatibleItemIds": [
-            "RMCM96SIntegratedScope"
-          ],
-          "installedItemIds": [
-            "RMCM96SIntegratedScope"
-          ]
-        },
-        {
           "id": "rmc-aslot-underbarrel",
           "name": "Подствольный слот",
           "compatibleItemIds": [
@@ -35738,11 +35728,6 @@
         }
       ],
       "relationships": [
-        {
-          "type": "compatibleAttachment",
-          "itemId": "RMCM96SIntegratedScope",
-          "slot": "rmc-aslot-rail"
-        },
         {
           "type": "compatibleAttachment",
           "itemId": "RMCAttachmentBipod",
@@ -68103,25 +68088,8 @@
       },
       "category": "Обвесы",
       "public": true,
-      "attachableTo": [
-        {
-          "slotId": "rmc-aslot-underbarrel",
-          "slotName": "Подствольный слот",
-          "weaponIds": [
-            "RMCMK80"
-          ]
-        }
-      ],
       "attachmentStats": {
-        "compatibleWith": [
-          {
-            "slotId": "rmc-aslot-underbarrel",
-            "slotName": "Подствольный слот",
-            "weaponIds": [
-              "RMCMK80"
-            ]
-          }
-        ],
+        "compatibleWith": [],
         "modifiers": {
           "AttachableWeaponRangedMods": {
             "modifiers": [
@@ -74965,26 +74933,6 @@
       },
       "category": "Обвесы",
       "public": true,
-      "attachableTo": [
-        {
-          "slotId": "rmc-aslot-underbarrel",
-          "slotName": "Подствольный слот",
-          "weaponIds": [
-            "RMCWeaponFlamer",
-            "RMCWeaponFlamerSpec",
-            "RMCWeaponRifleM54C",
-            "RMCWeaponRifleM54CE2",
-            "RMCWeaponRifleM54CMK1",
-            "RMCWeaponRifleM54CMK1AP",
-            "RMCWeaponRifleM59A",
-            "WeaponRifleM4SPR",
-            "WeaponRifleM4SPRCustom",
-            "WeaponSMGM63",
-            "WeaponShotgunM42A2",
-            "WeaponShotgunMOU53"
-          ]
-        }
-      ],
       "weaponStats": {
         "fireModes": [
           "SemiAuto"
@@ -74997,26 +74945,7 @@
         }
       },
       "attachmentStats": {
-        "compatibleWith": [
-          {
-            "slotId": "rmc-aslot-underbarrel",
-            "slotName": "Подствольный слот",
-            "weaponIds": [
-              "RMCWeaponFlamer",
-              "RMCWeaponFlamerSpec",
-              "RMCWeaponRifleM54C",
-              "RMCWeaponRifleM54CE2",
-              "RMCWeaponRifleM54CMK1",
-              "RMCWeaponRifleM54CMK1AP",
-              "RMCWeaponRifleM59A",
-              "WeaponRifleM4SPR",
-              "WeaponRifleM4SPRCustom",
-              "WeaponSMGM63",
-              "WeaponShotgunM42A2",
-              "WeaponShotgunMOU53"
-            ]
-          }
-        ],
+        "compatibleWith": [],
         "modifiers": {},
         "effects": [
           "AttachableToggleable"
@@ -134948,25 +134877,8 @@
       },
       "category": "Обвесы",
       "public": true,
-      "attachableTo": [
-        {
-          "slotId": "rmc-aslot-rail",
-          "slotName": "Верхняя планка",
-          "weaponIds": [
-            "CMM96SSniperRifle"
-          ]
-        }
-      ],
       "attachmentStats": {
-        "compatibleWith": [
-          {
-            "slotId": "rmc-aslot-rail",
-            "slotName": "Верхняя планка",
-            "weaponIds": [
-              "CMM96SSniperRifle"
-            ]
-          }
-        ],
+        "compatibleWith": [],
         "modifiers": {
           "AttachableWeaponRangedMods": {
             "modifiers": [
@@ -135263,16 +135175,6 @@
             "RMCAttachmentS6ReflexSight"
           ],
           "installedItemIds": []
-        },
-        {
-          "id": "rmc-aslot-underbarrel",
-          "name": "Подствольный слот",
-          "compatibleItemIds": [
-            "RMCAttachmentLaserLightModule"
-          ],
-          "installedItemIds": [
-            "RMCAttachmentLaserLightModule"
-          ]
         }
       ],
       "magazineSlots": [
@@ -135338,11 +135240,6 @@
           "type": "compatibleAttachment",
           "itemId": "RMCAttachmentS6ReflexSight",
           "slot": "rmc-aslot-rail"
-        },
-        {
-          "type": "compatibleAttachment",
-          "itemId": "RMCAttachmentLaserLightModule",
-          "slot": "rmc-aslot-underbarrel"
         },
         {
           "type": "compatibleMagazine",
@@ -166917,8 +166814,7 @@
           "id": "rmc-aslot-underbarrel",
           "name": "Подствольный слот",
           "compatibleItemIds": [
-            "RMCAttachmentUnderbarrelExtinguisher",
-            "RMCAttachmentUnderbarrelExtinguisherSpec"
+            "RMCAttachmentUnderbarrelExtinguisher"
           ],
           "installedItemIds": []
         }
@@ -166937,11 +166833,6 @@
         {
           "type": "compatibleAttachment",
           "itemId": "RMCAttachmentUnderbarrelExtinguisher",
-          "slot": "rmc-aslot-underbarrel"
-        },
-        {
-          "type": "compatibleAttachment",
-          "itemId": "RMCAttachmentUnderbarrelExtinguisherSpec",
           "slot": "rmc-aslot-underbarrel"
         },
         {
@@ -167217,8 +167108,7 @@
           "id": "rmc-aslot-underbarrel",
           "name": "Подствольный слот",
           "compatibleItemIds": [
-            "RMCAttachmentUnderbarrelExtinguisher",
-            "RMCAttachmentUnderbarrelExtinguisherSpec"
+            "RMCAttachmentUnderbarrelExtinguisher"
           ],
           "installedItemIds": [
             "RMCAttachmentUnderbarrelExtinguisherSpec"
@@ -167239,11 +167129,6 @@
         {
           "type": "compatibleAttachment",
           "itemId": "RMCAttachmentUnderbarrelExtinguisher",
-          "slot": "rmc-aslot-underbarrel"
-        },
-        {
-          "type": "compatibleAttachment",
-          "itemId": "RMCAttachmentUnderbarrelExtinguisherSpec",
           "slot": "rmc-aslot-underbarrel"
         },
         {
@@ -173466,7 +173351,6 @@
             "RMCAttachmentU1GrenadeLauncher",
             "RMCAttachmentU7UnderbarrelShotgun",
             "RMCAttachmentUnderbarrelExtinguisher",
-            "RMCAttachmentUnderbarrelExtinguisherSpec",
             "RMCAttachmentVerticalGrip"
           ],
           "installedItemIds": [
@@ -173634,11 +173518,6 @@
         {
           "type": "compatibleAttachment",
           "itemId": "RMCAttachmentUnderbarrelExtinguisher",
-          "slot": "rmc-aslot-underbarrel"
-        },
-        {
-          "type": "compatibleAttachment",
-          "itemId": "RMCAttachmentUnderbarrelExtinguisherSpec",
           "slot": "rmc-aslot-underbarrel"
         },
         {
@@ -174198,7 +174077,6 @@
             "RMCAttachmentBurstFireAssembly",
             "RMCAttachmentFlashlightGrip",
             "RMCAttachmentUnderbarrelExtinguisher",
-            "RMCAttachmentUnderbarrelExtinguisherSpec",
             "RMCAttachmentVerticalGrip"
           ],
           "installedItemIds": [
@@ -174298,11 +174176,6 @@
         {
           "type": "compatibleAttachment",
           "itemId": "RMCAttachmentUnderbarrelExtinguisher",
-          "slot": "rmc-aslot-underbarrel"
-        },
-        {
-          "type": "compatibleAttachment",
-          "itemId": "RMCAttachmentUnderbarrelExtinguisherSpec",
           "slot": "rmc-aslot-underbarrel"
         },
         {
@@ -174792,8 +174665,7 @@
           "compatibleItemIds": [
             "RMCAttachmentMK1GrenadeLauncher",
             "RMCAttachmentU7UnderbarrelShotgun",
-            "RMCAttachmentUnderbarrelExtinguisher",
-            "RMCAttachmentUnderbarrelExtinguisherSpec"
+            "RMCAttachmentUnderbarrelExtinguisher"
           ],
           "installedItemIds": [
             "RMCAttachmentMK1GrenadeLauncher"
@@ -174887,11 +174759,6 @@
         {
           "type": "compatibleAttachment",
           "itemId": "RMCAttachmentUnderbarrelExtinguisher",
-          "slot": "rmc-aslot-underbarrel"
-        },
-        {
-          "type": "compatibleAttachment",
-          "itemId": "RMCAttachmentUnderbarrelExtinguisherSpec",
           "slot": "rmc-aslot-underbarrel"
         },
         {
@@ -175384,8 +175251,7 @@
           "compatibleItemIds": [
             "RMCAttachmentMK1GrenadeLauncher",
             "RMCAttachmentU7UnderbarrelShotgun",
-            "RMCAttachmentUnderbarrelExtinguisher",
-            "RMCAttachmentUnderbarrelExtinguisherSpec"
+            "RMCAttachmentUnderbarrelExtinguisher"
           ],
           "installedItemIds": [
             "RMCAttachmentMK1GrenadeLauncher"
@@ -175479,11 +175345,6 @@
         {
           "type": "compatibleAttachment",
           "itemId": "RMCAttachmentUnderbarrelExtinguisher",
-          "slot": "rmc-aslot-underbarrel"
-        },
-        {
-          "type": "compatibleAttachment",
-          "itemId": "RMCAttachmentUnderbarrelExtinguisherSpec",
           "slot": "rmc-aslot-underbarrel"
         },
         {
@@ -175998,7 +175859,6 @@
             "RMCAttachmentU1GrenadeLauncher",
             "RMCAttachmentU7UnderbarrelShotgun",
             "RMCAttachmentUnderbarrelExtinguisher",
-            "RMCAttachmentUnderbarrelExtinguisherSpec",
             "RMCAttachmentVerticalGrip"
           ],
           "installedItemIds": []
@@ -176171,11 +176031,6 @@
         {
           "type": "compatibleAttachment",
           "itemId": "RMCAttachmentUnderbarrelExtinguisher",
-          "slot": "rmc-aslot-underbarrel"
-        },
-        {
-          "type": "compatibleAttachment",
-          "itemId": "RMCAttachmentUnderbarrelExtinguisherSpec",
           "slot": "rmc-aslot-underbarrel"
         },
         {
@@ -179262,16 +179117,6 @@
       "public": true,
       "attachmentSlots": [
         {
-          "id": "rmc-aslot-rail",
-          "name": "Верхняя планка",
-          "compatibleItemIds": [
-            "RMCXM43E1IntegratedScope"
-          ],
-          "installedItemIds": [
-            "RMCXM43E1IntegratedScope"
-          ]
-        },
-        {
           "id": "rmc-aslot-underbarrel",
           "name": "Подствольный слот",
           "compatibleItemIds": [
@@ -179304,11 +179149,6 @@
         }
       ],
       "relationships": [
-        {
-          "type": "compatibleAttachment",
-          "itemId": "RMCXM43E1IntegratedScope",
-          "slot": "rmc-aslot-rail"
-        },
         {
           "type": "compatibleAttachment",
           "itemId": "RMCAttachmentBipod",
@@ -179577,25 +179417,8 @@
       },
       "category": "Обвесы",
       "public": true,
-      "attachableTo": [
-        {
-          "slotId": "rmc-aslot-rail",
-          "slotName": "Верхняя планка",
-          "weaponIds": [
-            "RMCXM43E1AntiMaterielRifle"
-          ]
-        }
-      ],
       "attachmentStats": {
-        "compatibleWith": [
-          {
-            "slotId": "rmc-aslot-rail",
-            "slotName": "Верхняя планка",
-            "weaponIds": [
-              "RMCXM43E1AntiMaterielRifle"
-            ]
-          }
-        ],
+        "compatibleWith": [],
         "modifiers": {
           "AttachableWeaponRangedMods": {
             "modifiers": [
@@ -183556,7 +183379,6 @@
             "RMCAttachmentFlashlightGrip",
             "RMCAttachmentLaserSight",
             "RMCAttachmentUnderbarrelExtinguisher",
-            "RMCAttachmentUnderbarrelExtinguisherSpec",
             "RMCAttachmentVerticalGrip"
           ],
           "installedItemIds": []
@@ -183682,11 +183504,6 @@
         {
           "type": "compatibleAttachment",
           "itemId": "RMCAttachmentUnderbarrelExtinguisher",
-          "slot": "rmc-aslot-underbarrel"
-        },
-        {
-          "type": "compatibleAttachment",
-          "itemId": "RMCAttachmentUnderbarrelExtinguisherSpec",
           "slot": "rmc-aslot-underbarrel"
         },
         {
@@ -184212,7 +184029,6 @@
             "RMCAttachmentLaserSight",
             "RMCAttachmentU7UnderbarrelShotgun",
             "RMCAttachmentUnderbarrelExtinguisher",
-            "RMCAttachmentUnderbarrelExtinguisherSpec",
             "RMCAttachmentVerticalGrip"
           ],
           "installedItemIds": []
@@ -184365,11 +184181,6 @@
         {
           "type": "compatibleAttachment",
           "itemId": "RMCAttachmentUnderbarrelExtinguisher",
-          "slot": "rmc-aslot-underbarrel"
-        },
-        {
-          "type": "compatibleAttachment",
-          "itemId": "RMCAttachmentUnderbarrelExtinguisherSpec",
           "slot": "rmc-aslot-underbarrel"
         },
         {
@@ -185563,7 +185374,6 @@
             "RMCAttachmentGyroscopicStabilizer",
             "RMCAttachmentLaserSight",
             "RMCAttachmentUnderbarrelExtinguisher",
-            "RMCAttachmentUnderbarrelExtinguisherSpec",
             "RMCAttachmentVerticalGrip"
           ],
           "installedItemIds": []
@@ -185709,11 +185519,6 @@
         {
           "type": "compatibleAttachment",
           "itemId": "RMCAttachmentUnderbarrelExtinguisher",
-          "slot": "rmc-aslot-underbarrel"
-        },
-        {
-          "type": "compatibleAttachment",
-          "itemId": "RMCAttachmentUnderbarrelExtinguisherSpec",
           "slot": "rmc-aslot-underbarrel"
         },
         {
@@ -186239,7 +186044,6 @@
             "RMCAttachmentFlashlightGrip",
             "RMCAttachmentGyroscopicStabilizer",
             "RMCAttachmentUnderbarrelExtinguisher",
-            "RMCAttachmentUnderbarrelExtinguisherSpec",
             "RMCAttachmentVerticalGrip"
           ],
           "installedItemIds": []
@@ -186309,11 +186113,6 @@
         {
           "type": "compatibleAttachment",
           "itemId": "RMCAttachmentUnderbarrelExtinguisher",
-          "slot": "rmc-aslot-underbarrel"
-        },
-        {
-          "type": "compatibleAttachment",
-          "itemId": "RMCAttachmentUnderbarrelExtinguisherSpec",
           "slot": "rmc-aslot-underbarrel"
         },
         {
@@ -187373,7 +187172,6 @@
             "RMCAttachmentGyroscopicStabilizer",
             "RMCAttachmentLaserSight",
             "RMCAttachmentUnderbarrelExtinguisher",
-            "RMCAttachmentUnderbarrelExtinguisherSpec",
             "RMCAttachmentVerticalGrip"
           ],
           "installedItemIds": []
@@ -187438,11 +187236,6 @@
         {
           "type": "compatibleAttachment",
           "itemId": "RMCAttachmentUnderbarrelExtinguisher",
-          "slot": "rmc-aslot-underbarrel"
-        },
-        {
-          "type": "compatibleAttachment",
-          "itemId": "RMCAttachmentUnderbarrelExtinguisherSpec",
           "slot": "rmc-aslot-underbarrel"
         },
         {

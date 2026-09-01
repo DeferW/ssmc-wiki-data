@@ -24846,12 +24846,6 @@
     },
     {
       "from": "CMM96SSniperRifle",
-      "to": "RMCM96SIntegratedScope",
-      "type": "compatibleAttachment",
-      "slot": "rmc-aslot-rail"
-    },
-    {
-      "from": "CMM96SSniperRifle",
       "to": "CMMagazineSniperM96S",
       "type": "compatibleMagazine",
       "slot": "gun_magazine"
@@ -30031,12 +30025,6 @@
     },
     {
       "from": "RMCMK80",
-      "to": "RMCAttachmentLaserLightModule",
-      "type": "compatibleAttachment",
-      "slot": "rmc-aslot-underbarrel"
-    },
-    {
-      "from": "RMCMK80",
       "to": "RMCAttachmentRailFlashlight",
       "type": "compatibleAttachment",
       "slot": "rmc-aslot-rail"
@@ -31434,12 +31422,6 @@
     },
     {
       "from": "RMCWeaponFlamer",
-      "to": "RMCAttachmentUnderbarrelExtinguisherSpec",
-      "type": "compatibleAttachment",
-      "slot": "rmc-aslot-underbarrel"
-    },
-    {
-      "from": "RMCWeaponFlamer",
       "to": "RMCTankFlamer",
       "type": "loadedWith",
       "slot": "gun_magazine",
@@ -31460,12 +31442,6 @@
     {
       "from": "RMCWeaponFlamerSpec",
       "to": "RMCAttachmentUnderbarrelExtinguisher",
-      "type": "compatibleAttachment",
-      "slot": "rmc-aslot-underbarrel"
-    },
-    {
-      "from": "RMCWeaponFlamerSpec",
-      "to": "RMCAttachmentUnderbarrelExtinguisherSpec",
       "type": "compatibleAttachment",
       "slot": "rmc-aslot-underbarrel"
     },
@@ -32374,12 +32350,6 @@
     },
     {
       "from": "RMCWeaponRifleM54C",
-      "to": "RMCAttachmentUnderbarrelExtinguisherSpec",
-      "type": "compatibleAttachment",
-      "slot": "rmc-aslot-underbarrel"
-    },
-    {
-      "from": "RMCWeaponRifleM54C",
       "to": "RMCAttachmentVerticalGrip",
       "type": "compatibleAttachment",
       "slot": "rmc-aslot-underbarrel"
@@ -32502,12 +32472,6 @@
     },
     {
       "from": "RMCWeaponRifleM54CE2",
-      "to": "RMCAttachmentUnderbarrelExtinguisherSpec",
-      "type": "compatibleAttachment",
-      "slot": "rmc-aslot-underbarrel"
-    },
-    {
-      "from": "RMCWeaponRifleM54CE2",
       "to": "RMCAttachmentVerticalGrip",
       "type": "compatibleAttachment",
       "slot": "rmc-aslot-underbarrel"
@@ -32595,12 +32559,6 @@
     {
       "from": "RMCWeaponRifleM54CMK1",
       "to": "RMCAttachmentUnderbarrelExtinguisher",
-      "type": "compatibleAttachment",
-      "slot": "rmc-aslot-underbarrel"
-    },
-    {
-      "from": "RMCWeaponRifleM54CMK1",
-      "to": "RMCAttachmentUnderbarrelExtinguisherSpec",
       "type": "compatibleAttachment",
       "slot": "rmc-aslot-underbarrel"
     },
@@ -32700,12 +32658,6 @@
     {
       "from": "RMCWeaponRifleM54CMK1AP",
       "to": "RMCAttachmentUnderbarrelExtinguisher",
-      "type": "compatibleAttachment",
-      "slot": "rmc-aslot-underbarrel"
-    },
-    {
-      "from": "RMCWeaponRifleM54CMK1AP",
-      "to": "RMCAttachmentUnderbarrelExtinguisherSpec",
       "type": "compatibleAttachment",
       "slot": "rmc-aslot-underbarrel"
     },
@@ -32853,12 +32805,6 @@
     {
       "from": "RMCWeaponRifleM59A",
       "to": "RMCAttachmentUnderbarrelExtinguisher",
-      "type": "compatibleAttachment",
-      "slot": "rmc-aslot-underbarrel"
-    },
-    {
-      "from": "RMCWeaponRifleM59A",
-      "to": "RMCAttachmentUnderbarrelExtinguisherSpec",
       "type": "compatibleAttachment",
       "slot": "rmc-aslot-underbarrel"
     },
@@ -33012,12 +32958,6 @@
       "to": "RMCAttachmentBipod",
       "type": "compatibleAttachment",
       "slot": "rmc-aslot-underbarrel"
-    },
-    {
-      "from": "RMCXM43E1AntiMaterielRifle",
-      "to": "RMCXM43E1IntegratedScope",
-      "type": "compatibleAttachment",
-      "slot": "rmc-aslot-rail"
     },
     {
       "from": "RMCXM43E1AntiMaterielRifle",
@@ -33295,12 +33235,6 @@
     },
     {
       "from": "WeaponRifleM4SPR",
-      "to": "RMCAttachmentUnderbarrelExtinguisherSpec",
-      "type": "compatibleAttachment",
-      "slot": "rmc-aslot-underbarrel"
-    },
-    {
-      "from": "WeaponRifleM4SPR",
       "to": "RMCAttachmentVerticalGrip",
       "type": "compatibleAttachment",
       "slot": "rmc-aslot-underbarrel"
@@ -33410,12 +33344,6 @@
     {
       "from": "WeaponRifleM4SPRCustom",
       "to": "RMCAttachmentUnderbarrelExtinguisher",
-      "type": "compatibleAttachment",
-      "slot": "rmc-aslot-underbarrel"
-    },
-    {
-      "from": "WeaponRifleM4SPRCustom",
-      "to": "RMCAttachmentUnderbarrelExtinguisherSpec",
       "type": "compatibleAttachment",
       "slot": "rmc-aslot-underbarrel"
     },
@@ -33662,12 +33590,6 @@
     },
     {
       "from": "WeaponSMGM63",
-      "to": "RMCAttachmentUnderbarrelExtinguisherSpec",
-      "type": "compatibleAttachment",
-      "slot": "rmc-aslot-underbarrel"
-    },
-    {
-      "from": "WeaponSMGM63",
       "to": "RMCAttachmentVerticalGrip",
       "type": "compatibleAttachment",
       "slot": "rmc-aslot-underbarrel"
@@ -33772,12 +33694,6 @@
     {
       "from": "WeaponShotgunM42A2",
       "to": "RMCAttachmentUnderbarrelExtinguisher",
-      "type": "compatibleAttachment",
-      "slot": "rmc-aslot-underbarrel"
-    },
-    {
-      "from": "WeaponShotgunM42A2",
-      "to": "RMCAttachmentUnderbarrelExtinguisherSpec",
       "type": "compatibleAttachment",
       "slot": "rmc-aslot-underbarrel"
     },
@@ -33935,12 +33851,6 @@
     },
     {
       "from": "WeaponShotgunMOU53",
-      "to": "RMCAttachmentUnderbarrelExtinguisherSpec",
-      "type": "compatibleAttachment",
-      "slot": "rmc-aslot-underbarrel"
-    },
-    {
-      "from": "WeaponShotgunMOU53",
       "to": "RMCAttachmentVerticalGrip",
       "type": "compatibleAttachment",
       "slot": "rmc-aslot-underbarrel"
@@ -33969,7 +33879,7 @@
     "catalogItems": 1152,
     "publicItems": 1150,
     "excludedItems": 0,
-    "relations": 1510,
+    "relations": 1495,
     "catalogEntityPrototypes": 1152,
     "resolvedEntityPrototypes": 1569
   },
