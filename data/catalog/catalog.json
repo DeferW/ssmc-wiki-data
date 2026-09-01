@@ -47671,7 +47671,7 @@
       "description": "Листы, изготовленные из металла. Их прозвали металлическими листами.",
       "suffix": "Полный",
       "types": [
-        "other"
+        "gear"
       ],
       "tags": [
         "Metal",
@@ -47739,14 +47739,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no stronger universal functional rule matched",
+        "reason": "portable metal construction material",
         "signals": [
-          "fallback:other"
+          "material:metal-stack"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Другое",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/CMSheetMetal.png"
     },
@@ -47757,7 +47757,7 @@
       "description": "Листы, изготовленные из металла. Их прозвали металлическими листами.",
       "suffix": "10",
       "types": [
-        "other"
+        "gear"
       ],
       "tags": [
         "Metal",
@@ -47846,14 +47846,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no stronger universal functional rule matched",
+        "reason": "portable metal construction material",
         "signals": [
-          "fallback:other"
+          "material:metal-stack"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Другое",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/CMSheetMetal10.png"
     },
@@ -47864,7 +47864,7 @@
       "description": "Листы, изготовленные из металла. Их прозвали металлическими листами.",
       "suffix": "50",
       "types": [
-        "other"
+        "gear"
       ],
       "tags": [
         "Metal",
@@ -47932,14 +47932,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no stronger universal functional rule matched",
+        "reason": "portable metal construction material",
         "signals": [
-          "fallback:other"
+          "material:metal-stack"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Другое",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/CMSheetMetal50.png"
     },
@@ -48027,7 +48027,7 @@
       "description": "Plasteel is an expensive, durable material made from combining platinum, steel, and advanced polymers to create a metal that is corrosion-resistant, highly durable, and lightweight. The only reason this isn't used more often is because of how damn costly it is.",
       "suffix": "Полный",
       "types": [
-        "other"
+        "gear"
       ],
       "tags": [
         "Metal",
@@ -48093,14 +48093,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no stronger universal functional rule matched",
+        "reason": "portable metal construction material",
         "signals": [
-          "fallback:other"
+          "material:metal-stack"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Другое",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/CMSheetPlasteel.png"
     },
@@ -48111,7 +48111,7 @@
       "description": "Plasteel is an expensive, durable material made from combining platinum, steel, and advanced polymers to create a metal that is corrosion-resistant, highly durable, and lightweight. The only reason this isn't used more often is because of how damn costly it is.",
       "suffix": "10",
       "types": [
-        "other"
+        "gear"
       ],
       "tags": [
         "Metal",
@@ -48198,14 +48198,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no stronger universal functional rule matched",
+        "reason": "portable metal construction material",
         "signals": [
-          "fallback:other"
+          "material:metal-stack"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Другое",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/CMSheetPlasteel10.png"
     },
@@ -48216,7 +48216,7 @@
       "description": "Plasteel is an expensive, durable material made from combining platinum, steel, and advanced polymers to create a metal that is corrosion-resistant, highly durable, and lightweight. The only reason this isn't used more often is because of how damn costly it is.",
       "suffix": "30",
       "types": [
-        "other"
+        "gear"
       ],
       "tags": [
         "Metal",
@@ -48282,14 +48282,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no stronger universal functional rule matched",
+        "reason": "portable metal construction material",
         "signals": [
-          "fallback:other"
+          "material:metal-stack"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Другое",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/CMSheetPlasteel30.png"
     },
@@ -48300,7 +48300,7 @@
       "description": "Plasteel is an expensive, durable material made from combining platinum, steel, and advanced polymers to create a metal that is corrosion-resistant, highly durable, and lightweight. The only reason this isn't used more often is because of how damn costly it is.",
       "suffix": "40",
       "types": [
-        "other"
+        "gear"
       ],
       "tags": [
         "Metal",
@@ -48366,14 +48366,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no stronger universal functional rule matched",
+        "reason": "portable metal construction material",
         "signals": [
-          "fallback:other"
+          "material:metal-stack"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Другое",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/CMSheetPlasteel40.png"
     },
@@ -189461,6 +189461,9 @@
         "RMCMortarShellFlare",
         "RMCTentUNMCStandardMedicalFolded",
         "RMCLightReplacer",
+        "CMSheetPlasteel10",
+        "CMSheetPlasteel30",
+        "CMSheetPlasteel40",
         "RMCSentryFire",
         "RMCSentry",
         "RMCPowerCellSmartgun",
@@ -189493,6 +189496,9 @@
         "RMCLaserDesignatorSpotter",
         "RMCLaserDesignatorScout",
         "RMCGlassesMedicalHUDGlasses",
+        "CMSheetMetal10",
+        "CMSheetMetal50",
+        "CMSheetMetal",
         "CMAPCElectronics",
         "CMCrowbar",
         "RMCEngineerKit",
@@ -189506,6 +189512,7 @@
         "RMCMortarKit",
         "CMFireExtinguisherPortable",
         "RMCFlashlightPen",
+        "CMSheetPlasteel",
         "RMCPouchFlareFilled",
         "CMGlassesM42ScoutSight",
         "RMCVisorMedicalAdvanced",
@@ -189542,9 +189549,6 @@
         "RMCPortableGeneratorPacmanMachineCircuitBoard",
         "RMCPDTLocatorTube",
         "RMCMREInstantPowderPineapple",
-        "CMSheetPlasteel10",
-        "CMSheetPlasteel30",
-        "CMSheetPlasteel40",
         "RMCPortableGeneratorSuperPacmanMachineCircuitboard",
         "RMCCrateMagazineAmmoSurplus",
         "RMCMREInstantPowderWatermelon",
@@ -189670,9 +189674,6 @@
         "RMCCrayonPurple",
         "RMCCrayonRed",
         "RMCCrayonYellow",
-        "CMSheetMetal10",
-        "CMSheetMetal50",
-        "CMSheetMetal",
         "CMSandbagFull50",
         "TrashBag",
         "CMCigarettePackLuckySlothsMini",
@@ -189690,7 +189691,6 @@
         "RMCHelmetGarbGunOil",
         "CMStampApproved",
         "CMFortuneCookie",
-        "CMSheetPlasteel",
         "RMCSheetPlastic10",
         "RMCOverwatchCameraTripod",
         "RMCCrateSuppliesBoxes",
