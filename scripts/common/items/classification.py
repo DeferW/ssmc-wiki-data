@@ -330,7 +330,11 @@ def is_utility_supply_box(item: dict[str, Any]) -> bool:
     return any(marker in item_id for marker in ("boxmre", "boxpackflare", "boxflashlights"))
 
 
-def is_technical_hidden_item(item: dict[str, Any]) -> bool:
+def is_technical_hidden_item(
+    item: dict[str, Any],
+    *,
+    placed_on_map: bool = False,
+) -> bool:
     """Hide runtime helpers and non-player-facing variants using stable signals."""
     item_id = str(item.get("id", ""))
     folded_id = item_id.casefold()
@@ -363,6 +367,7 @@ def is_technical_hidden_item(item: dict[str, Any]) -> bool:
         return True
     if (
         "Gun" in component_types
+        and not placed_on_map
         and not has_availability
         and suffix in {
             "ap", "unmc", "марксманский", "marksman", "пустой", "empty",
@@ -378,6 +383,10 @@ def is_miscellaneous_item(item: dict[str, Any]) -> bool:
     item_id = str(item.get("id", "")).casefold()
     component_types = set(item.get("componentTypes", []))
     tags = {str(tag).casefold() for tag in item.get("tags", [])}
+    # Forks, spoons and similar disposable tableware inherit melee/tool-like
+    # mechanics, but SpaceGarbage + Utensil describes their actual purpose.
+    if {"SpaceGarbage", "Utensil"}.issubset(component_types):
+        return True
     if component_types.intersection({"GasTank", "MachineBoard", "PDTLocator"}):
         return True
     if tags.intersection({"gastank", "trash", "trashbag", "cigarette"}):
@@ -412,6 +421,8 @@ def is_miscellaneous_item(item: dict[str, Any]) -> bool:
 def classify_item(
     item: dict[str, Any],
     policy: dict[str, Any],
+    *,
+    placed_on_map: bool = False,
 ) -> dict[str, Any]:
     """Assign exactly one wiki category from reusable mechanical signals."""
     item_id = str(item.get("id", ""))
@@ -486,7 +497,7 @@ def classify_item(
         )
     )
 
-    if is_technical_hidden_item(item):
+    if is_technical_hidden_item(item, placed_on_map=placed_on_map):
         return public(
             "hidden",
             "runtime helper, projectile or internal item variant",
@@ -521,6 +532,12 @@ def classify_item(
 
     if is_packaging_container(item) and is_utility_supply_box(item):
         return public("gear", "portable field-supply box", "container:utility-box")
+
+    # Metal and plasteel sheets are portable construction resources used in
+    # the field. The Metal tag excludes glass/plastic stacks without relying
+    # on a prototype-name allowlist.
+    if {"Stack", "Material"}.issubset(component_types) and "metal" in folded_tags:
+        return public("gear", "portable metal construction material", "material:metal-stack")
 
     # These strong mechanics describe the item's primary role and must win
     # over incidental MeleeWeapon/Gun components inherited by many utilities.

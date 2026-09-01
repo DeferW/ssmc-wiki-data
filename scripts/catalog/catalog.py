@@ -120,7 +120,11 @@ def build_public_catalog(
     excluded_ids: list[str] = []
     sort_key = lambda value: (items[value]["name"].casefold(), value)
     for item_id in sorted(public_ids, key=sort_key):
-        classification = classify_item(items[item_id], classification_policy)
+        classification = classify_item(
+            items[item_id],
+            classification_policy,
+            placed_on_map=item_id in (additional_item_ids or ()),
+        )
         if (
             classification["status"] == "excluded"
             and item_id in (additional_item_ids or ())

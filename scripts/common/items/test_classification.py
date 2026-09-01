@@ -243,6 +243,29 @@ def test_source_category_hint_no_match_returns_none():
     assert source_category_hint("Not A Real Section") is None
 
 
+def test_map_loaded_weapon_tableware_and_metal_use_player_facing_categories():
+    loaded_weapon = {
+        "id": "WeaponRifleMAR40",
+        "suffix": "Filled",
+        "componentTypes": ["Item", "Gun"],
+        "availability": [],
+    }
+    fork = {
+        "id": "RMCFork",
+        "componentTypes": ["Item", "MeleeWeapon", "SpaceGarbage", "Utensil"],
+    }
+    metal = {
+        "id": "CMSheetMetal50",
+        "componentTypes": ["Item", "Material", "Stack"],
+        "tags": ["Metal", "Sheet"],
+    }
+
+    assert classify_item(loaded_weapon, EMPTY_POLICY)["categoryId"] == "hidden"
+    assert classify_item(loaded_weapon, EMPTY_POLICY, placed_on_map=True)["categoryId"] == "weapon"
+    assert classify_item(fork, EMPTY_POLICY)["categoryId"] == "other"
+    assert classify_item(metal, EMPTY_POLICY)["categoryId"] == "gear"
+
+
 def test_infer_types_detects_weapon():
     assert "weapon" in infer_types("RMCWeaponM13", {"Gun": {}}, set())
 

@@ -33,13 +33,12 @@
     },
     {
       "id": "vehicles-and-wheels",
-      "name": "Машины и колёса",
-      "detail": "размещённые на карте машины и запасные колёса",
+      "name": "Машины",
+      "detail": "размещённые на карте машины",
       "objects": [
         { "id": "VehicleVan", "name": "Фургон" },
         { "id": "VehicleBoxVan", "name": "Грузовой фургон" },
-        { "id": "VehiclePizzaVan", "name": "Фургон доставки" },
-        { "id": "RMCVanWheel", "name": "Колесо фургона" }
+        { "id": "VehiclePizzaVan", "name": "Фургон доставки" }
       ]
     },
     {
