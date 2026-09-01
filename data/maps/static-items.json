@@ -9380,9 +9380,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "medicine, medical device, treatment kit or surgical instrument",
+        "reason": "surgical instrument",
         "signals": [
-          "component:medicine"
+          "component:surgery-tool"
         ],
         "categoryId": "medicine",
         "category": "Медицина"
@@ -14196,9 +14196,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "medicine, medical device, treatment kit or surgical instrument",
+        "reason": "surgical instrument",
         "signals": [
-          "component:medicine"
+          "component:surgery-tool"
         ],
         "categoryId": "medicine",
         "category": "Медицина"
@@ -14259,9 +14259,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "medicine, medical device, treatment kit or surgical instrument",
+        "reason": "surgical instrument",
         "signals": [
-          "component:medicine"
+          "component:surgery-tool"
         ],
         "categoryId": "medicine",
         "category": "Медицина"
@@ -14322,9 +14322,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "medicine, medical device, treatment kit or surgical instrument",
+        "reason": "surgical instrument",
         "signals": [
-          "component:medicine"
+          "component:surgery-tool"
         ],
         "categoryId": "medicine",
         "category": "Медицина"
@@ -15866,9 +15866,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "medicine, medical device, treatment kit or surgical instrument",
+        "reason": "surgical instrument",
         "signals": [
-          "component:medicine"
+          "component:surgery-tool"
         ],
         "categoryId": "medicine",
         "category": "Медицина"
@@ -15941,9 +15941,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "medicine, medical device, treatment kit or surgical instrument",
+        "reason": "surgical instrument",
         "signals": [
-          "component:medicine"
+          "component:surgery-tool"
         ],
         "categoryId": "medicine",
         "category": "Медицина"
@@ -16180,9 +16180,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "medicine, medical device, treatment kit or surgical instrument",
+        "reason": "surgical instrument",
         "signals": [
-          "component:medicine"
+          "component:surgery-tool"
         ],
         "categoryId": "medicine",
         "category": "Медицина"
@@ -16256,9 +16256,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "medicine, medical device, treatment kit or surgical instrument",
+        "reason": "surgical instrument",
         "signals": [
-          "component:medicine"
+          "component:surgery-tool"
         ],
         "categoryId": "medicine",
         "category": "Медицина"
@@ -22445,7 +22445,7 @@
       "description": "Используется для того, чтобы ослеплять и быть засранцем. Перезаряжает одну вспышку каждые 30 секунд. Между использованиями необходимо подождать 1 секунду, чтобы конденсатор перезарядился.",
       "suffix": "",
       "types": [
-        "weapon"
+        "gear"
       ],
       "tags": [],
       "componentTypes": [
@@ -22518,14 +22518,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated melee, incapacitation or crew-served weapon",
+        "reason": "field incapacitation device",
         "signals": [
-          "component:weapon"
+          "component:flash"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Оружие",
+      "category": "Снаряжение",
       "public": true,
       "image": "static-item-sprites/CMFlash.png"
     },
@@ -27552,9 +27552,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "medicine, medical device, treatment kit or surgical instrument",
+        "reason": "surgical instrument",
         "signals": [
-          "component:medicine"
+          "component:surgery-tool"
         ],
         "categoryId": "medicine",
         "category": "Медицина"
@@ -27615,9 +27615,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "medicine, medical device, treatment kit or surgical instrument",
+        "reason": "surgical instrument",
         "signals": [
-          "component:medicine"
+          "component:surgery-tool"
         ],
         "categoryId": "medicine",
         "category": "Медицина"
@@ -39564,9 +39564,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "medicine, medical device, treatment kit or surgical instrument",
+        "reason": "surgical instrument",
         "signals": [
-          "component:medicine"
+          "component:surgery-tool"
         ],
         "categoryId": "medicine",
         "category": "Медицина"
@@ -39627,9 +39627,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "medicine, medical device, treatment kit or surgical instrument",
+        "reason": "surgical instrument",
         "signals": [
-          "component:medicine"
+          "component:surgery-tool"
         ],
         "categoryId": "medicine",
         "category": "Медицина"
@@ -41497,7 +41497,7 @@
       "description": "Резать, резать и еще раз резать.",
       "suffix": "",
       "types": [
-        "weapon"
+        "medicine"
       ],
       "tags": [
         "RMCScalpel"
@@ -41559,14 +41559,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated melee, incapacitation or crew-served weapon",
+        "reason": "surgical instrument",
         "signals": [
-          "component:weapon"
+          "component:surgery-tool"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Оружие",
+      "category": "Медицина",
       "public": true,
       "image": "static-item-sprites/CMScalpel.png"
     },
@@ -41577,7 +41577,7 @@
       "description": "Скальпель, оснащенный направленным лазером, для контроля кровотечения при выполнении разреза. Также выполняет функции каутеризатора. Выглядит как ненадежная ранняя модель.",
       "suffix": "",
       "types": [
-        "weapon"
+        "medicine"
       ],
       "tags": [
         "RMCScalpel"
@@ -41653,14 +41653,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated melee, incapacitation or crew-served weapon",
+        "reason": "surgical instrument",
         "signals": [
-          "component:weapon"
+          "component:surgery-tool"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Оружие",
+      "category": "Медицина",
       "public": true,
       "image": "static-item-sprites/CMScalpelLaser.png"
     },
@@ -41671,7 +41671,7 @@
       "description": "Скальпель, дополненный направленным лазером, для борьбы с кровотечением при выполнении разреза. Также выполняет функцию каутеризации. Похоже, это вершина точности энергетических столовых приборов!",
       "suffix": "",
       "types": [
-        "weapon"
+        "medicine"
       ],
       "tags": [
         "RMCScalpel"
@@ -41747,14 +41747,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated melee, incapacitation or crew-served weapon",
+        "reason": "surgical instrument",
         "signals": [
-          "component:weapon"
+          "component:surgery-tool"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Оружие",
+      "category": "Медицина",
       "public": true,
       "image": "static-item-sprites/CMScalpelLaserAdvanced.png"
     },
@@ -41765,7 +41765,7 @@
       "description": "Это чудо, являющееся настоящим продолжением тела хирурга, мгновенно и полностью подготавливает разрез, позволяя сразу же приступить к лечебным мероприятиям.",
       "suffix": "",
       "types": [
-        "weapon"
+        "medicine"
       ],
       "tags": [
         "RMCScalpel"
@@ -41827,14 +41827,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated melee, incapacitation or crew-served weapon",
+        "reason": "surgical instrument",
         "signals": [
-          "component:weapon"
+          "component:surgery-tool"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Оружие",
+      "category": "Медицина",
       "public": true,
       "image": "static-item-sprites/CMScalpelManager.png"
     },
@@ -41845,7 +41845,7 @@
       "description": "Инструмент для точных разрезов и прижиганий использует высокочастотное вибрирующее лезвие, лазерный каутеризатор и систему контроля всасывания жидкости для точного рассечения тканей, предотвращая утечку жидкости. Несмотря на проблемную программу разработки и ужасающий ценник, за пределами сложных экспериментальных операций он не лучше обычного двадцатидолларового скальпеля и не может бескровно создать разрез во всю длину.",
       "suffix": "",
       "types": [
-        "weapon"
+        "medicine"
       ],
       "tags": [
         "RMCScalpel"
@@ -41907,14 +41907,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated melee, incapacitation or crew-served weapon",
+        "reason": "surgical instrument",
         "signals": [
-          "component:weapon"
+          "component:surgery-tool"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Оружие",
+      "category": "Медицина",
       "public": true,
       "image": "static-item-sprites/CMScalpelPICT.png"
     },
@@ -41925,7 +41925,7 @@
       "description": "Резать, резать и еще раз резать.",
       "suffix": "",
       "types": [
-        "weapon"
+        "medicine"
       ],
       "tags": [
         "RMCScalpel"
@@ -41987,14 +41987,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated melee, incapacitation or crew-served weapon",
+        "reason": "surgical instrument",
         "signals": [
-          "component:weapon"
+          "component:surgery-tool"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Оружие",
+      "category": "Медицина",
       "public": true,
       "image": "static-item-sprites/CMScalpelPredator.png"
     },
@@ -46938,7 +46938,7 @@
       "description": "Электрошоковая дубинка для обездвиживания людей.",
       "suffix": "",
       "types": [
-        "weapon"
+        "other"
       ],
       "tags": [],
       "componentTypes": [
@@ -47012,14 +47012,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated melee, incapacitation or crew-served weapon",
+        "reason": "station utility weapon",
         "signals": [
-          "component:weapon"
+          "component:stunbaton"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "other",
+        "category": "Другое"
       },
-      "category": "Оружие",
+      "category": "Другое",
       "public": true,
       "image": "static-item-sprites/CMStunbaton.png"
     },
@@ -47087,9 +47087,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "medicine, medical device, treatment kit or surgical instrument",
+        "reason": "surgical instrument",
         "signals": [
-          "component:medicine"
+          "component:surgery-tool"
         ],
         "categoryId": "medicine",
         "category": "Медицина"
@@ -47162,9 +47162,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "medicine, medical device, treatment kit or surgical instrument",
+        "reason": "surgical instrument",
         "signals": [
-          "component:medicine"
+          "component:surgery-tool"
         ],
         "categoryId": "medicine",
         "category": "Медицина"
@@ -113920,7 +113920,7 @@
       "description": "A heavy combat knife, designed for SPP special forces. Its heft and durability makes it popular for various uses in the field.",
       "suffix": "",
       "types": [
-        "weapon"
+        "attachment"
       ],
       "tags": [
         "Knife",
@@ -114023,14 +114023,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated melee, incapacitation or crew-served weapon",
+        "reason": "dedicated attachment component",
         "signals": [
-          "component:weapon"
+          "Attachable"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "attachment",
+        "category": "Обвесы"
       },
-      "category": "Оружие",
+      "category": "Обвесы",
       "public": true,
       "attachableTo": [
         {
@@ -120263,9 +120263,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "advanced field device, weapon support or encryption component",
+        "reason": "deployable weapon support",
         "signals": [
-          "component:gear"
+          "component:weapon-support"
         ],
         "categoryId": "gear",
         "category": "Снаряжение"
@@ -146544,7 +146544,7 @@
       "description": "Стандартный штык морской пехоты. Этот нож можно засунуть в сапоги.",
       "suffix": "",
       "types": [
-        "weapon"
+        "attachment"
       ],
       "tags": [
         "Knife",
@@ -146666,14 +146666,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated melee, incapacitation or crew-served weapon",
+        "reason": "dedicated attachment component",
         "signals": [
-          "component:weapon"
+          "Attachable"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "attachment",
+        "category": "Обвесы"
       },
-      "category": "Оружие",
+      "category": "Обвесы",
       "public": true,
       "attachableTo": [
         {
@@ -173362,7 +173362,7 @@
       "description": "This thin, yet rigid dagger is favored for its combination of elegant features and lethality in hand-to-hand combat.",
       "suffix": "",
       "types": [
-        "weapon"
+        "attachment"
       ],
       "tags": [
         "Knife",
@@ -173465,14 +173465,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated melee, incapacitation or crew-served weapon",
+        "reason": "dedicated attachment component",
         "signals": [
-          "component:weapon"
+          "Attachable"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "attachment",
+        "category": "Обвесы"
       },
-      "category": "Оружие",
+      "category": "Обвесы",
       "public": true,
       "attachableTo": [
         {
@@ -173940,9 +173940,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated hand tool or single-purpose utility item",
+        "reason": "deployable weapon support",
         "signals": [
-          "component:tool"
+          "component:weapon-support"
         ],
         "categoryId": "gear",
         "category": "Снаряжение"
@@ -173958,7 +173958,7 @@
       "description": "Компактная оборонительная система. Предназначена для быстрого развертывания на поле боя.",
       "suffix": "",
       "types": [
-        "weapon"
+        "gear"
       ],
       "tags": [
         "RMCSentry"
@@ -174058,14 +174058,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "item has a dedicated projectile-launching mechanic",
+        "reason": "deployable weapon support",
         "signals": [
-          "component:projectile-launcher"
+          "component:weapon-support"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Оружие",
+      "category": "Снаряжение",
       "public": true,
       "weaponStats": {
         "fireModes": [
@@ -182787,9 +182787,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "advanced field device, weapon support or encryption component",
+        "reason": "deployable weapon support",
         "signals": [
-          "component:gear"
+          "component:weapon-support"
         ],
         "categoryId": "gear",
         "category": "Снаряжение"
@@ -185874,9 +185874,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no stronger universal functional rule matched",
+        "reason": "vehicle-installed part",
         "signals": [
-          "fallback:other"
+          "component:vehicle-part"
         ],
         "categoryId": "other",
         "category": "Другое"
@@ -187021,7 +187021,7 @@
       "description": "Названная в честь своих эксцентричных конструкторов, винтовка Басира-Армстронга — дешевая, но надежная гражданская винтовка, часто встречающаяся во внешних колониях. Несмотря на ограниченную по закону емкость магазина, ее малый вес и легендарная точность делают ее популярной среди охотников и стрелков-соревнователей.",
       "suffix": "Заполненный",
       "types": [
-        "weapon"
+        "hidden"
       ],
       "tags": [],
       "componentTypes": [
@@ -187246,14 +187246,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "item has a dedicated projectile-launching mechanic",
+        "reason": "runtime helper, projectile or internal item variant",
         "signals": [
-          "component:projectile-launcher"
+          "technical:hidden"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "hidden",
+        "category": "Скрытые"
       },
-      "category": "Оружие",
+      "category": "Скрытые",
       "public": true,
       "attachmentSlots": [
         {
@@ -191474,7 +191474,7 @@
       "description": "Миниатюрный пистолет, предназначенный для того, чтобы прятаться в труднодоступных местах. Лучше не спрашивать, откуда он взялся.",
       "suffix": "Заполненный",
       "types": [
-        "weapon"
+        "hidden"
       ],
       "tags": [
         "Holdout"
@@ -191662,14 +191662,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "item has a dedicated projectile-launching mechanic",
+        "reason": "runtime helper, projectile or internal item variant",
         "signals": [
-          "component:projectile-launcher"
+          "technical:hidden"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "hidden",
+        "category": "Скрытые"
       },
-      "category": "Оружие",
+      "category": "Скрытые",
       "public": true,
       "attachmentSlots": [
         {
@@ -193082,7 +193082,7 @@
       "description": "Изначально он был разработан как замена боевому револьверу M44, но в последнюю минуту комиссия отклонила его, сославшись на то, что он должен взводиться после каждого заряженного магазина и является слишком громоздким и устаревшим.",
       "suffix": "Заполненный",
       "types": [
-        "weapon"
+        "hidden"
       ],
       "tags": [
         "RMCMK45",
@@ -193293,14 +193293,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "item has a dedicated projectile-launching mechanic",
+        "reason": "runtime helper, projectile or internal item variant",
         "signals": [
-          "component:projectile-launcher"
+          "technical:hidden"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "hidden",
+        "category": "Скрытые"
       },
-      "category": "Оружие",
+      "category": "Скрытые",
       "public": true,
       "attachmentSlots": [
         {
@@ -198749,7 +198749,7 @@
       "description": "The L42A Battle Rifle, found commonly around the frontiers of the Galaxy. It's commonly used by colonists for self defense, as well as many colonial militias, whomever they serve due to it's rugged reliability and ease of use without much training. This rifle was put up for adoption by the UNMC and tested for a time, but ultimately lost to the M4SPR already in service.",
       "suffix": "Filled",
       "types": [
-        "weapon"
+        "hidden"
       ],
       "tags": [],
       "componentTypes": [
@@ -198978,14 +198978,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "item has a dedicated projectile-launching mechanic",
+        "reason": "runtime helper, projectile or internal item variant",
         "signals": [
-          "component:projectile-launcher"
+          "technical:hidden"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "hidden",
+        "category": "Скрытые"
       },
-      "category": "Оружие",
+      "category": "Скрытые",
       "public": true,
       "attachmentSlots": [
         {
@@ -199411,7 +199411,7 @@
       "description": "The L88A2 is the second iteration in the L88 series of rifles. The A2 variant offers greater modularity with a rail spanning the underside of the handguard.",
       "suffix": "Filled",
       "types": [
-        "weapon"
+        "hidden"
       ],
       "tags": [
         "RMCRifleL88",
@@ -199645,14 +199645,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "item has a dedicated projectile-launching mechanic",
+        "reason": "runtime helper, projectile or internal item variant",
         "signals": [
-          "component:projectile-launcher"
+          "technical:hidden"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "hidden",
+        "category": "Скрытые"
       },
-      "category": "Оружие",
+      "category": "Скрытые",
       "public": true,
       "attachmentSlots": [
         {
@@ -201441,7 +201441,7 @@
       "description": "Стандартная винтовка морской пехоты. Часто используется большинством бойцов. Использует безгильзовые патроны 10x24 мм.",
       "suffix": "Заполненный",
       "types": [
-        "weapon"
+        "hidden"
       ],
       "tags": [
         "RMCWeaponRifleM54CMK2"
@@ -201698,14 +201698,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "item has a dedicated projectile-launching mechanic",
+        "reason": "runtime helper, projectile or internal item variant",
         "signals": [
-          "component:projectile-launcher"
+          "technical:hidden"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "hidden",
+        "category": "Скрытые"
       },
-      "category": "Оружие",
+      "category": "Скрытые",
       "public": true,
       "attachmentSlots": [
         {
@@ -212722,7 +212722,7 @@
       "description": "The PDW90 submachine gun. An archaic design, but still widely used by corporate and mercenary groups, sometimes seen in the hands of civilian populations. This weapon only accepts 5.7×28mm rounds.",
       "suffix": "Filled",
       "types": [
-        "weapon"
+        "hidden"
       ],
       "tags": [
         "RMCWeaponSMG"
@@ -212950,14 +212950,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "item has a dedicated projectile-launching mechanic",
+        "reason": "runtime helper, projectile or internal item variant",
         "signals": [
-          "component:projectile-launcher"
+          "technical:hidden"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "hidden",
+        "category": "Скрытые"
       },
-      "category": "Оружие",
+      "category": "Скрытые",
       "public": true,
       "attachmentSlots": [
         {
@@ -213284,7 +213284,7 @@
       "description": "A PDW90 submachine gun in the colors of the Royal Crown Marines, manufactured for the TSE's armed forces under license. This weapon only accepts 5.7x28mm rounds.",
       "suffix": "Filled",
       "types": [
-        "weapon"
+        "hidden"
       ],
       "tags": [
         "RMCWeaponSMG"
@@ -213512,14 +213512,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "item has a dedicated projectile-launching mechanic",
+        "reason": "runtime helper, projectile or internal item variant",
         "signals": [
-          "component:projectile-launcher"
+          "technical:hidden"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "hidden",
+        "category": "Скрытые"
       },
-      "category": "Оружие",
+      "category": "Скрытые",
       "public": true,
       "attachmentSlots": [
         {
@@ -216729,7 +216729,7 @@
       "description": "Современное воплощение от Armat Battlefield Systems, сочетающее в себе мощь на ближней дистанции и долговечность. Требует перезарядки.",
       "suffix": "Заряженный",
       "types": [
-        "weapon"
+        "hidden"
       ],
       "tags": [
         "RMCWeaponShotgun",
@@ -216957,14 +216957,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "item has a dedicated projectile-launching mechanic",
+        "reason": "runtime helper, projectile or internal item variant",
         "signals": [
-          "component:projectile-launcher"
+          "technical:hidden"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "hidden",
+        "category": "Скрытые"
       },
-      "category": "Оружие",
+      "category": "Скрытые",
       "public": true,
       "attachmentSlots": [
         {
@@ -217914,7 +217914,7 @@
       "description": "Усовершенствованное электрошоковое устройство, способное стрелять шарами ионизированного электричества. Используется для несмертельных захватов.",
       "suffix": "",
       "types": [
-        "weapon"
+        "other"
       ],
       "tags": [
         "Sidearm",
@@ -218024,14 +218024,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated melee, incapacitation or crew-served weapon",
+        "reason": "station utility weapon",
         "signals": [
-          "component:weapon"
+          "component:stunbaton"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "other",
+        "category": "Другое"
       },
-      "category": "Оружие",
+      "category": "Другое",
       "public": true,
       "relationships": [
         {
@@ -223943,7 +223943,7 @@
       "description": "Классическая танковая пушка, стреляющая мощными осколочно-фугасными снарядами по площади.",
       "suffix": "",
       "types": [
-        "weapon"
+        "other"
       ],
       "tags": [],
       "componentTypes": [
@@ -224027,14 +224027,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "item has a dedicated projectile-launching mechanic",
+        "reason": "vehicle-installed part",
         "signals": [
-          "component:projectile-launcher"
+          "component:vehicle-part"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "other",
+        "category": "Другое"
       },
-      "category": "Оружие",
+      "category": "Другое",
       "public": true,
       "relationships": [
         {
@@ -224168,7 +224168,7 @@
       "description": "Столярный инструмент, используемый для забивания гвоздей в прочные поверхности. Конечно, если там ничего нет, то это просто очень острый гвоздь, запущенный с большой скоростью...",
       "suffix": "Заполненный",
       "types": [
-        "weapon"
+        "hidden"
       ],
       "tags": [
         "RMCWeaponSMGNailgun"
@@ -224376,14 +224376,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "item has a dedicated projectile-launching mechanic",
+        "reason": "runtime helper, projectile or internal item variant",
         "signals": [
-          "component:projectile-launcher"
+          "technical:hidden"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "hidden",
+        "category": "Скрытые"
       },
-      "category": "Оружие",
+      "category": "Скрытые",
       "public": true,
       "magazineSlots": [
         {
@@ -226487,7 +226487,7 @@
       "description": "Боевая винтовка M4RA — марксманская винтовка, используемая морскими пехотинцами. Благодаря компоновке булл-пап, M4RA идеально подходит для разведгрупп и подразделений огневой поддержки.",
       "suffix": "Заполненная",
       "types": [
-        "weapon"
+        "hidden"
       ],
       "tags": [
         "RMCWeaponRifleM4SPR"
@@ -226735,14 +226735,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "item has a dedicated projectile-launching mechanic",
+        "reason": "runtime helper, projectile or internal item variant",
         "signals": [
-          "component:projectile-launcher"
+          "technical:hidden"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "hidden",
+        "category": "Скрытые"
       },
-      "category": "Оружие",
+      "category": "Скрытые",
       "public": true,
       "attachmentSlots": [
         {
@@ -227228,7 +227228,7 @@
       "description": "Дешевая, надежная штурмовая винтовка под патрон 7,62x39 мм. Обычно встречается в руках преступников или наемников, а также в руках SPP или CLF.",
       "suffix": "Заполненная",
       "types": [
-        "weapon"
+        "hidden"
       ],
       "tags": [],
       "componentTypes": [
@@ -227473,14 +227473,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "item has a dedicated projectile-launching mechanic",
+        "reason": "runtime helper, projectile or internal item variant",
         "signals": [
-          "component:projectile-launcher"
+          "technical:hidden"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "hidden",
+        "category": "Скрытые"
       },
-      "category": "Оружие",
+      "category": "Скрытые",
       "public": true,
       "attachmentSlots": [
         {
@@ -236198,6 +236198,7 @@
         "FoodCakeAppleSlice",
         "DrinkJuiceLimeCarton",
         "RMCLightBulbBroken",
+        "VehicleTankLTBCannon",
         "RMCCigarettePackLadyFingers",
         "FoodBreadMeatXenoSlice",
         "HydroponicsToolSpade",
@@ -236436,6 +236437,7 @@
         "FoodMeat",
         "FoodMeatFish",
         "FoodBakedGrilledCheeseSandwich",
+        "RMCWeaponTaser",
         "RMCTimerTrigger",
         "RMCDrinkAlcoholPatron",
         "RMCTelephone",
@@ -236491,6 +236493,7 @@
         "CMSyringe",
         "RMCPrefilledSyringe",
         "RMCSyringeDrugs",
+        "CMStunbaton",
         "FoodMealEnchiladas",
         "FoodCakeApple",
         "FoodBakedMuffinBerry",
@@ -236498,123 +236501,27 @@
         "RMCBeerCooler",
         "RMCBeerCoolerFilled"
       ],
-      "Оружие": [
+      "Обвесы": [
         "RMCCombatUtilityKnifeA",
-        "RMCWeaponPistolD18",
+        "RMCAttachmentB8SmartScope",
         "RMCSawtoothDaggerA",
-        "RMCWeaponSMGPDW90",
-        "RMCWeaponRifleL42A",
-        "RMCWeaponSMGPDW90TSE",
-        "RMCWeaponRifleL88A2Filled",
-        "CMWeaponPistolM1911",
-        "RMCWeaponLauncherM5ATL",
-        "RMCWeaponPistolMK45",
-        "RMCSmartGunPMC",
-        "RMCWeaponShotgunM12",
-        "RMCKatanaDull",
-        "RMCWeaponRevolverSpearhead",
-        "RMCWeaponRevolverSpearheadCustom",
-        "RMCWeaponPistolB92FS",
-        "WeaponRifleM4SPR",
-        "WeaponRifleM4SPRFilled",
-        "WeaponRifleMAR40",
-        "RMCWeaponPistolM77",
-        "RMCWeaponRevolverM44",
-        "WeaponRifleM16",
-        "CMFlash",
-        "WeaponNailgun",
-        "RMCWeaponLauncherM85A1",
-        "RMCWeaponLauncherM81",
-        "WeaponShotgunM42A1",
-        "RMCWeaponShotgunType23",
-        "ToySword",
-        "RevolverCapGun",
-        "WeaponShotgunCustomBuilt",
-        "RMCKatana",
-        "RMCPickaxe",
-        "STClanSword",
-        "WeaponShotgunM357",
-        "HydroponicsToolScythe",
-        "KitchenKnife",
-        "RMCKitchenKnifeChef",
-        "RMCWeaponMar50LMG",
-        "VehicleTankLTBCannon",
-        "RMCIceAxe",
-        "RMCIceAxeGreen",
-        "RMCIceAxeRed",
-        "CMM2132Machete",
-        "CMM11Knife",
-        "RMCSentryMini",
-        "RMCKitchenKnife",
-        "RMCWeaponFlamerSPP",
-        "RMCWeaponFlamer",
-        "RMCStraightRazor",
-        "RMCWeaponRifleABR40",
-        "RMCWeaponBoltActionRifle",
-        "RMCWeaponPistolNP92",
-        "RMCWeaponPistolNPZ92",
-        "RMCMK80",
-        "RMCWeaponPistolT73",
-        "RMCWeaponPistolT74",
-        "RMCWeaponPistolHoldout",
-        "RMCWeaponSMGFP9000",
-        "RMCWeaponSMGFP9000PMC",
-        "RMCWeaponSMGMP27",
-        "RMCWeaponSMGType64",
-        "RMCWeaponSMGType19",
-        "WeaponSMGM63",
-        "RMCWeaponSMGM63WhiteNoLock",
-        "WeaponSMGMP5",
-        "RMCWeaponPistolHandcannon",
-        "RMCKitchenKnifePlastic",
-        "RMCFireAxe",
-        "RMCWeaponRevolverM44Custom",
-        "RMCWeaponShotgunM3717",
-        "RMCWeaponShotgunM42A2Filled",
-        "WeaponShotgunM42A2",
-        "FoamCrossbow",
-        "CMScalpelLaser",
-        "RMCWeaponLMGQYJ72",
-        "WeaponShotgunMOU53",
-        "WeaponShotgunM357Sawn",
-        "RMCWeaponRevolver38Magnum",
-        "RMCWeaponRevolverZHNK72",
-        "CMScalpelPredator",
-        "RMCWeaponPistolM82F",
-        "CMScalpelPICT",
-        "CMScalpelManager",
-        "CMScalpel",
-        "RMCWeaponPistolL54",
-        "CMWeaponPistolM1984",
-        "CMM96SSniperRifle",
-        "RMCSmartGunMounted",
-        "RMCWeaponTaser",
-        "WeaponShotgunM890",
-        "RMCKitchenKnifeButcher",
-        "HydroponicsToolHatchet",
-        "RMCToolHatchet",
-        "RMCWeaponRifleM54CE2",
-        "RMCWeaponSMGUZI",
-        "CMScalpelLaserAdvanced",
-        "RMCWeaponFlamerColony",
-        "STCeremonialDagger",
-        "WeaponRifleAR10",
-        "RMCWeaponRifleM54CMK1",
-        "RMCWeaponRifleM54C",
-        "RMCWeaponRifleM54CFilled",
-        "RMCWeaponRifleM54CWhiteNoLock",
-        "RMCWeaponRifleM54CSemiStripped",
-        "RMCWeaponRifleM54CWhite",
-        "RMCWeaponRifleM54CStripped",
-        "RMCWeaponRifleMAR30",
-        "RMCWeaponRifleSSG45NoLock",
-        "RMCWeaponRifleSSG45",
-        "RMCWeaponRifleType71",
-        "RMCWeaponRifleType71C",
-        "RMCWeaponRifleType77",
-        "RMCWeaponRevolverRSh9",
-        "RMCM5Bayonet",
-        "CMStunbaton"
+        "RMCAttachmentS42xTelescopicMiniscope",
+        "RMCAttachmentVerticalGrip",
+        "RMCAttachmentSuppressor",
+        "RMCAttachmentRecoilCompensator",
+        "RMCAttachmentBarrelCharger",
+        "RMCAttachmentLaserSight",
+        "RMCAttachmentMagneticHarness",
+        "RMCAttachmentMiniFlamethrower",
+        "RMCAttachmentRailFlashlight",
+        "CMAttachmentXMVESG1FlamerNozzle",
+        "RMCAttachmentFlashlightGrip",
+        "RMCAttachmentUnderbarrelExtinguisher",
+        "RMCAttachmentS5RedDotSight",
+        "RMCAttachmentM16StockCollapsible",
+        "RMCAttachmentBipod",
+        "RMCAttachmentExtendedBarrel",
+        "RMCM5Bayonet"
       ],
       "Броня": [
         "RMCArmorSPPArmy",
@@ -236826,25 +236733,6 @@
         "RMCBoxBulletsSMG",
         "VehicleAmmoBoxLTAA",
         "VehicleAmmoBoxAceAutocannon"
-      ],
-      "Обвесы": [
-        "RMCAttachmentB8SmartScope",
-        "RMCAttachmentS42xTelescopicMiniscope",
-        "RMCAttachmentVerticalGrip",
-        "RMCAttachmentSuppressor",
-        "RMCAttachmentRecoilCompensator",
-        "RMCAttachmentBarrelCharger",
-        "RMCAttachmentLaserSight",
-        "RMCAttachmentMagneticHarness",
-        "RMCAttachmentMiniFlamethrower",
-        "RMCAttachmentRailFlashlight",
-        "CMAttachmentXMVESG1FlamerNozzle",
-        "RMCAttachmentFlashlightGrip",
-        "RMCAttachmentUnderbarrelExtinguisher",
-        "RMCAttachmentS5RedDotSight",
-        "RMCAttachmentM16StockCollapsible",
-        "RMCAttachmentBipod",
-        "RMCAttachmentExtendedBarrel"
       ],
       "Экипировка": [
         "RMCBackpackBobda",
@@ -237234,6 +237122,7 @@
         "RMCFork",
         "CMDrinkCanBobdaGrape",
         "CMDrinkCanBobdaCherry",
+        "CMFlash",
         "RMCPowerCellHigh",
         "CMWrench",
         "CMDrinkCanSoda",
@@ -237271,6 +237160,7 @@
         "CMPamphletMedical",
         "DoorElectronics",
         "RMCToolMiniHoe",
+        "RMCSentryMini",
         "CMAPCElectronics",
         "CMCrowbar",
         "CMSoap",
@@ -237326,23 +237216,123 @@
         "RMCLampTripodGrey",
         "XenoEgg"
       ],
+      "Оружие": [
+        "RMCWeaponPistolD18",
+        "CMWeaponPistolM1911",
+        "RMCWeaponLauncherM5ATL",
+        "RMCSmartGunPMC",
+        "RMCWeaponShotgunM12",
+        "RMCKatanaDull",
+        "RMCWeaponRevolverSpearhead",
+        "RMCWeaponRevolverSpearheadCustom",
+        "RMCWeaponPistolB92FS",
+        "WeaponRifleM4SPR",
+        "RMCWeaponPistolM77",
+        "RMCWeaponRevolverM44",
+        "WeaponRifleM16",
+        "RMCWeaponLauncherM85A1",
+        "RMCWeaponLauncherM81",
+        "WeaponShotgunM42A1",
+        "RMCWeaponShotgunType23",
+        "ToySword",
+        "RevolverCapGun",
+        "WeaponShotgunCustomBuilt",
+        "RMCKatana",
+        "RMCPickaxe",
+        "STClanSword",
+        "WeaponShotgunM357",
+        "HydroponicsToolScythe",
+        "KitchenKnife",
+        "RMCKitchenKnifeChef",
+        "RMCWeaponMar50LMG",
+        "RMCIceAxe",
+        "RMCIceAxeGreen",
+        "RMCIceAxeRed",
+        "CMM2132Machete",
+        "CMM11Knife",
+        "RMCKitchenKnife",
+        "RMCWeaponFlamerSPP",
+        "RMCWeaponFlamer",
+        "RMCStraightRazor",
+        "RMCWeaponRifleABR40",
+        "RMCWeaponPistolNP92",
+        "RMCWeaponPistolNPZ92",
+        "RMCMK80",
+        "RMCWeaponPistolT73",
+        "RMCWeaponPistolT74",
+        "RMCWeaponSMGFP9000",
+        "RMCWeaponSMGFP9000PMC",
+        "RMCWeaponSMGMP27",
+        "RMCWeaponSMGType64",
+        "RMCWeaponSMGType19",
+        "WeaponSMGM63",
+        "RMCWeaponSMGM63WhiteNoLock",
+        "WeaponSMGMP5",
+        "RMCWeaponPistolHandcannon",
+        "RMCKitchenKnifePlastic",
+        "RMCFireAxe",
+        "RMCWeaponRevolverM44Custom",
+        "RMCWeaponShotgunM3717",
+        "WeaponShotgunM42A2",
+        "FoamCrossbow",
+        "RMCWeaponLMGQYJ72",
+        "WeaponShotgunMOU53",
+        "WeaponShotgunM357Sawn",
+        "RMCWeaponRevolver38Magnum",
+        "RMCWeaponRevolverZHNK72",
+        "RMCWeaponPistolM82F",
+        "RMCWeaponPistolL54",
+        "CMWeaponPistolM1984",
+        "CMM96SSniperRifle",
+        "RMCSmartGunMounted",
+        "WeaponShotgunM890",
+        "RMCKitchenKnifeButcher",
+        "HydroponicsToolHatchet",
+        "RMCToolHatchet",
+        "RMCWeaponRifleM54CE2",
+        "RMCWeaponSMGUZI",
+        "RMCWeaponFlamerColony",
+        "STCeremonialDagger",
+        "WeaponRifleAR10",
+        "RMCWeaponRifleM54CMK1",
+        "RMCWeaponRifleM54C",
+        "RMCWeaponRifleM54CWhiteNoLock",
+        "RMCWeaponRifleM54CSemiStripped",
+        "RMCWeaponRifleM54CWhite",
+        "RMCWeaponRifleM54CStripped",
+        "RMCWeaponRifleMAR30",
+        "RMCWeaponRifleSSG45NoLock",
+        "RMCWeaponRifleSSG45",
+        "RMCWeaponRifleType71",
+        "RMCWeaponRifleType71C",
+        "RMCWeaponRifleType77",
+        "RMCWeaponRevolverRSh9"
+      ],
       "Скрытые": [
+        "RMCWeaponSMGPDW90",
         "CMFolderBlackEmpty",
         "CMFolderRedEmpty",
         "RMCMagazineSMGM63HEAPEmpty",
         "RMCMagazineRifleM54CHEAPEmpty",
         "RMCMagazineRifleSSG45HEAPEmpty",
         "RMCMagazineRifleType71HEAPEmpty",
+        "RMCWeaponRifleL42A",
+        "RMCWeaponSMGPDW90TSE",
+        "RMCWeaponRifleL88A2Filled",
         "RMCLightReplacerEmpty",
         "RMCBoxMagazineRifleType71HEAPEmpty",
         "RMCBoxMagazineRifleType71Empty",
         "RMCBoxMagazineRifleType77Empty",
+        "RMCWeaponPistolMK45",
         "RMCSmartGunUNMC",
         "RMCBoxBulletsRifleEmpty",
         "RMCBoxBulletsRifleType71HalfEmpty",
         "RMCBoxDonutEmpty",
+        "WeaponRifleM4SPRFilled",
+        "WeaponRifleMAR40",
         "RMCMagazineRifleM4SPRAPEmpty",
         "CMBottleEmpty",
+        "WeaponNailgun",
         "CMDefibrillatorEmpty",
         "RMCBoxShellsBeanbagEmpty",
         "RMCBoxShellsBuckshotEmpty",
@@ -237352,6 +237342,9 @@
         "RMCBoxPackFlareEmpty",
         "RMCMagazinePistolMK80Empty",
         "RMCMagazineRifleType77Empty",
+        "RMCWeaponBoltActionRifle",
+        "RMCWeaponPistolHoldout",
+        "RMCWeaponShotgunM42A2Filled",
         "RMCTrayEmpty",
         "CMSandbagEmpty",
         "RMCPowerCellAPCEmpty",
@@ -237359,7 +237352,8 @@
         "RMCML66DMountAssembled",
         "RMCML66DMountWeaponAssembledLoaded",
         "RMCML66DMount",
-        "RMCSurgicalTrayEmpty"
+        "RMCSurgicalTrayEmpty",
+        "RMCWeaponRifleM54CFilled"
       ],
       "Медицина": [
         "CMPillCanisterInaprovaline",
@@ -237442,9 +237436,14 @@
         "RMCVial",
         "CMAdvFirstAidKit",
         "CMAdvFirstAidKitFilled",
+        "CMScalpelLaser",
         "RMCThermalTarpV2Folded",
+        "CMScalpelPredator",
         "CMRetractor",
         "CMSynthGraft",
+        "CMScalpelPICT",
+        "CMScalpelManager",
+        "CMScalpel",
         "CMStasisBag",
         "CMStasisBagFolded",
         "RMCStethoscope",
@@ -237460,6 +237459,7 @@
         "CMPacketPillsBicaridine",
         "CMPacketPillsKelotane",
         "CMPacketPillsTricordrazine",
+        "CMScalpelLaserAdvanced",
         "CMBonesetter",
         "CMSurgicalDrill",
         "RMCSurgicalTray",
