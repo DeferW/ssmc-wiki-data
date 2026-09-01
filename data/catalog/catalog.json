@@ -15538,9 +15538,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "medicine, medical device, treatment kit or surgical instrument",
+        "reason": "surgical instrument",
         "signals": [
-          "component:medicine"
+          "component:surgery-tool"
         ],
         "categoryId": "medicine",
         "category": "Медицина"
@@ -15601,9 +15601,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "medicine, medical device, treatment kit or surgical instrument",
+        "reason": "surgical instrument",
         "signals": [
-          "component:medicine"
+          "component:surgery-tool"
         ],
         "categoryId": "medicine",
         "category": "Медицина"
@@ -19468,9 +19468,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "medicine, medical device, treatment kit or surgical instrument",
+        "reason": "surgical instrument",
         "signals": [
-          "component:medicine"
+          "component:surgery-tool"
         ],
         "categoryId": "medicine",
         "category": "Медицина"
@@ -19704,9 +19704,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "medicine, medical device, treatment kit or surgical instrument",
+        "reason": "surgical instrument",
         "signals": [
-          "component:medicine"
+          "component:surgery-tool"
         ],
         "categoryId": "medicine",
         "category": "Медицина"
@@ -24217,7 +24217,7 @@
       "description": "Используется для того, чтобы ослеплять и быть засранцем. Перезаряжает одну вспышку каждые 30 секунд. Между использованиями необходимо подождать 1 секунду, чтобы конденсатор перезарядился.",
       "suffix": "",
       "types": [
-        "weapon"
+        "gear"
       ],
       "tags": [],
       "componentTypes": [
@@ -24290,14 +24290,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated melee, incapacitation or crew-served weapon",
+        "reason": "field incapacitation device",
         "signals": [
-          "component:weapon"
+          "component:flash"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Оружие",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/CMFlash.png"
     },
@@ -33702,9 +33702,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "medicine, medical device, treatment kit or surgical instrument",
+        "reason": "surgical instrument",
         "signals": [
-          "component:medicine"
+          "component:surgery-tool"
         ],
         "categoryId": "medicine",
         "category": "Медицина"
@@ -45187,9 +45187,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "medicine, medical device, treatment kit or surgical instrument",
+        "reason": "surgical instrument",
         "signals": [
-          "component:medicine"
+          "component:surgery-tool"
         ],
         "categoryId": "medicine",
         "category": "Медицина"
@@ -47032,7 +47032,7 @@
       "description": "Резать, резать и еще раз резать.",
       "suffix": "",
       "types": [
-        "weapon"
+        "medicine"
       ],
       "tags": [
         "RMCScalpel"
@@ -47094,14 +47094,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated melee, incapacitation or crew-served weapon",
+        "reason": "surgical instrument",
         "signals": [
-          "component:weapon"
+          "component:surgery-tool"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Оружие",
+      "category": "Медицина",
       "public": true,
       "image": "sprites/CMScalpel.png"
     },
@@ -49652,7 +49652,7 @@
       "description": "Электрошоковая дубинка для обездвиживания людей.",
       "suffix": "",
       "types": [
-        "weapon"
+        "other"
       ],
       "tags": [],
       "componentTypes": [
@@ -49726,14 +49726,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated melee, incapacitation or crew-served weapon",
+        "reason": "station utility weapon",
         "signals": [
-          "component:weapon"
+          "component:stunbaton"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "other",
+        "category": "Другое"
       },
-      "category": "Оружие",
+      "category": "Другое",
       "public": true,
       "image": "sprites/CMStunbaton.png"
     },
@@ -49967,9 +49967,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "medicine, medical device, treatment kit or surgical instrument",
+        "reason": "surgical instrument",
         "signals": [
-          "component:medicine"
+          "component:surgery-tool"
         ],
         "categoryId": "medicine",
         "category": "Медицина"
@@ -118433,9 +118433,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "advanced field device, weapon support or encryption component",
+        "reason": "deployable weapon support",
         "signals": [
-          "component:gear"
+          "component:weapon-support"
         ],
         "categoryId": "gear",
         "category": "Снаряжение"
@@ -133469,7 +133469,7 @@
       "description": "Стандартный штык морской пехоты. Этот нож можно засунуть в сапоги.",
       "suffix": "",
       "types": [
-        "weapon"
+        "attachment"
       ],
       "tags": [
         "Knife",
@@ -133591,14 +133591,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated melee, incapacitation or crew-served weapon",
+        "reason": "dedicated attachment component",
         "signals": [
-          "component:weapon"
+          "Attachable"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "attachment",
+        "category": "Обвесы"
       },
-      "category": "Оружие",
+      "category": "Обвесы",
       "public": true,
       "attachableTo": [
         {
@@ -141448,7 +141448,7 @@
       "description": "Ручной миномет, управляемый экипажем, предназначен для обстрела 80-миллиметровыми снарядами всего, на что он нацелен. Сначала ее нужно установить.",
       "suffix": "Классический",
       "types": [
-        "weapon"
+        "gear"
       ],
       "tags": [],
       "componentTypes": [
@@ -141508,14 +141508,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated melee, incapacitation or crew-served weapon",
+        "reason": "deployable weapon support",
         "signals": [
-          "component:weapon"
+          "component:weapon-support"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Оружие",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/RMCMortarKit.png"
     },
@@ -160565,7 +160565,7 @@
       "description": "Развертываемая, полуавтоматическая турель с возможностью наведения ИИ. Вооружена автопушкой M30 и барабанным магазином на 500 патронов.",
       "suffix": "",
       "types": [
-        "weapon"
+        "gear"
       ],
       "tags": [
         "RMCSentry"
@@ -160677,14 +160677,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "item has a dedicated projectile-launching mechanic",
+        "reason": "deployable weapon support",
         "signals": [
-          "component:projectile-launcher"
+          "component:weapon-support"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Оружие",
+      "category": "Снаряжение",
       "public": true,
       "weaponStats": {
         "fireModes": [
@@ -160707,7 +160707,7 @@
       "description": "Турель с огнеметом автоматически отслеживает и стреляет по любой цели, носящей идентификатор, не подключенный к системам Алмайер. Как и турель UA 571-C, эта турель имеет систему опознавания \"свой-чужой\", но остаточное пламя — нет.",
       "suffix": "",
       "types": [
-        "weapon"
+        "gear"
       ],
       "tags": [
         "RMCSentry"
@@ -160819,14 +160819,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "item has a dedicated projectile-launching mechanic",
+        "reason": "deployable weapon support",
         "signals": [
-          "component:projectile-launcher"
+          "component:weapon-support"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Оружие",
+      "category": "Снаряжение",
       "public": true,
       "weaponStats": {
         "fireModes": [
@@ -160917,9 +160917,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated hand tool or single-purpose utility item",
+        "reason": "deployable weapon support",
         "signals": [
-          "component:tool"
+          "component:weapon-support"
         ],
         "categoryId": "gear",
         "category": "Снаряжение"
@@ -164787,9 +164787,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "advanced field device, weapon support or encryption component",
+        "reason": "deployable weapon support",
         "signals": [
-          "component:gear"
+          "component:weapon-support"
         ],
         "categoryId": "gear",
         "category": "Снаряжение"
@@ -176555,7 +176555,7 @@
       "description": "Усовершенствованное электрошоковое устройство, способное стрелять шарами ионизированного электричества. Используется для несмертельных захватов.",
       "suffix": "",
       "types": [
-        "weapon"
+        "other"
       ],
       "tags": [
         "Sidearm",
@@ -176665,14 +176665,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated melee, incapacitation or crew-served weapon",
+        "reason": "station utility weapon",
         "signals": [
-          "component:weapon"
+          "component:stunbaton"
         ],
-        "categoryId": "weapon",
-        "category": "Оружие"
+        "categoryId": "other",
+        "category": "Другое"
       },
-      "category": "Оружие",
+      "category": "Другое",
       "public": true,
       "relationships": [
         {
@@ -188789,15 +188789,12 @@
       "Оружие": [
         "RMCWeaponLauncherM5ATL",
         "RMCWeaponLauncherM6HBrute",
-        "RMCSentryFire",
-        "RMCSentry",
         "RMCWeaponPistolM13",
         "RMCXM43E1AntiMaterielRifle",
         "WeaponRifleM4SPR",
         "RMCWeaponPistolM77",
         "RMCWeaponRevolverM44",
         "STWeaponSharpRifle",
-        "CMFlash",
         "RMCWeaponLauncherM85A1",
         "WeaponLauncherM83",
         "RMCWeaponRifleM59A",
@@ -188806,18 +188803,15 @@
         "WeaponRifleM4SPRCustom",
         "RMCWeaponFlamerSpec",
         "RMCWeaponFlamer",
-        "RMCMortarKit",
         "RMCMK80",
         "WeaponSMGM63",
         "WeaponShotgunM42A2",
         "WeaponShotgunMOU53",
         "RMCWeaponPistolM82F",
-        "CMScalpel",
         "CMWeaponPistolM1984",
         "CMM96SSniperRifle",
         "RMCMachineGunM2C",
         "RMCSmartGunMounted",
-        "RMCWeaponTaser",
         "WeaponShotgunM890",
         "RMCNailgunTactical",
         "WeaponRifleXM88",
@@ -188827,9 +188821,7 @@
         "RMCCeremonialSword",
         "RMCWeaponRifleM54CMK1",
         "RMCWeaponRifleM54C",
-        "RMCWeaponRevolverRSh9",
-        "RMCM5Bayonet",
-        "CMStunbaton"
+        "RMCWeaponRevolverRSh9"
       ],
       "Боезапас": [
         "RMCGrenadeWhitePhosphorusCompound",
@@ -189056,7 +189048,8 @@
         "RMCAttachmentExtendedBarrel",
         "RMCAttachmentExtendedCompensator",
         "RMCAttachmentRecoilCompensatorM13",
-        "RMCAttachmentRecoilCompensatorM13Spiked"
+        "RMCAttachmentRecoilCompensatorM13Spiked",
+        "RMCM5Bayonet"
       ],
       "Броня": [
         "RMCCoatService",
@@ -189444,6 +189437,7 @@
         "RMCThermalTarpFolded",
         "CMRetractor",
         "CMSynthGraft",
+        "CMScalpel",
         "CMStasisBagFolded",
         "RMCStethoscope",
         "CMPillBicaridine",
@@ -189467,6 +189461,8 @@
         "RMCMortarShellFlare",
         "RMCTentUNMCStandardMedicalFolded",
         "RMCLightReplacer",
+        "RMCSentryFire",
+        "RMCSentry",
         "RMCPowerCellSmartgun",
         "RMCVisorMedical",
         "RMCPowerCell",
@@ -189478,6 +189474,7 @@
         "RMCPamphletHeavyMachineGunner",
         "CMPamphletIntel",
         "CMPamphletPowerloader",
+        "CMFlash",
         "RMCPowerCellHigh",
         "CMWrench",
         "RMCRangefinder",
@@ -189506,6 +189503,7 @@
         "CMScrewdriver",
         "RMCVisorSquad",
         "RMCPowerCellCrap",
+        "RMCMortarKit",
         "CMFireExtinguisherPortable",
         "RMCFlashlightPen",
         "RMCPouchFlareFilled",
@@ -189716,6 +189714,7 @@
         "RMCGuidebookSOP",
         "CMSheetGlass",
         "RMCZipties",
+        "RMCWeaponTaser",
         "RMCTankReagentFuel",
         "RMCCrateMagazineBGel",
         "RagItem",
@@ -189723,6 +189722,7 @@
         "CMSheetPhoron30",
         "CMMop",
         "CMSyringe",
+        "CMStunbaton",
         "RMCCrateBoxShellsShotgunBuckshot",
         "RMCCrateBoxShellsShotgunSlugs",
         "RMCCrateBoxShellsShotgunFlechette",
