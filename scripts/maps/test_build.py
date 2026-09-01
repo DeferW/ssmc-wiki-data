@@ -153,6 +153,39 @@ def test_static_items_include_only_unanchored_grid_children():
     }
 
 
+def test_insert_static_items_are_relative_to_editor_grid_transform():
+    prototypes = {
+        "Grid": make_prototype(
+            "Grid",
+            components=({"type": "Transform"}, {"type": "MapGrid"}),
+        ),
+        "Rifle": make_prototype(
+            "Rifle",
+            components=({"type": "Transform"}, {"type": "Item"}, {"type": "Gun"}),
+        ),
+    }
+    document = {
+        "entities": [
+            {"proto": "Grid", "entities": [{"uid": 1, "components": [
+                {"type": "Transform", "pos": "10,0"},
+                {"type": "MapGrid"},
+            ]}]},
+            {"proto": "Rifle", "entities": [{"uid": 2, "components": [
+                {"type": "Transform", "pos": "2.5,2.5", "parent": 1},
+            ]}]},
+        ],
+    }
+
+    occurrences = _static_item_occurrences(
+        document,
+        prototypes,
+        PrototypeResolver(prototypes),
+        relative_to_grid=True,
+    )
+
+    assert occurrences == {"Rifle": [[2.5, 2.5]]}
+
+
 def write_yaml(path: Path, data: object) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(yaml.safe_dump(data, sort_keys=False), encoding="utf-8")

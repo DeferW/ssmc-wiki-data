@@ -278,6 +278,8 @@ def _static_item_occurrences(
     document: dict[str, Any],
     prototypes: dict[str, EntityPrototype],
     resolver: PrototypeResolver,
+    *,
+    relative_to_grid: bool = False,
 ) -> dict[str, list[list[Any]]]:
     """Return unanchored Items placed directly on a map grid."""
     transforms: dict[Any, tuple[list[float], float, Any]] = {}
@@ -372,6 +374,15 @@ def _static_item_occurrences(
             if parent in transforms and parent not in grid_entities:
                 continue
             x, y, rotation = world_transform(uid)
+            if relative_to_grid and parent in grid_entities:
+                grid_x, grid_y, grid_rotation = world_transform(parent)
+                delta_x = x - grid_x
+                delta_y = y - grid_y
+                cosine = math.cos(grid_rotation)
+                sine = math.sin(grid_rotation)
+                x = delta_x * cosine + delta_y * sine
+                y = -delta_x * sine + delta_y * cosine
+                rotation -= grid_rotation
             point: list[Any] = [x, y]
             if rotation:
                 point.append(rotation)
@@ -639,7 +650,12 @@ def build_overlay(
         render_key = insert_render_key(insert_path)
         insert_maps[insert_path] = {
             "occurrences": insert_occurrences,
-            "itemOccurrences": _static_item_occurrences(insert_document, prototypes, resolver),
+            "itemOccurrences": _static_item_occurrences(
+                insert_document,
+                prototypes,
+                resolver,
+                relative_to_grid=True,
+            ),
             "objectOccurrences": _configured_object_occurrences(insert_document, object_ids),
             "areas": _area_grid(insert_document, prototypes, resolver),
             "footprint": _tile_footprint(insert_document),
