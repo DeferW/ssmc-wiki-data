@@ -92,6 +92,23 @@ def test_populate_weapon_statistics_includes_projectile_spread():
     assert projectile["spreadDegrees"] == 15
 
 
+def test_populate_weapon_statistics_expands_bare_projectile_falloff_defaults():
+    items = _sniper_items(weapon_aimed_shot={}, has_focused_shooting=False)
+    items["Bullet"]["componentTypes"] = ["Projectile", "RMCProjectileDamageFalloff"]
+    items["Bullet"]["properties"]["RMCProjectileDamageFalloff"] = {}
+
+    populate_weapon_statistics(items, relations=[], public_item_ids={"Rifle"})
+
+    projectile = items["Rifle"]["weaponStats"]["ammunition"][0]["projectiles"][0]
+    assert projectile["damageFalloff"] == {
+        "thresholds": [
+            {"range": 0, "falloff": 1, "ignoreModifiers": False},
+            {"range": 22, "falloff": 9999, "ignoreModifiers": True},
+        ],
+        "minRemainingDamageMult": 0.05,
+    }
+
+
 def test_populate_weapon_statistics_expands_holo_targeting_defaults():
     items = _sniper_items(weapon_aimed_shot={}, has_focused_shooting=False)
     items["Bullet"]["componentTypes"] = ["Projectile", "HoloTargeting"]

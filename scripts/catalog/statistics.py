@@ -33,6 +33,17 @@ HOLO_TARGETING_DEFAULTS: dict[str, int | float] = {
     "damageMultiplierPerStack": 0.001,
 }
 
+# RMCProjectileDamageFalloffComponent's C# defaults. Most ordinary bullets
+# inherit the component bare through CMBulletBase, so checking for a non-empty
+# YAML mapping silently removes falloff from pistols and many other weapons.
+PROJECTILE_DAMAGE_FALLOFF_DEFAULTS: dict[str, Any] = {
+    "thresholds": [
+        {"range": 0, "falloff": 1, "ignoreModifiers": False},
+        {"range": 22, "falloff": 9999, "ignoreModifiers": True},
+    ],
+    "minRemainingDamageMult": 0.05,
+}
+
 
 def box_cells(boxes: Iterable[tuple[int, int, int, int]]) -> set[tuple[int, int]]:
     cells: set[tuple[int, int]] = set()
@@ -641,9 +652,13 @@ def populate_weapon_statistics(
         accuracy = properties.get("RMCProjectileAccuracy")
         if isinstance(accuracy, dict) and accuracy:
             result["accuracy"] = copy.deepcopy(accuracy)
-        falloff = properties.get("RMCProjectileDamageFalloff")
-        if isinstance(falloff, dict) and falloff:
-            result["damageFalloff"] = copy.deepcopy(falloff)
+        if "RMCProjectileDamageFalloff" in projectile.get("componentTypes", []):
+            falloff = properties.get("RMCProjectileDamageFalloff")
+            if not isinstance(falloff, dict):
+                falloff = {}
+            normalized_falloff = copy.deepcopy(PROJECTILE_DAMAGE_FALLOFF_DEFAULTS)
+            normalized_falloff.update(copy.deepcopy(falloff))
+            result["damageFalloff"] = normalized_falloff
         aimed_effect = properties.get("AimedShotEffect")
         if isinstance(aimed_effect, dict) and aimed_effect:
             result["aimedShotEffect"] = copy.deepcopy(aimed_effect)
