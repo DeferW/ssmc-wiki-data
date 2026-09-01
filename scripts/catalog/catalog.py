@@ -812,7 +812,13 @@ def build_catalog(
             ):
                 provenance_queue.append(target)
 
-    add_compatibility_relations(item_ids, resolver, relations, relation_keys)
+    add_compatibility_relations(
+        item_ids,
+        resolver,
+        relations,
+        relation_keys,
+        set(availability_by_item),
+    )
 
     items: dict[str, Any] = {}
     for item_id in sorted(item_ids):

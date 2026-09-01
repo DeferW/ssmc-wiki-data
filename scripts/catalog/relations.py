@@ -271,10 +271,12 @@ def add_compatibility_relations(
     resolver: PrototypeResolver,
     relations: list[dict[str, Any]],
     relation_keys: set[str],
+    available_item_ids: set[str] | None = None,
 ) -> None:
     candidate_data: dict[str, tuple[set[str], set[str]]] = {}
     attachments: set[str] = set()
     magazines: set[str] = set()
+    locked_integrated_attachments: set[str] = set()
 
     for item_id in item_ids:
         resolved = resolver.resolve(item_id)
@@ -287,6 +289,21 @@ def add_compatibility_relations(
             attachments.add(item_id)
         if "BallisticAmmoProvider" in component_set and "Gun" not in component_set:
             magazines.add(item_id)
+
+        slots = components.get("AttachableHolder", {}).get("slots")
+        if isinstance(slots, dict):
+            for slot in slots.values():
+                if not isinstance(slot, dict) or slot.get("locked") is not True:
+                    continue
+                starting = slot.get("startingAttachable")
+                if isinstance(starting, str):
+                    locked_integrated_attachments.add(starting)
+
+    # A locked built-in attachment can inherit the same tag as its removable
+    # counterpart. It must not become compatible with every weapon accepting
+    # that tag unless it is also obtainable as a standalone catalog item.
+    locked_integrated_attachments.difference_update(available_item_ids or set())
+    attachments.difference_update(locked_integrated_attachments)
 
     for weapon_id in sorted(item_ids):
         components = resolver.resolve(weapon_id)["components"]

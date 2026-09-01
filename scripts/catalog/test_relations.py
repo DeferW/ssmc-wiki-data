@@ -1,4 +1,17 @@
-from scripts.catalog.relations import add_relation, relation_key, whitelist_matches
+from scripts.catalog.relations import (
+    add_compatibility_relations,
+    add_relation,
+    relation_key,
+    whitelist_matches,
+)
+
+
+class StubResolver:
+    def __init__(self, resolved):
+        self.resolved = resolved
+
+    def resolve(self, prototype_id):
+        return self.resolved[prototype_id]
 
 
 def test_relation_key_is_stable_regardless_of_key_order():
@@ -48,3 +61,40 @@ def test_whitelist_matches_no_overlap_returns_false():
 
 def test_whitelist_matches_non_dict_returns_false():
     assert whitelist_matches(None, "x", set(), set()) is False
+
+
+def test_locked_integrated_attachment_is_not_offered_by_shared_tag():
+    resolver = StubResolver({
+        "Weapon": {"components": {
+            "AttachableHolder": {"slots": {"under": {
+                "whitelist": {"tags": ["Extinguisher"]},
+            }}},
+        }},
+        "IntegratedWeapon": {"components": {
+            "AttachableHolder": {"slots": {"under": {
+                "locked": True,
+                "startingAttachable": "Integrated",
+                "whitelist": {"tags": ["Extinguisher"]},
+            }}},
+        }},
+        "Removable": {"components": {
+            "Attachable": {},
+            "Tag": {"tags": ["Extinguisher"]},
+        }},
+        "Integrated": {"components": {
+            "Attachable": {},
+            "Tag": {"tags": ["Extinguisher"]},
+        }},
+    })
+    relations = []
+    add_compatibility_relations(
+        set(resolver.resolved),
+        resolver,
+        relations,
+        set(),
+        available_item_ids={"Removable"},
+    )
+
+    compatible = {(item["from"], item["to"]) for item in relations}
+    assert ("Weapon", "Removable") in compatible
+    assert ("Weapon", "Integrated") not in compatible
