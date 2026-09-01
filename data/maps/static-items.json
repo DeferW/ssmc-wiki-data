@@ -43012,7 +43012,7 @@
       "description": "Листы, изготовленные из металла. Их прозвали металлическими листами.",
       "suffix": "1",
       "types": [
-        "other"
+        "gear"
       ],
       "tags": [
         "Metal",
@@ -43080,14 +43080,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no stronger universal functional rule matched",
+        "reason": "portable metal construction material",
         "signals": [
-          "fallback:other"
+          "material:metal-stack"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Другое",
+      "category": "Снаряжение",
       "public": true,
       "image": "static-item-sprites/CMSheetMetal1.png"
     },
@@ -43098,7 +43098,7 @@
       "description": "Листы, изготовленные из металла. Их прозвали металлическими листами.",
       "suffix": "10",
       "types": [
-        "other"
+        "gear"
       ],
       "tags": [
         "Metal",
@@ -43187,14 +43187,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no stronger universal functional rule matched",
+        "reason": "portable metal construction material",
         "signals": [
-          "fallback:other"
+          "material:metal-stack"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Другое",
+      "category": "Снаряжение",
       "public": true,
       "image": "static-item-sprites/CMSheetMetal10.png"
     },
@@ -43205,7 +43205,7 @@
       "description": "Листы, изготовленные из металла. Их прозвали металлическими листами.",
       "suffix": "2",
       "types": [
-        "other"
+        "gear"
       ],
       "tags": [
         "Metal",
@@ -43273,14 +43273,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no stronger universal functional rule matched",
+        "reason": "portable metal construction material",
         "signals": [
-          "fallback:other"
+          "material:metal-stack"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Другое",
+      "category": "Снаряжение",
       "public": true,
       "image": "static-item-sprites/CMSheetMetal2.png"
     },
@@ -43291,7 +43291,7 @@
       "description": "Листы, изготовленные из металла. Их прозвали металлическими листами.",
       "suffix": "20",
       "types": [
-        "other"
+        "gear"
       ],
       "tags": [
         "Metal",
@@ -43359,14 +43359,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no stronger universal functional rule matched",
+        "reason": "portable metal construction material",
         "signals": [
-          "fallback:other"
+          "material:metal-stack"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Другое",
+      "category": "Снаряжение",
       "public": true,
       "image": "static-item-sprites/CMSheetMetal20.png"
     },
@@ -43377,7 +43377,7 @@
       "description": "Листы, изготовленные из металла. Их прозвали металлическими листами.",
       "suffix": "30",
       "types": [
-        "other"
+        "gear"
       ],
       "tags": [
         "Metal",
@@ -43445,14 +43445,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no stronger universal functional rule matched",
+        "reason": "portable metal construction material",
         "signals": [
-          "fallback:other"
+          "material:metal-stack"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Другое",
+      "category": "Снаряжение",
       "public": true,
       "image": "static-item-sprites/CMSheetMetal30.png"
     },
@@ -43463,7 +43463,7 @@
       "description": "Листы, изготовленные из металла. Их прозвали металлическими листами.",
       "suffix": "40",
       "types": [
-        "other"
+        "gear"
       ],
       "tags": [
         "Metal",
@@ -43531,14 +43531,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no stronger universal functional rule matched",
+        "reason": "portable metal construction material",
         "signals": [
-          "fallback:other"
+          "material:metal-stack"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Другое",
+      "category": "Снаряжение",
       "public": true,
       "image": "static-item-sprites/CMSheetMetal40.png"
     },
@@ -43549,7 +43549,7 @@
       "description": "Листы, изготовленные из металла. Их прозвали металлическими листами.",
       "suffix": "50",
       "types": [
-        "other"
+        "gear"
       ],
       "tags": [
         "Metal",
@@ -43617,14 +43617,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no stronger universal functional rule matched",
+        "reason": "portable metal construction material",
         "signals": [
-          "fallback:other"
+          "material:metal-stack"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Другое",
+      "category": "Снаряжение",
       "public": true,
       "image": "static-item-sprites/CMSheetMetal50.png"
     },
@@ -44020,7 +44020,7 @@
       "description": "Plasteel is an expensive, durable material made from combining platinum, steel, and advanced polymers to create a metal that is corrosion-resistant, highly durable, and lightweight. The only reason this isn't used more often is because of how damn costly it is.",
       "suffix": "Полный",
       "types": [
-        "other"
+        "gear"
       ],
       "tags": [
         "Metal",
@@ -44086,14 +44086,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no stronger universal functional rule matched",
+        "reason": "portable metal construction material",
         "signals": [
-          "fallback:other"
+          "material:metal-stack"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Другое",
+      "category": "Снаряжение",
       "public": true,
       "image": "static-item-sprites/CMSheetPlasteel.png"
     },
@@ -44104,7 +44104,7 @@
       "description": "Plasteel is an expensive, durable material made from combining platinum, steel, and advanced polymers to create a metal that is corrosion-resistant, highly durable, and lightweight. The only reason this isn't used more often is because of how damn costly it is.",
       "suffix": "1",
       "types": [
-        "other"
+        "gear"
       ],
       "tags": [
         "Metal",
@@ -44170,14 +44170,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no stronger universal functional rule matched",
+        "reason": "portable metal construction material",
         "signals": [
-          "fallback:other"
+          "material:metal-stack"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Другое",
+      "category": "Снаряжение",
       "public": true,
       "image": "static-item-sprites/CMSheetPlasteel1.png"
     },
@@ -44188,7 +44188,7 @@
       "description": "Plasteel is an expensive, durable material made from combining platinum, steel, and advanced polymers to create a metal that is corrosion-resistant, highly durable, and lightweight. The only reason this isn't used more often is because of how damn costly it is.",
       "suffix": "10",
       "types": [
-        "other"
+        "gear"
       ],
       "tags": [
         "Metal",
@@ -44275,14 +44275,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no stronger universal functional rule matched",
+        "reason": "portable metal construction material",
         "signals": [
-          "fallback:other"
+          "material:metal-stack"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Другое",
+      "category": "Снаряжение",
       "public": true,
       "image": "static-item-sprites/CMSheetPlasteel10.png"
     },
@@ -44293,7 +44293,7 @@
       "description": "Plasteel is an expensive, durable material made from combining platinum, steel, and advanced polymers to create a metal that is corrosion-resistant, highly durable, and lightweight. The only reason this isn't used more often is because of how damn costly it is.",
       "suffix": "15",
       "types": [
-        "other"
+        "gear"
       ],
       "tags": [
         "Metal",
@@ -44359,14 +44359,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no stronger universal functional rule matched",
+        "reason": "portable metal construction material",
         "signals": [
-          "fallback:other"
+          "material:metal-stack"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Другое",
+      "category": "Снаряжение",
       "public": true,
       "image": "static-item-sprites/CMSheetPlasteel15.png"
     },
@@ -44377,7 +44377,7 @@
       "description": "Plasteel is an expensive, durable material made from combining platinum, steel, and advanced polymers to create a metal that is corrosion-resistant, highly durable, and lightweight. The only reason this isn't used more often is because of how damn costly it is.",
       "suffix": "20",
       "types": [
-        "other"
+        "gear"
       ],
       "tags": [
         "Metal",
@@ -44443,14 +44443,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no stronger universal functional rule matched",
+        "reason": "portable metal construction material",
         "signals": [
-          "fallback:other"
+          "material:metal-stack"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Другое",
+      "category": "Снаряжение",
       "public": true,
       "image": "static-item-sprites/CMSheetPlasteel20.png"
     },
@@ -44461,7 +44461,7 @@
       "description": "Plasteel is an expensive, durable material made from combining platinum, steel, and advanced polymers to create a metal that is corrosion-resistant, highly durable, and lightweight. The only reason this isn't used more often is because of how damn costly it is.",
       "suffix": "30",
       "types": [
-        "other"
+        "gear"
       ],
       "tags": [
         "Metal",
@@ -44527,14 +44527,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no stronger universal functional rule matched",
+        "reason": "portable metal construction material",
         "signals": [
-          "fallback:other"
+          "material:metal-stack"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Другое",
+      "category": "Снаряжение",
       "public": true,
       "image": "static-item-sprites/CMSheetPlasteel30.png"
     },
@@ -44545,7 +44545,7 @@
       "description": "Plasteel is an expensive, durable material made from combining platinum, steel, and advanced polymers to create a metal that is corrosion-resistant, highly durable, and lightweight. The only reason this isn't used more often is because of how damn costly it is.",
       "suffix": "40",
       "types": [
-        "other"
+        "gear"
       ],
       "tags": [
         "Metal",
@@ -44611,14 +44611,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no stronger universal functional rule matched",
+        "reason": "portable metal construction material",
         "signals": [
-          "fallback:other"
+          "material:metal-stack"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Другое",
+      "category": "Снаряжение",
       "public": true,
       "image": "static-item-sprites/CMSheetPlasteel40.png"
     },
@@ -44629,7 +44629,7 @@
       "description": "Plasteel is an expensive, durable material made from combining platinum, steel, and advanced polymers to create a metal that is corrosion-resistant, highly durable, and lightweight. The only reason this isn't used more often is because of how damn costly it is.",
       "suffix": "50",
       "types": [
-        "other"
+        "gear"
       ],
       "tags": [
         "Metal",
@@ -44695,14 +44695,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no stronger universal functional rule matched",
+        "reason": "portable metal construction material",
         "signals": [
-          "fallback:other"
+          "material:metal-stack"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Другое",
+      "category": "Снаряжение",
       "public": true,
       "image": "static-item-sprites/CMSheetPlasteel50.png"
     },
@@ -124963,7 +124963,7 @@
       "description": "Это вилка. Конечно, острая.",
       "suffix": "",
       "types": [
-        "gear"
+        "other"
       ],
       "tags": [
         "Hoe",
@@ -125015,14 +125015,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated hand tool or single-purpose utility item",
+        "reason": "ordinary supply, consumable, replacement part or utility object",
         "signals": [
-          "component:tool"
+          "item:miscellaneous"
         ],
-        "categoryId": "gear",
-        "category": "Снаряжение"
+        "categoryId": "other",
+        "category": "Другое"
       },
-      "category": "Снаряжение",
+      "category": "Другое",
       "public": true,
       "image": "static-item-sprites/RMCFork.png"
     },
@@ -125033,7 +125033,7 @@
       "description": "Ура, не надо мыть посуду.",
       "suffix": "",
       "types": [
-        "gear"
+        "other"
       ],
       "tags": [
         "Hoe",
@@ -125085,14 +125085,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated hand tool or single-purpose utility item",
+        "reason": "ordinary supply, consumable, replacement part or utility object",
         "signals": [
-          "component:tool"
+          "item:miscellaneous"
         ],
-        "categoryId": "gear",
-        "category": "Снаряжение"
+        "categoryId": "other",
+        "category": "Другое"
       },
-      "category": "Снаряжение",
+      "category": "Другое",
       "public": true,
       "image": "static-item-sprites/RMCForkPlastic.png"
     },
@@ -177339,7 +177339,7 @@
       "description": "The actual firearm in the Smart Gun System. Essentially a heavy, mobile machinegun.",
       "suffix": "UNMC",
       "types": [
-        "hidden"
+        "weapon"
       ],
       "tags": [],
       "componentTypes": [
@@ -177587,14 +177587,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "runtime helper, projectile or internal item variant",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "technical:hidden"
+          "component:projectile-launcher"
         ],
-        "categoryId": "hidden",
-        "category": "Скрытые"
+        "categoryId": "weapon",
+        "category": "Оружие"
       },
-      "category": "Скрытые",
+      "category": "Оружие",
       "public": true,
       "attachmentSlots": [
         {
@@ -178829,7 +178829,7 @@
       "description": "Это ложка. В ней можно увидеть собственное перевернутое лицо.",
       "suffix": "",
       "types": [
-        "gear"
+        "other"
       ],
       "tags": [
         "Metal"
@@ -178882,14 +178882,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated hand tool or single-purpose utility item",
+        "reason": "ordinary supply, consumable, replacement part or utility object",
         "signals": [
-          "component:tool"
+          "item:miscellaneous"
         ],
-        "categoryId": "gear",
-        "category": "Снаряжение"
+        "categoryId": "other",
+        "category": "Другое"
       },
-      "category": "Снаряжение",
+      "category": "Другое",
       "public": true,
       "image": "static-item-sprites/RMCSpoon.png"
     },
@@ -178900,7 +178900,7 @@
       "description": "Это пластиковая ложка. Какая скучная.",
       "suffix": "",
       "types": [
-        "gear"
+        "other"
       ],
       "tags": [
         "Metal"
@@ -178953,14 +178953,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated hand tool or single-purpose utility item",
+        "reason": "ordinary supply, consumable, replacement part or utility object",
         "signals": [
-          "component:tool"
+          "item:miscellaneous"
         ],
-        "categoryId": "gear",
-        "category": "Снаряжение"
+        "categoryId": "other",
+        "category": "Другое"
       },
-      "category": "Снаряжение",
+      "category": "Другое",
       "public": true,
       "image": "static-item-sprites/RMCSpoonPlastic.png"
     },
@@ -187021,7 +187021,7 @@
       "description": "Названная в честь своих эксцентричных конструкторов, винтовка Басира-Армстронга — дешевая, но надежная гражданская винтовка, часто встречающаяся во внешних колониях. Несмотря на ограниченную по закону емкость магазина, ее малый вес и легендарная точность делают ее популярной среди охотников и стрелков-соревнователей.",
       "suffix": "Заполненный",
       "types": [
-        "hidden"
+        "weapon"
       ],
       "tags": [],
       "componentTypes": [
@@ -187246,14 +187246,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "runtime helper, projectile or internal item variant",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "technical:hidden"
+          "component:projectile-launcher"
         ],
-        "categoryId": "hidden",
-        "category": "Скрытые"
+        "categoryId": "weapon",
+        "category": "Оружие"
       },
-      "category": "Скрытые",
+      "category": "Оружие",
       "public": true,
       "attachmentSlots": [
         {
@@ -191474,7 +191474,7 @@
       "description": "Миниатюрный пистолет, предназначенный для того, чтобы прятаться в труднодоступных местах. Лучше не спрашивать, откуда он взялся.",
       "suffix": "Заполненный",
       "types": [
-        "hidden"
+        "weapon"
       ],
       "tags": [
         "Holdout"
@@ -191662,14 +191662,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "runtime helper, projectile or internal item variant",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "technical:hidden"
+          "component:projectile-launcher"
         ],
-        "categoryId": "hidden",
-        "category": "Скрытые"
+        "categoryId": "weapon",
+        "category": "Оружие"
       },
-      "category": "Скрытые",
+      "category": "Оружие",
       "public": true,
       "attachmentSlots": [
         {
@@ -193082,7 +193082,7 @@
       "description": "Изначально он был разработан как замена боевому револьверу M44, но в последнюю минуту комиссия отклонила его, сославшись на то, что он должен взводиться после каждого заряженного магазина и является слишком громоздким и устаревшим.",
       "suffix": "Заполненный",
       "types": [
-        "hidden"
+        "weapon"
       ],
       "tags": [
         "RMCMK45",
@@ -193293,14 +193293,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "runtime helper, projectile or internal item variant",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "technical:hidden"
+          "component:projectile-launcher"
         ],
-        "categoryId": "hidden",
-        "category": "Скрытые"
+        "categoryId": "weapon",
+        "category": "Оружие"
       },
-      "category": "Скрытые",
+      "category": "Оружие",
       "public": true,
       "attachmentSlots": [
         {
@@ -198749,7 +198749,7 @@
       "description": "The L42A Battle Rifle, found commonly around the frontiers of the Galaxy. It's commonly used by colonists for self defense, as well as many colonial militias, whomever they serve due to it's rugged reliability and ease of use without much training. This rifle was put up for adoption by the UNMC and tested for a time, but ultimately lost to the M4SPR already in service.",
       "suffix": "Filled",
       "types": [
-        "hidden"
+        "weapon"
       ],
       "tags": [],
       "componentTypes": [
@@ -198978,14 +198978,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "runtime helper, projectile or internal item variant",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "technical:hidden"
+          "component:projectile-launcher"
         ],
-        "categoryId": "hidden",
-        "category": "Скрытые"
+        "categoryId": "weapon",
+        "category": "Оружие"
       },
-      "category": "Скрытые",
+      "category": "Оружие",
       "public": true,
       "attachmentSlots": [
         {
@@ -199411,7 +199411,7 @@
       "description": "The L88A2 is the second iteration in the L88 series of rifles. The A2 variant offers greater modularity with a rail spanning the underside of the handguard.",
       "suffix": "Filled",
       "types": [
-        "hidden"
+        "weapon"
       ],
       "tags": [
         "RMCRifleL88",
@@ -199645,14 +199645,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "runtime helper, projectile or internal item variant",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "technical:hidden"
+          "component:projectile-launcher"
         ],
-        "categoryId": "hidden",
-        "category": "Скрытые"
+        "categoryId": "weapon",
+        "category": "Оружие"
       },
-      "category": "Скрытые",
+      "category": "Оружие",
       "public": true,
       "attachmentSlots": [
         {
@@ -201441,7 +201441,7 @@
       "description": "Стандартная винтовка морской пехоты. Часто используется большинством бойцов. Использует безгильзовые патроны 10x24 мм.",
       "suffix": "Заполненный",
       "types": [
-        "hidden"
+        "weapon"
       ],
       "tags": [
         "RMCWeaponRifleM54CMK2"
@@ -201698,14 +201698,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "runtime helper, projectile or internal item variant",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "technical:hidden"
+          "component:projectile-launcher"
         ],
-        "categoryId": "hidden",
-        "category": "Скрытые"
+        "categoryId": "weapon",
+        "category": "Оружие"
       },
-      "category": "Скрытые",
+      "category": "Оружие",
       "public": true,
       "attachmentSlots": [
         {
@@ -212722,7 +212722,7 @@
       "description": "The PDW90 submachine gun. An archaic design, but still widely used by corporate and mercenary groups, sometimes seen in the hands of civilian populations. This weapon only accepts 5.7×28mm rounds.",
       "suffix": "Filled",
       "types": [
-        "hidden"
+        "weapon"
       ],
       "tags": [
         "RMCWeaponSMG"
@@ -212950,14 +212950,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "runtime helper, projectile or internal item variant",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "technical:hidden"
+          "component:projectile-launcher"
         ],
-        "categoryId": "hidden",
-        "category": "Скрытые"
+        "categoryId": "weapon",
+        "category": "Оружие"
       },
-      "category": "Скрытые",
+      "category": "Оружие",
       "public": true,
       "attachmentSlots": [
         {
@@ -213284,7 +213284,7 @@
       "description": "A PDW90 submachine gun in the colors of the Royal Crown Marines, manufactured for the TSE's armed forces under license. This weapon only accepts 5.7x28mm rounds.",
       "suffix": "Filled",
       "types": [
-        "hidden"
+        "weapon"
       ],
       "tags": [
         "RMCWeaponSMG"
@@ -213512,14 +213512,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "runtime helper, projectile or internal item variant",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "technical:hidden"
+          "component:projectile-launcher"
         ],
-        "categoryId": "hidden",
-        "category": "Скрытые"
+        "categoryId": "weapon",
+        "category": "Оружие"
       },
-      "category": "Скрытые",
+      "category": "Оружие",
       "public": true,
       "attachmentSlots": [
         {
@@ -216729,7 +216729,7 @@
       "description": "Современное воплощение от Armat Battlefield Systems, сочетающее в себе мощь на ближней дистанции и долговечность. Требует перезарядки.",
       "suffix": "Заряженный",
       "types": [
-        "hidden"
+        "weapon"
       ],
       "tags": [
         "RMCWeaponShotgun",
@@ -216957,14 +216957,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "runtime helper, projectile or internal item variant",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "technical:hidden"
+          "component:projectile-launcher"
         ],
-        "categoryId": "hidden",
-        "category": "Скрытые"
+        "categoryId": "weapon",
+        "category": "Оружие"
       },
-      "category": "Скрытые",
+      "category": "Оружие",
       "public": true,
       "attachmentSlots": [
         {
@@ -224168,7 +224168,7 @@
       "description": "Столярный инструмент, используемый для забивания гвоздей в прочные поверхности. Конечно, если там ничего нет, то это просто очень острый гвоздь, запущенный с большой скоростью...",
       "suffix": "Заполненный",
       "types": [
-        "hidden"
+        "weapon"
       ],
       "tags": [
         "RMCWeaponSMGNailgun"
@@ -224376,14 +224376,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "runtime helper, projectile or internal item variant",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "technical:hidden"
+          "component:projectile-launcher"
         ],
-        "categoryId": "hidden",
-        "category": "Скрытые"
+        "categoryId": "weapon",
+        "category": "Оружие"
       },
-      "category": "Скрытые",
+      "category": "Оружие",
       "public": true,
       "magazineSlots": [
         {
@@ -226487,7 +226487,7 @@
       "description": "Боевая винтовка M4RA — марксманская винтовка, используемая морскими пехотинцами. Благодаря компоновке булл-пап, M4RA идеально подходит для разведгрупп и подразделений огневой поддержки.",
       "suffix": "Заполненная",
       "types": [
-        "hidden"
+        "weapon"
       ],
       "tags": [
         "RMCWeaponRifleM4SPR"
@@ -226735,14 +226735,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "runtime helper, projectile or internal item variant",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "technical:hidden"
+          "component:projectile-launcher"
         ],
-        "categoryId": "hidden",
-        "category": "Скрытые"
+        "categoryId": "weapon",
+        "category": "Оружие"
       },
-      "category": "Скрытые",
+      "category": "Оружие",
       "public": true,
       "attachmentSlots": [
         {
@@ -227228,7 +227228,7 @@
       "description": "Дешевая, надежная штурмовая винтовка под патрон 7,62x39 мм. Обычно встречается в руках преступников или наемников, а также в руках SPP или CLF.",
       "suffix": "Заполненная",
       "types": [
-        "hidden"
+        "weapon"
       ],
       "tags": [],
       "componentTypes": [
@@ -227473,14 +227473,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "runtime helper, projectile or internal item variant",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "technical:hidden"
+          "component:projectile-launcher"
         ],
-        "categoryId": "hidden",
-        "category": "Скрытые"
+        "categoryId": "weapon",
+        "category": "Оружие"
       },
-      "category": "Скрытые",
+      "category": "Оружие",
       "public": true,
       "attachmentSlots": [
         {
@@ -235892,11 +235892,6 @@
         "RMCBoxPizzaGalaxyMeat",
         "RMCBoxPizzaGalaxyMystery",
         "PlantBGoneSpray",
-        "CMSheetPlasteel1",
-        "CMSheetPlasteel10",
-        "CMSheetPlasteel15",
-        "CMSheetPlasteel30",
-        "CMSheetPlasteel40",
         "RMCMREWeYa",
         "RMCMREWeYaPMC",
         "RMCFoodMeatFish",
@@ -235987,6 +235982,7 @@
         "RMCDrinkAlcoholAbsinthe",
         "RMCMagazineWeYaOrrery",
         "RMCC4PlasticCasing",
+        "RMCFork",
         "FoodPieCherry",
         "RMCDrinkAlcoholVodka",
         "RMCDrinkAlcoholVodkaChess",
@@ -236200,6 +236196,7 @@
         "RMCLightBulbBroken",
         "VehicleTankLTBCannon",
         "RMCCigarettePackLadyFingers",
+        "RMCSpoon",
         "FoodBreadMeatXenoSlice",
         "HydroponicsToolSpade",
         "OrganHumanLungs",
@@ -236214,13 +236211,6 @@
         "RMCCrayonPurple",
         "RMCCrayonRed",
         "RMCCrayonYellow",
-        "CMSheetMetal1",
-        "CMSheetMetal10",
-        "CMSheetMetal2",
-        "CMSheetMetal20",
-        "CMSheetMetal30",
-        "CMSheetMetal40",
-        "CMSheetMetal50",
         "RMCBaseballBatMetal",
         "CMMetalFlask",
         "CMTileItemSteel",
@@ -236312,12 +236302,11 @@
         "FoodPizzaMargherita",
         "CMRodPlasteel1",
         "CMRodPlasteel",
-        "CMSheetPlasteel20",
-        "CMSheetPlasteel50",
-        "CMSheetPlasteel",
         "RMCSheetPlastic10",
         "RMCSheetPlastic1",
         "ForkPlastic",
+        "RMCForkPlastic",
+        "RMCSpoonPlastic",
         "RMCAshtray",
         "FoodPlateSmallPlastic",
         "KnifePlastic",
@@ -237102,6 +237091,11 @@
         "RMCTentUNMCExtendedReqFolded",
         "RMCGeigerCounter",
         "RMCLightReplacer",
+        "CMSheetPlasteel1",
+        "CMSheetPlasteel10",
+        "CMSheetPlasteel15",
+        "CMSheetPlasteel30",
+        "CMSheetPlasteel40",
         "CMTRayScanner",
         "CMCrowbarRed",
         "CMDrinkCanBobdaPineapple",
@@ -237119,7 +237113,6 @@
         "CMDrinkCanBobdaVanilla",
         "CMDrinkCanAle",
         "CMDrinkCanBeerLite",
-        "RMCFork",
         "CMDrinkCanBobdaGrape",
         "CMDrinkCanBobdaCherry",
         "CMFlash",
@@ -237152,12 +237145,18 @@
         "DrinkRumBottleFull",
         "CMWirecutter",
         "Wirecutter",
-        "RMCSpoon",
         "RMCShovel",
         "RMCToolSpade",
         "RMCMegaphone",
         "RMCGlassesMedicalHUDGlasses",
         "CMPamphletMedical",
+        "CMSheetMetal1",
+        "CMSheetMetal10",
+        "CMSheetMetal2",
+        "CMSheetMetal20",
+        "CMSheetMetal30",
+        "CMSheetMetal40",
+        "CMSheetMetal50",
         "DoorElectronics",
         "RMCToolMiniHoe",
         "RMCSentryMini",
@@ -237177,8 +237176,9 @@
         "RMCFlashlightPen",
         "CMDrinkCanBobdaPeach",
         "RMCDrinkCanSequoiaBeer",
-        "RMCForkPlastic",
-        "RMCSpoonPlastic",
+        "CMSheetPlasteel20",
+        "CMSheetPlasteel50",
+        "CMSheetPlasteel",
         "ClothingEyesBlindfold",
         "CMSoapSyndie",
         "RMCPouchFlare",
@@ -237218,8 +237218,14 @@
       ],
       "Оружие": [
         "RMCWeaponPistolD18",
+        "RMCWeaponSMGPDW90",
+        "RMCWeaponRifleL42A",
+        "RMCWeaponSMGPDW90TSE",
+        "RMCWeaponRifleL88A2Filled",
         "CMWeaponPistolM1911",
         "RMCWeaponLauncherM5ATL",
+        "RMCWeaponPistolMK45",
+        "RMCSmartGunUNMC",
         "RMCSmartGunPMC",
         "RMCWeaponShotgunM12",
         "RMCKatanaDull",
@@ -237227,9 +237233,12 @@
         "RMCWeaponRevolverSpearheadCustom",
         "RMCWeaponPistolB92FS",
         "WeaponRifleM4SPR",
+        "WeaponRifleM4SPRFilled",
+        "WeaponRifleMAR40",
         "RMCWeaponPistolM77",
         "RMCWeaponRevolverM44",
         "WeaponRifleM16",
+        "WeaponNailgun",
         "RMCWeaponLauncherM85A1",
         "RMCWeaponLauncherM81",
         "WeaponShotgunM42A1",
@@ -237255,11 +237264,13 @@
         "RMCWeaponFlamer",
         "RMCStraightRazor",
         "RMCWeaponRifleABR40",
+        "RMCWeaponBoltActionRifle",
         "RMCWeaponPistolNP92",
         "RMCWeaponPistolNPZ92",
         "RMCMK80",
         "RMCWeaponPistolT73",
         "RMCWeaponPistolT74",
+        "RMCWeaponPistolHoldout",
         "RMCWeaponSMGFP9000",
         "RMCWeaponSMGFP9000PMC",
         "RMCWeaponSMGMP27",
@@ -237273,6 +237284,7 @@
         "RMCFireAxe",
         "RMCWeaponRevolverM44Custom",
         "RMCWeaponShotgunM3717",
+        "RMCWeaponShotgunM42A2Filled",
         "WeaponShotgunM42A2",
         "FoamCrossbow",
         "RMCWeaponLMGQYJ72",
@@ -237296,6 +237308,7 @@
         "WeaponRifleAR10",
         "RMCWeaponRifleM54CMK1",
         "RMCWeaponRifleM54C",
+        "RMCWeaponRifleM54CFilled",
         "RMCWeaponRifleM54CWhiteNoLock",
         "RMCWeaponRifleM54CSemiStripped",
         "RMCWeaponRifleM54CWhite",
@@ -237309,30 +237322,21 @@
         "RMCWeaponRevolverRSh9"
       ],
       "Скрытые": [
-        "RMCWeaponSMGPDW90",
         "CMFolderBlackEmpty",
         "CMFolderRedEmpty",
         "RMCMagazineSMGM63HEAPEmpty",
         "RMCMagazineRifleM54CHEAPEmpty",
         "RMCMagazineRifleSSG45HEAPEmpty",
         "RMCMagazineRifleType71HEAPEmpty",
-        "RMCWeaponRifleL42A",
-        "RMCWeaponSMGPDW90TSE",
-        "RMCWeaponRifleL88A2Filled",
         "RMCLightReplacerEmpty",
         "RMCBoxMagazineRifleType71HEAPEmpty",
         "RMCBoxMagazineRifleType71Empty",
         "RMCBoxMagazineRifleType77Empty",
-        "RMCWeaponPistolMK45",
-        "RMCSmartGunUNMC",
         "RMCBoxBulletsRifleEmpty",
         "RMCBoxBulletsRifleType71HalfEmpty",
         "RMCBoxDonutEmpty",
-        "WeaponRifleM4SPRFilled",
-        "WeaponRifleMAR40",
         "RMCMagazineRifleM4SPRAPEmpty",
         "CMBottleEmpty",
-        "WeaponNailgun",
         "CMDefibrillatorEmpty",
         "RMCBoxShellsBeanbagEmpty",
         "RMCBoxShellsBuckshotEmpty",
@@ -237342,9 +237346,6 @@
         "RMCBoxPackFlareEmpty",
         "RMCMagazinePistolMK80Empty",
         "RMCMagazineRifleType77Empty",
-        "RMCWeaponBoltActionRifle",
-        "RMCWeaponPistolHoldout",
-        "RMCWeaponShotgunM42A2Filled",
         "RMCTrayEmpty",
         "CMSandbagEmpty",
         "RMCPowerCellAPCEmpty",
@@ -237352,8 +237353,7 @@
         "RMCML66DMountAssembled",
         "RMCML66DMountWeaponAssembledLoaded",
         "RMCML66DMount",
-        "RMCSurgicalTrayEmpty",
-        "RMCWeaponRifleM54CFilled"
+        "RMCSurgicalTrayEmpty"
       ],
       "Медицина": [
         "CMPillCanisterInaprovaline",
