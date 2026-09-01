@@ -652,7 +652,10 @@ def populate_weapon_statistics(
         accuracy = properties.get("RMCProjectileAccuracy")
         if isinstance(accuracy, dict) and accuracy:
             result["accuracy"] = copy.deepcopy(accuracy)
-        if "RMCProjectileDamageFalloff" in projectile.get("componentTypes", []):
+        if (
+            "RMCProjectileDamageFalloff" in projectile.get("componentTypes", [])
+            or "RMCProjectileDamageFalloff" in properties
+        ):
             falloff = properties.get("RMCProjectileDamageFalloff")
             if not isinstance(falloff, dict):
                 falloff = {}
