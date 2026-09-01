@@ -12191,7 +12191,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -15273,7 +15273,7 @@
       "description": "A blood pack. Contains fluids, typically used for transfusions.",
       "suffix": "КМ, Полный",
       "types": [
-        "equipment"
+        "medicine"
       ],
       "tags": [
         "CMBloodPack"
@@ -15365,14 +15365,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "medicine, medical device, treatment kit or surgical instrument",
         "signals": [
-          "component:wearable-equipment"
+          "component:medicine"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Экипировка",
+      "category": "Медицина",
       "public": true,
       "solutionStats": {
         "solutions": [
@@ -15492,7 +15492,7 @@
       "description": "A container for bone gel that often needs to be refilled from a specialized machine.",
       "suffix": "",
       "types": [
-        "equipment"
+        "medicine"
       ],
       "tags": [
         "SurgeryTool"
@@ -15538,14 +15538,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "medicine, medical device, treatment kit or surgical instrument",
         "signals": [
-          "component:wearable-equipment"
+          "component:medicine"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Экипировка",
+      "category": "Медицина",
       "public": true,
       "image": "sprites/CMBoneGel.png"
     },
@@ -15556,7 +15556,7 @@
       "description": "Used for setting bones back into place.",
       "suffix": "",
       "types": [
-        "equipment"
+        "medicine"
       ],
       "tags": [
         "SurgeryTool"
@@ -15601,14 +15601,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "medicine, medical device, treatment kit or surgical instrument",
         "signals": [
-          "component:wearable-equipment"
+          "component:medicine"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Экипировка",
+      "category": "Медицина",
       "public": true,
       "image": "sprites/CMBonesetter.png"
     },
@@ -15728,7 +15728,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -15875,7 +15875,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -16010,7 +16010,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -16132,7 +16132,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -16153,7 +16153,7 @@
       "description": "Небольшая бутылочка. Содержит бикаридин — используется для лечения повреждений грубой силы.",
       "suffix": "",
       "types": [
-        "equipment"
+        "medicine"
       ],
       "tags": [
         "Bottle"
@@ -16279,14 +16279,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "medicine, medical device, treatment kit or surgical instrument",
         "signals": [
-          "component:wearable-equipment"
+          "component:medicine"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Экипировка",
+      "category": "Медицина",
       "public": true,
       "solutionStats": {
         "solutions": [
@@ -16311,7 +16311,7 @@
       "description": "Небольшая бутылочка. Содержит дексалин — используется для лечения асфиксии.",
       "suffix": "",
       "types": [
-        "equipment"
+        "medicine"
       ],
       "tags": [
         "Bottle"
@@ -16437,14 +16437,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "medicine, medical device, treatment kit or surgical instrument",
         "signals": [
-          "component:wearable-equipment"
+          "component:medicine"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Экипировка",
+      "category": "Медицина",
       "public": true,
       "solutionStats": {
         "solutions": [
@@ -16469,7 +16469,7 @@
       "description": "Небольшая бутылочка. Содержит диловен — противодействует ядам и восстанавливает повреждения от токсинов. Чудо-лекарство.",
       "suffix": "",
       "types": [
-        "equipment"
+        "medicine"
       ],
       "tags": [
         "Bottle"
@@ -16595,14 +16595,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "medicine, medical device, treatment kit or surgical instrument",
         "signals": [
-          "component:wearable-equipment"
+          "component:medicine"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Экипировка",
+      "category": "Медицина",
       "public": true,
       "solutionStats": {
         "solutions": [
@@ -16627,7 +16627,7 @@
       "description": "Небольшая бутылочка. Содержит инапровалин — используется для стабилизации состояния пациентов.",
       "suffix": "",
       "types": [
-        "equipment"
+        "medicine"
       ],
       "tags": [
         "Bottle"
@@ -16753,14 +16753,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "medicine, medical device, treatment kit or surgical instrument",
         "signals": [
-          "component:wearable-equipment"
+          "component:medicine"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Экипировка",
+      "category": "Медицина",
       "public": true,
       "solutionStats": {
         "solutions": [
@@ -16785,7 +16785,7 @@
       "description": "Небольшая бутылочка. Содержит келотан — используется для лечения ожогов.",
       "suffix": "",
       "types": [
-        "equipment"
+        "medicine"
       ],
       "tags": [
         "Bottle"
@@ -16911,14 +16911,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "medicine, medical device, treatment kit or surgical instrument",
         "signals": [
-          "component:wearable-equipment"
+          "component:medicine"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Экипировка",
+      "category": "Медицина",
       "public": true,
       "solutionStats": {
         "solutions": [
@@ -18111,7 +18111,7 @@
       "description": "Набор для лечения сильных ожогов.",
       "suffix": "Десять",
       "types": [
-        "equipment"
+        "medicine"
       ],
       "tags": [
         "CMBurnKit"
@@ -18178,14 +18178,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "medicine, medical device, treatment kit or surgical instrument",
         "signals": [
-          "component:wearable-equipment"
+          "component:medicine"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Экипировка",
+      "category": "Медицина",
       "public": true,
       "image": "sprites/CMBurnKit10.png"
     },
@@ -19411,7 +19411,7 @@
       "description": "Это останавливает кровотечение.",
       "suffix": "",
       "types": [
-        "equipment"
+        "medicine"
       ],
       "tags": [
         "SurgeryTool"
@@ -19468,14 +19468,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "medicine, medical device, treatment kit or surgical instrument",
         "signals": [
-          "component:wearable-equipment"
+          "component:medicine"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Экипировка",
+      "category": "Медицина",
       "public": true,
       "image": "sprites/CMCautery.png"
     },
@@ -19646,7 +19646,7 @@
       "description": "Для интенсивной резки.",
       "suffix": "",
       "types": [
-        "equipment"
+        "medicine"
       ],
       "tags": [
         "SurgeryTool"
@@ -19704,14 +19704,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "medicine, medical device, treatment kit or surgical instrument",
         "signals": [
-          "component:wearable-equipment"
+          "component:medicine"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Экипировка",
+      "category": "Медицина",
       "public": true,
       "image": "sprites/CMCircularSaw.png"
     },
@@ -20199,7 +20199,7 @@
       "description": "Многофункциональный инструмент для открывания дверей и борьбы с межпространственными захватчиками.",
       "suffix": "",
       "types": [
-        "equipment"
+        "gear"
       ],
       "tags": [
         "Crowbar"
@@ -20278,14 +20278,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "dedicated hand tool or single-purpose utility item",
         "signals": [
-          "component:wearable-equipment"
+          "component:tool"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Экипировка",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/CMCrowbar.png"
     },
@@ -20296,7 +20296,7 @@
       "description": "ЧИСТО! Ззззат!",
       "suffix": "КМ14",
       "types": [
-        "gear"
+        "medicine"
       ],
       "tags": [],
       "componentTypes": [
@@ -20366,14 +20366,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "field utility, signalling device or training item",
+        "reason": "medicine, medical device, treatment kit or surgical instrument",
         "signals": [
-          "component:field-utility"
+          "component:medicine"
         ],
-        "categoryId": "gear",
-        "category": "Снаряжение"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Снаряжение",
+      "category": "Медицина",
       "public": true,
       "relationships": [
         {
@@ -20965,7 +20965,7 @@
       "description": "Ключ шифрования для радиогарнитуры.",
       "suffix": "",
       "types": [
-        "gear"
+        "other"
       ],
       "tags": [],
       "componentTypes": [
@@ -21019,14 +21019,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "advanced field device, weapon support or encryption component",
+        "reason": "no stronger universal functional rule matched",
         "signals": [
-          "component:gear"
+          "fallback:other"
         ],
-        "categoryId": "gear",
-        "category": "Снаряжение"
+        "categoryId": "other",
+        "category": "Другое"
       },
-      "category": "Снаряжение",
+      "category": "Другое",
       "public": true,
       "communicationStats": {
         "componentTypes": [
@@ -21050,7 +21050,7 @@
       "description": "Ключ шифрования для радиогарнитуры.",
       "suffix": "",
       "types": [
-        "gear"
+        "other"
       ],
       "tags": [],
       "componentTypes": [
@@ -21104,14 +21104,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "advanced field device, weapon support or encryption component",
+        "reason": "no stronger universal functional rule matched",
         "signals": [
-          "component:gear"
+          "fallback:other"
         ],
-        "categoryId": "gear",
-        "category": "Снаряжение"
+        "categoryId": "other",
+        "category": "Другое"
       },
-      "category": "Снаряжение",
+      "category": "Другое",
       "public": true,
       "communicationStats": {
         "componentTypes": [
@@ -21135,7 +21135,7 @@
       "description": "Ключ шифрования для радиогарнитуры.",
       "suffix": "",
       "types": [
-        "gear"
+        "other"
       ],
       "tags": [],
       "componentTypes": [
@@ -21188,14 +21188,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "advanced field device, weapon support or encryption component",
+        "reason": "no stronger universal functional rule matched",
         "signals": [
-          "component:gear"
+          "fallback:other"
         ],
-        "categoryId": "gear",
-        "category": "Снаряжение"
+        "categoryId": "other",
+        "category": "Другое"
       },
-      "category": "Снаряжение",
+      "category": "Другое",
       "public": true,
       "communicationStats": {
         "componentTypes": [
@@ -21228,7 +21228,7 @@
       "description": "Ключ шифрования для радиогарнитуры.",
       "suffix": "",
       "types": [
-        "gear"
+        "other"
       ],
       "tags": [],
       "componentTypes": [
@@ -21281,14 +21281,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "advanced field device, weapon support or encryption component",
+        "reason": "no stronger universal functional rule matched",
         "signals": [
-          "component:gear"
+          "fallback:other"
         ],
-        "categoryId": "gear",
-        "category": "Снаряжение"
+        "categoryId": "other",
+        "category": "Другое"
       },
-      "category": "Снаряжение",
+      "category": "Другое",
       "public": true,
       "communicationStats": {
         "componentTypes": [
@@ -21321,7 +21321,7 @@
       "description": "Ключ шифрования для радиогарнитуры.",
       "suffix": "",
       "types": [
-        "gear"
+        "other"
       ],
       "tags": [],
       "componentTypes": [
@@ -21375,14 +21375,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "advanced field device, weapon support or encryption component",
+        "reason": "no stronger universal functional rule matched",
         "signals": [
-          "component:gear"
+          "fallback:other"
         ],
-        "categoryId": "gear",
-        "category": "Снаряжение"
+        "categoryId": "other",
+        "category": "Другое"
       },
-      "category": "Снаряжение",
+      "category": "Другое",
       "public": true,
       "communicationStats": {
         "componentTypes": [
@@ -21416,7 +21416,7 @@
       "description": "Ключ шифрования для радиогарнитуры.",
       "suffix": "",
       "types": [
-        "gear"
+        "other"
       ],
       "tags": [],
       "componentTypes": [
@@ -21470,14 +21470,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "advanced field device, weapon support or encryption component",
+        "reason": "no stronger universal functional rule matched",
         "signals": [
-          "component:gear"
+          "fallback:other"
         ],
-        "categoryId": "gear",
-        "category": "Снаряжение"
+        "categoryId": "other",
+        "category": "Другое"
       },
-      "category": "Снаряжение",
+      "category": "Другое",
       "public": true,
       "communicationStats": {
         "componentTypes": [
@@ -21501,7 +21501,7 @@
       "description": "Ключ шифрования для радиогарнитуры.",
       "suffix": "",
       "types": [
-        "gear"
+        "other"
       ],
       "tags": [],
       "componentTypes": [
@@ -21545,14 +21545,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "advanced field device, weapon support or encryption component",
+        "reason": "no stronger universal functional rule matched",
         "signals": [
-          "component:gear"
+          "fallback:other"
         ],
-        "categoryId": "gear",
-        "category": "Снаряжение"
+        "categoryId": "other",
+        "category": "Другое"
       },
-      "category": "Снаряжение",
+      "category": "Другое",
       "public": true,
       "communicationStats": {
         "componentTypes": [
@@ -21576,7 +21576,7 @@
       "description": "Ключ шифрования для радиогарнитуры.",
       "suffix": "",
       "types": [
-        "gear"
+        "other"
       ],
       "tags": [],
       "componentTypes": [
@@ -21630,14 +21630,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "advanced field device, weapon support or encryption component",
+        "reason": "no stronger universal functional rule matched",
         "signals": [
-          "component:gear"
+          "fallback:other"
         ],
-        "categoryId": "gear",
-        "category": "Снаряжение"
+        "categoryId": "other",
+        "category": "Другое"
       },
-      "category": "Снаряжение",
+      "category": "Другое",
       "public": true,
       "communicationStats": {
         "componentTypes": [
@@ -21661,7 +21661,7 @@
       "description": "Ключ шифрования для радиогарнитуры.",
       "suffix": "",
       "types": [
-        "gear"
+        "other"
       ],
       "tags": [],
       "componentTypes": [
@@ -21715,14 +21715,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "advanced field device, weapon support or encryption component",
+        "reason": "no stronger universal functional rule matched",
         "signals": [
-          "component:gear"
+          "fallback:other"
         ],
-        "categoryId": "gear",
-        "category": "Снаряжение"
+        "categoryId": "other",
+        "category": "Другое"
       },
-      "category": "Снаряжение",
+      "category": "Другое",
       "public": true,
       "communicationStats": {
         "componentTypes": [
@@ -21746,7 +21746,7 @@
       "description": "Ключ шифрования для радиогарнитуры.",
       "suffix": "",
       "types": [
-        "gear"
+        "other"
       ],
       "tags": [],
       "componentTypes": [
@@ -21845,14 +21845,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "advanced field device, weapon support or encryption component",
+        "reason": "no stronger universal functional rule matched",
         "signals": [
-          "component:gear"
+          "fallback:other"
         ],
-        "categoryId": "gear",
-        "category": "Снаряжение"
+        "categoryId": "other",
+        "category": "Другое"
       },
-      "category": "Снаряжение",
+      "category": "Другое",
       "public": true,
       "communicationStats": {
         "componentTypes": [
@@ -21876,7 +21876,7 @@
       "description": "Ключ шифрования для радиогарнитуры.",
       "suffix": "",
       "types": [
-        "gear"
+        "other"
       ],
       "tags": [],
       "componentTypes": [
@@ -21930,14 +21930,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "advanced field device, weapon support or encryption component",
+        "reason": "no stronger universal functional rule matched",
         "signals": [
-          "component:gear"
+          "fallback:other"
         ],
-        "categoryId": "gear",
-        "category": "Снаряжение"
+        "categoryId": "other",
+        "category": "Другое"
       },
-      "category": "Снаряжение",
+      "category": "Другое",
       "public": true,
       "communicationStats": {
         "componentTypes": [
@@ -21961,7 +21961,7 @@
       "description": "Ключ шифрования для радиогарнитуры.",
       "suffix": "",
       "types": [
-        "gear"
+        "other"
       ],
       "tags": [],
       "componentTypes": [
@@ -22069,14 +22069,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "advanced field device, weapon support or encryption component",
+        "reason": "no stronger universal functional rule matched",
         "signals": [
-          "component:gear"
+          "fallback:other"
         ],
-        "categoryId": "gear",
-        "category": "Снаряжение"
+        "categoryId": "other",
+        "category": "Другое"
       },
-      "category": "Снаряжение",
+      "category": "Другое",
       "public": true,
       "communicationStats": {
         "componentTypes": [
@@ -22100,7 +22100,7 @@
       "description": "Ключ шифрования для радиогарнитуры.",
       "suffix": "",
       "types": [
-        "gear"
+        "other"
       ],
       "tags": [],
       "componentTypes": [
@@ -22208,14 +22208,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "advanced field device, weapon support or encryption component",
+        "reason": "no stronger universal functional rule matched",
         "signals": [
-          "component:gear"
+          "fallback:other"
         ],
-        "categoryId": "gear",
-        "category": "Снаряжение"
+        "categoryId": "other",
+        "category": "Другое"
       },
-      "category": "Снаряжение",
+      "category": "Другое",
       "public": true,
       "communicationStats": {
         "componentTypes": [
@@ -22239,7 +22239,7 @@
       "description": "Ключ шифрования для радиогарнитуры.",
       "suffix": "",
       "types": [
-        "gear"
+        "other"
       ],
       "tags": [],
       "componentTypes": [
@@ -22338,14 +22338,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "advanced field device, weapon support or encryption component",
+        "reason": "no stronger universal functional rule matched",
         "signals": [
-          "component:gear"
+          "fallback:other"
         ],
-        "categoryId": "gear",
-        "category": "Снаряжение"
+        "categoryId": "other",
+        "category": "Другое"
       },
-      "category": "Снаряжение",
+      "category": "Другое",
       "public": true,
       "communicationStats": {
         "componentTypes": [
@@ -22369,7 +22369,7 @@
       "description": "Ключ шифрования для радиогарнитуры.",
       "suffix": "",
       "types": [
-        "gear"
+        "other"
       ],
       "tags": [],
       "componentTypes": [
@@ -22477,14 +22477,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "advanced field device, weapon support or encryption component",
+        "reason": "no stronger universal functional rule matched",
         "signals": [
-          "component:gear"
+          "fallback:other"
         ],
-        "categoryId": "gear",
-        "category": "Снаряжение"
+        "categoryId": "other",
+        "category": "Другое"
       },
-      "category": "Снаряжение",
+      "category": "Другое",
       "public": true,
       "communicationStats": {
         "componentTypes": [
@@ -22508,7 +22508,7 @@
       "description": "Ключ шифрования для радиогарнитуры.",
       "suffix": "",
       "types": [
-        "gear"
+        "other"
       ],
       "tags": [],
       "componentTypes": [
@@ -22553,14 +22553,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "advanced field device, weapon support or encryption component",
+        "reason": "no stronger universal functional rule matched",
         "signals": [
-          "component:gear"
+          "fallback:other"
         ],
-        "categoryId": "gear",
-        "category": "Снаряжение"
+        "categoryId": "other",
+        "category": "Другое"
       },
-      "category": "Снаряжение",
+      "category": "Другое",
       "public": true,
       "communicationStats": {
         "componentTypes": [
@@ -22585,7 +22585,7 @@
       "description": "Ключ шифрования для радиогарнитуры.",
       "suffix": "",
       "types": [
-        "gear"
+        "other"
       ],
       "tags": [],
       "componentTypes": [
@@ -22631,14 +22631,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "advanced field device, weapon support or encryption component",
+        "reason": "no stronger universal functional rule matched",
         "signals": [
-          "component:gear"
+          "fallback:other"
         ],
-        "categoryId": "gear",
-        "category": "Снаряжение"
+        "categoryId": "other",
+        "category": "Другое"
       },
-      "category": "Снаряжение",
+      "category": "Другое",
       "public": true,
       "communicationStats": {
         "componentTypes": [
@@ -23261,7 +23261,7 @@
       "description": "Традиционный красный огнетушитель.",
       "suffix": "",
       "types": [
-        "equipment"
+        "gear"
       ],
       "tags": [
         "FireExtinguisher"
@@ -23359,14 +23359,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "dedicated hand tool or single-purpose utility item",
         "signals": [
-          "component:wearable-equipment"
+          "component:tool"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Экипировка",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/CMFireExtinguisher.png"
     },
@@ -23377,7 +23377,7 @@
       "description": "Легкая и компактная модель огнетушителя в стекловолоконном корпусе.",
       "suffix": "",
       "types": [
-        "equipment"
+        "gear"
       ],
       "tags": [
         "CMFireExtinguisherPortable"
@@ -23538,14 +23538,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "dedicated hand tool or single-purpose utility item",
         "signals": [
-          "component:wearable-equipment"
+          "component:tool"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Экипировка",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/CMFireExtinguisherPortable.png"
     },
@@ -24308,7 +24308,7 @@
       "description": "Переносная композитная баррикада, которую можно быстро развернуть в оборонительную позицию.",
       "suffix": "Три",
       "types": [
-        "equipment"
+        "gear"
       ],
       "tags": [
         "RMCFoldingBarricade"
@@ -24382,14 +24382,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "dedicated hand tool or single-purpose utility item",
         "signals": [
-          "component:wearable-equipment"
+          "component:tool"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Экипировка",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/CMFoldingBarricadesMB6x3.png"
     },
@@ -24455,7 +24455,7 @@
       "description": "Несколько стерильных марлевых салфеток для обматывания кровоточащих культей и рваных ран.",
       "suffix": "Десять",
       "types": [
-        "equipment"
+        "medicine"
       ],
       "tags": [
         "Brutepack"
@@ -24502,14 +24502,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "medicine, medical device, treatment kit or surgical instrument",
         "signals": [
-          "component:wearable-equipment"
+          "component:medicine"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Экипировка",
+      "category": "Медицина",
       "public": true,
       "image": "sprites/CMGauze10.png"
     },
@@ -24520,7 +24520,7 @@
       "description": "Гарнитура и прицельная система ночного видения для винтовки M42 Scout. Позволяет получать освещенное изображение окружающей обстановки.",
       "suffix": "",
       "types": [
-        "equipment"
+        "gear"
       ],
       "tags": [
         "WhitelistChameleon"
@@ -24577,14 +24577,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "advanced field device, weapon support or encryption component",
         "signals": [
-          "component:wearable-equipment"
+          "component:gear"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Экипировка",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/CMGlassesM42ScoutSight.png"
     },
@@ -24670,7 +24670,7 @@
       "description": "Высокоэксплозивная осколочно-фугасная противопехотная граната. Небольшая, но обманчиво сильная осколочная граната, которая вытесняет осколочные гранаты M15, а также M40 ОКГ. Может заряжаться в гранатомет M83 Launcher или метаться вручную.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "Grenade",
@@ -24745,14 +24745,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "image": "sprites/CMGrenadeFrag.png"
     },
@@ -24763,7 +24763,7 @@
       "description": "Устаревшая осколочная граната США. Прослужив несколько десятилетий в КМП США, старая осколочная граната M15 постепенно заменяется более безопасными гранатами серии M40. Она срабатывает через 4 секунды.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "Grenade"
@@ -24859,14 +24859,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "image": "sprites/CMGrenadeFragOld.png"
     },
@@ -24877,7 +24877,7 @@
       "description": "Взрывная граната двойного назначения. Небольшая, но обманчиво сильная фугасная граната, которая вытеснила гранаты M15 HE и заменила их на M40 ОППГ. Может заряжаться в гранатомет M83 Launcher или метаться вручную.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "Grenade",
@@ -24982,14 +24982,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "image": "sprites/CMGrenadeHighExplosive.png"
     },
@@ -25000,7 +25000,7 @@
       "description": "M40 ДГДН — это небольшая, но мощная дымовая граната. Основана на той же платформе, что и M40 ОКГ. Взрывается через 2 секунды.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "Grenade",
@@ -25095,14 +25095,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "image": "sprites/CMGrenadeSmoke.png"
     },
@@ -25504,7 +25504,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -25756,7 +25756,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -25842,7 +25842,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -25928,7 +25928,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -26014,7 +26014,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -26133,7 +26133,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -26316,7 +26316,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -26519,7 +26519,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -26693,7 +26693,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -26884,7 +26884,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -27067,7 +27067,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -27250,7 +27250,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -27433,7 +27433,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -27617,7 +27617,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -27800,7 +27800,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -27983,7 +27983,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -28166,7 +28166,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -28349,7 +28349,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -28532,7 +28532,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -28715,7 +28715,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -28868,7 +28868,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -28986,7 +28986,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -29115,7 +29115,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -29245,7 +29245,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -29374,7 +29374,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -29504,7 +29504,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -29622,7 +29622,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -29751,7 +29751,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -29881,7 +29881,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -30010,7 +30010,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -30149,7 +30149,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -30288,7 +30288,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -30426,7 +30426,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -30554,7 +30554,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -30672,7 +30672,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -30801,7 +30801,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -30931,7 +30931,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -31060,7 +31060,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -31190,7 +31190,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -31308,7 +31308,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -31437,7 +31437,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -31567,7 +31567,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -31696,7 +31696,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -31826,7 +31826,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -31944,7 +31944,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -32073,7 +32073,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -32203,7 +32203,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -32332,7 +32332,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -32468,7 +32468,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -32593,7 +32593,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -32711,7 +32711,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -32840,7 +32840,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -32970,7 +32970,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -33099,7 +33099,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -33235,7 +33235,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -33366,7 +33366,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -33508,7 +33508,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -33569,7 +33569,7 @@
       "description": "Ручной сканер тела, способный распознавать жизненно важные показатели человека.",
       "suffix": "КМ14",
       "types": [
-        "equipment"
+        "medicine"
       ],
       "tags": [
         "DiscreteHealthAnalyzer"
@@ -33639,14 +33639,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "medicine, medical device, treatment kit or surgical instrument",
         "signals": [
-          "component:wearable-equipment"
+          "component:medicine"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Экипировка",
+      "category": "Медицина",
       "public": true,
       "image": "sprites/CMHealthAnalyzer.png"
     },
@@ -33657,7 +33657,7 @@
       "description": "Вам кажется, что вы уже видели это раньше.",
       "suffix": "",
       "types": [
-        "equipment"
+        "medicine"
       ],
       "tags": [
         "SurgeryTool"
@@ -33702,14 +33702,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "medicine, medical device, treatment kit or surgical instrument",
         "signals": [
-          "component:wearable-equipment"
+          "component:medicine"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Экипировка",
+      "category": "Медицина",
       "public": true,
       "image": "sprites/CMHemostat.png"
     },
@@ -35665,9 +35665,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated firearm component",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "Gun"
+          "component:projectile-launcher"
         ],
         "categoryId": "weapon",
         "category": "Оружие"
@@ -37485,7 +37485,7 @@
       "description": "A pistol magazine.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "CMMagazinePistol",
@@ -37605,14 +37605,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "compatibleWeaponIds": [
         "CMWeaponPistolM1984",
@@ -37637,7 +37637,7 @@
       "description": "A pistol magazine.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "CMMagazinePistol",
@@ -37757,14 +37757,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "compatibleWeaponIds": [
         "RMCWeaponPistolM77",
@@ -37789,7 +37789,7 @@
       "description": "A pistol magazine.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "CMMagazinePistol",
@@ -37950,14 +37950,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "compatibleWeaponIds": [
         "RMCMK80"
@@ -37981,7 +37981,7 @@
       "description": "Магазин для винтовки M4RA, предназначенный для стандартных патронов 10x24 мм.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "CMMagazineRifle",
@@ -38130,14 +38130,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "compatibleWeaponIds": [
         "WeaponRifleM4SPR",
@@ -38166,7 +38166,7 @@
       "description": "Магазин M4RA ББ, предназначенный для бронебойных патронов 10x24 мм.",
       "suffix": "Бронебойный",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "CMMagazineRifle",
@@ -38327,14 +38327,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "compatibleWeaponIds": [
         "WeaponRifleM4SPR",
@@ -38363,7 +38363,7 @@
       "description": "Удлинённый магазин для винтовки M4RA, рассчитанный на стандартные патроны 10x24 мм.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "CMMagazineRifle",
@@ -38506,14 +38506,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "compatibleWeaponIds": [
         "WeaponRifleM4SPR",
@@ -38542,7 +38542,7 @@
       "description": "{ \"\" }",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "CMMagazineRifle",
@@ -38691,14 +38691,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "compatibleWeaponIds": [
         "RMCWeaponRifleM54C",
@@ -38727,7 +38727,7 @@
       "description": "{ \"\" }",
       "suffix": "Бронебойный",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "CMMagazineRifle",
@@ -38898,14 +38898,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "compatibleWeaponIds": [
         "RMCWeaponRifleM54C",
@@ -38934,7 +38934,7 @@
       "description": "{ \"\" }",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "CMMagazineRifle",
@@ -39019,14 +39019,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "compatibleWeaponIds": [
         "RMCWeaponRifleM54CE2"
@@ -39054,7 +39054,7 @@
       "description": "{ \"\" }",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "CMMagazineRifle",
@@ -39143,14 +39143,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "compatibleWeaponIds": [
         "RMCWeaponRifleM54CE2"
@@ -39178,7 +39178,7 @@
       "description": "{ \"\" }",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "CMMagazineRifle",
@@ -39330,14 +39330,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "compatibleWeaponIds": [
         "RMCWeaponRifleM54C",
@@ -39366,7 +39366,7 @@
       "description": "{ \"\" }",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "CMMagazineRifle",
@@ -39470,14 +39470,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "compatibleWeaponIds": [
         "RMCWeaponRifleM54CMK1",
@@ -39507,7 +39507,7 @@
       "description": "{ \"\" }",
       "suffix": "ББ",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "CMMagazineRifle",
@@ -39615,14 +39615,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "compatibleWeaponIds": [
         "RMCWeaponRifleM54CMK1",
@@ -39652,7 +39652,7 @@
       "description": "{ \"\" }",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "CMMagazineSMGM63",
@@ -39801,14 +39801,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "compatibleWeaponIds": [
         "WeaponSMGM63"
@@ -39836,7 +39836,7 @@
       "description": "{ \"\" }",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "CMMagazineSMGM63AP",
@@ -39997,14 +39997,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "compatibleWeaponIds": [
         "WeaponSMGM63"
@@ -40032,7 +40032,7 @@
       "description": "{ \"\" }",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "CMMagazineSMGM63Ext",
@@ -40175,14 +40175,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "compatibleWeaponIds": [
         "WeaponSMGM63"
@@ -40210,7 +40210,7 @@
       "description": "Магазин для снайперской винтовки. Точный выстрел наносит существенный урон.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "CMMagazineSniper",
@@ -40292,14 +40292,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "compatibleWeaponIds": [
         "CMM96SSniperRifle"
@@ -40323,7 +40323,7 @@
       "description": "Магазин снайперской винтовки, содержащий патроны \"воздушный удар\". Прицельный выстрел временно замедлит цель и уменьшит откат.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "CMMagazineSniper",
@@ -40409,14 +40409,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "compatibleWeaponIds": [
         "CMM96SSniperRifle"
@@ -40440,7 +40440,7 @@
       "description": "Магазин снайперской винтовки, содержащий зажигательные патроны. Прицельный выстрел временно ослепит цель и ещё больше разжжёт пламя.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "CMMagazineSniper",
@@ -40526,14 +40526,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "compatibleWeaponIds": [
         "CMM96SSniperRifle"
@@ -40790,7 +40790,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -40959,7 +40959,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -41026,7 +41026,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -41099,7 +41099,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -41508,7 +41508,7 @@
       "description": "Небольшой ручной инструмент, используемый для отмены различных функций машины.",
       "suffix": "Мультиинструмент",
       "types": [
-        "equipment"
+        "gear"
       ],
       "tags": [
         "DoorElectronicsConfigurator",
@@ -41570,14 +41570,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "dedicated hand tool or single-purpose utility item",
         "signals": [
-          "component:wearable-equipment"
+          "component:tool"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Экипировка",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/CMMultitool.png"
     },
@@ -41588,7 +41588,7 @@
       "description": "Используется для лечения неприятных ожогов. Менее эффективна при едких ожогах.",
       "suffix": "Десять",
       "types": [
-        "equipment"
+        "medicine"
       ],
       "tags": [
         "CMOintment"
@@ -41635,14 +41635,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "medicine, medical device, treatment kit or surgical instrument",
         "signals": [
-          "component:wearable-equipment"
+          "component:medicine"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Экипировка",
+      "category": "Медицина",
       "public": true,
       "image": "sprites/CMOintment10.png"
     },
@@ -42329,7 +42329,7 @@
       "description": "Содержит таблетки бикаридина. Эффективно лечит грубый урон. После того как вы их вынете, они уже не вставляются обратно. Не принимайте более 2 таблеток за короткий промежуток времени.",
       "suffix": "",
       "types": [
-        "equipment"
+        "medicine"
       ],
       "tags": [
         "PillPacket"
@@ -42399,14 +42399,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "medicine, medical device, treatment kit or surgical instrument",
         "signals": [
-          "component:wearable-equipment"
+          "component:medicine"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Экипировка",
+      "category": "Медицина",
       "public": true,
       "relationships": [
         {
@@ -42433,7 +42433,7 @@
       "description": "Содержит таблетки бикаридина. Эффективно лечит повреждения от ожогов. После того, как вы их вынете, они не вставляются обратно. Не принимайте более 2 таблеток за короткий промежуток времени.",
       "suffix": "",
       "types": [
-        "equipment"
+        "medicine"
       ],
       "tags": [
         "PillPacket"
@@ -42503,14 +42503,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "medicine, medical device, treatment kit or surgical instrument",
         "signals": [
-          "component:wearable-equipment"
+          "component:medicine"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Экипировка",
+      "category": "Медицина",
       "public": true,
       "relationships": [
         {
@@ -43461,7 +43461,7 @@
       "description": "Неизвестная таблетка.",
       "suffix": "",
       "types": [
-        "equipment"
+        "medicine"
       ],
       "tags": [
         "Pill"
@@ -43536,14 +43536,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "medicine, medical device, treatment kit or surgical instrument",
         "signals": [
-          "component:wearable-equipment"
+          "component:medicine"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Экипировка",
+      "category": "Медицина",
       "public": true,
       "solutionStats": {
         "solutions": [
@@ -43568,7 +43568,7 @@
       "description": "Это герметичный контейнер для хранения лекарств.",
       "suffix": "Требуется навык",
       "types": [
-        "equipment"
+        "medicine"
       ],
       "tags": [
         "PillCanister"
@@ -43667,14 +43667,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "medicine, medical device, treatment kit or surgical instrument",
         "signals": [
-          "component:wearable-equipment"
+          "component:medicine"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Экипировка",
+      "category": "Медицина",
       "public": true,
       "storageStats": {
         "gridCells": 32,
@@ -43712,7 +43712,7 @@
       "description": "It's an airtight container for storing medication. It's labeled \"Bicaridine (15u, 2 pill OD) Used to treat brute damage.\"",
       "suffix": "Бикаридин, 16",
       "types": [
-        "equipment"
+        "medicine"
       ],
       "tags": [
         "PillCanister"
@@ -43823,14 +43823,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "medicine, medical device, treatment kit or surgical instrument",
         "signals": [
-          "component:wearable-equipment"
+          "component:medicine"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Экипировка",
+      "category": "Медицина",
       "public": true,
       "relationships": [
         {
@@ -43879,7 +43879,7 @@
       "description": "Это герметичный контейнер для хранения лекарств. На нем написано: \"Дексалин (15 ЕД, максимум 2 таблетки). Используется для лечения кислородного голодания\".",
       "suffix": "Дексалин, 16",
       "types": [
-        "equipment"
+        "medicine"
       ],
       "tags": [
         "PillCanister"
@@ -43989,14 +43989,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "medicine, medical device, treatment kit or surgical instrument",
         "signals": [
-          "component:wearable-equipment"
+          "component:medicine"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Экипировка",
+      "category": "Медицина",
       "public": true,
       "relationships": [
         {
@@ -44045,7 +44045,7 @@
       "description": "Это герметичный контейнер для хранения лекарств. На нем написано: \"Диловен (15 ЕД, максимум 2 таблетки) — антитоксиновый препарат. Он нейтрализует многие распространенные токсины, а также лечит повреждения, вызванные токсинами\".",
       "suffix": "Диловен, 16",
       "types": [
-        "equipment"
+        "medicine"
       ],
       "tags": [
         "PillCanister"
@@ -44155,14 +44155,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "medicine, medical device, treatment kit or surgical instrument",
         "signals": [
-          "component:wearable-equipment"
+          "component:medicine"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Экипировка",
+      "category": "Медицина",
       "public": true,
       "relationships": [
         {
@@ -44211,7 +44211,7 @@
       "description": "It's an airtight container for storing medication. It's labeled \"Inaprovaline (15u, 4 pill OD) Used to stabilize patients.\"",
       "suffix": "Инапровалин, 16",
       "types": [
-        "equipment"
+        "medicine"
       ],
       "tags": [
         "PillCanister"
@@ -44321,14 +44321,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "medicine, medical device, treatment kit or surgical instrument",
         "signals": [
-          "component:wearable-equipment"
+          "component:medicine"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Экипировка",
+      "category": "Медицина",
       "public": true,
       "relationships": [
         {
@@ -44377,7 +44377,7 @@
       "description": "It's an airtight container for storing medication. It's labeled \"Kelotane (15u, 2 pill OD) Used to treat burns.\"",
       "suffix": "Келотан, 16",
       "types": [
-        "equipment"
+        "medicine"
       ],
       "tags": [
         "PillCanister"
@@ -44488,14 +44488,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "medicine, medical device, treatment kit or surgical instrument",
         "signals": [
-          "component:wearable-equipment"
+          "component:medicine"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Экипировка",
+      "category": "Медицина",
       "public": true,
       "relationships": [
         {
@@ -44544,7 +44544,7 @@
       "description": "Неизвестная таблетка.",
       "suffix": "",
       "types": [
-        "equipment"
+        "medicine"
       ],
       "tags": [
         "Pill"
@@ -44619,14 +44619,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "medicine, medical device, treatment kit or surgical instrument",
         "signals": [
-          "component:wearable-equipment"
+          "component:medicine"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Экипировка",
+      "category": "Медицина",
       "public": true,
       "solutionStats": {
         "solutions": [
@@ -44651,7 +44651,7 @@
       "description": "Неизвестная таблетка.",
       "suffix": "",
       "types": [
-        "equipment"
+        "medicine"
       ],
       "tags": [
         "Pill"
@@ -44726,14 +44726,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "medicine, medical device, treatment kit or surgical instrument",
         "signals": [
-          "component:wearable-equipment"
+          "component:medicine"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Экипировка",
+      "category": "Медицина",
       "public": true,
       "solutionStats": {
         "solutions": [
@@ -44758,7 +44758,7 @@
       "description": "Неизвестная таблетка.",
       "suffix": "",
       "types": [
-        "equipment"
+        "medicine"
       ],
       "tags": [
         "Pill"
@@ -44833,14 +44833,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "medicine, medical device, treatment kit or surgical instrument",
         "signals": [
-          "component:wearable-equipment"
+          "component:medicine"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Экипировка",
+      "category": "Медицина",
       "public": true,
       "solutionStats": {
         "solutions": [
@@ -44865,7 +44865,7 @@
       "description": "Неизвестная таблетка.",
       "suffix": "",
       "types": [
-        "equipment"
+        "medicine"
       ],
       "tags": [
         "Pill"
@@ -44940,14 +44940,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "medicine, medical device, treatment kit or surgical instrument",
         "signals": [
-          "component:wearable-equipment"
+          "component:medicine"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Экипировка",
+      "category": "Медицина",
       "public": true,
       "solutionStats": {
         "solutions": [
@@ -44972,7 +44972,7 @@
       "description": "Складная хирургическая кровать. Она не идеальна, но это лучшее, что вы можете получить, не считая настоящего хирургического стола.",
       "suffix": "Сложенный",
       "types": [
-        "equipment"
+        "medicine"
       ],
       "tags": [
         "CMRollerBed",
@@ -45051,14 +45051,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "medicine, medical device, treatment kit or surgical instrument",
         "signals": [
-          "component:wearable-equipment"
+          "component:medicine"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Экипировка",
+      "category": "Медицина",
       "public": true,
       "image": "sprites/CMPortableSurgicalBedSpawnFolded.png"
     },
@@ -45142,7 +45142,7 @@
       "description": "Втягивает предметы.",
       "suffix": "",
       "types": [
-        "equipment"
+        "medicine"
       ],
       "tags": [
         "SurgeryTool"
@@ -45187,14 +45187,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "medicine, medical device, treatment kit or surgical instrument",
         "signals": [
-          "component:wearable-equipment"
+          "component:medicine"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Экипировка",
+      "category": "Медицина",
       "public": true,
       "image": "sprites/CMRetractor.png"
     },
@@ -45205,7 +45205,7 @@
       "description": "Сложенная кровать на роликах, которую можно носить с собой.",
       "suffix": "Сложенный",
       "types": [
-        "equipment"
+        "medicine"
       ],
       "tags": [
         "CMRollerBed",
@@ -45348,14 +45348,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "medicine, medical device, treatment kit or surgical instrument",
         "signals": [
-          "component:wearable-equipment"
+          "component:medicine"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Экипировка",
+      "category": "Медицина",
       "public": true,
       "image": "sprites/CMRollerBedSpawnFolded.png"
     },
@@ -47112,7 +47112,7 @@
       "description": "Крутящий момент промышленного класса в небольшом корпусе отвёртки.",
       "suffix": "",
       "types": [
-        "equipment"
+        "gear"
       ],
       "tags": [
         "Screwdriver"
@@ -47196,14 +47196,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "dedicated hand tool or single-purpose utility item",
         "signals": [
-          "component:wearable-equipment"
+          "component:tool"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Экипировка",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/CMScrewdriver.png"
     },
@@ -49910,7 +49910,7 @@
       "description": "С помощью этого предмета можно сверлить. Вы копаете?",
       "suffix": "",
       "types": [
-        "equipment"
+        "medicine"
       ],
       "tags": [
         "SurgeryTool"
@@ -49967,14 +49967,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "medicine, medical device, treatment kit or surgical instrument",
         "signals": [
-          "component:wearable-equipment"
+          "component:medicine"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Экипировка",
+      "category": "Медицина",
       "public": true,
       "image": "sprites/CMSurgicalDrill.png"
     },
@@ -49985,7 +49985,7 @@
       "description": "Рулон хирургической лески военного класса, способной без труда зашить любую рану. Также используется в качестве прочной лески для морских операций.",
       "suffix": "",
       "types": [
-        "equipment"
+        "medicine"
       ],
       "tags": [
         "CMSurgicalLine"
@@ -50031,14 +50031,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "medicine, medical device, treatment kit or surgical instrument",
         "signals": [
-          "component:wearable-equipment"
+          "component:medicine"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Экипировка",
+      "category": "Медицина",
       "public": true,
       "image": "sprites/CMSurgicalLine.png"
     },
@@ -50049,7 +50049,7 @@
       "description": "Аппликатор для полевых трансплантатов из синтетической кожи. Эта штука воняет, чешется, как черт, болит, а цвет — совершенно усредненный мультиэтнический тон, который не сочетается ни с чьим цветом лица. Но, по крайней мере, вам не придется оставаться в лазарете.",
       "suffix": "",
       "types": [
-        "equipment"
+        "medicine"
       ],
       "tags": [
         "CMSynthGraft"
@@ -50095,14 +50095,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "medicine, medical device, treatment kit or surgical instrument",
         "signals": [
-          "component:wearable-equipment"
+          "component:medicine"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Экипировка",
+      "category": "Медицина",
       "public": true,
       "image": "sprites/CMSynthGraft.png"
     },
@@ -50493,7 +50493,7 @@
       "description": "Травматологический набор для лечения тяжелых травм.",
       "suffix": "Десять",
       "types": [
-        "equipment"
+        "medicine"
       ],
       "tags": [
         "CMTraumaKit"
@@ -50560,14 +50560,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "medicine, medical device, treatment kit or surgical instrument",
         "signals": [
-          "component:wearable-equipment"
+          "component:medicine"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Экипировка",
+      "category": "Медицина",
       "public": true,
       "image": "sprites/CMTraumaKit10.png"
     },
@@ -52163,9 +52163,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated firearm component",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "Gun"
+          "component:projectile-launcher"
         ],
         "categoryId": "weapon",
         "category": "Оружие"
@@ -54303,7 +54303,7 @@
       "description": "Плавит все, что угодно, лишь бы было топливо, не забывайте о защите глаз!",
       "suffix": "",
       "types": [
-        "equipment"
+        "gear"
       ],
       "tags": [],
       "componentTypes": [
@@ -54411,14 +54411,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "dedicated hand tool or single-purpose utility item",
         "signals": [
-          "component:wearable-equipment"
+          "component:tool"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Экипировка",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/CMWelder.png"
     },
@@ -54429,7 +54429,7 @@
       "description": "Компактная ручная сварочная горелка, используемая морскими пехотинцами Колониальной морской пехоты США для резки и сварки в полевых условиях. Из-за небольшого размера и низкой прочности его функции ограничены по сравнению с полноразмерным паяльником техника.",
       "suffix": "",
       "types": [
-        "equipment"
+        "gear"
       ],
       "tags": [],
       "componentTypes": [
@@ -54555,14 +54555,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "dedicated hand tool or single-purpose utility item",
         "signals": [
-          "component:wearable-equipment"
+          "component:tool"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Экипировка",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/CMWelderSmall.png"
     },
@@ -54630,7 +54630,7 @@
       "description": "Это убивает провод.",
       "suffix": "",
       "types": [
-        "equipment"
+        "gear"
       ],
       "tags": [
         "PlantSampleTaker",
@@ -54714,14 +54714,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "dedicated hand tool or single-purpose utility item",
         "signals": [
-          "component:wearable-equipment"
+          "component:tool"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Экипировка",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/CMWirecutter.png"
     },
@@ -54732,7 +54732,7 @@
       "description": "Главный инструмент для откручивания и крепления чего бы то ни было куда-нибудь.",
       "suffix": "",
       "types": [
-        "equipment"
+        "gear"
       ],
       "tags": [
         "Wrench"
@@ -54803,14 +54803,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "dedicated hand tool or single-purpose utility item",
         "signals": [
-          "component:wearable-equipment"
+          "component:tool"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Экипировка",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/CMWrench.png"
     },
@@ -54821,7 +54821,7 @@
       "description": "Специальная граната для уборщиков, выпускающая большое облако пены для чистки помещений.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "HandGrenade"
@@ -54881,14 +54881,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "image": "sprites/CleanerGrenade.png"
     },
@@ -54955,7 +54955,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -55198,7 +55198,7 @@
       "description": "M74 — Боеприпас Воздушного Взрыва — Осколочный. Эта граната должна быть запущена из гранатомета и детонирует по достижении цели. Она рассеивает зазубренную шрапнель конусом перед собой, разрывая сухожилия и броню. Диаграмма рассеивания оптимизирована для поражения крупных целей. Страдает от избыточного пробития при прямом попадании.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "Grenade",
@@ -55291,14 +55291,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "relationships": [
         {
@@ -55319,7 +55319,7 @@
       "description": "M74 — Боеприпас Воздушного Взрыва — Зажигательный. Эта граната должна быть запущена из гранатомета и детонирует по достижении цели. Она рассеивает зазубренную шрапнель конусом перед собой, разрывая сухожилия и броню. Диаграмма рассеивания оптимизирована для поражения крупных целей. Страдает от избыточного пробития при прямом попадании.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "Grenade",
@@ -55412,14 +55412,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "relationships": [
         {
@@ -55440,7 +55440,7 @@
       "description": "M74 — Боеприпас Воздушного Взрыва — Дымовой. Эта граната должна быть запущена из гранатомета и детонирует по достижении цели. При детонации мгновенно смешивает несколько химических веществ внутри своего корпуса, образуя дымовое облако.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "Grenade",
@@ -55533,14 +55533,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "relationships": [
         {
@@ -75892,7 +75892,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -76646,7 +76646,7 @@
       "description": "Родственник резиновой пули M15, РПУВ картечь с резиновой пулей была отозвана из вооруженных сил и гражданской полиции из-за избытка пороха в подкалиберном корпусе. Теперь она используется в качестве несмертельного варианта в столкновениях с людьми, а иногда и с нелюдями. Исторически, РПУВ была невероятно популярна во время Арктурианского конфликта, так как ударная сила, как было установлено, надежно выводила из строя силы арктурианского сопротивления, ломая им ребра и пробивая легкие.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "Grenade",
@@ -76738,14 +76738,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "relationships": [
         {
@@ -78607,7 +78607,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -79894,7 +79894,7 @@
       "description": "Бинокль, выданный военным.",
       "suffix": "Джунгли",
       "types": [
-        "equipment"
+        "gear"
       ],
       "tags": [
         "Binoculars"
@@ -80012,14 +80012,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "advanced field device, weapon support or encryption component",
         "signals": [
-          "component:wearable-equipment"
+          "component:gear"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Экипировка",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/RMCBinoculars.png"
     },
@@ -80659,7 +80659,7 @@
       "description": "A box of bundled .458 SOCOM rounds.",
       "suffix": "Заполненый",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -80775,14 +80775,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "portable ammunition or magazine box",
         "signals": [
-          "component:wearable-equipment"
+          "container:ammunition-box"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "relationships": [
         {
@@ -80889,7 +80889,7 @@
       "description": "A 10x24mm ammunition box. Used to refill M54C MK1, MK2, M4RA and M54CE2 HAR magazines. It comes with a leather strap allowing someone to wear it on their back.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -81017,14 +81017,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "image": "sprites/RMCBoxBulletsRifle.png"
     },
@@ -81035,7 +81035,7 @@
       "description": "Ящик с бронебойными боеприпасами 10x24мм. Используется для пополнения магазинов M41A MK2 и M4RA ББ. Поставляется с кожаным ремешком, позволяющим носить его на спине.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -81137,14 +81137,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "image": "sprites/RMCBoxBulletsRifleAP.png"
     },
@@ -81155,7 +81155,7 @@
       "description": "Ящик для боеприпасов 10x20 мм. Используется для пополнения магазинов M39 и удлиненных магазинов. Поставляется с кожаным ремешком, позволяющим носить его на спине.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -81257,14 +81257,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "image": "sprites/RMCBoxBulletsSMG.png"
     },
@@ -81275,7 +81275,7 @@
       "description": "Ящик для бронебойных боеприпасов 10x20 мм. Используется для пополнения магазинов M39 ББ. В комплекте идет кожаный ремешок, позволяющий носить его на спине.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -81364,14 +81364,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "image": "sprites/RMCBoxBulletsSMGAP.png"
     },
@@ -85891,7 +85891,7 @@
       "description": "Коробка со снарядами в связке.",
       "suffix": "Заполненый",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -86009,14 +86009,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "portable ammunition or magazine box",
         "signals": [
-          "component:wearable-equipment"
+          "container:ammunition-box"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "relationships": [
         {
@@ -86043,7 +86043,7 @@
       "description": "Коробка со снарядами в связке.",
       "suffix": "Заполненый",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -86161,14 +86161,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "portable ammunition or magazine box",
         "signals": [
-          "component:wearable-equipment"
+          "container:ammunition-box"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "relationships": [
         {
@@ -86195,7 +86195,7 @@
       "description": "Коробка со снарядами в связке.",
       "suffix": "Заполненый",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -86313,14 +86313,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "portable ammunition or magazine box",
         "signals": [
-          "component:wearable-equipment"
+          "container:ammunition-box"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "relationships": [
         {
@@ -118129,7 +118129,7 @@
       "description": "Ключ шифрования для радиогарнитуры.",
       "suffix": "",
       "types": [
-        "gear"
+        "other"
       ],
       "tags": [],
       "componentTypes": [
@@ -118185,14 +118185,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "advanced field device, weapon support or encryption component",
+        "reason": "no stronger universal functional rule matched",
         "signals": [
-          "component:gear"
+          "fallback:other"
         ],
-        "categoryId": "gear",
-        "category": "Снаряжение"
+        "categoryId": "other",
+        "category": "Другое"
       },
-      "category": "Снаряжение",
+      "category": "Другое",
       "public": true,
       "communicationStats": {
         "componentTypes": [
@@ -119032,7 +119032,7 @@
       "description": "Ручной аварийный фонарь.",
       "suffix": "",
       "types": [
-        "equipment"
+        "gear"
       ],
       "tags": [
         "Flashlight"
@@ -119137,14 +119137,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "dedicated hand tool or single-purpose utility item",
         "signals": [
-          "component:wearable-equipment"
+          "component:tool"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Экипировка",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/RMCFlashlight.png"
     },
@@ -119155,7 +119155,7 @@
       "description": "Фонарь размером с ручку, используемый медицинским персоналом.",
       "suffix": "",
       "types": [
-        "equipment"
+        "gear"
       ],
       "tags": [
         "RMCPenlight"
@@ -119231,14 +119231,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "dedicated hand tool or single-purpose utility item",
         "signals": [
-          "component:wearable-equipment"
+          "component:tool"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Экипировка",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/RMCFlashlightPen.png"
     },
@@ -119520,7 +119520,7 @@
       "description": "Гарнитура и прицельная система ночного видения для винтовки M4RA Custom Battle Rifle. Позволяет получать четкое изображение окружающей обстановки.",
       "suffix": "",
       "types": [
-        "equipment"
+        "gear"
       ],
       "tags": [
         "CorgiWearable",
@@ -119579,14 +119579,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "advanced field device, weapon support or encryption component",
         "signals": [
-          "component:wearable-equipment"
+          "component:gear"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Экипировка",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/RMCGlassesM4SPRBattleSight.png"
     },
@@ -119752,7 +119752,7 @@
       "description": "Наголовный дисплей, сканирующий находящихся в поле зрения гуманоидов и предоставляющий точные данные об их состоянии здоровья.",
       "suffix": "",
       "types": [
-        "equipment"
+        "gear"
       ],
       "tags": [
         "CorgiWearable",
@@ -119826,14 +119826,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "single-purpose field item",
         "signals": [
-          "component:wearable-equipment"
+          "component:gear"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Экипировка",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/RMCGlassesMedicalHUDGlasses.png"
     },
@@ -119844,7 +119844,7 @@
       "description": "Гарнитура и очки для умного оружия M56.",
       "suffix": "",
       "types": [
-        "equipment"
+        "gear"
       ],
       "tags": [
         "WhitelistChameleon"
@@ -119900,14 +119900,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "advanced field device, weapon support or encryption component",
         "signals": [
-          "component:wearable-equipment"
+          "component:gear"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Экипировка",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/RMCGlassesSmartGunSight.png"
     },
@@ -120056,7 +120056,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -120259,7 +120259,7 @@
       "description": "Взрывная граната, производимая для частных охранных фирм. Взрывается примерно через 3 секунды после выдергивания чеки.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "Grenade"
@@ -120328,14 +120328,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "image": "sprites/RMCGrenadeBlastM12.png"
     },
@@ -120346,7 +120346,7 @@
       "description": "M40 ЗКГ — это небольшая, но обманчиво сильная зажигательная граната, предназначенная для нарушения подвижности противника с помощью напалма типа B длительного действия. Она детонирует через 4 секунды.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "HandGrenade"
@@ -120445,14 +120445,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "image": "sprites/RMCGrenadeIncendiary.png"
     },
@@ -120748,7 +120748,7 @@
       "description": "The 30mm WPDP is a small, but powerful phosphorus grenade. It is set to detonate in 2 seconds.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "HandGrenade"
@@ -120817,14 +120817,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "image": "sprites/RMCGrenadeWhitePhosphorus.png"
     },
@@ -120835,7 +120835,7 @@
       "description": "The 30mm CCDP is a small, but powerful chemical compound grenade, similar in effect to WPDP. Word on the block says that the CCDP doesn't actually release White Phosphorus, but some other chemical developed in We-Ya labs.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "HandGrenade"
@@ -120937,14 +120937,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "image": "sprites/RMCGrenadeWhitePhosphorusCompound.png"
     },
@@ -124587,7 +124587,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -124673,7 +124673,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -124759,7 +124759,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -124846,7 +124846,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -124984,7 +124984,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -125203,7 +125203,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -125386,7 +125386,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -125557,7 +125557,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -125679,7 +125679,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -126192,7 +126192,7 @@
       "description": "Функционирует идентично стандартной БВГ-Ф 40-мм гранате, за исключением того, что вместо взрыва шрапнелью, шрапнель \"Шершень\" выстреливает самонаводящимися голографическими пулями калибра .22lr. Эквивалент картечи на дистанции.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "Grenade",
@@ -126285,14 +126285,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "relationships": [
         {
@@ -126429,7 +126429,7 @@
       "description": "Устройство, обнаруживающее объекты, которые могут быть полезны для сбора информации.",
       "suffix": "",
       "types": [
-        "equipment"
+        "gear"
       ],
       "tags": [
         "RMCDetector"
@@ -126502,14 +126502,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "dedicated hand tool or single-purpose utility item",
         "signals": [
-          "component:wearable-equipment"
+          "component:tool"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Экипировка",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/RMCIntelDetector.png"
     },
@@ -130600,7 +130600,7 @@
       "description": "Лазерный целеуказатель с двумя режимами: маркировка цели для CAS с помощью ИК-лазера и дальномер. Нажмите на плитку, чтобы навести на цель.",
       "suffix": "Джунгли",
       "types": [
-        "equipment"
+        "gear"
       ],
       "tags": [
         "Binoculars"
@@ -130738,14 +130738,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "advanced field device, weapon support or encryption component",
         "signals": [
-          "component:wearable-equipment"
+          "component:gear"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Экипировка",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/RMCLaserDesignator.png"
     },
@@ -130756,7 +130756,7 @@
       "description": "Усовершенствованный лазерный целеуказатель, выдаваемый разведчикам КМП США, с двумя режимами: маркировка цели для CAS с помощью ИК-лазера и дальномер. Нажмите на плитку, чтобы навести на цель.",
       "suffix": "Джунгли",
       "types": [
-        "equipment"
+        "gear"
       ],
       "tags": [
         "Binoculars"
@@ -130813,14 +130813,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "advanced field device, weapon support or encryption component",
         "signals": [
-          "component:wearable-equipment"
+          "component:gear"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Экипировка",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/RMCLaserDesignatorScout.png"
     },
@@ -130831,7 +130831,7 @@
       "description": "Специально разработанный лазерный целеуказатель, выдаваемый споттерам КМП США, с двумя режимами: обозначение цели для CAS с помощью ИК-лазера и дальномер. Нажмите на плитку, чтобы навестись на цель. Кроме того, обученный наводчик может навести на цель стрелка КМП США, увеличивая скорость захвата цели. Луч наведения соединяет бинокль с целью, но он может наследовать маскировку пользователя, если это возможно.",
       "suffix": "Джунгли",
       "types": [
-        "equipment"
+        "gear"
       ],
       "tags": [
         "Binoculars"
@@ -130893,14 +130893,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "advanced field device, weapon support or encryption component",
         "signals": [
-          "component:wearable-equipment"
+          "component:gear"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Экипировка",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/RMCLaserDesignatorSpotter.png"
     },
@@ -133681,7 +133681,7 @@
       "description": "Камера и сопутствующий головной убор, предназначенные для того, чтобы командиры морских пехотинцев могли видеть то, что видят их войска. Более надежная версия этого оборудования интегрирована во все стандартные боевые шлемы КМП США. Можно носить через ухо или на голове.",
       "suffix": "",
       "types": [
-        "equipment"
+        "gear"
       ],
       "tags": [
         "RipOffOnInfection"
@@ -133747,14 +133747,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "advanced field device, weapon support or encryption component",
         "signals": [
-          "component:wearable-equipment"
+          "component:gear"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Экипировка",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/RMCM5CameraGear.png"
     },
@@ -135232,9 +135232,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated firearm component",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "Gun"
+          "component:projectile-launcher"
         ],
         "categoryId": "weapon",
         "category": "Оружие"
@@ -137049,9 +137049,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated firearm component",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "Gun"
+          "component:projectile-launcher"
         ],
         "categoryId": "weapon",
         "category": "Оружие"
@@ -137203,7 +137203,7 @@
       "description": "Короб из 125 безгильзовых вольфрамовых патронов 10x28 мм для крупнокалиберного пулемета M2C.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "RMCMagazineM2C"
@@ -137295,14 +137295,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "compatibleWeaponIds": [
         "RMCMachineGunM2C"
@@ -137326,7 +137326,7 @@
       "description": "Короб из 700 безгильзовых вольфрамовых патронов калибра 10x28 мм для крупнокалиберного пулемета M56D.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "RMCMagazineML66D"
@@ -137418,14 +137418,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "compatibleWeaponIds": [
         "RMCSmartGunMounted"
@@ -137449,7 +137449,7 @@
       "description": "Семь патронов разрушительной мощи калибра 50. Пули покрыты синтетическим сплавом осмия и свинца, чтобы останавливать абсолютно все, в чем бы они ни оказались. Направляйте подальше от всего, что вам дорого.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "CMMagazinePistol",
@@ -137536,14 +137536,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "relationships": [
         {
@@ -137564,7 +137564,7 @@
       "description": "Семь патронов разрушительной мощи калибра 50. Обладают разрушительным ударом. Пули покрыты сплавом осмия и карбида вольфрама, чтобы не только останавливать, но и пробивать броню любой цели. Выдаются в малом количестве из-за огромной стоимости производства и опасений по поводу пробоин в корпусе. Направляйте подальше от всего, что вам дорого.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "CMMagazinePistol",
@@ -137651,14 +137651,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "relationships": [
         {
@@ -137679,7 +137679,7 @@
       "description": "A pistol magazine.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "CMMagazinePistol",
@@ -137800,14 +137800,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "compatibleWeaponIds": [
         "RMCWeaponPistolM13",
@@ -137836,7 +137836,7 @@
       "description": "A pistol magazine.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "CMMagazinePistol",
@@ -137997,14 +137997,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "compatibleWeaponIds": [
         "RMCWeaponPistolM13",
@@ -138033,7 +138033,7 @@
       "description": "Пистолетный магазин. Содержит бронебойные пули, обладающие заметно большей убойной силой по хорошо бронированным целям и заметно меньшей — по небронированным или легкобронированным.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "CMMagazinePistol",
@@ -138197,14 +138197,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "compatibleWeaponIds": [
         "CMWeaponPistolM1984",
@@ -138229,7 +138229,7 @@
       "description": "Пистолетный магазин M4A3 калибра 9 мм с пулями с полой головной частью. Эти пули с полой головной частью обладают заметно большей убойной силой по небронированным целям и заметно меньшей — по бронированным.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "CMMagazinePistol",
@@ -138384,14 +138384,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "compatibleWeaponIds": [
         "CMWeaponPistolM1984",
@@ -138416,7 +138416,7 @@
       "description": "A pistol magazine.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "CMMagazinePistol",
@@ -138576,14 +138576,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "compatibleWeaponIds": [
         "RMCWeaponPistolSU6"
@@ -138607,7 +138607,7 @@
       "description": "Магазин для винтовки M4RA, предназначенный для патронов A19 высокой скорости.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "CMMagazineRifle",
@@ -138690,14 +138690,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "compatibleWeaponIds": [
         "WeaponRifleM4SPRCustom"
@@ -138721,7 +138721,7 @@
       "description": "Магазин для винтовки M4RA, предназначенный для патронов A19 высокой скорости и высокой поражающей способности.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "CMMagazineRifle",
@@ -138808,14 +138808,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "compatibleWeaponIds": [
         "WeaponRifleM4SPRCustom"
@@ -138839,7 +138839,7 @@
       "description": "Магазин с зажигательными патронами A19 для боевой винтовки M4RA.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "CMMagazineRifle",
@@ -138926,14 +138926,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "compatibleWeaponIds": [
         "WeaponRifleM4SPRCustom"
@@ -138957,7 +138957,7 @@
       "description": "Магазин с менее смертоносными резиновыми патронами калибра 10x24 мм для боевой винтовки M41A.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "CMMagazineRifle",
@@ -139046,14 +139046,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "compatibleWeaponIds": [
         "RMCWeaponRifleM54C",
@@ -139082,7 +139082,7 @@
       "description": "Большой магазин крупногабаритных пласталевых гвоздей. К сожалению, стоимость производства этих гвоздей делает их недоступными для большинства военных проектов, и только некоторые специфические строительные проекты требуют их использования.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "CMMagazineSmg",
@@ -139175,14 +139175,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "compatibleWeaponIds": [
         "RMCNailgunTactical"
@@ -139206,7 +139206,7 @@
       "description": "Бочка с 500 безгильзовыми патронами 10x28 мм для часовой пушки US 571-C. Просто вставьте его в патронный порт часовой пушки, когда ее боеприпасы закончатся.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "RMCMagazineSentry"
@@ -139279,14 +139279,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "relationships": [
         {
@@ -139613,7 +139613,7 @@
       "description": "Бочка с 50 патронами для 12-граммовой картечи для US 12-G Shotgun Sentry. Просто вставьте его в патронный порт часового, когда патроны закончатся.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "RMCMagazineSentryShotgun"
@@ -139686,14 +139686,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "relationships": [
         {
@@ -139714,7 +139714,7 @@
       "description": "{ \"\" }",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "RMCMagazineSmartGun"
@@ -139816,14 +139816,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "compatibleWeaponIds": [
         "RMCSmartGunCO",
@@ -139852,7 +139852,7 @@
       "description": "Магазин с безоболочечными патронами 10x99 мм, способными пробить большинство боевых единиц пехоты. В зависимости от того, во что вы попали, энергии может хватить даже на то, чтобы ранить все, что находится за целью.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "CMMagazineSniper",
@@ -139934,14 +139934,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "compatibleWeaponIds": [
         "RMCXM43E1AntiMaterielRifle"
@@ -140021,7 +140021,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -140168,7 +140168,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -140258,7 +140258,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -141430,7 +141430,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -141698,7 +141698,7 @@
       "description": "Устройство, которое обнаруживает движение, но игнорирует пехотинцев.",
       "suffix": "",
       "types": [
-        "equipment"
+        "gear"
       ],
       "tags": [
         "RMCDetector"
@@ -141827,14 +141827,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "dedicated hand tool or single-purpose utility item",
         "signals": [
-          "component:wearable-equipment"
+          "component:tool"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Экипировка",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/RMCMotionDetector.png"
     },
@@ -141937,7 +141937,7 @@
       "description": "Столярный инструмент, используемый для забивания гвоздей в прочные поверхности. Этот гвоздомёт — военного образца, оливкового цвета и тактический. Не может стрелять гвоздями в качестве снаряда.",
       "suffix": "Заполненный",
       "types": [
-        "equipment"
+        "weapon"
       ],
       "tags": [
         "RMCNailgunTactical"
@@ -142032,14 +142032,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "component:wearable-equipment"
+          "component:projectile-launcher"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "weapon",
+        "category": "Оружие"
       },
-      "category": "Экипировка",
+      "category": "Оружие",
       "public": true,
       "magazineSlots": [
         {
@@ -144834,7 +144834,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -145590,7 +145590,7 @@
       "description": "Неизвестная таблетка.",
       "suffix": "",
       "types": [
-        "equipment"
+        "medicine"
       ],
       "tags": [
         "Pill"
@@ -145665,14 +145665,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "medicine, medical device, treatment kit or surgical instrument",
         "signals": [
-          "component:wearable-equipment"
+          "component:medicine"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Экипировка",
+      "category": "Медицина",
       "public": true,
       "solutionStats": {
         "solutions": [
@@ -146797,7 +146797,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -150754,7 +150754,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -152463,7 +152463,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -157198,7 +157198,7 @@
       "description": "Бинокль с функцией дальномера. Нажмите на плитку, чтобы узнать ее координаты.",
       "suffix": "Джунгли",
       "types": [
-        "equipment"
+        "gear"
       ],
       "tags": [
         "Binoculars"
@@ -157333,14 +157333,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "advanced field device, weapon support or encryption component",
         "signals": [
-          "component:wearable-equipment"
+          "component:gear"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Экипировка",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/RMCRangefinder.png"
     },
@@ -158736,7 +158736,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -158899,7 +158899,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -158999,7 +158999,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -159105,7 +159105,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -159212,7 +159212,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "clothing assigned to a real wearable equipment slot",
         "signals": [
           "component:wearable-equipment"
         ],
@@ -160565,7 +160565,7 @@
       "description": "Развертываемая, полуавтоматическая турель с возможностью наведения ИИ. Вооружена автопушкой M30 и барабанным магазином на 500 патронов.",
       "suffix": "",
       "types": [
-        "gear"
+        "weapon"
       ],
       "tags": [
         "RMCSentry"
@@ -160677,14 +160677,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "deployable sentry or automated field support",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "component:sentry"
+          "component:projectile-launcher"
         ],
-        "categoryId": "gear",
-        "category": "Снаряжение"
+        "categoryId": "weapon",
+        "category": "Оружие"
       },
-      "category": "Снаряжение",
+      "category": "Оружие",
       "public": true,
       "weaponStats": {
         "fireModes": [
@@ -160707,7 +160707,7 @@
       "description": "Турель с огнеметом автоматически отслеживает и стреляет по любой цели, носящей идентификатор, не подключенный к системам Алмайер. Как и турель UA 571-C, эта турель имеет систему опознавания \"свой-чужой\", но остаточное пламя — нет.",
       "suffix": "",
       "types": [
-        "gear"
+        "weapon"
       ],
       "tags": [
         "RMCSentry"
@@ -160819,14 +160819,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "deployable sentry or automated field support",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "component:sentry"
+          "component:projectile-launcher"
         ],
-        "categoryId": "gear",
-        "category": "Снаряжение"
+        "categoryId": "weapon",
+        "category": "Оружие"
       },
-      "category": "Снаряжение",
+      "category": "Оружие",
       "public": true,
       "weaponStats": {
         "fireModes": [
@@ -161339,9 +161339,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated firearm component",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "Gun"
+          "component:projectile-launcher"
         ],
         "categoryId": "weapon",
         "category": "Оружие"
@@ -161714,9 +161714,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated firearm component",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "Gun"
+          "component:projectile-launcher"
         ],
         "categoryId": "weapon",
         "category": "Оружие"
@@ -163060,7 +163060,7 @@
       "description": "Функционирует идентично стандартной БВГ-Ф 40-мм гранате, за исключением того, что вместо взрыва шрапнелью, осветительная граната взрывается горящим фосфором, который освещает местность.",
       "suffix": "",
       "types": [
-        "equipment"
+        "ammunition"
       ],
       "tags": [
         "Grenade",
@@ -163153,14 +163153,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "ammunition, grenade or explosive item",
         "signals": [
-          "component:wearable-equipment"
+          "component:ammunition-or-explosive"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "ammunition",
+        "category": "Боезапас"
       },
-      "category": "Экипировка",
+      "category": "Боезапас",
       "public": true,
       "relationships": [
         {
@@ -163181,7 +163181,7 @@
       "description": "Устаревший, но все еще полезный медицинский аппарат для прослушивания звуков человеческого тела. А еще с ним вы выглядите так, будто знаете, что делаете.",
       "suffix": "",
       "types": [
-        "equipment"
+        "medicine"
       ],
       "tags": [],
       "componentTypes": [
@@ -163219,14 +163219,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable clothing, storage or installed uniform accessory",
+        "reason": "medical diagnostic instrument",
         "signals": [
-          "component:wearable-equipment"
+          "component:medicine"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Экипировка",
+      "category": "Медицина",
       "public": true,
       "image": "sprites/RMCStethoscope.png"
     },
@@ -164787,9 +164787,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "deployable sentry or automated field support",
+        "reason": "advanced field device, weapon support or encryption component",
         "signals": [
-          "component:sentry"
+          "component:gear"
         ],
         "categoryId": "gear",
         "category": "Снаряжение"
@@ -166894,9 +166894,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated firearm component",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "Gun"
+          "component:projectile-launcher"
         ],
         "categoryId": "weapon",
         "category": "Оружие"
@@ -167194,9 +167194,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated firearm component",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "Gun"
+          "component:projectile-launcher"
         ],
         "categoryId": "weapon",
         "category": "Оружие"
@@ -167460,9 +167460,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated firearm component",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "Gun"
+          "component:projectile-launcher"
         ],
         "categoryId": "weapon",
         "category": "Оружие"
@@ -167778,9 +167778,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated firearm component",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "Gun"
+          "component:projectile-launcher"
         ],
         "categoryId": "weapon",
         "category": "Оружие"
@@ -168057,9 +168057,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated firearm component",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "Gun"
+          "component:projectile-launcher"
         ],
         "categoryId": "weapon",
         "category": "Оружие"
@@ -168523,9 +168523,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated firearm component",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "Gun"
+          "component:projectile-launcher"
         ],
         "categoryId": "weapon",
         "category": "Оружие"
@@ -169605,9 +169605,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated firearm component",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "Gun"
+          "component:projectile-launcher"
         ],
         "categoryId": "weapon",
         "category": "Оружие"
@@ -170457,9 +170457,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated firearm component",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "Gun"
+          "component:projectile-launcher"
         ],
         "categoryId": "weapon",
         "category": "Оружие"
@@ -171131,9 +171131,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated firearm component",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "Gun"
+          "component:projectile-launcher"
         ],
         "categoryId": "weapon",
         "category": "Оружие"
@@ -171560,9 +171560,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated firearm component",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "Gun"
+          "component:projectile-launcher"
         ],
         "categoryId": "weapon",
         "category": "Оружие"
@@ -172974,9 +172974,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated firearm component",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "Gun"
+          "component:projectile-launcher"
         ],
         "categoryId": "weapon",
         "category": "Оружие"
@@ -173407,9 +173407,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated firearm component",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "Gun"
+          "component:projectile-launcher"
         ],
         "categoryId": "weapon",
         "category": "Оружие"
@@ -174158,9 +174158,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated firearm component",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "Gun"
+          "component:projectile-launcher"
         ],
         "categoryId": "weapon",
         "category": "Оружие"
@@ -174745,9 +174745,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated firearm component",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "Gun"
+          "component:projectile-launcher"
         ],
         "categoryId": "weapon",
         "category": "Оружие"
@@ -175942,9 +175942,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated firearm component",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "Gun"
+          "component:projectile-launcher"
         ],
         "categoryId": "weapon",
         "category": "Оружие"
@@ -179251,9 +179251,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated firearm component",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "Gun"
+          "component:projectile-launcher"
         ],
         "categoryId": "weapon",
         "category": "Оружие"
@@ -181524,9 +181524,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated firearm component",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "Gun"
+          "component:projectile-launcher"
         ],
         "categoryId": "weapon",
         "category": "Оружие"
@@ -183022,9 +183022,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated firearm component",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "Gun"
+          "component:projectile-launcher"
         ],
         "categoryId": "weapon",
         "category": "Оружие"
@@ -183512,9 +183512,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated firearm component",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "Gun"
+          "component:projectile-launcher"
         ],
         "categoryId": "weapon",
         "category": "Оружие"
@@ -184169,9 +184169,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated firearm component",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "Gun"
+          "component:projectile-launcher"
         ],
         "categoryId": "weapon",
         "category": "Оружие"
@@ -184992,9 +184992,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated firearm component",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "Gun"
+          "component:projectile-launcher"
         ],
         "categoryId": "weapon",
         "category": "Оружие"
@@ -185506,9 +185506,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated firearm component",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "Gun"
+          "component:projectile-launcher"
         ],
         "categoryId": "weapon",
         "category": "Оружие"
@@ -186191,9 +186191,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated firearm component",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "Gun"
+          "component:projectile-launcher"
         ],
         "categoryId": "weapon",
         "category": "Оружие"
@@ -186761,9 +186761,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated firearm component",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "Gun"
+          "component:projectile-launcher"
         ],
         "categoryId": "weapon",
         "category": "Оружие"
@@ -187326,9 +187326,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "dedicated firearm component",
+        "reason": "item has a dedicated projectile-launching mechanic",
         "signals": [
-          "Gun"
+          "component:projectile-launcher"
         ],
         "categoryId": "weapon",
         "category": "Оружие"
@@ -188789,6 +188789,8 @@
       "Оружие": [
         "RMCWeaponLauncherM5ATL",
         "RMCWeaponLauncherM6HBrute",
+        "RMCSentryFire",
+        "RMCSentry",
         "RMCWeaponPistolM13",
         "RMCXM43E1AntiMaterielRifle",
         "WeaponRifleM4SPR",
@@ -188817,6 +188819,7 @@
         "RMCSmartGunMounted",
         "RMCWeaponTaser",
         "WeaponShotgunM890",
+        "RMCNailgunTactical",
         "WeaponRifleXM88",
         "RMCWeaponRifleM54CE2",
         "RMCSmartGunCO",
@@ -188829,7 +188832,9 @@
         "CMStunbaton"
       ],
       "Боезапас": [
+        "RMCGrenadeWhitePhosphorusCompound",
         "RMCBoxCCDP",
+        "RMCGrenadeWhitePhosphorus",
         "RMCMortarShellIncendiary",
         "RMCMortarShellHE",
         "RMCRocket84mmAntiArmor",
@@ -188838,17 +188843,28 @@
         "RMCPacketGrenadeWhitePhosphorusCompoundFilled",
         "VehicleFlamerTankLZRN",
         "RMCBoxMagazinePistolM1984HP",
+        "RMCBoxBulletsRifle",
         "RMCPacketGrenadeWhitePhosphorusFilled",
+        "RMCMagazineSniperXM43E1AntiMateriel",
         "RMCCartridgeSniper10x99mmAntiMateriel",
         "RMCTankFlamer",
         "RMCTankFlamerBGel",
+        "RMCMagazineSentry",
+        "RMCMagazineSentryShotgun",
+        "RMCMagazineSmartGun",
         "RMCTankFlamerLarge",
         "RMCTankFlamerLargeX",
         "RMCTankFlamerLargeB",
+        "CMMagazineSMGM63AP",
+        "CMMagazineRifleM54CAP",
+        "CMMagazineRifleM4SPRAP",
+        "RMCMagazinePistolHandcannonHIAP",
         "CMCartridge10x20mmAP",
         "CMCartridgeRifle10x24mmAP",
         "RMCSpeedLoaderMatebaHIAP",
+        "RMCGrenadeBlastM12",
         "RMCExplosiveBreachingCharge",
+        "RMCMagazineRifleM4SPRA19",
         "RMCCartridgeRifleM4SPRA19",
         "RMCCartridge7x45mm",
         "CMShellShotgunBeanbag",
@@ -188856,8 +188872,18 @@
         "CMShellShotgunSlugs",
         "RMCCartridge458SOCOM",
         "CMShellShotgunFlechette",
+        "CMGrenadeHighExplosive",
+        "CMGrenadeFrag",
+        "CMGrenadeSmoke",
+        "RMC40MMGrenadeM74AGMS",
+        "RMCGrenadeIncendiary",
+        "RMC40MMGrenadeM74AGMI",
+        "RMCMagazineRifleM4SPRA19Incendiary",
         "RMCCartridgeRifleM4SPRA19Incendiary",
+        "RMCBatonSlugHIRR",
         "RMCGrenadeSpecEquipmentCase",
+        "RMCMagazineM2C",
+        "RMCMagazineML66D",
         "RMCBox458SOCOM",
         "RMCBoxShotgunBeanbag",
         "RMCPacketGrenadeM74AGMSHornetFilled",
@@ -188868,6 +188894,9 @@
         "RMCPacketGrenadeIncendiaryFilled",
         "CMPacketGrenadeHighExplosiveFilled",
         "CMPacketGrenadeFragFilled",
+        "RMCBoxShellsBuckshot",
+        "RMCBoxShellsSlugs",
+        "RMCBoxShellsFlechette",
         "RMCPacketGrenadeBatonSlugHIRRFilled",
         "RMCBoxMagazinePistolM77AP",
         "RMCBoxMagazinePistolM13",
@@ -188889,13 +188918,36 @@
         "RMCPacketGrenadeM74AGMSStarShellFilled",
         "CMPacketGrenadeFragOldFilled",
         "RMCBoxShotgunBuckshot",
+        "RMCBoxBullets458",
         "RMCBoxShotgunSlugs",
         "RMCBoxMagazineRevolverM44",
         "RMCBoxMagazineRevolverM44Marksman",
         "RMCBoxShotgunFlechette",
+        "CMMagazinePistolM77AP",
         "STMagazineSharpRifleExplosive",
         "STMagazineSharpRifleFlechette",
         "STMagazineSharpRifleIncendiary",
+        "RMCMagazinePistolM13",
+        "CMMagazineSMGM63",
+        "CMMagazineRifleM54C",
+        "CMMagazineRifleM54CMK1",
+        "CMMagazineRifleM54CMK1AP",
+        "CMMagazineRifleM54CE2",
+        "CMMagazineRifleM54CE2HT",
+        "CMMagazinePistolM1984",
+        "RMCMagazinePistolM1984AP",
+        "RMCMagazinePistolM1984HP",
+        "CMMagazineRifleM4SPR",
+        "CMMagazineSniperM96S",
+        "CMMagazineSniperM96SIncendiary",
+        "CMMagazineSniperM96SFlak",
+        "RMCMagazinePistolSU6",
+        "CMMagazinePistolMK80",
+        "RMCMagazineSMGNailgun",
+        "RMCMagazinePistolHandcannonHI",
+        "RMCStarShellM74AGMS",
+        "CMGrenadeFragOld",
+        "RMC40MMGrenadeM74AGMF",
         "RMCCartridgePistolHandcannonHIAP",
         "RMCCartridgePistolHandcannonHI",
         "RMCCartridgeRevolver44Marksman",
@@ -188922,6 +188974,9 @@
         "RMCCartridgeSentry",
         "CMCartridgeSniper10x28mm",
         "RMCRocketM5510Brute",
+        "CMMagazineRifleM54CExt",
+        "CMMagazineRifleM4SPRExt",
+        "RMCMagazineRifleM54CRubber",
         "RMCCartridgeRifle10x24mmRubber",
         "RMCSpeedLoaderMatebaHighImpact",
         "RMCSpeedLoaderM44",
@@ -188931,7 +188986,15 @@
         "RMCMagazineSentryFire",
         "RMCMagazineSentryFireBlue",
         "RMCMagazineSentryFireSmoke",
+        "RMCMagazinePistolM13Ext",
+        "RMCMagazineRifleM4SPRA19Impact",
         "RMCCartridgeRifleM4SPRA19Impact",
+        "CMMagazineSMGM63Ext",
+        "CleanerGrenade",
+        "RMCHornetShellM74AGMS",
+        "RMCBoxBulletsSMGAP",
+        "RMCBoxBulletsSMG",
+        "RMCBoxBulletsRifleAP",
         "VehicleAmmoBoxGrenadeLauncher",
         "RMCBoxHEDP",
         "RMCBoxHEFA",
@@ -189056,8 +189119,6 @@
         "RMCArmorHelmetM3TDemo"
       ],
       "Экипировка": [
-        "RMCGrenadeWhitePhosphorusCompound",
-        "RMCGrenadeWhitePhosphorus",
         "RMCScrubsBrown",
         "CMHeadCapSurgBrown",
         "RMCScrubsCMO",
@@ -189065,7 +189126,6 @@
         "RMCHeadBeretChiefOfficer",
         "CMHeadCapSurgGrey",
         "CMGlassesSecurity",
-        "CMPillCanisterInaprovaline",
         "RMCHeadsetMarine",
         "RMCScrubsBlack",
         "CMHeadCapSurgBlack",
@@ -189073,7 +189133,6 @@
         "RMCPDTBracelet",
         "RMCScrubsPharm",
         "CMHeadCapSurgPharm",
-        "RMCBoxBulletsRifle",
         "RMCWebbingSurgicalGreen",
         "RMCPonchoDesert",
         "RMCPonchoJungle",
@@ -189083,29 +189142,17 @@
         "RMCScrubsWhite",
         "CMHeadCapSurgWhite",
         "RMCGlassesAviators",
-        "CMHealthAnalyzer",
-        "RMCMagazineSniperXM43E1AntiMateriel",
         "CMMaskCoif",
         "RMCMaskBalaclava",
         "RMCGogglesBallistic",
         "RMCGogglesM1A1Ballistic",
         "RMCGogglesPrescriptionBallistic",
-        "CMPillCanisterBicaridine",
-        "CMPillCanisterDexalin",
-        "CMPillCanisterDylovene",
-        "CMPillCanisterKelotane",
-        "CMPillCanister",
-        "RMCMagazineSentry",
-        "RMCMagazineSentryShotgun",
         "CMHeadBeretTan",
         "RMCHeadBeret",
         "RMCHeadBeretQuartermaster",
         "CMHeadBeretCMP",
         "RMCHeadBeretASO",
-        "RMCBinoculars",
         "RMCHelmetGarbNetting",
-        "RMCMagazineSmartGun",
-        "RMCGlassesM4SPRBattleSight",
         "CMHandsBlackMarine",
         "RMCHandsLatexMarine",
         "RMCPouchShotgunLarge",
@@ -189114,40 +189161,17 @@
         "RMCPouchGeneralLarge",
         "RMCPouchMagazinePistolLarge",
         "RMCScoutShoes",
-        "CMMagazineSMGM63AP",
-        "CMMagazineRifleM54CAP",
-        "CMMagazineRifleM4SPRAP",
-        "RMCMagazinePistolHandcannonHIAP",
-        "CMBottleBicaridine",
-        "CMBottleDexalin",
-        "CMBottleDylovene",
-        "CMBottleInaprovaline",
-        "CMBottleKelotane",
-        "RMCGrenadeBlastM12",
         "RMCPouchExplosive",
         "RMCOuterClothingExternalWebbing",
         "CMBeltSecurityMPFilled",
-        "RMCMagazineRifleM4SPRA19",
-        "CMWrench",
         "CMHeadsetCMO",
         "RMCHeadsetShip",
         "CMHeadsetCMP",
         "CMHeadsetCE",
         "CMHeadsetSeniorCommand",
-        "CMHemostat",
         "RMCBackpackBroiler",
-        "CMGrenadeHighExplosive",
-        "CMGrenadeFrag",
         "RMCSatchelGrenadeSpec",
-        "RMCRangefinder",
-        "RMCIntelDetector",
-        "RMCMotionDetector",
         "RMCHelmetGarbRainCover",
-        "CMGrenadeSmoke",
-        "RMC40MMGrenadeM74AGMS",
-        "RMCGrenadeIncendiary",
-        "RMC40MMGrenadeM74AGMI",
-        "RMCMagazineRifleM4SPRA19Incendiary",
         "CMSatchelSecurity",
         "CMHeadCapSurgGreen",
         "CMScrubsGreen",
@@ -189158,8 +189182,6 @@
         "RMCPouchEngineerKit",
         "CMHeadBeretEngineer",
         "RMCHelmetGarbGasmask",
-        "RMCM5CameraGear",
-        "RMCBatonSlugHIRR",
         "RMCHeadCapFlippable",
         "CMHeadCapCargo",
         "CMHeadCapCMO",
@@ -189180,53 +189202,17 @@
         "RMCBackpackRTO",
         "CMWebbingBrown",
         "CMHandsBrown",
-        "RMCMagazineM2C",
-        "RMCMagazineML66D",
-        "RMCBoxShellsBuckshot",
-        "RMCBoxShellsSlugs",
-        "RMCBoxShellsFlechette",
-        "RMCBoxBullets458",
-        "CMBoneGel",
         "RMCQuartermasterJacket",
-        "CMWirecutter",
-        "RMCLaserDesignator",
-        "RMCLaserDesignatorSpotter",
-        "RMCLaserDesignatorScout",
         "CMHandsLatex",
         "CMBackpackMarine",
-        "CMMagazinePistolM77AP",
-        "RMCMagazinePistolM13",
-        "CMMagazineSMGM63",
-        "CMMagazineRifleM54C",
-        "CMMagazineRifleM54CMK1",
-        "CMMagazineRifleM54CMK1AP",
-        "CMMagazineRifleM54CE2",
-        "CMMagazineRifleM54CE2HT",
-        "CMMagazinePistolM1984",
-        "RMCMagazinePistolM1984AP",
-        "RMCMagazinePistolM1984HP",
-        "CMMagazineRifleM4SPR",
-        "CMMagazineSniperM96S",
-        "CMMagazineSniperM96SIncendiary",
-        "CMMagazineSniperM96SFlak",
-        "RMCMagazinePistolSU6",
-        "CMMagazinePistolMK80",
-        "RMCMagazineSMGNailgun",
-        "RMCMagazinePistolHandcannonHI",
-        "CMOintment10",
         "RMCToolWebbingSmallFilled",
         "CMHeadsetMedical",
-        "CMGauze10",
         "CMSatchelMedical",
-        "RMCGlassesMedicalHUDGlasses",
         "RMCPouchMedical",
         "CMMaskGasMedical",
         "CMBackpackMedical",
         "RMCMedicalApron",
-        "CMCrowbar",
         "RMCWebbingLegPouch",
-        "CMBurnKit10",
-        "RMCGlassesSmartGunSight",
         "CMHeadsetResearcher",
         "RMCPatchFallingFalcons",
         "RMCPatchFallingFalconsAlt",
@@ -189240,26 +189226,16 @@
         "RMCScabbardShotgun",
         "RMCPouchBayonetFill",
         "RMCScabbardCeremonialFilled",
-        "CMFireExtinguisher",
         "RMCScrubsOlive",
         "CMJumpsuitOperations",
         "RMCJumpsuitASOOperations",
-        "RMCStarShellM74AGMS",
-        "CMGrenadeFragOld",
-        "RMC40MMGrenadeM74AGMF",
-        "CMScrewdriver",
         "CMJumpsuitBO",
         "CMHeadCapOfficer",
         "RMCGlassesMarineRpg",
-        "CMBloodPackFull",
         "RMCJumpsuitASOFormal",
         "RMCJumpsuitASOFormalAlt",
         "CMJumpsuitXOFormal",
         "RMCParachute",
-        "CMRollerBedSpawnFolded",
-        "CMPortableSurgicalBedSpawnFolded",
-        "CMFireExtinguisherPortable",
-        "RMCFlashlightPen",
         "RMCSunglassesBig",
         "RMCHandsM3G4",
         "RMCBackpackFlamer",
@@ -189302,8 +189278,6 @@
         "CMBeltSmartGunOperatorFilled",
         "RMCBeltConstruction",
         "RMCBeltMachineGunner",
-        "CMCautery",
-        "CMGlassesM42ScoutSight",
         "CMMaskGas",
         "RMCM271A2BruteLauncherRigFilled",
         "CMHeadsetAlpha",
@@ -189341,18 +189315,12 @@
         "RMCM82FHolster",
         "RMCM82FHolsterFilled",
         "RMCSatchelDemoSpec",
-        "CMMagazineRifleM54CExt",
-        "CMMagazineRifleM4SPRExt",
-        "RMCMagazineRifleM54CRubber",
         "RMCMaskRebreather",
-        "CMRetractor",
-        "CMWelderSmall",
         "CMBackpackMortar",
         "CMBackpackMarineMedic",
         "CMBackpackWelder",
         "CMBackpackMarineTech",
         "RMCWeldingGoggles",
-        "CMWelder",
         "RMCScrubsLightBlue",
         "RMCHazardVestYellow",
         "RMCHazardVest",
@@ -189362,15 +189330,12 @@
         "RMCScrubsGrey",
         "RMCHandsGreyMarine",
         "CMScrubsBlue",
-        "CMSynthGraft",
         "CMHeadCapSurgBlue",
-        "CMFoldingBarricadesMB6x3",
         "CMBackpackSniper",
         "RMCM300SOCOMBelt",
         "RMCPouchGeneralMedium",
         "RMCGlassesMarineRpgOld",
         "CMMaskSterile",
-        "RMCStethoscope",
         "RMCBackpackAmmo",
         "RMCPouchConstruction",
         "RMCPouchConstructionFillLowGrade",
@@ -189381,20 +189346,8 @@
         "CMSatchelMarine",
         "CMSatchelMarineMedic",
         "CMSatchelMarineTech",
-        "CMPillBicaridine",
-        "CMPillDexalin",
-        "CMPillDylovene",
-        "CMPillInaprovaline",
-        "CMPillKelotane",
-        "RMCPillRussianRed",
-        "RMCNailgunTactical",
         "RMCMaskTornScarfBlack",
         "RMCBackpackScout",
-        "CMTraumaKit10",
-        "CMMultitool",
-        "RMCMagazinePistolM13Ext",
-        "RMCMagazineRifleM4SPRA19Impact",
-        "CMMagazineSMGM63Ext",
         "CMJumpsuitMarineEngineer",
         "RMCJumpsuitMarineEngineerPatch",
         "RMCJumpsuitDoctor",
@@ -189406,18 +189359,11 @@
         "JumpsuitMarine",
         "RMCJumpsuitMarinePatch",
         "CMJumpsuitWO",
-        "CMPacketPillsBicaridine",
-        "CMPacketPillsKelotane",
         "RMCGogglesBallisticSquad",
-        "CMBonesetter",
         "CMHeadCapSurgPurple",
         "CMScrubsPurple",
-        "RMCFlashlight",
         "CMHeadCapPeakedFormal",
         "RMCHeadCapPeakedASO",
-        "CMSurgicalDrill",
-        "CMSurgicalLine",
-        "CMCircularSaw",
         "CMWebbingBlack",
         "CMBootsBlack",
         "CMBootsBlackFilled",
@@ -189427,7 +189373,6 @@
         "RMCPouchReagentCanisterKelotane",
         "RMCPouchReagentCanisterTricordrazineRevival",
         "RMCPouchReagentCanisterTricordrazine",
-        "CleanerGrenade",
         "RMCWebbingLegPouchBlack",
         "RMCWebbingHolsterBlack",
         "RMCWebbingBlackSmall",
@@ -189435,13 +189380,10 @@
         "RMCJumpsuitASOBlackAlt",
         "CMHandsBlackInsulated",
         "RMCWebbingDropPouchBlack",
-        "RMCHeadCapASO",
-        "RMCHornetShellM74AGMS",
-        "RMCBoxBulletsSMGAP",
-        "RMCBoxBulletsSMG",
-        "RMCBoxBulletsRifleAP"
+        "RMCHeadCapASO"
       ],
       "Медицина": [
+        "CMPillCanisterInaprovaline",
         "CMMiniTank",
         "CMEmergencyAutoInjector",
         "CMBicaridineAutoInjector",
@@ -189451,6 +189393,7 @@
         "CMTricordrazineAutoInjectorNoSkill",
         "CMTricordrazineAutoInjector",
         "CMEpinephrineAutoInjector",
+        "CMHealthAnalyzer",
         "CMFirstAidO2KitFilled",
         "CMBurnAidKitFilled",
         "RMCRadiationAidKitFilled",
@@ -189461,38 +189404,74 @@
         "RMCPressurizedCanisterKelotane",
         "RMCPressurizedCanisterTricordrazineRevival",
         "RMCPressurizedCanisterTricordrazine",
+        "CMPillCanisterBicaridine",
+        "CMPillCanisterDexalin",
+        "CMPillCanisterDylovene",
+        "CMPillCanisterKelotane",
+        "CMPillCanister",
+        "CMBottleBicaridine",
+        "CMBottleDexalin",
+        "CMBottleDylovene",
+        "CMBottleInaprovaline",
+        "CMBottleKelotane",
+        "CMHemostat",
+        "CMDefibrillator",
         "CMIV",
         "RMCBoxLatexGloves",
         "RMCBoxBodyBag",
         "RMCBoxSterileMask",
         "RMCBoxPillCanister",
         "RMCBoxSyringe",
+        "CMBoneGel",
+        "CMOintment10",
         "RMCCPRDummy",
+        "CMGauze10",
         "RMCMedicAutoInjector15",
         "RMCMedicAutoInjectorBicaridine15",
         "RMCMedicAutoInjectorKelotane15",
         "RMCMedicAutoInjectorTricordrazineRevival15",
         "RMCMedicAutoInjectorTricordrazine15",
         "CMBodyBagFolded",
+        "CMBurnKit10",
+        "CMBloodPackFull",
         "RMCSyringeCase",
+        "CMRollerBedSpawnFolded",
+        "CMPortableSurgicalBedSpawnFolded",
         "RMCPortableDialysis",
+        "CMCautery",
         "RMCVial",
         "CMAdvFirstAidKitFilled",
         "RMCThermalTarpFolded",
+        "CMRetractor",
+        "CMSynthGraft",
         "CMStasisBagFolded",
+        "RMCStethoscope",
+        "CMPillBicaridine",
+        "CMPillDexalin",
+        "CMPillDylovene",
+        "CMPillInaprovaline",
+        "CMPillKelotane",
+        "RMCPillRussianRed",
+        "CMTraumaKit10",
+        "CMPacketPillsBicaridine",
+        "CMPacketPillsKelotane",
+        "CMBonesetter",
+        "CMSurgicalDrill",
+        "CMSurgicalLine",
         "RMCSurgicalTray",
         "CMSurgicalCaseFilled",
+        "CMCircularSaw",
         "RMCMedevacStretcherFolded"
       ],
       "Снаряжение": [
         "RMCMortarShellFlare",
         "RMCTentUNMCStandardMedicalFolded",
         "RMCLightReplacer",
-        "RMCSentryFire",
-        "RMCSentry",
         "RMCPowerCellSmartgun",
         "RMCVisorMedical",
         "RMCPowerCell",
+        "RMCBinoculars",
+        "RMCGlassesM4SPRBattleSight",
         "RMCPamphletLoader",
         "CMPamphletEngineer",
         "CMPamphletSpotter",
@@ -189500,48 +189479,51 @@
         "CMPamphletIntel",
         "CMPamphletPowerloader",
         "RMCPowerCellHigh",
-        "CMDefibrillator",
+        "CMWrench",
+        "RMCRangefinder",
+        "RMCIntelDetector",
+        "RMCMotionDetector",
         "CMPamphletJTAC",
+        "RMCM5CameraGear",
         "RMCTesla",
         "RMCSynthResetKey",
-        "CMEncryptionKeyAlpha",
-        "CMEncryptionKeyBravo",
-        "CMEncryptionKeyCMO",
-        "CMEncryptionKeyCMP",
-        "CMEncryptionKeyDelta",
-        "CMEncryptionKeyEngineer",
-        "CMEncryptionKeyResearcher",
-        "CMEncryptionKeySquadLeader",
-        "CMEncryptionKeyMedical",
-        "CMEncryptionKeyRequisition",
-        "CMEncryptionKeyIntel",
-        "CMEncryptionKeyJTAC",
-        "CMEncryptionKeyCE",
-        "RMCEncryptionKeySeniorCommand",
-        "CMEncryptionKeyFoxtrot",
-        "CMEncryptionKeyCharlie",
-        "CMEncryptionKeyEcho",
         "RMCEngineeringUpgrade",
         "RMCBoxMRE",
         "RMCBoxPackFlare",
         "RMCBoxFlashlights",
+        "CMWirecutter",
+        "RMCLaserDesignator",
+        "RMCLaserDesignatorSpotter",
+        "RMCLaserDesignatorScout",
+        "RMCGlassesMedicalHUDGlasses",
         "CMAPCElectronics",
+        "CMCrowbar",
         "RMCEngineerKit",
+        "RMCGlassesSmartGunSight",
         "RMCSentryLaptop",
-        "CMEncryptionKeyCommon",
+        "CMFireExtinguisher",
         "RMCVisorNightVision",
+        "CMScrewdriver",
         "RMCVisorSquad",
         "RMCPowerCellCrap",
+        "CMFireExtinguisherPortable",
+        "RMCFlashlightPen",
         "RMCPouchFlareFilled",
+        "CMGlassesM42ScoutSight",
         "RMCVisorMedicalAdvanced",
+        "CMWelderSmall",
+        "CMWelder",
         "RMCVisorWelding",
         "RMCPowerCellSuper",
         "RMCWhistle",
         "RMCFlareCAS",
+        "CMFoldingBarricadesMB6x3",
         "CMEntrenchingTool",
+        "CMMultitool",
         "CMPackFlare",
         "RMCPackFlareCAS",
         "CMFlare",
+        "RMCFlashlight",
         "RMCFulton20",
         "VehicleAmmoBoxFlareLauncher"
       ],
@@ -189619,6 +189601,23 @@
         "RMCM54CMK1CaseAP",
         "RMCM54CMK2Case",
         "RMCGasTankOxygenFilled",
+        "CMEncryptionKeyAlpha",
+        "CMEncryptionKeyBravo",
+        "CMEncryptionKeyCMO",
+        "CMEncryptionKeyCMP",
+        "CMEncryptionKeyDelta",
+        "CMEncryptionKeyEngineer",
+        "CMEncryptionKeyResearcher",
+        "CMEncryptionKeySquadLeader",
+        "CMEncryptionKeyMedical",
+        "CMEncryptionKeyRequisition",
+        "CMEncryptionKeyIntel",
+        "CMEncryptionKeyJTAC",
+        "CMEncryptionKeyCE",
+        "RMCEncryptionKeySeniorCommand",
+        "CMEncryptionKeyFoxtrot",
+        "CMEncryptionKeyCharlie",
+        "CMEncryptionKeyEcho",
         "BarbedWire15",
         "RMCKitEngineering",
         "RMCKitSpotter",
@@ -189689,6 +189688,7 @@
         "CMVendorBundleCombatTechnicianEssentials",
         "RMCVendorBundleCrewFireteamLeader",
         "RMCVendorBundleMilitaryPoliceApparelCMP",
+        "CMEncryptionKeyCommon",
         "RMCHelmetGarbGunOil",
         "CMStampApproved",
         "CMFortuneCookie",
