@@ -35877,7 +35877,8 @@
                       "falloff": 9999,
                       "ignoreModifiers": true
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 },
                 "aimedShotEffect": {
                   "extraHits": 2
@@ -35921,7 +35922,8 @@
                       "falloff": 9999,
                       "ignoreModifiers": true
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 },
                 "aimedShotEffect": {
                   "extraHits": 1,
@@ -35967,7 +35969,8 @@
                       "falloff": 9999,
                       "ignoreModifiers": true
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 },
                 "aimedShotEffect": {
                   "extraHits": 0,
@@ -52374,6 +52377,21 @@
                 "armorPiercing": 10,
                 "accuracy": {
                   "accuracy": 60
+                },
+                "damageFalloff": {
+                  "thresholds": [
+                    {
+                      "range": 0,
+                      "falloff": 1,
+                      "ignoreModifiers": false
+                    },
+                    {
+                      "range": 22,
+                      "falloff": 9999,
+                      "ignoreModifiers": true
+                    }
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -52395,6 +52413,21 @@
                 "armorPiercing": 40,
                 "accuracy": {
                   "accuracy": 60
+                },
+                "damageFalloff": {
+                  "thresholds": [
+                    {
+                      "range": 0,
+                      "falloff": 1,
+                      "ignoreModifiers": false
+                    },
+                    {
+                      "range": 22,
+                      "falloff": 9999,
+                      "ignoreModifiers": true
+                    }
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -52415,6 +52448,21 @@
                 },
                 "accuracy": {
                   "accuracy": 60
+                },
+                "damageFalloff": {
+                  "thresholds": [
+                    {
+                      "range": 0,
+                      "falloff": 1,
+                      "ignoreModifiers": false
+                    },
+                    {
+                      "range": 22,
+                      "falloff": 9999,
+                      "ignoreModifiers": true
+                    }
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -52859,6 +52907,21 @@
                 "armorPiercing": 10,
                 "accuracy": {
                   "accuracy": 60
+                },
+                "damageFalloff": {
+                  "thresholds": [
+                    {
+                      "range": 0,
+                      "falloff": 1,
+                      "ignoreModifiers": false
+                    },
+                    {
+                      "range": 22,
+                      "falloff": 9999,
+                      "ignoreModifiers": true
+                    }
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -52880,6 +52943,21 @@
                 "armorPiercing": 40,
                 "accuracy": {
                   "accuracy": 60
+                },
+                "damageFalloff": {
+                  "thresholds": [
+                    {
+                      "range": 0,
+                      "falloff": 1,
+                      "ignoreModifiers": false
+                    },
+                    {
+                      "range": 22,
+                      "falloff": 9999,
+                      "ignoreModifiers": true
+                    }
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -52900,6 +52978,21 @@
                 },
                 "accuracy": {
                   "accuracy": 60
+                },
+                "damageFalloff": {
+                  "thresholds": [
+                    {
+                      "range": 0,
+                      "falloff": 1,
+                      "ignoreModifiers": false
+                    },
+                    {
+                      "range": 22,
+                      "falloff": 9999,
+                      "ignoreModifiers": true
+                    }
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -74590,7 +74683,8 @@
                       "range": 0,
                       "falloff": 1
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -135354,7 +135448,8 @@
                       "range": 6,
                       "falloff": 5
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -137096,7 +137191,8 @@
                       "range": 15,
                       "falloff": 9999
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -161432,7 +161528,8 @@
                       "range": 7,
                       "falloff": 4
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -161746,7 +161843,8 @@
                       "range": 22,
                       "falloff": 9999
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -162194,7 +162292,8 @@
                       "range": 7,
                       "falloff": 4
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -168671,7 +168770,8 @@
                       "range": 3,
                       "falloff": 7
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -168714,7 +168814,8 @@
                       "range": 3,
                       "falloff": 7
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -169219,7 +169320,8 @@
                       "range": 3,
                       "falloff": 7
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -169262,7 +169364,8 @@
                       "range": 3,
                       "falloff": 7
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -169707,6 +169810,21 @@
                 "armorPiercing": 40,
                 "accuracy": {
                   "accuracy": 60
+                },
+                "damageFalloff": {
+                  "thresholds": [
+                    {
+                      "range": 0,
+                      "falloff": 1,
+                      "ignoreModifiers": false
+                    },
+                    {
+                      "range": 22,
+                      "falloff": 9999,
+                      "ignoreModifiers": true
+                    }
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -170159,6 +170277,21 @@
                 "armorPiercing": 40,
                 "accuracy": {
                   "accuracy": 60
+                },
+                "damageFalloff": {
+                  "thresholds": [
+                    {
+                      "range": 0,
+                      "falloff": 1,
+                      "ignoreModifiers": false
+                    },
+                    {
+                      "range": 22,
+                      "falloff": 9999,
+                      "ignoreModifiers": true
+                    }
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -171211,6 +171344,21 @@
                 "armorPiercing": 20,
                 "accuracy": {
                   "accuracy": 125
+                },
+                "damageFalloff": {
+                  "thresholds": [
+                    {
+                      "range": 0,
+                      "falloff": 1,
+                      "ignoreModifiers": false
+                    },
+                    {
+                      "range": 22,
+                      "falloff": 9999,
+                      "ignoreModifiers": true
+                    }
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -171647,6 +171795,21 @@
                 "armorPiercing": 5,
                 "accuracy": {
                   "accuracy": 90
+                },
+                "damageFalloff": {
+                  "thresholds": [
+                    {
+                      "range": 0,
+                      "falloff": 1,
+                      "ignoreModifiers": false
+                    },
+                    {
+                      "range": 22,
+                      "falloff": 9999,
+                      "ignoreModifiers": true
+                    }
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -171683,7 +171846,8 @@
                       "falloff": 9999,
                       "ignoreModifiers": true
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -172129,6 +172293,21 @@
                 "armorPiercing": 5,
                 "accuracy": {
                   "accuracy": 90
+                },
+                "damageFalloff": {
+                  "thresholds": [
+                    {
+                      "range": 0,
+                      "falloff": 1,
+                      "ignoreModifiers": false
+                    },
+                    {
+                      "range": 22,
+                      "falloff": 9999,
+                      "ignoreModifiers": true
+                    }
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -172165,7 +172344,8 @@
                       "falloff": 9999,
                       "ignoreModifiers": true
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -172602,6 +172782,21 @@
                 "armorPiercing": 5,
                 "accuracy": {
                   "accuracy": 90
+                },
+                "damageFalloff": {
+                  "thresholds": [
+                    {
+                      "range": 0,
+                      "falloff": 1,
+                      "ignoreModifiers": false
+                    },
+                    {
+                      "range": 22,
+                      "falloff": 9999,
+                      "ignoreModifiers": true
+                    }
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -172638,7 +172833,8 @@
                       "falloff": 9999,
                       "ignoreModifiers": true
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -173009,6 +173205,21 @@
                 "armorPiercing": 35,
                 "accuracy": {
                   "accuracy": 90
+                },
+                "damageFalloff": {
+                  "thresholds": [
+                    {
+                      "range": 0,
+                      "falloff": 1,
+                      "ignoreModifiers": false
+                    },
+                    {
+                      "range": 22,
+                      "falloff": 9999,
+                      "ignoreModifiers": true
+                    }
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -173679,7 +173890,8 @@
                       "range": 7,
                       "falloff": 4
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -173722,7 +173934,8 @@
                       "range": 7,
                       "falloff": 4
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -173765,7 +173978,8 @@
                       "range": 7,
                       "falloff": 4
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -174324,7 +174538,8 @@
                       "range": 7,
                       "falloff": 4
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -174364,7 +174579,8 @@
                       "range": 7,
                       "falloff": 4
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 },
                 "holoTargeting": {
                   "stacksPerHit": 10,
@@ -174916,7 +175132,8 @@
                       "range": 7,
                       "falloff": 4
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -174959,7 +175176,8 @@
                       "range": 7,
                       "falloff": 4
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -175504,7 +175722,8 @@
                       "range": 7,
                       "falloff": 4
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -175547,7 +175766,8 @@
                       "range": 7,
                       "falloff": 4
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -176197,7 +176417,8 @@
                       "range": 7,
                       "falloff": 4
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -176240,7 +176461,8 @@
                       "range": 7,
                       "falloff": 4
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -176283,7 +176505,8 @@
                       "range": 7,
                       "falloff": 4
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -176326,7 +176549,8 @@
                       "range": 7,
                       "falloff": 4
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -176369,7 +176593,8 @@
                       "range": 7,
                       "falloff": 4
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -179298,7 +179523,8 @@
                       "falloff": 9999,
                       "ignoreModifiers": true
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 },
                 "aimedShotEffect": {
                   "extraHits": 0.8
@@ -183648,7 +183874,8 @@
                       "range": 7,
                       "falloff": 4
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -183691,7 +183918,8 @@
                       "range": 7,
                       "falloff": 4
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -183734,7 +183962,8 @@
                       "range": 7,
                       "falloff": 4
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -184343,7 +184572,8 @@
                       "range": 7,
                       "falloff": 4
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -184386,7 +184616,8 @@
                       "range": 7,
                       "falloff": 4
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -184429,7 +184660,8 @@
                       "range": 7,
                       "falloff": 4
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -184473,7 +184705,8 @@
                       "falloff": 9999,
                       "ignoreModifiers": true
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -184517,7 +184750,8 @@
                       "falloff": 9999,
                       "ignoreModifiers": true
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -184561,7 +184795,8 @@
                       "falloff": 9999,
                       "ignoreModifiers": true
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -185044,7 +185279,8 @@
                       "range": 7,
                       "falloff": 1
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -185669,7 +185905,8 @@
                       "range": 4,
                       "falloff": 6
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -185709,7 +185946,8 @@
                       "range": 4,
                       "falloff": 6
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -185749,7 +185987,8 @@
                       "range": 4,
                       "falloff": 6
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -186223,7 +186462,8 @@
                       "range": 0,
                       "falloff": 1
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -186266,7 +186506,8 @@
                       "range": 0,
                       "falloff": 1
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -186303,7 +186544,8 @@
                       "range": 0,
                       "falloff": 1
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -186344,7 +186586,8 @@
                       "range": 0,
                       "falloff": 1
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -186775,7 +187018,8 @@
                       "range": 0,
                       "falloff": 1
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -186818,7 +187062,8 @@
                       "range": 0,
                       "falloff": 1
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -186855,7 +187100,8 @@
                       "range": 0,
                       "falloff": 1
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -186896,7 +187142,8 @@
                       "range": 0,
                       "falloff": 1
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -187349,7 +187596,8 @@
                       "range": 0,
                       "falloff": 1
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -187386,7 +187634,8 @@
                       "range": 0,
                       "falloff": 1
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
@@ -187427,7 +187676,8 @@
                       "range": 0,
                       "falloff": 1
                     }
-                  ]
+                  ],
+                  "minRemainingDamageMult": 0.05
                 }
               }
             ]
