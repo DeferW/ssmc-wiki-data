@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "gameCommit": "d0bfa6b3645f82951647074306dd99339f394fdd",
+  "gameCommit": "024d853a184f956e0c08d876808ea7771a104a04",
   "source": "MetalSage/space-stories-cm14",
   "locale": "ru-RU",
   "sources": {
@@ -53,7 +53,8 @@
             "CMASRSConsole:cargo:0:35:crate",
             "CMASRSConsole:cargo:0:36:crate",
             "CMASRSConsole:cargo:0:37:crate",
-            "CMASRSConsole:cargo:0:38:crate"
+            "CMASRSConsole:cargo:0:38:crate",
+            "CMASRSConsole:cargo:0:39:crate"
           ]
         },
         {
@@ -200,7 +201,8 @@
             "CMASRSConsole:cargo:8:0:crate",
             "CMASRSConsole:cargo:8:1:crate",
             "CMASRSConsole:cargo:8:2:crate",
-            "CMASRSConsole:cargo:8:3:crate"
+            "CMASRSConsole:cargo:8:3:crate",
+            "CMASRSConsole:cargo:8:4:crate"
           ]
         },
         {
@@ -366,7 +368,8 @@
             "ColMarTechCargoAmmo:3:2",
             "ColMarTechCargoAmmo:3:3",
             "ColMarTechCargoAmmo:3:4",
-            "ColMarTechCargoAmmo:3:5"
+            "ColMarTechCargoAmmo:3:5",
+            "ColMarTechCargoAmmo:3:6"
           ]
         },
         {
@@ -413,7 +416,8 @@
             "ColMarTechCargoAmmo:5:19",
             "ColMarTechCargoAmmo:5:20",
             "ColMarTechCargoAmmo:5:21",
-            "ColMarTechCargoAmmo:5:22"
+            "ColMarTechCargoAmmo:5:22",
+            "ColMarTechCargoAmmo:5:23"
           ]
         },
         {
@@ -1304,7 +1308,8 @@
             "ColMarTechFLGear:2:2",
             "ColMarTechFLGear:2:3",
             "ColMarTechFLGear:2:4",
-            "ColMarTechFLGear:2:5"
+            "ColMarTechFLGear:2:5",
+            "ColMarTechFLGear:2:6"
           ]
         },
         {
@@ -1761,7 +1766,8 @@
             "ColMarTechMedicalGear:8:2",
             "ColMarTechMedicalGear:8:3",
             "ColMarTechMedicalGear:8:4",
-            "ColMarTechMedicalGear:8:5"
+            "ColMarTechMedicalGear:8:5",
+            "ColMarTechMedicalGear:8:6"
           ]
         },
         {
@@ -1885,7 +1891,8 @@
           "tradeKeys": [
             "ColMarTechMunitions:2:0",
             "ColMarTechMunitions:2:1",
-            "ColMarTechMunitions:2:2"
+            "ColMarTechMunitions:2:2",
+            "ColMarTechMunitions:2:3"
           ]
         },
         {
@@ -2133,7 +2140,8 @@
             "ColMarTechSCTGear:6:2",
             "ColMarTechSCTGear:6:3",
             "ColMarTechSCTGear:6:4",
-            "ColMarTechSCTGear:6:5"
+            "ColMarTechSCTGear:6:5",
+            "ColMarTechSCTGear:6:6"
           ]
         },
         {
@@ -2363,7 +2371,8 @@
             "ColMarTechSGGear:3:2",
             "ColMarTechSGGear:3:3",
             "ColMarTechSGGear:3:4",
-            "ColMarTechSGGear:3:5"
+            "ColMarTechSGGear:3:5",
+            "ColMarTechSGGear:3:6"
           ]
         },
         {
@@ -2709,7 +2718,8 @@
             "ColMarTechSLGear:10:2",
             "ColMarTechSLGear:10:3",
             "ColMarTechSLGear:10:4",
-            "ColMarTechSLGear:10:5"
+            "ColMarTechSLGear:10:5",
+            "ColMarTechSLGear:10:6"
           ]
         },
         {
@@ -2860,7 +2870,8 @@
             "ColMarTechSWSEquipment:7:2",
             "ColMarTechSWSEquipment:7:3",
             "ColMarTechSWSEquipment:7:4",
-            "ColMarTechSWSEquipment:7:5"
+            "ColMarTechSWSEquipment:7:5",
+            "ColMarTechSWSEquipment:7:6"
           ]
         },
         {
@@ -11579,6 +11590,7 @@
         ],
         "acceptedItemIds": [
           "RMCMortarShellFlare",
+          "RMCMortarShellFrag",
           "RMCMortarShellHE",
           "RMCMortarShellIncendiary"
         ],
@@ -12488,6 +12500,7 @@
           "RMCMagazineSentryShotgun",
           "RMCMagazineSmartGun",
           "RMCMagazineSniperXM43E1AntiMateriel",
+          "RMCSpeedLoader44Heavy",
           "RMCSpeedLoader44Marksman",
           "RMCSpeedLoaderM44",
           "RMCSpeedLoaderMatebaHIAP",
@@ -13893,6 +13906,7 @@
           "CMWeaponPistolM1984Empty",
           "RMCMK80",
           "RMCMortarShellFlare",
+          "RMCMortarShellFrag",
           "RMCMortarShellHE",
           "RMCMortarShellIncendiary",
           "RMCWeaponPistolM13",
@@ -14198,6 +14212,7 @@
           "RMCNailgunTactical",
           "RMCSentry",
           "RMCSentryFire",
+          "RMCSpeedLoader44Heavy",
           "RMCSpeedLoader44Marksman",
           "RMCSpeedLoaderM44",
           "RMCSpeedLoaderMatebaHIAP",
@@ -14209,8 +14224,7 @@
           "RMCWeaponPistolM77",
           "RMCWeaponPistolM77Empty",
           "RMCWeaponPistolM82F",
-          "RMCWeaponPistolM82FEmpty",
-          "RMCWeaponPistolSU6"
+          "RMCWeaponPistolM82FEmpty"
         ],
         "whitelist": {
           "tags": [
@@ -14748,6 +14762,7 @@
           "RMCPowerCellHigh",
           "RMCPowerCellSmartgun",
           "RMCPowerCellSuper",
+          "RMCSpeedLoader44Heavy",
           "RMCSpeedLoader44Marksman",
           "RMCSpeedLoaderM44",
           "RMCSpeedLoaderMatebaHIAP",
@@ -37874,7 +37889,7 @@
           "sourceType": "vendor",
           "sectionKey": "ColMarTechSGGear:3",
           "sectionName": "Боеприпасы К Вторичному Оружиюs",
-          "tradeKey": "ColMarTechSGGear:3:4",
+          "tradeKey": "ColMarTechSGGear:3:5",
           "spawn": 1,
           "points": 5
         },
@@ -37883,7 +37898,7 @@
           "sourceType": "vendor",
           "sectionKey": "ColMarTechSLGear:10",
           "sectionName": "Sidearm Ammunition",
-          "tradeKey": "ColMarTechSLGear:10:4",
+          "tradeKey": "ColMarTechSLGear:10:5",
           "spawn": 1,
           "points": 3
         },
@@ -37892,7 +37907,7 @@
           "sourceType": "vendor",
           "sectionKey": "ColMarTechFLGear:2",
           "sectionName": "Sidearm Ammunition",
-          "tradeKey": "ColMarTechFLGear:2:4",
+          "tradeKey": "ColMarTechFLGear:2:5",
           "spawn": 1,
           "points": 5
         },
@@ -37901,7 +37916,7 @@
           "sourceType": "vendor",
           "sectionKey": "ColMarTechSCTGear:6",
           "sectionName": "Sidearm Ammunition",
-          "tradeKey": "ColMarTechSCTGear:6:4",
+          "tradeKey": "ColMarTechSCTGear:6:5",
           "spawn": 1,
           "points": 3
         },
@@ -37910,7 +37925,7 @@
           "sourceType": "vendor",
           "sectionKey": "ColMarTechMedicalGear:8",
           "sectionName": "Sidearm Ammunition",
-          "tradeKey": "ColMarTechMedicalGear:8:4",
+          "tradeKey": "ColMarTechMedicalGear:8:5",
           "spawn": 1,
           "points": 3
         },
@@ -37919,7 +37934,7 @@
           "sourceType": "vendor",
           "sectionKey": "ColMarTechSWSEquipment:7",
           "sectionName": "Боеприпасы К Вторичному Оружию",
-          "tradeKey": "ColMarTechSWSEquipment:7:4",
+          "tradeKey": "ColMarTechSWSEquipment:7:5",
           "spawn": 1,
           "points": 5
         }
@@ -39108,7 +39123,7 @@
           "sourceType": "vendor",
           "sectionKey": "ColMarTechCargoAmmo:3",
           "sectionName": "Специальные боеприпасы",
-          "tradeKey": "ColMarTechCargoAmmo:3:4",
+          "tradeKey": "ColMarTechCargoAmmo:3:5",
           "amount": 2,
           "spawn": 1
         }
@@ -54207,6 +54222,7 @@
           "RMCMagazinePistolM1984AP",
           "RMCMagazinePistolM1984HP",
           "RMCMagazinePistolSU6",
+          "RMCSpeedLoader44Heavy",
           "RMCSpeedLoader44Marksman",
           "RMCSpeedLoaderM44",
           "RMCSpeedLoaderMatebaHIAP",
@@ -75799,6 +75815,7 @@
           "RMCBoxMagazinePistolMK80",
           "RMCBoxMagazinePistolSU6",
           "RMCBoxMagazineRevolverM44",
+          "RMCBoxMagazineRevolverM44Heavy",
           "RMCBoxMagazineRevolverM44Marksman",
           "RMCBoxMagazineRifleM4SPR",
           "RMCBoxMagazineRifleM4SPRAP",
@@ -78460,6 +78477,7 @@
           }
         ],
         "acceptedItemIds": [
+          "RMCSpeedLoader44Heavy",
           "RMCSpeedLoader44Marksman",
           "RMCSpeedLoaderM44",
           "RMCSpeedLoaderMatebaHIAP",
@@ -79322,6 +79340,7 @@
           "RMCMagazinePistolM1984HP",
           "RMCMagazinePistolSU6",
           "RMCMagazineSmartGun",
+          "RMCSpeedLoader44Heavy",
           "RMCSpeedLoader44Marksman",
           "RMCSpeedLoaderM44",
           "RMCSpeedLoaderMatebaHIAP",
@@ -80108,7 +80127,7 @@
           "sourceType": "vendor",
           "sectionKey": "ColMarTechCargoAmmo:3",
           "sectionName": "Специальные боеприпасы",
-          "tradeKey": "ColMarTechCargoAmmo:3:5",
+          "tradeKey": "ColMarTechCargoAmmo:3:6",
           "amount": 4,
           "spawn": 1
         },
@@ -84127,6 +84146,147 @@
         ]
       },
       "image": "sprites/RMCBoxMagazineRevolverM44.png"
+    },
+    "RMCBoxMagazineRevolverM44Heavy": {
+      "id": "RMCBoxMagazineRevolverM44Heavy",
+      "name": "Коробка спидлоадеров (тяжёлые M44 16x)",
+      "baseName": "Коробка спидлоадеров (тяжёлые M44 16x)",
+      "description": "Коробка для хранения множества спидлоадеров с ручкой для переноски, заряженных тяжёлыми патронами.",
+      "suffix": "Заполненный",
+      "types": [
+        "ammunition"
+      ],
+      "tags": [
+        "RMCAmmoBox"
+      ],
+      "componentTypes": [
+        "Animateable",
+        "Appearance",
+        "CMItemSlots",
+        "Clickable",
+        "CollisionWake",
+        "Construction",
+        "Corrodible",
+        "DamageExaminable",
+        "DamageOnHighSpeedImpact",
+        "DeployableItem",
+        "DestroyedByExplosion",
+        "EmitSoundOnCollide",
+        "EmitSoundOnLand",
+        "Fixtures",
+        "GenericVisualizer",
+        "InteractedBlacklist",
+        "InteractionOutline",
+        "Item",
+        "ItemSlots",
+        "MovedByPressure",
+        "Physics",
+        "Pullable",
+        "RMCItemPickup",
+        "RMCMesonsNonviewable",
+        "RMCUnfoldCardboard",
+        "Sprite",
+        "Tag"
+      ],
+      "equipmentSlots": [],
+      "properties": {
+        "CMItemSlots": {
+          "count": 16,
+          "slot": {
+            "whitelist": {
+              "tags": [
+                "RMCSpeedLoader44Heavy"
+              ]
+            }
+          },
+          "startingItem": "RMCSpeedLoader44Heavy"
+        }
+      },
+      "availability": [
+        {
+          "vendorId": "ColMarTechCargoAmmo",
+          "sourceType": "vendor",
+          "sectionKey": "ColMarTechCargoAmmo:5",
+          "sectionName": "Коробки с магазинами",
+          "tradeKey": "ColMarTechCargoAmmo:5:23",
+          "spawn": 1,
+          "stock": {
+            "itemId": "RMCSpeedLoader44Heavy",
+            "amount": null,
+            "slots": null
+          }
+        }
+      ],
+      "directlyVended": true,
+      "sprite": {
+        "sprite": "_RMC14/Objects/Weapons/Guns/Ammunition/Boxes/modular_boxes.rsi",
+        "layers": [
+          {
+            "state": "pistol_box",
+            "color": "#727e90"
+          },
+          {
+            "state": "pistol_ammo_full",
+            "map": [
+              "enum.CMItemSlotsLayers.Fill"
+            ],
+            "color": "#7866FF"
+          },
+          {
+            "state": "pistol_box_44",
+            "color": "#ffcb26"
+          },
+          {
+            "state": "pistol_box_marking",
+            "color": "#7866FF"
+          },
+          {
+            "state": "pistol_lid",
+            "map": [
+              "lid"
+            ],
+            "color": "#727e90"
+          },
+          {
+            "state": "pistol_lid_marking",
+            "map": [
+              "lid_marking"
+            ],
+            "color": "#7866FF"
+          }
+        ],
+        "state": "pistol_box",
+        "file": "RMCBoxMagazineRevolverM44Heavy.png"
+      },
+      "classification": {
+        "status": "public",
+        "confidence": "high",
+        "reason": "portable ammunition or magazine box",
+        "signals": [
+          "container:ammunition-box"
+        ],
+        "categoryId": "ammunition",
+        "category": "Боезапас"
+      },
+      "category": "Боезапас",
+      "public": true,
+      "relationships": [
+        {
+          "type": "slotItem",
+          "itemId": "RMCSpeedLoader44Heavy",
+          "quantity": 16
+        }
+      ],
+      "containsItemIds": [
+        "RMCSpeedLoader44Heavy"
+      ],
+      "storageStats": {
+        "exactPlaces": 16,
+        "acceptedItemIds": [
+          "RMCSpeedLoader44Heavy"
+        ]
+      },
+      "image": "sprites/RMCBoxMagazineRevolverM44Heavy.png"
     },
     "RMCBoxMagazineRevolverM44Marksman": {
       "id": "RMCBoxMagazineRevolverM44Marksman",
@@ -88593,6 +88753,82 @@
       "public": true,
       "image": "sprites/RMCBulletPistolHandcannonHIAP.png"
     },
+    "RMCBulletRevolver44Heavy": {
+      "id": "RMCBulletRevolver44Heavy",
+      "name": "Тяжёлая пуля (.44)",
+      "baseName": "Тяжёлая пуля (.44)",
+      "description": "Если вы можете видеть это, вы, вероятно, мертвы!",
+      "suffix": "",
+      "types": [
+        "hidden"
+      ],
+      "tags": [],
+      "componentTypes": [
+        "BulletholeGenerator",
+        "CMArmorPiercing",
+        "CauseEmoteOnProjectileHit",
+        "Clickable",
+        "Fixtures",
+        "LagCompensation",
+        "Physics",
+        "Projectile",
+        "RMCApplyBuildupOnHit",
+        "RMCBullet",
+        "RMCKnockdownOnBuildup",
+        "RMCProjectileAccuracy",
+        "RMCProjectileDamageFalloff",
+        "Reflective",
+        "Sprite",
+        "TimedDespawn"
+      ],
+      "equipmentSlots": [],
+      "properties": {
+        "CMArmorPiercing": {
+          "amount": 20
+        },
+        "Projectile": {
+          "impactEffect": "BulletImpactEffect",
+          "damage": {
+            "types": {
+              "Piercing": 35
+            }
+          },
+          "soundHit": {
+            "path": "/Audio/_RMC14/Bullets/bullet_impact1.ogg"
+          }
+        },
+        "RMCProjectileAccuracy": {
+          "accuracy": 100
+        },
+        "RMCProjectileDamageFalloff": {}
+      },
+      "availability": [],
+      "directlyVended": false,
+      "sprite": {
+        "sprite": "_RMC14/Objects/Weapons/Guns/Ammunition/Projectiles/bullet_projectiles.rsi",
+        "layers": [
+          {
+            "state": "bullet",
+            "shader": "unshaded"
+          }
+        ],
+        "state": "bullet",
+        "file": "RMCBulletRevolver44Heavy.png"
+      },
+      "classification": {
+        "status": "public",
+        "confidence": "high",
+        "reason": "runtime helper, projectile or internal item variant",
+        "signals": [
+          "technical:hidden"
+        ],
+        "categoryId": "hidden",
+        "category": "Скрытые"
+      },
+      "category": "Скрытые",
+      "public": true,
+      "image": "sprites/RMCBulletRevolver44Heavy.png"
+    },
     "RMCBulletRevolver44Marksman": {
       "id": "RMCBulletRevolver44Marksman",
       "name": "Пуля (.44 снайперская)",
@@ -90367,6 +90603,94 @@
       ],
       "image": "sprites/RMCCartridgeRevolver44.png"
     },
+    "RMCCartridgeRevolver44Heavy": {
+      "id": "RMCCartridgeRevolver44Heavy",
+      "name": "Тяжёлый патрон (.44)",
+      "baseName": "Тяжёлый патрон (.44)",
+      "description": "{ \"\" }",
+      "suffix": "",
+      "types": [
+        "ammunition"
+      ],
+      "tags": [
+        "Cartridge",
+        "RMCCartridgeRevolver44Heavy"
+      ],
+      "componentTypes": [
+        "Animateable",
+        "Appearance",
+        "CartridgeAmmo",
+        "Clickable",
+        "CollisionWake",
+        "Contraband",
+        "Corrodible",
+        "DamageExaminable",
+        "DamageOnHighSpeedImpact",
+        "Damageable",
+        "DestroyedByExplosion",
+        "Destructible",
+        "EmitSoundOnCollide",
+        "EmitSoundOnLand",
+        "Fixtures",
+        "InteractionOutline",
+        "Item",
+        "MovedByPressure",
+        "Physics",
+        "Pullable",
+        "RMCItemPickup",
+        "RMCMesonsNonviewable",
+        "SpaceGarbage",
+        "SpentAmmoVisuals",
+        "Sprite",
+        "StaticPrice",
+        "Tag"
+      ],
+      "equipmentSlots": [],
+      "properties": {
+        "CartridgeAmmo": {
+          "proto": "RMCBulletRevolver44Heavy",
+          "deleteOnSpawn": true
+        }
+      },
+      "availability": [],
+      "directlyVended": false,
+      "sprite": {
+        "sprite": "Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi",
+        "layers": [
+          {
+            "state": "base",
+            "map": [
+              "enum.AmmoVisualLayers.Base"
+            ]
+          }
+        ],
+        "state": "base",
+        "file": "RMCCartridgeRevolver44Heavy.png"
+      },
+      "classification": {
+        "status": "public",
+        "confidence": "high",
+        "reason": "ammunition, grenade or explosive item",
+        "signals": [
+          "component:ammunition-or-explosive"
+        ],
+        "categoryId": "ammunition",
+        "category": "Боезапас"
+      },
+      "category": "Боезапас",
+      "public": true,
+      "relationships": [
+        {
+          "type": "fires",
+          "itemId": "RMCBulletRevolver44Heavy",
+          "quantity": 1
+        }
+      ],
+      "containsItemIds": [
+        "RMCBulletRevolver44Heavy"
+      ],
+      "image": "sprites/RMCCartridgeRevolver44Heavy.png"
+    },
     "RMCCartridgeRevolver44Marksman": {
       "id": "RMCCartridgeRevolver44Marksman",
       "name": "Патрон (.44 снайперский)",
@@ -90378,7 +90702,7 @@
       ],
       "tags": [
         "Cartridge",
-        "RMCCartridgeRevolver44"
+        "RMCCartridgeRevolver44Marksman"
       ],
       "componentTypes": [
         "Animateable",
@@ -97809,6 +98133,134 @@
       ],
       "image": "sprites/RMCCrateBoxMagazinePistolMK80.png"
     },
+    "RMCCrateBoxMagazineRevolverM44Heavy": {
+      "id": "RMCCrateBoxMagazineRevolverM44Heavy",
+      "name": "Коробка спидлоадеров (M44, 16x, Тяжёлые)",
+      "baseName": "Коробка спидлоадеров (M44, 16x, Тяжёлые)",
+      "description": "Ящик с боеприпасами.",
+      "suffix": "",
+      "types": [
+        "other"
+      ],
+      "tags": [
+        "Structure"
+      ],
+      "componentTypes": [
+        "Anchorable",
+        "AnimationPlayer",
+        "Appearance",
+        "CanBeSupplyDropped",
+        "Clickable",
+        "ContainerContainer",
+        "Corrodible",
+        "CrashLandable",
+        "Damageable",
+        "Destructible",
+        "EntityStorage",
+        "EntityStorageCloseOnMapInit",
+        "EntityStorageVisuals",
+        "Fixtures",
+        "GenericVisualizer",
+        "Icon",
+        "InteractedBlacklist",
+        "InteractionOutline",
+        "ItemSlots",
+        "PaperLabel",
+        "ParaDroppable",
+        "Physics",
+        "PlaceableSurface",
+        "PowerLoaderGrabbable",
+        "Pullable",
+        "RMCCanBeFultoned",
+        "RMCContainerEmptyOnDestruction",
+        "RMCMesonsNonviewable",
+        "RMCWeldEffectSource",
+        "ReceiverXenoClaws",
+        "RequireProjectileTarget",
+        "RequisitionsCrate",
+        "ResistLocker",
+        "Sprite",
+        "StaticPrice",
+        "StorageFill",
+        "Tag",
+        "Transform",
+        "Weldable",
+        "XenoCrusherChargable"
+      ],
+      "equipmentSlots": [],
+      "properties": {},
+      "availability": [
+        {
+          "vendorId": "CMASRSConsole",
+          "sourceType": "cargo",
+          "sectionKey": "CMASRSConsole:cargo:0",
+          "sectionName": "Боеприпасы",
+          "tradeKey": "CMASRSConsole:cargo:0:28:crate",
+          "transportContainer": true,
+          "cost": 4000
+        }
+      ],
+      "directlyVended": true,
+      "sprite": {
+        "sprite": "_RMC14/Structures/Storage/Crates/ammo.rsi",
+        "layers": [
+          {
+            "state": "base",
+            "map": [
+              "enum.StorageVisualLayers.Base"
+            ]
+          },
+          {
+            "state": "closed",
+            "map": [
+              "enum.StorageVisualLayers.Door"
+            ]
+          },
+          {
+            "state": "welded",
+            "visible": false,
+            "map": [
+              "enum.WeldableLayers.BaseWelded"
+            ]
+          },
+          {
+            "state": "invoice",
+            "sprite": "_RMC14/Structures/Storage/Crates/labels.rsi",
+            "visible": false,
+            "map": [
+              "enum.PaperLabelVisuals.Layer"
+            ]
+          }
+        ],
+        "state": "base",
+        "preferClosed": true,
+        "file": "RMCCrateBoxMagazineRevolverM44Heavy.png"
+      },
+      "classification": {
+        "status": "public",
+        "confidence": "high",
+        "reason": "full-sized cargo or map crate",
+        "signals": [
+          "container:shipping-crate"
+        ],
+        "categoryId": "other",
+        "category": "Другое"
+      },
+      "category": "Другое",
+      "public": true,
+      "relationships": [
+        {
+          "type": "contains",
+          "itemId": "RMCBoxMagazineRevolverM44Heavy",
+          "quantity": 1,
+          "position": 0
+        }
+      ],
+      "containsItemIds": [
+        "RMCBoxMagazineRevolverM44Heavy"
+      ],
+      "image": "sprites/RMCCrateBoxMagazineRevolverM44Heavy.png"
+    },
     "RMCCrateBoxMagazineRevolverM44Marksman": {
       "id": "RMCCrateBoxMagazineRevolverM44Marksman",
       "name": "Коробка спидлоадеров (M44, 16x, Марксманские)",
@@ -98895,7 +99347,7 @@
           "sourceType": "cargo",
           "sectionKey": "CMASRSConsole:cargo:0",
           "sectionName": "Боеприпасы",
-          "tradeKey": "CMASRSConsole:cargo:0:28:crate",
+          "tradeKey": "CMASRSConsole:cargo:0:29:crate",
           "transportContainer": true,
           "cost": 4000
         }
@@ -99023,7 +99475,7 @@
           "sourceType": "cargo",
           "sectionKey": "CMASRSConsole:cargo:0",
           "sectionName": "Боеприпасы",
-          "tradeKey": "CMASRSConsole:cargo:0:33:crate",
+          "tradeKey": "CMASRSConsole:cargo:0:34:crate",
           "transportContainer": true,
           "cost": 4000
         }
@@ -99151,7 +99603,7 @@
           "sourceType": "cargo",
           "sectionKey": "CMASRSConsole:cargo:0",
           "sectionName": "Боеприпасы",
-          "tradeKey": "CMASRSConsole:cargo:0:34:crate",
+          "tradeKey": "CMASRSConsole:cargo:0:35:crate",
           "transportContainer": true,
           "cost": 4000
         }
@@ -99279,7 +99731,7 @@
           "sourceType": "cargo",
           "sectionKey": "CMASRSConsole:cargo:0",
           "sectionName": "Боеприпасы",
-          "tradeKey": "CMASRSConsole:cargo:0:35:crate",
+          "tradeKey": "CMASRSConsole:cargo:0:36:crate",
           "transportContainer": true,
           "cost": 4000
         }
@@ -99407,7 +99859,7 @@
           "sourceType": "cargo",
           "sectionKey": "CMASRSConsole:cargo:0",
           "sectionName": "Боеприпасы",
-          "tradeKey": "CMASRSConsole:cargo:0:32:crate",
+          "tradeKey": "CMASRSConsole:cargo:0:33:crate",
           "transportContainer": true,
           "cost": 4000
         }
@@ -108086,7 +108538,7 @@
           "sourceType": "cargo",
           "sectionKey": "CMASRSConsole:cargo:0",
           "sectionName": "Боеприпасы",
-          "tradeKey": "CMASRSConsole:cargo:0:38:crate",
+          "tradeKey": "CMASRSConsole:cargo:0:39:crate",
           "transportContainer": true,
           "cost": 6000
         }
@@ -108202,7 +108654,7 @@
           "sourceType": "cargo",
           "sectionKey": "CMASRSConsole:cargo:0",
           "sectionName": "Боеприпасы",
-          "tradeKey": "CMASRSConsole:cargo:0:30:crate",
+          "tradeKey": "CMASRSConsole:cargo:0:31:crate",
           "transportContainer": true,
           "cost": 4000
         }
@@ -108330,7 +108782,7 @@
           "sourceType": "cargo",
           "sectionKey": "CMASRSConsole:cargo:0",
           "sectionName": "Боеприпасы",
-          "tradeKey": "CMASRSConsole:cargo:0:31:crate",
+          "tradeKey": "CMASRSConsole:cargo:0:32:crate",
           "transportContainer": true,
           "cost": 4000
         }
@@ -108465,7 +108917,7 @@
           "sourceType": "cargo",
           "sectionKey": "CMASRSConsole:cargo:0",
           "sectionName": "Боеприпасы",
-          "tradeKey": "CMASRSConsole:cargo:0:37:crate",
+          "tradeKey": "CMASRSConsole:cargo:0:38:crate",
           "transportContainer": true,
           "cost": 2500
         }
@@ -109645,7 +110097,7 @@
           "sourceType": "cargo",
           "sectionKey": "CMASRSConsole:cargo:0",
           "sectionName": "Боеприпасы",
-          "tradeKey": "CMASRSConsole:cargo:0:36:crate",
+          "tradeKey": "CMASRSConsole:cargo:0:37:crate",
           "transportContainer": true,
           "cost": 2500
         }
@@ -109773,7 +110225,7 @@
           "sourceType": "cargo",
           "sectionKey": "CMASRSConsole:cargo:0",
           "sectionName": "Боеприпасы",
-          "tradeKey": "CMASRSConsole:cargo:0:29:crate",
+          "tradeKey": "CMASRSConsole:cargo:0:30:crate",
           "transportContainer": true,
           "cost": 4000
         }
@@ -111853,6 +112305,134 @@
         "RMCMortarShellFlare"
       ],
       "image": "sprites/RMCCrateMortarShellFlare.png"
+    },
+    "RMCCrateMortarShellFrag": {
+      "id": "RMCCrateMortarShellFrag",
+      "name": "Ящик минометных снарядов M402 (x6 осколочные)",
+      "baseName": "Ящик минометных снарядов M402 (x6 осколочные)",
+      "description": "Ящик, содержащий боевые минометные снаряды с различной боевой нагрузкой. НЕ БРОСАТЬ. ДЕРЖИТЕ ПОДАЛЬШЕ ОТ ИСТОЧНИКОВ ОГНЯ.",
+      "suffix": "",
+      "types": [
+        "other"
+      ],
+      "tags": [
+        "Structure"
+      ],
+      "componentTypes": [
+        "Anchorable",
+        "AnimationPlayer",
+        "Appearance",
+        "CanBeSupplyDropped",
+        "Clickable",
+        "ContainerContainer",
+        "Corrodible",
+        "CrashLandable",
+        "Damageable",
+        "Destructible",
+        "EntityStorage",
+        "EntityStorageCloseOnMapInit",
+        "EntityStorageVisuals",
+        "Fixtures",
+        "GenericVisualizer",
+        "Icon",
+        "InteractedBlacklist",
+        "InteractionOutline",
+        "ItemSlots",
+        "PaperLabel",
+        "ParaDroppable",
+        "Physics",
+        "PlaceableSurface",
+        "PowerLoaderGrabbable",
+        "Pullable",
+        "RMCCanBeFultoned",
+        "RMCContainerEmptyOnDestruction",
+        "RMCMesonsNonviewable",
+        "RMCWeldEffectSource",
+        "ReceiverXenoClaws",
+        "RequireProjectileTarget",
+        "RequisitionsCrate",
+        "ResistLocker",
+        "Sprite",
+        "StaticPrice",
+        "StorageFill",
+        "Tag",
+        "Transform",
+        "Weldable",
+        "XenoCrusherChargable"
+      ],
+      "equipmentSlots": [],
+      "properties": {},
+      "availability": [
+        {
+          "vendorId": "CMASRSConsole",
+          "sourceType": "cargo",
+          "sectionKey": "CMASRSConsole:cargo:8",
+          "sectionName": "Мортира",
+          "tradeKey": "CMASRSConsole:cargo:8:4:crate",
+          "transportContainer": true,
+          "cost": 1000
+        }
+      ],
+      "directlyVended": true,
+      "sprite": {
+        "sprite": "_RMC14/Structures/Storage/Crates/mortar_ammo.rsi",
+        "layers": [
+          {
+            "state": "base",
+            "map": [
+              "enum.StorageVisualLayers.Base"
+            ]
+          },
+          {
+            "state": "closed",
+            "map": [
+              "enum.StorageVisualLayers.Door"
+            ]
+          },
+          {
+            "state": "welded",
+            "visible": false,
+            "map": [
+              "enum.WeldableLayers.BaseWelded"
+            ]
+          },
+          {
+            "state": "invoice",
+            "sprite": "_RMC14/Structures/Storage/Crates/labels.rsi",
+            "visible": false,
+            "map": [
+              "enum.PaperLabelVisuals.Layer"
+            ]
+          }
+        ],
+        "state": "base",
+        "preferClosed": true,
+        "file": "RMCCrateMortarShellFrag.png"
+      },
+      "classification": {
+        "status": "public",
+        "confidence": "high",
+        "reason": "full-sized cargo or map crate",
+        "signals": [
+          "container:shipping-crate"
+        ],
+        "categoryId": "other",
+        "category": "Другое"
+      },
+      "category": "Другое",
+      "public": true,
+      "relationships": [
+        {
+          "type": "contains",
+          "itemId": "RMCMortarShellFrag",
+          "quantity": 6,
+          "position": 0
+        }
+      ],
+      "containsItemIds": [
+        "RMCMortarShellFrag"
+      ],
+      "image": "sprites/RMCCrateMortarShellFrag.png"
     },
     "RMCCrateMortarShellHE": {
       "id": "RMCCrateMortarShellHE",
@@ -118485,6 +119065,7 @@
         "Animateable",
         "Appearance",
         "Clickable",
+        "ClusterLimitHits",
         "CollisionWake",
         "Corrodible",
         "DamageExaminable",
@@ -118492,7 +119073,6 @@
         "DestroyedByExplosion",
         "EmitSoundOnCollide",
         "EmitSoundOnLand",
-        "ExplodeOnTrigger",
         "Explosive",
         "Fixtures",
         "GenericVisualizer",
@@ -118500,7 +119080,9 @@
         "Item",
         "MovedByPressure",
         "Physics",
+        "ProjectileGrenade",
         "Pullable",
+        "RMCBreachingCharge",
         "RMCExplosiveDelete",
         "RMCItemPickup",
         "RMCMesonsNonviewable",
@@ -118696,6 +119278,7 @@
         "Animateable",
         "Appearance",
         "Clickable",
+        "ClusterLimitHits",
         "CollisionWake",
         "Corrodible",
         "DamageExaminable",
@@ -118711,10 +119294,13 @@
         "Item",
         "MovedByPressure",
         "Physics",
+        "ProjectileGrenade",
         "Pullable",
+        "RMCBreachingCharge",
         "RMCExplosiveDelete",
         "RMCItemPickup",
         "RMCMesonsNonviewable",
+        "RemoveComponents",
         "RequiresSkill",
         "Sprite",
         "Sticky",
@@ -132829,6 +133415,7 @@
           }
         ],
         "acceptedItemIds": [
+          "RMCSpeedLoader44Heavy",
           "RMCSpeedLoader44Marksman",
           "RMCSpeedLoaderM44",
           "RMCSpeedLoaderMatebaHIAP",
@@ -138115,7 +138702,7 @@
           "sourceType": "vendor",
           "sectionKey": "ColMarTechMunitions:2",
           "sectionName": "Special Ammunition",
-          "tradeKey": "ColMarTechMunitions:2:2",
+          "tradeKey": "ColMarTechMunitions:2:3",
           "amount": 2,
           "spawn": 1
         },
@@ -138124,7 +138711,7 @@
           "sourceType": "vendor",
           "sectionKey": "ColMarTechSGGear:3",
           "sectionName": "Боеприпасы К Вторичному Оружиюs",
-          "tradeKey": "ColMarTechSGGear:3:3",
+          "tradeKey": "ColMarTechSGGear:3:4",
           "spawn": 1,
           "points": 5
         },
@@ -138133,7 +138720,7 @@
           "sourceType": "vendor",
           "sectionKey": "ColMarTechSLGear:10",
           "sectionName": "Sidearm Ammunition",
-          "tradeKey": "ColMarTechSLGear:10:3",
+          "tradeKey": "ColMarTechSLGear:10:4",
           "spawn": 1,
           "points": 3
         },
@@ -138142,7 +138729,7 @@
           "sourceType": "vendor",
           "sectionKey": "ColMarTechFLGear:2",
           "sectionName": "Sidearm Ammunition",
-          "tradeKey": "ColMarTechFLGear:2:3",
+          "tradeKey": "ColMarTechFLGear:2:4",
           "spawn": 1,
           "points": 5
         },
@@ -138151,7 +138738,7 @@
           "sourceType": "vendor",
           "sectionKey": "ColMarTechSCTGear:6",
           "sectionName": "Sidearm Ammunition",
-          "tradeKey": "ColMarTechSCTGear:6:3",
+          "tradeKey": "ColMarTechSCTGear:6:4",
           "spawn": 1,
           "points": 3
         },
@@ -138160,7 +138747,7 @@
           "sourceType": "vendor",
           "sectionKey": "ColMarTechMedicalGear:8",
           "sectionName": "Sidearm Ammunition",
-          "tradeKey": "ColMarTechMedicalGear:8:3",
+          "tradeKey": "ColMarTechMedicalGear:8:4",
           "spawn": 1,
           "points": 3
         },
@@ -138169,7 +138756,7 @@
           "sourceType": "vendor",
           "sectionKey": "ColMarTechSWSEquipment:7",
           "sectionName": "Боеприпасы К Вторичному Оружию",
-          "tradeKey": "ColMarTechSWSEquipment:7:3",
+          "tradeKey": "ColMarTechSWSEquipment:7:4",
           "spawn": 1,
           "points": 5
         }
@@ -138288,7 +138875,7 @@
           "sourceType": "vendor",
           "sectionKey": "ColMarTechCargoAmmo:3",
           "sectionName": "Специальные боеприпасы",
-          "tradeKey": "ColMarTechCargoAmmo:3:3",
+          "tradeKey": "ColMarTechCargoAmmo:3:4",
           "amount": 2,
           "spawn": 1
         },
@@ -138311,7 +138898,7 @@
           "sourceType": "vendor",
           "sectionKey": "ColMarTechSGGear:3",
           "sectionName": "Боеприпасы К Вторичному Оружиюs",
-          "tradeKey": "ColMarTechSGGear:3:2",
+          "tradeKey": "ColMarTechSGGear:3:3",
           "spawn": 1,
           "points": 5
         },
@@ -138320,7 +138907,7 @@
           "sourceType": "vendor",
           "sectionKey": "ColMarTechSLGear:10",
           "sectionName": "Sidearm Ammunition",
-          "tradeKey": "ColMarTechSLGear:10:2",
+          "tradeKey": "ColMarTechSLGear:10:3",
           "spawn": 1,
           "points": 3
         },
@@ -138329,7 +138916,7 @@
           "sourceType": "vendor",
           "sectionKey": "ColMarTechFLGear:2",
           "sectionName": "Sidearm Ammunition",
-          "tradeKey": "ColMarTechFLGear:2:2",
+          "tradeKey": "ColMarTechFLGear:2:3",
           "spawn": 1,
           "points": 5
         },
@@ -138338,7 +138925,7 @@
           "sourceType": "vendor",
           "sectionKey": "ColMarTechSCTGear:6",
           "sectionName": "Sidearm Ammunition",
-          "tradeKey": "ColMarTechSCTGear:6:2",
+          "tradeKey": "ColMarTechSCTGear:6:3",
           "spawn": 1,
           "points": 3
         },
@@ -138347,7 +138934,7 @@
           "sourceType": "vendor",
           "sectionKey": "ColMarTechMedicalGear:8",
           "sectionName": "Sidearm Ammunition",
-          "tradeKey": "ColMarTechMedicalGear:8:2",
+          "tradeKey": "ColMarTechMedicalGear:8:3",
           "spawn": 1,
           "points": 3
         },
@@ -138356,7 +138943,7 @@
           "sourceType": "vendor",
           "sectionKey": "ColMarTechSWSEquipment:7",
           "sectionName": "Боеприпасы К Вторичному Оружию",
-          "tradeKey": "ColMarTechSWSEquipment:7:2",
+          "tradeKey": "ColMarTechSWSEquipment:7:3",
           "spawn": 1,
           "points": 5
         }
@@ -138507,7 +139094,7 @@
           "sourceType": "vendor",
           "sectionKey": "ColMarTechSGGear:3",
           "sectionName": "Боеприпасы К Вторичному Оружиюs",
-          "tradeKey": "ColMarTechSGGear:3:5",
+          "tradeKey": "ColMarTechSGGear:3:6",
           "spawn": 1,
           "points": 10
         },
@@ -138516,7 +139103,7 @@
           "sourceType": "vendor",
           "sectionKey": "ColMarTechSLGear:10",
           "sectionName": "Sidearm Ammunition",
-          "tradeKey": "ColMarTechSLGear:10:5",
+          "tradeKey": "ColMarTechSLGear:10:6",
           "spawn": 1,
           "points": 6
         },
@@ -138525,7 +139112,7 @@
           "sourceType": "vendor",
           "sectionKey": "ColMarTechFLGear:2",
           "sectionName": "Sidearm Ammunition",
-          "tradeKey": "ColMarTechFLGear:2:5",
+          "tradeKey": "ColMarTechFLGear:2:6",
           "spawn": 1,
           "points": 10
         },
@@ -138534,7 +139121,7 @@
           "sourceType": "vendor",
           "sectionKey": "ColMarTechSCTGear:6",
           "sectionName": "Sidearm Ammunition",
-          "tradeKey": "ColMarTechSCTGear:6:5",
+          "tradeKey": "ColMarTechSCTGear:6:6",
           "spawn": 1,
           "points": 6
         },
@@ -138543,7 +139130,7 @@
           "sourceType": "vendor",
           "sectionKey": "ColMarTechMedicalGear:8",
           "sectionName": "Sidearm Ammunition",
-          "tradeKey": "ColMarTechMedicalGear:8:5",
+          "tradeKey": "ColMarTechMedicalGear:8:6",
           "spawn": 1,
           "points": 6
         },
@@ -138552,7 +139139,7 @@
           "sourceType": "vendor",
           "sectionKey": "ColMarTechSWSEquipment:7",
           "sectionName": "Боеприпасы К Вторичному Оружию",
-          "tradeKey": "ColMarTechSWSEquipment:7:5",
+          "tradeKey": "ColMarTechSWSEquipment:7:6",
           "spawn": 1,
           "points": 10
         }
@@ -141579,6 +142166,66 @@
       "category": "Боезапас",
       "public": true,
       "image": "sprites/RMCMortarShellFlare.png"
+    },
+    "RMCMortarShellFrag": {
+      "id": "RMCMortarShellFrag",
+      "name": "80-мм осколочный минометный снаряд",
+      "baseName": "80-мм осколочный минометный снаряд",
+      "description": "80-мм минометная мина, заряженная осколочным зарядом.",
+      "suffix": "",
+      "types": [
+        "ammunition"
+      ],
+      "tags": [],
+      "componentTypes": [
+        "Animateable",
+        "CMExplosionEffect",
+        "Clickable",
+        "CollisionWake",
+        "ContainerContainer",
+        "Corrodible",
+        "DamageExaminable",
+        "DamageOnHighSpeedImpact",
+        "DestroyedByExplosion",
+        "EmitSoundOnCollide",
+        "EmitSoundOnLand",
+        "Explosive",
+        "Fixtures",
+        "GuideHelp",
+        "InteractionOutline",
+        "Item",
+        "MortarShell",
+        "MovedByPressure",
+        "Physics",
+        "ProjectileGrenade",
+        "Pullable",
+        "RMCItemPickup",
+        "RMCMesonsNonviewable",
+        "RMCScorchEffect",
+        "Sprite"
+      ],
+      "equipmentSlots": [],
+      "properties": {},
+      "availability": [],
+      "directlyVended": false,
+      "sprite": {
+        "sprite": "_RMC14/Objects/Weapons/mortar.rsi",
+        "state": "mortar_ammo_frag",
+        "file": "RMCMortarShellFrag.png"
+      },
+      "classification": {
+        "status": "public",
+        "confidence": "high",
+        "reason": "ammunition, grenade or explosive item",
+        "signals": [
+          "component:ammunition-or-explosive"
+        ],
+        "categoryId": "ammunition",
+        "category": "Боезапас"
+      },
+      "category": "Боезапас",
+      "public": true,
+      "image": "sprites/RMCMortarShellFrag.png"
     },
     "RMCMortarShellHE": {
       "id": "RMCMortarShellHE",
@@ -151013,6 +151660,7 @@
           "RMCMagazineRifleM54CRubber",
           "RMCMagazineSMGNailgun",
           "RMCMagazineSniperXM43E1AntiMateriel",
+          "RMCSpeedLoader44Heavy",
           "RMCSpeedLoader44Marksman",
           "RMCSpeedLoaderM44",
           "RMCSpeedLoaderMatebaHIAP",
@@ -151225,6 +151873,7 @@
           "RMCMagazineRifleM54CRubber",
           "RMCMagazineSMGNailgun",
           "RMCMagazineSniperXM43E1AntiMateriel",
+          "RMCSpeedLoader44Heavy",
           "RMCSpeedLoader44Marksman",
           "RMCSpeedLoaderM44",
           "RMCSpeedLoaderMatebaHIAP",
@@ -151394,6 +152043,7 @@
           "RMCMagazinePistolM1984AP",
           "RMCMagazinePistolM1984HP",
           "RMCMagazinePistolSU6",
+          "RMCSpeedLoader44Heavy",
           "RMCSpeedLoader44Marksman",
           "RMCSpeedLoaderM44",
           "RMCSpeedLoaderMatebaHIAP",
@@ -151616,6 +152266,7 @@
           "RMCMagazinePistolM1984AP",
           "RMCMagazinePistolM1984HP",
           "RMCMagazinePistolSU6",
+          "RMCSpeedLoader44Heavy",
           "RMCSpeedLoader44Marksman",
           "RMCSpeedLoaderM44",
           "RMCSpeedLoaderMatebaHIAP",
@@ -162307,18 +162958,18 @@
       },
       "image": "sprites/RMCSmartGunUNMC.png"
     },
-    "RMCSpeedLoader44Marksman": {
-      "id": "RMCSpeedLoader44Marksman",
-      "name": "Спидлоадер M44 снайперский (.44)",
-      "baseName": "Спидлоадер M44 снайперский (.44)",
-      "description": "Скорострельный магазин для револьвера, заполненный патронами для снайперской стрельбы.",
+    "RMCSpeedLoader44Heavy": {
+      "id": "RMCSpeedLoader44Heavy",
+      "name": "Тяжёлый спидлоадер M44 (.44)",
+      "baseName": "Тяжёлый спидлоадер M44 (.44)",
+      "description": "7-зарядный спидлоадер для револьвера с тяжёлыми пулями. Они наносят меньше урона, чем обычные патроны .44, но обладают более высоким останавливающим действием.",
       "suffix": "",
       "types": [
         "ammunition"
       ],
       "tags": [
         "RMCMagazineRevolver",
-        "RMCSpeedLoader44Marksman"
+        "RMCSpeedLoader44Heavy"
       ],
       "componentTypes": [
         "Animateable",
@@ -162351,11 +163002,11 @@
         "BallisticAmmoProvider": {
           "whitelist": {
             "tags": [
-              "RMCCartridgeRevolver44"
+              "RMCCartridgeRevolver44Heavy"
             ]
           },
           "capacity": 7,
-          "proto": "RMCCartridgeRevolver44Marksman"
+          "proto": "RMCCartridgeRevolver44Heavy"
         }
       },
       "availability": [
@@ -162365,7 +163016,7 @@
           "sectionKey": "ColMarTechCargoAmmo:3",
           "sectionName": "Специальные боеприпасы",
           "tradeKey": "ColMarTechCargoAmmo:3:2",
-          "amount": 16,
+          "amount": 10,
           "spawn": 1
         },
         {
@@ -162373,14 +163024,14 @@
           "sourceType": "vendor",
           "sectionKey": "ColMarTechCargoAmmo:5",
           "sectionName": "Коробки с магазинами",
-          "tradeKey": "ColMarTechCargoAmmo:5:22",
+          "tradeKey": "ColMarTechCargoAmmo:5:23",
           "spawn": 1,
           "stock": {
-            "itemId": "RMCSpeedLoader44Marksman",
+            "itemId": "RMCSpeedLoader44Heavy",
             "amount": null,
             "slots": null
           },
-          "stockForItemId": "RMCBoxMagazineRevolverM44Marksman"
+          "stockForItemId": "RMCBoxMagazineRevolverM44Heavy"
         },
         {
           "vendorId": "ColMarTechMunitions",
@@ -162442,6 +163093,197 @@
           "sectionKey": "ColMarTechSWSEquipment:7",
           "sectionName": "Боеприпасы К Вторичному Оружию",
           "tradeKey": "ColMarTechSWSEquipment:7:1",
+          "spawn": 1,
+          "points": 10
+        }
+      ],
+      "directlyVended": true,
+      "sprite": {
+        "sprite": "_RMC14/Objects/Weapons/Guns/Ammunition/SpeedLoaders/m44.rsi",
+        "layers": [
+          {
+            "state": "base",
+            "map": [
+              "enum.GunVisualLayers.Base"
+            ]
+          },
+          {
+            "state": "base-5",
+            "map": [
+              "enum.GunVisualLayers.Mag"
+            ],
+            "visible": true
+          },
+          {
+            "state": "base-unshaded-5",
+            "color": "#7866FF",
+            "map": [
+              "enum.GunVisualLayers.MagUnshaded"
+            ]
+          }
+        ],
+        "state": "base",
+        "file": "RMCSpeedLoader44Heavy.png"
+      },
+      "classification": {
+        "status": "public",
+        "confidence": "high",
+        "reason": "ammunition, grenade or explosive item",
+        "signals": [
+          "component:ammunition-or-explosive"
+        ],
+        "categoryId": "ammunition",
+        "category": "Боезапас"
+      },
+      "category": "Боезапас",
+      "public": true,
+      "relationships": [
+        {
+          "type": "loadedWith",
+          "itemId": "RMCCartridgeRevolver44Heavy",
+          "quantity": 7
+        }
+      ],
+      "containsItemIds": [
+        "RMCCartridgeRevolver44Heavy"
+      ],
+      "image": "sprites/RMCSpeedLoader44Heavy.png"
+    },
+    "RMCSpeedLoader44Marksman": {
+      "id": "RMCSpeedLoader44Marksman",
+      "name": "Спидлоадер M44 снайперский (.44)",
+      "baseName": "Спидлоадер M44 снайперский (.44)",
+      "description": "Скорострельный магазин для револьвера, заполненный патронами для снайперской стрельбы.",
+      "suffix": "",
+      "types": [
+        "ammunition"
+      ],
+      "tags": [
+        "RMCMagazineRevolver",
+        "RMCSpeedLoader44Marksman"
+      ],
+      "componentTypes": [
+        "Animateable",
+        "Appearance",
+        "BallisticAmmoProvider",
+        "Clickable",
+        "CollisionWake",
+        "ContainerContainer",
+        "Corrodible",
+        "DamageExaminable",
+        "DamageOnHighSpeedImpact",
+        "DestroyedByExplosion",
+        "EmitSoundOnCollide",
+        "EmitSoundOnLand",
+        "Fixtures",
+        "InteractionOutline",
+        "Item",
+        "MagazineVisuals",
+        "MovedByPressure",
+        "Physics",
+        "Pullable",
+        "RMCItemPickup",
+        "RMCMesonsNonviewable",
+        "SpeedLoader",
+        "Sprite",
+        "Tag"
+      ],
+      "equipmentSlots": [],
+      "properties": {
+        "BallisticAmmoProvider": {
+          "whitelist": {
+            "tags": [
+              "RMCCartridgeRevolver44Marksman"
+            ]
+          },
+          "capacity": 7,
+          "proto": "RMCCartridgeRevolver44Marksman"
+        }
+      },
+      "availability": [
+        {
+          "vendorId": "ColMarTechCargoAmmo",
+          "sourceType": "vendor",
+          "sectionKey": "ColMarTechCargoAmmo:3",
+          "sectionName": "Специальные боеприпасы",
+          "tradeKey": "ColMarTechCargoAmmo:3:3",
+          "amount": 6,
+          "spawn": 1
+        },
+        {
+          "vendorId": "ColMarTechCargoAmmo",
+          "sourceType": "vendor",
+          "sectionKey": "ColMarTechCargoAmmo:5",
+          "sectionName": "Коробки с магазинами",
+          "tradeKey": "ColMarTechCargoAmmo:5:22",
+          "spawn": 1,
+          "stock": {
+            "itemId": "RMCSpeedLoader44Marksman",
+            "amount": null,
+            "slots": null
+          },
+          "stockForItemId": "RMCBoxMagazineRevolverM44Marksman"
+        },
+        {
+          "vendorId": "ColMarTechMunitions",
+          "sourceType": "vendor",
+          "sectionKey": "ColMarTechMunitions:2",
+          "sectionName": "Special Ammunition",
+          "tradeKey": "ColMarTechMunitions:2:2",
+          "amount": 2,
+          "spawn": 1
+        },
+        {
+          "vendorId": "ColMarTechSGGear",
+          "sourceType": "vendor",
+          "sectionKey": "ColMarTechSGGear:3",
+          "sectionName": "Боеприпасы К Вторичному Оружиюs",
+          "tradeKey": "ColMarTechSGGear:3:2",
+          "spawn": 1,
+          "points": 10
+        },
+        {
+          "vendorId": "ColMarTechSLGear",
+          "sourceType": "vendor",
+          "sectionKey": "ColMarTechSLGear:10",
+          "sectionName": "Sidearm Ammunition",
+          "tradeKey": "ColMarTechSLGear:10:2",
+          "spawn": 1,
+          "points": 6
+        },
+        {
+          "vendorId": "ColMarTechFLGear",
+          "sourceType": "vendor",
+          "sectionKey": "ColMarTechFLGear:2",
+          "sectionName": "Sidearm Ammunition",
+          "tradeKey": "ColMarTechFLGear:2:2",
+          "spawn": 1,
+          "points": 10
+        },
+        {
+          "vendorId": "ColMarTechSCTGear",
+          "sourceType": "vendor",
+          "sectionKey": "ColMarTechSCTGear:6",
+          "sectionName": "Sidearm Ammunition",
+          "tradeKey": "ColMarTechSCTGear:6:2",
+          "spawn": 1,
+          "points": 6
+        },
+        {
+          "vendorId": "ColMarTechMedicalGear",
+          "sourceType": "vendor",
+          "sectionKey": "ColMarTechMedicalGear:8",
+          "sectionName": "Sidearm Ammunition",
+          "tradeKey": "ColMarTechMedicalGear:8:2",
+          "spawn": 1,
+          "points": 6
+        },
+        {
+          "vendorId": "ColMarTechSWSEquipment",
+          "sourceType": "vendor",
+          "sectionKey": "ColMarTechSWSEquipment:7",
+          "sectionName": "Боеприпасы К Вторичному Оружию",
+          "tradeKey": "ColMarTechSWSEquipment:7:2",
           "spawn": 1,
           "points": 10
         }
@@ -171551,8 +172393,10 @@
             "tags": [
               "RMCSpeedLoaderM44",
               "RMCSpeedLoader44Marksman",
+              "RMCSpeedLoader44Heavy",
               "RMCCartridgeRevolver44",
-              "RMCCartridgeRevolver44Marksman"
+              "RMCCartridgeRevolver44Marksman",
+              "RMCCartridgeRevolver44Heavy"
             ]
           },
           "proto": "RMCCartridgeRevolver44",
@@ -171771,7 +172615,9 @@
           "startingAmmoId": "RMCCartridgeRevolver44",
           "acceptedTags": [
             "RMCCartridgeRevolver44",
+            "RMCCartridgeRevolver44Heavy",
             "RMCCartridgeRevolver44Marksman",
+            "RMCSpeedLoader44Heavy",
             "RMCSpeedLoader44Marksman",
             "RMCSpeedLoaderM44"
           ]
@@ -171795,6 +172641,43 @@
                 "armorPiercing": 5,
                 "accuracy": {
                   "accuracy": 90
+                },
+                "damageFalloff": {
+                  "thresholds": [
+                    {
+                      "range": 0,
+                      "falloff": 1,
+                      "ignoreModifiers": false
+                    },
+                    {
+                      "range": 22,
+                      "falloff": 9999,
+                      "ignoreModifiers": true
+                    }
+                  ],
+                  "minRemainingDamageMult": 0.05
+                }
+              }
+            ]
+          },
+          {
+            "directFeed": true,
+            "ammoId": "RMCCartridgeRevolver44Heavy",
+            "ammoName": "Тяжёлый патрон (.44)",
+            "capacity": 7,
+            "cartridgeIds": [
+              "RMCCartridgeRevolver44Heavy"
+            ],
+            "projectiles": [
+              {
+                "projectileId": "RMCBulletRevolver44Heavy",
+                "name": "Тяжёлая пуля (.44)",
+                "damage": {
+                  "Piercing": 35
+                },
+                "armorPiercing": 20,
+                "accuracy": {
+                  "accuracy": 100
                 },
                 "damageFalloff": {
                   "thresholds": [
@@ -172040,8 +172923,10 @@
             "tags": [
               "RMCSpeedLoaderM44",
               "RMCSpeedLoader44Marksman",
+              "RMCSpeedLoader44Heavy",
               "RMCCartridgeRevolver44",
-              "RMCCartridgeRevolver44Marksman"
+              "RMCCartridgeRevolver44Marksman",
+              "RMCCartridgeRevolver44Heavy"
             ]
           },
           "proto": null,
@@ -172269,7 +173154,9 @@
           "capacity": 7,
           "acceptedTags": [
             "RMCCartridgeRevolver44",
+            "RMCCartridgeRevolver44Heavy",
             "RMCCartridgeRevolver44Marksman",
+            "RMCSpeedLoader44Heavy",
             "RMCSpeedLoader44Marksman",
             "RMCSpeedLoaderM44"
           ]
@@ -172293,6 +173180,43 @@
                 "armorPiercing": 5,
                 "accuracy": {
                   "accuracy": 90
+                },
+                "damageFalloff": {
+                  "thresholds": [
+                    {
+                      "range": 0,
+                      "falloff": 1,
+                      "ignoreModifiers": false
+                    },
+                    {
+                      "range": 22,
+                      "falloff": 9999,
+                      "ignoreModifiers": true
+                    }
+                  ],
+                  "minRemainingDamageMult": 0.05
+                }
+              }
+            ]
+          },
+          {
+            "directFeed": true,
+            "ammoId": "RMCCartridgeRevolver44Heavy",
+            "ammoName": "Тяжёлый патрон (.44)",
+            "capacity": 7,
+            "cartridgeIds": [
+              "RMCCartridgeRevolver44Heavy"
+            ],
+            "projectiles": [
+              {
+                "projectileId": "RMCBulletRevolver44Heavy",
+                "name": "Тяжёлая пуля (.44)",
+                "damage": {
+                  "Piercing": 35
+                },
+                "armorPiercing": 20,
+                "accuracy": {
+                  "accuracy": 100
                 },
                 "damageFalloff": {
                   "thresholds": [
@@ -172538,8 +173462,10 @@
             "tags": [
               "RMCSpeedLoaderM44",
               "RMCSpeedLoader44Marksman",
+              "RMCSpeedLoader44Heavy",
               "RMCCartridgeRevolver44",
-              "RMCCartridgeRevolver44Marksman"
+              "RMCCartridgeRevolver44Marksman",
+              "RMCCartridgeRevolver44Heavy"
             ]
           },
           "proto": "RMCCartridgeRevolver44Marksman",
@@ -172758,7 +173684,9 @@
           "startingAmmoId": "RMCCartridgeRevolver44Marksman",
           "acceptedTags": [
             "RMCCartridgeRevolver44",
+            "RMCCartridgeRevolver44Heavy",
             "RMCCartridgeRevolver44Marksman",
+            "RMCSpeedLoader44Heavy",
             "RMCSpeedLoader44Marksman",
             "RMCSpeedLoaderM44"
           ]
@@ -172782,6 +173710,43 @@
                 "armorPiercing": 5,
                 "accuracy": {
                   "accuracy": 90
+                },
+                "damageFalloff": {
+                  "thresholds": [
+                    {
+                      "range": 0,
+                      "falloff": 1,
+                      "ignoreModifiers": false
+                    },
+                    {
+                      "range": 22,
+                      "falloff": 9999,
+                      "ignoreModifiers": true
+                    }
+                  ],
+                  "minRemainingDamageMult": 0.05
+                }
+              }
+            ]
+          },
+          {
+            "directFeed": true,
+            "ammoId": "RMCCartridgeRevolver44Heavy",
+            "ammoName": "Тяжёлый патрон (.44)",
+            "capacity": 7,
+            "cartridgeIds": [
+              "RMCCartridgeRevolver44Heavy"
+            ],
+            "projectiles": [
+              {
+                "projectileId": "RMCBulletRevolver44Heavy",
+                "name": "Тяжёлая пуля (.44)",
+                "damage": {
+                  "Piercing": 35
+                },
+                "armorPiercing": 20,
+                "accuracy": {
+                  "accuracy": 100
                 },
                 "damageFalloff": {
                   "thresholds": [
@@ -177931,6 +178896,7 @@
           "RMCMagazinePistolM1984AP",
           "RMCMagazinePistolM1984HP",
           "RMCMagazinePistolSU6",
+          "RMCSpeedLoader44Heavy",
           "RMCSpeedLoader44Marksman",
           "RMCSpeedLoaderM44",
           "RMCSpeedLoaderMatebaHIAP",
@@ -182005,6 +182971,7 @@
           "RMCCartridgePistolHandcannonHI",
           "RMCCartridgePistolHandcannonHIAP",
           "RMCCartridgeRevolver44",
+          "RMCCartridgeRevolver44Heavy",
           "RMCCartridgeRevolver44Marksman",
           "RMCCartridgeRevolverMatebaHIAP",
           "RMCCartridgeRevolverMatebaHighImpact",
@@ -187695,6 +188662,7 @@
       "RMCMortarShellIncendiary",
       "RMCMortarShellHE",
       "RMCMortarShellFlare",
+      "RMCMortarShellFrag",
       "RMCProjectileRocket84mmAntiArmor",
       "RMCRocket84mmAntiArmor",
       "RMCProjectileRocket84mm",
@@ -188146,7 +189114,9 @@
       "RMCBoxMagazineRevolverM44",
       "RMCCrateBoxMagazineM44Revolver",
       "RMCCrateBoxMagazineRevolverM44Marksman",
+      "RMCCrateBoxMagazineRevolverM44Heavy",
       "RMCBoxMagazineRevolverM44Marksman",
+      "RMCBoxMagazineRevolverM44Heavy",
       "RMCBoxSterileMask",
       "RMCBoxZiptie",
       "RMCBoxPillCanister",
@@ -188582,7 +189552,10 @@
       "RMCArmorM3HeavySmooth",
       "RMCArmorM3HeavyVariants",
       "WeaponRifleXM88",
+      "RMCBulletRevolver44Heavy",
       "RMCWeaponRifleM54CE2",
+      "RMCCartridgeRevolver44Heavy",
+      "RMCSpeedLoader44Heavy",
       "RMCMagazinePistolM13Ext",
       "RMCAttachmentAngledGrip",
       "RMCMagazineRifleM4SPRA19Impact",
@@ -188741,6 +189714,7 @@
       "RMCCrateExplosiveClaymoreMine",
       "RMCCrateMortarKit",
       "RMCCrateMortarShellIncendiary",
+      "RMCCrateMortarShellFrag",
       "RMCCrateMortarShellFlare",
       "RMCCrateMortarShellHE",
       "RMCCrateInflatableBarriers",
@@ -188882,6 +189856,7 @@
         "RMCMortarShellIncendiary",
         "RMCMortarShellHE",
         "RMCMortarShellFlare",
+        "RMCMortarShellFrag",
         "RMCRocket84mmAntiArmor",
         "RMCRocket84mm",
         "RMCRocket84mmWhitePhosphorus",
@@ -188966,6 +189941,7 @@
         "RMCBoxShotgunSlugs",
         "RMCBoxMagazineRevolverM44",
         "RMCBoxMagazineRevolverM44Marksman",
+        "RMCBoxMagazineRevolverM44Heavy",
         "RMCBoxShotgunFlechette",
         "CMMagazinePistolM77AP",
         "STMagazineSharpRifleExplosive",
@@ -189031,6 +190007,8 @@
         "RMCMagazineSentryFire",
         "RMCMagazineSentryFireBlue",
         "RMCMagazineSentryFireSmoke",
+        "RMCCartridgeRevolver44Heavy",
+        "RMCSpeedLoader44Heavy",
         "RMCMagazinePistolM13Ext",
         "RMCMagazineRifleM4SPRA19Impact",
         "RMCCartridgeRifleM4SPRA19Impact",
@@ -189705,6 +190683,7 @@
         "RMCBoxLightsMixed",
         "RMCCrateBoxMagazineM44Revolver",
         "RMCCrateBoxMagazineRevolverM44Marksman",
+        "RMCCrateBoxMagazineRevolverM44Heavy",
         "RMCBoxZiptie",
         "SprayBottleSpaceCleaner",
         "RMCSprayBottleSpaceCleaner",
@@ -189838,6 +190817,7 @@
         "RMCCrateExplosiveClaymoreMine",
         "RMCCrateMortarKit",
         "RMCCrateMortarShellIncendiary",
+        "RMCCrateMortarShellFrag",
         "RMCCrateMortarShellFlare",
         "RMCCrateMortarShellHE",
         "RMCCrateInflatableBarriers",
@@ -190005,6 +190985,7 @@
         "RMCM2CMount",
         "RMCML66DMount",
         "RMCArmorM3HeavyVariants",
+        "RMCBulletRevolver44Heavy",
         "STBulletSharpFlechette",
         "RMCAirBurstProjectileHornet",
         "RMCWeaponRifleM54CMK1AP"
@@ -190018,6 +190999,7 @@
       "RMCMortarShellIncendiary",
       "RMCMortarShellHE",
       "RMCMortarShellFlare",
+      "RMCMortarShellFrag",
       "RMCProjectileRocket84mmAntiArmor",
       "RMCRocket84mmAntiArmor",
       "RMCProjectileRocket84mm",
@@ -190469,7 +191451,9 @@
       "RMCBoxMagazineRevolverM44",
       "RMCCrateBoxMagazineM44Revolver",
       "RMCCrateBoxMagazineRevolverM44Marksman",
+      "RMCCrateBoxMagazineRevolverM44Heavy",
       "RMCBoxMagazineRevolverM44Marksman",
+      "RMCBoxMagazineRevolverM44Heavy",
       "RMCBoxSterileMask",
       "RMCBoxZiptie",
       "RMCBoxPillCanister",
@@ -190905,7 +191889,10 @@
       "RMCArmorM3HeavySmooth",
       "RMCArmorM3HeavyVariants",
       "WeaponRifleXM88",
+      "RMCBulletRevolver44Heavy",
       "RMCWeaponRifleM54CE2",
+      "RMCCartridgeRevolver44Heavy",
+      "RMCSpeedLoader44Heavy",
       "RMCMagazinePistolM13Ext",
       "RMCAttachmentAngledGrip",
       "RMCMagazineRifleM4SPRA19Impact",
@@ -191064,6 +192051,7 @@
       "RMCCrateExplosiveClaymoreMine",
       "RMCCrateMortarKit",
       "RMCCrateMortarShellIncendiary",
+      "RMCCrateMortarShellFrag",
       "RMCCrateMortarShellFlare",
       "RMCCrateMortarShellHE",
       "RMCCrateInflatableBarriers",
@@ -191165,10 +192153,10 @@
     ]
   },
   "counts": {
-    "catalogItems": 1152,
-    "publicItems": 1150,
+    "catalogItems": 1159,
+    "publicItems": 1157,
     "excludedItems": 0,
-    "hiddenItems": 78
+    "hiddenItems": 79
   },
   "review": {
     "policy": "catalog-v4-functional",
