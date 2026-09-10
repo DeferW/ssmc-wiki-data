@@ -693,6 +693,7 @@ def main() -> None:
     args.output.write_text(
         json.dumps(result, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
+        newline="\n",
     )
 
     print(f'Custom reagents: {result["counts"]["customReagents"]}')

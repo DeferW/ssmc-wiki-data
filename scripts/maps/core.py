@@ -727,7 +727,7 @@ def write_json(path: Path, data: Any, *, compact: bool = False) -> None:
         kwargs["separators"] = (",", ":")
     else:
         kwargs["indent"] = 2
-    path.write_text(json.dumps(data, **kwargs) + "\n", encoding="utf-8")
+    path.write_text(json.dumps(data, **kwargs) + "\n", encoding="utf-8", newline="\n")
 
 
 def write_overlays(

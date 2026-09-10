@@ -603,7 +603,7 @@ def classify_item(
     if (
         "MeleeWeapon" in component_types
         and (
-            component_types.intersection({"Tool", "Utensil", "ItemToggleMeleeWeapon"})
+            component_types.intersection({"Utensil", "ItemToggleMeleeWeapon"})
             or folded_tags.intersection({"botanyhatchet", "fireaxe", "kitchenknife", "pickaxe", "stpredatorgear"})
         )
     ):

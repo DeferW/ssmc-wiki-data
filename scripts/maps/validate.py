@@ -20,6 +20,13 @@ def read_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def published_asset_size(path: Path) -> int:
+    """Generated JSON uses LF on publication, even in older CRLF checkouts."""
+    if path.suffix == ".json":
+        return len(path.read_bytes().replace(b"\r\n", b"\n"))
+    return path.stat().st_size
+
+
 def validate_tiles(
     manifest_path: Path,
     label: str,
@@ -183,7 +190,7 @@ def validate(catalog_path: Path, assets_root: Path, max_assets_bytes: int) -> No
         raise RuntimeError("Unexpected map asset files: " + ", ".join(extras[:20]))
     published_bytes = sum(path.stat().st_size for path in actual_files)
     assets_bytes = sum(
-        path.stat().st_size
+        published_asset_size(path)
         for path in actual_files
         if path != catalog_path.resolve()
     )

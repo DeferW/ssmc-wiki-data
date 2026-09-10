@@ -105,6 +105,25 @@ def test_validate_accepts_insert_tiles(tmp_path: Path) -> None:
     validate(catalog_path, assets_root, 10_000_000)
 
 
+def test_validate_uses_published_lf_sizes_for_windows_checkout(tmp_path: Path) -> None:
+    catalog_path, assets_root = make_dataset(tmp_path)
+    path = assets_root / "static-items.json"
+    # Simulate a generated multiline file, then a checkout with core.autocrlf.
+    original = path.read_bytes()
+    path.write_bytes(original + b"\n")
+    catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
+    catalog["counts"]["assetBytes"] += 1
+    write_json(catalog_path, catalog)
+    path.write_bytes(original + b"\r\n")
+
+    validate(catalog_path, assets_root, 10_000_000)
+
+    # Real content changes must still be detected.
+    path.write_bytes(original + b" \r\n")
+    with pytest.raises(RuntimeError, match="Map counts mismatch"):
+        validate(catalog_path, assets_root, 10_000_000)
+
+
 def test_validate_still_rejects_unreferenced_assets(tmp_path: Path) -> None:
     catalog_path, assets_root = make_dataset(tmp_path)
     (assets_root / "unexpected.webp").write_bytes(b"not a referenced asset")

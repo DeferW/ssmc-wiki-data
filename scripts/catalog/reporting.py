@@ -10,6 +10,7 @@ def write_json(path: Path, data: dict[str, Any]) -> None:
     path.write_text(
         json.dumps(data, ensure_ascii=False, indent=2, sort_keys=False) + "\n",
         encoding="utf-8",
+        newline="\n",
     )
 
 

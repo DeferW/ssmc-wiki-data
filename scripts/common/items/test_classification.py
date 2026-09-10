@@ -184,6 +184,11 @@ def test_classify_belt_compatible_tool_as_gear_not_equipment():
     assert classify_item(item, EMPTY_POLICY)["categoryId"] == "gear"
 
 
+def test_classify_disposable_utensil_with_tool_mechanics_as_other():
+    item = {"id": "PlasticFork", "componentTypes": ["Item", "Tool", "MeleeWeapon", "Utensil", "SpaceGarbage"]}
+    assert classify_item(item, EMPTY_POLICY)["categoryId"] == "other"
+
+
 def test_classify_back_compatible_ammo_box_as_ammunition():
     item = {
         "id": "RMCBoxBulletsRifle",
