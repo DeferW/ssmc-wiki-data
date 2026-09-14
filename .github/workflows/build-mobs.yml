@@ -2,6 +2,12 @@ name: Build mobs data
 
 on:
   workflow_dispatch:
+    inputs:
+      game_ref:
+        description: "Game commit/tag/branch (use the same commit for all data builds)"
+        required: true
+        default: "master"
+        type: string
 
 permissions:
   contents: write
@@ -27,7 +33,7 @@ jobs:
         uses: actions/checkout@v7.0.1
         with:
           repository: MetalSage/space-stories-cm14
-          ref: master
+          ref: ${{ inputs.game_ref }}
           path: game-source
           sparse-checkout: |
             Resources/Prototypes

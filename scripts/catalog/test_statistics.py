@@ -322,3 +322,12 @@ def test_new_weapon_gets_ballistics_during_catalog_build():
     assert result["scatterUnwielded"] == 23
     assert result["recoilUnwielded"] == 5
     assert result["modes"]["FullAuto"]["unwieldedMultiplier"] == 3
+
+
+def test_bare_selective_component_publishes_both_grip_defaults():
+    items = _sniper_items({}, False)
+    items["Rifle"]["properties"]["RMCSelectiveFire"] = {}
+    populate_weapon_statistics(items, relations=[], public_item_ids={"Rifle"})
+    stats = items["Rifle"]["weaponStats"]
+    assert stats["scatter"] == {"wielded": 10, "unwielded": 10}
+    assert stats["recoil"] == {"wielded": 1, "unwielded": 1}

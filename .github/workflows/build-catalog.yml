@@ -2,6 +2,12 @@ name: Build catalog
 
 on:
   workflow_dispatch:
+    inputs:
+      game_ref:
+        description: "Game commit/tag/branch (use the same commit for all data builds)"
+        required: true
+        default: "master"
+        type: string
 
 permissions:
   contents: write
@@ -27,7 +33,7 @@ jobs:
         uses: actions/checkout@v7.0.1
         with:
           repository: MetalSage/space-stories-cm14
-          ref: master
+          ref: ${{ inputs.game_ref }}
           path: game-source
           sparse-checkout: |
             Resources/Prototypes
@@ -59,6 +65,9 @@ jobs:
             --index data/catalog/index.json \
             --config config/catalog-sources.yml \
             --sprites data/catalog/sprites
+
+      - name: Validate damage calculator fields
+        run: python3 -m scripts.catalog.validate_weapon_contract --catalog data/catalog/catalog.json
 
       - name: Save catalog data
         run: |

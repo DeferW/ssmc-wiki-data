@@ -776,6 +776,11 @@ def populate_weapon_statistics(
             if values:
                 stats[output_key] = values
 
+        # Card statistics and the firing range must share the same C# defaults.
+        if ballistics is not None:
+            stats["scatter"] = {"wielded": ballistics["scatter"], "unwielded": ballistics["scatterUnwielded"]}
+            stats["recoil"] = {"wielded": ballistics["recoil"], "unwielded": ballistics["recoilUnwielded"]}
+
         accuracy_component = properties.get("RMCWeaponAccuracy", {})
         if isinstance(accuracy_component, dict):
             accuracy = {
