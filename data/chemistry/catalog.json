@@ -3,7 +3,7 @@
   "source": {
     "repository": "MetalSage/space-stories-cm14",
     "branch": "master",
-    "commit": "d0bfa6b3645f82951647074306dd99339f394fdd"
+    "commit": "024d853a184f956e0c08d876808ea7771a104a04"
   },
   "locale": "ru-RU",
   "counts": {
@@ -1108,7 +1108,7 @@
         "includedBy": "rmc-chemicals-guide"
       },
       {
-        "id": "RMCNapalmUTTank",
+        "id": "RMCNapalmWeak",
         "name": "Топливо СГ-Нафталин",
         "origin": "rmc14",
         "sectionPath": [
@@ -1117,7 +1117,7 @@
         "includedBy": "rmc-chemicals-guide"
       },
       {
-        "id": "RMCNapalmWeak",
+        "id": "RMCNapalmUTTank",
         "name": "Топливо СГ-Нафталин",
         "origin": "rmc14",
         "sectionPath": [
@@ -18434,8 +18434,8 @@
     "RMCGenericToxin",
     "RMCTableSalt",
     "RMCMindbreakerToxin",
-    "RMCNapalmUTTank",
     "RMCNapalmWeak",
+    "RMCNapalmUTTank",
     "RMCCarbon",
     "RMCUltrazine",
     "RMCUranium",
