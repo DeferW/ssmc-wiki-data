@@ -34160,6 +34160,8 @@
             "SemiAuto"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 20,
+          "recoilUnwielded": 4,
           "scatter": 0,
           "increase": 0.0,
           "decay": 0.0,
@@ -34170,18 +34172,21 @@
           "burstSize": 1,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 10,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1665
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 13,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -56649,6 +56654,8 @@
             "SemiAuto"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 10,
+          "recoilUnwielded": 1.0,
           "scatter": 10,
           "increase": 0.0,
           "decay": 0.0,
@@ -56659,18 +56666,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 10.0,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 26.0,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -56707,6 +56717,10 @@
         "scatter": {
           "wielded": 10,
           "unwielded": 10
+        },
+        "recoil": {
+          "wielded": 1.0,
+          "unwielded": 1.0
         },
         "accuracy": {
           "wieldedMultiplier": 1.15
@@ -57162,6 +57176,8 @@
             "SemiAuto"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 10,
+          "recoilUnwielded": 1.0,
           "scatter": 10,
           "increase": 0.0,
           "decay": 0.0,
@@ -57172,18 +57188,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 10.0,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 26.0,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -57220,6 +57239,10 @@
         "scatter": {
           "wielded": 10,
           "unwielded": 10
+        },
+        "recoil": {
+          "wielded": 1.0,
+          "unwielded": 1.0
         },
         "accuracy": {
           "wieldedMultiplier": 1.2
@@ -94171,6 +94194,8 @@
             "SemiAuto"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 10.0,
+          "recoilUnwielded": 1.0,
           "scatter": 10.0,
           "increase": 0.0,
           "decay": 0.0,
@@ -94181,18 +94206,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 10.0,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 26.0,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -94208,6 +94236,14 @@
           "resetOnHandSelected": false
         },
         "iffEnabled": true,
+        "scatter": {
+          "wielded": 10.0,
+          "unwielded": 10.0
+        },
+        "recoil": {
+          "wielded": 1.0,
+          "unwielded": 1.0
+        },
         "ammoProvider": {
           "type": "BallisticAmmoProvider",
           "capacity": 5,
@@ -97341,6 +97377,8 @@
             "SemiAuto"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 10.0,
+          "recoilUnwielded": 1.0,
           "scatter": 10.0,
           "increase": 0.0,
           "decay": 0.0,
@@ -97351,18 +97389,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 10.0,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 26.0,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -97378,6 +97419,14 @@
           "resetOnHandSelected": false
         },
         "iffEnabled": true,
+        "scatter": {
+          "wielded": 10.0,
+          "unwielded": 10.0
+        },
+        "recoil": {
+          "wielded": 1.0,
+          "unwielded": 1.0
+        },
         "ammoProvider": {
           "type": "BallisticAmmoProvider",
           "capacity": 3,
@@ -166816,6 +166865,8 @@
             "Burst"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 10,
+          "recoilUnwielded": 2,
           "scatter": 10,
           "increase": 0.0,
           "decay": 0.0,
@@ -166826,18 +166877,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 10,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.08
             },
             "FullAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
@@ -199005,6 +199059,8 @@
             "SemiAuto"
           ],
           "defaultMode": "FullAuto",
+          "scatterUnwielded": 0,
+          "recoilUnwielded": 0,
           "scatter": 10.0,
           "increase": 0.0,
           "decay": 0.0,
@@ -199015,18 +199071,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "FullAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": 700,
@@ -199061,9 +199120,11 @@
           }
         },
         "recoil": {
+          "wielded": 1.0,
           "unwielded": 0
         },
         "scatter": {
+          "wielded": 10.0,
           "unwielded": 0
         },
         "accuracy": {
@@ -199364,6 +199425,8 @@
             "SemiAuto"
           ],
           "defaultMode": "FullAuto",
+          "scatterUnwielded": 0,
+          "recoilUnwielded": 0,
           "scatter": 10.0,
           "increase": 0.0,
           "decay": 0.0,
@@ -199374,18 +199437,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "FullAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": 700,
@@ -199420,9 +199486,11 @@
           }
         },
         "recoil": {
+          "wielded": 1.0,
           "unwielded": 0
         },
         "scatter": {
+          "wielded": 10.0,
           "unwielded": 0
         },
         "accuracy": {
@@ -199851,6 +199919,8 @@
             "FullAuto"
           ],
           "defaultMode": "FullAuto",
+          "scatterUnwielded": 10.0,
+          "recoilUnwielded": 1.0,
           "scatter": 10,
           "increase": 0.0,
           "decay": 0.0,
@@ -199861,18 +199931,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 4,
               "scaleExtraScatter": true,
               "shotsToMax": 80,
@@ -199915,10 +199988,12 @@
           "heavy": 0.806
         },
         "recoil": {
-          "wielded": 3
+          "wielded": 3,
+          "unwielded": 1.0
         },
         "scatter": {
-          "wielded": 10
+          "wielded": 10,
+          "unwielded": 10.0
         },
         "accuracy": {
           "wieldedMultiplier": 1.05
@@ -200467,6 +200542,8 @@
             "FullAuto"
           ],
           "defaultMode": "FullAuto",
+          "scatterUnwielded": 10.0,
+          "recoilUnwielded": 1.0,
           "scatter": 10,
           "increase": 0.0,
           "decay": 0.0,
@@ -200477,18 +200554,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 4,
               "scaleExtraScatter": true,
               "shotsToMax": 80,
@@ -200531,10 +200611,12 @@
           "heavy": 0.806
         },
         "recoil": {
-          "wielded": 3
+          "wielded": 3,
+          "unwielded": 1.0
         },
         "scatter": {
-          "wielded": 10
+          "wielded": 10,
+          "unwielded": 10.0
         },
         "accuracy": {
           "wieldedMultiplier": 1.05
@@ -210751,6 +210833,8 @@
             "SemiAuto"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 20,
+          "recoilUnwielded": 4,
           "scatter": 10,
           "increase": 0.0,
           "decay": 0.0,
@@ -210761,18 +210845,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 10,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1665
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 13,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -212051,6 +212138,8 @@
             "FullAuto"
           ],
           "defaultMode": "FullAuto",
+          "scatterUnwielded": 20,
+          "recoilUnwielded": 4,
           "scatter": 1,
           "increase": 0.0,
           "decay": 0.0,
@@ -212061,18 +212150,21 @@
           "burstSize": 6,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 10,
               "scaleExtraScatter": true,
               "shotsToMax": null,
               "fireDelay": 0.233
             },
             "FullAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 6,
               "scaleExtraScatter": false,
               "shotsToMax": null,
@@ -212688,6 +212780,8 @@
             "SemiAuto"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 10.0,
+          "recoilUnwielded": 1.0,
           "scatter": 10.0,
           "increase": 0.0,
           "decay": 0.0,
@@ -212698,18 +212792,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 10.0,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 26.0,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -212748,7 +212845,12 @@
           "heavy": 0.806
         },
         "recoil": {
-          "wielded": 2
+          "wielded": 2,
+          "unwielded": 1.0
+        },
+        "scatter": {
+          "wielded": 10.0,
+          "unwielded": 10.0
         },
         "weaponArmorPiercing": 20,
         "ammoProvider": {
@@ -213021,6 +213123,8 @@
             "SemiAuto"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 10.0,
+          "recoilUnwielded": 1.0,
           "scatter": 10.0,
           "increase": 0.0,
           "decay": 0.0,
@@ -213031,18 +213135,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 10.0,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 26.0,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -213081,7 +213188,12 @@
           "heavy": 0.806
         },
         "recoil": {
-          "wielded": 2
+          "wielded": 2,
+          "unwielded": 1.0
+        },
+        "scatter": {
+          "wielded": 10.0,
+          "unwielded": 10.0
         },
         "weaponArmorPiercing": 20,
         "ammoProvider": {
@@ -213607,6 +213719,8 @@
             "FullAuto"
           ],
           "defaultMode": "FullAuto",
+          "scatterUnwielded": 20,
+          "recoilUnwielded": 4,
           "scatter": 10,
           "increase": 0.0,
           "decay": 0.0,
@@ -213617,18 +213731,21 @@
           "burstSize": 5,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0.1332
             },
             "FullAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
@@ -214173,6 +214290,8 @@
             "SemiAuto"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 8,
+          "recoilUnwielded": 1.0,
           "scatter": 8,
           "increase": 0.0,
           "decay": 0.0,
@@ -214183,18 +214302,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 10.0,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 26.0,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -214231,6 +214353,10 @@
         "scatter": {
           "wielded": 8,
           "unwielded": 8
+        },
+        "recoil": {
+          "wielded": 1.0,
+          "unwielded": 1.0
         },
         "accuracy": {
           "wieldedMultiplier": 1.25
@@ -214580,6 +214706,8 @@
             "SemiAuto"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 6,
+          "recoilUnwielded": 1.0,
           "scatter": 6,
           "increase": 0.0,
           "decay": 0.0,
@@ -214590,18 +214718,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 10.0,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 26.0,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -214638,6 +214769,10 @@
         "scatter": {
           "wielded": 6,
           "unwielded": 6
+        },
+        "recoil": {
+          "wielded": 1.0,
+          "unwielded": 1.0
         },
         "damageMultiplier": 1.2,
         "weaponArmorPiercing": 20,
@@ -215039,6 +215174,8 @@
             "Burst"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 5,
+          "recoilUnwielded": 1.0,
           "scatter": 5,
           "increase": 0.0,
           "decay": 0.0,
@@ -215049,18 +215186,21 @@
           "burstSize": 2,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 5,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.2
             },
             "FullAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
@@ -215099,6 +215239,10 @@
         "scatter": {
           "wielded": 5,
           "unwielded": 5
+        },
+        "recoil": {
+          "wielded": 1.0,
+          "unwielded": 1.0
         },
         "accuracy": {
           "wieldedMultiplier": 1,
@@ -215466,6 +215610,8 @@
             "SemiAuto"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 10,
+          "recoilUnwielded": 1.0,
           "scatter": 10,
           "increase": 0.0,
           "decay": 0.0,
@@ -215476,18 +215622,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 10.0,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 26.0,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -215524,6 +215673,10 @@
         "scatter": {
           "wielded": 10,
           "unwielded": 10
+        },
+        "recoil": {
+          "wielded": 1.0,
+          "unwielded": 1.0
         },
         "weaponArmorPiercing": 20,
         "ammoProvider": {
@@ -215927,6 +216080,8 @@
             "SemiAuto"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 10,
+          "recoilUnwielded": 1.0,
           "scatter": 10,
           "increase": 0.0,
           "decay": 0.0,
@@ -215937,18 +216092,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 10.0,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 26.0,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -215985,6 +216143,10 @@
         "scatter": {
           "wielded": 10,
           "unwielded": 10
+        },
+        "recoil": {
+          "wielded": 1.0,
+          "unwielded": 1.0
         },
         "accuracy": {
           "wieldedMultiplier": 1.2
@@ -216418,6 +216580,8 @@
             "Burst"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 8,
+          "recoilUnwielded": 1.0,
           "scatter": 8,
           "increase": 0.0,
           "decay": 0.0,
@@ -216428,18 +216592,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 10,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1665
             },
             "FullAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
@@ -216478,6 +216645,10 @@
         "scatter": {
           "wielded": 8,
           "unwielded": 8
+        },
+        "recoil": {
+          "wielded": 1.0,
+          "unwielded": 1.0
         },
         "damageMultiplier": 1.2,
         "weaponArmorPiercing": 20,
@@ -216771,6 +216942,8 @@
             "SemiAuto"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 0,
+          "recoilUnwielded": 1.0,
           "scatter": 0,
           "increase": 0.0,
           "decay": 0.0,
@@ -216781,18 +216954,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 10.0,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 26.0,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -216827,6 +217003,10 @@
         "scatter": {
           "wielded": 0,
           "unwielded": 0
+        },
+        "recoil": {
+          "wielded": 1.0,
+          "unwielded": 1.0
         },
         "accuracy": {
           "wieldedMultiplier": 1,
@@ -217358,6 +217538,8 @@
             "SemiAuto"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 14,
+          "recoilUnwielded": 1.0,
           "scatter": 10,
           "increase": 0.0,
           "decay": 0.0,
@@ -217368,18 +217550,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 10.0,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 26.0,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -217416,6 +217601,10 @@
         "scatter": {
           "wielded": 10,
           "unwielded": 14
+        },
+        "recoil": {
+          "wielded": 1.0,
+          "unwielded": 1.0
         },
         "accuracy": {
           "wieldedMultiplier": 1.2,
@@ -217793,6 +217982,8 @@
             "Burst"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 5,
+          "recoilUnwielded": 1.0,
           "scatter": 5,
           "increase": 0.0,
           "decay": 0.0,
@@ -217803,18 +217994,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 10,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1665
             },
             "FullAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
@@ -217853,6 +218047,10 @@
         "scatter": {
           "wielded": 5,
           "unwielded": 5
+        },
+        "recoil": {
+          "wielded": 1.0,
+          "unwielded": 1.0
         },
         "accuracy": {
           "wieldedMultiplier": 1.25
@@ -218234,6 +218432,8 @@
             "Burst"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 5,
+          "recoilUnwielded": 1.0,
           "scatter": 5,
           "increase": 0.0,
           "decay": 0.0,
@@ -218244,18 +218444,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 10,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1665
             },
             "FullAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
@@ -218294,6 +218497,10 @@
         "scatter": {
           "wielded": 5,
           "unwielded": 5
+        },
+        "recoil": {
+          "wielded": 1.0,
+          "unwielded": 1.0
         },
         "accuracy": {
           "wieldedMultiplier": 1.25
@@ -218698,6 +218905,8 @@
             "Burst"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 5,
+          "recoilUnwielded": 1.0,
           "scatter": 5,
           "increase": 0.0,
           "decay": 0.0,
@@ -218708,18 +218917,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 10,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1665
             },
             "FullAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
@@ -218758,6 +218970,10 @@
         "scatter": {
           "wielded": 5,
           "unwielded": 5
+        },
+        "recoil": {
+          "wielded": 1.0,
+          "unwielded": 1.0
         },
         "accuracy": {
           "wieldedMultiplier": 1.25
@@ -219127,6 +219343,8 @@
             "SemiAuto"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 4,
+          "recoilUnwielded": 1.0,
           "scatter": 4,
           "increase": 0.0,
           "decay": 0.0,
@@ -219137,18 +219355,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 10.0,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 26.0,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -219185,6 +219406,10 @@
         "scatter": {
           "wielded": 4,
           "unwielded": 4
+        },
+        "recoil": {
+          "wielded": 1.0,
+          "unwielded": 1.0
         },
         "accuracy": {
           "wieldedMultiplier": 1.25
@@ -219460,6 +219685,8 @@
             "SemiAuto"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 12,
+          "recoilUnwielded": 3,
           "scatter": 8,
           "increase": 0.0,
           "decay": 0.0,
@@ -219470,18 +219697,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 10.0,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 26.0,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -219965,6 +220195,8 @@
             "SemiAuto"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 14,
+          "recoilUnwielded": 3,
           "scatter": 6,
           "increase": 0.0,
           "decay": 0.0,
@@ -219975,18 +220207,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 10.0,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 26.0,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -220550,6 +220785,8 @@
             "SemiAuto"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 14,
+          "recoilUnwielded": 3,
           "scatter": 6,
           "increase": 0.0,
           "decay": 0.0,
@@ -220560,18 +220797,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 10.0,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 26.0,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -221052,6 +221292,8 @@
             "SemiAuto"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 14,
+          "recoilUnwielded": 3,
           "scatter": 8,
           "increase": 0.0,
           "decay": 0.0,
@@ -221062,18 +221304,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 10.0,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 26.0,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -221550,6 +221795,8 @@
             "SemiAuto"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 12,
+          "recoilUnwielded": 3,
           "scatter": 8,
           "increase": 0.0,
           "decay": 0.0,
@@ -221560,18 +221807,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 10.0,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 26.0,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -222078,6 +222328,8 @@
             "SemiAuto"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 12,
+          "recoilUnwielded": 3,
           "scatter": 8,
           "increase": 0.0,
           "decay": 0.0,
@@ -222088,18 +222340,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 10.0,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 26.0,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -222623,6 +222878,8 @@
             "SemiAuto"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 14,
+          "recoilUnwielded": 3,
           "scatter": 6,
           "increase": 0.0,
           "decay": 0.0,
@@ -222633,18 +222890,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 10.0,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 26.0,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -223187,6 +223447,8 @@
             "SemiAuto"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 12,
+          "recoilUnwielded": 3,
           "scatter": 5,
           "increase": 0.0,
           "decay": 0.0,
@@ -223197,18 +223459,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 10.0,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 26.0,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -223730,6 +223995,8 @@
             "SemiAuto"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 16,
+          "recoilUnwielded": 2,
           "scatter": 6,
           "increase": 0.0,
           "decay": 0.0,
@@ -223740,18 +224007,21 @@
           "burstSize": 1,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 10,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1665
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 13,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -224338,6 +224608,8 @@
             "SemiAuto"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 20,
+          "recoilUnwielded": 2,
           "scatter": 6,
           "increase": 0.0,
           "decay": 0.0,
@@ -224348,18 +224620,21 @@
           "burstSize": 1,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 10,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1665
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 13,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -225022,6 +225297,8 @@
             "FullAuto"
           ],
           "defaultMode": "FullAuto",
+          "scatterUnwielded": 10,
+          "recoilUnwielded": 4,
           "scatter": 3,
           "increase": 0.0,
           "decay": 0.0,
@@ -225032,18 +225309,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 10,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1665
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 13,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -225771,6 +226051,8 @@
             "FullAuto"
           ],
           "defaultMode": "FullAuto",
+          "scatterUnwielded": 20,
+          "recoilUnwielded": 4,
           "scatter": 6,
           "increase": 0.0,
           "decay": 0.0,
@@ -225781,18 +226063,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 10,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1665
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 13,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -226512,6 +226797,8 @@
             "FullAuto"
           ],
           "defaultMode": "FullAuto",
+          "scatterUnwielded": 20,
+          "recoilUnwielded": 5,
           "scatter": 10,
           "increase": 0.0,
           "decay": 0.0,
@@ -226522,18 +226809,21 @@
           "burstSize": 5,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 10,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1332
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 14,
               "scaleExtraScatter": true,
               "shotsToMax": 30,
@@ -227295,6 +227585,8 @@
             "FullAuto"
           ],
           "defaultMode": "FullAuto",
+          "scatterUnwielded": 20,
+          "recoilUnwielded": 4,
           "scatter": 6,
           "increase": 0.0,
           "decay": 0.0,
@@ -227305,18 +227597,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 10,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1665
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 13,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -228059,6 +228354,8 @@
             "FullAuto"
           ],
           "defaultMode": "FullAuto",
+          "scatterUnwielded": 20,
+          "recoilUnwielded": 4,
           "scatter": 4,
           "increase": 0.0,
           "decay": 0.0,
@@ -228069,18 +228366,21 @@
           "burstSize": 4,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 10,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1665
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 13,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -228825,6 +229125,8 @@
             "FullAuto"
           ],
           "defaultMode": "FullAuto",
+          "scatterUnwielded": 20,
+          "recoilUnwielded": 4,
           "scatter": 6,
           "increase": 0.0,
           "decay": 0.0,
@@ -228835,18 +229137,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 10,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1665
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 13,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -229697,6 +230002,8 @@
             "FullAuto"
           ],
           "defaultMode": "FullAuto",
+          "scatterUnwielded": 20,
+          "recoilUnwielded": 4,
           "scatter": 6,
           "increase": 0.0,
           "decay": 0.0,
@@ -229707,18 +230014,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 10,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1665
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 13,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -230582,6 +230892,8 @@
             "FullAuto"
           ],
           "defaultMode": "FullAuto",
+          "scatterUnwielded": 20,
+          "recoilUnwielded": 4,
           "scatter": 6,
           "increase": 0.0,
           "decay": 0.0,
@@ -230592,18 +230904,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 10,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1665
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 13,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -231465,6 +231780,8 @@
             "FullAuto"
           ],
           "defaultMode": "FullAuto",
+          "scatterUnwielded": 20,
+          "recoilUnwielded": 4,
           "scatter": 6,
           "increase": 0.0,
           "decay": 0.0,
@@ -231475,18 +231792,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 10,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1665
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 13,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -232268,6 +232588,8 @@
             "FullAuto"
           ],
           "defaultMode": "FullAuto",
+          "scatterUnwielded": 14,
+          "recoilUnwielded": 3,
           "scatter": 10,
           "increase": 0.0,
           "decay": 0.0,
@@ -232278,18 +232600,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 10,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
               "fireDelay": 0
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 13,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -232964,6 +233289,8 @@
             "FullAuto"
           ],
           "defaultMode": "FullAuto",
+          "scatterUnwielded": 20,
+          "recoilUnwielded": 4,
           "scatter": 2,
           "increase": 0.0,
           "decay": 0.0,
@@ -232974,18 +233301,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 6,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1665
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 6,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -233704,6 +234034,8 @@
             "FullAuto"
           ],
           "defaultMode": "FullAuto",
+          "scatterUnwielded": 20,
+          "recoilUnwielded": 4,
           "scatter": 2,
           "increase": 0.0,
           "decay": 0.0,
@@ -233714,18 +234046,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 6,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1665
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 6,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -234428,6 +234763,8 @@
             "FullAuto"
           ],
           "defaultMode": "FullAuto",
+          "scatterUnwielded": 14,
+          "recoilUnwielded": 3,
           "scatter": 10,
           "increase": 0.0,
           "decay": 0.0,
@@ -234438,18 +234775,21 @@
           "burstSize": 4,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0.2331
             },
             "FullAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
@@ -235101,6 +235441,8 @@
             "FullAuto"
           ],
           "defaultMode": "FullAuto",
+          "scatterUnwielded": 12,
+          "recoilUnwielded": 3,
           "scatter": 10,
           "increase": 0.0,
           "decay": 0.0,
@@ -235111,18 +235453,21 @@
           "burstSize": 4,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0.2331
             },
             "FullAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
@@ -235856,6 +236201,8 @@
             "FullAuto"
           ],
           "defaultMode": "FullAuto",
+          "scatterUnwielded": 11,
+          "recoilUnwielded": 4,
           "scatter": 4,
           "increase": 0.0,
           "decay": 0.0,
@@ -235866,18 +236213,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 10,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1665
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 13,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -236446,6 +236796,8 @@
             "FullAuto"
           ],
           "defaultMode": "FullAuto",
+          "scatterUnwielded": 14,
+          "recoilUnwielded": 1,
           "scatter": 10,
           "increase": 0.0,
           "decay": 0.0,
@@ -236456,18 +236808,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 10,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.0999
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 3,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -236963,6 +237318,8 @@
             "FullAuto"
           ],
           "defaultMode": "FullAuto",
+          "scatterUnwielded": 14,
+          "recoilUnwielded": 1,
           "scatter": 8,
           "increase": 0.0,
           "decay": 0.0,
@@ -236973,18 +237330,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 10,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.0999
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 2,
               "scaleExtraScatter": true,
               "shotsToMax": 20,
@@ -237655,6 +238015,8 @@
             "FullAuto"
           ],
           "defaultMode": "FullAuto",
+          "scatterUnwielded": 14,
+          "recoilUnwielded": 1,
           "scatter": 14,
           "increase": 0.0,
           "decay": 0.0,
@@ -237665,18 +238027,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 10,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.0999
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 3,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -238361,6 +238726,8 @@
             "FullAuto"
           ],
           "defaultMode": "FullAuto",
+          "scatterUnwielded": 16,
+          "recoilUnwielded": 1,
           "scatter": 15,
           "increase": 0.0,
           "decay": 0.0,
@@ -238371,18 +238738,21 @@
           "burstSize": 2,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 10,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.0999
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 3,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -238914,6 +239284,8 @@
             "FullAuto"
           ],
           "defaultMode": "FullAuto",
+          "scatterUnwielded": 16,
+          "recoilUnwielded": 1,
           "scatter": 14,
           "increase": 0.0,
           "decay": 0.0,
@@ -238924,18 +239296,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 10,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.098
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 3,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -239511,6 +239886,8 @@
             "FullAuto"
           ],
           "defaultMode": "FullAuto",
+          "scatterUnwielded": 16,
+          "recoilUnwielded": 1,
           "scatter": 14,
           "increase": 0.0,
           "decay": 0.0,
@@ -239521,18 +239898,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 10,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.098
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 3,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -240101,6 +240481,8 @@
             "FullAuto"
           ],
           "defaultMode": "FullAuto",
+          "scatterUnwielded": 16,
+          "recoilUnwielded": 1,
           "scatter": 10,
           "increase": 0.0,
           "decay": 0.0,
@@ -240111,18 +240493,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 10,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.098
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 3,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -240674,6 +241059,8 @@
             "FullAuto"
           ],
           "defaultMode": "FullAuto",
+          "scatterUnwielded": 14,
+          "recoilUnwielded": 1,
           "scatter": 14,
           "increase": 0.0,
           "decay": 0.0,
@@ -240684,18 +241071,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 10,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.0999
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 3,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -241220,6 +241610,8 @@
             "FullAuto"
           ],
           "defaultMode": "FullAuto",
+          "scatterUnwielded": 16,
+          "recoilUnwielded": 1,
           "scatter": 10,
           "increase": 0.0,
           "decay": 0.0,
@@ -241230,18 +241622,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 12,
               "scaleExtraScatter": true,
               "shotsToMax": 50,
@@ -241753,6 +242148,8 @@
             "SemiAuto"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 20,
+          "recoilUnwielded": 4,
           "scatter": 10,
           "increase": 0.0,
           "decay": 0.0,
@@ -241763,18 +242160,21 @@
           "burstSize": 1,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 10.0,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 26.0,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -242420,6 +242820,8 @@
             "SemiAuto"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 20,
+          "recoilUnwielded": 4,
           "scatter": 10,
           "increase": 0.0,
           "decay": 0.0,
@@ -242430,18 +242832,21 @@
           "burstSize": 1,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 10.0,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 26.0,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -243166,6 +243571,8 @@
             "SemiAuto"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 10,
+          "recoilUnwielded": 4,
           "scatter": 10,
           "increase": 0.0,
           "decay": 0.0,
@@ -243176,18 +243583,21 @@
           "burstSize": 1,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 10.0,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 26.0,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -243890,6 +244300,8 @@
             "SemiAuto"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 30,
+          "recoilUnwielded": 5,
           "scatter": 14,
           "increase": 0.0,
           "decay": 0.0,
@@ -243900,18 +244312,21 @@
           "burstSize": 1,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 10.0,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 26.0,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -250711,6 +251126,8 @@
             "FullAuto"
           ],
           "defaultMode": "FullAuto",
+          "scatterUnwielded": 12,
+          "recoilUnwielded": 1,
           "scatter": 6,
           "increase": 0.0,
           "decay": 0.0,
@@ -250721,18 +251138,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 10,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.0999
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 3,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -251304,6 +251724,8 @@
             "Burst"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 20,
+          "recoilUnwielded": 3,
           "scatter": 4,
           "increase": 0.0,
           "decay": 0.0,
@@ -251314,18 +251736,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 10,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1665
             },
             "FullAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
@@ -251958,6 +252383,8 @@
             "Burst"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 20,
+          "recoilUnwielded": 3,
           "scatter": 2,
           "increase": 0.0,
           "decay": 0.0,
@@ -251968,18 +252395,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 10,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1665
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 13,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -252604,6 +253034,8 @@
             "SemiAuto"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 20,
+          "recoilUnwielded": 2,
           "scatter": 6,
           "increase": 0.0,
           "decay": 0.0,
@@ -252614,18 +253046,21 @@
           "burstSize": 0,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 10,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1665
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 13,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -253374,6 +253809,8 @@
             "SemiAuto"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 20,
+          "recoilUnwielded": 2,
           "scatter": 6,
           "increase": 0.0,
           "decay": 0.0,
@@ -253384,18 +253821,21 @@
           "burstSize": 0,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 10,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1665
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 13,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -254107,6 +254547,8 @@
             "FullAuto"
           ],
           "defaultMode": "FullAuto",
+          "scatterUnwielded": 20,
+          "recoilUnwielded": 4,
           "scatter": 10,
           "increase": 0.0,
           "decay": 0.0,
@@ -254117,18 +254559,21 @@
           "burstSize": 4,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 10,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
               "fireDelay": 0
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 13,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -254845,6 +255290,8 @@
             "FullAuto"
           ],
           "defaultMode": "FullAuto",
+          "scatterUnwielded": 14,
+          "recoilUnwielded": 1,
           "scatter": 14,
           "increase": 0.0,
           "decay": 0.0,
@@ -254855,18 +255302,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 10,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.0999
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 3,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -255560,6 +256010,8 @@
             "FullAuto"
           ],
           "defaultMode": "FullAuto",
+          "scatterUnwielded": 12,
+          "recoilUnwielded": 1,
           "scatter": 6,
           "increase": 0.0,
           "decay": 0.0,
@@ -255570,18 +256022,21 @@
           "burstSize": 3,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 10,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.0999
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2,
               "extraScatter": 3,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -255940,6 +256395,8 @@
             "Burst"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 20,
+          "recoilUnwielded": 4,
           "scatter": 10,
           "increase": 0.0,
           "decay": 0.0,
@@ -255950,18 +256407,21 @@
           "burstSize": 2,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0.1665
             },
             "FullAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
@@ -256662,6 +257122,8 @@
             "SemiAuto"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 20,
+          "recoilUnwielded": 4,
           "scatter": 10,
           "increase": 0.0,
           "decay": 0.0,
@@ -256672,18 +257134,21 @@
           "burstSize": 2,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 10.0,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 26.0,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -257353,6 +257818,8 @@
             "SemiAuto"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 20,
+          "recoilUnwielded": 5,
           "scatter": 10,
           "increase": 0.0,
           "decay": 0.0,
@@ -257363,18 +257830,21 @@
           "burstSize": 2,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 10.0,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 26.0,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -258122,6 +258592,8 @@
             "SemiAuto"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 10,
+          "recoilUnwielded": 4,
           "scatter": 10,
           "increase": 0.0,
           "decay": 0.0,
@@ -258132,18 +258604,21 @@
           "burstSize": 1,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 10.0,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 26.0,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -258862,6 +259337,8 @@
             "SemiAuto"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 10,
+          "recoilUnwielded": 4,
           "scatter": 10,
           "increase": 0.0,
           "decay": 0.0,
@@ -258872,18 +259349,21 @@
           "burstSize": 1,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 10.0,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 26.0,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -259557,6 +260037,8 @@
             "SemiAuto"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 10,
+          "recoilUnwielded": 4,
           "scatter": 5,
           "increase": 0.0,
           "decay": 0.0,
@@ -259567,18 +260049,21 @@
           "burstSize": 1,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 10.0,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 26.0,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
@@ -260311,6 +260796,8 @@
             "SemiAuto"
           ],
           "defaultMode": "SemiAuto",
+          "scatterUnwielded": 18,
+          "recoilUnwielded": 4,
           "scatter": 9,
           "increase": 0.0,
           "decay": 0.0,
@@ -260321,18 +260808,21 @@
           "burstSize": 1,
           "modes": {
             "SemiAuto": {
+              "unwieldedMultiplier": 0,
               "extraScatter": 0,
               "scaleExtraScatter": false,
               "shotsToMax": null,
               "fireDelay": 0
             },
             "Burst": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 10.0,
               "scaleExtraScatter": true,
               "shotsToMax": 6,
               "fireDelay": 0.1
             },
             "FullAuto": {
+              "unwieldedMultiplier": 2.0,
               "extraScatter": 26.0,
               "scaleExtraScatter": true,
               "shotsToMax": 4,
