@@ -25,3 +25,17 @@ def test_omitted_record_fields_use_record_defaults():
 
 def test_non_selective_guns_are_not_fabricated():
     assert weapon_ballistics({"Gun": {}}) is None
+
+
+def test_one_handed_defaults_and_overrides():
+    defaults = weapon_ballistics({"Gun": {}, "RMCSelectiveFire": {}})
+    assert defaults["scatterUnwielded"] == 10
+    assert defaults["recoilUnwielded"] == 1
+    assert defaults["modes"]["FullAuto"]["unwieldedMultiplier"] == 2
+    explicit = weapon_ballistics({"Gun": {}, "RMCSelectiveFire": {
+        "scatterUnwielded": 20, "recoilUnwielded": 4,
+        "modifiers": {"FullAuto": {"unwieldedScatterMultiplier": 0}}
+    }})
+    assert explicit["scatterUnwielded"] == 20
+    assert explicit["recoilUnwielded"] == 4
+    assert explicit["modes"]["FullAuto"]["unwieldedMultiplier"] == 0

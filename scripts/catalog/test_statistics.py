@@ -306,3 +306,19 @@ def test_default_storage_max_size_picks_size_below_container():
 def test_default_storage_max_size_unknown_container_prefers_normal():
     item_sizes = {"Small": {"weight": 1}, "Normal": {"weight": 2}}
     assert default_storage_max_size("Unknown", item_sizes) == "Normal"
+
+
+def test_new_weapon_gets_ballistics_during_catalog_build():
+    items = _sniper_items({}, False)
+    items["NewWeapon"] = items.pop("Rifle")
+    items["NewWeapon"]["componentTypes"].append("RMCSelectiveFire")
+    items["NewWeapon"]["properties"]["RMCSelectiveFire"] = {
+        "scatterWielded": 7, "scatterUnwielded": 23, "recoilUnwielded": 5,
+        "modifiers": {"FullAuto": {"maxScatterModifier": 12, "unwieldedScatterMultiplier": 3}},
+    }
+    populate_weapon_statistics(items, relations=[], public_item_ids={"NewWeapon"})
+    result = items["NewWeapon"]["weaponStats"]["ballistics"]
+    assert result["scatter"] == 7
+    assert result["scatterUnwielded"] == 23
+    assert result["recoilUnwielded"] == 5
+    assert result["modes"]["FullAuto"]["unwieldedMultiplier"] == 3
