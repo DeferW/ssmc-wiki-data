@@ -5,6 +5,7 @@ import math
 from collections import defaultdict
 from typing import Any, Iterable
 
+from scripts.catalog.ballistics import weapon_ballistics
 from scripts.common.items.classification import has_meaningful_armor
 from scripts.common.items.prototypes import parse_box2i
 
@@ -700,6 +701,9 @@ def populate_weapon_statistics(
         if not isinstance(selective, dict):
             selective = {}
         stats: dict[str, Any] = {}
+        ballistics = weapon_ballistics(properties)
+        if ballistics is not None:
+            stats["ballistics"] = ballistics
 
         modes = selective.get("baseFireModes", gun.get("availableModes"))
         if isinstance(modes, list) and modes:

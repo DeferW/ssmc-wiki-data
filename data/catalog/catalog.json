@@ -35995,7 +35995,44 @@
               }
             ]
           }
-        ]
+        ],
+        "ballistics": {
+          "schemaVersion": 1,
+          "rulesCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+          "availableModes": [
+            "SemiAuto"
+          ],
+          "defaultMode": "SemiAuto",
+          "scatter": 0,
+          "increase": 0.0,
+          "decay": 0.0,
+          "recoil": 1,
+          "burstScatterMultiplier": 4,
+          "fireRate": 0.667,
+          "burstRateMultiplier": 2.0,
+          "burstSize": 1,
+          "modes": {
+            "SemiAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "Burst": {
+              "extraScatter": 10,
+              "scaleExtraScatter": true,
+              "shotsToMax": 6,
+              "fireDelay": 0.1665
+            },
+            "FullAuto": {
+              "extraScatter": 13,
+              "scaleExtraScatter": true,
+              "shotsToMax": 4,
+              "fireDelay": 0
+            }
+          },
+          "unsupported": []
+        }
       },
       "image": "sprites/CMM96SSniperRifle.png"
     },
@@ -52482,7 +52519,44 @@
               }
             ]
           }
-        ]
+        ],
+        "ballistics": {
+          "schemaVersion": 1,
+          "rulesCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+          "availableModes": [
+            "SemiAuto"
+          ],
+          "defaultMode": "SemiAuto",
+          "scatter": 10,
+          "increase": 0.0,
+          "decay": 0.0,
+          "recoil": 1.0,
+          "burstScatterMultiplier": 5,
+          "fireRate": 10,
+          "burstRateMultiplier": 2.0,
+          "burstSize": 3,
+          "modes": {
+            "SemiAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "Burst": {
+              "extraScatter": 10.0,
+              "scaleExtraScatter": true,
+              "shotsToMax": 6,
+              "fireDelay": 0.1
+            },
+            "FullAuto": {
+              "extraScatter": 26.0,
+              "scaleExtraScatter": true,
+              "shotsToMax": 4,
+              "fireDelay": 0.0
+            }
+          },
+          "unsupported": []
+        }
       },
       "image": "sprites/CMWeaponPistolM1984.png"
     },
@@ -53012,7 +53086,44 @@
               }
             ]
           }
-        ]
+        ],
+        "ballistics": {
+          "schemaVersion": 1,
+          "rulesCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+          "availableModes": [
+            "SemiAuto"
+          ],
+          "defaultMode": "SemiAuto",
+          "scatter": 10,
+          "increase": 0.0,
+          "decay": 0.0,
+          "recoil": 1.0,
+          "burstScatterMultiplier": 5,
+          "fireRate": 10,
+          "burstRateMultiplier": 2.0,
+          "burstSize": 3,
+          "modes": {
+            "SemiAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "Burst": {
+              "extraScatter": 10.0,
+              "scaleExtraScatter": true,
+              "shotsToMax": 6,
+              "fireDelay": 0.1
+            },
+            "FullAuto": {
+              "extraScatter": 26.0,
+              "scaleExtraScatter": true,
+              "shotsToMax": 4,
+              "fireDelay": 0.0
+            }
+          },
+          "unsupported": []
+        }
       },
       "image": "sprites/CMWeaponPistolM1984Empty.png"
     },
@@ -71231,7 +71342,44 @@
               }
             ]
           }
-        ]
+        ],
+        "ballistics": {
+          "schemaVersion": 1,
+          "rulesCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+          "availableModes": [
+            "SemiAuto"
+          ],
+          "defaultMode": "SemiAuto",
+          "scatter": 10.0,
+          "increase": 0.0,
+          "decay": 0.0,
+          "recoil": 1.0,
+          "burstScatterMultiplier": 4.0,
+          "fireRate": 0.334,
+          "burstRateMultiplier": 2.0,
+          "burstSize": 3,
+          "modes": {
+            "SemiAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "Burst": {
+              "extraScatter": 10.0,
+              "scaleExtraScatter": true,
+              "shotsToMax": 6,
+              "fireDelay": 0.1
+            },
+            "FullAuto": {
+              "extraScatter": 26.0,
+              "scaleExtraScatter": true,
+              "shotsToMax": 4,
+              "fireDelay": 0.0
+            }
+          },
+          "unsupported": []
+        }
       },
       "attachmentStats": {
         "compatibleWith": [
@@ -74441,7 +74589,44 @@
               }
             ]
           }
-        ]
+        ],
+        "ballistics": {
+          "schemaVersion": 1,
+          "rulesCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+          "availableModes": [
+            "SemiAuto"
+          ],
+          "defaultMode": "SemiAuto",
+          "scatter": 10.0,
+          "increase": 0.0,
+          "decay": 0.0,
+          "recoil": 1.0,
+          "burstScatterMultiplier": 4.0,
+          "fireRate": 0.417,
+          "burstRateMultiplier": 2.0,
+          "burstSize": 3,
+          "modes": {
+            "SemiAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "Burst": {
+              "extraScatter": 10.0,
+              "scaleExtraScatter": true,
+              "shotsToMax": 6,
+              "fireDelay": 0.1
+            },
+            "FullAuto": {
+              "extraScatter": 26.0,
+              "scaleExtraScatter": true,
+              "shotsToMax": 4,
+              "fireDelay": 0.0
+            }
+          },
+          "unsupported": []
+        }
       },
       "attachmentStats": {
         "compatibleWith": [
@@ -74705,7 +74890,44 @@
               }
             ]
           }
-        ]
+        ],
+        "ballistics": {
+          "schemaVersion": 1,
+          "rulesCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+          "availableModes": [
+            "SemiAuto"
+          ],
+          "defaultMode": "SemiAuto",
+          "scatter": 10.0,
+          "increase": 0.0,
+          "decay": 0.0,
+          "recoil": 1.0,
+          "burstScatterMultiplier": 4.0,
+          "fireRate": 0.476,
+          "burstRateMultiplier": 2.0,
+          "burstSize": 3,
+          "modes": {
+            "SemiAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "Burst": {
+              "extraScatter": 10.0,
+              "scaleExtraScatter": true,
+              "shotsToMax": 6,
+              "fireDelay": 0.1
+            },
+            "FullAuto": {
+              "extraScatter": 26.0,
+              "scaleExtraScatter": true,
+              "shotsToMax": 4,
+              "fireDelay": 0.0
+            }
+          },
+          "unsupported": []
+        }
       },
       "attachmentStats": {
         "compatibleWith": [
@@ -136041,7 +136263,45 @@
               }
             ]
           }
-        ]
+        ],
+        "ballistics": {
+          "schemaVersion": 1,
+          "rulesCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+          "availableModes": [
+            "SemiAuto",
+            "Burst"
+          ],
+          "defaultMode": "SemiAuto",
+          "scatter": 10,
+          "increase": 0.0,
+          "decay": 0.0,
+          "recoil": 1,
+          "burstScatterMultiplier": 4,
+          "fireRate": 2,
+          "burstRateMultiplier": 2.0,
+          "burstSize": 3,
+          "modes": {
+            "SemiAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "Burst": {
+              "extraScatter": 10,
+              "scaleExtraScatter": true,
+              "shotsToMax": 6,
+              "fireDelay": 0.08
+            },
+            "FullAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            }
+          },
+          "unsupported": []
+        }
       },
       "image": "sprites/RMCMK80.png"
     },
@@ -137784,7 +138044,44 @@
               }
             ]
           }
-        ]
+        ],
+        "ballistics": {
+          "schemaVersion": 1,
+          "rulesCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+          "availableModes": [
+            "FullAuto"
+          ],
+          "defaultMode": "FullAuto",
+          "scatter": 10.0,
+          "increase": 0.0,
+          "decay": 0.0,
+          "recoil": 1.0,
+          "burstScatterMultiplier": 4.0,
+          "fireRate": 10,
+          "burstRateMultiplier": 2.0,
+          "burstSize": 3,
+          "modes": {
+            "SemiAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "Burst": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "FullAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": 125,
+              "fireDelay": 0
+            }
+          },
+          "unsupported": []
+        }
       },
       "image": "sprites/RMCMachineGunM2C.png"
     },
@@ -162190,7 +162487,44 @@
             "ammoId": "RMCPowerCellSmartgun",
             "ammoName": "Аккумулятор для умного оружия M56"
           }
-        ]
+        ],
+        "ballistics": {
+          "schemaVersion": 1,
+          "rulesCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+          "availableModes": [
+            "FullAuto"
+          ],
+          "defaultMode": "FullAuto",
+          "scatter": 10,
+          "increase": 0.0,
+          "decay": 0.0,
+          "recoil": 3,
+          "burstScatterMultiplier": 4,
+          "fireRate": 5,
+          "burstRateMultiplier": 2.0,
+          "burstSize": 3,
+          "modes": {
+            "SemiAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "Burst": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "FullAuto": {
+              "extraScatter": 4,
+              "scaleExtraScatter": true,
+              "shotsToMax": 80,
+              "fireDelay": 0
+            }
+          },
+          "unsupported": []
+        }
       },
       "image": "sprites/RMCSmartGunCO.png"
     },
@@ -162500,7 +162834,45 @@
               }
             ]
           }
-        ]
+        ],
+        "ballistics": {
+          "schemaVersion": 1,
+          "rulesCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+          "availableModes": [
+            "FullAuto",
+            "SemiAuto"
+          ],
+          "defaultMode": "FullAuto",
+          "scatter": 10.0,
+          "increase": 0.0,
+          "decay": 0.0,
+          "recoil": 1.0,
+          "burstScatterMultiplier": 4.0,
+          "fireRate": 3.33,
+          "burstRateMultiplier": 2.0,
+          "burstSize": 3,
+          "modes": {
+            "SemiAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "Burst": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "FullAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": 700,
+              "fireDelay": 0
+            }
+          },
+          "unsupported": []
+        }
       },
       "image": "sprites/RMCSmartGunMounted.png"
     },
@@ -162954,7 +163326,44 @@
             "ammoId": "RMCPowerCellSmartgun",
             "ammoName": "Аккумулятор для умного оружия M56"
           }
-        ]
+        ],
+        "ballistics": {
+          "schemaVersion": 1,
+          "rulesCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+          "availableModes": [
+            "FullAuto"
+          ],
+          "defaultMode": "FullAuto",
+          "scatter": 10,
+          "increase": 0.0,
+          "decay": 0.0,
+          "recoil": 3,
+          "burstScatterMultiplier": 4,
+          "fireRate": 5,
+          "burstRateMultiplier": 2.0,
+          "burstSize": 3,
+          "modes": {
+            "SemiAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "Burst": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "FullAuto": {
+              "extraScatter": 4,
+              "scaleExtraScatter": true,
+              "shotsToMax": 80,
+              "fireDelay": 0
+            }
+          },
+          "unsupported": []
+        }
       },
       "image": "sprites/RMCSmartGunUNMC.png"
     },
@@ -169120,7 +169529,44 @@
               }
             ]
           }
-        ]
+        ],
+        "ballistics": {
+          "schemaVersion": 1,
+          "rulesCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+          "availableModes": [
+            "SemiAuto"
+          ],
+          "defaultMode": "SemiAuto",
+          "scatter": 10.0,
+          "increase": 0.0,
+          "decay": 0.0,
+          "recoil": 2,
+          "burstScatterMultiplier": 4.0,
+          "fireRate": 0.3125,
+          "burstRateMultiplier": 2.0,
+          "burstSize": 3,
+          "modes": {
+            "SemiAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "Burst": {
+              "extraScatter": 10.0,
+              "scaleExtraScatter": true,
+              "shotsToMax": 6,
+              "fireDelay": 0.1
+            },
+            "FullAuto": {
+              "extraScatter": 26.0,
+              "scaleExtraScatter": true,
+              "shotsToMax": 4,
+              "fireDelay": 0.0
+            }
+          },
+          "unsupported": []
+        }
       },
       "image": "sprites/RMCWeaponLauncherM85A1.png"
     },
@@ -169662,7 +170108,44 @@
               }
             ]
           }
-        ]
+        ],
+        "ballistics": {
+          "schemaVersion": 1,
+          "rulesCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+          "availableModes": [
+            "FullAuto"
+          ],
+          "defaultMode": "FullAuto",
+          "scatter": 6,
+          "increase": 0.0,
+          "decay": 0.0,
+          "recoil": 1.0,
+          "burstScatterMultiplier": 4,
+          "fireRate": 10,
+          "burstRateMultiplier": 2.0,
+          "burstSize": 3,
+          "modes": {
+            "SemiAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "Burst": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "FullAuto": {
+              "extraScatter": 4,
+              "scaleExtraScatter": true,
+              "shotsToMax": 40,
+              "fireDelay": 0
+            }
+          },
+          "unsupported": []
+        }
       },
       "image": "sprites/RMCWeaponPistolM13.png"
     },
@@ -170212,7 +170695,44 @@
               }
             ]
           }
-        ]
+        ],
+        "ballistics": {
+          "schemaVersion": 1,
+          "rulesCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+          "availableModes": [
+            "FullAuto"
+          ],
+          "defaultMode": "FullAuto",
+          "scatter": 6,
+          "increase": 0.0,
+          "decay": 0.0,
+          "recoil": 1.0,
+          "burstScatterMultiplier": 4,
+          "fireRate": 10,
+          "burstRateMultiplier": 2.0,
+          "burstSize": 3,
+          "modes": {
+            "SemiAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "Burst": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "FullAuto": {
+              "extraScatter": 4,
+              "scaleExtraScatter": true,
+              "shotsToMax": 40,
+              "fireDelay": 0
+            }
+          },
+          "unsupported": []
+        }
       },
       "image": "sprites/RMCWeaponPistolM13Empty.png"
     },
@@ -170671,7 +171191,45 @@
               }
             ]
           }
-        ]
+        ],
+        "ballistics": {
+          "schemaVersion": 1,
+          "rulesCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+          "availableModes": [
+            "SemiAuto",
+            "Burst"
+          ],
+          "defaultMode": "SemiAuto",
+          "scatter": 8,
+          "increase": 0.0,
+          "decay": 0.0,
+          "recoil": 1.0,
+          "burstScatterMultiplier": 4,
+          "fireRate": 4,
+          "burstRateMultiplier": 2.0,
+          "burstSize": 3,
+          "modes": {
+            "SemiAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "Burst": {
+              "extraScatter": 10,
+              "scaleExtraScatter": true,
+              "shotsToMax": 6,
+              "fireDelay": 0.1665
+            },
+            "FullAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            }
+          },
+          "unsupported": []
+        }
       },
       "image": "sprites/RMCWeaponPistolM77.png"
     },
@@ -171138,7 +171696,45 @@
               }
             ]
           }
-        ]
+        ],
+        "ballistics": {
+          "schemaVersion": 1,
+          "rulesCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+          "availableModes": [
+            "SemiAuto",
+            "Burst"
+          ],
+          "defaultMode": "SemiAuto",
+          "scatter": 8,
+          "increase": 0.0,
+          "decay": 0.0,
+          "recoil": 1.0,
+          "burstScatterMultiplier": 4,
+          "fireRate": 4,
+          "burstRateMultiplier": 2.0,
+          "burstSize": 3,
+          "modes": {
+            "SemiAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "Burst": {
+              "extraScatter": 10,
+              "scaleExtraScatter": true,
+              "shotsToMax": 6,
+              "fireDelay": 0.1665
+            },
+            "FullAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            }
+          },
+          "unsupported": []
+        }
       },
       "image": "sprites/RMCWeaponPistolM77Empty.png"
     },
@@ -171451,7 +172047,44 @@
               }
             ]
           }
-        ]
+        ],
+        "ballistics": {
+          "schemaVersion": 1,
+          "rulesCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+          "availableModes": [
+            "SemiAuto"
+          ],
+          "defaultMode": "SemiAuto",
+          "scatter": 0,
+          "increase": 0.0,
+          "decay": 0.0,
+          "recoil": 1.0,
+          "burstScatterMultiplier": 0,
+          "fireRate": 10,
+          "burstRateMultiplier": 2.0,
+          "burstSize": 3,
+          "modes": {
+            "SemiAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "Burst": {
+              "extraScatter": 10.0,
+              "scaleExtraScatter": true,
+              "shotsToMax": 6,
+              "fireDelay": 0.1
+            },
+            "FullAuto": {
+              "extraScatter": 26.0,
+              "scaleExtraScatter": true,
+              "shotsToMax": 4,
+              "fireDelay": 0.0
+            }
+          },
+          "unsupported": []
+        }
       },
       "image": "sprites/RMCWeaponPistolM82F.png"
     },
@@ -171776,7 +172409,44 @@
               }
             ]
           }
-        ]
+        ],
+        "ballistics": {
+          "schemaVersion": 1,
+          "rulesCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+          "availableModes": [
+            "SemiAuto"
+          ],
+          "defaultMode": "SemiAuto",
+          "scatter": 0,
+          "increase": 0.0,
+          "decay": 0.0,
+          "recoil": 1.0,
+          "burstScatterMultiplier": 0,
+          "fireRate": 10,
+          "burstRateMultiplier": 2.0,
+          "burstSize": 3,
+          "modes": {
+            "SemiAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "Burst": {
+              "extraScatter": 10.0,
+              "scaleExtraScatter": true,
+              "shotsToMax": 6,
+              "fireDelay": 0.1
+            },
+            "FullAuto": {
+              "extraScatter": 26.0,
+              "scaleExtraScatter": true,
+              "shotsToMax": 4,
+              "fireDelay": 0.0
+            }
+          },
+          "unsupported": []
+        }
       },
       "image": "sprites/RMCWeaponPistolM82FEmpty.png"
     },
@@ -172205,7 +172875,45 @@
               }
             ]
           }
-        ]
+        ],
+        "ballistics": {
+          "schemaVersion": 1,
+          "rulesCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+          "availableModes": [
+            "SemiAuto",
+            "Burst"
+          ],
+          "defaultMode": "SemiAuto",
+          "scatter": 10,
+          "increase": 0.0,
+          "decay": 0.0,
+          "recoil": 1,
+          "burstScatterMultiplier": 5,
+          "fireRate": 10,
+          "burstRateMultiplier": 2.0,
+          "burstSize": 3,
+          "modes": {
+            "SemiAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "Burst": {
+              "extraScatter": 10,
+              "scaleExtraScatter": true,
+              "shotsToMax": 6,
+              "fireDelay": 0.1665
+            },
+            "FullAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            }
+          },
+          "unsupported": []
+        }
       },
       "image": "sprites/RMCWeaponPistolSU6.png"
     },
@@ -172735,7 +173443,44 @@
               }
             ]
           }
-        ]
+        ],
+        "ballistics": {
+          "schemaVersion": 1,
+          "rulesCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+          "availableModes": [
+            "SemiAuto"
+          ],
+          "defaultMode": "SemiAuto",
+          "scatter": 6,
+          "increase": 0.0,
+          "decay": 0.0,
+          "recoil": 1,
+          "burstScatterMultiplier": 4.0,
+          "fireRate": 2,
+          "burstRateMultiplier": 2.0,
+          "burstSize": 3,
+          "modes": {
+            "SemiAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "Burst": {
+              "extraScatter": 10.0,
+              "scaleExtraScatter": true,
+              "shotsToMax": 6,
+              "fireDelay": 0.1
+            },
+            "FullAuto": {
+              "extraScatter": 26.0,
+              "scaleExtraScatter": true,
+              "shotsToMax": 4,
+              "fireDelay": 0.0
+            }
+          },
+          "unsupported": []
+        }
       },
       "image": "sprites/RMCWeaponRevolverM44.png"
     },
@@ -173274,7 +174019,44 @@
               }
             ]
           }
-        ]
+        ],
+        "ballistics": {
+          "schemaVersion": 1,
+          "rulesCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+          "availableModes": [
+            "SemiAuto"
+          ],
+          "defaultMode": "SemiAuto",
+          "scatter": 6,
+          "increase": 0.0,
+          "decay": 0.0,
+          "recoil": 1,
+          "burstScatterMultiplier": 4.0,
+          "fireRate": 2,
+          "burstRateMultiplier": 2.0,
+          "burstSize": 3,
+          "modes": {
+            "SemiAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "Burst": {
+              "extraScatter": 10.0,
+              "scaleExtraScatter": true,
+              "shotsToMax": 6,
+              "fireDelay": 0.1
+            },
+            "FullAuto": {
+              "extraScatter": 26.0,
+              "scaleExtraScatter": true,
+              "shotsToMax": 4,
+              "fireDelay": 0.0
+            }
+          },
+          "unsupported": []
+        }
       },
       "image": "sprites/RMCWeaponRevolverM44Empty.png"
     },
@@ -173804,7 +174586,44 @@
               }
             ]
           }
-        ]
+        ],
+        "ballistics": {
+          "schemaVersion": 1,
+          "rulesCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+          "availableModes": [
+            "SemiAuto"
+          ],
+          "defaultMode": "SemiAuto",
+          "scatter": 6,
+          "increase": 0.0,
+          "decay": 0.0,
+          "recoil": 1,
+          "burstScatterMultiplier": 4.0,
+          "fireRate": 2,
+          "burstRateMultiplier": 2.0,
+          "burstSize": 3,
+          "modes": {
+            "SemiAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "Burst": {
+              "extraScatter": 10.0,
+              "scaleExtraScatter": true,
+              "shotsToMax": 6,
+              "fireDelay": 0.1
+            },
+            "FullAuto": {
+              "extraScatter": 26.0,
+              "scaleExtraScatter": true,
+              "shotsToMax": 4,
+              "fireDelay": 0.0
+            }
+          },
+          "unsupported": []
+        }
       },
       "image": "sprites/RMCWeaponRevolverM44Marksman.png"
     },
@@ -174189,7 +175008,44 @@
               }
             ]
           }
-        ]
+        ],
+        "ballistics": {
+          "schemaVersion": 1,
+          "rulesCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+          "availableModes": [
+            "SemiAuto"
+          ],
+          "defaultMode": "SemiAuto",
+          "scatter": 8,
+          "increase": 0.0,
+          "decay": 0.0,
+          "recoil": 1,
+          "burstScatterMultiplier": 4.0,
+          "fireRate": 1.2,
+          "burstRateMultiplier": 2.0,
+          "burstSize": 3,
+          "modes": {
+            "SemiAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "Burst": {
+              "extraScatter": 10.0,
+              "scaleExtraScatter": true,
+              "shotsToMax": 6,
+              "fireDelay": 0.1
+            },
+            "FullAuto": {
+              "extraScatter": 26.0,
+              "scaleExtraScatter": true,
+              "shotsToMax": 4,
+              "fireDelay": 0.0
+            }
+          },
+          "unsupported": []
+        }
       },
       "image": "sprites/RMCWeaponRevolverRSh9.png"
     },
@@ -174979,7 +175835,46 @@
               }
             ]
           }
-        ]
+        ],
+        "ballistics": {
+          "schemaVersion": 1,
+          "rulesCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+          "availableModes": [
+            "SemiAuto",
+            "Burst",
+            "FullAuto"
+          ],
+          "defaultMode": "FullAuto",
+          "scatter": 6,
+          "increase": 0.0,
+          "decay": 0.0,
+          "recoil": 1,
+          "burstScatterMultiplier": 1,
+          "fireRate": 4,
+          "burstRateMultiplier": 2.0,
+          "burstSize": 3,
+          "modes": {
+            "SemiAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "Burst": {
+              "extraScatter": 10,
+              "scaleExtraScatter": true,
+              "shotsToMax": 6,
+              "fireDelay": 0.1665
+            },
+            "FullAuto": {
+              "extraScatter": 13,
+              "scaleExtraScatter": true,
+              "shotsToMax": 4,
+              "fireDelay": 0
+            }
+          },
+          "unsupported": []
+        }
       },
       "image": "sprites/RMCWeaponRifleM54C.png"
     },
@@ -175557,7 +176452,46 @@
               }
             ]
           }
-        ]
+        ],
+        "ballistics": {
+          "schemaVersion": 1,
+          "rulesCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+          "availableModes": [
+            "SemiAuto",
+            "Burst",
+            "FullAuto"
+          ],
+          "defaultMode": "FullAuto",
+          "scatter": 10,
+          "increase": 0.0,
+          "decay": 0.0,
+          "recoil": 1,
+          "burstScatterMultiplier": 6,
+          "fireRate": 5,
+          "burstRateMultiplier": 2.0,
+          "burstSize": 5,
+          "modes": {
+            "SemiAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "Burst": {
+              "extraScatter": 10,
+              "scaleExtraScatter": true,
+              "shotsToMax": 6,
+              "fireDelay": 0.1332
+            },
+            "FullAuto": {
+              "extraScatter": 14,
+              "scaleExtraScatter": true,
+              "shotsToMax": 30,
+              "fireDelay": 0
+            }
+          },
+          "unsupported": []
+        }
       },
       "image": "sprites/RMCWeaponRifleM54CE2.png"
     },
@@ -176147,7 +177081,46 @@
               }
             ]
           }
-        ]
+        ],
+        "ballistics": {
+          "schemaVersion": 1,
+          "rulesCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+          "availableModes": [
+            "SemiAuto",
+            "Burst",
+            "FullAuto"
+          ],
+          "defaultMode": "FullAuto",
+          "scatter": 4,
+          "increase": 0.0,
+          "decay": 0.0,
+          "recoil": 1,
+          "burstScatterMultiplier": 1,
+          "fireRate": 4,
+          "burstRateMultiplier": 2.0,
+          "burstSize": 4,
+          "modes": {
+            "SemiAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "Burst": {
+              "extraScatter": 10,
+              "scaleExtraScatter": true,
+              "shotsToMax": 6,
+              "fireDelay": 0.1665
+            },
+            "FullAuto": {
+              "extraScatter": 13,
+              "scaleExtraScatter": true,
+              "shotsToMax": 4,
+              "fireDelay": 0
+            }
+          },
+          "unsupported": []
+        }
       },
       "image": "sprites/RMCWeaponRifleM54CMK1.png"
     },
@@ -176737,7 +177710,46 @@
               }
             ]
           }
-        ]
+        ],
+        "ballistics": {
+          "schemaVersion": 1,
+          "rulesCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+          "availableModes": [
+            "SemiAuto",
+            "Burst",
+            "FullAuto"
+          ],
+          "defaultMode": "FullAuto",
+          "scatter": 4,
+          "increase": 0.0,
+          "decay": 0.0,
+          "recoil": 1,
+          "burstScatterMultiplier": 1,
+          "fireRate": 4,
+          "burstRateMultiplier": 2.0,
+          "burstSize": 4,
+          "modes": {
+            "SemiAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "Burst": {
+              "extraScatter": 10,
+              "scaleExtraScatter": true,
+              "shotsToMax": 6,
+              "fireDelay": 0.1665
+            },
+            "FullAuto": {
+              "extraScatter": 13,
+              "scaleExtraScatter": true,
+              "shotsToMax": 4,
+              "fireDelay": 0
+            }
+          },
+          "unsupported": []
+        }
       },
       "image": "sprites/RMCWeaponRifleM54CMK1AP.png"
     },
@@ -177594,7 +178606,46 @@
               }
             ]
           }
-        ]
+        ],
+        "ballistics": {
+          "schemaVersion": 1,
+          "rulesCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+          "availableModes": [
+            "SemiAuto",
+            "Burst",
+            "FullAuto"
+          ],
+          "defaultMode": "FullAuto",
+          "scatter": 4,
+          "increase": 0.0,
+          "decay": 0.0,
+          "recoil": 1,
+          "burstScatterMultiplier": 1,
+          "fireRate": 4,
+          "burstRateMultiplier": 2.0,
+          "burstSize": 4,
+          "modes": {
+            "SemiAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "Burst": {
+              "extraScatter": 10,
+              "scaleExtraScatter": true,
+              "shotsToMax": 6,
+              "fireDelay": 0.1665
+            },
+            "FullAuto": {
+              "extraScatter": 13,
+              "scaleExtraScatter": true,
+              "shotsToMax": 4,
+              "fireDelay": 0
+            }
+          },
+          "unsupported": []
+        }
       },
       "image": "sprites/RMCWeaponRifleM59A.png"
     },
@@ -180498,7 +181549,44 @@
               }
             ]
           }
-        ]
+        ],
+        "ballistics": {
+          "schemaVersion": 1,
+          "rulesCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+          "availableModes": [
+            "SemiAuto"
+          ],
+          "defaultMode": "SemiAuto",
+          "scatter": 0,
+          "increase": 0.0,
+          "decay": 0.0,
+          "recoil": 1,
+          "burstScatterMultiplier": 4,
+          "fireRate": 0.335,
+          "burstRateMultiplier": 2.0,
+          "burstSize": 1,
+          "modes": {
+            "SemiAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "Burst": {
+              "extraScatter": 10,
+              "scaleExtraScatter": true,
+              "shotsToMax": 6,
+              "fireDelay": 0.1665
+            },
+            "FullAuto": {
+              "extraScatter": 13,
+              "scaleExtraScatter": true,
+              "shotsToMax": 4,
+              "fireDelay": 0
+            }
+          },
+          "unsupported": []
+        }
       },
       "image": "sprites/RMCXM43E1AntiMaterielRifle.png"
     },
@@ -182725,7 +183813,44 @@
               }
             ]
           }
-        ]
+        ],
+        "ballistics": {
+          "schemaVersion": 1,
+          "rulesCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+          "availableModes": [
+            "SemiAuto"
+          ],
+          "defaultMode": "SemiAuto",
+          "scatter": 0.1,
+          "increase": 0.0,
+          "decay": 0.0,
+          "recoil": 0.1,
+          "burstScatterMultiplier": 4,
+          "fireRate": 0.3425,
+          "burstRateMultiplier": 2.0,
+          "burstSize": 3,
+          "modes": {
+            "SemiAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "Burst": {
+              "extraScatter": 10.0,
+              "scaleExtraScatter": true,
+              "shotsToMax": 6,
+              "fireDelay": 0.1
+            },
+            "FullAuto": {
+              "extraScatter": 26.0,
+              "scaleExtraScatter": true,
+              "shotsToMax": 4,
+              "fireDelay": 0.0
+            }
+          },
+          "unsupported": []
+        }
       },
       "image": "sprites/STWeaponSharpRifle.png"
     },
@@ -184265,7 +185390,44 @@
               }
             ]
           }
-        ]
+        ],
+        "ballistics": {
+          "schemaVersion": 1,
+          "rulesCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+          "availableModes": [
+            "SemiAuto"
+          ],
+          "defaultMode": "SemiAuto",
+          "scatter": 10.0,
+          "increase": 0.0,
+          "decay": 0.0,
+          "recoil": 2,
+          "burstScatterMultiplier": 4.0,
+          "fireRate": 0.675,
+          "burstRateMultiplier": 2.0,
+          "burstSize": 3,
+          "modes": {
+            "SemiAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "Burst": {
+              "extraScatter": 10.0,
+              "scaleExtraScatter": true,
+              "shotsToMax": 6,
+              "fireDelay": 0.1
+            },
+            "FullAuto": {
+              "extraScatter": 26.0,
+              "scaleExtraScatter": true,
+              "shotsToMax": 4,
+              "fireDelay": 0.0
+            }
+          },
+          "unsupported": []
+        }
       },
       "image": "sprites/WeaponLauncherM83.png"
     },
@@ -184935,7 +186097,44 @@
               }
             ]
           }
-        ]
+        ],
+        "ballistics": {
+          "schemaVersion": 1,
+          "rulesCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+          "availableModes": [
+            "SemiAuto"
+          ],
+          "defaultMode": "SemiAuto",
+          "scatter": 6,
+          "increase": 0.0,
+          "decay": 0.0,
+          "recoil": 1,
+          "burstScatterMultiplier": 4,
+          "fireRate": 2.86,
+          "burstRateMultiplier": 2.0,
+          "burstSize": 0,
+          "modes": {
+            "SemiAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "Burst": {
+              "extraScatter": 10,
+              "scaleExtraScatter": true,
+              "shotsToMax": 6,
+              "fireDelay": 0.1665
+            },
+            "FullAuto": {
+              "extraScatter": 13,
+              "scaleExtraScatter": true,
+              "shotsToMax": 4,
+              "fireDelay": 0
+            }
+          },
+          "unsupported": []
+        }
       },
       "image": "sprites/WeaponRifleM4SPR.png"
     },
@@ -185768,7 +186967,44 @@
               }
             ]
           }
-        ]
+        ],
+        "ballistics": {
+          "schemaVersion": 1,
+          "rulesCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+          "availableModes": [
+            "SemiAuto"
+          ],
+          "defaultMode": "SemiAuto",
+          "scatter": 2.5,
+          "increase": 0.0,
+          "decay": 0.0,
+          "recoil": 1,
+          "burstScatterMultiplier": 4,
+          "fireRate": 1.8,
+          "burstRateMultiplier": 15,
+          "burstSize": 2,
+          "modes": {
+            "SemiAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "Burst": {
+              "extraScatter": 10,
+              "scaleExtraScatter": true,
+              "shotsToMax": 6,
+              "fireDelay": 0
+            },
+            "FullAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            }
+          },
+          "unsupported": []
+        }
       },
       "image": "sprites/WeaponRifleM4SPRCustom.png"
     },
@@ -186252,7 +187488,44 @@
               }
             ]
           }
-        ]
+        ],
+        "ballistics": {
+          "schemaVersion": 1,
+          "rulesCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+          "availableModes": [
+            "SemiAuto"
+          ],
+          "defaultMode": "SemiAuto",
+          "scatter": 6,
+          "increase": 0.0,
+          "decay": 0.0,
+          "recoil": 3,
+          "burstScatterMultiplier": 4,
+          "fireRate": 1,
+          "burstRateMultiplier": 2.0,
+          "burstSize": 1,
+          "modes": {
+            "SemiAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "Burst": {
+              "extraScatter": 10,
+              "scaleExtraScatter": true,
+              "shotsToMax": 6,
+              "fireDelay": 0.1665
+            },
+            "FullAuto": {
+              "extraScatter": 13,
+              "scaleExtraScatter": true,
+              "shotsToMax": 4,
+              "fireDelay": 0
+            }
+          },
+          "unsupported": []
+        }
       },
       "image": "sprites/WeaponRifleXM88.png"
     },
@@ -186960,7 +188233,46 @@
               }
             ]
           }
-        ]
+        ],
+        "ballistics": {
+          "schemaVersion": 1,
+          "rulesCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+          "availableModes": [
+            "SemiAuto",
+            "Burst",
+            "FullAuto"
+          ],
+          "defaultMode": "FullAuto",
+          "scatter": 14,
+          "increase": 0.0,
+          "decay": 0.0,
+          "recoil": 1,
+          "burstScatterMultiplier": 4,
+          "fireRate": 6.667,
+          "burstRateMultiplier": 2.0,
+          "burstSize": 3,
+          "modes": {
+            "SemiAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "Burst": {
+              "extraScatter": 10,
+              "scaleExtraScatter": true,
+              "shotsToMax": 6,
+              "fireDelay": 0.0999
+            },
+            "FullAuto": {
+              "extraScatter": 3,
+              "scaleExtraScatter": true,
+              "shotsToMax": 4,
+              "fireDelay": 0
+            }
+          },
+          "unsupported": []
+        }
       },
       "image": "sprites/WeaponSMGM63.png"
     },
@@ -187559,7 +188871,44 @@
               }
             ]
           }
-        ]
+        ],
+        "ballistics": {
+          "schemaVersion": 1,
+          "rulesCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+          "availableModes": [
+            "SemiAuto"
+          ],
+          "defaultMode": "SemiAuto",
+          "scatter": 10,
+          "increase": 0.0,
+          "decay": 0.0,
+          "recoil": 2,
+          "burstScatterMultiplier": 5,
+          "fireRate": 0.5,
+          "burstRateMultiplier": 2.0,
+          "burstSize": 1,
+          "modes": {
+            "SemiAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "Burst": {
+              "extraScatter": 10.0,
+              "scaleExtraScatter": true,
+              "shotsToMax": 6,
+              "fireDelay": 0.1
+            },
+            "FullAuto": {
+              "extraScatter": 26.0,
+              "scaleExtraScatter": true,
+              "shotsToMax": 4,
+              "fireDelay": 0.0
+            }
+          },
+          "unsupported": []
+        }
       },
       "image": "sprites/WeaponShotgunM42A2.png"
     },
@@ -188115,7 +189464,44 @@
               }
             ]
           }
-        ]
+        ],
+        "ballistics": {
+          "schemaVersion": 1,
+          "rulesCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+          "availableModes": [
+            "SemiAuto"
+          ],
+          "defaultMode": "SemiAuto",
+          "scatter": 5,
+          "increase": 0.0,
+          "decay": 0.0,
+          "recoil": 2,
+          "burstScatterMultiplier": 5,
+          "fireRate": 0.7,
+          "burstRateMultiplier": 2.0,
+          "burstSize": 1,
+          "modes": {
+            "SemiAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "Burst": {
+              "extraScatter": 10.0,
+              "scaleExtraScatter": true,
+              "shotsToMax": 6,
+              "fireDelay": 0.1
+            },
+            "FullAuto": {
+              "extraScatter": 26.0,
+              "scaleExtraScatter": true,
+              "shotsToMax": 4,
+              "fireDelay": 0.0
+            }
+          },
+          "unsupported": []
+        }
       },
       "image": "sprites/WeaponShotgunM890.png"
     },
@@ -188649,7 +190035,44 @@
               }
             ]
           }
-        ]
+        ],
+        "ballistics": {
+          "schemaVersion": 1,
+          "rulesCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+          "availableModes": [
+            "SemiAuto"
+          ],
+          "defaultMode": "SemiAuto",
+          "scatter": 9,
+          "increase": 0.0,
+          "decay": 0.0,
+          "recoil": 2,
+          "burstScatterMultiplier": 1,
+          "fireRate": 4,
+          "burstRateMultiplier": 2.0,
+          "burstSize": 1,
+          "modes": {
+            "SemiAuto": {
+              "extraScatter": 0,
+              "scaleExtraScatter": false,
+              "shotsToMax": null,
+              "fireDelay": 0
+            },
+            "Burst": {
+              "extraScatter": 10.0,
+              "scaleExtraScatter": true,
+              "shotsToMax": 6,
+              "fireDelay": 0.1
+            },
+            "FullAuto": {
+              "extraScatter": 26.0,
+              "scaleExtraScatter": true,
+              "shotsToMax": 4,
+              "fireDelay": 0.0
+            }
+          },
+          "unsupported": []
+        }
       },
       "image": "sprites/WeaponShotgunMOU53.png"
     }
