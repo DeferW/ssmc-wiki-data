@@ -651,8 +651,13 @@ def populate_weapon_statistics(
             if amount is not None:
                 result["armorPiercing"] = amount
         accuracy = properties.get("RMCProjectileAccuracy")
-        if isinstance(accuracy, dict) and accuracy:
-            result["accuracy"] = copy.deepcopy(accuracy)
+        if isinstance(accuracy, dict):
+            result["accuracy"] = {
+                "accuracy": 90, "minAccuracy": 5, "forceHit": False,
+                "ignoreFriendlyEvasion": False,
+                "thresholds": [{"range": 5, "falloff": 10, "buildup": False}],
+                **copy.deepcopy(accuracy),
+            }
         if (
             "RMCProjectileDamageFalloff" in projectile.get("componentTypes", [])
             or "RMCProjectileDamageFalloff" in properties

@@ -331,3 +331,23 @@ def test_bare_selective_component_publishes_both_grip_defaults():
     stats = items["Rifle"]["weaponStats"]
     assert stats["scatter"] == {"wielded": 10, "unwielded": 10}
     assert stats["recoil"] == {"wielded": 1, "unwielded": 1}
+
+
+def test_projectile_accuracy_bare_component_keeps_game_defaults():
+    items = _sniper_items({}, False)
+    items["Bullet"]["properties"]["RMCProjectileAccuracy"] = {}
+    populate_weapon_statistics(items, relations=[], public_item_ids={"Rifle"})
+    accuracy = items["Rifle"]["weaponStats"]["ammunition"][0]["projectiles"][0]["accuracy"]
+    assert accuracy["accuracy"] == 90
+    assert accuracy["minAccuracy"] == 5
+    assert accuracy["thresholds"] == [{"range": 5, "falloff": 10, "buildup": False}]
+
+
+def test_projectile_accuracy_explicit_values_override_defaults():
+    items = _sniper_items({}, False)
+    items["Bullet"]["properties"]["RMCProjectileAccuracy"] = {"accuracy": 0, "thresholds": [], "forceHit": True}
+    populate_weapon_statistics(items, relations=[], public_item_ids={"Rifle"})
+    accuracy = items["Rifle"]["weaponStats"]["ammunition"][0]["projectiles"][0]["accuracy"]
+    assert accuracy["accuracy"] == 0
+    assert accuracy["thresholds"] == []
+    assert accuracy["forceHit"] is True
