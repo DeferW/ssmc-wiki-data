@@ -35915,6 +35915,9 @@
                 "armorPiercing": 50,
                 "accuracy": {
                   "accuracy": 125,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 32,
@@ -35960,6 +35963,9 @@
                 "armorPiercing": 0,
                 "accuracy": {
                   "accuracy": 125,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 32,
@@ -36007,6 +36013,9 @@
                 "armorPiercing": 20,
                 "accuracy": {
                   "accuracy": 125,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 32,
@@ -52479,7 +52488,17 @@
                 },
                 "armorPiercing": 10,
                 "accuracy": {
-                  "accuracy": 60
+                  "accuracy": 60,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 },
                 "damageFalloff": {
                   "thresholds": [
@@ -52515,7 +52534,17 @@
                 },
                 "armorPiercing": 40,
                 "accuracy": {
-                  "accuracy": 60
+                  "accuracy": 60,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 },
                 "damageFalloff": {
                   "thresholds": [
@@ -52550,7 +52579,17 @@
                   "Piercing": 55
                 },
                 "accuracy": {
-                  "accuracy": 60
+                  "accuracy": 60,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 },
                 "damageFalloff": {
                   "thresholds": [
@@ -53055,7 +53094,17 @@
                 },
                 "armorPiercing": 10,
                 "accuracy": {
-                  "accuracy": 60
+                  "accuracy": 60,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 },
                 "damageFalloff": {
                   "thresholds": [
@@ -53091,7 +53140,17 @@
                 },
                 "armorPiercing": 40,
                 "accuracy": {
-                  "accuracy": 60
+                  "accuracy": 60,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 },
                 "damageFalloff": {
                   "thresholds": [
@@ -53126,7 +53185,17 @@
                   "Piercing": 55
                 },
                 "accuracy": {
-                  "accuracy": 60
+                  "accuracy": 60,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 },
                 "damageFalloff": {
                   "thresholds": [
@@ -71339,6 +71408,19 @@
                 "name": "Осколочная граната M74 БВГ-Ф 40мм",
                 "damage": {
                   "Piercing": 100
+                },
+                "accuracy": {
+                  "accuracy": 90,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 }
               }
             ]
@@ -71357,6 +71439,19 @@
                 "name": "Зажигательная граната M74 БВГ-З 40мм",
                 "damage": {
                   "Piercing": 100
+                },
+                "accuracy": {
+                  "accuracy": 90,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 }
               }
             ]
@@ -71375,6 +71470,19 @@
                 "name": "Дымовая граната M74 БВГ-Д 40мм",
                 "damage": {
                   "Piercing": 30
+                },
+                "accuracy": {
+                  "accuracy": 90,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 }
               }
             ]
@@ -71393,6 +71501,19 @@
                 "name": "Шрапнель \"Шершень\" M74 БВГ-Ш 40мм",
                 "damage": {
                   "Piercing": 100
+                },
+                "accuracy": {
+                  "accuracy": 90,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 }
               }
             ]
@@ -71411,6 +71532,19 @@
                 "name": "Осветительная граната M74 БВГ-Ш 40мм",
                 "damage": {
                   "Piercing": 30
+                },
+                "accuracy": {
+                  "accuracy": 90,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 }
               }
             ]
@@ -74599,6 +74733,19 @@
                 "name": "Осколочная граната M74 БВГ-Ф 40мм",
                 "damage": {
                   "Piercing": 100
+                },
+                "accuracy": {
+                  "accuracy": 90,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 }
               }
             ]
@@ -74617,6 +74764,19 @@
                 "name": "Зажигательная граната M74 БВГ-З 40мм",
                 "damage": {
                   "Piercing": 100
+                },
+                "accuracy": {
+                  "accuracy": 90,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 }
               }
             ]
@@ -74635,6 +74795,19 @@
                 "name": "Дымовая граната M74 БВГ-Д 40мм",
                 "damage": {
                   "Piercing": 30
+                },
+                "accuracy": {
+                  "accuracy": 90,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 }
               }
             ]
@@ -74653,6 +74826,19 @@
                 "name": "Шрапнель \"Шершень\" M74 БВГ-Ш 40мм",
                 "damage": {
                   "Piercing": 100
+                },
+                "accuracy": {
+                  "accuracy": 90,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 }
               }
             ]
@@ -74671,6 +74857,19 @@
                 "name": "Осветительная граната M74 БВГ-Ш 40мм",
                 "damage": {
                   "Piercing": 30
+                },
+                "accuracy": {
+                  "accuracy": 90,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 }
               }
             ]
@@ -74965,6 +75164,9 @@
                 "armorPiercing": 5,
                 "accuracy": {
                   "accuracy": 60,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 4,
@@ -136349,7 +136551,17 @@
                 },
                 "armorPiercing": 30,
                 "accuracy": {
-                  "accuracy": 105
+                  "accuracy": 105,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 },
                 "damageFalloff": {
                   "thresholds": [
@@ -138124,6 +138336,9 @@
                 "armorPiercing": 30,
                 "accuracy": {
                   "accuracy": 75,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 6,
@@ -162576,6 +162791,9 @@
                 "armorPiercing": 0,
                 "accuracy": {
                   "accuracy": 105,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 5,
@@ -162937,6 +163155,9 @@
                 "armorPiercing": 50,
                 "accuracy": {
                   "accuracy": 105,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 8,
@@ -163429,6 +163650,9 @@
                 "armorPiercing": 0,
                 "accuracy": {
                   "accuracy": 105,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 5,
@@ -168871,6 +169095,9 @@
                 },
                 "accuracy": {
                   "accuracy": 95,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 7,
@@ -168900,6 +169127,9 @@
                 "armorPiercing": 100,
                 "accuracy": {
                   "accuracy": 125,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 6,
@@ -168927,6 +169157,9 @@
                 },
                 "accuracy": {
                   "accuracy": 95,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 7,
@@ -169194,6 +169427,9 @@
                 },
                 "accuracy": {
                   "accuracy": 95,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 7,
@@ -169568,6 +169804,19 @@
                 "name": "Осколочная граната M74 БВГ-Ф 40мм",
                 "damage": {
                   "Piercing": 100
+                },
+                "accuracy": {
+                  "accuracy": 90,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 }
               }
             ]
@@ -169586,6 +169835,19 @@
                 "name": "Зажигательная граната M74 БВГ-З 40мм",
                 "damage": {
                   "Piercing": 100
+                },
+                "accuracy": {
+                  "accuracy": 90,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 }
               }
             ]
@@ -169604,6 +169866,19 @@
                 "name": "Дымовая граната M74 БВГ-Д 40мм",
                 "damage": {
                   "Piercing": 30
+                },
+                "accuracy": {
+                  "accuracy": 90,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 }
               }
             ]
@@ -169625,6 +169900,9 @@
                 },
                 "accuracy": {
                   "accuracy": 100,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 7,
@@ -169649,6 +169927,19 @@
                 "name": "Шрапнель \"Шершень\" M74 БВГ-Ш 40мм",
                 "damage": {
                   "Piercing": 100
+                },
+                "accuracy": {
+                  "accuracy": 90,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 }
               }
             ]
@@ -169667,6 +169958,19 @@
                 "name": "Осветительная граната M74 БВГ-Ш 40мм",
                 "damage": {
                   "Piercing": 30
+                },
+                "accuracy": {
+                  "accuracy": 90,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 }
               }
             ]
@@ -170191,6 +170495,9 @@
                 "armorPiercing": 5,
                 "accuracy": {
                   "accuracy": 115,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 2,
@@ -170235,6 +170542,9 @@
                 "armorPiercing": 5,
                 "accuracy": {
                   "accuracy": 115,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 2,
@@ -170787,6 +171097,9 @@
                 "armorPiercing": 5,
                 "accuracy": {
                   "accuracy": 115,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 2,
@@ -170831,6 +171144,9 @@
                 "armorPiercing": 5,
                 "accuracy": {
                   "accuracy": 115,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 2,
@@ -171341,7 +171657,17 @@
                 },
                 "armorPiercing": 40,
                 "accuracy": {
-                  "accuracy": 60
+                  "accuracy": 60,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 },
                 "damageFalloff": {
                   "thresholds": [
@@ -171855,7 +172181,17 @@
                 },
                 "armorPiercing": 40,
                 "accuracy": {
-                  "accuracy": 60
+                  "accuracy": 60,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 },
                 "damageFalloff": {
                   "thresholds": [
@@ -172212,6 +172548,19 @@
                 "name": "Сигнальная ракета",
                 "damage": {
                   "Piercing": 2.5
+                },
+                "accuracy": {
+                  "accuracy": 90,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 }
               }
             ]
@@ -172230,6 +172579,19 @@
                 "name": "Сигнальная ракета осветительная",
                 "damage": {
                   "Piercing": 2.5
+                },
+                "accuracy": {
+                  "accuracy": 90,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 }
               }
             ]
@@ -172583,6 +172945,19 @@
                 "name": "Сигнальная ракета",
                 "damage": {
                   "Piercing": 2.5
+                },
+                "accuracy": {
+                  "accuracy": 90,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 }
               }
             ]
@@ -172601,6 +172976,19 @@
                 "name": "Сигнальная ракета осветительная",
                 "damage": {
                   "Piercing": 2.5
+                },
+                "accuracy": {
+                  "accuracy": 90,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 }
               }
             ]
@@ -173057,7 +173445,17 @@
                 },
                 "armorPiercing": 20,
                 "accuracy": {
-                  "accuracy": 125
+                  "accuracy": 125,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 },
                 "damageFalloff": {
                   "thresholds": [
@@ -173554,7 +173952,17 @@
                 },
                 "armorPiercing": 5,
                 "accuracy": {
-                  "accuracy": 90
+                  "accuracy": 90,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 },
                 "damageFalloff": {
                   "thresholds": [
@@ -173591,7 +173999,17 @@
                 },
                 "armorPiercing": 20,
                 "accuracy": {
-                  "accuracy": 100
+                  "accuracy": 100,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 },
                 "damageFalloff": {
                   "thresholds": [
@@ -173629,6 +174047,9 @@
                 "armorPiercing": 35,
                 "accuracy": {
                   "accuracy": 90,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 12,
@@ -174135,7 +174556,17 @@
                 },
                 "armorPiercing": 5,
                 "accuracy": {
-                  "accuracy": 90
+                  "accuracy": 90,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 },
                 "damageFalloff": {
                   "thresholds": [
@@ -174172,7 +174603,17 @@
                 },
                 "armorPiercing": 20,
                 "accuracy": {
-                  "accuracy": 100
+                  "accuracy": 100,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 },
                 "damageFalloff": {
                   "thresholds": [
@@ -174210,6 +174651,9 @@
                 "armorPiercing": 35,
                 "accuracy": {
                   "accuracy": 90,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 12,
@@ -174707,7 +175151,17 @@
                 },
                 "armorPiercing": 5,
                 "accuracy": {
-                  "accuracy": 90
+                  "accuracy": 90,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 },
                 "damageFalloff": {
                   "thresholds": [
@@ -174744,7 +175198,17 @@
                 },
                 "armorPiercing": 20,
                 "accuracy": {
-                  "accuracy": 100
+                  "accuracy": 100,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 },
                 "damageFalloff": {
                   "thresholds": [
@@ -174782,6 +175246,9 @@
                 "armorPiercing": 35,
                 "accuracy": {
                   "accuracy": 90,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 12,
@@ -175209,7 +175676,17 @@
                 },
                 "armorPiercing": 35,
                 "accuracy": {
-                  "accuracy": 90
+                  "accuracy": 90,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 },
                 "damageFalloff": {
                   "thresholds": [
@@ -175921,6 +176398,9 @@
                 "armorPiercing": 5,
                 "accuracy": {
                   "accuracy": 105,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 16,
@@ -175965,6 +176445,9 @@
                 "armorPiercing": 40,
                 "accuracy": {
                   "accuracy": 105,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 16,
@@ -176009,6 +176492,9 @@
                 "armorPiercing": 5,
                 "accuracy": {
                   "accuracy": 105,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 16,
@@ -176053,6 +176539,9 @@
                 "armorPiercing": 5,
                 "accuracy": {
                   "accuracy": 105,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 16,
@@ -176613,6 +177102,9 @@
                 "armorPiercing": 5,
                 "accuracy": {
                   "accuracy": 105,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 16,
@@ -176654,6 +177146,9 @@
                 "armorPiercing": 5,
                 "accuracy": {
                   "accuracy": 105,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 16,
@@ -177251,6 +177746,9 @@
                 "armorPiercing": 5,
                 "accuracy": {
                   "accuracy": 105,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 16,
@@ -177295,6 +177793,9 @@
                 "armorPiercing": 40,
                 "accuracy": {
                   "accuracy": 105,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 16,
@@ -177885,6 +178386,9 @@
                 "armorPiercing": 5,
                 "accuracy": {
                   "accuracy": 105,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 16,
@@ -177929,6 +178433,9 @@
                 "armorPiercing": 40,
                 "accuracy": {
                   "accuracy": 105,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 16,
@@ -178624,6 +179131,9 @@
                 "armorPiercing": 5,
                 "accuracy": {
                   "accuracy": 105,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 16,
@@ -178668,6 +179178,9 @@
                 "armorPiercing": 40,
                 "accuracy": {
                   "accuracy": 105,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 16,
@@ -178712,6 +179225,9 @@
                 "armorPiercing": 5,
                 "accuracy": {
                   "accuracy": 105,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 16,
@@ -178756,6 +179272,9 @@
                 "armorPiercing": 5,
                 "accuracy": {
                   "accuracy": 105,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 16,
@@ -178800,6 +179319,9 @@
                 "armorPiercing": 40,
                 "accuracy": {
                   "accuracy": 105,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 16,
@@ -178844,6 +179366,9 @@
                 "armorPiercing": 5,
                 "accuracy": {
                   "accuracy": 105,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 16,
@@ -179034,7 +179559,16 @@
                 },
                 "accuracy": {
                   "accuracy": 125,
-                  "ignoreFriendlyEvasion": true
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": true,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 }
               }
             ]
@@ -181772,6 +182306,9 @@
                 "armorPiercing": 75,
                 "accuracy": {
                   "accuracy": 125,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 32,
@@ -185555,6 +186092,19 @@
                 "name": "Осколочная граната M74 БВГ-Ф 40мм",
                 "damage": {
                   "Piercing": 100
+                },
+                "accuracy": {
+                  "accuracy": 90,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 }
               }
             ]
@@ -185573,6 +186123,19 @@
                 "name": "Зажигательная граната M74 БВГ-З 40мм",
                 "damage": {
                   "Piercing": 100
+                },
+                "accuracy": {
+                  "accuracy": 90,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 }
               }
             ]
@@ -185591,6 +186154,19 @@
                 "name": "Дымовая граната M74 БВГ-Д 40мм",
                 "damage": {
                   "Piercing": 30
+                },
+                "accuracy": {
+                  "accuracy": 90,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 }
               }
             ]
@@ -185612,6 +186188,9 @@
                 },
                 "accuracy": {
                   "accuracy": 100,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 7,
@@ -185636,6 +186215,19 @@
                 "name": "Шрапнель \"Шершень\" M74 БВГ-Ш 40мм",
                 "damage": {
                   "Piercing": 100
+                },
+                "accuracy": {
+                  "accuracy": 90,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 }
               }
             ]
@@ -185654,6 +186246,19 @@
                 "name": "Осветительная граната M74 БВГ-Ш 40мм",
                 "damage": {
                   "Piercing": 30
+                },
+                "accuracy": {
+                  "accuracy": 90,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 }
               }
             ]
@@ -186258,6 +186863,9 @@
                 "armorPiercing": 5,
                 "accuracy": {
                   "accuracy": 105,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 16,
@@ -186302,6 +186910,9 @@
                 "armorPiercing": 40,
                 "accuracy": {
                   "accuracy": 105,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 16,
@@ -186346,6 +186957,9 @@
                 "armorPiercing": 5,
                 "accuracy": {
                   "accuracy": 105,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 16,
@@ -186998,6 +187612,9 @@
                 "armorPiercing": 5,
                 "accuracy": {
                   "accuracy": 105,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 16,
@@ -187042,6 +187659,9 @@
                 "armorPiercing": 40,
                 "accuracy": {
                   "accuracy": 105,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 16,
@@ -187086,6 +187706,9 @@
                 "armorPiercing": 5,
                 "accuracy": {
                   "accuracy": 105,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 16,
@@ -187130,6 +187753,9 @@
                 "armorPiercing": 35,
                 "accuracy": {
                   "accuracy": 105,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 16,
@@ -187175,6 +187801,9 @@
                 "armorPiercing": 50,
                 "accuracy": {
                   "accuracy": 75,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 16,
@@ -187220,6 +187849,9 @@
                 "armorPiercing": 25,
                 "accuracy": {
                   "accuracy": 105,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 16,
@@ -187747,6 +188379,9 @@
                 "armorPiercing": 10,
                 "accuracy": {
                   "accuracy": 90,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 14,
@@ -188417,6 +189052,9 @@
                 "armorPiercing": 5,
                 "accuracy": {
                   "accuracy": 100,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 4,
@@ -188458,6 +189096,9 @@
                 "armorPiercing": 30,
                 "accuracy": {
                   "accuracy": 100,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 4,
@@ -188499,6 +189140,9 @@
                 "armorPiercing": 5,
                 "accuracy": {
                   "accuracy": 100,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 4,
@@ -189021,7 +189665,17 @@
                 "projectileId": "CMPelletShotgunBeanbag",
                 "name": "Бейсбольная пуля",
                 "accuracy": {
-                  "accuracy": 100
+                  "accuracy": 100,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 },
                 "damageFalloff": {
                   "thresholds": [
@@ -189060,6 +189714,9 @@
                 "armorPiercing": 5,
                 "accuracy": {
                   "accuracy": 60,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 4,
@@ -189103,7 +189760,17 @@
                 },
                 "armorPiercing": 35,
                 "accuracy": {
-                  "accuracy": 60
+                  "accuracy": 60,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 },
                 "damageFalloff": {
                   "thresholds": [
@@ -189140,6 +189807,9 @@
                 "armorPiercing": 20,
                 "accuracy": {
                   "accuracy": 100,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 8,
@@ -189619,7 +190289,17 @@
                 "projectileId": "CMPelletShotgunBeanbag",
                 "name": "Бейсбольная пуля",
                 "accuracy": {
-                  "accuracy": 100
+                  "accuracy": 100,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 },
                 "damageFalloff": {
                   "thresholds": [
@@ -189658,6 +190338,9 @@
                 "armorPiercing": 5,
                 "accuracy": {
                   "accuracy": 60,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 4,
@@ -189701,7 +190384,17 @@
                 },
                 "armorPiercing": 35,
                 "accuracy": {
-                  "accuracy": 60
+                  "accuracy": 60,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 },
                 "damageFalloff": {
                   "thresholds": [
@@ -189738,6 +190431,9 @@
                 "armorPiercing": 20,
                 "accuracy": {
                   "accuracy": 100,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 8,
@@ -190239,7 +190935,17 @@
                 "projectileId": "CMPelletShotgunBeanbag",
                 "name": "Бейсбольная пуля",
                 "accuracy": {
-                  "accuracy": 100
+                  "accuracy": 100,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 },
                 "damageFalloff": {
                   "thresholds": [
@@ -190277,7 +190983,17 @@
                 },
                 "armorPiercing": 35,
                 "accuracy": {
-                  "accuracy": 60
+                  "accuracy": 60,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
+                  "thresholds": [
+                    {
+                      "range": 5,
+                      "falloff": 10,
+                      "buildup": false
+                    }
+                  ]
                 },
                 "damageFalloff": {
                   "thresholds": [
@@ -190314,6 +191030,9 @@
                 "armorPiercing": 20,
                 "accuracy": {
                   "accuracy": 100,
+                  "minAccuracy": 5,
+                  "forceHit": false,
+                  "ignoreFriendlyEvasion": false,
                   "thresholds": [
                     {
                       "range": 8,
