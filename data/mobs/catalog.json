@@ -1,5 +1,6 @@
 {
   "schemaVersion": 1,
+  "evasionSchemaVersion": 1,
   "source": "MetalSage/space-stories-cm14",
   "gameCommit": "024d853a184f956e0c08d876808ea7771a104a04",
   "locale": "ru-RU",
@@ -16,6 +17,11 @@
       "name": "Бурильщик",
       "strainName": null,
       "size": "Xeno",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": 0,
+        "standing": 0
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/burrower.yml",
       "parents": [
@@ -46,6 +52,11 @@
       "name": "Носитель",
       "strainName": null,
       "size": "Big",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/carrier.yml",
       "parents": [
@@ -70,6 +81,11 @@
       "name": "Защитник",
       "strainName": null,
       "size": "Xeno",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": 0,
+        "standing": 0
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/defender.yml",
       "parents": [
@@ -94,6 +110,11 @@
       "name": "Защитник",
       "strainName": "Стальной гребень",
       "size": "Xeno",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": 0,
+        "standing": 0
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/defender.yml",
       "parents": [
@@ -118,6 +139,11 @@
       "name": "Дрон",
       "strainName": null,
       "size": "Xeno",
+      "evasion": {
+        "base": 15,
+        "sizeModifier": 0,
+        "standing": 15
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/drone.yml",
       "parents": [
@@ -142,6 +168,11 @@
       "name": "Дрон",
       "strainName": "Садовник",
       "size": "Xeno",
+      "evasion": {
+        "base": 15,
+        "sizeModifier": 0,
+        "standing": 15
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/drone.yml",
       "parents": [
@@ -166,6 +197,11 @@
       "name": "Дрон",
       "strainName": "Целитель",
       "size": "Xeno",
+      "evasion": {
+        "base": 15,
+        "sizeModifier": 0,
+        "standing": 15
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/drone.yml",
       "parents": [
@@ -190,6 +226,11 @@
       "name": "Повелитель улья",
       "strainName": null,
       "size": "Big",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/hivelord.yml",
       "parents": [
@@ -214,6 +255,11 @@
       "name": "Повелитель улья",
       "strainName": "Дизайнер",
       "size": "Big",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/hivelord.yml",
       "parents": [
@@ -238,6 +284,11 @@
       "name": "Повелитель улья",
       "strainName": "Смоляной Шептун",
       "size": "Big",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/hivelord.yml",
       "parents": [
@@ -262,6 +313,11 @@
       "name": "Личинка",
       "strainName": null,
       "size": "Small",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": 10,
+        "standing": 10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/larva.yml",
       "parents": [
@@ -288,6 +344,11 @@
       "name": "Малый дрон",
       "strainName": null,
       "size": "VerySmallXeno",
+      "evasion": {
+        "base": 10,
+        "sizeModifier": 0,
+        "standing": 10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/lesser_drone.yml",
       "parents": [
@@ -316,6 +377,11 @@
       "name": "Охотник",
       "strainName": null,
       "size": "Xeno",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": 0,
+        "standing": 0
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/lurker.yml",
       "parents": [
@@ -341,6 +407,11 @@
       "name": "Лицехват",
       "strainName": null,
       "size": "Small",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": 10,
+        "standing": 10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/parasite.yml",
       "parents": [
@@ -365,6 +436,11 @@
       "name": "Преторианец",
       "strainName": null,
       "size": "Big",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/praetorian.yml",
       "parents": [
@@ -389,6 +465,11 @@
       "name": "Королева",
       "strainName": null,
       "size": "Immobile",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/queen.yml",
       "parents": [
@@ -416,6 +497,11 @@
       "name": "Разрушитель",
       "strainName": null,
       "size": "Big",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/ravager.yml",
       "parents": [
@@ -440,6 +526,11 @@
       "name": "Бегун",
       "strainName": null,
       "size": "SmallXeno",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": 0,
+        "standing": 0
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/runner.yml",
       "parents": [
@@ -464,6 +555,11 @@
       "name": "Страж",
       "strainName": null,
       "size": "Xeno",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": 0,
+        "standing": 0
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/sentinel.yml",
       "parents": [
@@ -494,6 +590,11 @@
       "name": "Плеватель",
       "strainName": null,
       "size": "Xeno",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": 0,
+        "standing": 0
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/spitter.yml",
       "parents": [
@@ -524,6 +625,11 @@
       "name": "Воин",
       "strainName": null,
       "size": "Xeno",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": 0,
+        "standing": 0
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/warrior.yml",
       "parents": [
@@ -553,6 +659,11 @@
       "name": "Бойлер",
       "strainName": null,
       "size": "Big",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/boiler.yml",
       "parents": [
@@ -577,6 +688,11 @@
       "name": "Бойлер",
       "strainName": "Сапёр",
       "size": "Big",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/boiler.yml",
       "parents": [
@@ -601,6 +717,11 @@
       "name": "Носитель",
       "strainName": "Кокон",
       "size": "Big",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/carrier.yml",
       "parents": [
@@ -625,6 +746,11 @@
       "name": "Крушитель",
       "strainName": null,
       "size": "Immobile",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/crusher.yml",
       "parents": [
@@ -649,6 +775,11 @@
       "name": "Крушитель",
       "strainName": "Таран",
       "size": "Immobile",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/crusher.yml",
       "parents": [
@@ -673,6 +804,11 @@
       "name": "Король",
       "strainName": null,
       "size": "Immobile",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/king.yml",
       "parents": [
@@ -701,6 +837,11 @@
       "name": "Малый Носитель",
       "strainName": null,
       "size": "VerySmallXeno",
+      "evasion": {
+        "base": 10,
+        "sizeModifier": 0,
+        "standing": 10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/fun.yml",
       "parents": [
@@ -728,6 +869,11 @@
       "name": "Охотник",
       "strainName": "Вампир",
       "size": "Xeno",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": 0,
+        "standing": 0
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/lurker.yml",
       "parents": [
@@ -752,6 +898,11 @@
       "name": "Лицехват",
       "strainName": "Наблюдатель",
       "size": "Small",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": 10,
+        "standing": 10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/parasite.yml",
       "parents": [
@@ -776,6 +927,11 @@
       "name": "Преторианец",
       "strainName": "Танцор",
       "size": "Big",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/praetorian.yml",
       "parents": [
@@ -800,6 +956,11 @@
       "name": "Преторианец",
       "strainName": "Угнетатель",
       "size": "Big",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/praetorian.yml",
       "parents": [
@@ -824,6 +985,11 @@
       "name": "Преторианец",
       "strainName": "Валькирия",
       "size": "Big",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/praetorian.yml",
       "parents": [
@@ -848,6 +1014,11 @@
       "name": "Преторианец",
       "strainName": "Авангард",
       "size": "Big",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/praetorian.yml",
       "parents": [
@@ -872,6 +1043,11 @@
       "name": "Разрушитель",
       "strainName": "Берсерк",
       "size": "Big",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/ravager.yml",
       "parents": [
@@ -896,6 +1072,11 @@
       "name": "Разрушитель",
       "strainName": "Ёж",
       "size": "Big",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/ravager.yml",
       "parents": [
@@ -920,6 +1101,11 @@
       "name": "Бегун",
       "strainName": "Окислитель",
       "size": "SmallXeno",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": 0,
+        "standing": 0
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/runner.yml",
       "parents": [
@@ -944,6 +1130,11 @@
       "name": "Дисбойлер",
       "strainName": null,
       "size": "Big",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "stories",
       "sourceFile": "Resources/Prototypes/_Stories/Entities/Mobs/Xeno/despoiler.yml",
       "parents": [
@@ -973,6 +1164,11 @@
       "name": "Воин",
       "strainName": "Боксёр",
       "size": "Big",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "stories",
       "sourceFile": "Resources/Prototypes/_Stories/Entities/Mobs/Xeno/warrior.yml",
       "parents": [
@@ -1002,6 +1198,11 @@
       "name": "Воин",
       "strainName": "Бастион",
       "size": "Xeno",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": 0,
+        "standing": 0
+      },
       "origin": "stories",
       "sourceFile": "Resources/Prototypes/_Stories/Entities/Mobs/Xeno/warrior.yml",
       "parents": [
