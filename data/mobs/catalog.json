@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "source": "MetalSage/space-stories-cm14",
-  "gameCommit": "d0bfa6b3645f82951647074306dd99339f394fdd",
+  "gameCommit": "024d853a184f956e0c08d876808ea7771a104a04",
   "locale": "ru-RU",
   "marine": {
     "sourcePrototypeId": "RMCBaseMobSpeciesOrganic",
