@@ -253,3 +253,14 @@ def test_discovery_filter_includes_concrete_excludes_abstract():
             kept.append(prototype.id)
 
     assert kept == ["CMXenoWarrior"]
+
+
+def test_evasion_is_generated_for_any_new_prototype():
+    from scripts.mobs.build import evasion_from_components
+    assert evasion_from_components({}) is None
+    assert evasion_from_components({"Evasion": {}})["standing"] == 0
+    assert evasion_from_components({"Evasion": {"evasion": 20}, "RMCSize": {"size": "Small"}}) == {
+        "base": 20, "sizeModifier": 10, "standing": 30,
+    }
+    assert evasion_from_components({"Evasion": {}, "RMCSize": {"size": "Big"}})["standing"] == -10
+    assert evasion_from_components({"Evasion": {}, "RMCSize": {"size": "SmallXeno"}})["standing"] == 0

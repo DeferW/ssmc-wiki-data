@@ -93,6 +93,24 @@ def apply_bulwark_passive(armor: dict[str, Any], components: dict[str, Any]) -> 
     return armor
 
 
+def evasion_from_components(components: dict[str, Any]) -> dict[str, Any] | None:
+    """Standing enemy baseline: EvasionSystem.OnSizeRefreshEvasion, 024d853a."""
+    evasion = components.get("Evasion")
+    if not isinstance(evasion, dict):
+        return None
+    base = evasion.get("evasion", 0)
+    if isinstance(base, bool) or not isinstance(base, (int, float)):
+        raise RuntimeError(f"Invalid Evasion.evasion: {base!r}")
+    size_modifier = 0
+    if isinstance(components.get("RMCSize"), dict):
+        size = rmc_size(components)
+        if size == "Small":
+            size_modifier = 10
+        elif size in ("Big", "Immobile"):
+            size_modifier = -10
+    return {"base": base, "sizeModifier": size_modifier, "standing": base + size_modifier}
+
+
 def rmc_size(components: dict[str, Any]) -> str:
     """RMCSizeComponent.Size gates several mechanics (stopping power stun
     thresholds, RMCFocusedShootingSystem's bonus-damage tiers) by an ordered
@@ -174,6 +192,7 @@ def main() -> None:
             "name": name,
             "strainName": strain_name(components, localizer),
             "size": rmc_size(components),
+            "evasion": evasion_from_components(components),
             "origin": prototype.origin,
             "sourceFile": prototype.source_file,
             "parents": list(prototype.parents),
@@ -194,6 +213,7 @@ def main() -> None:
 
     result = {
         "schemaVersion": 1,
+        "evasionSchemaVersion": 1,
         "source": "MetalSage/space-stories-cm14",
         "gameCommit": args.commit,
         "locale": args.locale,

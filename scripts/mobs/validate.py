@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 from pathlib import Path
 from typing import Any
 
@@ -70,6 +71,20 @@ def validate(data: dict[str, Any], sprites_path: Path) -> None:
             raise RuntimeError(f"Xeno caste has an invalid strainName: {caste_id}")
         if caste.get("size") not in RMC_SIZES:
             raise RuntimeError(f"Xeno caste has an unknown size: {caste_id}")
+        if data.get("evasionSchemaVersion") == 1:
+            if "evasion" not in caste:
+                raise RuntimeError(f"Missing evasion field: {caste_id}")
+            evasion = caste["evasion"]
+            if evasion is not None:
+                if not isinstance(evasion, dict) or any(
+                    isinstance(evasion.get(key), bool)
+                    or not isinstance(evasion.get(key), (int, float))
+                    or not math.isfinite(evasion[key])
+                    for key in ("base", "sizeModifier", "standing")
+                ):
+                    raise RuntimeError(f"Invalid evasion: {caste_id}")
+                if evasion["standing"] != evasion["base"] + evasion["sizeModifier"]:
+                    raise RuntimeError(f"Inconsistent evasion: {caste_id}")
         source_file = caste.get("sourceFile")
         if not isinstance(source_file, str) or "Mobs/Xeno/" not in source_file:
             raise RuntimeError(f"Xeno caste has an unexpected sourceFile: {caste_id}")
