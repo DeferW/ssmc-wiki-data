@@ -84,3 +84,12 @@ jobs:
             --catalog data/maps/catalog.json \
             --assets data/maps \
             --max-assets-bytes 536870912
+
+      # Published by build-fire-zones.yml after the module's first run.
+      - name: Validate fire zones
+        run: |
+          if [ -f data/fire-zones/catalog.json ]; then
+            python3 -m scripts.fire_zones.validate --catalog data/fire-zones/catalog.json
+          else
+            echo "data/fire-zones/catalog.json is not published yet"
+          fi
