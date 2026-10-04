@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "source": "MetalSage/space-stories-cm14",
+  "gameCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+  "counts": {
+    "mortars": 1,
+    "orbitalWarheads": 4,
+    "roofs": 2
+  },
+  "mortars": [
+    {
+      "id": "RMCMortarKit",
+      "name": "Переносной комплект для миномета M402",
+      "minRange": 15.0,
+      "maxRange": 65.0
+    }
+  ],
+  "orbitalWarheads": [
+    {
+      "id": "RMCOrbitalCannonWarheadExplosive",
+      "name": "Орбитальная боеголовка (фугасная)",
+      "explosionId": "RMCOrbitalCannonExplosionExplosive",
+      "parts": [
+        {
+          "shape": "circle",
+          "radius": 2.887
+        },
+        {
+          "shape": "circle",
+          "radius": 17.542
+        }
+      ]
+    },
+    {
+      "id": "RMCOrbitalCannonWarheadCluster",
+      "name": "Орбитальная боеголовка (кластерная)",
+      "explosionId": "RMCOrbitalCannonExplosionCluster",
+      "parts": [
+        {
+          "shape": "scatter",
+          "spread": 12.0,
+          "radius": 3.961,
+          "count": 225
+        }
+      ]
+    },
+    {
+      "id": "RMCOrbitalCannonWarheadIncendiary",
+      "name": "Орбитальная боеголовка (зажигательная)",
+      "explosionId": "RMCOrbitalCannonExplosionIncendiary",
+      "parts": [
+        {
+          "shape": "circle",
+          "radius": 2.887
+        },
+        {
+          "shape": "diamond",
+          "radius": 18.0
+        }
+      ]
+    },
+    {
+      "id": "RMCOrbitalCannonWarheadAegis",
+      "name": "Орбитальная боеголовка (ЭГИДА)",
+      "explosionId": "RMCOrbitalCannonExplosionAegis",
+      "parts": [
+        {
+          "shape": "circle",
+          "radius": 2.887
+        },
+        {
+          "shape": "circle",
+          "radius": 27.386
+        },
+        {
+          "shape": "diamond",
+          "radius": 35.0
+        }
+      ]
+    }
+  ],
+  "roofs": [
+    {
+      "id": "HiveCoreXeno",
+      "name": "Ядро улья",
+      "radius": 11.848,
+      "blocks": [
+        "CAS",
+        "OB",
+        "fulton",
+        "lasing",
+        "medevac",
+        "mortarFire",
+        "mortarPlacement",
+        "paradropping",
+        "supplyDrop"
+      ]
+    },
+    {
+      "id": "HivePylonXeno",
+      "name": "Пилон улья",
+      "radius": 8.463,
+      "blocks": [
+        "CAS",
+        "fulton",
+        "lasing",
+        "medevac",
+        "mortarFire",
+        "mortarPlacement",
+        "paradropping",
+        "supplyDrop"
+      ]
+    }
+  ]
+}
