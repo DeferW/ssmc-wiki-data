@@ -1,6 +1,7 @@
 {
   "schemaVersion": 1,
   "evasionSchemaVersion": 1,
+  "attacksSchemaVersion": 1,
   "source": "MetalSage/space-stories-cm14",
   "gameCommit": "024d853a184f956e0c08d876808ea7771a104a04",
   "locale": "ru-RU",
@@ -45,6 +46,25 @@
         "explosionArmor": 40,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 9.1667,
+            "Slash": 9.1667,
+            "Piercing": 9.1667
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 12.0,
+            "Slash": 12.0,
+            "Piercing": 12.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/CMXenoBurrower.png"
     },
     "CMXenoCarrier": {
@@ -73,6 +93,25 @@
         "sideArmor": 0,
         "explosionArmor": 20,
         "immuneToArmorPiercing": false
+      },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 9.1667,
+            "Slash": 9.1667,
+            "Piercing": 9.1667
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 14.0,
+            "Slash": 14.0,
+            "Piercing": 14.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
       },
       "sprite": "sprites/CMXenoCarrier.png"
     },
@@ -103,6 +142,25 @@
         "explosionArmor": 70,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 9.1667,
+            "Slash": 9.1667,
+            "Piercing": 9.1667
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 12.0,
+            "Slash": 12.0,
+            "Piercing": 12.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/CMXenoDefender.png"
     },
     "CMXenoDefenderSteelcrest": {
@@ -131,6 +189,25 @@
         "sideArmor": 0,
         "explosionArmor": 70,
         "immuneToArmorPiercing": false
+      },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 7.5,
+            "Slash": 7.5,
+            "Piercing": 7.5
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 10.0,
+            "Slash": 10.0,
+            "Piercing": 10.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
       },
       "sprite": "sprites/CMXenoDefenderSteelcrest.png"
     },
@@ -161,6 +238,25 @@
         "explosionArmor": 0,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 7.5,
+            "Slash": 7.5,
+            "Piercing": 7.5
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 10.0,
+            "Slash": 10.0,
+            "Piercing": 10.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/CMXenoDrone.png"
     },
     "CMXenoDroneGardener": {
@@ -189,6 +285,25 @@
         "sideArmor": 0,
         "explosionArmor": 0,
         "immuneToArmorPiercing": false
+      },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 7.5,
+            "Slash": 7.5,
+            "Piercing": 7.5
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 10.0,
+            "Slash": 10.0,
+            "Piercing": 10.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
       },
       "sprite": "sprites/CMXenoDroneGardener.png"
     },
@@ -219,6 +334,25 @@
         "explosionArmor": 0,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 5.8333,
+            "Slash": 5.8333,
+            "Piercing": 5.8333
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 8.3333,
+            "Slash": 8.3333,
+            "Piercing": 8.3333
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/CMXenoDroneHealer.png"
     },
     "CMXenoHivelord": {
@@ -247,6 +381,25 @@
         "sideArmor": 0,
         "explosionArmor": 10,
         "immuneToArmorPiercing": false
+      },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 7.5,
+            "Slash": 7.5,
+            "Piercing": 7.5
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 10.0,
+            "Slash": 10.0,
+            "Piercing": 10.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
       },
       "sprite": "sprites/CMXenoHivelord.png"
     },
@@ -277,6 +430,25 @@
         "explosionArmor": 10,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 7.5,
+            "Slash": 7.5,
+            "Piercing": 7.5
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 10.0,
+            "Slash": 10.0,
+            "Piercing": 10.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/CMXenoHivelordDesigner.png"
     },
     "CMXenoHivelordResinWhisperer": {
@@ -305,6 +477,25 @@
         "sideArmor": 0,
         "explosionArmor": 10,
         "immuneToArmorPiercing": false
+      },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 7.5,
+            "Slash": 7.5,
+            "Piercing": 7.5
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 10.0,
+            "Slash": 10.0,
+            "Piercing": 10.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
       },
       "sprite": "sprites/CMXenoHivelordResinWhisperer.png"
     },
@@ -336,6 +527,10 @@
         "sideArmor": 0,
         "explosionArmor": 0,
         "immuneToArmorPiercing": false
+      },
+      "attacks": {
+        "claw": null,
+        "tail": null
       },
       "sprite": "sprites/CMXenoLarva.png"
     },
@@ -370,6 +565,25 @@
         "explosionArmor": 0,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 6.6667,
+            "Slash": 6.6667,
+            "Piercing": 6.6667
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 8.0,
+            "Slash": 8.0,
+            "Piercing": 8.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/CMXenoLesserDrone.png"
     },
     "CMXenoLurker": {
@@ -400,6 +614,25 @@
         "explosionArmor": 20,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 11.6667,
+            "Slash": 11.6667,
+            "Piercing": 11.6667
+          },
+          "attackRate": 0.75
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 14.0,
+            "Slash": 14.0,
+            "Piercing": 14.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/CMXenoLurker.png"
     },
     "CMXenoParasite": {
@@ -429,6 +662,10 @@
         "explosionArmor": 0,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": null,
+        "tail": null
+      },
       "sprite": "sprites/CMXenoParasite.png"
     },
     "CMXenoPraetorian": {
@@ -457,6 +694,25 @@
         "sideArmor": 0,
         "explosionArmor": 40,
         "immuneToArmorPiercing": false
+      },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 13.3333,
+            "Slash": 13.3333,
+            "Piercing": 13.3333
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 16.0,
+            "Slash": 16.0,
+            "Piercing": 16.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
       },
       "sprite": "sprites/CMXenoPraetorian.png"
     },
@@ -490,6 +746,25 @@
         "explosionArmor": 100,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 13.3333,
+            "Slash": 13.3333,
+            "Piercing": 13.3333
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 18.0,
+            "Slash": 18.0,
+            "Piercing": 18.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/CMXenoQueen.png"
     },
     "CMXenoRavager": {
@@ -519,6 +794,25 @@
         "explosionArmor": 80,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 15.0,
+            "Slash": 15.0,
+            "Piercing": 15.0
+          },
+          "attackRate": 1.05
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 18.0,
+            "Slash": 18.0,
+            "Piercing": 18.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/CMXenoRavager.png"
     },
     "CMXenoRunner": {
@@ -547,6 +841,25 @@
         "sideArmor": 0,
         "explosionArmor": 10,
         "immuneToArmorPiercing": false
+      },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 7.5,
+            "Slash": 7.5,
+            "Piercing": 7.5
+          },
+          "attackRate": 1.4
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 10.0,
+            "Slash": 10.0,
+            "Piercing": 10.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
       },
       "sprite": "sprites/CMXenoRunner.png"
     },
@@ -583,6 +896,25 @@
         "explosionArmor": 10,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 7.5,
+            "Slash": 7.5,
+            "Piercing": 7.5
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 10.0,
+            "Slash": 10.0,
+            "Piercing": 10.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/CMXenoSentinel.png"
     },
     "CMXenoSpitter": {
@@ -618,6 +950,25 @@
         "explosionArmor": 20,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 8.3333,
+            "Slash": 8.3333,
+            "Piercing": 8.3333
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 12.0,
+            "Slash": 12.0,
+            "Piercing": 12.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/CMXenoSpitter.png"
     },
     "CMXenoWarrior": {
@@ -652,6 +1003,25 @@
         "explosionArmor": 40,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 11.6667,
+            "Slash": 11.6667,
+            "Piercing": 11.6667
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 16.0,
+            "Slash": 16.0,
+            "Piercing": 16.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/CMXenoWarrior.png"
     },
     "RMCXenoBoiler": {
@@ -680,6 +1050,25 @@
         "sideArmor": 0,
         "explosionArmor": 20,
         "immuneToArmorPiercing": false
+      },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 7.5,
+            "Slash": 7.5,
+            "Piercing": 7.5
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 10.0,
+            "Slash": 10.0,
+            "Piercing": 10.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
       },
       "sprite": "sprites/RMCXenoBoiler.png"
     },
@@ -710,6 +1099,25 @@
         "explosionArmor": 20,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 7.5,
+            "Slash": 7.5,
+            "Piercing": 7.5
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 10.0,
+            "Slash": 10.0,
+            "Piercing": 10.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/RMCXenoBoilerSapper.png"
     },
     "RMCXenoCarrierEggsac": {
@@ -738,6 +1146,25 @@
         "sideArmor": 0,
         "explosionArmor": 20,
         "immuneToArmorPiercing": false
+      },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 9.1667,
+            "Slash": 9.1667,
+            "Piercing": 9.1667
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 14.0,
+            "Slash": 14.0,
+            "Piercing": 14.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
       },
       "sprite": "sprites/RMCXenoCarrierEggsac.png"
     },
@@ -768,6 +1195,25 @@
         "explosionArmor": 100,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 13.3333,
+            "Slash": 13.3333,
+            "Piercing": 13.3333
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 16.0,
+            "Slash": 16.0,
+            "Piercing": 16.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/RMCXenoCrusher.png"
     },
     "RMCXenoCrusherCharger": {
@@ -796,6 +1242,25 @@
         "sideArmor": 15,
         "explosionArmor": 100,
         "immuneToArmorPiercing": false
+      },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 10.0,
+            "Slash": 10.0,
+            "Piercing": 10.0
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 12.0,
+            "Slash": 12.0,
+            "Piercing": 12.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
       },
       "sprite": "sprites/RMCXenoCrusherCharger.png"
     },
@@ -830,6 +1295,25 @@
         "explosionArmor": 70,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 16.6667,
+            "Slash": 16.6667,
+            "Piercing": 16.6667
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 22.0,
+            "Slash": 22.0,
+            "Piercing": 22.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/RMCXenoKing.png"
     },
     "RMCXenoLesserCarrier": {
@@ -862,6 +1346,25 @@
         "explosionArmor": 10,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 8.3333,
+            "Slash": 8.3333,
+            "Piercing": 8.3333
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 10.0,
+            "Slash": 10.0,
+            "Piercing": 10.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/RMCXenoLesserCarrier.png"
     },
     "RMCXenoLurkerVampire": {
@@ -890,6 +1393,17 @@
         "sideArmor": 0,
         "explosionArmor": 20,
         "immuneToArmorPiercing": false
+      },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 10.0,
+            "Slash": 10.0,
+            "Piercing": 10.0
+          },
+          "attackRate": 0.93
+        },
+        "tail": null
       },
       "sprite": "sprites/RMCXenoLurkerVampire.png"
     },
@@ -920,6 +1434,10 @@
         "explosionArmor": 0,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": null,
+        "tail": null
+      },
       "sprite": "sprites/RMCXenoParasiteWatcher.png"
     },
     "RMCXenoPraetorianDancer": {
@@ -948,6 +1466,25 @@
         "sideArmor": 0,
         "explosionArmor": 40,
         "immuneToArmorPiercing": false
+      },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 13.3333,
+            "Slash": 13.3333,
+            "Piercing": 13.3333
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 16.0,
+            "Slash": 16.0,
+            "Piercing": 16.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
       },
       "sprite": "sprites/RMCXenoPraetorianDancer.png"
     },
@@ -978,6 +1515,17 @@
         "explosionArmor": 60,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 10.0,
+            "Slash": 10.0,
+            "Piercing": 10.0
+          },
+          "attackRate": 1.0
+        },
+        "tail": null
+      },
       "sprite": "sprites/RMCXenoPraetorianOppressor.png"
     },
     "RMCXenoPraetorianValkyrie": {
@@ -1006,6 +1554,17 @@
         "sideArmor": 0,
         "explosionArmor": 40,
         "immuneToArmorPiercing": false
+      },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 13.3333,
+            "Slash": 13.3333,
+            "Piercing": 13.3333
+          },
+          "attackRate": 1.0
+        },
+        "tail": null
       },
       "sprite": "sprites/RMCXenoPraetorianValkyrie.png"
     },
@@ -1036,6 +1595,25 @@
         "explosionArmor": 40,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 13.3333,
+            "Slash": 13.3333,
+            "Piercing": 13.3333
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 16.0,
+            "Slash": 16.0,
+            "Piercing": 16.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/RMCXenoPraetorianVanguard.png"
     },
     "RMCXenoRavagerBerserker": {
@@ -1064,6 +1642,25 @@
         "sideArmor": 0,
         "explosionArmor": 80,
         "immuneToArmorPiercing": false
+      },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 15.0,
+            "Slash": 15.0,
+            "Piercing": 15.0
+          },
+          "attackRate": 1.05
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 18.0,
+            "Slash": 18.0,
+            "Piercing": 18.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
       },
       "sprite": "sprites/RMCXenoRavagerBerserker.png"
     },
@@ -1094,6 +1691,25 @@
         "explosionArmor": 100,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 11.6667,
+            "Slash": 11.6667,
+            "Piercing": 11.6667
+          },
+          "attackRate": 0.9
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 16.0,
+            "Slash": 16.0,
+            "Piercing": 16.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/RMCXenoRavagerHedgehog.png"
     },
     "RMCXenoRunnerAcider": {
@@ -1122,6 +1738,25 @@
         "sideArmor": 0,
         "explosionArmor": 10,
         "immuneToArmorPiercing": false
+      },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 7.5,
+            "Slash": 7.5,
+            "Piercing": 7.5
+          },
+          "attackRate": 1.4
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 10.0,
+            "Slash": 10.0,
+            "Piercing": 10.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
       },
       "sprite": "sprites/RMCXenoRunnerAcider.png"
     },
@@ -1157,6 +1792,24 @@
         "explosionArmor": 20,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Slash": 18,
+            "Heat": 7
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 6.6667,
+            "Slash": 6.6667,
+            "Piercing": 6.6667
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/STXenoDespoiler.png"
     },
     "STXenoWarriorBoxer": {
@@ -1191,6 +1844,25 @@
         "explosionArmor": 45,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 10.0,
+            "Slash": 10.0,
+            "Piercing": 10.0
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 15.0,
+            "Slash": 15.0,
+            "Piercing": 15.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/STXenoWarriorBoxer.png"
     },
     "STXenoWarriorBulwark": {
@@ -1224,6 +1896,25 @@
         "sideArmor": 10,
         "explosionArmor": 50,
         "immuneToArmorPiercing": false
+      },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 11.6667,
+            "Slash": 11.6667,
+            "Piercing": 11.6667
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 16.0,
+            "Slash": 16.0,
+            "Piercing": 16.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
       },
       "sprite": "sprites/STXenoWarriorBulwark.png"
     }
