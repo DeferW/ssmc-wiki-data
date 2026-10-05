@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import Any
 
 from scripts.common.localization import Localizer, read_fluent_messages
-from scripts.common.prototypes import PrototypeResolver, read_entity_prototypes
+from scripts.common.prototypes import PrototypeResolver, iter_prototype_documents, read_entity_prototypes
 from scripts.mobs.constants import RMC_SIZES
 from scripts.mobs.sprites import render_mob_sprites, sprite_path_from_component
 
@@ -111,6 +111,119 @@ def evasion_from_components(components: dict[str, Any]) -> dict[str, Any] | None
     return {"base": base, "sizeModifier": size_modifier, "standing": base + size_modifier}
 
 
+def read_damage_groups(game_source: Path) -> dict[str, list[str]]:
+    """damageGroup prototypes (Resources/Prototypes/Damage/groups.yml): a
+    DamageSpecifier written as `groups: {Brute: 12}` is spread over the
+    group's damage types when the game loads it."""
+    root = game_source / "Resources/Prototypes"
+    groups: dict[str, list[str]] = {}
+    for path in sorted(root.rglob("*.yml")):
+        for raw in iter_prototype_documents(path):
+            if raw.get("type") != "damageGroup":
+                continue
+            group_id = raw.get("id")
+            types = raw.get("damageTypes")
+            if isinstance(group_id, str) and isinstance(types, list):
+                groups[group_id] = [value for value in types if isinstance(value, str)]
+    if "Brute" not in groups:
+        raise RuntimeError("No Brute damageGroup prototype found")
+    return groups
+
+
+def damage_from_specifier(specifier: Any, groups: dict[str, list[str]]) -> dict[str, float]:
+    """DamageSpecifier `types` + `groups`; a group amount is split evenly
+    across its types (DamageSpecifier's group constructor)."""
+    if not isinstance(specifier, dict):
+        return {}
+    result: dict[str, float] = {}
+    raw_types = specifier.get("types")
+    if isinstance(raw_types, dict):
+        for damage_type, amount in raw_types.items():
+            if isinstance(amount, (int, float)) and not isinstance(amount, bool):
+                result[damage_type] = result.get(damage_type, 0) + amount
+    raw_groups = specifier.get("groups")
+    if isinstance(raw_groups, dict):
+        for group_id, amount in raw_groups.items():
+            if isinstance(amount, bool) or not isinstance(amount, (int, float)):
+                continue
+            types = groups.get(group_id)
+            if not types:
+                raise RuntimeError(f"Unknown damage group: {group_id}")
+            share = amount / len(types)
+            for damage_type in types:
+                result[damage_type] = result.get(damage_type, 0) + share
+    return {key: round(value, 4) for key, value in result.items() if value != 0}
+
+
+# MeleeWeaponComponent.AttackRate default (attacks per second); xeno castes
+# that swing faster or slower override it in their MeleeWeapon component.
+DEFAULT_MELEE_ATTACK_RATE = 1.0
+
+
+def is_tail_stab_action(resolver: PrototypeResolver, action_id: str) -> bool:
+    """An action whose WorldTargetAction raises XenoTailStabEvent — the plain
+    stab and its renamed children (Defender's Tail Slam, Corrosive, Lance).
+    useAltTailStab marks the Praetorian lance's secondary mode, which uses
+    a different component's stats."""
+    if action_id not in resolver.prototypes:
+        return False
+    target = resolver.resolve(action_id)["components"].get("WorldTargetAction")
+    event = target.get("event") if isinstance(target, dict) else None
+    if not isinstance(event, dict) or event.get("yamlTag") != "!type:XenoTailStabEvent":
+        return False
+    value = event.get("value")
+    return not (isinstance(value, dict) and value.get("useAltTailStab") is True)
+
+
+def tail_stab_action_id(components: dict[str, Any], resolver: PrototypeResolver) -> str | None:
+    """The tail stab action a caste is actually granted (Xeno.actionIds)."""
+    xeno = components.get("Xeno")
+    action_ids = xeno.get("actionIds") if isinstance(xeno, dict) else None
+    if not isinstance(action_ids, list):
+        return None
+    for action_id in action_ids:
+        if isinstance(action_id, str) and is_tail_stab_action(resolver, action_id):
+            return action_id
+    return None
+
+
+def attacks_from_components(
+    components: dict[str, Any],
+    resolver: PrototypeResolver,
+    groups: dict[str, list[str]],
+) -> dict[str, Any]:
+    """Base claw swing (MeleeWeapon) and tail stab (XenoTailStab + the granted
+    action's useDelay). Situational buffs (pheromones, Empower, strain
+    passives) are not included."""
+    claw = None
+    melee = components.get("MeleeWeapon")
+    if isinstance(melee, dict):
+        damage = damage_from_specifier(melee.get("damage"), groups)
+        if damage:
+            rate = melee.get("attackRate", DEFAULT_MELEE_ATTACK_RATE)
+            claw = {
+                "damage": damage,
+                "attackRate": rate if isinstance(rate, (int, float)) and not isinstance(rate, bool) else DEFAULT_MELEE_ATTACK_RATE,
+            }
+
+    tail = None
+    stab = components.get("XenoTailStab")
+    action_id = tail_stab_action_id(components, resolver)
+    if isinstance(stab, dict) and action_id is not None:
+        damage = damage_from_specifier(stab.get("tailDamage"), groups)
+        action = resolver.resolve(action_id)["components"].get("Action", {})
+        cooldown = action.get("useDelay") if isinstance(action, dict) else None
+        if damage and isinstance(cooldown, (int, float)) and cooldown > 0:
+            piercing = stab.get("armorPiercing", 0)
+            tail = {
+                "damage": damage,
+                "armorPiercing": piercing if isinstance(piercing, int) else 0,
+                "cooldownSeconds": cooldown,
+            }
+
+    return {"claw": claw, "tail": tail}
+
+
 def rmc_size(components: dict[str, Any]) -> str:
     """RMCSizeComponent.Size gates several mechanics (stopping power stun
     thresholds, RMCFocusedShootingSystem's bonus-damage tiers) by an ordered
@@ -150,6 +263,7 @@ def main() -> None:
     resolver = PrototypeResolver(prototypes)
     locale_root = args.game_source / "Resources/Locale" / args.locale
     localizer = Localizer(read_fluent_messages(locale_root))
+    damage_groups = read_damage_groups(args.game_source)
 
     marine_resolved = resolver.resolve(MARINE_BASE_PROTOTYPE_ID)
     marine_thresholds = marine_resolved["components"].get("MobThresholds")
@@ -201,6 +315,7 @@ def main() -> None:
             ),
             "maturedThresholds": matured_thresholds(components.get("XenoMaturing")),
             "armor": apply_bulwark_passive(armor_from_component(armor_component), components),
+            "attacks": attacks_from_components(components, resolver, damage_groups),
             "sprite": None,
         }
 
@@ -214,6 +329,7 @@ def main() -> None:
     result = {
         "schemaVersion": 1,
         "evasionSchemaVersion": 1,
+        "attacksSchemaVersion": 1,
         "source": "MetalSage/space-stories-cm14",
         "gameCommit": args.commit,
         "locale": args.locale,

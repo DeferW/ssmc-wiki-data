@@ -264,3 +264,71 @@ def test_evasion_is_generated_for_any_new_prototype():
     }
     assert evasion_from_components({"Evasion": {}, "RMCSize": {"size": "Big"}})["standing"] == -10
     assert evasion_from_components({"Evasion": {}, "RMCSize": {"size": "SmallXeno"}})["standing"] == 0
+
+
+def test_damage_from_specifier_splits_groups_evenly():
+    from scripts.mobs.build import damage_from_specifier
+    groups = {"Brute": ["Blunt", "Slash", "Piercing"]}
+    assert damage_from_specifier({"groups": {"Brute": 22.5}}, groups) == {
+        "Blunt": 7.5, "Slash": 7.5, "Piercing": 7.5,
+    }
+    assert damage_from_specifier({"types": {"Slash": 10}, "groups": {"Brute": 3}}, groups) == {
+        "Slash": 11, "Blunt": 1, "Piercing": 1,
+    }
+    assert damage_from_specifier(None, groups) == {}
+
+
+def test_damage_from_specifier_unknown_group_raises():
+    from scripts.mobs.build import damage_from_specifier
+    with pytest.raises(RuntimeError, match="Unknown damage group"):
+        damage_from_specifier({"groups": {"Mystery": 5}}, {"Brute": ["Blunt"]})
+
+
+def tail_stab_actions():
+    # Mirrors xeno_offense_actions.yml: Tail Slam (Defender) inherits the stab
+    # event; the lance Alt action raises it with useAltTailStab.
+    stab_event = {"yamlTag": "!type:XenoTailStabEvent", "value": {}}
+    alt_event = {"yamlTag": "!type:XenoTailStabEvent", "value": {"useAltTailStab": True}}
+    return {
+        "ActionXenoTailStab": make_prototype("ActionXenoTailStab", components=[
+            {"type": "Action", "useDelay": 10},
+            {"type": "WorldTargetAction", "event": stab_event},
+        ]),
+        "ActionXenoTailSlam": make_prototype("ActionXenoTailSlam", parents=["ActionXenoTailStab"]),
+        "ActionXenoTailStabLanceAlt": make_prototype("ActionXenoTailStabLanceAlt", parents=["ActionXenoTailStab"], components=[
+            {"type": "Action", "useDelay": 3},
+            {"type": "WorldTargetAction", "event": alt_event},
+        ]),
+        "ActionXenoTailFountain": make_prototype("ActionXenoTailFountain", components=[{"type": "Action", "useDelay": 5}]),
+    }
+
+
+def test_attacks_read_claw_and_granted_tail_stab():
+    # Mirrors drone.yml: MeleeWeapon Brute 22.5 (attackRate inherited default),
+    # XenoTailStab Brute 30, ActionXenoTailStab granted with useDelay 10.
+    from scripts.mobs.build import attacks_from_components
+    resolver = PrototypeResolver(tail_stab_actions())
+    groups = {"Brute": ["Blunt", "Slash", "Piercing"]}
+    components = {
+        "MeleeWeapon": {"damage": {"groups": {"Brute": 22.5}}},
+        "XenoTailStab": {"tailDamage": {"groups": {"Brute": 30}}},
+        "Xeno": {"actionIds": ["ActionXenoRest", "ActionXenoTailStab"]},
+    }
+    attacks = attacks_from_components(components, resolver, groups)
+    assert attacks["claw"] == {"damage": {"Blunt": 7.5, "Slash": 7.5, "Piercing": 7.5}, "attackRate": 1.0}
+    assert attacks["tail"] == {"damage": {"Blunt": 10, "Slash": 10, "Piercing": 10}, "armorPiercing": 0, "cooldownSeconds": 10}
+
+
+def test_attacks_skip_tail_without_granted_action_and_lance_alt():
+    from scripts.mobs.build import attacks_from_components, tail_stab_action_id
+    resolver = PrototypeResolver(tail_stab_actions())
+    groups = {"Brute": ["Blunt"]}
+    components = {
+        "MeleeWeapon": {"damage": {"groups": {"Brute": 12}}, "attackRate": 1.4},
+        "XenoTailStab": {"tailDamage": {"groups": {"Brute": 30}}},
+        "Xeno": {"actionIds": ["ActionXenoRest", "ActionXenoTailFountain"]},
+    }
+    attacks = attacks_from_components(components, resolver, groups)
+    assert attacks["claw"]["attackRate"] == 1.4
+    assert attacks["tail"] is None
+    assert tail_stab_action_id({"Xeno": {"actionIds": ["ActionXenoTailStabLanceAlt", "ActionXenoTailSlam"]}}, resolver) == "ActionXenoTailSlam"
