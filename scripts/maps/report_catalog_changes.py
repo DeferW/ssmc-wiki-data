@@ -6,18 +6,10 @@ from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
 
+from scripts.common.items.categories import PUBLIC_CATEGORY_LABELS
 
-CATEGORY_ORDER = (
-    "Оружие",
-    "Боезапас",
-    "Обвесы",
-    "Броня",
-    "Экипировка",
-    "Медицина",
-    "Снаряжение",
-    "Другое",
-    "Скрытые",
-)
+
+CATEGORY_ORDER = tuple(PUBLIC_CATEGORY_LABELS.values())
 
 
 def read_json(path: Path) -> dict[str, Any]:

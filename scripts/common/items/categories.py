@@ -6,26 +6,74 @@ PUBLIC_CATEGORY_LABELS = {
     "ammunition": "Боезапас",
     "attachment": "Обвесы",
     "armor": "Броня",
+    "clothing": "Одежда",
     "equipment": "Экипировка",
     "medicine": "Медицина",
     "gear": "Снаряжение",
+    "tools": "Инструменты",
+    "electronics": "Электроника",
+    "food": "Провизия",
+    "household": "Быт",
+    "materials": "Материалы",
+    "containers": "Контейнеры",
     "other": "Другое",
     "hidden": "Скрытые",
 }
 
 PUBLIC_CATEGORY_ORDER = tuple(PUBLIC_CATEGORY_LABELS)
+# Schema 4 snapshots published before the taxonomy extension remain readable.
+LEGACY_CATEGORY_ORDER = (
+    "weapon",
+    "ammunition",
+    "attachment",
+    "armor",
+    "equipment",
+    "medicine",
+    "gear",
+    "other",
+    "hidden",
+)
+
+
+def supported_category_order(labels: list[str]) -> bool:
+    return labels in [
+        [PUBLIC_CATEGORY_LABELS[key] for key in order]
+        for order in (LEGACY_CATEGORY_ORDER, PUBLIC_CATEGORY_ORDER)
+    ]
+
+
 PUBLIC_CATEGORY_IDS_BY_LABEL = {
     label: category_id for category_id, label in PUBLIC_CATEGORY_LABELS.items()
 }
 
 WEARABLE_EQUIPMENT_SLOTS = {
-    "innerclothing", "jumpsuit", "head", "eyes", "gloves", "hands",
-    "shoes", "feet", "mask", "mouth", "ears", "ear", "neck",
-    "pocket", "pockets", "belt", "back", "outerclothing",
+    "innerclothing",
+    "jumpsuit",
+    "head",
+    "eyes",
+    "gloves",
+    "hands",
+    "shoes",
+    "feet",
+    "mask",
+    "mouth",
+    "ears",
+    "ear",
+    "neck",
+    "pocket",
+    "pockets",
+    "belt",
+    "back",
+    "outerclothing",
 }
 
 WEARABLE_STORAGE_SLOTS = {
-    "innerclothing", "pocket", "pockets", "belt", "back", "outerclothing",
+    "innerclothing",
+    "pocket",
+    "pockets",
+    "belt",
+    "back",
+    "outerclothing",
 }
 
 SOURCE_CATEGORY_HINTS = {

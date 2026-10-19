@@ -10,6 +10,7 @@ from scripts.common.items.classification import (
     infer_types,
     source_category_hint,
 )
+from scripts.common.items.variants import hidden_variant_reasons
 from .core import (
     EntityPrototype,
     NON_MECHANICAL_COMPONENTS,
@@ -62,11 +63,7 @@ def catalog_display_name(base_name: str, suffix: str) -> str:
     for part in suffix.split(","):
         qualifier = part.strip()
         normalized = qualifier.casefold()
-        if (
-            not qualifier
-            or normalized in seen
-            or normalized.startswith(ignored_prefixes)
-        ):
+        if not qualifier or normalized in seen or normalized.startswith(ignored_prefixes):
             continue
         qualifiers.append(qualifier)
         seen.add(normalized)
@@ -112,23 +109,49 @@ def build_public_catalog(
         # Boxes/crates are no longer silently replaced with their contents.
         queue.extend(physical_contents.get(item_id, []))
 
-    # Every reachable prototype stays a separate card so the admin can review
-    # filled, empty and wrapper variants independently.
+    # Keep all IDs for links/maps/admin, but hide redundant state variants.
     public_ids = public_candidates
+    hidden_variants = hidden_variant_reasons(items, public_ids)
+
+    # Classify physical contents first so generic cases can inherit a meaningful
+    # supply role without maintaining lists of product IDs. Cycles are harmless.
+    classifications: dict[str, dict[str, Any]] = {}
+    content_roles: dict[str, str] = {}
+
+    def classify_with_contents(item_id: str, ancestry: frozenset[str]) -> dict[str, Any]:
+        if item_id in classifications:
+            return classifications[item_id]
+        content_categories = set()
+        for child in physical_contents.get(item_id, []):
+            if child in items and child not in ancestry:
+                child_classification = classify_with_contents(child, ancestry | {child})
+                if child_category := content_roles.get(
+                    child, child_classification.get("categoryId")
+                ):
+                    content_categories.add(child_category)
+        classification_input = {**items[item_id], "_contentCategories": sorted(content_categories)}
+        classification = classify_item(
+            classification_input,
+            classification_policy,
+            placed_on_map=item_id in (additional_item_ids or ()),
+        )
+        if category_id := classification.get("categoryId"):
+            content_roles[item_id] = category_id
+        if item_id in hidden_variants and classification["status"] != "excluded":
+            classification = classify_item(
+                {**classification_input, "_variantHiddenReason": hidden_variants[item_id]},
+                classification_policy,
+                placed_on_map=item_id in (additional_item_ids or ()),
+            )
+        classifications[item_id] = classification
+        return classification
 
     categories: dict[str, list[str]] = defaultdict(list)
     excluded_ids: list[str] = []
     sort_key = lambda value: (items[value]["name"].casefold(), value)
     for item_id in sorted(public_ids, key=sort_key):
-        classification = classify_item(
-            items[item_id],
-            classification_policy,
-            placed_on_map=item_id in (additional_item_ids or ()),
-        )
-        if (
-            classification["status"] == "excluded"
-            and item_id in (additional_item_ids or ())
-        ):
+        classification = classify_with_contents(item_id, frozenset({item_id}))
+        if classification["status"] == "excluded" and item_id in (additional_item_ids or ()):
             classification = {
                 **classification,
                 "status": "included",
@@ -179,11 +202,7 @@ def cargo_payloads(raw_entry: dict[str, Any]) -> list[dict[str, Any]]:
         ordered.append((crate_id, True))
     entities = raw_entry.get("entities")
     if isinstance(entities, list):
-        ordered.extend(
-            (item_id, False)
-            for item_id in entities
-            if isinstance(item_id, str)
-        )
+        ordered.extend((item_id, False) for item_id in entities if isinstance(item_id, str))
 
     unique: list[tuple[str, bool]] = []
     seen: set[str] = set()
@@ -244,7 +263,11 @@ def build_card(
 ) -> dict[str, Any]:
     components = resolved["components"]
     raw_tags = components.get("Tag", {}).get("tags", [])
-    tags = {item for item in raw_tags if isinstance(item, str)} if isinstance(raw_tags, list) else set()
+    tags = (
+        {item for item in raw_tags if isinstance(item, str)}
+        if isinstance(raw_tags, list)
+        else set()
+    )
     fields = resolved["fields"]
 
     properties = {
@@ -253,19 +276,13 @@ def build_card(
         if should_publish_component(component_type)
     }
 
-    base_name = capitalize_first(
-        localizer.entity_text(prototype_id, None, fields.get("name"))
-    )
-    suffix = localizer.entity_text(
-        prototype_id, "suffix", fields.get("suffix")
-    )
+    base_name = capitalize_first(localizer.entity_text(prototype_id, None, fields.get("name")))
+    suffix = localizer.entity_text(prototype_id, "suffix", fields.get("suffix"))
     card: dict[str, Any] = {
         "id": prototype_id,
         "name": catalog_display_name(base_name, suffix),
         "baseName": base_name,
-        "description": localizer.entity_text(
-            prototype_id, "desc", fields.get("description")
-        ),
+        "description": localizer.entity_text(prototype_id, "desc", fields.get("description")),
         "suffix": suffix,
         "origin": resolved["origin"],
         "sourceFile": resolved["sourceFile"],
@@ -277,6 +294,8 @@ def build_card(
         "componentTypes": sorted(components),
         "equipmentSlots": sorted(equipment_slots(components)),
         "properties": properties,
+        "_classificationComponents": components,
+        "_prototypeSuffix": fields.get("suffix", ""),
         "itemSize": str(components.get("Item", {}).get("size", "Small")),
         "itemShape": copy.deepcopy(components.get("Item", {}).get("shape")),
         "availability": availability,
@@ -310,15 +329,9 @@ def populate_compatibility_summaries(
     relations: list[dict[str, Any]],
     public_item_ids: set[str],
 ) -> None:
-    attachment_slots: dict[str, dict[str, set[str]]] = defaultdict(
-        lambda: defaultdict(set)
-    )
-    attachment_weapons: dict[str, dict[str, set[str]]] = defaultdict(
-        lambda: defaultdict(set)
-    )
-    magazine_slots: dict[str, dict[str, set[str]]] = defaultdict(
-        lambda: defaultdict(set)
-    )
+    attachment_slots: dict[str, dict[str, set[str]]] = defaultdict(lambda: defaultdict(set))
+    attachment_weapons: dict[str, dict[str, set[str]]] = defaultdict(lambda: defaultdict(set))
+    magazine_slots: dict[str, dict[str, set[str]]] = defaultdict(lambda: defaultdict(set))
     magazine_weapons: dict[str, set[str]] = defaultdict(set)
     installed: dict[str, dict[str, set[str]]] = defaultdict(lambda: defaultdict(set))
     loaded: dict[str, dict[str, set[str]]] = defaultdict(lambda: defaultdict(set))
@@ -415,8 +428,7 @@ def populate_compatibility_summaries(
                 if relation.get("type") == "loadedWith"
                 and "BallisticAmmoProvider"
                 in items.get(str(relation.get("to")), {}).get("componentTypes", [])
-                and "Gun"
-                not in items.get(str(relation.get("to")), {}).get("componentTypes", [])
+                and "Gun" not in items.get(str(relation.get("to")), {}).get("componentTypes", [])
             }
         for magazine_id in sorted(magazines):
             cartridges = sorted(
@@ -535,9 +547,7 @@ def build_catalog(
 
     for item_id in sorted(additional_item_ids or ()):
         if item_id not in prototypes:
-            raise RuntimeError(
-                f"Additional catalog root references unknown item {item_id}"
-            )
+            raise RuntimeError(f"Additional catalog root references unknown item {item_id}")
         item_ids.add(item_id)
         queue.append(item_id)
 
@@ -573,16 +583,12 @@ def build_catalog(
                         f"Vendor entry without id: {vendor_id}/{section_name}/{entry_index}"
                     )
                 if item_id not in prototypes:
-                    raise RuntimeError(
-                        f"Vendor {vendor_id} references unknown item {item_id}"
-                    )
+                    raise RuntimeError(f"Vendor {vendor_id} references unknown item {item_id}")
                 trade_key = f"{vendor_id}:{section_index}:{entry_index}"
                 item = resolver.resolve(item_id)
                 display_name = raw_entry.get("name")
                 if not isinstance(display_name, str):
-                    display_name = localizer.entity_text(
-                        item_id, None, item["fields"].get("name")
-                    )
+                    display_name = localizer.entity_text(item_id, None, item["fields"].get("name"))
 
                 trade: dict[str, Any] = {
                     "key": trade_key,
@@ -668,9 +674,7 @@ def build_catalog(
 
         vendors[vendor_id] = {
             "id": vendor_id,
-            "name": localizer.entity_text(
-                vendor_id, None, vendor["fields"].get("name")
-            ),
+            "name": localizer.entity_text(vendor_id, None, vendor["fields"].get("name")),
             "description": localizer.entity_text(
                 vendor_id, "desc", vendor["fields"].get("description")
             ),
@@ -682,9 +686,7 @@ def build_catalog(
         catalog_source = resolver.resolve(catalog_id)
         component = catalog_source["components"].get("RequisitionsComputer")
         if not isinstance(component, dict):
-            raise RuntimeError(
-                f"Cargo catalog {catalog_id} has no RequisitionsComputer"
-            )
+            raise RuntimeError(f"Cargo catalog {catalog_id} has no RequisitionsComputer")
         categories = component.get("categories")
         if not isinstance(categories, list) or not categories:
             raise RuntimeError(f"Cargo catalog {catalog_id} has no categories")
@@ -714,9 +716,7 @@ def build_catalog(
                             f"Cargo catalog {catalog_id} references unknown item {item_id}"
                         )
                     kind = "crate" if is_transport else f"entity{payload_index}"
-                    trade_key = (
-                        f"{catalog_id}:cargo:{section_index}:{entry_index}:{kind}"
-                    )
+                    trade_key = f"{catalog_id}:cargo:{section_index}:{entry_index}:{kind}"
                     item = resolver.resolve(item_id)
                     trade: dict[str, Any] = {
                         "key": trade_key,
@@ -726,9 +726,7 @@ def build_catalog(
                         "sectionName": section_name,
                         "position": entry_index,
                         "itemId": item_id,
-                        "name": localizer.entity_text(
-                            item_id, None, item["fields"].get("name")
-                        ),
+                        "name": localizer.entity_text(item_id, None, item["fields"].get("name")),
                         "transportContainer": is_transport,
                     }
                     for key in ("includedItemIds", "includedWithItemId"):
@@ -771,9 +769,7 @@ def build_catalog(
         vendors[catalog_id] = {
             "id": catalog_id,
             "type": "cargo",
-            "name": localizer.entity_text(
-                catalog_id, None, catalog_source["fields"].get("name")
-            ),
+            "name": localizer.entity_text(catalog_id, None, catalog_source["fields"].get("name")),
             "description": localizer.entity_text(
                 catalog_id, "desc", catalog_source["fields"].get("description")
             ),
@@ -909,6 +905,8 @@ def build_catalog(
     # Keep purchase offers and normalized card relationships in the public API.
     # Only parser/debug provenance stays exclusive to index.json.
     provenance_keys = {
+        "_classificationComponents",
+        "_prototypeSuffix",
         "origin",
         "sourceFile",
         "parents",
@@ -929,16 +927,12 @@ def build_catalog(
         "catalogItems": len(items),
         "publicItems": len(public_catalog["itemIds"]),
         "excludedItems": len(public_catalog["excludedItemIds"]),
-        "hiddenItems": len(
-            public_catalog["categories"][PUBLIC_CATEGORY_LABELS["hidden"]]
-        ),
+        "hiddenItems": len(public_catalog["categories"][PUBLIC_CATEGORY_LABELS["hidden"]]),
     }
 
     public_sources = {
         source_id: {
-            key: copy.deepcopy(value)
-            for key, value in source.items()
-            if key != "sourceFile"
+            key: copy.deepcopy(value) for key, value in source.items() if key != "sourceFile"
         }
         for source_id, source in sorted(vendors.items())
     }

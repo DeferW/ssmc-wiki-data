@@ -9,10 +9,11 @@ from typing import Any
 import yaml
 from PIL import Image
 
+from scripts.common.items.categories import supported_category_order
+
 from scripts.catalog.core import (
     PHYSICAL_CONTENT_RELATION_TYPES,
     PUBLIC_CATEGORY_LABELS,
-    PUBLIC_CATEGORY_ORDER,
 )
 
 
@@ -91,10 +92,7 @@ def validate(
     ):
         fail_if(not isinstance(value, list), f"publicCatalog.{name} must be a list")
     fail_if(not isinstance(categories, dict), "publicCatalog.categories must be an object")
-    expected_categories = [
-        PUBLIC_CATEGORY_LABELS[category_id] for category_id in PUBLIC_CATEGORY_ORDER
-    ]
-    fail_if(list(categories) != expected_categories, "Category order or labels changed")
+    fail_if(not supported_category_order(list(categories)), "Category order or labels changed")
     flat_categories = [item_id for ids in categories.values() for item_id in ids]
     fail_if(Counter(flat_categories) != Counter(public_ids), "Categories do not partition items")
     fail_if(set(public_ids) | set(excluded_ids) != set(candidate_ids), "Candidate partition is invalid")

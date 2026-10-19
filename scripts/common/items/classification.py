@@ -6,7 +6,6 @@ from typing import Any, Iterable
 from .categories import (
     PUBLIC_CATEGORY_LABELS,
     SOURCE_CATEGORY_HINTS,
-    WEARABLE_EQUIPMENT_SLOTS,
     WEARABLE_STORAGE_SLOTS,
 )
 
@@ -65,13 +64,15 @@ def is_ammunition_container(
 ) -> bool:
     if "RMCAmmoBox" in tags or "RMCBoxShotgunShells" in tags:
         return True
-    if prototype_id.startswith((
-        "RMCBoxMagazine",
-        "RMCBoxBullets",
-        "RMCBoxShells",
-        "RMCBoxShotgun",
-        "RMCBox458SOCOM",
-    )):
+    if prototype_id.startswith(
+        (
+            "RMCBoxMagazine",
+            "RMCBoxBullets",
+            "RMCBoxShells",
+            "RMCBoxShotgun",
+            "RMCBox458SOCOM",
+        )
+    ):
         return True
     return "RMCFlamerTank" in component_types
 
@@ -120,9 +121,8 @@ def infer_types(
     source_hints = source_hints or set()
     folded_id = prototype_id.casefold()
 
-    if (
-        "Attachable" not in component_types
-        and ("Gun" in component_types or "RMCFlamerAmmoProvider" in component_types)
+    if "Attachable" not in component_types and (
+        "Gun" in component_types or "RMCFlamerAmmoProvider" in component_types
     ):
         result.add("weapon")
     if "Attachable" in component_types:
@@ -156,16 +156,10 @@ def infer_types(
         ("healing", "healthanalyzer", "surgery", "defibrillator", "hypospray"),
     ):
         result.add("medical")
-    if (
-        has_any_component(
-            component_types,
-            ("pill", "injector", "hypospray", "syringe", "injectablesolution"),
-        )
-        or any(
-            word in folded_id
-            for word in ("pill", "tablet", "autoinjector", "syringe")
-        )
-    ):
+    if has_any_component(
+        component_types,
+        ("pill", "injector", "hypospray", "syringe", "injectablesolution"),
+    ) or any(word in folded_id for word in ("pill", "tablet", "autoinjector", "syringe")):
         result.add("medicine")
     if has_any_component(component_types, ("edible",)):
         result.add("food")
@@ -198,8 +192,7 @@ def infer_types(
     ):
         result.add("office")
     if has_any_component(component_types, ("mop", "broom", "janitor")) or any(
-        word in folded_id
-        for word in ("cleaner", "wetsign", "mop", "broom", "janitor")
+        word in folded_id for word in ("cleaner", "wetsign", "mop", "broom", "janitor")
     ):
         result.add("janitorial")
     if has_any_component(component_types, ("cprdummy", "healthscannable")):
@@ -209,17 +202,10 @@ def infer_types(
         ("welder", "construction", "powercell", "generator", "barricade"),
     ):
         result.add("engineering")
-    if "WeaponMount" in component_types or has_any_component(
-        component_types, ("sentry", "mortar")
-    ):
+    if "WeaponMount" in component_types or has_any_component(component_types, ("sentry", "mortar")):
         result.add("weapon-support")
-    if (
-        "vehicle-ammunition" in source_hints
-        and (
-            "magazine-or-ammo-container" in result
-            or "cartridge" in result
-            or "explosive" in result
-        )
+    if "vehicle-ammunition" in source_hints and (
+        "magazine-or-ammo-container" in result or "cartridge" in result or "explosive" in result
     ):
         result.add("vehicle-ammunition")
     if not result:
@@ -325,117 +311,12 @@ def is_ammunition_or_magazine_box(item: dict[str, Any]) -> bool:
     )
 
 
-def is_utility_supply_box(item: dict[str, Any]) -> bool:
-    item_id = str(item.get("id", "")).casefold()
-    return any(marker in item_id for marker in ("boxmre", "boxpackflare", "boxflashlights"))
-
-
-def is_technical_hidden_item(
-    item: dict[str, Any],
-    *,
-    placed_on_map: bool = False,
-) -> bool:
-    """Hide runtime helpers and non-player-facing variants using stable signals."""
-    item_id = str(item.get("id", ""))
-    folded_id = item_id.casefold()
-    component_types = set(item.get("componentTypes", []))
-    suffix = str(item.get("suffix", "")).strip().casefold()
-    availability = item.get("availability")
-    has_availability = isinstance(availability, list) and bool(availability)
-
-    # Real catalog cards carry origin/sourceFile. A drawable Item without any
-    # sprite summary is a broken/internal prototype, not a useful public card.
-    if (
-        (item.get("origin") or item.get("sourceFile"))
-        and "Item" in component_types
-        and not isinstance(item.get("sprite"), dict)
-    ):
-        return True
-    if "CMVendorMapToSquad" in component_types:
-        return True
-    if "Item" not in component_types and component_types.intersection(
-        {"Projectile", "RMCArmorVariant"}
-    ):
-        return True
-    if folded_id.endswith("empty") or folded_id.startswith("stcartridgesharp"):
-        return True
-    if {
-        "WeaponMount",
-        "Foldable",
-        "Strap",
-    }.issubset(component_types):
-        return True
-    if {
-        "PDTBraceletHolderTarget",
-        "StorageFill",
-    }.issubset(component_types) and component_types.intersection(
-        {"CMArmor", "CMHardArmor", "RMCArmor"}
-    ):
-        return True
-    if (
-        "Gun" in component_types
-        and not placed_on_map
-        and not has_availability
-        and suffix in {
-            "ap", "unmc", "марксманский", "marksman", "пустой", "empty",
-            "заполненная", "заполненный", "заряженная", "заряженный", "filled", "loaded",
-        }
-    ):
-        return True
-    if (
-        not placed_on_map
-        and not has_availability
-        and suffix in {
-            "заполненная", "заполненный", "заполнено", "заряженная",
-            "заряженный", "filled", "loaded",
-        }
-        and "StorageFill" in component_types
-        and component_types.intersection({"CMArmor", "CMHardArmor", "RMCArmor"})
-    ):
-        return True
-    return False
-
-
-def is_miscellaneous_item(item: dict[str, Any]) -> bool:
-    """Recognize ordinary supplies that should not be promoted to field gear."""
-    item_id = str(item.get("id", "")).casefold()
-    component_types = set(item.get("componentTypes", []))
-    tags = {str(tag).casefold() for tag in item.get("tags", [])}
-    # Forks, spoons and similar disposable tableware inherit melee/tool-like
-    # mechanics, but SpaceGarbage + Utensil describes their actual purpose.
-    if {"SpaceGarbage", "Utensil"}.issubset(component_types):
-        return True
-    if component_types.intersection({"Drink", "GasTank", "MachineBoard", "PDTLocator", "PacifismAllowedGun"}):
-        return True
-    if tags.intersection({
-        "book", "cigarette", "doorelectronics", "folder", "gastank", "payload",
-        "pen", "rmccircuitboard", "toyrubberduck", "trash", "trashbag", "write",
-    }):
-        return True
-    return any(
-        marker in item_id
-        for marker in (
-            "bucket",
-            "mop",
-            "wetsign",
-            "spraybottle",
-            "spacecleaner",
-            "lightbulb",
-            "lighttube",
-            "cigarette",
-            "trashbag",
-            "inflatabledoor",
-            "inflatablewall",
-            "handcuff",
-            "ziptie",
-            "bedroll",
-            "helmetgarbgunoil",
-            "overwatchcameratripod",
-            "radiohandheld",
-            "pdtlocator",
-            "machinecircuitboard",
-            "circuitboard",
-        )
+def is_technical_hidden_item(item: dict[str, Any], *, placed_on_map: bool = False) -> bool:
+    """Only runtime helpers are hidden; load state and vendor availability are not roles."""
+    components = set(item.get("componentTypes", []))
+    return "CMVendorMapToSquad" in components or (
+        "Item" not in components
+        and bool(components.intersection({"Projectile", "RMCArmorVariant"}))
     )
 
 
@@ -445,496 +326,364 @@ def classify_item(
     *,
     placed_on_map: bool = False,
 ) -> dict[str, Any]:
-    """Assign exactly one wiki category from reusable mechanical signals."""
-    item_id = str(item.get("id", ""))
-    component_types = set(item.get("componentTypes", []))
-    tags = set(item.get("tags", []))
-    source_file = str(item.get("sourceFile", ""))
-    folded_id = item_id.casefold()
-    folded_path = source_file.casefold()
-    folded_tags = {tag.casefold() for tag in tags}
+    """Classify primary purpose before incidental storage, clothing or combat mechanics.
 
-    excluded_ids = set(policy.get("excludePrototypeIds", []))
-    if item_id in excluded_ids:
+    Component data is retained privately by build_card until classification finishes.
+    State-variant visibility is resolved separately using inheritance and mechanics.
+    """
+    item_id = str(item.get("id", ""))
+    components = set(item.get("componentTypes", []))
+    tags = {str(tag).casefold() for tag in item.get("tags", [])}
+    path = str(item.get("sourceFile", "")).replace("\\", "/").casefold()
+    properties = item.get("_classificationComponents", item.get("properties", {}))
+    if not isinstance(properties, dict):
+        properties = {}
+    slots = {str(slot).casefold() for slot in item.get("equipmentSlots", [])}
+    contents = set(item.get("_contentCategories", []))
+
+    def result(category: str, reason: str, *signals: str) -> dict[str, Any]:
+        return classification_result("public", category_id=category, reason=reason, signals=signals)
+
+    def has(*fragments: str) -> bool:
+        return has_any_component(
+            {
+                component
+                for component in components
+                if not component.casefold().endswith(("blocked", "visible"))
+            },
+            fragments,
+        )
+
+    if item_id in set(policy.get("excludePrototypeIds", [])):
         return classification_result(
             "excluded",
             reason="prototype explicitly excluded by classification policy",
             signals=("config:excludePrototypeIds",),
         )
-    def public(category_id: str, reason: str, *signals: str) -> dict[str, Any]:
-        return classification_result(
-            "public",
-            category_id=category_id,
-            reason=reason,
-            signals=signals,
+    if reason := item.get("_variantHiddenReason"):
+        return result("hidden", str(reason), "variant:duplicate")
+    if is_technical_hidden_item(item, placed_on_map=placed_on_map):
+        return result(
+            "hidden", "runtime helper without a portable item role", "technical:runtime-helper"
         )
+    if "Attachable" in components:
+        return result("attachment", "dedicated weapon attachment", "component:Attachable")
 
-    properties = item.get("properties", {})
-    if not isinstance(properties, dict):
-        properties = {}
-    slots = {str(slot).casefold() for slot in item.get("equipmentSlots", [])}
-    # A weapon is identified by the mechanic that actually launches a shot,
-    # not by its name or wearable storage slots. Nailguns use their own firing
-    # component instead of Gun.
-    has_gun = (
-        "Gun" in component_types
-        or "RMCFlamerAmmoProvider" in component_types
-        or "Nailgun" in component_types
-    )
-    has_ammo = (
-        "Projectile" in component_types
-        or "ProjectileGrenade" in component_types
-        or "CartridgeAmmo" in component_types
-        or (
-            "BallisticAmmoProvider" in component_types
-            and "Gun" not in component_types
-        )
-        or is_ammunition_container(item_id, component_types, tags)
-        or "MortarShell" in component_types
-        or "RMCPacketGrenade" in tags
-    )
-    has_explosive = (
-        ("Explosive" in component_types and "gastank" not in folded_tags)
-        or "ExplodeOnTrigger" in component_types
-        or "ProjectileGrenade" in component_types
-        or "grenade" in folded_id
-        or "grenade" in folded_tags
-        or "handgrenade" in folded_tags
-    )
-
-    cm_armor = properties.get("CMArmor")
-    armor_components = {
+    armor = {
         key: value
         for key, value in properties.items()
-        if key in {"Armor", "CMArmor", "RMCArmor"}
+        if key in {"Armor", "CMArmor", "RMCArmor", "CMHardArmor", "RMCBulkyArmor", "SquadArmor"}
     }
-    meaningful_armor = has_meaningful_armor(armor_components) or (
-        isinstance(cm_armor, dict)
-        and any(
-            isinstance(value, (int, float))
-            and not isinstance(value, bool)
-            and value != 0
-            for value in cm_armor.values()
+    if has_meaningful_armor(armor) and slots.intersection({"head", "outerclothing"}):
+        return result("armor", "protective helmet or outer clothing", "role:protection")
+
+    if any(
+        part in path for part in ("/smokeables/", "/fun/", "/toys/", "/melee/kitchen")
+    ) or tags.intersection({"cigarettecase", "toyrubberduck"}):
+        return result("household", "smoking supplies and personal cases", "role:personal-supply")
+    if "/tools/lighters" in path:
+        return result(
+            "household", "personal lighter with incidental welding mechanic", "source:lighter"
         )
+
+    # A wearable pouch remains equipment even if its contents are medicine, ammo or flares.
+    wearable_storage = bool(slots.intersection(WEARABLE_STORAGE_SLOTS)) and has(
+        "storage", "webbing", "holster", "pouch"
     )
+    if wearable_storage or "Webbing" in components:
+        return result("equipment", "wearable storage, holster or webbing", "role:wearable-storage")
 
-    if is_technical_hidden_item(item, placed_on_map=placed_on_map):
-        return public(
-            "hidden",
-            "runtime helper, projectile or internal item variant",
-            "technical:hidden",
-        )
+    if has("whistle"):
+        return result("gear", "field signalling device", "component:Whistle")
 
-    if is_miscellaneous_item(item):
-        return public(
-            "other",
-            "ordinary supply, consumable, replacement part or utility object",
-            "item:miscellaneous",
-        )
-
-    # Full-sized cargo/map crates are structures rather than portable ammo
-    # boxes. They always live in "Другое"; their contents are separate cards.
-    if is_shipping_crate(item):
-        return public(
-            "other",
-            "full-sized cargo or map crate",
-            "container:shipping-crate",
-        )
-
-    # Protection wins over incidental grenade/ammunition signals. This keeps
-    # helmets and armored clothing out of "Боезапас".
-    if meaningful_armor and slots.intersection({"outerclothing", "head"}):
-        return public(
-            "armor",
-            "protective outer-clothing or helmet slot",
-            "component:armor",
-            "slot:armor-or-head",
-        )
-
-    if "cmfirstaidkit" in folded_tags:
-        return public("medicine", "portable first-aid kit", "tag:first-aid-kit")
-
-    primary_clothing_slots = {
-        "innerclothing", "jumpsuit", "head", "eyes", "gloves", "hands",
-        "shoes", "feet", "mask", "mouth", "neck", "outerclothing",
+    primary_slots = {
+        "innerclothing",
+        "jumpsuit",
+        "head",
+        "eyes",
+        "gloves",
+        "hands",
+        "shoes",
+        "feet",
+        "mask",
+        "mouth",
+        "neck",
+        "outerclothing",
     }
+    gun = bool(components.intersection({"Gun", "RMCFlamerAmmoProvider", "Nailgun"}))
+    utility_clothing = (
+        "/objects/tools/" in path
+        or "Drink" in components
+        or {"MeleeWeapon", "Sharp"}.issubset(components)
+    )
     if (
-        "Clothing" in component_types
-        and bool(slots.intersection(primary_clothing_slots))
-        and not has_gun
-        and "MeleeWeapon" not in component_types
-    ) or "handcuffs" in folded_tags or "briefcase" in folded_tags:
-        return public(
-            "equipment",
-            "clothing or portable equipment assigned to its primary wearable role",
-            "component:primary-wearable",
-        )
-
-    if is_packaging_container(item) and is_utility_supply_box(item):
-        return public("gear", "portable field-supply box", "container:utility-box")
-
-    # Metal and plasteel sheets are portable construction resources used in
-    # the field. The Metal tag excludes glass/plastic stacks without relying
-    # on a prototype-name allowlist.
-    if {"Stack", "Material"}.issubset(component_types) and "metal" in folded_tags:
-        return public("gear", "portable metal construction material", "material:metal-stack")
-
-    # These strong mechanics describe the item's primary role and must win
-    # over incidental MeleeWeapon/Gun components inherited by many utilities.
-    if "Attachable" in component_types:
-        return public("attachment", "dedicated attachment component", "Attachable")
-    if has_any_component(component_types, ("surgerytool", "scalpel")):
-        return public("medicine", "surgical instrument", "component:surgery-tool")
-    if component_types.intersection({"VehicleTurretAttachment", "HardpointItem"}):
-        return public("other", "vehicle-installed part", "component:vehicle-part")
-    if has_any_component(component_types, ("sentry", "turret", "weaponmount")) or "Mortar" in component_types:
-        return public("gear", "deployable weapon support", "component:weapon-support")
-    if "Stunbaton" in component_types:
-        return public("other", "station utility weapon", "component:stunbaton")
-    if "Flash" in component_types and "LimitedCharges" in component_types:
-        return public("gear", "field incapacitation device", "component:flash")
-
-    if "MeleeWeapon" in component_types and "/hydroponics/" in folded_path:
-        return public("other", "hydroponics hand tool", "path:hydroponics-tool")
-
-    if "MeleeWeapon" in component_types and folded_tags.intersection({"machete", "throwingknife"}):
-        return public("gear", "portable field blade", "tag:field-blade")
-
-    if (
-        "MeleeWeapon" in component_types
+        not gun
+        and not utility_clothing
         and (
-            component_types.intersection({"Utensil", "ItemToggleMeleeWeapon"})
-            or folded_tags.intersection({"botanyhatchet", "fireaxe", "kitchenknife", "pickaxe", "stpredatorgear"})
+            ("Clothing" in components and slots.intersection(primary_slots))
+            or has("uniformaccessory", "helmetaccessory", "patch")
         )
     ):
-        return public("other", "civilian, ceremonial or utility melee object", "component:utility-melee")
+        if not has("stethoscope"):
+            return result("clothing", "clothing or uniform accessory", "role:clothing")
 
-    if (
-        is_dedicated_melee_weapon(item_id, component_types, tags)
-    ):
-        return public(
-            "weapon",
-            "dedicated melee, incapacitation or crew-served weapon",
-            "component:weapon",
+    if tags.intersection({"rmcsynthresetkey"}) or has("synthreset"):
+        return result(
+            "electronics", "synthetic diagnostic or reset device", "role:synthetic-device"
         )
 
-    # Underbarrel launchers and shotguns still belong to attachments even when
-    # they also contain a Gun component. Firearms win over their Clothing slots.
-    if has_gun:
-        return public(
-            "weapon",
-            "item has a dedicated projectile-launching mechanic",
-            "component:projectile-launcher",
-        )
-
-    is_flare = (
-        "Flare" in component_types
-        or "RMCFlare" in component_types
-        or "flare" in folded_id
-        or bool({"flare", "rmcflare"}.intersection(folded_tags))
-    )
-    if (
-        (is_flare and not has_ammo)
-        or "SkillPamphlet" in component_types
-        or "Whistle" in component_types
-        or "synthresetkey" in folded_id
-    ):
-        return public(
-            "gear",
-            "field utility, signalling device or training item",
-            "component:field-utility",
-        )
-
-    has_storage = "Storage" in component_types
-    is_wearable_storage = has_storage and bool(slots.intersection(WEARABLE_STORAGE_SLOTS))
-    is_patch = (
-        "patch" in folded_id
-        or any("patch" in tag for tag in folded_tags)
-        or has_any_component(component_types, ("uniformaccessory", "patch"))
-    )
-
-    # Stethoscopes are uniform accessories mechanically, but their primary
-    # purpose is medical and must win over the wearable signal.
-    if has_any_component(component_types, ("stethoscope",)):
-        return public("medicine", "medical diagnostic instrument", "component:medicine")
-
-    # Real containers worn as belts, pouches or backpacks must stay equipment
-    # even when their names mention grenades or ammunition. Ordinary objects
-    # merely allowed in a belt/suit-storage slot do not pass this rule.
-    if (
-        is_patch
-        or "Webbing" in component_types
-        or "HelmetAccessory" in component_types
-        or is_wearable_storage
-    ):
-        return public(
-            "equipment",
-            "wearable clothing, storage or installed uniform accessory",
-            "component:wearable-equipment",
-        )
-
-    if is_packaging_container(item) and {"RemoveOnlyStorage", "StorageFill"}.issubset(component_types) and not has_ammo:
-        return public("other", "portable equipment case", "container:equipment-case")
-
-    if is_packaging_container(item) and is_ammunition_or_magazine_box(item):
-        return public(
-            "ammunition",
-            "portable ammunition or magazine box",
-            "container:ammunition-box",
-        )
-
-    if has_ammo or has_explosive:
-        return public(
-            "ammunition",
-            "ammunition, grenade or explosive item",
-            "component:ammunition-or-explosive",
-        )
-    if (
-        "/objects/weapons/throwable/packets" in folded_path
-        and ("Storage" in component_types or "CMItemSlots" in component_types)
-    ):
-        return public(
-            "ammunition",
-            "grenade packet or ammunition box",
-            "path:throwable-packet",
-        )
-    medical_object_path = "/entities/objects/medical/" in folded_path
-    medical_box_path = "/catalog/fills/boxes/medical" in folded_path
-    medical_delivery = (
-        "Pill" in component_types
-        or "Hypospray" in component_types
-        or "Injector" in component_types
-        or "Syringe" in component_types
-        or "pillcanister" in folded_id
-        or "packetpills" in folded_id
-        or "syringecase" in folded_id
-        or "surgicalcase" in folded_id
-    )
-    medical_solution = medical_object_path and (
-        "CMRefillableSolution" in component_types
-        or folded_id.startswith("cmbottle")
-    )
-
-    medical_path_id_signal = any(
-        word in folded_id
-        for word in (
-            "firstaid",
-            "aidkit",
-            "medkit",
-            "surgicaltray",
+    medical_components = {
+        component for component in components if not component.casefold().endswith("blocked")
+    }
+    medical = "Pill" in components or has_any_component(
+        medical_components,
+        (
+            "surgery",
+            "scalpel",
+            "healing",
+            "defibrillator",
+            "hypospray",
+            "injector",
+            "syringe",
+            "healthanalyzer",
+            "healthscanner",
+            "healthscannable",
+            "stethoscope",
+            "dialysis",
+            "bloodpack",
+            "pillcanister",
             "ivdrip",
-            "medicaltent",
-        )
-    )
-    field_medical_id_signal = any(
-        word in folded_id
-        for word in (
+            "stasisbag",
+            "bodybag",
+            "cprdummy",
+            "medicalupgrade",
             "rollerbed",
             "stretcher",
             "surgicalbed",
-            "oxygentank",
-            "anesthetictank",
-            "surgical",
-            "scalpel",
-            "hemostat",
-            "retractor",
-            "cautery",
-            "bonesaw",
-            "bonesetter",
-            "woundclamp",
-            "bonegel",
-            "synthgraft",
-        )
-    )
-    medical_mechanics = has_any_component(
-        {
-            component
-            for component in component_types
-            if not component.casefold().endswith("blocked")
-        },
-        (
-            "surgerytool",
-            "surgery",
-            "healthanalyzer",
-            "defibrillator",
-            "dialysis",
-            "cprdummy",
-            "stasisbag",
-            "bodybag",
-            "healthscannable",
-            "healthscanner",
-            "ivdrip",
-            "bloodpack",
-            "stethoscope",
-            "healing",
         ),
     )
-    medical_container = (
-        medical_object_path
-        and (
-            medical_path_id_signal
-            or "Storage" in component_types
-            or "CMItemSlots" in component_types
-        )
+    medical_source = "/objects/medical/" in path or "/fills/boxes/medical" in path
+    solutions = properties.get("SolutionContainerManager", {}).get("solutions", {})
+    filled_vessel = isinstance(solutions, dict) and any(
+        isinstance(solution, dict) and solution.get("reagents") for solution in solutions.values()
     )
     if (
-        medical_delivery
-        or medical_solution
-        or medical_mechanics
-        or medical_container
-        or medical_object_path
-        or medical_box_path
-        or field_medical_id_signal
+        medical_source
+        and "SolutionContainerManager" in components
+        and not filled_vessel
+        and not medical
     ):
-        return public(
-            "medicine",
-            "medicine, medical device, treatment kit or surgical instrument",
-            "component:medicine",
-        )
+        return result("containers", "empty reusable solution vessel", "role:empty-vessel")
+    if not gun and (
+        medical or medical_source or tags.intersection({"cmfirstaidkit", "cmmedicalupgradekit"})
+    ):
+        return result("medicine", "treatment, diagnostic or medical supply", "role:medicine")
 
-    if is_packaging_container(item):
-        return public(
-            "other",
-            "box or case published as a separate catalog item",
-            "container:packaging",
-        )
+    if "/hydroponics/" in path and "Food" not in components:
+        return result("tools", "agricultural tool or production supply", "source:hydroponics")
 
-    strong_tool = (
-        "Tool" in component_types
-        or any(component.endswith("Tool") for component in component_types)
-        or has_any_component(
-            component_types,
-            (
-                "welder",
-                "multitool",
-                "entrenchingtool",
-                "nailgun",
-                "lightreplacer",
-            ),
-        )
-        or "/entities/objects/tools/" in folded_path
-    )
-    if strong_tool:
-        return public(
-            "gear",
-            "dedicated hand tool or single-purpose utility item",
-            "component:tool",
-        )
-
-    advanced_field_device = (
-        "WeaponMount" in component_types
-        or has_any_component(component_types, ("sentry", "turret", "mortar", "weaponmount"))
-        or has_any_component(
-            component_types,
-            (
-                "scope",
-                "binocular",
-                "rangefinder",
-                "spotting",
-                "motiondetector",
-                "motionsensor",
-                "sensor",
-                "nightvision",
-                "togglevisor",
-                "integratedvisor",
-                "cycleablevisor",
-                "targetinglaser",
-                "overwatchcamera",
-                "overwatch",
-                "handcuff",
-                "restrain",
-            ),
-        )
-    )
-    if advanced_field_device:
-        return public(
-            "gear",
-            "advanced field device, weapon support or encryption component",
-            "component:gear",
-        )
-
-    # Tools, complex field technology and single-purpose utility objects share
-    # one broad section. This avoids an arbitrary border between a multitool,
-    # binoculars, a turret and an encryption key.
+    # Combat blades share Utensil and Tool with tableware and repair tools.
     if (
-        "WeaponMount" in component_types
-        or has_any_component(component_types, ("sentry", "turret", "mortar", "weaponmount"))
-        or "Tool" in component_types
-        or any(component.endswith("Tool") for component in component_types)
-        or has_any_component(
-            component_types,
-            (
-                "welder",
-                "multitool",
-                "entrenchingtool",
-                "nailgun",
-                "foldingbarricade",
-                "powercell",
-                "battery",
-                "circuitboard",
-                "lightreplacer",
-                "lightbulb",
-                "lighttube",
-                "generator",
-                "machineboard",
-            ),
+        "MeleeWeapon" in components
+        and "Sharp" in components
+        and "SpaceGarbage" not in components
+        and not tags.intersection({"kitchenknife", "botanyhatchet", "botanyhoe", "botanyshovel"})
+    ):
+        return result("weapon", "dedicated sharp melee weapon", "role:combat-blade")
+
+    # Civilian roles override incidental melee, solution or tool components.
+    household_tags = {
+        "soap",
+        "cigarette",
+        "cigarettecase",
+        "book",
+        "pen",
+        "write",
+        "folder",
+        "trashbag",
+        "toyrubberduck",
+        "kitchenknife",
+        "utensil",
+    }
+    trash_item = "trash" in tags and not components.intersection({"Food", "Drink"})
+    if (
+        "Paper" in components
+        or trash_item
+        or tags.intersection(household_tags)
+        or has(
+            "utensil",
+            "smokable",
+            "lighter",
+            "cigarette",
+            "toy",
+            "plushie",
+            "stamp",
+            "crayon",
+            "soap",
+            "smoking",
         )
-        or "/entities/objects/tools/" in folded_path
-        or "engineerkit" in folded_id
-        or any(component.casefold().endswith("electronics") for component in component_types)
-        or any(
-            word in folded_id
-            for word in (
-                "battery",
-                "powercell",
-                "lightbulb",
-                "lighttube",
-                "circuitboard",
+    ):
+        return result("household", "household, stationery or personal item", "role:household")
+    if any(
+        part in path for part in ("/cigarettes", "/smoking", "/toys/", "/fun/", "/paper", "/flags")
+    ):
+        return result("household", "household or personal item source", "source:household")
+
+    if has(
+        "sandbag",
+        "barbedwire",
+        "foldingbarricade",
+        "sentry",
+        "turret",
+        "weaponmount",
+        "mortar",
+        "vehiclewheelitem",
+    ):
+        # Mortar shells are ammunition, not deployable mortars.
+        if "MortarShell" not in components:
+            return result(
+                "gear",
+                "field fortification, weapon support or vehicle repair",
+                "role:field-equipment",
             )
-        )
+    construction = properties.get("Construction", {})
+    if isinstance(construction, dict) and any(
+        word in str(construction.get("graph", "")).casefold()
+        for word in ("sandbag", "barbedwire", "barricade")
     ):
-        return public(
-            "gear",
-            "tool, field technology, replacement part or single-purpose utility item",
-            "component:gear-or-tool",
+        return result("gear", "field fortification construction recipe", "component:Construction")
+    if "Material" in components and "Stack" in components:
+        return result(
+            "materials", "stackable construction material or raw resource", "role:material"
+        )
+    if has("ore", "extractable") and "Stack" in components:
+        return result("materials", "raw resource stack", "role:raw-resource")
+
+    if "/tools/janitor" in path:
+        return result("tools", "cleaning and maintenance supplies", "source:maintenance")
+
+    # Drink is also inherited by buckets, sprays and chemical beakers.
+    if "Drink" in components and (has("spray", "bucket") or "bucket" in tags):
+        if "Tool" in components:
+            return result("gear", "field emergency fluid tool", "role:field-tool")
+        return result("tools", "maintenance or agricultural fluid tool", "role:maintenance-tool")
+
+    # Food crates and ration boxes must not inherit their engine's generic ammo-box tag.
+    food_source = "/food/" in path or "/drinks/" in path
+    edible = "Food" in components
+    beverage = "Drink" in components and not any(
+        part in path for part in ("/weapons/", "/tools/", "/hydroponics/")
+    )
+    if not gun and (edible or beverage or food_source):
+        if not tags.intersection({"gastank"}):
+            return result("food", "food, drink or ration supply", "role:food")
+
+    if "PacifismAllowedGun" in components:
+        return result(
+            "tools", "utility device with incidental firing mechanic", "role:utility-tool"
+        )
+    if gun:
+        return result("weapon", "dedicated projectile-launching mechanic", "role:firearm")
+    if "Stunbaton" in components:
+        return result("weapon", "dedicated incapacitation weapon", "component:Stunbaton")
+    if has("powercell") or "Battery" in components and tags.intersection({"powercell"}):
+        return result(
+            "electronics", "electrical power supply, including riggable cells", "role:power-supply"
+        )
+    if is_shipping_crate(item):
+        return result("containers", "full-sized cargo or storage crate", "role:shipping-container")
+    ammo = bool(
+        components.intersection(
+            {
+                "Projectile",
+                "ProjectileGrenade",
+                "CartridgeAmmo",
+                "BallisticAmmoProvider",
+                "MortarShell",
+                "BulletBox",
+                "RMCFlamerTank",
+            }
+        )
+    )
+    ammo = ammo or is_ammunition_container(item_id, components, set(item.get("tags", [])))
+    ammo = ammo or any("magazine" in tag or "cartridge" in tag or "grenade" in tag for tag in tags)
+    ammo = (
+        ammo
+        or ("Explosive" in components and "gastank" not in tags)
+        or "ExplodeOnTrigger" in components
+    )
+    if ammo or (is_packaging_container(item) and is_ammunition_or_magazine_box(item)):
+        return result(
+            "ammunition", "ammunition, grenade or dedicated ammunition packaging", "role:ammunition"
         )
 
-    if has_any_component(
-        component_types,
-        (
-            "handheldlight",
-            "flare",
-            "flash",
-            "detector",
-            "scanner",
-        ),
-    ) or any(
-        word in folded_id
-        for word in ("whistle", "ziptie", "bedroll")
+    if (
+        "/hydroponics/" in path
+        or "Shovel" in components
+        or tags.intersection({"botanyhoe", "botanyshovel", "botanyhatchet", "hoe"})
     ):
-        return public(
-            "gear",
-            "single-purpose field item",
-            "component:gear",
+        return result("tools", "agricultural or production tool", "role:production-tool")
+    if has("tool", "welder", "fireextinguisher", "entrenching", "wirecutter") or tags.intersection(
+        {"fireextinguisher", "cmfireextinguisherportable"}
+    ):
+        return result("gear", "field engineering or emergency tool", "role:field-tool")
+    if has("janitor", "mop", "broom", "lightreplacer", "spray", "cleaner"):
+        return result("tools", "cleaning or maintenance tool", "role:maintenance-tool")
+    if is_dedicated_melee_weapon(item_id, components, set(item.get("tags", []))):
+        return result("weapon", "dedicated melee weapon", "role:melee-weapon")
+
+    if has(
+        "headset",
+        "radio",
+        "encryption",
+        "powercell",
+        "battery",
+        "handheldlight",
+        "flash",
+        "geiger",
+        "detector",
+        "scanner",
+        "sensor",
+        "binocular",
+        "rangefinder",
+        "scope",
+        "camera",
+        "megaphone",
+        "machineboard",
+        "circuitboard",
+        "electronics",
+        "pdtlocator",
+        "visor",
+        "nightvision",
+        "computer",
+        "laptop",
+    ):
+        return result(
+            "electronics",
+            "electronic, optical, communication or lighting device",
+            "role:electronics",
         )
-
-    # Clothing is intentionally late: the game also gives this component to
-    # tools, lights, ammo boxes and other objects merely compatible with a
-    # wearable slot. Their actual mechanics were classified above.
-    is_standard_wearable = (
-        "Clothing" in component_types
-        and bool(slots.intersection(WEARABLE_EQUIPMENT_SLOTS))
-    )
-    if is_standard_wearable:
-        return public(
-            "equipment",
-            "clothing assigned to a real wearable equipment slot",
-            "component:wearable-equipment",
+    if has(
+        "flare",
+        "whistle",
+        "skillpamphlet",
+        "inflatable",
+        "deployable",
+        "fulton",
+        "parachute",
+        "handcuff",
+        "restrain",
+        "bedroll",
+    ):
+        return result(
+            "gear", "field signalling, training or deployable utility", "role:field-utility"
         )
-
-    return public(
-        "other",
-        "no stronger universal functional rule matched",
-        "fallback:other",
-    )
-
+    if has("storage", "itemslots", "solutioncontainer", "gasTank") or is_packaging_container(item):
+        if contents and contents.issubset({"medicine"}):
+            return result("medicine", "container of medical supplies", "contents:medicine")
+        if contents and contents.issubset({"food"}):
+            return result("food", "container of food or drinks", "contents:food")
+        return result("containers", "general-purpose container or packaging", "role:container")
+    if "Stack" in components and tags.intersection({"clothmade"}):
+        return result("materials", "raw textile resource", "tag:material")
+    return result("other", "no specific primary-purpose signal", "fallback:other")

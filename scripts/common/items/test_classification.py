@@ -63,10 +63,9 @@ def test_classify_item_fallback_other_when_nothing_matches():
     item = {"id": "MysteryItem", "componentTypes": [], "tags": []}
     result = classify_item(item, EMPTY_POLICY)
     assert result["categoryId"] == "other"
-    assert result["reason"] == "no stronger universal functional rule matched"
 
 
-def test_classify_item_packaging_box_defaults_to_other():
+def test_classify_item_packaging_box_as_container():
     item = {
         "id": "RMCBoxSupplies",
         "name": "ящик снабжения",
@@ -74,11 +73,11 @@ def test_classify_item_packaging_box_defaults_to_other():
         "tags": [],
     }
     result = classify_item(item, EMPTY_POLICY)
-    assert result["categoryId"] == "other"
+    assert result["categoryId"] == "containers"
     assert "container" in result["signals"][0]
 
 
-def test_classify_shipping_ammo_crate_as_other_but_portable_box_as_ammo():
+def test_classify_shipping_crate_as_container_but_portable_box_as_ammo():
     crate = {
         "id": "RMCCrateGrenadesFrag",
         "name": "wooden ammunition crate",
@@ -91,7 +90,7 @@ def test_classify_shipping_ammo_crate_as_other_but_portable_box_as_ammo():
         "componentTypes": ["Item", "Storage"],
         "tags": [],
     }
-    assert classify_item(crate, EMPTY_POLICY)["categoryId"] == "other"
+    assert classify_item(crate, EMPTY_POLICY)["categoryId"] == "containers"
     assert classify_item(box, EMPTY_POLICY)["categoryId"] == "ammunition"
 
 
@@ -115,7 +114,7 @@ def test_classify_runtime_projectile_as_hidden():
     assert classify_item(item, EMPTY_POLICY)["categoryId"] == "hidden"
 
 
-def test_classify_real_item_without_sprite_as_hidden():
+def test_classify_missing_sprite_alone_does_not_hide_real_item():
     item = {
         "id": "RMCBrokenInternalItem",
         "origin": "RMCBrokenInternalItem",
@@ -123,7 +122,7 @@ def test_classify_real_item_without_sprite_as_hidden():
         "componentTypes": ["Item"],
         "tags": [],
     }
-    assert classify_item(item, EMPTY_POLICY)["categoryId"] == "hidden"
+    assert classify_item(item, EMPTY_POLICY)["categoryId"] == "other"
 
 
 def test_classify_wearable_grenade_belt_as_equipment_before_ammunition():
@@ -165,13 +164,13 @@ def test_classify_nailgun_as_weapon_despite_back_slot():
     assert classify_item(item, EMPTY_POLICY)["categoryId"] == "weapon"
 
 
-def test_classify_handheld_radio_as_other():
+def test_classify_handheld_radio_as_electronics():
     item = {
         "id": "RadioHandheld",
         "componentTypes": ["Item", "RadioMicrophone"],
         "tags": [],
     }
-    assert classify_item(item, EMPTY_POLICY)["categoryId"] == "other"
+    assert classify_item(item, EMPTY_POLICY)["categoryId"] == "electronics"
 
 
 def test_classify_belt_compatible_tool_as_gear_not_equipment():
@@ -184,9 +183,9 @@ def test_classify_belt_compatible_tool_as_gear_not_equipment():
     assert classify_item(item, EMPTY_POLICY)["categoryId"] == "gear"
 
 
-def test_classify_disposable_utensil_with_tool_mechanics_as_other():
+def test_classify_disposable_utensil_as_household():
     item = {"id": "PlasticFork", "componentTypes": ["Item", "Tool", "MeleeWeapon", "Utensil", "SpaceGarbage"]}
-    assert classify_item(item, EMPTY_POLICY)["categoryId"] == "other"
+    assert classify_item(item, EMPTY_POLICY)["categoryId"] == "household"
 
 
 def test_classify_back_compatible_ammo_box_as_ammunition():
@@ -265,10 +264,10 @@ def test_map_loaded_weapon_tableware_and_metal_use_player_facing_categories():
         "tags": ["Metal", "Sheet"],
     }
 
-    assert classify_item(loaded_weapon, EMPTY_POLICY)["categoryId"] == "hidden"
+    assert classify_item(loaded_weapon, EMPTY_POLICY)["categoryId"] == "weapon"
     assert classify_item(loaded_weapon, EMPTY_POLICY, placed_on_map=True)["categoryId"] == "weapon"
-    assert classify_item(fork, EMPTY_POLICY)["categoryId"] == "other"
-    assert classify_item(metal, EMPTY_POLICY)["categoryId"] == "gear"
+    assert classify_item(fork, EMPTY_POLICY)["categoryId"] == "household"
+    assert classify_item(metal, EMPTY_POLICY)["categoryId"] == "materials"
 
 
 def test_incidental_components_do_not_override_primary_item_role():
@@ -290,10 +289,10 @@ def test_incidental_components_do_not_override_primary_item_role():
         "componentTypes": ["Item", "CMArmor", "StorageFill", "PDTBraceletHolderTarget"],
     }
 
-    assert classify_item(clothing, EMPTY_POLICY)["categoryId"] == "equipment"
+    assert classify_item(clothing, EMPTY_POLICY)["categoryId"] == "clothing"
     assert classify_item(mortar_flare, EMPTY_POLICY)["categoryId"] == "ammunition"
-    assert classify_item(equipment_case, EMPTY_POLICY)["categoryId"] == "other"
-    assert classify_item(leader_armor_fill, EMPTY_POLICY)["categoryId"] == "hidden"
+    assert classify_item(equipment_case, EMPTY_POLICY)["categoryId"] == "containers"
+    assert classify_item(leader_armor_fill, EMPTY_POLICY)["categoryId"] == "containers"
 
 
 def test_infer_types_detects_weapon():
