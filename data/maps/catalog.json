@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "source": "MetalSage/space-stories-cm14",
-  "gameCommit": "1b6bb98624d44ccc3ade9dbdd63bb51c44079108",
+  "gameCommit": "27f7ff790c6492deb708349127753f580c6763ca",
   "items": "static-items.json",
   "maps": [
     {
@@ -379,6 +379,6 @@
     "maps": 11,
     "ships": 1,
     "planets": 10,
-    "assetBytes": 128204978
+    "assetBytes": 128204921
   }
 }
