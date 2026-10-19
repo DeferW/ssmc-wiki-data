@@ -3,7 +3,7 @@
   "evasionSchemaVersion": 1,
   "attacksSchemaVersion": 1,
   "source": "MetalSage/space-stories-cm14",
-  "gameCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+  "gameCommit": "1b6bb98624d44ccc3ade9dbdd63bb51c44079108",
   "locale": "ru-RU",
   "marine": {
     "sourcePrototypeId": "RMCBaseMobSpeciesOrganic",
@@ -1812,6 +1812,93 @@
       },
       "sprite": "sprites/STXenoDespoiler.png"
     },
+    "STXenoPredalien": {
+      "id": "STXenoPredalien",
+      "name": "Абоминация",
+      "strainName": null,
+      "size": "Big",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Entities/Mobs/Xeno/predalien.yml",
+      "parents": [
+        "CMXenoDeveloped",
+        "CMXenoTail",
+        "CMXenoFlammable",
+        "RMCXenoSpeechSounds",
+        "RMCXenoMobCollision"
+      ],
+      "thresholds": {
+        "critical": 650,
+        "dead": 750
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 30,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 100,
+        "immuneToArmorPiercing": false
+      },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 11.6667,
+            "Slash": 11.6667,
+            "Piercing": 11.6667
+          },
+          "attackRate": 1.18
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 16.0,
+            "Slash": 16.0,
+            "Piercing": 16.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
+      "sprite": "sprites/STXenoPredalien.png"
+    },
+    "STXenoPredalienLarva": {
+      "id": "STXenoPredalienLarva",
+      "name": "Личинка-абоминация",
+      "strainName": null,
+      "size": "Small",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": 10,
+        "standing": 10
+      },
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Entities/Mobs/Xeno/predalien_larva.yml",
+      "parents": [
+        "CMXenoUndeveloped",
+        "CMXenoFlammable",
+        "RMCXenoVentCrawler"
+      ],
+      "thresholds": {
+        "critical": 35,
+        "dead": 70
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 0,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 0,
+        "immuneToArmorPiercing": false
+      },
+      "attacks": {
+        "claw": null,
+        "tail": null
+      },
+      "sprite": "sprites/STXenoPredalienLarva.png"
+    },
     "STXenoWarriorBoxer": {
       "id": "STXenoWarriorBoxer",
       "name": "Воин",
@@ -1920,6 +2007,6 @@
     }
   },
   "counts": {
-    "xenoCastes": 40
+    "xenoCastes": 42
   }
 }
