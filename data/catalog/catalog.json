@@ -4687,7 +4687,7 @@
       "description": "Складной спальник — практически единственная вещь, которая может быть удобной в полевых условиях. Как правило, перед сном его нужно развернуть, но кому нужны правила?",
       "suffix": "Сложеный",
       "types": [
-        "other"
+        "household"
       ],
       "tags": [],
       "componentTypes": [
@@ -4770,15 +4770,15 @@
       },
       "classification": {
         "status": "public",
-        "confidence": "high",
-        "reason": "no specific primary-purpose signal",
+        "confidence": "medium",
+        "reason": "primary-purpose source family",
         "signals": [
-          "fallback:other"
+          "source:/structures/furniture/"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "household",
+        "category": "Быт"
       },
-      "category": "Другое",
+      "category": "Быт",
       "public": true,
       "image": "sprites/BedrollFolded.png"
     },
@@ -5955,7 +5955,7 @@
       "description": "Баллон с газовой смесью N2O/O2.",
       "suffix": "Заполненный",
       "types": [
-        "containers"
+        "gear"
       ],
       "tags": [
         "GasTank"
@@ -6015,14 +6015,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "general-purpose container or packaging",
+        "reason": "portable breathing or utility gas supply",
         "signals": [
-          "role:container"
+          "component:GasTank"
         ],
-        "categoryId": "containers",
-        "category": "Контейнеры"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Контейнеры",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/CMAnestheticTankFilled.png"
     },
@@ -11490,7 +11490,7 @@
       "description": "Специализированный ранец, который носят техники КМП США. В нем находится топливный бак для быстрой заправки и использования сварочного аппарата.",
       "suffix": "",
       "types": [
-        "equipment"
+        "gear"
       ],
       "tags": [
         "Backpack",
@@ -11644,14 +11644,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable storage, holster or webbing",
+        "reason": "portable welding or utility fuel supply",
         "signals": [
-          "role:wearable-storage"
+          "role:fuel-supply"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Экипировка",
+      "category": "Снаряжение",
       "public": true,
       "solutionStats": {
         "solutions": [
@@ -15162,9 +15162,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "treatment, diagnostic or medical supply",
+        "reason": "deployable patient transport or body bag",
         "signals": [
-          "role:medicine"
+          "role:patient-transport"
         ],
         "categoryId": "medicine",
         "category": "Медицина"
@@ -33905,7 +33905,7 @@
       "description": "Стандартная офицерская форма.",
       "suffix": "",
       "types": [
-        "equipment"
+        "clothing"
       ],
       "tags": [
         "ClothMade",
@@ -33999,14 +33999,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable storage, holster or webbing",
+        "reason": "clothing or uniform accessory",
         "signals": [
-          "role:wearable-storage"
+          "role:clothing"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "clothing",
+        "category": "Одежда"
       },
-      "category": "Экипировка",
+      "category": "Одежда",
       "public": true,
       "armorStats": {
         "slots": [
@@ -34034,7 +34034,7 @@
       "description": "Форма главного инженера стандартного образца.",
       "suffix": "",
       "types": [
-        "equipment"
+        "clothing"
       ],
       "tags": [
         "RMCUniformMarine"
@@ -34127,14 +34127,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable storage, holster or webbing",
+        "reason": "clothing or uniform accessory",
         "signals": [
-          "role:wearable-storage"
+          "role:clothing"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "clothing",
+        "category": "Одежда"
       },
-      "category": "Экипировка",
+      "category": "Одежда",
       "public": true,
       "armorStats": {
         "slots": [
@@ -34162,7 +34162,7 @@
       "description": "Стандартное обмундирование боевого техника морской пехоты. Защищает от холодного оружия и пуль благодаря элементам лёгкого кевлара.",
       "suffix": "",
       "types": [
-        "equipment"
+        "clothing"
       ],
       "tags": [
         "ClothMade",
@@ -34257,14 +34257,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable storage, holster or webbing",
+        "reason": "clothing or uniform accessory",
         "signals": [
-          "role:wearable-storage"
+          "role:clothing"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "clothing",
+        "category": "Одежда"
       },
-      "category": "Экипировка",
+      "category": "Одежда",
       "public": true,
       "armorStats": {
         "slots": [
@@ -34292,7 +34292,7 @@
       "description": "Стандартное обмундирование медика морской пехоты. Имеет элементы лёгкого кевлара для защиты от холодного оружия и пуль.",
       "suffix": "",
       "types": [
-        "equipment"
+        "clothing"
       ],
       "tags": [
         "ClothMade",
@@ -34387,14 +34387,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable storage, holster or webbing",
+        "reason": "clothing or uniform accessory",
         "signals": [
-          "role:wearable-storage"
+          "role:clothing"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "clothing",
+        "category": "Одежда"
       },
-      "category": "Экипировка",
+      "category": "Одежда",
       "public": true,
       "armorStats": {
         "slots": [
@@ -34422,7 +34422,7 @@
       "description": "Оперативная форма, используемая членами морской пехоты. С честью несёт честь корпуса. В ней присутствуют элементы лёгкого кевлара, защищающие от холодного оружия и пуль.",
       "suffix": "",
       "types": [
-        "equipment"
+        "clothing"
       ],
       "tags": [
         "ClothMade",
@@ -34518,14 +34518,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable storage, holster or webbing",
+        "reason": "clothing or uniform accessory",
         "signals": [
-          "role:wearable-storage"
+          "role:clothing"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "clothing",
+        "category": "Одежда"
       },
-      "category": "Экипировка",
+      "category": "Одежда",
       "public": true,
       "armorStats": {
         "slots": [
@@ -34553,7 +34553,7 @@
       "description": "Стандартная форма квартирмейстера.",
       "suffix": "",
       "types": [
-        "equipment"
+        "clothing"
       ],
       "tags": [
         "RMCUniformMarine"
@@ -34634,14 +34634,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable storage, holster or webbing",
+        "reason": "clothing or uniform accessory",
         "signals": [
-          "role:wearable-storage"
+          "role:clothing"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "clothing",
+        "category": "Одежда"
       },
-      "category": "Экипировка",
+      "category": "Одежда",
       "public": true,
       "armorStats": {
         "slots": [
@@ -34669,7 +34669,7 @@
       "description": "Парадная форма, которую обычно носят старшие офицеры морской пехоты. Практичная и более строгая, чем стандартная.",
       "suffix": "",
       "types": [
-        "equipment"
+        "clothing"
       ],
       "tags": [
         "ClothMade",
@@ -34754,14 +34754,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable storage, holster or webbing",
+        "reason": "clothing or uniform accessory",
         "signals": [
-          "role:wearable-storage"
+          "role:clothing"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "clothing",
+        "category": "Одежда"
       },
-      "category": "Экипировка",
+      "category": "Одежда",
       "public": true,
       "armorStats": {
         "slots": [
@@ -44718,7 +44718,7 @@
       "description": "Складная хирургическая кровать. Она не идеальна, но это лучшее, что вы можете получить, не считая настоящего хирургического стола.",
       "suffix": "Сложенный",
       "types": [
-        "other"
+        "medicine"
       ],
       "tags": [
         "CMRollerBed",
@@ -44797,14 +44797,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no specific primary-purpose signal",
+        "reason": "deployable patient transport or body bag",
         "signals": [
-          "fallback:other"
+          "role:patient-transport"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Другое",
+      "category": "Медицина",
       "public": true,
       "image": "sprites/CMPortableSurgicalBedSpawnFolded.png"
     },
@@ -44952,7 +44952,7 @@
       "description": "Сложенная кровать на роликах, которую можно носить с собой.",
       "suffix": "Сложенный",
       "types": [
-        "other"
+        "medicine"
       ],
       "tags": [
         "CMRollerBed",
@@ -45095,14 +45095,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no specific primary-purpose signal",
+        "reason": "deployable patient transport or body bag",
         "signals": [
-          "fallback:other"
+          "role:patient-transport"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "medicine",
+        "category": "Медицина"
       },
-      "category": "Другое",
+      "category": "Медицина",
       "public": true,
       "image": "sprites/CMRollerBedSpawnFolded.png"
     },
@@ -45199,7 +45199,7 @@
       "description": "Несколько пустых мешков с песком, лучше наполнить их, если вы хотите их использовать.",
       "suffix": "50",
       "types": [
-        "gear"
+        "hidden"
       ],
       "tags": [],
       "componentTypes": [
@@ -45246,14 +45246,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "field fortification, weapon support or vehicle repair",
+        "reason": "stack-count duplicate of CMSandbagEmpty25",
         "signals": [
-          "role:field-equipment"
+          "variant:duplicate"
         ],
-        "categoryId": "gear",
-        "category": "Снаряжение"
+        "categoryId": "hidden",
+        "category": "Скрытые"
       },
-      "category": "Снаряжение",
+      "category": "Скрытые",
       "public": true,
       "image": "sprites/CMSandbagEmpty50.png"
     },
@@ -46715,7 +46715,7 @@
       "description": "Стандартная униформа синего цвета.",
       "suffix": "",
       "types": [
-        "equipment"
+        "clothing"
       ],
       "tags": [
         "RMCUniformMarine"
@@ -46805,14 +46805,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable storage, holster or webbing",
+        "reason": "clothing or uniform accessory",
         "signals": [
-          "role:wearable-storage"
+          "role:clothing"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "clothing",
+        "category": "Одежда"
       },
-      "category": "Экипировка",
+      "category": "Одежда",
       "public": true,
       "armorStats": {
         "slots": [
@@ -46840,7 +46840,7 @@
       "description": "Стандартный медицинский костюм зелёного цвета.",
       "suffix": "",
       "types": [
-        "equipment"
+        "clothing"
       ],
       "tags": [
         "RMCUniformMarine"
@@ -46930,14 +46930,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable storage, holster or webbing",
+        "reason": "clothing or uniform accessory",
         "signals": [
-          "role:wearable-storage"
+          "role:clothing"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "clothing",
+        "category": "Одежда"
       },
-      "category": "Экипировка",
+      "category": "Одежда",
       "public": true,
       "armorStats": {
         "slots": [
@@ -46965,7 +46965,7 @@
       "description": "Стандартный медицинский костюм фиолетового цвета.",
       "suffix": "",
       "types": [
-        "equipment"
+        "clothing"
       ],
       "tags": [
         "RMCUniformMarine"
@@ -47055,14 +47055,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable storage, holster or webbing",
+        "reason": "clothing or uniform accessory",
         "signals": [
-          "role:wearable-storage"
+          "role:clothing"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "clothing",
+        "category": "Одежда"
       },
-      "category": "Экипировка",
+      "category": "Одежда",
       "public": true,
       "armorStats": {
         "slots": [
@@ -47172,7 +47172,7 @@
       "description": "Листы, изготовленные из металла. Их прозвали металлическими листами.",
       "suffix": "Полный",
       "types": [
-        "materials"
+        "hidden"
       ],
       "tags": [
         "Metal",
@@ -47240,14 +47240,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "stackable construction material or raw resource",
+        "reason": "stack-count duplicate of CMSheetMetal10",
         "signals": [
-          "role:material"
+          "variant:duplicate"
         ],
-        "categoryId": "materials",
-        "category": "Материалы"
+        "categoryId": "hidden",
+        "category": "Скрытые"
       },
-      "category": "Материалы",
+      "category": "Скрытые",
       "public": true,
       "image": "sprites/CMSheetMetal.png"
     },
@@ -47365,7 +47365,7 @@
       "description": "Листы, изготовленные из металла. Их прозвали металлическими листами.",
       "suffix": "50",
       "types": [
-        "materials"
+        "hidden"
       ],
       "tags": [
         "Metal",
@@ -47433,14 +47433,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "stackable construction material or raw resource",
+        "reason": "stack-count duplicate of CMSheetMetal10",
         "signals": [
-          "role:material"
+          "variant:duplicate"
         ],
-        "categoryId": "materials",
-        "category": "Материалы"
+        "categoryId": "hidden",
+        "category": "Скрытые"
       },
-      "category": "Материалы",
+      "category": "Скрытые",
       "public": true,
       "image": "sprites/CMSheetMetal50.png"
     },
@@ -47718,7 +47718,7 @@
       "description": "Plasteel is an expensive, durable material made from combining platinum, steel, and advanced polymers to create a metal that is corrosion-resistant, highly durable, and lightweight. The only reason this isn't used more often is because of how damn costly it is.",
       "suffix": "30",
       "types": [
-        "materials"
+        "hidden"
       ],
       "tags": [
         "Metal",
@@ -47784,14 +47784,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "stackable construction material or raw resource",
+        "reason": "stack-count duplicate of CMSheetPlasteel10",
         "signals": [
-          "role:material"
+          "variant:duplicate"
         ],
-        "categoryId": "materials",
-        "category": "Материалы"
+        "categoryId": "hidden",
+        "category": "Скрытые"
       },
-      "category": "Материалы",
+      "category": "Скрытые",
       "public": true,
       "image": "sprites/CMSheetPlasteel30.png"
     },
@@ -47802,7 +47802,7 @@
       "description": "Plasteel is an expensive, durable material made from combining platinum, steel, and advanced polymers to create a metal that is corrosion-resistant, highly durable, and lightweight. The only reason this isn't used more often is because of how damn costly it is.",
       "suffix": "40",
       "types": [
-        "materials"
+        "hidden"
       ],
       "tags": [
         "Metal",
@@ -47868,14 +47868,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "stackable construction material or raw resource",
+        "reason": "stack-count duplicate of CMSheetPlasteel10",
         "signals": [
-          "role:material"
+          "variant:duplicate"
         ],
-        "categoryId": "materials",
-        "category": "Материалы"
+        "categoryId": "hidden",
+        "category": "Скрытые"
       },
-      "category": "Материалы",
+      "category": "Скрытые",
       "public": true,
       "image": "sprites/CMSheetPlasteel40.png"
     },
@@ -48832,7 +48832,7 @@
       "description": "A rugged little case containing a PDT/L locator tube, its paired wrist PDT bracelet, and a spare We-Ya mini-battery.",
       "suffix": "Empty",
       "types": [
-        "containers"
+        "electronics"
       ],
       "tags": [],
       "componentTypes": [
@@ -48905,15 +48905,15 @@
       },
       "classification": {
         "status": "public",
-        "confidence": "high",
-        "reason": "general-purpose container or packaging",
+        "confidence": "medium",
+        "reason": "primary-purpose source family",
         "signals": [
-          "role:container"
+          "source:/objects/devices/"
         ],
-        "categoryId": "containers",
-        "category": "Контейнеры"
+        "categoryId": "electronics",
+        "category": "Электроника"
       },
-      "category": "Контейнеры",
+      "category": "Электроника",
       "public": true,
       "relationships": [
         {
@@ -49136,9 +49136,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "treatment, diagnostic or medical supply",
+        "reason": "deployable patient transport or body bag",
         "signals": [
-          "role:medicine"
+          "role:patient-transport"
         ],
         "categoryId": "medicine",
         "category": "Медицина"
@@ -50343,7 +50343,7 @@
       "description": "Contains a marine jumpsuit, a headset, and combat boots.",
       "suffix": "",
       "types": [
-        "other"
+        "hidden"
       ],
       "tags": [],
       "componentTypes": [
@@ -50371,14 +50371,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no specific primary-purpose signal",
+        "reason": "runtime helper without a portable item role",
         "signals": [
-          "fallback:other"
+          "technical:runtime-helper"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "hidden",
+        "category": "Скрытые"
       },
-      "category": "Другое",
+      "category": "Скрытые",
       "public": true,
       "relationships": [
         {
@@ -50414,7 +50414,7 @@
       "description": "Contains 50 metal, 40 plasteel, 25 sandbags, a high-capacity power cell, an entrenching tool, a light replacer, and a nailgun.",
       "suffix": "",
       "types": [
-        "other"
+        "hidden"
       ],
       "tags": [],
       "componentTypes": [
@@ -50450,14 +50450,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no specific primary-purpose signal",
+        "reason": "runtime helper without a portable item role",
         "signals": [
-          "fallback:other"
+          "technical:runtime-helper"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "hidden",
+        "category": "Скрытые"
       },
-      "category": "Другое",
+      "category": "Скрытые",
       "public": true,
       "relationships": [
         {
@@ -50535,7 +50535,7 @@
       "description": "Contains a marine jumpsuit, a M12 helmet, a headset, and combat boots.",
       "suffix": "",
       "types": [
-        "other"
+        "hidden"
       ],
       "tags": [],
       "componentTypes": [
@@ -50563,14 +50563,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no specific primary-purpose signal",
+        "reason": "runtime helper without a portable item role",
         "signals": [
-          "fallback:other"
+          "technical:runtime-helper"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "hidden",
+        "category": "Скрытые"
       },
-      "category": "Другое",
+      "category": "Скрытые",
       "public": true,
       "relationships": [
         {
@@ -50613,7 +50613,7 @@
       "description": "Contains a marine jumpsuit, a M10 helmet, a headset, combat gloves and combat boots.",
       "suffix": "",
       "types": [
-        "other"
+        "hidden"
       ],
       "tags": [],
       "componentTypes": [
@@ -50641,14 +50641,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no specific primary-purpose signal",
+        "reason": "runtime helper without a portable item role",
         "signals": [
-          "fallback:other"
+          "technical:runtime-helper"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "hidden",
+        "category": "Скрытые"
       },
-      "category": "Другое",
+      "category": "Скрытые",
       "public": true,
       "relationships": [
         {
@@ -50698,7 +50698,7 @@
       "description": "Contains a marine jumpsuit, a M11 helmet, a headset, combat gloves and combat boots.",
       "suffix": "",
       "types": [
-        "other"
+        "hidden"
       ],
       "tags": [],
       "componentTypes": [
@@ -50726,14 +50726,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no specific primary-purpose signal",
+        "reason": "runtime helper without a portable item role",
         "signals": [
-          "fallback:other"
+          "technical:runtime-helper"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "hidden",
+        "category": "Скрытые"
       },
-      "category": "Другое",
+      "category": "Скрытые",
       "public": true,
       "relationships": [
         {
@@ -50783,7 +50783,7 @@
       "description": "Contains a corpsman jumpsuit, a M10 helmet, a headset and combat boots.",
       "suffix": "",
       "types": [
-        "other"
+        "hidden"
       ],
       "tags": [],
       "componentTypes": [
@@ -50811,14 +50811,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no specific primary-purpose signal",
+        "reason": "runtime helper without a portable item role",
         "signals": [
-          "fallback:other"
+          "technical:runtime-helper"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "hidden",
+        "category": "Скрытые"
       },
-      "category": "Другое",
+      "category": "Скрытые",
       "public": true,
       "relationships": [
         {
@@ -50854,7 +50854,7 @@
       "description": "Contains a stasis bag, a defibrillator, a roller bed, medical tools, and two blood packs.",
       "suffix": "",
       "types": [
-        "other"
+        "hidden"
       ],
       "tags": [],
       "componentTypes": [
@@ -50890,14 +50890,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no specific primary-purpose signal",
+        "reason": "runtime helper without a portable item role",
         "signals": [
-          "fallback:other"
+          "technical:runtime-helper"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "hidden",
+        "category": "Скрытые"
       },
-      "category": "Другое",
+      "category": "Скрытые",
       "public": true,
       "relationships": [
         {
@@ -51002,7 +51002,7 @@
       "description": "Contains a marine jumpsuit, a headset, combat gloves and combat boots.",
       "suffix": "",
       "types": [
-        "other"
+        "hidden"
       ],
       "tags": [],
       "componentTypes": [
@@ -51030,14 +51030,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no specific primary-purpose signal",
+        "reason": "runtime helper without a portable item role",
         "signals": [
-          "fallback:other"
+          "technical:runtime-helper"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "hidden",
+        "category": "Скрытые"
       },
-      "category": "Другое",
+      "category": "Скрытые",
       "public": true,
       "relationships": [
         {
@@ -54653,7 +54653,7 @@
       "description": "Стандартная форма морской пехоты. Имеет элементы лёгкого кевлара для защиты от холодного оружия и пуль.",
       "suffix": "",
       "types": [
-        "equipment"
+        "clothing"
       ],
       "tags": [
         "ClothMade",
@@ -54757,14 +54757,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable storage, holster or webbing",
+        "reason": "clothing or uniform accessory",
         "signals": [
-          "role:wearable-storage"
+          "role:clothing"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "clothing",
+        "category": "Одежда"
       },
-      "category": "Экипировка",
+      "category": "Одежда",
       "public": true,
       "armorStats": {
         "slots": [
@@ -81433,7 +81433,7 @@
       "description": "Коробка со связками патронов .458 SOCOM.",
       "suffix": "Заполненый",
       "types": [
-        "ammunition"
+        "equipment"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -81549,14 +81549,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "ammunition, grenade or dedicated ammunition packaging",
+        "reason": "wearable storage, holster or webbing",
         "signals": [
-          "role:ammunition"
+          "role:wearable-storage"
         ],
-        "categoryId": "ammunition",
-        "category": "Боезапас"
+        "categoryId": "equipment",
+        "category": "Экипировка"
       },
-      "category": "Боезапас",
+      "category": "Экипировка",
       "public": true,
       "relationships": [
         {
@@ -86806,7 +86806,7 @@
       "description": "Коробка со снарядами в связке.",
       "suffix": "Заполненый",
       "types": [
-        "ammunition"
+        "equipment"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -86924,14 +86924,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "ammunition, grenade or dedicated ammunition packaging",
+        "reason": "wearable storage, holster or webbing",
         "signals": [
-          "role:ammunition"
+          "role:wearable-storage"
         ],
-        "categoryId": "ammunition",
-        "category": "Боезапас"
+        "categoryId": "equipment",
+        "category": "Экипировка"
       },
-      "category": "Боезапас",
+      "category": "Экипировка",
       "public": true,
       "relationships": [
         {
@@ -86958,7 +86958,7 @@
       "description": "Коробка со снарядами в связке.",
       "suffix": "Заполненый",
       "types": [
-        "ammunition"
+        "equipment"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -87076,14 +87076,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "ammunition, grenade or dedicated ammunition packaging",
+        "reason": "wearable storage, holster or webbing",
         "signals": [
-          "role:ammunition"
+          "role:wearable-storage"
         ],
-        "categoryId": "ammunition",
-        "category": "Боезапас"
+        "categoryId": "equipment",
+        "category": "Экипировка"
       },
-      "category": "Боезапас",
+      "category": "Экипировка",
       "public": true,
       "relationships": [
         {
@@ -87110,7 +87110,7 @@
       "description": "Коробка со снарядами в связке.",
       "suffix": "Заполненый",
       "types": [
-        "ammunition"
+        "equipment"
       ],
       "tags": [
         "RMCAmmoBox"
@@ -87228,14 +87228,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "ammunition, grenade or dedicated ammunition packaging",
+        "reason": "wearable storage, holster or webbing",
         "signals": [
-          "role:ammunition"
+          "role:wearable-storage"
         ],
-        "categoryId": "ammunition",
-        "category": "Боезапас"
+        "categoryId": "equipment",
+        "category": "Экипировка"
       },
-      "category": "Боезапас",
+      "category": "Экипировка",
       "public": true,
       "relationships": [
         {
@@ -90225,7 +90225,7 @@
       "description": "Катушка силового кабеля.",
       "suffix": "Полный",
       "types": [
-        "other"
+        "materials"
       ],
       "tags": [
         "CableCoil"
@@ -90278,14 +90278,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no specific primary-purpose signal",
+        "reason": "electrical construction cable",
         "signals": [
-          "fallback:other"
+          "tag:construction-resource"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "materials",
+        "category": "Материалы"
       },
-      "category": "Другое",
+      "category": "Материалы",
       "public": true,
       "image": "sprites/RMCCableCoil.png"
     },
@@ -90296,7 +90296,7 @@
       "description": "Катушка силового кабеля.",
       "suffix": "30",
       "types": [
-        "other"
+        "hidden"
       ],
       "tags": [
         "CableCoil"
@@ -90349,14 +90349,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no specific primary-purpose signal",
+        "reason": "stack-count duplicate of RMCCableCoil",
         "signals": [
-          "fallback:other"
+          "variant:duplicate"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "hidden",
+        "category": "Скрытые"
       },
-      "category": "Другое",
+      "category": "Скрытые",
       "public": true,
       "image": "sprites/RMCCableCoil30.png"
     },
@@ -119048,7 +119048,7 @@
       "description": "Легко переносимый баллон для чрезвычайных ситуаций. Содержит очень мало кислорода, предназначен только для использования в экстремальных условиях. Вмещает 0,66 л газа.",
       "suffix": "RMC14, Заполненный",
       "types": [
-        "containers"
+        "gear"
       ],
       "tags": [
         "GasTank"
@@ -119110,14 +119110,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "general-purpose container or packaging",
+        "reason": "portable breathing or utility gas supply",
         "signals": [
-          "role:container"
+          "component:GasTank"
         ],
-        "categoryId": "containers",
-        "category": "Контейнеры"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Контейнеры",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/RMCEmergencyOxygenTankFilled.png"
     },
@@ -120359,7 +120359,7 @@
       "description": "Баллон, содержащий кислород под давлением для дыхания.",
       "suffix": "RMC14, Заполненный",
       "types": [
-        "containers"
+        "gear"
       ],
       "tags": [
         "GasTank"
@@ -120419,14 +120419,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "general-purpose container or packaging",
+        "reason": "portable breathing or utility gas supply",
         "signals": [
-          "role:container"
+          "component:GasTank"
         ],
-        "categoryId": "containers",
-        "category": "Контейнеры"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Контейнеры",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/RMCGasTankOxygenFilled.png"
     },
@@ -122016,9 +122016,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "household, stationery or personal item",
+        "reason": "reading or stationery item with incidental storage",
         "signals": [
-          "role:household"
+          "role:stationery"
         ],
         "categoryId": "household",
         "category": "Быт"
@@ -122106,9 +122106,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "household, stationery or personal item",
+        "reason": "reading or stationery item with incidental storage",
         "signals": [
-          "role:household"
+          "role:stationery"
         ],
         "categoryId": "household",
         "category": "Быт"
@@ -124834,7 +124834,7 @@
       "description": "Оранжевый светоотражающий жилет, используемый на строительных работах. Имеет дополнительные светоотражающие ленты.  На жилете указано, что он полностью соответствует всем стандартам безопасности труда США.",
       "suffix": "",
       "types": [
-        "equipment"
+        "clothing"
       ],
       "tags": [
         "RMCSynthAllowedArmor"
@@ -124916,14 +124916,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable storage, holster or webbing",
+        "reason": "clothing or uniform accessory",
         "signals": [
-          "role:wearable-storage"
+          "role:clothing"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "clothing",
+        "category": "Одежда"
       },
-      "category": "Экипировка",
+      "category": "Одежда",
       "public": true,
       "storageStats": {
         "gridCells": 8,
@@ -125044,7 +125044,7 @@
       "description": "Черный светоотражающий жилет, используемый на строительных работах. Имеет дополнительные светоотражающие ленты.  На жилете указано, что он полностью соответствует всем стандартам безопасности труда США.",
       "suffix": "",
       "types": [
-        "equipment"
+        "clothing"
       ],
       "tags": [
         "RMCSynthAllowedArmor"
@@ -125126,14 +125126,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable storage, holster or webbing",
+        "reason": "clothing or uniform accessory",
         "signals": [
-          "role:wearable-storage"
+          "role:clothing"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "clothing",
+        "category": "Одежда"
       },
-      "category": "Экипировка",
+      "category": "Одежда",
       "public": true,
       "storageStats": {
         "gridCells": 8,
@@ -125254,7 +125254,7 @@
       "description": "Синий светоотражающий жилет, используемый на строительных работах. Имеет дополнительные светоотражающие ленты.  На жилете указано, что он полностью соответствует всем стандартам безопасности труда США.",
       "suffix": "",
       "types": [
-        "equipment"
+        "clothing"
       ],
       "tags": [
         "RMCSynthAllowedArmor"
@@ -125336,14 +125336,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable storage, holster or webbing",
+        "reason": "clothing or uniform accessory",
         "signals": [
-          "role:wearable-storage"
+          "role:clothing"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "clothing",
+        "category": "Одежда"
       },
-      "category": "Экипировка",
+      "category": "Одежда",
       "public": true,
       "storageStats": {
         "gridCells": 8,
@@ -125464,7 +125464,7 @@
       "description": "Желтый светоотражающий жилет, используемый на строительных работах. Имеет дополнительные светоотражающие ленты.  На жилете указано, что он полностью соответствует всем стандартам безопасности труда США.",
       "suffix": "",
       "types": [
-        "equipment"
+        "clothing"
       ],
       "tags": [
         "RMCSynthAllowedArmor"
@@ -125546,14 +125546,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable storage, holster or webbing",
+        "reason": "clothing or uniform accessory",
         "signals": [
-          "role:wearable-storage"
+          "role:clothing"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "clothing",
+        "category": "Одежда"
       },
-      "category": "Экипировка",
+      "category": "Одежда",
       "public": true,
       "storageStats": {
         "gridCells": 8,
@@ -128170,7 +128170,7 @@
       "description": "Сложенная мембрана, которая при активации быстро превращается в простую дверь.",
       "suffix": "Полный",
       "types": [
-        "other"
+        "gear"
       ],
       "tags": [
         "RMCInflatableBarrier"
@@ -128210,14 +128210,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no specific primary-purpose signal",
+        "reason": "parachute or deployable field barrier",
         "signals": [
-          "fallback:other"
+          "role:field-utility"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Другое",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/RMCInflatableDoorFolded.png"
     },
@@ -128228,7 +128228,7 @@
       "description": "Сложенная мембрана, которая при активации быстро разворачивается в большую кубическую форму.",
       "suffix": "Полный",
       "types": [
-        "other"
+        "gear"
       ],
       "tags": [
         "RMCInflatableBarrier"
@@ -128268,14 +128268,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no specific primary-purpose signal",
+        "reason": "parachute or deployable field barrier",
         "signals": [
-          "fallback:other"
+          "role:field-utility"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Другое",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/RMCInflatableWallFolded.png"
     },
@@ -128377,7 +128377,7 @@
       "description": "Служебная форма, которую обычно носят офицеры обеспечения. Эта версия окрашена в чёрный цвет.",
       "suffix": "",
       "types": [
-        "equipment"
+        "clothing"
       ],
       "tags": [
         "ClothMade",
@@ -128470,14 +128470,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable storage, holster or webbing",
+        "reason": "clothing or uniform accessory",
         "signals": [
-          "role:wearable-storage"
+          "role:clothing"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "clothing",
+        "category": "Одежда"
       },
-      "category": "Экипировка",
+      "category": "Одежда",
       "public": true,
       "armorStats": {
         "slots": [
@@ -128505,7 +128505,7 @@
       "description": "Служебная форма, которую обычно носят офицеры обеспечения. Эта версия окрашена в чёрный цвет с зелёными полосами.",
       "suffix": "Альтернативная",
       "types": [
-        "equipment"
+        "clothing"
       ],
       "tags": [
         "ClothMade",
@@ -128598,14 +128598,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable storage, holster or webbing",
+        "reason": "clothing or uniform accessory",
         "signals": [
-          "role:wearable-storage"
+          "role:clothing"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "clothing",
+        "category": "Одежда"
       },
-      "category": "Экипировка",
+      "category": "Одежда",
       "public": true,
       "armorStats": {
         "slots": [
@@ -128633,7 +128633,7 @@
       "description": "Жемчужно-белая парадная форма, которую носят офицеры обеспечения.",
       "suffix": "",
       "types": [
-        "equipment"
+        "clothing"
       ],
       "tags": [
         "ClothMade",
@@ -128726,14 +128726,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable storage, holster or webbing",
+        "reason": "clothing or uniform accessory",
         "signals": [
-          "role:wearable-storage"
+          "role:clothing"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "clothing",
+        "category": "Одежда"
       },
-      "category": "Экипировка",
+      "category": "Одежда",
       "public": true,
       "armorStats": {
         "slots": [
@@ -128761,7 +128761,7 @@
       "description": "Жемчужно-белая парадная форма с чёрными брюками, которую носят офицеры обеспечения.",
       "suffix": "Альтернативная",
       "types": [
-        "equipment"
+        "clothing"
       ],
       "tags": [
         "ClothMade",
@@ -128854,14 +128854,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable storage, holster or webbing",
+        "reason": "clothing or uniform accessory",
         "signals": [
-          "role:wearable-storage"
+          "role:clothing"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "clothing",
+        "category": "Одежда"
       },
-      "category": "Экипировка",
+      "category": "Одежда",
       "public": true,
       "armorStats": {
         "slots": [
@@ -128889,7 +128889,7 @@
       "description": "Оперативная форма, которую обычно носят офицеры обеспечения. Эта версия имеет тёмно-синий камуфляжный рисунок.",
       "suffix": "",
       "types": [
-        "equipment"
+        "clothing"
       ],
       "tags": [
         "ClothMade",
@@ -128982,14 +128982,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable storage, holster or webbing",
+        "reason": "clothing or uniform accessory",
         "signals": [
-          "role:wearable-storage"
+          "role:clothing"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "clothing",
+        "category": "Одежда"
       },
-      "category": "Экипировка",
+      "category": "Одежда",
       "public": true,
       "armorStats": {
         "slots": [
@@ -129017,7 +129017,7 @@
       "description": "Изготовлена из специального волокна, которое обеспечивает незначительную защиту от биологических угроз. На груди имеется крест, указывающий на то, что носитель является квалифицированным медицинским персоналом.",
       "suffix": "",
       "types": [
-        "equipment"
+        "clothing"
       ],
       "tags": [
         "ClothMade",
@@ -129103,14 +129103,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable storage, holster or webbing",
+        "reason": "clothing or uniform accessory",
         "signals": [
-          "role:wearable-storage"
+          "role:clothing"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "clothing",
+        "category": "Одежда"
       },
-      "category": "Экипировка",
+      "category": "Одежда",
       "public": true,
       "image": "sprites/RMCJumpsuitDoctor.png"
     },
@@ -129121,7 +129121,7 @@
       "description": "Стандартное обмундирование боевого техника морской пехоты. Защищает от холодного оружия и пуль благодаря элементам лёгкого кевлара.",
       "suffix": "С эмблемой",
       "types": [
-        "equipment"
+        "clothing"
       ],
       "tags": [
         "ClothMade",
@@ -129206,14 +129206,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable storage, holster or webbing",
+        "reason": "clothing or uniform accessory",
         "signals": [
-          "role:wearable-storage"
+          "role:clothing"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "clothing",
+        "category": "Одежда"
       },
-      "category": "Экипировка",
+      "category": "Одежда",
       "public": true,
       "armorStats": {
         "slots": [
@@ -129241,7 +129241,7 @@
       "description": "Стандартное обмундирование медика морской пехоты. Имеет элементы лёгкого кевлара для защиты от холодного оружия и пуль.",
       "suffix": "С эмблемой",
       "types": [
-        "equipment"
+        "clothing"
       ],
       "tags": [
         "ClothMade",
@@ -129326,14 +129326,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable storage, holster or webbing",
+        "reason": "clothing or uniform accessory",
         "signals": [
-          "role:wearable-storage"
+          "role:clothing"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "clothing",
+        "category": "Одежда"
       },
-      "category": "Экипировка",
+      "category": "Одежда",
       "public": true,
       "armorStats": {
         "slots": [
@@ -129361,7 +129361,7 @@
       "description": "Стандартная форма морской пехоты. Имеет элементы лёгкого кевлара для защиты от холодного оружия и пуль.",
       "suffix": "С эмблемой",
       "types": [
-        "equipment"
+        "clothing"
       ],
       "tags": [
         "ClothMade",
@@ -129446,14 +129446,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable storage, holster or webbing",
+        "reason": "clothing or uniform accessory",
         "signals": [
-          "role:wearable-storage"
+          "role:clothing"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "clothing",
+        "category": "Одежда"
       },
-      "category": "Экипировка",
+      "category": "Одежда",
       "public": true,
       "armorStats": {
         "slots": [
@@ -143111,7 +143111,7 @@
       "description": "Базовый и стерильный белый фартук, подходящий для хирургической и, конечно, других медицинских практик.",
       "suffix": "",
       "types": [
-        "equipment"
+        "clothing"
       ],
       "tags": [
         "WhitelistChameleon"
@@ -143164,14 +143164,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable storage, holster or webbing",
+        "reason": "clothing or uniform accessory",
         "signals": [
-          "role:wearable-storage"
+          "role:clothing"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "clothing",
+        "category": "Одежда"
       },
-      "category": "Экипировка",
+      "category": "Одежда",
       "public": true,
       "image": "sprites/RMCMedicalApron.png"
     },
@@ -146558,7 +146558,7 @@
       "description": "На удивление маленький, но громоздкий ранец с достаточным количеством страховочных ремней, чтобы отдел исследований и разработок прошел проверку по технике безопасности. На этикетке указано, что в комплекте два парашюта — основной и запасной, но вы сомневаетесь, что в ранец поместится хотя бы один.",
       "suffix": "",
       "types": [
-        "other"
+        "gear"
       ],
       "tags": [
         "WhitelistChameleon"
@@ -146618,14 +146618,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no specific primary-purpose signal",
+        "reason": "parachute or deployable field barrier",
         "signals": [
-          "fallback:other"
+          "role:field-utility"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Другое",
+      "category": "Снаряжение",
       "public": true,
       "image": "sprites/RMCParachute.png"
     },
@@ -158593,7 +158593,7 @@
       "description": "Зеленая куртка, которую носит персонал КМП США. На спине изображен флаг США.",
       "suffix": "",
       "types": [
-        "equipment"
+        "clothing"
       ],
       "tags": [
         "RMCSynthAllowedArmor"
@@ -158675,14 +158675,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable storage, holster or webbing",
+        "reason": "clothing or uniform accessory",
         "signals": [
-          "role:wearable-storage"
+          "role:clothing"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "clothing",
+        "category": "Одежда"
       },
-      "category": "Экипировка",
+      "category": "Одежда",
       "public": true,
       "storageStats": {
         "gridCells": 8,
@@ -159978,7 +159978,7 @@
       "description": "Специализированный ранец, который носят техники и инженеры КМП США. В нем находятся два небольших топливных бака для быстрой заправки и использования сварщика.",
       "suffix": "",
       "types": [
-        "equipment"
+        "gear"
       ],
       "tags": [
         "Backpack",
@@ -160129,14 +160129,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable storage, holster or webbing",
+        "reason": "portable welding or utility fuel supply",
         "signals": [
-          "role:wearable-storage"
+          "role:fuel-supply"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Экипировка",
+      "category": "Снаряжение",
       "public": true,
       "solutionStats": {
         "solutions": [
@@ -160262,7 +160262,7 @@
       "description": "Специализированный честриг, который носят техники и инженеры. Он несет один средний топливный бак для быстрой заправки и использования сварщиком.",
       "suffix": "",
       "types": [
-        "equipment"
+        "gear"
       ],
       "tags": [
         "Backpack",
@@ -160405,14 +160405,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable storage, holster or webbing",
+        "reason": "portable welding or utility fuel supply",
         "signals": [
-          "role:wearable-storage"
+          "role:fuel-supply"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "gear",
+        "category": "Снаряжение"
       },
-      "category": "Экипировка",
+      "category": "Снаряжение",
       "public": true,
       "solutionStats": {
         "solutions": [
@@ -161431,7 +161431,7 @@
       "description": "Изготовлен из особого волокна, которое обеспечивает незначительную защиту от биологических опасностей. Его носят врачи, проводящие вскрытия. Этот — чёрный как уголь. Мрачно.",
       "suffix": "",
       "types": [
-        "equipment"
+        "clothing"
       ],
       "tags": [
         "RMCUniformMarine"
@@ -161521,14 +161521,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable storage, holster or webbing",
+        "reason": "clothing or uniform accessory",
         "signals": [
-          "role:wearable-storage"
+          "role:clothing"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "clothing",
+        "category": "Одежда"
       },
-      "category": "Экипировка",
+      "category": "Одежда",
       "public": true,
       "armorStats": {
         "slots": [
@@ -161556,7 +161556,7 @@
       "description": "Изготовлен из особого волокна, которое обеспечивает незначительную защиту от биологических опасностей. Его носят врачи без специализации, чтобы успокаивать пациентов. Этот — красновато-коричневый.",
       "suffix": "",
       "types": [
-        "equipment"
+        "clothing"
       ],
       "tags": [
         "RMCUniformMarine"
@@ -161646,14 +161646,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable storage, holster or webbing",
+        "reason": "clothing or uniform accessory",
         "signals": [
-          "role:wearable-storage"
+          "role:clothing"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "clothing",
+        "category": "Одежда"
       },
-      "category": "Экипировка",
+      "category": "Одежда",
       "public": true,
       "armorStats": {
         "slots": [
@@ -161681,7 +161681,7 @@
       "description": "Изготовлен из особого волокна, которое обеспечивает незначительную защиту от биологических опасностей. Этот — нефритово-зелёный, с персиковыми полосами, обозначающими, что его владелец — главный врач.",
       "suffix": "",
       "types": [
-        "equipment"
+        "clothing"
       ],
       "tags": [
         "RMCUniformMarine"
@@ -161772,14 +161772,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable storage, holster or webbing",
+        "reason": "clothing or uniform accessory",
         "signals": [
-          "role:wearable-storage"
+          "role:clothing"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "clothing",
+        "category": "Одежда"
       },
-      "category": "Экипировка",
+      "category": "Одежда",
       "public": true,
       "armorStats": {
         "slots": [
@@ -161807,7 +161807,7 @@
       "description": "Он изготовлен из специального волокна, которое обеспечивает незначительную защиту от биологических опасностей. Этот — обычного серого цвета.",
       "suffix": "",
       "types": [
-        "equipment"
+        "clothing"
       ],
       "tags": [
         "RMCUniformMarine"
@@ -161897,14 +161897,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable storage, holster or webbing",
+        "reason": "clothing or uniform accessory",
         "signals": [
-          "role:wearable-storage"
+          "role:clothing"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "clothing",
+        "category": "Одежда"
       },
-      "category": "Экипировка",
+      "category": "Одежда",
       "public": true,
       "armorStats": {
         "slots": [
@@ -161932,7 +161932,7 @@
       "description": "Он изготовлен из специального волокна, которое обеспечивает незначительную защиту от биологических опасностей. Эта модель светло-голубого цвета.",
       "suffix": "",
       "types": [
-        "equipment"
+        "clothing"
       ],
       "tags": [
         "RMCUniformMarine"
@@ -162022,14 +162022,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable storage, holster or webbing",
+        "reason": "clothing or uniform accessory",
         "signals": [
-          "role:wearable-storage"
+          "role:clothing"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "clothing",
+        "category": "Одежда"
       },
-      "category": "Экипировка",
+      "category": "Одежда",
       "public": true,
       "armorStats": {
         "slots": [
@@ -162057,7 +162057,7 @@
       "description": "Он изготовлен из специального волокна, которое обеспечивает незначительную защиту от биологических опасностей. Эта модель оливково-зеленого цвета.",
       "suffix": "",
       "types": [
-        "equipment"
+        "clothing"
       ],
       "tags": [
         "RMCUniformMarine"
@@ -162147,14 +162147,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable storage, holster or webbing",
+        "reason": "clothing or uniform accessory",
         "signals": [
-          "role:wearable-storage"
+          "role:clothing"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "clothing",
+        "category": "Одежда"
       },
-      "category": "Экипировка",
+      "category": "Одежда",
       "public": true,
       "armorStats": {
         "slots": [
@@ -162182,7 +162182,7 @@
       "description": "Изготовлен из особого волокна, которое обеспечивает незначительную защиту от биологических опасностей. Его носят врачи, специализирующиеся на фармацевтике. Этот — белый с оранжевыми полосами на плечах.",
       "suffix": "",
       "types": [
-        "equipment"
+        "clothing"
       ],
       "tags": [
         "RMCUniformMarine"
@@ -162272,14 +162272,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable storage, holster or webbing",
+        "reason": "clothing or uniform accessory",
         "signals": [
-          "role:wearable-storage"
+          "role:clothing"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "clothing",
+        "category": "Одежда"
       },
-      "category": "Экипировка",
+      "category": "Одежда",
       "public": true,
       "armorStats": {
         "slots": [
@@ -162307,7 +162307,7 @@
       "description": "Изготовлен из особого волокна, которое обеспечивает незначительную защиту от биологических опасностей. Его обожают все врачи, любящие чистоту. Этот — белоснежный.",
       "suffix": "",
       "types": [
-        "equipment"
+        "clothing"
       ],
       "tags": [
         "RMCUniformMarine"
@@ -162397,14 +162397,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable storage, holster or webbing",
+        "reason": "clothing or uniform accessory",
         "signals": [
-          "role:wearable-storage"
+          "role:clothing"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "clothing",
+        "category": "Одежда"
       },
-      "category": "Экипировка",
+      "category": "Одежда",
       "public": true,
       "armorStats": {
         "slots": [
@@ -166826,9 +166826,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "field engineering or emergency tool",
+        "reason": "portable welding or utility fuel supply",
         "signals": [
-          "role:field-tool"
+          "role:fuel-supply"
         ],
         "categoryId": "gear",
         "category": "Снаряжение"
@@ -167098,9 +167098,9 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "treatment, diagnostic or medical supply",
+        "reason": "deployable patient transport or body bag",
         "signals": [
-          "role:medicine"
+          "role:patient-transport"
         ],
         "categoryId": "medicine",
         "category": "Медицина"
@@ -167845,7 +167845,7 @@
       "description": "Содержит лазерный целеуказатель и две упаковки сигнальных ракет.",
       "suffix": "",
       "types": [
-        "other"
+        "hidden"
       ],
       "tags": [],
       "componentTypes": [
@@ -167881,14 +167881,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no specific primary-purpose signal",
+        "reason": "runtime helper without a portable item role",
         "signals": [
-          "fallback:other"
+          "technical:runtime-helper"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "hidden",
+        "category": "Скрытые"
       },
-      "category": "Другое",
+      "category": "Скрытые",
       "public": true,
       "relationships": [
         {
@@ -167923,7 +167923,7 @@
       "description": "Содержит лазерный целеуказатель, сигнальные ракеты, разрывной заряд и огнетушитель.",
       "suffix": "",
       "types": [
-        "other"
+        "hidden"
       ],
       "tags": [],
       "componentTypes": [
@@ -167951,14 +167951,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no specific primary-purpose signal",
+        "reason": "runtime helper without a portable item role",
         "signals": [
-          "fallback:other"
+          "technical:runtime-helper"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "hidden",
+        "category": "Скрытые"
       },
-      "category": "Другое",
+      "category": "Скрытые",
       "public": true,
       "relationships": [
         {
@@ -168001,7 +168001,7 @@
       "description": "Содержит дефибриллятор, аптечку первой помощи, медицинские инструменты и фонарик.",
       "suffix": "",
       "types": [
-        "other"
+        "hidden"
       ],
       "tags": [],
       "componentTypes": [
@@ -168029,14 +168029,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no specific primary-purpose signal",
+        "reason": "runtime helper without a portable item role",
         "signals": [
-          "fallback:other"
+          "technical:runtime-helper"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "hidden",
+        "category": "Скрытые"
       },
-      "category": "Другое",
+      "category": "Скрытые",
       "public": true,
       "relationships": [
         {
@@ -168107,7 +168107,7 @@
       "description": "Содержит кепку с козырьком, формальную форму и пиджак.",
       "suffix": "",
       "types": [
-        "other"
+        "hidden"
       ],
       "tags": [],
       "componentTypes": [
@@ -168135,14 +168135,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no specific primary-purpose signal",
+        "reason": "runtime helper without a portable item role",
         "signals": [
-          "fallback:other"
+          "technical:runtime-helper"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "hidden",
+        "category": "Скрытые"
       },
-      "category": "Другое",
+      "category": "Скрытые",
       "public": true,
       "relationships": [
         {
@@ -168178,7 +168178,7 @@
       "description": "Содержит тактический дробовик M890 и различные патроны к нему.",
       "suffix": "",
       "types": [
-        "other"
+        "hidden"
       ],
       "tags": [],
       "componentTypes": [
@@ -168206,14 +168206,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "no specific primary-purpose signal",
+        "reason": "runtime helper without a portable item role",
         "signals": [
-          "fallback:other"
+          "technical:runtime-helper"
         ],
-        "categoryId": "other",
-        "category": "Другое"
+        "categoryId": "hidden",
+        "category": "Скрытые"
       },
-      "category": "Другое",
+      "category": "Скрытые",
       "public": true,
       "relationships": [
         {
@@ -183506,7 +183506,7 @@
       "description": "Предположительно, для устранения беспорядка.",
       "suffix": "",
       "types": [
-        "containers"
+        "tools"
       ],
       "tags": [
         "Mop"
@@ -183595,14 +183595,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "general-purpose container or packaging",
+        "reason": "cleaning or waste collection supply",
         "signals": [
-          "role:container"
+          "role:maintenance-tool"
         ],
-        "categoryId": "containers",
-        "category": "Контейнеры"
+        "categoryId": "tools",
+        "category": "Инструменты"
       },
-      "category": "Контейнеры",
+      "category": "Инструменты",
       "public": true,
       "solutionStats": {
         "solutions": [
@@ -185671,7 +185671,7 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "maintenance or agricultural fluid tool",
+        "reason": "cleaning or waste collection supply",
         "signals": [
           "role:maintenance-tool"
         ],
@@ -185703,7 +185703,7 @@
       "description": "{ \"\" }",
       "suffix": "",
       "types": [
-        "equipment"
+        "tools"
       ],
       "tags": [
         "TrashBag"
@@ -185781,14 +185781,14 @@
       "classification": {
         "status": "public",
         "confidence": "high",
-        "reason": "wearable storage, holster or webbing",
+        "reason": "cleaning or waste collection supply",
         "signals": [
-          "role:wearable-storage"
+          "role:maintenance-tool"
         ],
-        "categoryId": "equipment",
-        "category": "Экипировка"
+        "categoryId": "tools",
+        "category": "Инструменты"
       },
-      "category": "Экипировка",
+      "category": "Инструменты",
       "public": true,
       "storageStats": {
         "gridCells": 48,
@@ -193324,9 +193324,6 @@
         "RMCPacketGrenadeIncendiaryFilled",
         "CMPacketGrenadeHighExplosiveFilled",
         "CMPacketGrenadeFragFilled",
-        "RMCBoxShellsBuckshot",
-        "RMCBoxShellsSlugs",
-        "RMCBoxShellsFlechette",
         "RMCPacketGrenadeBatonSlugHIRRFilled",
         "RMCBoxMagazinePistolM77AP",
         "RMCBoxMagazinePistolM13",
@@ -193349,7 +193346,6 @@
         "RMCPacketGrenadeM74AGMSStarShellFilled",
         "CMPacketGrenadeFragOldFilled",
         "RMCBoxShotgunBuckshot",
-        "RMCBoxBullets458",
         "RMCBoxShotgunSlugs",
         "RMCBoxPackFlare",
         "RMCBoxFlashlights",
@@ -193577,6 +193573,7 @@
         "CMHeadBeretTan",
         "CMHeadCap",
         "CMHeadCapSurgWhite",
+        "RMCScrubsWhite",
         "RMCHeadBeret",
         "RMCHeadBeretQuartermaster",
         "CMHeadBeretCMP",
@@ -193592,6 +193589,7 @@
         "RMCHelmetGarbRainCover",
         "RMCHeadDurag",
         "CMHeadCapSurgGreen",
+        "CMScrubsGreen",
         "RMCPonchoSnow",
         "RMCHelmetGarbUNMCFlair",
         "CMHandsInsulated",
@@ -193602,9 +193600,15 @@
         "CMHeadCapCMO",
         "CMHeadCapSurgBrown",
         "RMCHandsBrownMarine",
+        "RMCScrubsBrown",
+        "RMCQuartermasterJacket",
         "CMHandsLatex",
         "RMCGlassesMedicalHUDGlasses",
+        "RMCScrubsCMO",
+        "RMCScrubsBlack",
+        "RMCScrubsPharm",
         "CMMaskGasMedical",
+        "RMCMedicalApron",
         "RMCGlassesSmartGunSight",
         "RMCPatchFallingFalcons",
         "RMCPatchFallingFalconsAlt",
@@ -193613,11 +193617,18 @@
         "RMCPatchUnitedNations",
         "RMCPatchUnitedNationsSquare",
         "CMHeadCapSurgOlive",
+        "RMCScrubsOlive",
+        "CMJumpsuitOperations",
+        "RMCJumpsuitASOOperations",
         "RMCHelmetGarbGunOil",
         "RMCHeadBandSquad",
+        "CMJumpsuitBO",
         "CMHeadCapOfficer",
         "RMCGlassesMarineRpg",
         "RMCBoonie",
+        "RMCJumpsuitASOFormal",
+        "RMCJumpsuitASOFormalAlt",
+        "CMJumpsuitXOFormal",
         "RMCHeadCapPatrol",
         "RMCSunglassesBig",
         "RMCHandsM3G4",
@@ -193628,16 +193639,33 @@
         "RMCPonchoDesert",
         "RMCMaskRebreather",
         "RMCWeldingGoggles",
+        "RMCScrubsLightBlue",
+        "RMCHazardVestYellow",
+        "RMCHazardVest",
+        "RMCHazardVestBlue",
+        "RMCHazardVestBlack",
         "CMHeadCapSurgGrey",
         "RMCHeadBeanieGray",
         "CMBootsGrey",
         "RMCHandsGreyMarine",
+        "RMCScrubsGrey",
+        "CMScrubsBlue",
         "CMHeadCapSurgBlue",
         "RMCGlassesMarineRpgOld",
         "CMMaskSterile",
         "RMCMaskTornScarfBlack",
+        "CMJumpsuitMarineEngineer",
+        "RMCJumpsuitMarineEngineerPatch",
+        "RMCJumpsuitDoctor",
+        "CMJumpsuitChiefEngineer",
+        "CMJumpsuitQM",
+        "CMJumpsuitMarineMedic",
+        "RMCJumpsuitMarineMedicPatch",
+        "JumpsuitMarine",
+        "RMCJumpsuitMarinePatch",
         "RMCGogglesBallisticSquad",
         "CMHeadCapSurgPurple",
+        "CMScrubsPurple",
         "CMHeadCapPeakedFormal",
         "RMCHeadCapPeakedASO",
         "CMHeadCapSurgCMO",
@@ -193646,13 +193674,14 @@
         "CMBootsBlack",
         "CMBootsBlackFilled",
         "CMBootsBrown",
+        "RMCJumpsuitASOBlack",
+        "RMCJumpsuitASOBlackAlt",
         "STPonchoBlack",
         "CMHandsBlackInsulated",
         "RMCHeadCapASO",
         "CMHeadFlapCap"
       ],
       "Экипировка": [
-        "RMCScrubsWhite",
         "RMCPouchShotgunLarge",
         "RMCPouchDocument",
         "RMCPouchMagazineLarge",
@@ -193663,7 +193692,6 @@
         "CMBeltSecurityMPFilled",
         "RMCBackpackBroiler",
         "RMCSatchelGrenadeSpec",
-        "CMScrubsGreen",
         "RMCPouchEngineerKit",
         "RMCBeltHolsterSMG",
         "RMCBeltHolsterSMGPouch",
@@ -193679,18 +193707,15 @@
         "CMSatchel",
         "RMCBackpackRTO",
         "CMWebbingBrown",
-        "RMCScrubsBrown",
-        "RMCQuartermasterJacket",
+        "RMCBoxShellsBuckshot",
+        "RMCBoxShellsSlugs",
+        "RMCBoxShellsFlechette",
+        "RMCBoxBullets458",
         "CMBackpackMarine",
         "RMCToolWebbingSmallFilled",
         "CMSatchelMedical",
-        "RMCScrubsCMO",
-        "RMCScrubsBlack",
-        "RMCScrubsPharm",
         "RMCPouchMedical",
         "CMBackpackMedical",
-        "RMCMedicalApron",
-        "TrashBag",
         "RMCWebbingLegPouch",
         "RMCPouchDocumentSmall",
         "RMCScabbardMacheteFilled",
@@ -193698,13 +193723,6 @@
         "RMCScabbardShotgun",
         "RMCPouchBayonetFill",
         "RMCScabbardCeremonialFilled",
-        "RMCScrubsOlive",
-        "CMJumpsuitOperations",
-        "RMCJumpsuitASOOperations",
-        "CMJumpsuitBO",
-        "RMCJumpsuitASOFormal",
-        "RMCJumpsuitASOFormalAlt",
-        "CMJumpsuitXOFormal",
         "RMCBackpackFlamer",
         "CMWebbingHolster",
         "RMCPouchAutoinjector",
@@ -193753,15 +193771,7 @@
         "RMCSatchelDemoSpec",
         "CMBackpackMortar",
         "CMBackpackMarineMedic",
-        "CMBackpackWelder",
         "CMBackpackMarineTech",
-        "RMCScrubsLightBlue",
-        "RMCHazardVestYellow",
-        "RMCHazardVest",
-        "RMCHazardVestBlue",
-        "RMCHazardVestBlack",
-        "RMCScrubsGrey",
-        "CMScrubsBlue",
         "CMBackpackSniper",
         "RMCM300SOCOMBelt",
         "RMCPouchGeneralMedium",
@@ -193769,23 +193779,11 @@
         "RMCPouchConstruction",
         "RMCPouchConstructionFillLowGrade",
         "RMCPouchSling",
-        "RMCSatchelWelder",
-        "RMCSatchelWelderChestrig",
         "RMCPouchFirstResponder",
         "CMSatchelMarine",
         "CMSatchelMarineMedic",
         "CMSatchelMarineTech",
         "RMCBackpackScout",
-        "CMJumpsuitMarineEngineer",
-        "RMCJumpsuitMarineEngineerPatch",
-        "RMCJumpsuitDoctor",
-        "CMJumpsuitChiefEngineer",
-        "CMJumpsuitQM",
-        "CMJumpsuitMarineMedic",
-        "RMCJumpsuitMarineMedicPatch",
-        "JumpsuitMarine",
-        "RMCJumpsuitMarinePatch",
-        "CMScrubsPurple",
         "RMCWebbingSurgicalGreen",
         "CMWebbingBlack",
         "RMCPouchReagentCanister",
@@ -193796,8 +193794,6 @@
         "RMCWebbingLegPouchBlack",
         "RMCWebbingHolsterBlack",
         "RMCWebbingBlackSmall",
-        "RMCJumpsuitASOBlack",
-        "RMCJumpsuitASOBlackAlt",
         "RMCWebbingDropPouchBlack"
       ],
       "Медицина": [
@@ -193851,6 +193847,8 @@
         "CMBurnKit10",
         "CMBloodPackFull",
         "RMCSyringeCase",
+        "CMRollerBedSpawnFolded",
+        "CMPortableSurgicalBedSpawnFolded",
         "RMCPortableDialysis",
         "CMCautery",
         "CMAdvFirstAidKitFilled",
@@ -193881,7 +193879,9 @@
       "Снаряжение": [
         "RMCTentUNMCStandardMedicalFolded",
         "RMCSentryFire",
+        "RMCEmergencyOxygenTankFilled",
         "RMCSentry",
+        "CMAnestheticTankFilled",
         "RMCPamphletLoader",
         "CMPamphletEngineer",
         "CMPamphletSpotter",
@@ -193891,25 +193891,31 @@
         "CMWrench",
         "CMPamphletJTAC",
         "RMCTesla",
+        "RMCGasTankOxygenFilled",
         "BarbedWire15",
         "RMCEngineeringUpgrade",
         "CMWirecutter",
         "CMSandbagFull50",
         "CMCrowbar",
+        "RMCInflatableDoorFolded",
+        "RMCInflatableWallFolded",
         "RMCHandcuffs",
         "RMCSentryLaptop",
         "CMFireExtinguisher",
         "CMScrewdriver",
+        "RMCParachute",
         "RMCMortarKit",
         "CMFireExtinguisherPortable",
         "CMSandbagEmpty25",
-        "CMSandbagEmpty50",
         "CMWelderSmall",
+        "CMBackpackWelder",
         "CMWelder",
         "RMCWhistle",
         "CMFoldingBarricadesMB6x3",
         "RMCM2CMount",
         "RMCZipties",
+        "RMCSatchelWelder",
+        "RMCSatchelWelderChestrig",
         "RMCTankReagentFuel",
         "RMCML66DMount",
         "CMMultitool",
@@ -193922,10 +193928,13 @@
         "CMWetSign",
         "SprayBottleSpaceCleaner",
         "RMCSprayBottleSpaceCleaner",
+        "TrashBag",
         "CMEntrenchingTool",
+        "RagItem",
         "CMMop"
       ],
       "Электроника": [
+        "CMSparePDTLBattleBuddyKit",
         "RMCPortableGeneratorPacmanMachineCircuitBoard",
         "RMCPDTLocatorTube",
         "RMCPortableGeneratorSuperPacmanMachineCircuitboard",
@@ -194065,6 +194074,7 @@
         "CMStampApproved",
         "RMCLightTube",
         "RMCCigarette",
+        "BedrollFolded",
         "CMElectroMatchbook",
         "CMExecutiveSelectMatchbook",
         "CMMatchBook",
@@ -194073,19 +194083,15 @@
       "Материалы": [
         "RMCSheetCardboard",
         "CMSheetPlasteel10",
-        "CMSheetPlasteel30",
-        "CMSheetPlasteel40",
         "RMCPlankWood",
+        "RMCCableCoil",
         "CMSheetMetal10",
-        "CMSheetMetal50",
-        "CMSheetMetal",
         "CMSheetPlasteel",
         "RMCSheetPlastic10",
         "CMSheetGlass",
         "CMSheetPhoron30"
       ],
       "Контейнеры": [
-        "CMSparePDTLBattleBuddyKit",
         "RMCToolboxElectricalFilled",
         "RMCToolboxEmergencyFilled",
         "RMCCrateGearOverwatchCameraTripod",
@@ -194096,8 +194102,6 @@
         "CMMiniTank",
         "RMCCrateMagazineAmmoSurplus",
         "RMCCrateSupplyEvacuation",
-        "RMCEmergencyOxygenTankFilled",
-        "CMAnestheticTankFilled",
         "RMCPressurizedCanister",
         "RMCCrateBoxMagazineSentryShotgun",
         "RMCCrateBoxMagazineSentryFire",
@@ -194132,7 +194136,6 @@
         "RMCM54CMK1Case",
         "RMCM54CMK1CaseAP",
         "RMCM54CMK2Case",
-        "RMCGasTankOxygenFilled",
         "RMCKitEngineering",
         "RMCKitSpotter",
         "RMCKitIntel",
@@ -194163,7 +194166,6 @@
         "RMCCrateSupplyJanitor",
         "RMCCrateMagazineFlamerMixed",
         "RMCCrateMagazineBGel",
-        "RagItem",
         "RMCCrateBoxShellsShotgunBuckshot",
         "RMCCrateBoxShellsShotgunSlugs",
         "RMCCrateBoxShellsShotgunFlechette",
@@ -194318,29 +194320,7 @@
         "RMCCrateClothingWebbingBlack",
         "RMCCrateElectricalMaintenance"
       ],
-      "Другое": [
-        "RMCVendorBundleXOShotgun",
-        "RMCVendorBundleCrewLeader",
-        "RMCCableCoil30",
-        "RMCCableCoil",
-        "RMCInflatableDoorFolded",
-        "RMCInflatableWallFolded",
-        "CMVendorBundleSquadMedicalEssentials",
-        "RMCVendorBundleCrewMedicalEssentialsDoctor",
-        "CMVendorBundleCombatTechnicianEssentials",
-        "RMCVendorBundleCrewFireteamLeader",
-        "RMCParachute",
-        "CMRollerBedSpawnFolded",
-        "CMPortableSurgicalBedSpawnFolded",
-        "BedrollFolded",
-        "CMVendorBundleCombatTechnicianApparel",
-        "CMVendorBundleFireteamLeaderApparel",
-        "CMVendorBundleRiflemanApparel",
-        "CMVendorBundleSquadLeaderApparel",
-        "CMVendorBundleSquadMedicalApparel",
-        "CMVendorBundleWeaponsSpecialistApparel",
-        "RMCVendorBundleXOFormal"
-      ],
+      "Другое": [],
       "Скрытые": [
         "RMCProjectileRocket84mmAntiArmor",
         "RMCProjectileRocket84mmWhitePhosphorus",
@@ -194357,6 +194337,9 @@
         "RMCBullet458SOCOM",
         "RMCBulletAutoPistol",
         "RMCNail7x45mm",
+        "RMCVendorBundleXOShotgun",
+        "CMSheetPlasteel30",
+        "CMSheetPlasteel40",
         "CMVendorHeadsetSquad",
         "CMVendorHeadsetSquadComTech",
         "CMVendorHeadsetSquadCorpsman",
@@ -194364,6 +194347,7 @@
         "CMVendorHeadsetSquadLeader",
         "RMCWeaponPistolM13Empty",
         "RMCBulletSniper10x99mmAntiMateriel",
+        "RMCVendorBundleCrewLeader",
         "CMPelletShotgunBeanbag",
         "RMCWeaponPistolM77Empty",
         "RMCWeaponRevolverM44Empty",
@@ -194376,10 +194360,17 @@
         "RMCAirBurstProjectileSmoke",
         "RMCAirBurstProjectileIncendiary",
         "CMBulletSniper10x28mmIncendiary",
+        "RMCCableCoil30",
         "RMCArmorM3LightVariants",
         "STBulletSharpStickyExplosive",
         "STBulletSharpStickyIncendiary",
+        "CMSheetMetal50",
+        "CMSheetMetal",
         "RMCProjectileTaser",
+        "CMVendorBundleSquadMedicalEssentials",
+        "RMCVendorBundleCrewMedicalEssentialsDoctor",
+        "CMVendorBundleCombatTechnicianEssentials",
+        "RMCVendorBundleCrewFireteamLeader",
         "RMCBulletSentryFireProjectile",
         "RMCBulletSentryFireProjectileSmoke",
         "RMCBulletSentryFireProjectileBlue",
@@ -194403,15 +194394,23 @@
         "RMCBulletPistol9mmHP",
         "CMBulletPistol9mm",
         "RMCBulletRsh9",
+        "CMSandbagEmpty50",
         "RMCProjectileM5510Brute",
         "RMCBatonSlugProjectile",
         "RMCFlareBullet",
         "RMCFlareCASBullet",
         "RMCWeaponPistolM82FEmpty",
         "CMWeaponPistolM1984Empty",
+        "CMVendorBundleCombatTechnicianApparel",
+        "CMVendorBundleFireteamLeaderApparel",
+        "CMVendorBundleRiflemanApparel",
+        "CMVendorBundleSquadLeaderApparel",
+        "CMVendorBundleSquadMedicalApparel",
+        "CMVendorBundleWeaponsSpecialistApparel",
         "RMCArmorM3HeavyVariants",
         "RMCBulletRevolver44Heavy",
         "STBulletSharpFlechette",
+        "RMCVendorBundleXOFormal",
         "RMCAirBurstProjectileHornet"
       ]
     },
@@ -195588,7 +195587,7 @@
     "catalogItems": 1167,
     "publicItems": 1165,
     "excludedItems": 0,
-    "hiddenItems": 71
+    "hiddenItems": 90
   },
   "review": {
     "policy": "catalog-v4-functional",
