@@ -292,7 +292,9 @@ def test_incidental_components_do_not_override_primary_item_role():
     assert classify_item(clothing, EMPTY_POLICY)["categoryId"] == "clothing"
     assert classify_item(mortar_flare, EMPTY_POLICY)["categoryId"] == "ammunition"
     assert classify_item(equipment_case, EMPTY_POLICY)["categoryId"] == "containers"
-    assert classify_item(leader_armor_fill, EMPTY_POLICY)["categoryId"] == "containers"
+    # StorageFill is initial contents, not a storage mechanism. Visibility of
+    # this internal armor variant is handled by build_public_catalog.
+    assert classify_item(leader_armor_fill, EMPTY_POLICY)["categoryId"] == "other"
 
 
 def test_infer_types_detects_weapon():

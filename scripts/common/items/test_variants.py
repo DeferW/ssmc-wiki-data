@@ -1,4 +1,5 @@
 from scripts.catalog.catalog import build_public_catalog
+from scripts.common.items.variants import hidden_variant_reasons
 
 
 def card(item_id, components, *, parent=None, suffix="", name="Same item"):
@@ -215,3 +216,60 @@ def test_empty_tools_and_partial_ammo_boxes_are_loading_states():
             "Empty": card("Empty", {"Item": {}, provider: empty}, parent="Normal", suffix="Empty"),
         }
         assert categorize(items)["Empty"] == "Скрытые"
+
+
+def test_stack_counts_share_one_card_even_when_the_base_is_not_published():
+    items = {}
+    for amount in [1, 10, 100]:
+        key = f"FutureCash{amount}"
+        items[key] = card(
+            key, {"Item": {}, "Cash": {}, "Stack": {"stackType": "FutureCurrency", "count": amount}}
+        )
+    result = categorize(items)
+    assert result["FutureCash1"] == "Быт"
+    assert result["FutureCash10"] == result["FutureCash100"] == "Скрытые"
+
+
+def test_stack_deduplication_preserves_distinct_materials_and_game_mechanics():
+    items = {
+        "A": card("A", {"Item": {}, "Stack": {"stackType": "Steel", "count": 1}}),
+        "B": card("B", {"Item": {}, "Stack": {"stackType": "Steel", "count": 10}}),
+        "C": card("C", {"Item": {}, "Stack": {"stackType": "Glass", "count": 10}}),
+        "D": card(
+            "D", {"Item": {}, "Stack": {"stackType": "Steel", "count": 10}, "NewMechanic": {}}
+        ),
+    }
+    hidden = hidden_variant_reasons(items, set(items))
+    assert set(hidden) == {"B"}
+
+
+def test_stack_renderer_quantity_state_is_not_a_different_item():
+    common = {
+        "Item": {},
+        "Cash": {},
+        "Stack": {"stackType": "Cash", "layerStates": ["cash", "cash_10"]},
+    }
+    items = {}
+    for count in [1, 10]:
+        items[str(count)] = card(
+            str(count),
+            {
+                **common,
+                "Stack": {**common["Stack"], "count": count},
+                "Sprite": {"sprite": "cash.rsi", "state": f"cash_{count}"},
+            },
+        )
+    items["different"] = card(
+        "different", {**common, "Sprite": {"sprite": "other.rsi", "state": "cash_10"}}
+    )
+    assert set(hidden_variant_reasons(items, set(items))) == {"10"}
+
+
+def test_excluded_stack_cannot_be_the_only_canonical_card():
+    items = {
+        str(count): card(str(count), {"Item": {}, "Stack": {"stackType": "A", "count": count}})
+        for count in [1, 10, 20]
+    }
+    build_public_catalog([], items, [], {"excludePrototypeIds": ["1"]}, set(items))
+    assert items["10"]["category"] != "Скрытые"
+    assert items["20"]["category"] == "Скрытые"

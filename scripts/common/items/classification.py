@@ -316,7 +316,7 @@ def is_technical_hidden_item(item: dict[str, Any], *, placed_on_map: bool = Fals
     components = set(item.get("componentTypes", []))
     return "CMVendorMapToSquad" in components or (
         "Item" not in components
-        and bool(components.intersection({"Projectile", "RMCArmorVariant"}))
+        and bool(components.intersection({"Projectile", "RMCArmorVariant", "CMVendorBundle"}))
     )
 
 
@@ -386,9 +386,37 @@ def classify_item(
             "household", "personal lighter with incidental welding mechanic", "source:lighter"
         )
 
+    # These roles are stronger than incidental storage or a belt attachment slot.
+    if "IdCard" in components:
+        return result("equipment", "personal identification and access card", "component:IdCard")
+    if "Cash" in components:
+        return result("household", "currency, not a construction material", "component:Cash")
+    if "GasTank" in components:
+        return result("gear", "portable breathing or utility gas supply", "component:GasTank")
+    if properties.get("ReagentTank", {}).get("tankType") == "Fuel":
+        return result("gear", "portable welding or utility fuel supply", "role:fuel-supply")
+    if (
+        tags.intersection({"trashbag"})
+        or "/specific/janitorial/" in path
+        or "Mousetrap" in components
+    ):
+        return result("tools", "cleaning or waste collection supply", "role:maintenance-tool")
+    if tags.intersection({"book", "folder", "clipboard"}) or "HandLabeler" in components:
+        return result(
+            "household", "reading or stationery item with incidental storage", "role:stationery"
+        )
+
     # A wearable pouch remains equipment even if its contents are medicine, ammo or flares.
-    wearable_storage = bool(slots.intersection(WEARABLE_STORAGE_SLOTS)) and has(
-        "storage", "webbing", "holster", "pouch"
+    # WebbingClothing accepts a webbing; StorageStoreSkillRequired restricts use.
+    # Neither is a storage mechanism. Coats and uniforms can also have pockets.
+    wearable_storage = (
+        bool(slots.intersection(WEARABLE_STORAGE_SLOTS))
+        and bool(components.intersection({"Storage", "CMItemSlots"}))
+        and not slots.intersection({"innerclothing", "jumpsuit"})
+        and not (
+            "outerclothing" in slots
+            and components.intersection({"UniformAccessoryHolder", "FoldableClothing"})
+        )
     )
     if wearable_storage or "Webbing" in components:
         return result("equipment", "wearable storage, holster or webbing", "role:wearable-storage")
@@ -431,6 +459,13 @@ def classify_item(
         return result(
             "electronics", "synthetic diagnostic or reset device", "role:synthetic-device"
         )
+
+    if tags.intersection({"cmrollerbed", "bodybag"}):
+        return result(
+            "medicine", "deployable patient transport or body bag", "role:patient-transport"
+        )
+    if "GrantParaDroppable" in components or tags.intersection({"rmcinflatablebarrier"}):
+        return result("gear", "parachute or deployable field barrier", "role:field-utility")
 
     medical_components = {
         component for component in components if not component.casefold().endswith("blocked")
@@ -556,6 +591,8 @@ def classify_item(
         return result(
             "materials", "stackable construction material or raw resource", "role:material"
         )
+    if "Stack" in components and tags.intersection({"cablecoil"}):
+        return result("materials", "electrical construction cable", "tag:construction-resource")
     if has("ore", "extractable") and "Stack" in components:
         return result("materials", "raw resource stack", "role:raw-resource")
 
@@ -657,6 +694,12 @@ def classify_item(
         "nightvision",
         "computer",
         "laptop",
+        "telephone",
+        "recorder",
+        "cassette",
+        "crewmonitor",
+        "pinpointer",
+        "signaller",
     ):
         return result(
             "electronics",
@@ -678,7 +721,73 @@ def classify_item(
         return result(
             "gear", "field signalling, training or deployable utility", "role:field-utility"
         )
-    if has("storage", "itemslots", "solutioncontainer", "gasTank") or is_packaging_container(item):
+    # Source families fill gaps for props with no functional component. Keep
+    # these fallbacks below actual game mechanics and above generic storage.
+    source_roles = (
+        ("/objects/weapons/melee/", "weapon"),
+        ("/objects/weapons/guns/", "weapon"),
+        ("/objects/shields/", "armor"),
+        ("/objects/devices/", "electronics"),
+        ("/objects/materials/", "materials"),
+        ("/objects/decoration/", "household"),
+        ("/structures/furniture/", "household"),
+        ("/objects/fishing/", "tools"),
+    )
+    for fragment, category in source_roles:
+        if fragment in path and not is_packaging_container(item):
+            return {
+                **result(category, "primary-purpose source family", f"source:{fragment}"),
+                "confidence": "medium",
+            }
+    # Decorative props often intentionally have no usable device component.
+    # Semantic source terms describe a whole family, never individual IDs.
+    source_name = path.rsplit("/", 1)[-1].removesuffix(".yml").replace("_", " ")
+    source_terms = (
+        ("electronics", ("laptop", "computer", "recorder", "stock parts", "disk", "surveying")),
+        ("tools", ("mining",)),
+        ("gear", ("fuel canister",)),
+        ("materials", ("ice crystal",)),
+        (
+            "household",
+            (
+                "bedsheet",
+                "candle",
+                "desk",
+                "fan",
+                "vase",
+                "figurine",
+                "magazine",
+                "paper",
+                "trash",
+                "treasure",
+                "basketball",
+                "bandage props",
+                "prop casing",
+                "ordnancecasings",
+            ),
+        ),
+    )
+    for category, terms in source_terms:
+        if any(re.search(rf"\b{re.escape(term)}\w*\b", source_name) for term in terms):
+            return {
+                **result(category, "semantic source family for a prop", "source:semantic-family"),
+                "confidence": "medium",
+            }
+    if "/entities/clothing/" in path and "Clothing" in components:
+        return {
+            **result("clothing", "clothing source family", "source:clothing"),
+            "confidence": "medium",
+        }
+    if "/objects/idcards/" in path:
+        return {
+            **result("equipment", "identification accessory source", "source:identification"),
+            "confidence": "medium",
+        }
+    if "Clothing" in components and slots.intersection({"ears", "ear", "neck"}):
+        return result("clothing", "personal clothing accessory", "role:clothing")
+    if components.intersection(
+        {"Storage", "CMItemSlots", "ItemSlots", "SolutionContainerManager"}
+    ) or is_packaging_container(item):
         if contents and contents.issubset({"medicine"}):
             return result("medicine", "container of medical supplies", "contents:medicine")
         if contents and contents.issubset({"food"}):

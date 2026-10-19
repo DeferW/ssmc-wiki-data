@@ -3,7 +3,9 @@
 from __future__ import annotations
 
 import copy
+import json
 import re
+from collections import defaultdict
 from typing import Any
 
 
@@ -68,6 +70,37 @@ def hidden_variant_reasons(
     items: dict[str, dict[str, Any]], public_ids: set[str]
 ) -> dict[str, str]:
     hidden: dict[str, str] = {}
+
+    # Quantity is a spawn state, not a separate material/currency card. Compare
+    # all other mechanics so different resources and capacities stay distinct.
+    stack_groups: dict[str, list[tuple[int, str]]] = defaultdict(list)
+    for item_id in sorted(public_ids):
+        item = items[item_id]
+        stack = components(item).get("Stack")
+        if not isinstance(stack, dict) or not stack.get("stackType"):
+            continue
+        count = stack.get("count", 1)
+        if not isinstance(count, int) or isinstance(count, bool) or count < 1:
+            continue
+        signature = copy.deepcopy(components(item))
+        signature["Stack"].pop("count", None)
+        sprite = signature.get("Sprite")
+        if stack.get("layerStates") and isinstance(sprite, dict):
+            # The engine redraws this state from Stack.count. Keep the sprite
+            # resource/layers so unrelated visual variants cannot collapse.
+            sprite.pop("state", None)
+        key = json.dumps(
+            [item.get("baseName", item.get("name")), signature], sort_keys=True, ensure_ascii=False
+        )
+        stack_groups[key].append((count, item_id))
+    for group in stack_groups.values():
+        if len({count for count, _ in group}) < 2:
+            continue
+        canonical = min(group)[1]
+        for _, item_id in group:
+            if item_id != canonical:
+                hidden[item_id] = f"stack-count duplicate of {canonical}"
+
     for item_id in sorted(public_ids):
         item = items[item_id]
         types = set(item.get("componentTypes", []))

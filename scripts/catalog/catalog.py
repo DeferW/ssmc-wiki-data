@@ -111,7 +111,9 @@ def build_public_catalog(
 
     # Keep all IDs for links/maps/admin, but hide redundant state variants.
     public_ids = public_candidates
-    hidden_variants = hidden_variant_reasons(items, public_ids)
+    hidden_variants = hidden_variant_reasons(
+        items, public_ids - set(classification_policy.get("excludePrototypeIds", []))
+    )
 
     # Classify physical contents first so generic cases can inherit a meaningful
     # supply role without maintaining lists of product IDs. Cycles are harmless.
