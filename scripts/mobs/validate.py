@@ -40,6 +40,44 @@ def validate_thresholds(thresholds: Any, label: str) -> None:
             )
 
 
+def positive_number(value: Any) -> bool:
+    return (
+        isinstance(value, (int, float))
+        and not isinstance(value, bool)
+        and math.isfinite(value)
+        and value > 0
+    )
+
+
+def validate_damage(damage: Any, label: str) -> None:
+    if not isinstance(damage, dict) or not damage:
+        raise RuntimeError(f"{label}: damage must be a non-empty object")
+    for damage_type, amount in damage.items():
+        if not isinstance(damage_type, str) or not positive_number(amount):
+            raise RuntimeError(f"{label}: invalid damage entry {damage_type!r}: {amount!r}")
+
+
+def validate_attacks(attacks: Any, caste_id: str) -> None:
+    if not isinstance(attacks, dict) or set(attacks) != {"claw", "tail"}:
+        raise RuntimeError(f"Xeno caste has invalid attacks keys: {caste_id}")
+    claw = attacks["claw"]
+    if claw is not None:
+        if not isinstance(claw, dict):
+            raise RuntimeError(f"Xeno caste has invalid claw attack: {caste_id}")
+        validate_damage(claw.get("damage"), f"{caste_id} claw")
+        if not positive_number(claw.get("attackRate")):
+            raise RuntimeError(f"Xeno caste has invalid claw attackRate: {caste_id}")
+    tail = attacks["tail"]
+    if tail is not None:
+        if not isinstance(tail, dict):
+            raise RuntimeError(f"Xeno caste has invalid tail attack: {caste_id}")
+        validate_damage(tail.get("damage"), f"{caste_id} tail")
+        if not isinstance(tail.get("armorPiercing"), int) or tail["armorPiercing"] < 0:
+            raise RuntimeError(f"Xeno caste has invalid tail armorPiercing: {caste_id}")
+        if not positive_number(tail.get("cooldownSeconds")):
+            raise RuntimeError(f"Xeno caste has invalid tail cooldownSeconds: {caste_id}")
+
+
 def validate(data: dict[str, Any], sprites_path: Path) -> None:
     if data.get("schemaVersion") != 1:
         raise RuntimeError(f"Unexpected schemaVersion: {data.get('schemaVersion')}")
@@ -109,6 +147,9 @@ def validate(data: dict[str, Any], sprites_path: Path) -> None:
             raise RuntimeError(
                 f"Xeno caste has invalid immuneToArmorPiercing: {caste_id}"
             )
+
+        if data.get("attacksSchemaVersion") == 1:
+            validate_attacks(caste.get("attacks"), caste_id)
 
     counts = data.get("counts")
     expected_counts = {"xenoCastes": len(xeno_castes)}

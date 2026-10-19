@@ -12,7 +12,7 @@ def workflow(name):
 
 
 def test_all_builders_allow_the_same_pinned_game_commit():
-    for name in ("build-catalog.yml", "build-maps.yml", "build-mobs.yml", "build-chemistry-catalog.yml"):
+    for name in ("build-catalog.yml", "build-maps.yml", "build-mobs.yml", "build-chemistry-catalog.yml", "build-fire-zones.yml"):
         document = workflow(name)
         assert document["on"]["workflow_dispatch"]["inputs"]["game_ref"]["default"] == "master"
         steps = next(iter(document["jobs"].values()))["steps"]

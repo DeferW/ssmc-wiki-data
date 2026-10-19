@@ -1,7 +1,9 @@
 {
   "schemaVersion": 1,
+  "evasionSchemaVersion": 1,
+  "attacksSchemaVersion": 1,
   "source": "MetalSage/space-stories-cm14",
-  "gameCommit": "024d853a184f956e0c08d876808ea7771a104a04",
+  "gameCommit": "1b6bb98624d44ccc3ade9dbdd63bb51c44079108",
   "locale": "ru-RU",
   "marine": {
     "sourcePrototypeId": "RMCBaseMobSpeciesOrganic",
@@ -16,6 +18,11 @@
       "name": "Бурильщик",
       "strainName": null,
       "size": "Xeno",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": 0,
+        "standing": 0
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/burrower.yml",
       "parents": [
@@ -39,6 +46,25 @@
         "explosionArmor": 40,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 9.1667,
+            "Slash": 9.1667,
+            "Piercing": 9.1667
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 12.0,
+            "Slash": 12.0,
+            "Piercing": 12.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/CMXenoBurrower.png"
     },
     "CMXenoCarrier": {
@@ -46,6 +72,11 @@
       "name": "Носитель",
       "strainName": null,
       "size": "Big",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/carrier.yml",
       "parents": [
@@ -63,6 +94,25 @@
         "explosionArmor": 20,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 9.1667,
+            "Slash": 9.1667,
+            "Piercing": 9.1667
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 14.0,
+            "Slash": 14.0,
+            "Piercing": 14.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/CMXenoCarrier.png"
     },
     "CMXenoDefender": {
@@ -70,6 +120,11 @@
       "name": "Защитник",
       "strainName": null,
       "size": "Xeno",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": 0,
+        "standing": 0
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/defender.yml",
       "parents": [
@@ -86,6 +141,25 @@
         "sideArmor": 0,
         "explosionArmor": 70,
         "immuneToArmorPiercing": false
+      },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 9.1667,
+            "Slash": 9.1667,
+            "Piercing": 9.1667
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 12.0,
+            "Slash": 12.0,
+            "Piercing": 12.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
       },
       "sprite": "sprites/CMXenoDefender.png"
     },
@@ -94,6 +168,11 @@
       "name": "Защитник",
       "strainName": "Стальной гребень",
       "size": "Xeno",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": 0,
+        "standing": 0
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/defender.yml",
       "parents": [
@@ -111,6 +190,25 @@
         "explosionArmor": 70,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 7.5,
+            "Slash": 7.5,
+            "Piercing": 7.5
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 10.0,
+            "Slash": 10.0,
+            "Piercing": 10.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/CMXenoDefenderSteelcrest.png"
     },
     "CMXenoDrone": {
@@ -118,6 +216,11 @@
       "name": "Дрон",
       "strainName": null,
       "size": "Xeno",
+      "evasion": {
+        "base": 15,
+        "sizeModifier": 0,
+        "standing": 15
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/drone.yml",
       "parents": [
@@ -134,6 +237,25 @@
         "sideArmor": 0,
         "explosionArmor": 0,
         "immuneToArmorPiercing": false
+      },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 7.5,
+            "Slash": 7.5,
+            "Piercing": 7.5
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 10.0,
+            "Slash": 10.0,
+            "Piercing": 10.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
       },
       "sprite": "sprites/CMXenoDrone.png"
     },
@@ -142,6 +264,11 @@
       "name": "Дрон",
       "strainName": "Садовник",
       "size": "Xeno",
+      "evasion": {
+        "base": 15,
+        "sizeModifier": 0,
+        "standing": 15
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/drone.yml",
       "parents": [
@@ -158,6 +285,25 @@
         "sideArmor": 0,
         "explosionArmor": 0,
         "immuneToArmorPiercing": false
+      },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 7.5,
+            "Slash": 7.5,
+            "Piercing": 7.5
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 10.0,
+            "Slash": 10.0,
+            "Piercing": 10.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
       },
       "sprite": "sprites/CMXenoDroneGardener.png"
     },
@@ -166,6 +312,11 @@
       "name": "Дрон",
       "strainName": "Целитель",
       "size": "Xeno",
+      "evasion": {
+        "base": 15,
+        "sizeModifier": 0,
+        "standing": 15
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/drone.yml",
       "parents": [
@@ -183,6 +334,25 @@
         "explosionArmor": 0,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 5.8333,
+            "Slash": 5.8333,
+            "Piercing": 5.8333
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 8.3333,
+            "Slash": 8.3333,
+            "Piercing": 8.3333
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/CMXenoDroneHealer.png"
     },
     "CMXenoHivelord": {
@@ -190,6 +360,11 @@
       "name": "Повелитель улья",
       "strainName": null,
       "size": "Big",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/hivelord.yml",
       "parents": [
@@ -206,6 +381,25 @@
         "sideArmor": 0,
         "explosionArmor": 10,
         "immuneToArmorPiercing": false
+      },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 7.5,
+            "Slash": 7.5,
+            "Piercing": 7.5
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 10.0,
+            "Slash": 10.0,
+            "Piercing": 10.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
       },
       "sprite": "sprites/CMXenoHivelord.png"
     },
@@ -214,6 +408,11 @@
       "name": "Повелитель улья",
       "strainName": "Дизайнер",
       "size": "Big",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/hivelord.yml",
       "parents": [
@@ -230,6 +429,25 @@
         "sideArmor": 0,
         "explosionArmor": 10,
         "immuneToArmorPiercing": false
+      },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 7.5,
+            "Slash": 7.5,
+            "Piercing": 7.5
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 10.0,
+            "Slash": 10.0,
+            "Piercing": 10.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
       },
       "sprite": "sprites/CMXenoHivelordDesigner.png"
     },
@@ -238,6 +456,11 @@
       "name": "Повелитель улья",
       "strainName": "Смоляной Шептун",
       "size": "Big",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/hivelord.yml",
       "parents": [
@@ -255,6 +478,25 @@
         "explosionArmor": 10,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 7.5,
+            "Slash": 7.5,
+            "Piercing": 7.5
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 10.0,
+            "Slash": 10.0,
+            "Piercing": 10.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/CMXenoHivelordResinWhisperer.png"
     },
     "CMXenoLarva": {
@@ -262,6 +504,11 @@
       "name": "Личинка",
       "strainName": null,
       "size": "Small",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": 10,
+        "standing": 10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/larva.yml",
       "parents": [
@@ -281,6 +528,10 @@
         "explosionArmor": 0,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": null,
+        "tail": null
+      },
       "sprite": "sprites/CMXenoLarva.png"
     },
     "CMXenoLesserDrone": {
@@ -288,6 +539,11 @@
       "name": "Малый дрон",
       "strainName": null,
       "size": "VerySmallXeno",
+      "evasion": {
+        "base": 10,
+        "sizeModifier": 0,
+        "standing": 10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/lesser_drone.yml",
       "parents": [
@@ -309,6 +565,25 @@
         "explosionArmor": 0,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 6.6667,
+            "Slash": 6.6667,
+            "Piercing": 6.6667
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 8.0,
+            "Slash": 8.0,
+            "Piercing": 8.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/CMXenoLesserDrone.png"
     },
     "CMXenoLurker": {
@@ -316,6 +591,11 @@
       "name": "Охотник",
       "strainName": null,
       "size": "Xeno",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": 0,
+        "standing": 0
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/lurker.yml",
       "parents": [
@@ -334,6 +614,25 @@
         "explosionArmor": 20,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 11.6667,
+            "Slash": 11.6667,
+            "Piercing": 11.6667
+          },
+          "attackRate": 0.75
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 14.0,
+            "Slash": 14.0,
+            "Piercing": 14.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/CMXenoLurker.png"
     },
     "CMXenoParasite": {
@@ -341,6 +640,11 @@
       "name": "Лицехват",
       "strainName": null,
       "size": "Small",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": 10,
+        "standing": 10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/parasite.yml",
       "parents": [
@@ -358,6 +662,10 @@
         "explosionArmor": 0,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": null,
+        "tail": null
+      },
       "sprite": "sprites/CMXenoParasite.png"
     },
     "CMXenoPraetorian": {
@@ -365,6 +673,11 @@
       "name": "Преторианец",
       "strainName": null,
       "size": "Big",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/praetorian.yml",
       "parents": [
@@ -382,6 +695,25 @@
         "explosionArmor": 40,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 13.3333,
+            "Slash": 13.3333,
+            "Piercing": 13.3333
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 16.0,
+            "Slash": 16.0,
+            "Piercing": 16.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/CMXenoPraetorian.png"
     },
     "CMXenoQueen": {
@@ -389,6 +721,11 @@
       "name": "Королева",
       "strainName": null,
       "size": "Immobile",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/queen.yml",
       "parents": [
@@ -409,6 +746,25 @@
         "explosionArmor": 100,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 13.3333,
+            "Slash": 13.3333,
+            "Piercing": 13.3333
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 18.0,
+            "Slash": 18.0,
+            "Piercing": 18.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/CMXenoQueen.png"
     },
     "CMXenoRavager": {
@@ -416,6 +772,11 @@
       "name": "Разрушитель",
       "strainName": null,
       "size": "Big",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/ravager.yml",
       "parents": [
@@ -433,6 +794,25 @@
         "explosionArmor": 80,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 15.0,
+            "Slash": 15.0,
+            "Piercing": 15.0
+          },
+          "attackRate": 1.05
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 18.0,
+            "Slash": 18.0,
+            "Piercing": 18.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/CMXenoRavager.png"
     },
     "CMXenoRunner": {
@@ -440,6 +820,11 @@
       "name": "Бегун",
       "strainName": null,
       "size": "SmallXeno",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": 0,
+        "standing": 0
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/runner.yml",
       "parents": [
@@ -457,6 +842,25 @@
         "explosionArmor": 10,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 7.5,
+            "Slash": 7.5,
+            "Piercing": 7.5
+          },
+          "attackRate": 1.4
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 10.0,
+            "Slash": 10.0,
+            "Piercing": 10.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/CMXenoRunner.png"
     },
     "CMXenoSentinel": {
@@ -464,6 +868,11 @@
       "name": "Страж",
       "strainName": null,
       "size": "Xeno",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": 0,
+        "standing": 0
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/sentinel.yml",
       "parents": [
@@ -487,6 +896,25 @@
         "explosionArmor": 10,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 7.5,
+            "Slash": 7.5,
+            "Piercing": 7.5
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 10.0,
+            "Slash": 10.0,
+            "Piercing": 10.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/CMXenoSentinel.png"
     },
     "CMXenoSpitter": {
@@ -494,6 +922,11 @@
       "name": "Плеватель",
       "strainName": null,
       "size": "Xeno",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": 0,
+        "standing": 0
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/spitter.yml",
       "parents": [
@@ -517,6 +950,25 @@
         "explosionArmor": 20,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 8.3333,
+            "Slash": 8.3333,
+            "Piercing": 8.3333
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 12.0,
+            "Slash": 12.0,
+            "Piercing": 12.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/CMXenoSpitter.png"
     },
     "CMXenoWarrior": {
@@ -524,6 +976,11 @@
       "name": "Воин",
       "strainName": null,
       "size": "Xeno",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": 0,
+        "standing": 0
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/warrior.yml",
       "parents": [
@@ -546,6 +1003,25 @@
         "explosionArmor": 40,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 11.6667,
+            "Slash": 11.6667,
+            "Piercing": 11.6667
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 16.0,
+            "Slash": 16.0,
+            "Piercing": 16.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/CMXenoWarrior.png"
     },
     "RMCXenoBoiler": {
@@ -553,6 +1029,11 @@
       "name": "Бойлер",
       "strainName": null,
       "size": "Big",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/boiler.yml",
       "parents": [
@@ -570,6 +1051,25 @@
         "explosionArmor": 20,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 7.5,
+            "Slash": 7.5,
+            "Piercing": 7.5
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 10.0,
+            "Slash": 10.0,
+            "Piercing": 10.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/RMCXenoBoiler.png"
     },
     "RMCXenoBoilerSapper": {
@@ -577,6 +1077,11 @@
       "name": "Бойлер",
       "strainName": "Сапёр",
       "size": "Big",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/boiler.yml",
       "parents": [
@@ -594,6 +1099,25 @@
         "explosionArmor": 20,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 7.5,
+            "Slash": 7.5,
+            "Piercing": 7.5
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 10.0,
+            "Slash": 10.0,
+            "Piercing": 10.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/RMCXenoBoilerSapper.png"
     },
     "RMCXenoCarrierEggsac": {
@@ -601,6 +1125,11 @@
       "name": "Носитель",
       "strainName": "Кокон",
       "size": "Big",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/carrier.yml",
       "parents": [
@@ -618,6 +1147,25 @@
         "explosionArmor": 20,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 9.1667,
+            "Slash": 9.1667,
+            "Piercing": 9.1667
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 14.0,
+            "Slash": 14.0,
+            "Piercing": 14.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/RMCXenoCarrierEggsac.png"
     },
     "RMCXenoCrusher": {
@@ -625,6 +1173,11 @@
       "name": "Крушитель",
       "strainName": null,
       "size": "Immobile",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/crusher.yml",
       "parents": [
@@ -642,6 +1195,25 @@
         "explosionArmor": 100,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 13.3333,
+            "Slash": 13.3333,
+            "Piercing": 13.3333
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 16.0,
+            "Slash": 16.0,
+            "Piercing": 16.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/RMCXenoCrusher.png"
     },
     "RMCXenoCrusherCharger": {
@@ -649,6 +1221,11 @@
       "name": "Крушитель",
       "strainName": "Таран",
       "size": "Immobile",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/crusher.yml",
       "parents": [
@@ -666,6 +1243,25 @@
         "explosionArmor": 100,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 10.0,
+            "Slash": 10.0,
+            "Piercing": 10.0
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 12.0,
+            "Slash": 12.0,
+            "Piercing": 12.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/RMCXenoCrusherCharger.png"
     },
     "RMCXenoKing": {
@@ -673,6 +1269,11 @@
       "name": "Король",
       "strainName": null,
       "size": "Immobile",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/king.yml",
       "parents": [
@@ -694,6 +1295,25 @@
         "explosionArmor": 70,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 16.6667,
+            "Slash": 16.6667,
+            "Piercing": 16.6667
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 22.0,
+            "Slash": 22.0,
+            "Piercing": 22.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/RMCXenoKing.png"
     },
     "RMCXenoLesserCarrier": {
@@ -701,6 +1321,11 @@
       "name": "Малый Носитель",
       "strainName": null,
       "size": "VerySmallXeno",
+      "evasion": {
+        "base": 10,
+        "sizeModifier": 0,
+        "standing": 10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/fun.yml",
       "parents": [
@@ -721,6 +1346,25 @@
         "explosionArmor": 10,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 8.3333,
+            "Slash": 8.3333,
+            "Piercing": 8.3333
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 10.0,
+            "Slash": 10.0,
+            "Piercing": 10.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/RMCXenoLesserCarrier.png"
     },
     "RMCXenoLurkerVampire": {
@@ -728,6 +1372,11 @@
       "name": "Охотник",
       "strainName": "Вампир",
       "size": "Xeno",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": 0,
+        "standing": 0
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/lurker.yml",
       "parents": [
@@ -745,6 +1394,17 @@
         "explosionArmor": 20,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 10.0,
+            "Slash": 10.0,
+            "Piercing": 10.0
+          },
+          "attackRate": 0.93
+        },
+        "tail": null
+      },
       "sprite": "sprites/RMCXenoLurkerVampire.png"
     },
     "RMCXenoParasiteWatcher": {
@@ -752,6 +1412,11 @@
       "name": "Лицехват",
       "strainName": "Наблюдатель",
       "size": "Small",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": 10,
+        "standing": 10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/parasite.yml",
       "parents": [
@@ -769,6 +1434,10 @@
         "explosionArmor": 0,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": null,
+        "tail": null
+      },
       "sprite": "sprites/RMCXenoParasiteWatcher.png"
     },
     "RMCXenoPraetorianDancer": {
@@ -776,6 +1445,11 @@
       "name": "Преторианец",
       "strainName": "Танцор",
       "size": "Big",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/praetorian.yml",
       "parents": [
@@ -793,6 +1467,25 @@
         "explosionArmor": 40,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 13.3333,
+            "Slash": 13.3333,
+            "Piercing": 13.3333
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 16.0,
+            "Slash": 16.0,
+            "Piercing": 16.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/RMCXenoPraetorianDancer.png"
     },
     "RMCXenoPraetorianOppressor": {
@@ -800,6 +1493,11 @@
       "name": "Преторианец",
       "strainName": "Угнетатель",
       "size": "Big",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/praetorian.yml",
       "parents": [
@@ -817,6 +1515,17 @@
         "explosionArmor": 60,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 10.0,
+            "Slash": 10.0,
+            "Piercing": 10.0
+          },
+          "attackRate": 1.0
+        },
+        "tail": null
+      },
       "sprite": "sprites/RMCXenoPraetorianOppressor.png"
     },
     "RMCXenoPraetorianValkyrie": {
@@ -824,6 +1533,11 @@
       "name": "Преторианец",
       "strainName": "Валькирия",
       "size": "Big",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/praetorian.yml",
       "parents": [
@@ -841,6 +1555,17 @@
         "explosionArmor": 40,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 13.3333,
+            "Slash": 13.3333,
+            "Piercing": 13.3333
+          },
+          "attackRate": 1.0
+        },
+        "tail": null
+      },
       "sprite": "sprites/RMCXenoPraetorianValkyrie.png"
     },
     "RMCXenoPraetorianVanguard": {
@@ -848,6 +1573,11 @@
       "name": "Преторианец",
       "strainName": "Авангард",
       "size": "Big",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/praetorian.yml",
       "parents": [
@@ -865,6 +1595,25 @@
         "explosionArmor": 40,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 13.3333,
+            "Slash": 13.3333,
+            "Piercing": 13.3333
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 16.0,
+            "Slash": 16.0,
+            "Piercing": 16.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/RMCXenoPraetorianVanguard.png"
     },
     "RMCXenoRavagerBerserker": {
@@ -872,6 +1621,11 @@
       "name": "Разрушитель",
       "strainName": "Берсерк",
       "size": "Big",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/ravager.yml",
       "parents": [
@@ -889,6 +1643,25 @@
         "explosionArmor": 80,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 15.0,
+            "Slash": 15.0,
+            "Piercing": 15.0
+          },
+          "attackRate": 1.05
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 18.0,
+            "Slash": 18.0,
+            "Piercing": 18.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/RMCXenoRavagerBerserker.png"
     },
     "RMCXenoRavagerHedgehog": {
@@ -896,6 +1669,11 @@
       "name": "Разрушитель",
       "strainName": "Ёж",
       "size": "Big",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/ravager.yml",
       "parents": [
@@ -913,6 +1691,25 @@
         "explosionArmor": 100,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 11.6667,
+            "Slash": 11.6667,
+            "Piercing": 11.6667
+          },
+          "attackRate": 0.9
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 16.0,
+            "Slash": 16.0,
+            "Piercing": 16.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/RMCXenoRavagerHedgehog.png"
     },
     "RMCXenoRunnerAcider": {
@@ -920,6 +1717,11 @@
       "name": "Бегун",
       "strainName": "Окислитель",
       "size": "SmallXeno",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": 0,
+        "standing": 0
+      },
       "origin": "rmc14",
       "sourceFile": "Resources/Prototypes/_RMC14/Entities/Mobs/Xeno/runner.yml",
       "parents": [
@@ -937,6 +1739,25 @@
         "explosionArmor": 10,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 7.5,
+            "Slash": 7.5,
+            "Piercing": 7.5
+          },
+          "attackRate": 1.4
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 10.0,
+            "Slash": 10.0,
+            "Piercing": 10.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/RMCXenoRunnerAcider.png"
     },
     "STXenoDespoiler": {
@@ -944,6 +1765,11 @@
       "name": "Дисбойлер",
       "strainName": null,
       "size": "Big",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "stories",
       "sourceFile": "Resources/Prototypes/_Stories/Entities/Mobs/Xeno/despoiler.yml",
       "parents": [
@@ -966,13 +1792,123 @@
         "explosionArmor": 20,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Slash": 18,
+            "Heat": 7
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 6.6667,
+            "Slash": 6.6667,
+            "Piercing": 6.6667
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/STXenoDespoiler.png"
+    },
+    "STXenoPredalien": {
+      "id": "STXenoPredalien",
+      "name": "Абоминация",
+      "strainName": null,
+      "size": "Big",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Entities/Mobs/Xeno/predalien.yml",
+      "parents": [
+        "CMXenoDeveloped",
+        "CMXenoTail",
+        "CMXenoFlammable",
+        "RMCXenoSpeechSounds",
+        "RMCXenoMobCollision"
+      ],
+      "thresholds": {
+        "critical": 650,
+        "dead": 750
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 30,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 100,
+        "immuneToArmorPiercing": false
+      },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 11.6667,
+            "Slash": 11.6667,
+            "Piercing": 11.6667
+          },
+          "attackRate": 1.18
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 16.0,
+            "Slash": 16.0,
+            "Piercing": 16.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
+      "sprite": "sprites/STXenoPredalien.png"
+    },
+    "STXenoPredalienLarva": {
+      "id": "STXenoPredalienLarva",
+      "name": "Личинка-абоминация",
+      "strainName": null,
+      "size": "Small",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": 10,
+        "standing": 10
+      },
+      "origin": "stories",
+      "sourceFile": "Resources/Prototypes/_Stories/Entities/Mobs/Xeno/predalien_larva.yml",
+      "parents": [
+        "CMXenoUndeveloped",
+        "CMXenoFlammable",
+        "RMCXenoVentCrawler"
+      ],
+      "thresholds": {
+        "critical": 35,
+        "dead": 70
+      },
+      "maturedThresholds": null,
+      "armor": {
+        "xenoArmor": 0,
+        "frontalArmor": 0,
+        "sideArmor": 0,
+        "explosionArmor": 0,
+        "immuneToArmorPiercing": false
+      },
+      "attacks": {
+        "claw": null,
+        "tail": null
+      },
+      "sprite": "sprites/STXenoPredalienLarva.png"
     },
     "STXenoWarriorBoxer": {
       "id": "STXenoWarriorBoxer",
       "name": "Воин",
       "strainName": "Боксёр",
       "size": "Big",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": -10,
+        "standing": -10
+      },
       "origin": "stories",
       "sourceFile": "Resources/Prototypes/_Stories/Entities/Mobs/Xeno/warrior.yml",
       "parents": [
@@ -995,6 +1931,25 @@
         "explosionArmor": 45,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 10.0,
+            "Slash": 10.0,
+            "Piercing": 10.0
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 15.0,
+            "Slash": 15.0,
+            "Piercing": 15.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/STXenoWarriorBoxer.png"
     },
     "STXenoWarriorBulwark": {
@@ -1002,6 +1957,11 @@
       "name": "Воин",
       "strainName": "Бастион",
       "size": "Xeno",
+      "evasion": {
+        "base": 0,
+        "sizeModifier": 0,
+        "standing": 0
+      },
       "origin": "stories",
       "sourceFile": "Resources/Prototypes/_Stories/Entities/Mobs/Xeno/warrior.yml",
       "parents": [
@@ -1024,10 +1984,29 @@
         "explosionArmor": 50,
         "immuneToArmorPiercing": false
       },
+      "attacks": {
+        "claw": {
+          "damage": {
+            "Blunt": 11.6667,
+            "Slash": 11.6667,
+            "Piercing": 11.6667
+          },
+          "attackRate": 1.0
+        },
+        "tail": {
+          "damage": {
+            "Blunt": 16.0,
+            "Slash": 16.0,
+            "Piercing": 16.0
+          },
+          "armorPiercing": 0,
+          "cooldownSeconds": 10
+        }
+      },
       "sprite": "sprites/STXenoWarriorBulwark.png"
     }
   },
   "counts": {
-    "xenoCastes": 40
+    "xenoCastes": 42
   }
 }
